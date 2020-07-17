@@ -1,0 +1,506 @@
+### American Ideas
+ideas = {
+### Country ideas
+	country = {
+	### Civil War ideas ###
+		CSA_righteous_nation = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_righteous_nation"}
+			picture = FRA_national_mobilization_focus
+			modifier = {
+				army_morale_factor = 0.20
+				land_reinforce_rate = 0.10
+				army_speed_factor = 0.20
+			}
+		}
+		CSA_militia_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_militia_idea"}
+			picture = generic_syndicalist_militia
+			modifier = {
+				army_morale_factor = 0.02
+				army_org_Factor = -0.2
+				max_planning = -0.5
+			}
+		}
+		CSA_militia_idea2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_militia_idea2"}
+			picture = generic_syndicalist_militia
+			modifier = {
+				army_morale_factor = 0.02
+				army_org_Factor = -0.1
+				max_planning = -0.25
+			}
+		}
+		CSA_war_syndicalism_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_war_syndicalism_idea"}
+			picture = eng_spirit_of_the_industrial_revolution
+			modifier = {
+				industrial_capacity_factory = 0.1
+				production_speed_arms_factory_factor = 0.2
+				local_resources_factor = 0.2
+				political_power_gain = -0.15
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				production_speed_industrial_complex_factor = -0.15
+			}
+		}
+	### Political ideas ###	
+		CSA_market_socialism_idea1 = { #Market Socialism
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_market_socialism_idea1"}
+			picture = new_deal
+			modifier = {
+				production_factory_max_efficiency_factor = -0.10
+				industrial_capacity_factory = -0.10
+				production_speed_buildings_factor = -0.10
+			}
+		}
+		CSA_market_socialism_idea2 = { #Market Socialism
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_market_socialism_idea2"}
+			picture = new_deal
+			modifier = {
+				production_factory_max_efficiency_factor = -0.05
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		CSA_market_socialism_idea3 = { #Market Socialism
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_market_socialism_idea3"}
+			picture = new_deal
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		CSA_market_socialism_idea4 = { #Market Socialism
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_market_socialism_idea4"}
+			picture = new_deal
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+				line_change_production_efficiency_factor = 0.10
+			}
+		}
+		CSA_market_socialism_idea5 = { #Market Socialism
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_market_socialism_idea5"}
+			picture = new_deal
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				line_change_production_efficiency_factor = 0.15
+				monthly_population = 0.25
+			}
+		}
+		CSA_market_socialism_idea6 = { #Market Socialism
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_market_socialism_idea6"}
+			picture = new_deal
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				line_change_production_efficiency_factor = 0.15
+				monthly_population = 0.25
+				research_speed_factor = 0.05
+			}
+		}
+
+		CSA_syndicalist_economics1 = { #Syndicalist Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_syndicalist_economics1"}
+			picture = TUS_syndie_economy
+			modifier = {
+				production_factory_max_efficiency_factor = -0.10
+				industrial_capacity_factory = -0.10
+				production_speed_buildings_factor = -0.10
+			}
+		}
+		CSA_syndicalist_economics2 = { #Syndicalist Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_syndicalist_economics2"}
+			picture = TUS_syndie_economy
+			modifier = {
+				production_factory_max_efficiency_factor = -0.05
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		CSA_syndicalist_economics3 = { #Syndicalist Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_syndicalist_economics3"}
+			picture = TUS_syndie_economy
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		CSA_syndicalist_economics4 = { #Syndicalist Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_syndicalist_economics4"}
+			picture = TUS_syndie_economy
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		CSA_syndicalist_economics5 = { #Syndicalist Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_syndicalist_economics5"}
+			picture = TUS_syndie_economy
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.15
+				monthly_population = 0.25
+			}
+		}
+		CSA_syndicalist_economics6 = { #Syndicalist Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_syndicalist_economics6"}
+			picture = TUS_syndie_economy
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.15
+				monthly_population = 0.25
+				research_speed_factor = 0.05
+			}
+		}
+
+		CSA_foster_economic_policy_idea1 = { #Foster Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_foster_economic_policy_idea1"}
+			picture = UK_economy_syn_idea
+			modifier = {
+				production_factory_max_efficiency_factor = -0.10
+				industrial_capacity_factory = -0.10
+				production_speed_buildings_factor = -0.10
+			}
+		}
+		CSA_foster_economic_policy_idea2 = { #Foster Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_foster_economic_policy_idea2"}
+			picture = UK_economy_syn_idea
+			modifier = {
+				production_factory_max_efficiency_factor = -0.05
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		CSA_foster_economic_policy_idea3 = { #Foster Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_foster_economic_policy_idea3"}
+			picture = UK_economy_syn_idea
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		CSA_foster_economic_policy_idea4 = { #Foster Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_foster_economic_policy_idea4"}
+			picture = UK_economy_syn_idea
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+				local_resources_factor = 0.10
+			}
+		}
+		CSA_foster_economic_policy_idea5 = { #Foster Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_foster_economic_policy_idea5"}
+			picture = UK_economy_syn_idea
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_start_efficiency_factor = 0.15
+				local_resources_factor = 0.15
+				monthly_population = 0.25
+			}
+		}
+		CSA_foster_economic_policy_idea6 = { #Foster Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_foster_economic_policy_idea6"}
+			picture = UK_economy_syn_idea
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_start_efficiency_factor = 0.15
+				local_resources_factor = 0.15
+				monthly_population = 0.25
+				research_speed_factor = 0.05
+			}
+		}
+
+		CSA_browders_economic_policy_idea1 = { #Browder Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_browders_economic_policy_idea1"}
+			picture = eng_spirit_of_the_industrial_revolution
+			modifier = {
+				production_factory_max_efficiency_factor = -0.10
+				industrial_capacity_factory = -0.10
+				production_speed_buildings_factor = -0.10
+			}
+		}
+		CSA_browders_economic_policy_idea2 = { #Browder Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_browders_economic_policy_idea2"}
+			picture = eng_spirit_of_the_industrial_revolution
+			modifier = {
+				production_factory_max_efficiency_factor = -0.05
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		CSA_browders_economic_policy_idea3 = { #Browder Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_browders_economic_policy_idea3"}
+			picture = eng_spirit_of_the_industrial_revolution
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		CSA_browders_economic_policy_idea4 = { #Browder Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_browders_economic_policy_idea4"}
+			picture = eng_spirit_of_the_industrial_revolution
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		CSA_browders_economic_policy_idea5 = { #Browder Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_browders_economic_policy_idea5"}
+			picture = eng_spirit_of_the_industrial_revolution
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				production_factory_start_efficiency_factor = 0.15
+				monthly_population = 0.25
+			}
+		}
+		CSA_browders_economic_policy_idea6 = { #Browder Economics
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_browders_economic_policy_idea6"}
+			picture = eng_spirit_of_the_industrial_revolution
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				production_factory_start_efficiency_factor = 0.15
+				monthly_population = 0.25
+				research_speed_factor = 0.05
+			}
+		}
+
+		CSA_general_defense_comitte_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_general_defense_comitte_idea"}
+			picture = NOR_secret_police_idea_1
+			modifier = {
+				resistance_damage_to_garrison = -0.1
+			}
+		}
+		CSA_strategic_services_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_strategic_services_idea"}
+			picture = NOR_secret_police_idea_1
+			modifier = {
+				resistance_damage_to_garrison = -0.2
+				special_forces_cap = 0.1
+			}
+		}
+		CSA_revolutionary_guards_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_revolutionary_guards_idea"}
+			picture = NOR_secret_police_idea_1
+			modifier = {
+				resistance_damage_to_garrison = -0.1
+			}
+		}
+		CSA_lead_revolution_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_lead_revolution_idea"}
+			picture = FRA_scw_intervention_republicans_focus
+			modifier = {
+				send_volunteer_size = 2
+			}
+		}
+		CSA_csb_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_csb_idea"}
+			picture = NOR_secret_police_idea_1
+			modifier = {
+				resistance_damage_to_garrison = -0.2
+				special_forces_cap = 0.1
+			}
+		}
+
+		CSA_social_revolution1 = { #Civil War Aftermath
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_social_revolution1"}
+			modifier = {
+				stability_factor = -0.20
+				war_support_factor = -0.20
+				conscription_factor = -0.20
+			}
+			picture = usa_desegregation_1
+		}
+		CSA_social_revolution2 = { #Civil War Aftermath
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_social_revolution2"}
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = -0.10
+				conscription_factor = -0.10
+			}
+			picture = usa_desegregation_1
+		}
+		CSA_social_revolution3 = { #Civil War Aftermath
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_social_revolution3"}
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				conscription_factor = -0.05
+			}
+			picture = usa_desegregation_1
+		}
+		CSA_social_revolution4 = { #Civil War Aftermath
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_social_revolution4"}
+			modifier = {
+				stability_factor = 0.05
+				conscription_factor = 0.05
+				monthly_population = 0.4
+				production_factory_max_efficiency_factor = 0.05
+			}
+			picture = usa_desegregation_2
+		}
+		CSA_social_revolution5 = { #Civil War Aftermath
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_social_revolution5"}
+			modifier = {
+				stability_factor = 0.1
+				conscription_factor = 0.1
+				monthly_population = 0.8
+			}
+			picture = usa_desegregation_2
+		}
+		CSA_social_revolution6 = { #Civil War Aftermath
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_social_revolution6"}
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.15
+				conscription_factor = 0.15
+			}
+			picture = usa_desegregation_2
+		}
+		### Foreign ###
+		CSA_american_advisors_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_american_advisors_1"}
+			picture = generic_syndicalist_medal
+			available = {
+				has_socialist_government = yes
+				OR = {
+					is_in_faction_with = CSA
+					has_war_together_with = CSA
+					any_enemy_country = { has_war_with = CSA }
+				}
+			}
+			modifier = {
+				training_time_army_factor = -0.05
+				planning_speed = 0.05
+			}
+		}
+		CSA_on_the_beach_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_on_the_beach_idea"}
+			picture = escort_effort_focus
+			modifier = {
+				amphibious_invasion = 0.25
+				invasion_preparation = -0.25
+				special_forces_min = 10
+			}
+		}
+		CSA_from_the_sky_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_from_the_sky_idea"}
+			picture = escort_effort_focus
+			modifier = {
+				air_air_superiority_attack_factor = 0.10
+				army_bonus_air_superiority_factor = 0.20
+				experience_gain_air_factor = 0.10
+			}
+		}
+		CSA_leap_forward_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_leap_forward_idea"}
+			picture = YUG_federal_defense_council
+			modifier = {
+				industrial_capacity_dockyard = 0.10
+				research_speed_factor = 0.05
+			}
+		}
+		CSA_free_the_west_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_free_the_west_idea"}
+			picture = generic_sea_focused_navy
+			modifier = {
+				ai_focus_aggressive_factor = 0.25
+				non_core_manpower = 0.02
+				political_power_gain = 0.20
+			}
+		}
+		CSA_international_brigades = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_international_brigades"}
+			picture = generic_victors_of_ww1
+			research_bonus = {
+				air_equipment = 0.1
+				naval_equipment = 0.1
+				land_doctrine = 0.1
+			}
+			modifier = {
+				command_power_gain_mult = 0.10
+				army_org_Factor = 0.02
+			}
+		}
+		### army tree Ideas ###
+		CSA_rebel_girl_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_rebel_girl_idea"}
+			picture = UoB_women_soldiers
+			modifier = {
+				conscription = 0.01
+			}
+		}
+		CSA_motor_production_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_motor_production_idea"}
+			picture = FRA_motorized_focus
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		CSA_militia_disbanded = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_militia_disbanded"}
+			picture = MEX_politicised_army
+			modifier = {
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+				production_speed_anti_air_building_factor = 0.1
+				production_speed_naval_base_factor = 0.1
+				production_speed_air_base_factor = 0.1
+				production_speed_radar_station_factor = 0.1
+				production_speed_rocket_site_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		CSA_militia_incorporated = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_militia_incorporated"}
+			picture = MEX_revolutionary_army
+			modifier = {
+				experience_loss_factor = -0.2
+			}
+		}
+		CSA_fuel_stores = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_fuel_stores"}
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				max_fuel_factor = 1
+			}
+		}
+		CSA_political_officers = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_political_officers"}
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				mobilization_speed = 0.15
+			}
+		}
+		CSA_leveraging_industry = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_leveraging_industry"}
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				global_building_slots_factor = 0.2
+			}
+		}
+
+		### Navy ideas ### 
+		CSA_liberty_ships_ideas = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CSA_liberty_ships_ideas"}
+			picture = liberty_ships_focus
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+		}
+	}
+}
