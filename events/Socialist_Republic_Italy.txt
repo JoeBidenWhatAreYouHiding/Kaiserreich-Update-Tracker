@@ -2,7 +2,7 @@
 # Socialist Republic of Italy Events
 ####################################
 
-add_namespace = socitalyz
+add_namespace = socitaly
 
 country_event = { # Start Up Event
 	id = socitaly.1
