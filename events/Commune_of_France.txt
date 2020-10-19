@@ -3535,15 +3535,10 @@ country_event = { #FRA/ENG Aid Arrives
 
 	option = { #The help is much needed.
 		name = comfrance.104.a
-		meta_effect = {
-			text = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = [FROM_TAG]
-				}
-			}
-			FROM_TAG = "[FROM.GetTag]"
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = FROM
 		}
 	}
 }
