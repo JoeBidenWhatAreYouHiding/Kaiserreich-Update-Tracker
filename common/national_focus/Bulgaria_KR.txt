@@ -841,9 +841,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BUL_the_bulgarian_army"
-			army_experience = 35
+			army_experience = 50
 			hidden_effect = {
-				country_event = { id = bulgaria.10 days = 1 }
+				country_event = bulgaria.10
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
@@ -951,7 +951,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = BUL_further_tank_research
 				bonus = 1
-				uses = 2
+				uses = 1
 				category = armor
 			}
 		}
@@ -978,8 +978,7 @@ focus_tree = {
 				name = BUL_mountain_infantry
 				bonus = 1
 				uses = 2
-				technology = tech_mountaineers2
-				technology = tech_mountaineers3
+				category = mountaineers_tech
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -1018,7 +1017,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus BUL_advancements_in_artillery"
 			add_tech_bonus = {
 				name = BUL_advancements_in_artillery
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = artillery
 			}
@@ -1233,7 +1232,7 @@ focus_tree = {
 			else = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 500
+					amount = 1000
 					producer = BUL
 				}
 				add_equipment_to_stockpile = {
@@ -1324,8 +1323,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BUL_honouring_our_heroes"
 			add_political_power = 50
-			add_war_support = 0.02
-			country_event = { id = bulgaria.12 days = 1 }
+			add_war_support = 0.05
+			country_event = bulgaria.12
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 	}
@@ -3689,7 +3688,7 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus BUL_electoral_reform"
+			log = "[GetDateText]: [Root.GetName]: Focus BUL_sovereign_defense"
 			swap_ideas = {
 				remove_idea = BUL_peasants_organized
 				add_idea = BUL_peasants_organized_2
@@ -3715,7 +3714,7 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus BUL_electoral_reform"
+			log = "[GetDateText]: [Root.GetName]: Focus BUL_peace_and_order"
 			add_stability = 0.05
 			swap_ideas = {
 				remove_idea = BUL_benefits_of_peace

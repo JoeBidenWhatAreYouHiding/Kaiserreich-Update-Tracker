@@ -5265,14 +5265,16 @@ focus_tree = {
 			controls_all_owned_states = yes
 			custom_trigger_tooltip = {
 				tooltip = GRE_turks_exist_and_peaceful
-				OR = {
-					OTT = {
-						exists = yes
+				if = {
+					limit = { country_exists = TUR }
+					TUR = {
 						is_subject = no
 						controls_all_owned_states = yes
 					}
-					TUR = {
-						exists = yes
+				}
+				else = {
+					country_exists = OTT
+					OTT = {
 						is_subject = no
 						controls_all_owned_states = yes
 					}
@@ -5280,25 +5282,17 @@ focus_tree = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = GRE_turks_own_limited_greece
-				OR = {
-					OTT = {
-						exists = yes
+				NOT = {
+					any_of_scopes = {
+						array = core_states
 						NOT = {
-							any_owned_state = {
-								is_core_of = GRE
-								NOT = { state = 187 } #Aegean
-								NOT = { state = 182 } #Crete
-							}
+							state = 164 #Dodecanese
+							state = 183 #Cyprus
+							state = 187 #Aegean Islands
 						}
-					}
-					TUR = {
-						exists = yes
-						NOT = {
-							any_owned_state = {
-								is_core_of = GRE
-								NOT = { state = 187 } #Aegean
-								NOT = { state = 182 } #Crete
-							}
+						OR = {
+							is_owned_by = OTT
+							is_owned_by = TUR
 						}
 					}
 				}

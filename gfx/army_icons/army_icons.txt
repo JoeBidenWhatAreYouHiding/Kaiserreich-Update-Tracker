@@ -616,7 +616,7 @@
 		name = "Turkish 1"
 		available = 
 		{
-			has_dlc = "Battle for the Bosporus"
+			#has_dlc = "Battle for the Bosporus" #TODO:Manu DLC!
 			tag = TUR
 		}
 	}
@@ -625,7 +625,7 @@
 		name = "Turkish 2"
 		available = 
 		{
-			has_dlc = "Battle for the Bosporus"
+			#has_dlc = "Battle for the Bosporus" #TODO:Manu DLC!
 			tag = TUR
 		}
 	}
