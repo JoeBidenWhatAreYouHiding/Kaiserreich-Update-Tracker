@@ -69,5 +69,5 @@ tags={
 picture="KR.jpg"
 version="0.14.2a"
 supported_version="1.10.*"
-path="D:/Game Data/Hearts of Iron IV/mod/Kaiserreich"
+path="C:/Users/User/Documents/Paradox Interactive/Hearts of Iron IV/mod/jr"
 remote_file_id="1521695605"
