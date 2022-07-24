@@ -834,10 +834,10 @@ OTT_Handling_Suriye = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove OTT_SYR_Settle_Tribes"
 			455 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			680 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			custom_effect_tooltip = ott_increase_syr_int_5
 			add_to_variable = {
@@ -996,7 +996,7 @@ OTT_Handling_Suriye = {
 				}
 			}
 			454 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			add_offsite_building = {
 				type = industrial_complex
@@ -1801,7 +1801,7 @@ OTT_Handling_Arab_Vilayets = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove OTT_ARA_Salination_Plant"
 			679 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			custom_effect_tooltip = ott_increase_hej_int_5
 			add_to_variable = {
@@ -1847,7 +1847,7 @@ OTT_Handling_Arab_Vilayets = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove OTT_ARA_Settle_Tribes"
 			754 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 				ott_increase_revolt_risk = yes
 			}
 			custom_effect_tooltip = ott_increase_hej_int_5
@@ -2078,6 +2078,10 @@ OTT_Handling_Iraqi_Vilayets = {
 	OTT_IRQ_Abolish_Assyrian_Autonomous_Zone = {
 		icon = generic_break_treaty
 
+		visible = {
+			owns_state = 812
+		}
+
 		available = {
 			has_completed_focus = OTT_Status_of_the_Autonomous_Regions
 			has_country_flag = ASY_got_an_ass_whooping
@@ -2276,7 +2280,7 @@ OTT_Handling_Iraqi_Vilayets = {
 			}
 			676 = {
 				add_manpower = 50000
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			build_railway = {
 				path = { 4512 12416 1549 10804 10106 1600 8123 }
@@ -2295,6 +2299,10 @@ OTT_Handling_Iraqi_Vilayets = {
 	}
 	OTT_IRQ_Basra_Harbour_Project = {
 		icon = generic_naval_base
+
+		visible = {
+			owns_state = 812
+		}
 
 		available = {
 			has_completed_focus = OTT_Basra_Kuwait
@@ -2436,10 +2444,6 @@ OTT_Handling_Libyan_Vilayets = {
 
 		available = {
 			has_completed_focus = OTT_Order_by_the_Locomotive
-		}
-
-		visible = {
-			owns_state = 448
 		}
 
 		ai_will_do = {
@@ -2771,7 +2775,7 @@ OTT_Handling_Libyan_Vilayets = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove OTT_TRI_Settle_Tripolitanian_Tribes"
 			448 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			custom_effect_tooltip = ott_increase_tri_int_10
 			add_to_variable = {
@@ -3103,7 +3107,6 @@ OTT_congress_turkish_nationalists = {
 		icon = GFX_decision_generic_agriculture
 		available = {
 			num_of_civilian_factories_available_for_projects > 3
-			has_global_flag = black_monday
 			NOT = {
 				has_country_flag = reform_enacted_tt
 			}

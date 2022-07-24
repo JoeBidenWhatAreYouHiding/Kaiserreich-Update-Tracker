@@ -907,11 +907,11 @@ CHI_warlord_diplomacy_category = {
 		allowed = { always = no }
 
 		available = {
+			has_war_with = FROM
 			FROM = { surrender_progress > 0.65 }
 		}
 
 		visible = {
-			has_war_with = FROM
 			is_neighbor_of = FROM
 			FROM = {
 				has_government = paternal_autocrat
@@ -1461,6 +1461,7 @@ CHI_warlord_diplomacy_category = {
 				set_autonomy = {
 					target = FROM
 					autonomy_state = kr_autonomous_puppet
+					end_wars = no
 				}
 			}
 		}
@@ -1501,6 +1502,7 @@ CHI_warlord_diplomacy_category = {
 				set_autonomy = {
 					target = FROM
 					autonomy_state = kr_autonomous_puppet
+					end_wars = no
 				}
 			}
 		}
@@ -1511,17 +1513,16 @@ CHI_national_RC_category = {
 
 	CHI_dec_pop_industrialise = {
 		icon = generic_industry
-
 		allowed = { always = no }
+		visible = {
+			NOT = { has_idea = KR_CHI_popular_support_5 }
+		}
 
 		highlight_states = {
 			highlight_state_targets = { state = 613 }
 		}
 
 		cost = 100
-		available = {
-			has_completed_focus = CHI_national_RC
-		}
 		fire_only_once = yes
 		days_remove = 50
 		ai_will_do = { base = 200 }
@@ -1531,7 +1532,6 @@ CHI_national_RC_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_pop_industrialise"
-
 			increase_CHI_popular_support = yes
 		}
 	}

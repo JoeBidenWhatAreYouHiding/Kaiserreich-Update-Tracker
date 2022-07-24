@@ -9,8 +9,8 @@ focus_tree = {
 
 	default = no
 	continuous_focus_position = {
-		x = 800
-		y = 1000
+		x = 2340
+		y = 1100
 	}
 
 	focus = {
@@ -1225,17 +1225,18 @@ focus_tree = {
 	focus = {
 		id = QIE_imperial_consolidation
 		icon = GFX_goal_ANQ_stand_with_qing
-		cost = 8
+		cost = 4
 
 		relative_position_id = QIE_pick_NCERA
-		x = 4
+		x = 8
 		y = 4
 
 		prerequisite = {
 			focus = QIE_chinese_century
 			focus = QIE_rural_loyalty
+			focus = QIE_mandate_heaven
+			focus = QIE_raise_banners
 		}
-		mutually_exclusive = { focus = QIE_demand_fealty }
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -1243,8 +1244,8 @@ focus_tree = {
 			custom_effect_tooltip = QIE_imperial_consolidation_TT
 			hidden_effect = {
 				activate_targeted_decision = {
-					target = FROM
 					decision = QIE_prepare_national_pacification_campaign
+					target = FROM
 				}
 			}
 		}
@@ -1253,15 +1254,18 @@ focus_tree = {
 	focus = {
 		id = QIE_demand_fealty
 		icon = GFX_goal_QIE_manchu_unite_china
-		cost = 8
+		cost = 4
 
 		relative_position_id = QIE_pick_NCERA
-		x = 14
+		x = 10
 		y = 4
 
-		prerequisite = { focus = QIE_raise_banners }
-		prerequisite = { focus = QIE_mandate_heaven }
-		mutually_exclusive = { focus = QIE_imperial_consolidation }
+		prerequisite = {
+			focus = QIE_chinese_century
+			focus = QIE_rural_loyalty
+			focus = QIE_mandate_heaven
+			focus = QIE_raise_banners
+		}
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -1283,10 +1287,6 @@ focus_tree = {
 				activate_targeted_decision = {
 					target = SQI
 					decision = QIE_demand_shandong_submit_to_authority
-				}
-				activate_targeted_decision = {
-					target = FROM
-					decision = QIE_prepare_national_pacification_campaign
 				}
 			}
 		}

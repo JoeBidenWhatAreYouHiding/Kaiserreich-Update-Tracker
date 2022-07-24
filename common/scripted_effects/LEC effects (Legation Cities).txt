@@ -365,7 +365,11 @@ LEC_is_dismantled = {
 		limit = { owns_state = 609 }
 		if = {
 			limit = {
-				JAP = { is_faction_leader = yes }
+				JAP = {
+					is_subject = no
+					var:525.controller = { is_ally_with = JAP }
+					var:527.controller = { is_ally_with = JAP }
+				}
 			}
 			JAP = { country_event = lectianjap.25 }
 		}

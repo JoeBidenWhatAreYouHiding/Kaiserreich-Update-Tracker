@@ -34,10 +34,6 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 300
-			modifier = {
-				factor = 0
-				NOT = { has_country_flag = choice_made }
-			}
 		}
 
 		completion_reward = {
@@ -517,12 +513,23 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ANQ_electronic_studies"
-			add_tech_bonus = {
-				name = ANQ_electronic_studies
-				bonus = 1
-				uses = 2
-				category = decryption_tech
-				category = encryption_tech
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				add_tech_bonus = {
+					name = ANQ_electronic_studies
+					bonus = 0.75
+					uses = 2
+					category = electronics
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = ANQ_electronic_studies
+					bonus = 1
+					uses = 2
+					category = decryption_tech
+					category = encryption_tech
+				}
 			}
 			custom_effect_tooltip = anq_increase_jap_1
 			add_to_variable = { ANQ_tokyo_score = 1 }

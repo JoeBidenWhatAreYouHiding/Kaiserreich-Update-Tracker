@@ -73,6 +73,7 @@ JAP_fading_sun = {
 				NOT = {
 					any_owned_state = {
 						is_mainland_china = yes
+						NOT = { state = 524 } #Taiwan
 						NOT = { state = 745 } #Dalian
 						is_controlled_by = ROOT
 					}
@@ -499,7 +500,7 @@ JAP_land_reform = {
 							is_controlled_by = JAP
 							region = 154
 						}
-						add_extra_state_shared_building_slots = 1
+						increase_state_category_by_one_level = yes
 					}
 				}
 			}
@@ -514,7 +515,7 @@ JAP_land_reform = {
 							is_controlled_by = JAP
 							region = 154
 						}
-						add_extra_state_shared_building_slots = 2
+						increase_state_category_by_two_levels = yes
 					}
 				}
 			}
@@ -639,7 +640,7 @@ JAP_influence_china = {
 				FROM = {
 					add_offsite_building = { type = arms_factory level = 3 }
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_core_of = ROOT
 						arms_factory > 0
@@ -650,7 +651,7 @@ JAP_influence_china = {
 						level = 1
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_core_of = ROOT
 						arms_factory > 0
@@ -661,7 +662,7 @@ JAP_influence_china = {
 						level = 1
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_core_of = ROOT
 						arms_factory > 0
@@ -962,7 +963,7 @@ JAP_influence_china = {
 				FROM = {
 					add_offsite_building = { type = arms_factory level = 2 }
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_core_of = ROOT
 						arms_factory > 0
@@ -973,7 +974,7 @@ JAP_influence_china = {
 						level = 1
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_core_of = ROOT
 						arms_factory > 0
@@ -1362,7 +1363,7 @@ JAP_mantetsu_projects = {
 			FROM = {
 				ROOT = { activate_targeted_decision = { target = PREV decision = major_railroad_investment } }
 				add_opinion_modifier = { target = ROOT modifier = KR_approves_of_govt }
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_core_of = PREV
 						free_building_slots = { building = infrastructure size > 0 include_locked = yes }
@@ -1494,7 +1495,6 @@ JAP_co_prosperity_decisions = {
 			}
 		}
 		visible = {
-			is_faction_leader = yes
 			NOT = { has_war_with = FROM }
 			FROM = {
 				exists = yes
@@ -1509,7 +1509,6 @@ JAP_co_prosperity_decisions = {
 		fire_only_once = yes
 
 		priority = 10
-		target_root_trigger = { is_faction_leader = yes }
 		target_array = global.JAP_possible_allies_array
 		target_trigger = {
 			FROM = {
@@ -1548,7 +1547,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			is_faction_leader = yes
 			FROM = {
 				exists = yes
 				has_socialist_government = no
@@ -1785,9 +1783,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			has_completed_focus = JAP_integrate_asian_economies
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				has_socialist_government = no
 				OR = {
@@ -1876,9 +1871,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			has_completed_focus = JAP_integrate_asian_economies
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				has_socialist_government = no
 				OR = {
@@ -1964,9 +1956,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			has_completed_focus = JAP_integrate_asian_economies
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				has_socialist_government = no
 				OR = {
@@ -2052,8 +2041,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				is_subject = no
 				has_socialist_government = no
@@ -2118,8 +2105,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				has_socialist_government = no
 			}
@@ -2181,8 +2166,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				has_socialist_government = no
 			}
@@ -2234,8 +2217,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				has_socialist_government = no
 			}
@@ -2291,8 +2272,6 @@ JAP_co_prosperity_decisions = {
 		}
 
 		visible = {
-			is_faction_leader = yes
-			has_socialist_government = no
 			FROM = {
 				has_country_flag = JAP_invest_docks
 				has_socialist_government = no
@@ -2318,7 +2297,7 @@ JAP_co_prosperity_decisions = {
 			FROM = {
 				country_event = japfor.423
 				effect_tooltip = {
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							is_core_of = ROOT
 							dockyard > 0
@@ -2329,7 +2308,7 @@ JAP_co_prosperity_decisions = {
 							level = 1
 						}
 					}
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							is_core_of = ROOT
 							dockyard > 0
@@ -2340,7 +2319,7 @@ JAP_co_prosperity_decisions = {
 							level = 1
 						}
 					}
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							is_core_of = ROOT
 							dockyard > 0

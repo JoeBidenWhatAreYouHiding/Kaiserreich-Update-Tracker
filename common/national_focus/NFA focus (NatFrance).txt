@@ -908,16 +908,16 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Gives_Back_Companies"
 			add_political_power = -50
 			805 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			459 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			460 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			865 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -1283,13 +1283,13 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Decentralisation"
 			add_political_power = -50
 			805 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			460 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			1 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 		x = -2
@@ -1310,13 +1310,13 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Localism"
 			add_stability = -0.07
 			459 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			272 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			458 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 		}
 		x = -1
@@ -2317,7 +2317,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = NATFRA_Developp_Counter_Measures
+		id = NATFRA_Develop_Counter_Measures
 		icon = GFX_focus_generic_combined_arms
 		cost = 6
 		x = 1
@@ -2333,9 +2333,9 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Developp_Counter_Measures"
+			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Develop_Counter_Measures"
 			add_tech_bonus = {
-				name = NATFRA_Developp_Counter_Measures
+				name = NATFRA_Develop_Counter_Measures
 				bonus = 1.0
 				uses = 1
 				technology = interwar_antiair
@@ -2343,7 +2343,7 @@ focus_tree = {
 				technology = antiair5
 			}
 			add_tech_bonus = {
-				name = NATFRA_Developp_Counter_Measures
+				name = NATFRA_Develop_Counter_Measures
 				bonus = 1.0
 				uses = 1
 				technology = interwar_antitank
@@ -5299,7 +5299,7 @@ focus_tree = {
 						state = 22 #Languedoc
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 				if = {
 					limit = { has_resistance = yes }
 					add_resistance = 10
@@ -5365,7 +5365,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Rebuild_South_Whole"
-			custom_effect_tooltip = nfa_rebuild_south_tt
+			activate_targeted_decision = { target = THIS decision = NFA_Renovate_Marseille }
+			activate_targeted_decision = { target = THIS decision = NFA_mil_in_provence }
+			activate_targeted_decision = { target = THIS decision = NFA_Revive_La_Rochelle }
+			activate_targeted_decision = { target = THIS decision = NFA_civ_in_bordeaux  }
+			activate_targeted_decision = { target = THIS decision = NFA_mil_in_bordeaux }
+			activate_targeted_decision = { target = THIS decision = NFA_Light_Up_Lyon }
+			activate_targeted_decision = { target = THIS decision = NFA_mil_in_lyonnais }
 		}
 	}
 
@@ -5401,7 +5407,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Rebuild_North"
-			custom_effect_tooltip = nfa_rebuild_north_tt
+			activate_targeted_decision = { target = THIS decision = NFA_civ_in_amiens }
+			activate_targeted_decision = { target = THIS decision = NFA_mil_in_calais }
+			activate_targeted_decision = { target = THIS decision = NFA_Rebuild_Loire_Valley }
+			activate_targeted_decision = { target = THIS decision = NFA_Restore_Caen }
+			activate_targeted_decision = { target = THIS decision = NFA_Rebuild_Burgundy }
+			activate_targeted_decision = { target = THIS decision = NFA_Renovate_Champagne }
 		}
 	}
 
@@ -6235,7 +6246,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			785 = { #Lorraine Plateau
+			785 = { #Lorraine
 				add_building_construction = {
 					type = anti_air_building
 					level = 5
@@ -9604,6 +9615,16 @@ focus_tree = {
 					}
 					force_update_dynamic_modifier = yes
 				}
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Algeria }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Tunisia }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Guinea }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Mauritania }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_French_Sudan }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Ivory_Coast }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Upper_Volta }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Niger }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Chad }
+				activate_targeted_decision = { target = THIS decision = NFA_Focus_On_Dahomey }
 			}
 		}
 	}
@@ -9695,6 +9716,8 @@ focus_tree = {
 							character = SEN_blaise_diagne
 							advisor = {
 								slot = political_advisor
+								on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+								on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 								idea_token = SEN_blaise_diagne
 								traits = { KR_tireless_recruiter }
 								cost = 150
@@ -9702,12 +9725,24 @@ focus_tree = {
 						}
 					}
 				}
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Algeria }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Tunisia }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Guinea }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Mauritania }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_French_Sudan }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Ivory_Coast }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Upper_Volta }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Niger }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Chad }
+				activate_targeted_decision = { target = THIS decision = NFA_Integrate_Dahomey }
 			}
 			effect_tooltip = {
 				add_advisor_role = {
 					character = SEN_blaise_diagne
 					advisor = {
 						slot = political_advisor
+						on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+						on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 						idea_token = SEN_blaise_diagne
 						traits = { KR_tireless_recruiter }
 						cost = 150

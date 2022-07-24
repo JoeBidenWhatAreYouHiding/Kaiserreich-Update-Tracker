@@ -335,6 +335,8 @@ focus_tree = {
 				character = SQI_lu_zhongjie
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = SQI_lu_zhongjie
 					traits = { KR_spiritual_leader }
 				}

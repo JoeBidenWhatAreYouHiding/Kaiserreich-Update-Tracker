@@ -100,7 +100,7 @@ recruit_character = URG_martin_echegoyen
 recruit_character = URG_cesar_battle_pacheco
 
 ### Military Advisors
-recruit_character = URG_andres_martinez_tureba
+recruit_character = URG_andres_martinez_trueba
 recruit_character = URG_eduardo_rodriguez_larreta
 recruit_character = URG_julio_enrique
 recruit_character = URG_alberto_fermin

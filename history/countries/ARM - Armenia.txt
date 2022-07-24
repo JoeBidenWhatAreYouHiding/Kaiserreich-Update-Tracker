@@ -1,7 +1,7 @@
 ﻿capital = 230
 set_stability = 0.35
 set_war_support = 0.8
-set_research_slots = 2
+set_research_slots = 3
 
 set_politics = {
 	ruling_party = paternal_autocrat
@@ -24,6 +24,10 @@ set_popularities = {
 }
 
 ## Country leaders
+add_ideas = {
+	partial_economic_mobilisation
+	limited_conscription
+}
 recruit_character = ARM_anastas_mikoyan
 recruit_character = ARM_avetis_nazarbekian
 recruit_character = ARM_alexander_khatisian
@@ -50,3 +54,28 @@ recruit_character = ARM_jaques_bagratuni
 recruit_character = ARM_sargis_mehrabyan
 recruit_character = ARM_smbat_boroyan
 recruit_character = ARM_ruben_ter_minasian
+
+### Templates ###
+division_template = {
+	name = "Hrats'anneri Bazhanumy"
+	division_names_group = ARM_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Nardodna Gvardiya"
+	division_names_group = ARM_MIL_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	template_counter = 68
+}

@@ -1506,7 +1506,6 @@ USA_reconstruction_decisions = {# Reconstruction Stuff
 		}
 		visible = {
 			has_country_flag = USA_relocate_capital_flag
-			has_global_flag = USA_civil_war_over_flag
 			capital_scope = {
 				NOT = { state = 361 }
 			}

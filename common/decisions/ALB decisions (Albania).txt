@@ -241,11 +241,10 @@ ALB_economic_policy_decisions = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ALB_fier_county_oil_drilling"
-			FROM = {
-				add_resource = {
-					type = aluminium
-					amount = 5
-				}
+			add_resource = {
+				type = oil
+				amount = 5
+				state = FROM
 			}
 		}
 	}

@@ -154,15 +154,7 @@ focus_tree = {
 			custom_effect_tooltip = FOP_de_progreso_tooltip
 			activate_targeted_decision = { target = THIS decision = FOP_progreso_stage_1_supply }
 			activate_targeted_decision = { target = THIS decision = FOP_progreso_stage_1_railway }
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					prefer_home_area_states_unless_filled = yes
-				}
+			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -2544,15 +2536,13 @@ focus_tree = {
 		cost = 8
 		relative_position_id = FOP_the_Baldomeristas
 		x = 3
-		y = 2
+		y = 1
 		ai_will_do = {
 			factor = 10
 		}
 		prerequisite = {
 			focus = FOP_the_Baldomeristas
-		}
-		available = {
-			has_government = radical_socialist
+			focus = FOP_the_communist_supremacy
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -2566,7 +2556,7 @@ focus_tree = {
 		icon = GFX_goal_totalism
 		cost = 1
 		relative_position_id = FOP_the_first_national_trade_union_congress
-		x = 8
+		x = 7
 		y = 1
 		ai_will_do = {
 			factor = 100
@@ -2591,67 +2581,9 @@ focus_tree = {
 				popularity = 0.20
 			}
 			hidden_effect = {
-				country_event = { id = fop.239 days = 75 }
+				country_event = { id = fop.239 days = 75 }		# Justo trial
+				country_event = { id = fop.499 days = 270 }		# A question of Andesia
 			}
-		}
-	}
-
-	focus = {
-		id = FOP_economic_aid_for_the_internationale
-		icon = GFX_focus_usa_reestablish_the_gold_standard
-		cost = 5
-		relative_position_id = FOP_the_communist_supremacy
-		x = -2
-		y = 1
-		ai_will_do = {
-			factor = 10
-		}
-		prerequisite = {
-			focus = FOP_the_communist_supremacy
-			focus = FOP_the_Baldomeristas
-		}
-		available = {
-			OR = {
-				has_government = totalist
-				has_government = radical_socialist
-			}
-		}
-		bypass = {
-			AND = {
-				NOT = {
-					FRA = {
-						exists = yes
-						has_socialist_government = yes
-					}
-					ENG = {
-						exists = yes
-						has_socialist_government = yes
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FOP_economic_aid_for_the_internationale"
-			if = {
-				limit = {
-					FRA = {
-						exists = yes
-						has_socialist_government = yes
-					}
-				}
-				FRA = { add_ideas = FOP_economic_support }
-			}
-			if = {
-				limit = {
-					ENG = {
-						exists = yes
-						has_socialist_government = yes
-					}
-				}
-				ENG = { add_ideas = FOP_economic_support }
-			}
-			add_war_support = -0.05
 		}
 	}
 
@@ -2735,6 +2667,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_join_the_Third_Internationale"
+			custom_effect_tooltip = FOP_AND_internationale_warning_tt
 			INT = { country_event = { days = 1 id = fop.221 } }
 		}
 	}
@@ -3025,17 +2958,50 @@ focus_tree = {
 					gain_random_agency_upgrade = yes
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						has_dlc = "La Resistance"
-					}
-				}
+			else = {
 				add_ideas = FOP_commie_secret_police
 			}
 			hidden_effect = {
 				country_event = { id = fop.347 days = 500 }
 			}
+		}
+	}
+
+	focus = {
+		id = FOP_resource_exploitation_scheme
+		icon = GFX_goal_generic_coal_mining
+		cost = 3
+		prerequisite = {
+			focus = FOP_expropriate_the_haute_bourgeoise
+		}
+		prerequisite = {
+			focus = FOP_national_land_reform
+		}
+		prerequisite = {
+			focus = FOP_create_the_CSE
+		}
+		x = -3
+		y = 1
+		relative_position_id = FOP_national_land_reform
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_resource_exploitation_scheme"
+			custom_effect_tooltip = ARG_deisions_grant_steel_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			activate_targeted_decision = { target = THIS decision = ARG_Ancidar_preliminary_excavation_studies }
+			activate_targeted_decision = { target = THIS decision = ARG_Patagonia_preliminary_excavation_studies }
+			activate_targeted_decision = { target = THIS decision = ARG_Santiago_del_Estero_preliminary_excavation_studies }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = ARG_deisions_grant_oil_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			activate_targeted_decision = { target = 512 decision = ARG_YPF_expansion_dec }
+			activate_targeted_decision = { target = 512 decision = ARG_expand_local_infrastructure_tier1 }
+			activate_targeted_decision = { target = 1029 decision = ARG_YPF_expansion_dec }
+			activate_targeted_decision = { target = 1029 decision = ARG_expand_local_infrastructure_tier1 }
+			activate_targeted_decision = { target = 510 decision = ARG_YPF_expansion_limited_dec }
+			activate_targeted_decision = { target = 579 decision = ARG_YPF_expansion_limited_dec }
 		}
 	}
 
@@ -3104,6 +3070,65 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
+
+	focus = {
+		id = FOP_economic_aid_for_the_internationale
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 3
+		relative_position_id = FOP_create_the_CSE
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = FOP_expropriate_the_haute_bourgeoise
+		}
+		prerequisite = {
+			focus = FOP_national_land_reform
+		}
+		prerequisite = {
+			focus = FOP_create_the_CSE
+		}
+		bypass = {
+			AND = {
+				NOT = {
+					FRA = {
+						exists = yes
+						has_socialist_government = yes
+					}
+					ENG = {
+						exists = yes
+						has_socialist_government = yes
+					}
+				}
+			}
+		}
+		available = {
+			NOT = { has_war_with = INT }
+			FRA = { has_war_with = GER }
+			ENG = { has_war_with = GER }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_economic_aid_for_the_internationale"
+			custom_effect_tooltip = FOP_economic_aid_for_the_internationale_effect_1_tt
+			custom_effect_tooltip = tooltip_white_line
+			effect_tooltip = {
+				add_ideas = FOP_economic_support_1
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = FOP_economic_aid_for_the_internationale_effect_2_tt
+			custom_effect_tooltip = tooltip_white_line
+			effect_tooltip = {
+				add_ideas = FOP_economic_support_4
+			}
+			hidden_effect = {
+				country_event = fop.400
+			}
+		}
+	}
+
 
 	focus = {
 		id = FOP_keep_the_militias
@@ -3278,29 +3303,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_socialist_military_industry"
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									is_in_home_area = yes
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-						}
-					}
-				}
+			random_owned_controlled_state = {
+				prioritize = { 278 902 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -4583,7 +4587,7 @@ focus_tree = {
 			hidden_effect = {
 				activate_targeted_decision = { target = 278 decision = FOP_civs_for_state }
 				activate_targeted_decision = { target = 511 decision = FOP_civs_for_state }
-				activate_targeted_decision = { target = 512 decision = FOP_civs_for_state }
+				activate_targeted_decision = { target = 510 decision = FOP_civs_for_state }
 				activate_targeted_decision = { target = 902 decision = FOP_civs_for_state }
 			}
 		}
@@ -4703,38 +4707,6 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = FOP_resource_exploitation_scheme
-		icon = GFX_goal_generic_coal_mining
-		cost = 3
-		prerequisite = {
-			focus = FOP_further_the_social_revolution
-			focus = FOP_education_reform
-		}
-		x = 1
-		y = 1
-		relative_position_id = FOP_education_reform
-		ai_will_do = {
-			factor = 15
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FOP_resource_exploitation_scheme"
-			custom_effect_tooltip = ARG_deisions_grant_steel_tooltip
-			custom_effect_tooltip = tooltip_white_line
-			activate_targeted_decision = { target = THIS decision = ARG_Ancidar_preliminary_excavation_studies }
-			activate_targeted_decision = { target = THIS decision = ARG_Patagonia_preliminary_excavation_studies }
-			activate_targeted_decision = { target = THIS decision = ARG_Santiago_del_Estero_preliminary_excavation_studies }
-			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = ARG_deisions_grant_oil_tooltip
-			custom_effect_tooltip = tooltip_white_line
-			activate_targeted_decision = { target = 512 decision = ARG_YPF_expansion_dec }
-			activate_targeted_decision = { target = 512 decision = ARG_expand_local_infrastructure_tier1 }
-			activate_targeted_decision = { target = 1029 decision = ARG_YPF_expansion_dec }
-			activate_targeted_decision = { target = 1029 decision = ARG_expand_local_infrastructure_tier1 }
-			activate_targeted_decision = { target = 510 decision = ARG_YPF_expansion_limited_dec }
-			activate_targeted_decision = { target = 579 decision = ARG_YPF_expansion_limited_dec }
-		}
-	}
 
 ##############
 # Natpop puppet tree
@@ -4901,7 +4873,7 @@ focus_tree = {
 		relative_position_id = FOP_natpop_status_of_the_foreigners
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_natpop_economic_development"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -4952,7 +4924,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_natpop_agrarian_reforms"
 			add_ideas = FOP_natpop_agrarian_reforms_idea
-			random_owned_state = { add_extra_state_shared_building_slots = 2 }
+			random_owned_controlled_state = { increase_state_category_by_one_level = yes }
 		}
 	}
 
@@ -4999,7 +4971,7 @@ focus_tree = {
 		relative_position_id = FOP_natpop_a_brave_new_world
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_natpop_industrialization"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -5383,7 +5355,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_natpop_basic_military_production"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -5441,5 +5413,555 @@ focus_tree = {
 			add_political_power = 150
 		}
 	}
+##############
+# Who would ever play as Andesia?
+#############
+	focus = {
+		id = FOP_AND_andesia_declared
+		icon = GFX_focus_por_latin_american_communism
+		cost = 6
+		relative_position_id = FOP_communist_development_scheme
+		x = 0
+		y = 2
+		allow_branch = {
+			has_cosmetic_tag = FOP_AND
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_andesia_declared"
+			custom_effect_tooltip = SER_will_be_unlocked
+		}
+	}
+	focus = {
+		id = FOP_AND_first_south_american_congress
+		icon = GFX_socialist_constitution
+		cost = 6
+		relative_position_id = FOP_AND_andesia_declared
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_andesia_declared
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+			log = "[GetDateText]: [Root.GetName]: Focus select FOP_AND_first_south_american_congress"
+			hidden_effect = {
+				country_event = { id = fop.501 days = 21 }
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_first_south_american_congress"
+			swap_ideas = {
+				remove_idea = FOP_resistance_to_andesia_political
+				add_idea = FOP_resistance_to_andesia_political_1
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_establish_local_governments
+		icon = GFX_goal_generic_revolutionary_government
+		cost = 6
+		relative_position_id = FOP_AND_first_south_american_congress
+		x = -1
+		y = 1
+		dynamic = yes
+		prerequisite = {
+			focus = FOP_AND_first_south_american_congress
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_establish_local_governments"
+			if = {
+				limit = { has_idea = FOP_resistance_to_andesia_political_1 }
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_political_1
+					add_idea = FOP_resistance_to_andesia_political_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_political_3
+					add_idea = FOP_resistance_to_andesia_political_4
+				}
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_spread_marxism_ideas
+		icon = GFX_focus_spr_unify_the_london_bureau
+		cost = 6
+		relative_position_id = FOP_AND_first_south_american_congress
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_first_south_american_congress
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_spread_marxism_ideas"
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				if = {
+					limit = { has_intelligence_agency = yes }
+					if = {
+						limit = { NOT = { has_done_agency_upgrade = upgrade_psycho_warfare } }
+						upgrade_intelligence_agency = upgrade_psycho_warfare
+					}
+				}
+				else_if = {
+					limit = { has_intelligence_agency = no }
+					create_intelligence_agency = yes
+					upgrade_intelligence_agency = upgrade_psycho_warfare
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_idea = FOP_resistance_to_andesia_political_1 }
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_political_1
+					add_idea = FOP_resistance_to_andesia_political_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_political_2
+					add_idea = FOP_resistance_to_andesia_political_4
+				}
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_suppress_resistance
+		icon = GFX_focus_SOV_penal_battalions
+		cost = 6
+		relative_position_id = FOP_AND_establish_local_governments
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_establish_local_governments
+		}
+		prerequisite = {
+			focus = FOP_AND_spread_marxism_ideas
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_suppress_resistance"
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				add_ideas = FOP_AND_expanded_intelligence_agency
+				if = {
+					limit = { has_intelligence_agency = yes }
+					if = {
+						limit = { NOT = { has_done_agency_upgrade = upgrade_anti_partisan } }
+						upgrade_intelligence_agency = upgrade_anti_partisan
+					}
+				}
+				else_if = {
+					limit = { has_intelligence_agency = no }
+					create_intelligence_agency = yes
+					upgrade_intelligence_agency = upgrade_anti_partisan
+				}
+			}
+			else = {
+				add_political_power = 50
+				add_stability = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = FOP_resistance_to_andesia_political_4
+				add_idea = FOP_resistance_to_andesia_political_5
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_embrace_andesia
+		icon = GFX_goal_SOV_army
+		cost = 6
+		relative_position_id = FOP_AND_establish_local_governments
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_establish_local_governments
+		}
+		prerequisite = {
+			focus = FOP_AND_spread_marxism_ideas
+		}
+		available = {
+			has_idea = FOP_resistance_to_andesia_political_5
+			custom_trigger_tooltip = {
+				tooltip = FOP_AND_no_economical_chaos_tt
+				NOT = {
+					has_idea = FOP_resistance_to_andesia_economical_1
+					has_idea = FOP_resistance_to_andesia_economical_2
+					has_idea = FOP_resistance_to_andesia_economical_3
+					has_idea = FOP_resistance_to_andesia_economical_4
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_embrace_andesia"
+			remove_ideas = FOP_resistance_to_andesia_political_5
+			add_timed_idea = {
+				idea = FOP_resistance_to_andesia_political_6
+				days = 1460
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_south_american_unification
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 6
+		relative_position_id = FOP_AND_establish_local_governments
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_establish_local_governments
+		}
+		prerequisite = {
+			focus = FOP_AND_spread_marxism_ideas
+		}
+		available = {
+			FOP_AND_no_resistance_against_andesia = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_south_american_unification"
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					has_state_flag = FOP_andesian_claim
+				}
+				ROOT = { activate_targeted_decision = { target = PREV decision = FOP_AND_integrate_new_state }}
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_create_central_planning_committee
+		icon = GFX_Socialist_Law
+		cost = 6
+		relative_position_id = FOP_AND_andesia_declared
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_andesia_declared
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_create_central_planning_committee"
+			swap_ideas = {
+				remove_idea = FOP_resistance_to_andesia_economical
+				add_idea = FOP_resistance_to_andesia_economical_1
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_economical_integration_program
+		icon = GFX_focus_SOV_merge_plants
+		cost = 6
+		relative_position_id = FOP_AND_create_central_planning_committee
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_create_central_planning_committee
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_economical_integration_program"
+			if = {
+				limit = { has_idea = FOP_resistance_to_andesia_economical_1 }
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_economical_1
+					add_idea = FOP_resistance_to_andesia_economical_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_economical_3
+					add_idea = FOP_resistance_to_andesia_economical_4
+				}
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_agricultiral_economy_reforms
+		icon = GFX_goal_Workers_Paradise
+		cost = 6
+		relative_position_id = FOP_AND_create_central_planning_committee
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_create_central_planning_committee
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_agricultiral_economy_reforms"
+			if = {
+				limit = { has_idea = FOP_resistance_to_andesia_economical_1 }
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_economical_1
+					add_idea = FOP_resistance_to_andesia_economical_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FOP_resistance_to_andesia_economical_2
+					add_idea = FOP_resistance_to_andesia_economical_4
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					OR = {
+						has_state_category = two
+						has_state_category = three
+					}
+				}
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					OR = {
+						has_state_category = two
+						has_state_category = three
+					}
+				}
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					OR = {
+						has_state_category = two
+						has_state_category = three
+					}
+				}
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					OR = {
+						has_state_category = two
+						has_state_category = three
+					}
+				}
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					OR = {
+						has_state_category = two
+						has_state_category = three
+					}
+				}
+				increase_state_category_by_one_level = yes
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_industrialise_andesia
+		icon = GFX_goal_manage_industries
+		cost = 6
+		relative_position_id = FOP_AND_create_central_planning_committee
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_create_central_planning_committee
+		}
+		available = {
+			has_tech = construction3
+			has_tech = advanced_machine_tools
+			has_completed_focus = FOP_AND_economical_integration_program
+			has_completed_focus = FOP_AND_agricultiral_economy_reforms
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_industrialise_andesia"
+			add_tech_bonus = {
+				name = FOP_AND_industrialise_andesia
+				category = industry
+				bonus = 1
+				uses = 2
+			}
+			remove_ideas = FOP_resistance_to_andesia_economical_4
+			add_timed_idea = {
+				idea = FOP_resistance_to_andesia_economical_5
+				days = 1080
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					has_state_category = six
+					prefer_home_area_states_unless_filled = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					has_state_category = five
+					prefer_home_area_states_unless_filled = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					has_state_category = four
+					prefer_home_area_states_unless_filled = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = FOP_andesian_claim
+					has_state_category = five
+					prefer_home_area_states_unless_filled = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = FOP_AND_defence_against_imperialism
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		cost = 6
+		relative_position_id = FOP_AND_andesia_declared
+		x = -1
+		y = 3
+		prerequisite = {
+			focus = FOP_AND_andesia_declared
+		}
+		available = {
+			FOP_AND_no_resistance_against_andesia = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_defence_against_imperialism"
+			leave_faction = yes
+			FRA_remove_from_phalanstere = yes
+			create_faction = FOP_AND_faction
+			add_ideas = FOP_andesian_red_army
+		}
+	}
+	focus = {
+		id = FOP_AND_liberate_central_america
+		icon = GFX_focus_mex_redeem_aztlan
+		cost = 3
+		relative_position_id = FOP_AND_defence_against_imperialism
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_defence_against_imperialism
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_liberate_central_america"
+			custom_effect_tooltip = FOP_AND_liberate_central_america_tt
+		}
+	}
+	focus = {
+		id = FOP_AND_liberate_south_america
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		cost = 3
+		relative_position_id = FOP_AND_defence_against_imperialism
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_defence_against_imperialism
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_liberate_south_america"
+			custom_effect_tooltip = FOP_AND_liberate_south_america_tt
+		}
+	}
+	focus = {
+		id = FOP_AND_liberate_north_america
+		icon = GFX_focus_spa_the_war_of_vengeance
+		cost = 3
+		relative_position_id = FOP_AND_defence_against_imperialism
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = FOP_AND_defence_against_imperialism
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_liberate_north_america"
+			custom_effect_tooltip = FOP_AND_liberate_north_america_tt
+		}
+	}
+	focus = {
+		id = FOP_AND_free_america
+		icon = GFX_focus_SOV_proclaim_soviet_hegemony
+		cost = 6
+		relative_position_id = FOP_AND_liberate_south_america
+		x = 0
+		y = 1
+		prerequisite = { focus = FOP_AND_liberate_central_america }
+		prerequisite = { focus = FOP_AND_liberate_south_america }
+		prerequisite = { focus = FOP_AND_liberate_north_america }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = FOP_AND_all_countries_socialist_tt
+				all_of_scopes = {
+					array = global.american_tags_array
+					OR = {
+						exists = no
+						has_socialist_government = yes
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_free_america"
+			add_political_power = 300
+			add_stability = 0.1
+			add_war_support = -0.15
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					has_state_flag = FOP_andesian_claim
+					NOT = { is_core_of = ROOT }
+				}
+				add_compliance = 20
+			}
+			add_to_tech_sharing_group = FOP_AND_research_group
+			every_subject_country = {
+				limit = { is_in_americas = yes }
+				add_to_tech_sharing_group = FOP_AND_research_group
+			}
+			hidden_effect = {
+				every_subject_country = {
+					limit = { is_in_americas = yes }
+					set_cosmetic_tag = FOP_AND_subject
+				}
+			}
+		}
+	}
 }
-

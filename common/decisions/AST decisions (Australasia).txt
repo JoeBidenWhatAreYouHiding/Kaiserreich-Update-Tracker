@@ -126,10 +126,6 @@ political_actions = {
 			original_tag = AST
 		}
 
-		available = {
-			has_country_flag = AST_plebiscite_failed
-		}
-
 		visible = {
 			has_idea = volunteer_only
 			has_country_flag = AST_plebiscite_failed
@@ -185,7 +181,6 @@ political_actions = {
 			has_completed_focus = AST_trade_commonwealth
 			is_in_faction_with = ENT
 			FROM = {
-				exists = yes
 				is_in_faction_with = ROOT
 				is_subject = no
 				controls_all_owned_states = yes

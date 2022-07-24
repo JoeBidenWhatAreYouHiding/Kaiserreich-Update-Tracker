@@ -77,6 +77,8 @@ characters = {
 		advisor = {
 			idea_token = FOP_liborio_justo
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			available = {
 				is_country_leader = no
 			}
@@ -360,8 +362,10 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_leonidas_barletta
-			traits = { KR_national_unity_proponent }
+			traits = { KR_crime_fighter }
 		}
 	}
 	FOP_candido_testa = {
@@ -373,6 +377,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_candido_testa
 			traits = { KR_war_propagandist }
 		}
@@ -386,6 +392,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_alvaro_yunque
 			traits = { KR_socialist_novelist }
 		}
@@ -399,6 +407,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_rodolfo_gonzalez_pacheco
 			traits = { KR_popular_figurehead }
 		}
@@ -412,6 +422,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_geronimo_arnedo_alvarez
 			traits = { KR_social_revolutionary }
 		}
@@ -425,6 +437,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_diego_abad_de_santillan
 			traits = { KR_ideological_crusader }
 		}
@@ -438,6 +452,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_antonio_de_tomaso
 			traits = { KR_agricultural_economist }
 		}
@@ -451,6 +467,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_gregorio_bermann
 			traits = { KR_education_reformer }
 		}
@@ -464,6 +482,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_roberto_noble
 			allowed = {
 				has_dlc = "La Resistance"

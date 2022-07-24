@@ -3215,27 +3215,24 @@ country_event = { #Amerikagangers arrive!
 	option = { #Welcome Comrades!
 		name = holpostel.44.a
 		add_political_power = 25
-		custom_effect_tooltip = HOL_usavol_tt
-		hidden_effect = {
-			division_template = {
-				name = "Amerikavrijwilligers"
-				division_names_group = USA_GAR_01
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-				}
+		division_template = {
+			name = "Amerikavrijwilligers"
+			division_names_group = USA_GAR_01
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
 			}
-			random_owned_controlled_state = {
-				prioritize = { 358 360 }
-				create_unit = {
-					division = "name = \"Amerikavrijwilligers\" division_template = \"Amerikavrijwilligers\" start_experience_factor = 0"
-					owner = ROOT
-					id = 1776
-				}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 358 360 }
+			create_unit = {
+				division = "name = \"Amerikavrijwilligers\" division_template = \"Amerikavrijwilligers\" start_experience_factor = 0"
+				owner = ROOT
+				id = 1776
 			}
 		}
 	}
@@ -6657,7 +6654,6 @@ country_event = { #Vesting Holland phase 1 complete
 		hidden_effect = {
 			country_event = { id = holfocus.9 days = 270 }
 		}
-
 		7 = {
 			add_building_construction = {
 				type = bunker
@@ -6665,24 +6661,12 @@ country_event = { #Vesting Holland phase 1 complete
 				instant_build = yes
 				province = 9498
 			}
-		}
-		7 = {
-			add_building_construction = {
-				type = bunker
-				level = 1
-				instant_build = yes
-				province = 13544
-			}
-		}
-		7 = {
 			add_building_construction = {
 				type = bunker
 				level = 1
 				instant_build = yes
 				province = 391
 			}
-		}
-		7 = {
 			add_building_construction = {
 				type = bunker
 				level = 1
@@ -6703,7 +6687,6 @@ country_event = { #Vesting Holland phase 2 complete
 
 	option = { #We can sleep easy at night now!
 		name = holfocus.9.a
-
 		7 = {
 			add_building_construction = {
 				type = bunker
@@ -6711,24 +6694,12 @@ country_event = { #Vesting Holland phase 2 complete
 				instant_build = yes
 				province = 9498
 			}
-		}
-		7 = {
-			add_building_construction = {
-				type = bunker
-				level = 2
-				instant_build = yes
-				province = 13544
-			}
-		}
-		7 = {
 			add_building_construction = {
 				type = bunker
 				level = 2
 				instant_build = yes
 				province = 391
 			}
-		}
-		7 = {
 			add_building_construction = {
 				type = bunker
 				level = 2
@@ -7444,7 +7415,6 @@ country_event = { #Negotiations - Tariffs
 		ai_chance = { base = 50 }
 		custom_effect_tooltip = hol_negotiations_tariffs_one
 		set_country_flag = hol_negotiations_tariffs_limits_1
-		modify_country_flag = { flag = HOL_negotiations_right_happiness value = 1 }
 		HOL_right_negotiations_fail_chance_small = yes
 	}
 
@@ -9034,6 +9004,8 @@ country_event = { # SDAP has the backing of a majority
 			name = HOL_social_democrat_party
 			long_name = HOL_social_democrat_party_long
 		}
+		set_temp_variable = { coalition_partner_var = token:social_democrat }
+		add_to_coalition = yes
 		promote_character = HOL_willem_drees
 		if = {
 			limit = { NOT = { has_completed_focus = HOL_third_national_assembly } }
@@ -9081,6 +9053,8 @@ country_event = { # No majority
 					name = HOL_social_democrat_party
 					long_name = HOL_social_democrat_party_long
 				}
+				set_temp_variable = { coalition_partner_var = token:social_democrat }
+				add_to_coalition = yes
 				promote_character = HOL_willem_drees
 				complete_national_focus = HOL_social_democracy
 			}
@@ -9192,7 +9166,7 @@ country_event = { #Rhine line
 			}
 			add_building_construction = {
 				type = bunker
-				province = 13544
+				province = 391
 				level = 2
 				instant_build = yes
 			}
@@ -9580,6 +9554,10 @@ country_event = { #The Netherlands demands Flanders
 		ai_chance = {
 			base = 5
 			modifier = {
+				factor = 0
+				FROM = { is_in_faction = no }
+			}
+			modifier = {
 				factor = 3
 				NOT = {
 					owns_state = 925
@@ -9606,12 +9584,18 @@ country_event = { #The Netherlands demands Flanders
 				surrender_progress > 0.4
 			}
 			modifier = {
-				factor = 2
+				factor = 3
 				surrender_progress > 0.6
 			}
 			modifier = {
-				factor = 2
+				factor = 3
 				surrender_progress > 0.8
+			}
+			modifier = {
+				factor = 10
+				is_belgian_tag = yes
+				is_in_faction = no
+				FROM = { is_in_faction = yes }
 			}
 		}
 		if = {
@@ -9639,10 +9623,6 @@ country_event = { #The Netherlands demands Flanders
 				factor = 0.2
 				surrender_progress > 0.6
 			}
-		}
-		declare_war_on = {
-			target = FROM
-			type = annex_everything
 		}
 		FROM = {
 			country_event = holfocus.89
@@ -9681,6 +9661,11 @@ country_event = { #[From.GetNameDef] refuses to cede Flanders
 
 	option = { #War it is!
 		name = holfocus.89.a
+		create_wargoal = {
+			target = FROM
+			type = take_state_focus
+			generator = { 6 925 }
+		}
 	}
 }
 

@@ -101,7 +101,7 @@ focus_tree = {
 		relative_position_id = BUL_operation_nishava
 		x = -1
 		y = 1
-		cost = 3
+		cost = 4
 		ai_will_do = {
 			factor = 70
 			modifier = {
@@ -135,7 +135,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
-		id = BUL_curtail_military_league_1
+		id = BUL_curtail_military_league
 		text = BUL_curtail_military_league
 		icon = GFX_focus_BUL_destroy_the_zveno
 		prerequisite = {
@@ -148,11 +148,6 @@ focus_tree = {
 					has_country_flag = BUL_stands_with_opposition
 					has_country_flag = BUL_stands_with_prince
 				}
-			}
-		}
-		allow_branch = {
-			NOT = {
-				has_country_flag = BUL_curtail_military_league_1_completed
 			}
 		}
 		relative_position_id = BUL_operation_nishava
@@ -174,186 +169,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BUL_curtail_military_league_1"
-			custom_effect_tooltip = BUL_curtail_military_league_5_left
-			add_to_variable = { BUL_coup_success_chance = -10 }
-			clamp_variable = { var = BUL_coup_success_chance max = 100 min = 0 }
-			custom_effect_tooltip = BUL_decrease_coup_chance_tt
-			add_stability = 0.02
-			set_country_flag = BUL_curtail_military_league_1_completed
-			mark_focus_tree_layout_dirty = yes
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = BUL_curtail_military_league_2
-		text = BUL_curtail_military_league
-		icon = GFX_focus_BUL_destroy_the_zveno
-		prerequisite = {
-			focus = BUL_operation_nishava
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_the_time_is_right_tt
-				OR = {
-					has_country_flag = BUL_stands_with_opposition
-					has_country_flag = BUL_stands_with_prince
-				}
-			}
-		}
-		allow_branch = {
-			has_country_flag = BUL_curtail_military_league_1_completed
-			NOT = {
-				has_country_flag = BUL_curtail_military_league_2_completed
-			}
-		}
-		relative_position_id = BUL_operation_nishava
-		x = 1
-		y = 1
-		cost = 3
-		ai_will_do = {
-			factor = 5
-			#take this focus if coup success chance is above at or above 50
-			##only doing this for the first 3 focuses (and reducing factor as going) so AI wont spend entire time just doing this
-			modifier = {
-				factor = 5
-				check_variable = { BUL_coup_success_chance > 49 }
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus BUL_curtail_military_league_2"
-			custom_effect_tooltip = BUL_curtail_military_league_4_left
-			add_to_variable = { BUL_coup_success_chance = -10 }
-			clamp_variable = { var = BUL_coup_success_chance max = 100 min = 0 }
-			custom_effect_tooltip = BUL_decrease_coup_chance_tt
-			add_stability = 0.02
-			set_country_flag = BUL_curtail_military_league_2_completed
-			mark_focus_tree_layout_dirty = yes
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = BUL_curtail_military_league_3
-		text = BUL_curtail_military_league
-		icon = GFX_focus_BUL_destroy_the_zveno
-		prerequisite = {
-			focus = BUL_operation_nishava
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_the_time_is_right_tt
-				OR = {
-					has_country_flag = BUL_stands_with_opposition
-					has_country_flag = BUL_stands_with_prince
-				}
-			}
-		}
-		allow_branch = {
-			has_country_flag = BUL_curtail_military_league_2_completed
-			NOT = {
-				has_country_flag = BUL_curtail_military_league_3_completed
-			}
-		}
-		relative_position_id = BUL_operation_nishava
-		x = 1
-		y = 1
-		cost = 3
-		ai_will_do = {
-			factor = 5
-			#take this focus if coup success chance is above at or above 50
-			##only doing this for the first 3 focuses (and reducing factor as going) so AI wont spend entire time just doing this
-			modifier = {
-				factor = 3
-				check_variable = { BUL_coup_success_chance > 49 }
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus BUL_curtail_military_league_3"
-			custom_effect_tooltip = BUL_curtail_military_league_3_left
-			add_to_variable = { BUL_coup_success_chance = -10 }
-			clamp_variable = { var = BUL_coup_success_chance max = 100 min = 0 }
-			custom_effect_tooltip = BUL_decrease_coup_chance_tt
-			add_stability = 0.02
-			set_country_flag = BUL_curtail_military_league_3_completed
-			mark_focus_tree_layout_dirty = yes
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = BUL_curtail_military_league_4
-		text = BUL_curtail_military_league
-		icon = GFX_focus_BUL_destroy_the_zveno
-		prerequisite = {
-			focus = BUL_operation_nishava
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_the_time_is_right_tt
-				OR = {
-					has_country_flag = BUL_stands_with_opposition
-					has_country_flag = BUL_stands_with_prince
-				}
-			}
-		}
-		allow_branch = {
-			has_country_flag = BUL_curtail_military_league_3_completed
-			NOT = {
-				has_country_flag = BUL_curtail_military_league_4_completed
-			}
-		}
-		relative_position_id = BUL_operation_nishava
-		x = 1
-		y = 1
-		cost = 3
-		ai_will_do = {
-			factor = 5
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus BUL_curtail_military_league_4"
-			custom_effect_tooltip = BUL_curtail_military_league_2_left
-			add_to_variable = { BUL_coup_success_chance = -10 }
-			clamp_variable = { var = BUL_coup_success_chance max = 100 min = 0 }
-			custom_effect_tooltip = BUL_decrease_coup_chance_tt
-			add_stability = 0.02
-			set_country_flag = BUL_curtail_military_league_4_completed
-			mark_focus_tree_layout_dirty = yes
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = BUL_curtail_military_league_5
-		text = BUL_curtail_military_league
-		icon = GFX_focus_BUL_destroy_the_zveno
-		prerequisite = {
-			focus = BUL_operation_nishava
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_the_time_is_right_tt
-				OR = {
-					has_country_flag = BUL_stands_with_opposition
-					has_country_flag = BUL_stands_with_prince
-				}
-			}
-		}
-		allow_branch = {
-			has_country_flag = BUL_curtail_military_league_4_completed
-		}
-		relative_position_id = BUL_operation_nishava
-		x = 1
-		y = 1
-		cost = 3
-		ai_will_do = {
-			factor = 5
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus BUL_curtail_military_league_5"
+			custom_effect_tooltip = BUL_curtail_military_league_take_five
 			if = {
-				limit = {
-					NOT = {
-						has_completed_focus = BUL_curtail_military_league_5
+				limit = { has_variable = BUL_curtail_focus_amount_var }
+				custom_effect_tooltip = BUL_curtail_military_league_amount_taken
+				add_to_variable = { BUL_curtail_focus_amount_var = 1 }
+				if = {
+					limit = { check_variable = { BUL_curtail_focus_amount_var < 5 } }
+					hidden_effect = {
+						uncomplete_national_focus = { focus = BUL_curtail_military_league }
 					}
 				}
-				custom_effect_tooltip = BUL_curtail_military_league_1_left
 			}
 			add_to_variable = { BUL_coup_success_chance = -10 }
 			clamp_variable = { var = BUL_coup_success_chance max = 100 min = 0 }
@@ -839,19 +665,19 @@ focus_tree = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3210,13 +3036,13 @@ focus_tree = {
 					limit = {
 						is_core_of = BUL
 					}
-					add_extra_state_shared_building_slots = 1
+					increase_state_category_by_one_level = yes
 				}
 				random_owned_controlled_state = {
 					limit = {
 						is_core_of = BUL
 					}
-					add_extra_state_shared_building_slots = 1
+					increase_state_category_by_one_level = yes
 				}
 			}
 			else_if = {
@@ -3821,7 +3647,7 @@ focus_tree = {
 						state = 1089
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -3891,7 +3717,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -3905,7 +3731,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -3919,7 +3745,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -4124,6 +3950,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				increase_state_category_by_one_level = yes
 			}
 			770 = {
 				add_building_construction = {
@@ -4131,7 +3958,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -5211,7 +5038,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -5224,7 +5051,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -5237,7 +5064,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			swap_ideas = {
 				remove_idea = BUL_peasant_state_2
@@ -5341,31 +5168,31 @@ focus_tree = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = BUL
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			if = {
 				limit = {
@@ -5495,7 +5322,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -5508,7 +5335,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -5521,7 +5348,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -5930,7 +5757,7 @@ focus_tree = {
 					free_building_slots = { building = infrastructure size > 0 include_locked = yes }
 					NOT = { state = 48 } #Sofia
 				}
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -7363,7 +7190,7 @@ focus_tree = {
 					days = 180
 					tooltip = BUL_YUG_increase_rt_tt
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -7599,11 +7426,11 @@ focus_tree = {
 			create_faction = BUL_yugosphere
 			if = {
 				limit = {
-					ALB = {
-						has_country_flag = ALB_will_join_BUL_factions_flag
-					}
+					has_guaranteed = ALB
+					NOT = { has_war_with = ALB }
+					ALB = { is_valid_peace_target = yes }
 				}
-				add_to_faction = ALB
+				ALB = { country_event = kr.political.13 }
 			}
 		}
 	}
@@ -7676,16 +7503,16 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BUL_third_empire"
+			set_cosmetic_tag = BUL_empire
 			create_faction = BUL_third_empire_fac
 			if = {
 				limit = {
-					ALB = {
-						has_country_flag = ALB_will_join_BUL_factions_flag
-					}
+					has_guaranteed = ALB
+					NOT = { has_war_with = ALB }
+					ALB = { is_valid_peace_target = yes }
 				}
-				add_to_faction = ALB
+				ALB = { country_event = kr.political.13 }
 			}
-			set_cosmetic_tag = BUL_empire
 		}
 	}
 	focus = {
@@ -7726,19 +7553,15 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				ROOT_is_threatened_cautious = yes
 			}
 			modifier = {
 				factor = 0
-				TUR = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				TUR = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				TUR = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				TUR = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				TUR = { default_attack_AI_trigger_FROM = yes }
 			}
 		}
 		completion_reward = {
@@ -8749,19 +8572,15 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				ROOT_is_threatened_cautious = yes
 			}
 			modifier = {
 				factor = 0
-				TUR = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				TUR = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				TUR = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				TUR = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				TUR = { default_attack_AI_trigger_FROM = yes }
 			}
 		}
 		completion_reward = {

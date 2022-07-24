@@ -601,13 +601,9 @@ focus_tree = {
 		id = ARG_Ties_with_Germany
 		icon = GFX_focus_ger_return_of_the_kaiser
 		available = {
-			GER = {
-				has_war_with = FRA
-				exists = yes
-			}
-			NOT = {
-				is_in_faction = yes
-			}
+			GER = { has_war_with = INT }
+			is_in_faction = no
+			is_subject = no
 			has_war = no
 			has_country_flag = ARG_internal_conflicts_resolved
 			has_authoritarian_government = yes
@@ -621,7 +617,7 @@ focus_tree = {
 		relative_position_id = ARG_Countercoup
 
 		ai_will_do = {
-			factor = 35
+			factor = 250
 		}
 
 		available_if_capitulated = yes

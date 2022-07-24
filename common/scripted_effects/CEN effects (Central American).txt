@@ -290,7 +290,7 @@ CEN_setup_new_presidents = {
 			NIC_francisco_sequeira_moreno = {
 				if = {
 					limit = { has_ideology = social_democrat_subtype }
-					promote_character = { ideology = social_democrat_subtype }
+					promote_character = social_democrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -325,7 +325,7 @@ CEN_restore_socdem_president = {
 			if = {
 				limit = { has_country_flag = CEN_moreno_leads }
 				NIC_francisco_sequeira_moreno = {
-					promote_character = { ideology = social_democrat_subtype }
+					promote_character = social_democrat_subtype
 				}
 			}
 			else = {
@@ -384,49 +384,49 @@ GUA_restore_missing_characters = {
 			limit = { NOT = { has_character = GUA_silverio_ortiz } }
 			GUA_silverio_ortiz = {
 				set_nationality = PREV
-				promote_character = { ideology = radical_socialist_subtype }
+				promote_character = radical_socialist_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = GUA_juan_jose_arevalo_bermejo } }
 			GUA_juan_jose_arevalo_bermejo = {
 				set_nationality = PREV
-				promote_character = { ideology = social_democrat_subtype }
+				promote_character = social_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = GUA_julio_domingo_bianchi_smout } }
 			GUA_julio_domingo_bianchi_smout = {
 				set_nationality = PREV
-				promote_character = { ideology = social_conservative_subtype }
+				promote_character = social_conservative_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = GUA_jose_azmitia_gonzalez } }
 			GUA_jose_azmitia_gonzalez = {
 				set_nationality = PREV
-				promote_character = { ideology = social_conservative_subtype }
+				promote_character = social_conservative_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = GUA_lazaro_chacon_gonzalez } }
 			GUA_lazaro_chacon_gonzalez = {
 				set_nationality = PREV
-				promote_character = { ideology = social_conservative_subtype }
+				promote_character = social_conservative_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = GUA_jose_maria_orellana } }
 			GUA_jose_maria_orellana = {
 				set_nationality = PREV
-				promote_character = { ideology = authoritarian_democrat_subtype }
+				promote_character = authoritarian_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = GUA_jorge_ubico_castaneda } }
 			GUA_jorge_ubico_castaneda = {
 				set_nationality = PREV
-				promote_character = { ideology = paternal_autocrat_subtype }
+				promote_character = paternal_autocrat_subtype
 			}
 		}
 	}
@@ -471,7 +471,7 @@ GUA_add_liberal_generals = {
 		limit = { NOT = { has_character = GUA_lazaro_chacon_gonzalez } }
 		GUA_lazaro_chacon_gonzalez = {
 			set_nationality = PREV
-			promote_character = { ideology = social_conservative_subtype }
+			promote_character = social_conservative_subtype
 		}
 	}
 	if = {
@@ -493,14 +493,14 @@ GUA_add_reactionary_generals = {
 		limit = { NOT = { has_character = GUA_jose_maria_orellana } }
 		GUA_jose_maria_orellana = {
 			set_nationality = PREV
-			promote_character = { ideology = authoritarian_democrat_subtype }
+			promote_character = authoritarian_democrat_subtype
 		}
 	}
 	if = {
 		limit = { NOT = { has_character = GUA_jorge_ubico_castaneda } }
 		GUA_jorge_ubico_castaneda = {
 			set_nationality = PREV
-			promote_character = { ideology = paternal_autocrat_subtype }
+			promote_character = paternal_autocrat_subtype
 		}
 	}
 	if = {
@@ -558,49 +558,49 @@ ELS_restore_missing_characters = {
 			limit = { NOT = { has_character = ELS_agustin_farabundo_marti } }
 			ELS_agustin_farabundo_marti = {
 				set_nationality = PREV
-				promote_character = { ideology = syndicalist_subtype }
+				promote_character = syndicalist_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = ELS_feliciano_ama } }
 			ELS_feliciano_ama = {
 				set_nationality = PREV
-				promote_character = { ideology = radical_socialist_subtype }
+				promote_character = radical_socialist_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = ELS_arturo_araujo } }
 			ELS_arturo_araujo = {
 				set_nationality = PREV
-				promote_character = { ideology = social_democrat_subtype }
+				promote_character = social_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = ELS_alfonso_quinonez_molina } }
 			ELS_alfonso_quinonez_molina = {
 				set_nationality = PREV
-				promote_character = { ideology = social_liberal_subtype }
+				promote_character = social_liberal_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = ELS_salvador_castaneda_castro } }
 			ELS_salvador_castaneda_castro = {
 				set_nationality = PREV
-				promote_character = { ideology = authoritarian_democrat_subtype }
+				promote_character = authoritarian_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = ELS_osmin_aguirre_y_salinas } }
 			ELS_osmin_aguirre_y_salinas = {
 				set_nationality = PREV
-				promote_character = { ideology = paternal_autocrat_subtype }
+				promote_character = paternal_autocrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = ELS_maximiliano_hernandez_martinez } }
 			ELS_maximiliano_hernandez_martinez = {
 				set_nationality = PREV
-				promote_character = { ideology = national_populist_subtype }
+				promote_character = national_populist_subtype
 			}
 		}
 	}
@@ -611,21 +611,21 @@ ELS_add_democratic_generals = {
 		limit = { NOT = { has_character = ELS_agustin_farabundo_marti } }
 		ELS_agustin_farabundo_marti = {
 			set_nationality = PREV
-			promote_character = { ideology = syndicalist_subtype }
+			promote_character = syndicalist_subtype
 		}
 	}
 	if = {
 		limit = { NOT = { has_character = ELS_feliciano_ama } }
 		ELS_feliciano_ama = {
 			set_nationality = PREV
-			promote_character = { ideology = radical_socialist_subtype }
+			promote_character = radical_socialist_subtype
 		}
 	}
 	if = {
 		limit = { NOT = { has_character = ELS_salvador_castaneda_castro } }
 		ELS_salvador_castaneda_castro = {
 			set_nationality = PREV
-			promote_character = { ideology = authoritarian_democrat_subtype }
+			promote_character = authoritarian_democrat_subtype
 		}
 	}
 	ELS_remove_reactionary_generals = yes
@@ -654,7 +654,7 @@ ELS_add_liberal_generals = {
 		limit = { NOT = { has_character = ELS_salvador_castaneda_castro } }
 		ELS_salvador_castaneda_castro = {
 			set_nationality = PREV
-			promote_character = { ideology = authoritarian_democrat_subtype }
+			promote_character = authoritarian_democrat_subtype
 		}
 	}
 	if = {
@@ -673,14 +673,14 @@ ELS_add_reactionary_generals = {
 		limit = { NOT = { has_character = ELS_maximiliano_hernandez_martinez } }
 		ELS_maximiliano_hernandez_martinez = {
 			set_nationality = PREV
-			promote_character = { ideology = national_populist_subtype }
+			promote_character = national_populist_subtype
 		}
 	}
 	if = {
 		limit = { NOT = { has_character = ELS_osmin_aguirre_y_salinas } }
 		ELS_osmin_aguirre_y_salinas = {
 			set_nationality = PREV
-			promote_character = { ideology = paternal_autocrat_subtype }
+			promote_character = paternal_autocrat_subtype
 		}
 	}
 	if = {
@@ -721,52 +721,52 @@ HON_restore_missing_characters = {
 			limit = { NOT = { has_character = HON_venancio_callejas_lozano } }
 			HON_venancio_callejas_lozano = {
 				set_nationality = PREV
-				promote_character = { ideology = totalist_subtype }
-				promote_character = { ideology = syndicalist_subtype }
-				promote_character = { ideology = radical_socialist_subtype }
+				promote_character = totalist_subtype
+				promote_character = syndicalist_subtype
+				promote_character = radical_socialist_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = HON_jose_ramon_adolfo_villeda_morales } }
 			HON_jose_ramon_adolfo_villeda_morales = {
 				set_nationality = PREV
-				promote_character = { ideology = social_democrat_subtype }
+				promote_character = social_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = HON_jose_maria_moncada_tapia } }
 			HON_jose_maria_moncada_tapia = {
 				set_nationality = PREV
-				promote_character = { ideology = social_liberal_subtype }
+				promote_character = social_liberal_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = HON_jose_angel_zuniga_huete } }
 			HON_jose_angel_zuniga_huete = {
 				set_nationality = PREV
-				promote_character = { ideology = market_liberal_subtype }
+				promote_character = market_liberal_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = HON_juan_manuel_galvez_duron } }
 			HON_juan_manuel_galvez_duron = {
 				set_nationality = PREV
-				promote_character = { ideology = social_conservative_subtype }
+				promote_character = social_conservative_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = HON_honduran_council } }
 			HON_honduran_council = {
 				set_nationality = PREV
-				promote_character = { ideology = authoritarian_democrat_subtype }
+				promote_character = authoritarian_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = HON_jose_leon_castro } }
 			HON_jose_leon_castro = {
 				set_nationality = PREV
-				promote_character = { ideology = paternal_autocrat_subtype }
-				promote_character = { ideology = national_populist_subtype }
+				promote_character = paternal_autocrat_subtype
+				promote_character = national_populist_subtype
 			}
 		}
 	}
@@ -777,8 +777,8 @@ HON_add_non_socialist_generals = {
 		limit = { NOT = { has_character = HON_jose_leon_castro } }
 		HON_jose_leon_castro = {
 			set_nationality = PREV
-			promote_character = { ideology = paternal_autocrat_subtype }
-			promote_character = { ideology = national_populist_subtype }
+			promote_character = paternal_autocrat_subtype
+			promote_character = national_populist_subtype
 		}
 	}
 }
@@ -806,43 +806,43 @@ NIC_restore_missing_characters = {
 			limit = { NOT = { has_character = NIC_augusto_cesar_sandino } }
 			NIC_augusto_cesar_sandino = {
 				set_nationality = PREV
-				promote_character = { ideology = syndicalist_subtype }
+				promote_character = syndicalist_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = NIC_francisco_sequeira_moreno } }
 			NIC_francisco_sequeira_moreno = {
 				set_nationality = PREV
-				promote_character = { ideology = radical_socialist_subtype }
-				promote_character = { ideology = social_democrat_subtype }
+				promote_character = radical_socialist_subtype
+				promote_character = social_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = NIC_juan_bautista_sacasa } }
 			NIC_juan_bautista_sacasa = {
 				set_nationality = PREV
-				promote_character = { ideology = social_liberal_subtype }
+				promote_character = social_liberal_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = NIC_emiliano_chamorro_vargas } }
 			NIC_emiliano_chamorro_vargas = {
 				set_nationality = PREV
-				promote_character = { ideology = social_conservative_subtype }
+				promote_character = social_conservative_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = NIC_adolfo_diaz } }
 			NIC_adolfo_diaz = {
 				set_nationality = PREV
-				promote_character = { ideology = authoritarian_democrat_subtype }
+				promote_character = authoritarian_democrat_subtype
 			}
 		}
 		if = {
 			limit = { NOT = { has_character = NIC_anastasio_somoza_garcia } }
 			NIC_anastasio_somoza_garcia = {
 				set_nationality = PREV
-				promote_character = { ideology = paternal_autocrat_subtype }
+				promote_character = paternal_autocrat_subtype
 			}
 		}
 	}
@@ -853,14 +853,14 @@ NIC_add_socialist_generals = {
 		limit = { NOT = { has_character = NIC_augusto_cesar_sandino } }
 		NIC_augusto_cesar_sandino = {
 			set_nationality = PREV
-			promote_character = { ideology = syndicalist_subtype }
+			promote_character = syndicalist_subtype
 		}
 	}
 	if = {
 		limit = { NOT = { has_character = NIC_francisco_sequeira_moreno } }
 		NIC_francisco_sequeira_moreno = {
 			set_nationality = PREV
-			promote_character = { ideology = radical_socialist_subtype }
+			promote_character = radical_socialist_subtype
 		}
 	}
 	if = {
@@ -941,7 +941,7 @@ NIC_add_liberal_generals = {
 		}
 		NIC_emiliano_chamorro_vargas = {
 			set_nationality = PREV
-			promote_character = { ideology = social_conservative_subtype }
+			promote_character = social_conservative_subtype
 		}
 	}
 	if = {
@@ -993,7 +993,7 @@ NIC_add_reactionary_generals = {
 		limit = { NOT = { has_character = NIC_anastasio_somoza_garcia } }
 		NIC_anastasio_somoza_garcia = {
 			set_nationality = PREV
-			promote_character = { ideology = paternal_autocrat_subtype }
+			promote_character = paternal_autocrat_subtype
 		}
 	}
 	if = {

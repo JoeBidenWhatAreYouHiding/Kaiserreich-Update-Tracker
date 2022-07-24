@@ -725,6 +725,37 @@ ideas = {
 				ships_at_battle_start = 0.1
 			}
 		}
+		URG_paraguay_military_help = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea URG_paraguay_military_help" }
+			picture = german_advisors_KR
+			allowed = { always = no }
+			available = {
+				NOT = {
+					has_war_with = PAR
+				}
+			}
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				army_speed_factor = 0.05
+			}
+		}
+		URG_paraguay_military_help_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea URG_paraguay_military_help_2" }
+			picture = german_advisors_KR
+			allowed = { always = no }
+			available = {
+				NOT = {
+					has_war_with = PAR
+				}
+			}
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.10
+				army_speed_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
 		URG_literacy_good = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea URG_literacy_good" }
 			picture = generic_research_increase

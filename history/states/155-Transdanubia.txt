@@ -5,6 +5,7 @@ state = {
 	state_category = six
 
 	resources = {
+		aluminium = 36
 		oil = 1
 	}
 

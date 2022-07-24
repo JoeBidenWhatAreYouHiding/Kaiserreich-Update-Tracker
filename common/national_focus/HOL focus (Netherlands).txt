@@ -2919,6 +2919,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		cost = 8
+		dynamic = yes
 		relative_position_id = HOL_third_national_assembly
 		prerequisite = {
 			focus = HOL_social_democracy

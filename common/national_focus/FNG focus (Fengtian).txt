@@ -295,16 +295,16 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Develop_the_Three_Northeast_Provinces"
 			716 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			328 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			715 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			886 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			unlock_decision_tooltip = FNG_Liaoning_Infrastructure
 			unlock_decision_tooltip = FNG_Liaobei_Jilin_Infrastructure
@@ -1274,6 +1274,17 @@ focus_tree = {
 						traits = { KR_old_general_sic second_in_command_trait }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = FNG_zhang_zuolin }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							FNG_zhang_zuolin = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 					activate = yes
 				}
@@ -1505,6 +1516,17 @@ focus_tree = {
 								traits = { KR_committed_democrat_sic second_in_command_trait }
 								cost = 0
 								removal_cost = -1
+								on_add = {
+									random_character = {
+										limit = { is_character = GXC_chen_jiongming }
+										set_character_flag = is_second_in_command
+										set_variable = { PREV.current_second_in_command_character = THIS }
+									}
+								}
+								on_remove = {
+									GXC_chen_jiongming = { clr_character_flag = is_second_in_command }
+									clear_variable = current_second_in_command_character
+								}
 							}
 							activate = yes
 						}
@@ -2286,13 +2308,33 @@ focus_tree = {
 						traits = { KR_old_general_sic second_in_command_trait }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = FNG_zhang_zuolin }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							FNG_zhang_zuolin = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 					activate = yes
 				}
 			}
-			swap_ideas = {
-				remove_idea = FNG_Assertive_Governance
-				add_idea = FNG_Principled_Executive
+			custom_effect_tooltip = FNG_modify_factionalism
+			add_to_variable = {
+				FNG_factionalism_pp_factor = 0.1
+				tooltip = pp_factor_tooltip
+			}
+			add_to_variable = {
+				FNG_factionalism_stability = 0.1
+				tooltip = stability_tooltip
+			}
+			add_to_variable = {
+				FNG_factionalism_war_support = 0.1
+				tooltip = war_support_tooltip
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -2347,9 +2389,14 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Minde_Zhuyi"
 			FNG_increase_legitimacy = yes
-			swap_ideas = {
-				remove_idea = FNG_Principled_Executive
-				add_idea = FNG_Peoples_Morality
+			custom_effect_tooltip = FNG_modify_factionalism
+			add_to_variable = {
+				FNG_factionalism_consumer_goods = -0.05
+				tooltip = consumer_goods_tooltip
+			}
+			add_to_variable = {
+				FNG_factionalism_stability = 0.05
+				tooltip = stability_tooltip
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
@@ -2369,9 +2416,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_A_Father_to_the_People"
-			swap_ideas = {
-				remove_idea = FNG_Peoples_Morality
-				add_idea = FNG_Paternal_Guidance
+			custom_effect_tooltip = FNG_modify_factionalism
+			add_to_variable = {
+				FNG_factionalism_pp_factor = 0.1
+				tooltip = pp_factor_tooltip
+			}
+			add_to_variable = {
+				FNG_factionalism_stability = 0.05
+				tooltip = stability_tooltip
+			}
+			add_to_variable = {
+				FNG_factionalism_war_support = 0.1
+				tooltip = war_support_tooltip
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
@@ -2454,9 +2510,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Treaty_of_Friendship_and_Cooperation"
 			FNG_decrease_legitimacy = yes
-			JAP = {
-				add_to_faction = FNG
-			}
+			JAP = { country_event = kr.political.10 }
 			set_temp_variable = { CAPOP = 5 }
 			FNG_CAPOP = yes
 		}

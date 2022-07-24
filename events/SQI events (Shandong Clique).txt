@@ -298,6 +298,11 @@ country_event = { # Qing Magistrates Arrest Zongchang
 			retire_character = SQI_hakuro_kohinata
 			retire_character = SQI_junnosuke_date
 		}
+		custom_effect_tooltip = tooltip_white_line
+		delete_unit_template_and_units = { division_template = "Santosho Kiheishidan" }
+		custom_effect_tooltip = tooltip_white_line
+		set_division_template_lock = { division_template = "Juntuan Beifa" is_locked = no }
+		set_division_template_lock = { division_template = "Dadao Hui" is_locked = no }
 		hidden_effect = {
 			set_cosmetic_tag = SQI_CSONG
 			news_event = worldnews.477
@@ -438,6 +443,10 @@ country_event = { # Tianran Passes Judgement on Zongchang
 			limit = { SQI_is_tianran_loyalist = yes }
 		}
 		SQI_zongchang_clique_flees = yes
+		delete_unit_template_and_units = { division_template = "Santosho Kiheishidan" }
+		delete_unit_template_and_units = { division_template = "Juntuan Beifa" }
+		custom_effect_tooltip = tooltip_white_line
+		set_division_template_lock = { division_template = "Dadao Hui" is_locked = no }
 	}
 }
 
@@ -479,21 +488,11 @@ country_event = { # Zongchang Saves Jinan from Yiguandao Raid
 		retire_character = SQI_zhang_tianran
 		retire_character = SQI_han_enrong
 		set_country_flag = SQI_Zongchang_beat_Tianran
-		set_variable = { sqi_japanese_control_var = 5 }
-		set_variable = { sqi_german_control_var = 5 }
-		set_variable = { sqi_legation_control_var = 5 }
-		hidden_effect = {
-			activate_targeted_decision = { decision = SQI_Take_German_Loan target = GER }
-			activate_targeted_decision = { decision = SQI_Take_Japanese_Loan target = JAP }
-			activate_targeted_decision = { decision = SQI_Take_Legation_Loan target = LEC }
-			LEC = { activate_targeted_decision = { decision = SQI_Give_Legation_Loan target = SQI } }
-			activate_targeted_decision = { decision = SQI_Repay_German_Loan target = GER }
-			activate_targeted_decision = { decision = SQI_Repay_Japanese_Loan target = JAP }
-			activate_targeted_decision = { decision = SQI_Repay_Legation_Loan target = LEC }
-			activate_targeted_decision = { decision = SQI_join_Japan_faction target = JAP }
-			activate_targeted_decision = { decision = SQI_ask_AOG_protection target = GER }
-			activate_targeted_decision = { decision = SQI_ask_LEC_protection target = LEC }
-		}
+		custom_effect_tooltip = tooltip_white_line
+		delete_unit_template_and_units = { division_template = "Dadao Hui" }
+		custom_effect_tooltip = tooltip_white_line
+		set_division_template_lock = { division_template = "Santosho Kiheishidan" is_locked = no }
+		set_division_template_lock = { division_template = "Juntuan Beifa" is_locked = no }
 	}
 }
 
@@ -512,9 +511,6 @@ country_event = {# Yiguandao and Peasants Riot
 		add_political_power = -5
 		add_ideas = SQI_Peasant_revolt
 		add_ideas = SQI_Yiguandao_revolt
-		add_ideas = SQI_Tsingtau_Collaboration
-		add_ideas = SQI_Japan_Collaboration
-		add_ideas = SQI_Legation_Collaboration
 		hidden_effect = {
 			activate_targeted_decision = { decision = SQI_end_Yiguandao_riot target = SQI }
 			activate_targeted_decision = { decision = SQI_end_peasant_riot target = SQI }
@@ -730,7 +726,8 @@ country_event = { # A Strike Against Nanjing
 				has_government = national_populist
 				QIE = {
 					NOT = { has_completed_focus = QIE_unrest }
-					focus_progress = { focus = QIE_unrest progress = 0 }
+					NOT = { focus_progress = { focus = QIE_capitalize_politics progress > 0 } }
+					NOT = { focus_progress = { focus = QIE_placateassembly progress > 0 } }
 				}
 			}
 		}
@@ -779,7 +776,8 @@ country_event = { # A Strike Against Nanjing
 				has_government = national_populist
 				QIE = {
 					NOT = { has_completed_focus = QIE_unrest }
-					focus_progress = { focus = QIE_unrest progress = 0 }
+					NOT = { focus_progress = { focus = QIE_capitalize_politics progress > 0 } }
+					NOT = { focus_progress = { focus = QIE_placateassembly progress > 0 } }
 				}
 			}
 		}
@@ -1875,101 +1873,6 @@ country_event = {
 	}
 }
 
-country_event = { # Shandong wishes to join Japan's faction (fired from focus)
-	id = shandong.103
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.103 FROM = [From.GetName]" }
-	title = shandong.103.t
-	desc = shandong.103.d
-	picture = GFX_report_event_FNG_ministry
-
-	is_triggered_only = yes
-
-	option = { # Of course they may join!
-		name = shandong.103.a
-		ai_chance = {
-			base = 99
-		}
-		add_political_power = -50
-		add_to_faction = SQI
-	}
-	option = { # We have no need of them
-		name = shandong.103.b
-		ai_chance = {
-			base = 1
-		}
-		SQI = {
-			country_event = {
-				id = shandong.104
-				days = 1
-			}
-		}
-	}
-}
-
-country_event = { # Japan/Fengtian refuses
-	id = shandong.104
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.104 FROM = [From.GetName]" }
-	title = shandong.104.t
-	desc = shandong.104.d
-	picture = GFX_report_event_generic_diplomacy1
-
-	is_triggered_only = yes
-
-	option = {
-		name = shandong.104.a
-		add_political_power = -50
-		add_opinion_modifier = { target = FNG modifier = KR_disapproves_of_govt }
-		add_opinion_modifier = { target = JAP modifier = KR_disapproves_of_govt }
-	}
-}
-
-country_event = { # Shandong wishes to ask the LEC for protection (fired from focus)
-	id = shandong.107
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.107 FROM = [From.GetName]" }
-	title = shandong.107.t
-	desc = shandong.107.d
-	picture = GFX_report_event_generic_diplomacy1
-
-	is_triggered_only = yes
-
-	option = { # Of course they may join!
-		name = shandong.107.a
-		ai_chance = {
-			base = 99
-		}
-		add_political_power = -50
-		give_guarantee = SQI
-	}
-	option = { # We have no need of them
-		name = shandong.107.b
-		ai_chance = {
-			base = 1
-		}
-		SQI = {
-			country_event = {
-				id = shandong.108
-				days = 1
-			}
-		}
-	}
-}
-
-country_event = { # The LEC refuses to protect
-	id = shandong.108
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.108 FROM = [From.GetName]" }
-	title = shandong.108.t
-	desc = shandong.108.d
-	picture = GFX_report_event_generic_diplomacy1
-
-	is_triggered_only = yes
-
-	option = {
-		name = shandong.108.a
-		add_political_power = -50
-		add_opinion_modifier = { target = LEC modifier = KR_disapproves_of_govt }
-	}
-}
-
 country_event = { # Experimental Tank built
 	id = shandong.988
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.988 FROM = [From.GetName]" }
@@ -2908,9 +2811,6 @@ country_event = { # Zhang Zuolin Asks to Return Favor
 			give_military_access = SQI
 		}
 		LEP_remove_collapse_dm = yes
-		set_country_flag = SQI_German_request
-		set_country_flag = SQI_Legation_request
-		set_country_flag = SQI_Japan_request
 	}
 }
 
@@ -2944,7 +2844,7 @@ country_event = { # Shangqing Owns Beijing
 			QIE_aisin_gioro_puyi = {
 				if = {
 					limit = { has_ideology = authoritarian_democrat_subtype }
-					promote_character = { ideology = authoritarian_democrat_subtype }
+					promote_character = authoritarian_democrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -2958,13 +2858,27 @@ country_event = { # Shangqing Owns Beijing
 				}
 				if = {
 					limit = { has_ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
 						country_leader = {
 							desc = QIE_aisin_gioro_puyi_leader_desc
 							ideology = paternal_autocrat_subtype
+							traits = { SQI_imprisoned_emperor }
+						}
+						promote_leader = yes
+					}
+				}
+				if = {
+					limit = { has_ideology = national_populist_subtype }
+					promote_character = national_populist_subtype
+				}
+				else = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = QIE_aisin_gioro_puyi_leader_desc
+							ideology = national_populist_subtype
 							traits = { SQI_imprisoned_emperor }
 						}
 						promote_leader = yes
@@ -2998,133 +2912,6 @@ country_event = {#
 	option = {#
 		name = shandong.445.a
 		retire_character = SQI_xue_dian
-	}
-}
-
-country_event = {#
-	id = shandong.446
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.446 FROM = [From.GetName]" }
-	title = shandong.446.t
-	desc = shandong.446.d
-	picture = GFX_report_event_JAP_lost_decade
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {#
-		name = shandong.446.a
-		if = {
-			limit = { has_idea = SQI_Legation_Collaboration }
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = SQI_Legation_Collaboration
-					add_idea = SQI_Legation_Collaboration2
-				}
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration2 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration2
-				add_idea = SQI_Legation_Collaboration3
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration3 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration3
-				add_idea = SQI_Legation_Collaboration4
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration4 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration4
-				add_idea = SQI_Legation_Collaboration5
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration5 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration5
-				add_idea = SQI_Legation_Collaboration6
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration6 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration6
-				add_idea = SQI_Legation_Collaboration7
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration7 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration7
-				add_idea = SQI_Legation_Collaboration8
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration8 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration8
-				add_idea = SQI_Legation_Collaboration9
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration9 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration9
-				add_idea = SQI_Legation_Collaboration10
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration10 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration10
-				add_idea = SQI_Legation_Collaboration11
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration11 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration11
-				add_idea = SQI_Legation_Collaboration12
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration12 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration12
-				add_idea = SQI_Legation_Collaboration13
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration13 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration13
-				add_idea = SQI_Legation_Collaboration14
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration14 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration14
-				add_idea = SQI_Legation_Collaboration15
-			}
-		}
-		else_if = {
-			limit = { has_idea = SQI_Legation_Collaboration15 }
-			swap_ideas = {
-				remove_idea = SQI_Legation_Collaboration15
-				add_idea = SQI_Legation_Collaboration16
-			}
-		}
-		add_to_variable = {
-			var = sqi_legation_control_var
-			value = 5
-		}
-		custom_effect_tooltip = SQI_leccontroladd5_tt
 	}
 }
 

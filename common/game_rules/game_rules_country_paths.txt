@@ -6938,15 +6938,33 @@ SIA_civilwar = {
 		allow_achievements = yes
 	}
 	option = {
-		name = SIA_CIVILWAR_YES
-		text = RULE_OPTION_SIA_CIVILWAR_YES
-		desc = RULE_OPTION_SIA_CIVILWAR_YES_DESC
+		name = SIA_CIVILWAR_PATAUT
+		text = RULE_OPTION_SIA_CIVILWAR_PATAUT
+		desc = RULE_OPTION_SIA_CIVILWAR_PATAUT_DESC
 		allow_achievements = yes
 	}
 	option = {
-		name = SIA_CIVILWAR_COUP
-		text = RULE_OPTION_SIA_CIVILWAR_COUP
-		desc = RULE_OPTION_SIA_CIVILWAR_COUP_DESC
+		name = SIA_CIVILWAR_RADSOC
+		text = RULE_OPTION_SIA_CIVILWAR_RADSOC
+		desc = RULE_OPTION_SIA_CIVILWAR_RADSOC_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = SIA_CIVILWAR_PLAEK
+		text = RULE_OPTION_SIA_CIVILWAR_PLAEK
+		desc = RULE_OPTION_SIA_CIVILWAR_PLAEK_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = SIA_CIVILWAR_SARIT
+		text = RULE_OPTION_SIA_CIVILWAR_SARIT
+		desc = RULE_OPTION_SIA_CIVILWAR_SARIT_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = SIA_CIVILWAR_PHAO
+		text = RULE_OPTION_SIA_CIVILWAR_PHAO
+		desc = RULE_OPTION_SIA_CIVILWAR_PHAO_DESC
 		allow_achievements = yes
 	}
 }
@@ -7283,9 +7301,15 @@ LEC_path = {
 		allow_achievements = yes
 	}
 	option = {
-		name = LEC_COLLAPSE
-		text = RULE_OPTION_LEC_COLLAPSE
-		desc = RULE_OPTION_LEC_COLLAPSE_DESC
+		name = LEC_COLLAPSE_GER_PUPPET
+		text = RULE_OPTION_LEC_COLLAPSE_GER_PUPPET
+		desc = RULE_OPTION_LEC_COLLAPSE_GER_PUPPET_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = LEC_COLLAPSE_JAP_PUPPET
+		text = RULE_OPTION_LEC_COLLAPSE_JAP_PUPPET
+		desc = RULE_OPTION_LEC_COLLAPSE_JAP_PUPPET_DESC
 		allow_achievements = yes
 	}
 }

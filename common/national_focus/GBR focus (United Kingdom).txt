@@ -1209,13 +1209,6 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GBR_restore_MI6"
-			add_tech_bonus = {
-				name = GBR_restore_MI6
-				bonus = 1
-				uses = 2
-				category = decryption_tech
-				category = encryption_tech
-			}
 			if = {
 				limit = { has_dlc = "La Resistance" }
 				create_intelligence_agency = yes
@@ -1224,6 +1217,13 @@ focus_tree = {
 			}
 			else = {
 				add_ideas = GBR_MI6_idea
+				add_tech_bonus = {
+					name = GBR_restore_MI6
+					bonus = 1
+					uses = 2
+					category = decryption_tech
+					category = encryption_tech
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESISTANCE FOCUS_FILTER_RESEARCH }

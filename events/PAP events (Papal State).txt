@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # Papal State Events
 ###########################
 
@@ -382,6 +382,8 @@ country_event = {
 				character = PAP_eugenio_pacelli
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = PAP_eugenio_pacelli
 					traits = { KR_master_diplomat }
 				}
@@ -483,6 +485,8 @@ country_event = {
 				character = PAP_eugenio_pacelli
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = PAP_eugenio_pacelli
 					traits = { KR_master_diplomat }
 				}
@@ -585,6 +589,8 @@ country_event = {
 				character = PAP_eugenio_pacelli
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = PAP_eugenio_pacelli
 					traits = { KR_master_diplomat }
 				}

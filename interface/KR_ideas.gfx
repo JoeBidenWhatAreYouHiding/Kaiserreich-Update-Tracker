@@ -320,6 +320,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/generic_syndicalist_monarchy.png"
 	}
 	spriteType = {
+		name = "GFX_idea_generic_syndicalist_worker"
+		texturefile = "gfx/interface/ideas/generic_syndicalist_worker.png"
+	}
+	spriteType = {
 		name = "GFX_idea_generic_crippled_industry"
 		texturefile = "gfx/interface/ideas/generic_crippled_industry.png"
 	}

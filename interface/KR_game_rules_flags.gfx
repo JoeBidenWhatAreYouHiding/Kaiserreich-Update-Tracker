@@ -82,7 +82,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_KR_game_rule_flag_ITA_ANI"
-		texturefile = "gfx/flags/small/ITA_ANI.tga"
+		texturefile = "gfx/flags/small/ITA_national_populist.tga"
 		legacy_lazy_load = no
 	}
 	spriteType = {

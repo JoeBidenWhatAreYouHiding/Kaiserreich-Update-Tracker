@@ -1854,14 +1854,6 @@ rule_dont_take_friend_claims_ROOT = {
 		else = {
 			can_reach_state_direct = yes
 		}
-
-		# Exception: major nation who will take Chinese territory
-		NOT = {
-			AND = {
-				is_in_conference_with_chinese_ally = no
-				var:global.eval_state = { is_mainland_china = yes }
-			}
-		}
 	}
 }
 
@@ -1890,14 +1882,6 @@ rule_dont_take_friend_claims_PREV = {
 		}
 		else = {
 			can_reach_state_direct = yes
-		}
-
-		# Exception: major nation who will take Chinese territory
-		NOT = {
-			AND = {
-				is_in_conference_with_chinese_ally = no
-				var:global.eval_state = { is_mainland_china = yes }
-			}
 		}
 	}
 }

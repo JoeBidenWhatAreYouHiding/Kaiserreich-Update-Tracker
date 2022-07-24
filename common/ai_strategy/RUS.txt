@@ -104,9 +104,6 @@ RUS_we_dont_need_garrisons = {
 			original_tag = SOV
 		}
 	}
-	enable = {
-		always = yes
-	}
 
 	ai_strategy = {
 		type = garrison

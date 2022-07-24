@@ -48,25 +48,8 @@ can_release_alsace_lorraine = {
 		OR = {
 			is_french_tag = yes
 			is_germany_or_splinter_tag = yes
-			FRA = {
-				OR = {
-					owns_state = 779 #Nancy
-					owns_state = 785 #Plateau Lorrain
-				}
-				ROOT_can_grant_land = yes
-			}
-			NFA = {
-				OR = {
-					owns_state = 779 #Nancy
-					owns_state = 785 #Plateau Lorrain
-				}
-				ROOT_can_grant_land = yes
-			}
-			FRP = {
-				OR = {
-					owns_state = 779 #Nancy
-					owns_state = 785 #Plateau Lorrain
-				}
+			var:785.owner = { #Lorraine
+				is_french_tag = yes
 				ROOT_can_grant_land = yes
 			}
 			var:42.owner = { #Palatinate

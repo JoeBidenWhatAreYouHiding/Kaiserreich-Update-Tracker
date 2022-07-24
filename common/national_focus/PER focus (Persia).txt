@@ -812,15 +812,11 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				AZR = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				AZR = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				AZR = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				AZR = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				AZR = { default_attack_AI_trigger_FROM = yes }
 			}
 			modifier = {
 				factor = 0
@@ -999,17 +995,10 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				NOT = { has_war_with = IRQ }
-				IRQ = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				NOT = { has_war_with = IRQ }
-				IRQ = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				NOT = { has_war_with = IRQ }
-				IRQ = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				OR = {
+					IRQ = { dont_start_major_faction_wars = yes }
+					IRQ = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
 		}
 		available = {
@@ -1065,15 +1054,11 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				ARM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				ARM = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				ARM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				ARM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				ARM = { default_attack_AI_trigger_FROM = yes }
 			}
 			modifier = {
 				factor = 0
@@ -1152,15 +1137,11 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				GEO = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				GEO = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				GEO = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				GEO = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				GEO = { default_attack_AI_trigger_FROM = yes }
 			}
 			modifier = {
 				factor = 0
@@ -1214,15 +1195,11 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				RAJ = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				RAJ = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				RAJ = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				RAJ = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				RAJ = { default_attack_AI_trigger_FROM = yes }
 			}
 			modifier = {
 				factor = 0
@@ -1317,6 +1294,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = PER_govt_reform
 		cost = 8
+		dynamic = yes
 		ai_will_do = {
 			factor = 100
 		}
@@ -1993,6 +1971,7 @@ focus_tree = {
 			factor = 0
 		}
 		cost = 5
+		dynamic = yes
 		prerequisite = {
 			focus = PER_army_funding
 		}
@@ -2065,6 +2044,7 @@ focus_tree = {
 			NOT = { has_war_with = INT }
 		}
 		cost = 5
+		dynamic = yes
 		prerequisite = {
 			focus = PER_army_funding
 		}
@@ -2138,6 +2118,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = PER_army_funding
 		cost = 5
+		dynamic = yes
 		ai_will_do = {
 			factor = 10
 		}
@@ -2661,7 +2642,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus PER_dockyards"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_coastal = yes
 					free_building_slots = {

@@ -184,10 +184,6 @@ INS_expansion_category = {
 			can_declare_war_on = POR
 		}
 		visible = {
-			is_subject = no
-			NOT = {
-				has_idea = INS_idea_insulindian_national_revolution
-			}
 			POR = {
 				owns_state = 721 #East Timor
 			}
@@ -202,30 +198,6 @@ INS_expansion_category = {
 		fire_only_once = yes
 		ai_will_do = {
 			base = 0
-			# modifier = {
-			# 	factor = 0
-			# 	ROOT_is_threatened = yes
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	date < 1939.9.1
-			# }
 		}
 	}
 
@@ -235,24 +207,13 @@ INS_expansion_category = {
 			original_tag = INS
 		}
 		available = {
-			AST = {
-				owns_state = 523
-			}
 			INS = {
 				owns_state = 669
 				owns_state = 843
 			}
-			NOT = {
-				has_war_with = AST
-			}
+			NOT = { has_war_with = AST }
 		}
 		visible = {
-			NOT = {
-				OR = {
-					is_subject = yes
-					has_idea = INS_idea_insulindian_national_revolution
-				}
-			}
 			AST = {
 				owns_state = 523
 			}
@@ -274,25 +235,11 @@ INS_expansion_category = {
 			original_tag = INS
 		}
 		available = {
-			HOL = {
-				owns_state = 669
-				owns_state = 843
-			}
-			HOL = {
-				has_full_control_of_state = 669
-				has_full_control_of_state = 843
-			}
+			NOT = { has_war_with = HOL }
 		}
 		visible = {
-			is_subject = no
-			NOT = {
-				has_idea = INS_idea_insulindian_national_revolution
-				has_war_with = HOL
-			}
-			HOL = {
-				owns_state = 669
-				owns_state = 843
-			}
+			669 = { is_owned_and_controlled_by = HOL }
+			843 = { is_owned_and_controlled_by = HOL }
 		}
 		cost = 50
 		complete_effect = {
@@ -302,30 +249,6 @@ INS_expansion_category = {
 		fire_only_once = yes
 		ai_will_do = {
 			base = 0
-			# modifier = {
-			# 	factor = 0
-			# 	ROOT_is_threatened = yes
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	date < 1939.9.1
-			# }
 		}
 	}
 
@@ -339,16 +262,9 @@ INS_expansion_category = {
 				has_full_control_of_state = 669
 				has_full_control_of_state = 843
 			}
-			AST = {
-				owns_state = 523
-			}
-			NOT = {
-				has_war_with = AST
-			}
+			NOT = { has_war_with = AST }
 		}
 		visible = {
-			is_subject = no
-			NOT = { has_idea = INS_idea_insulindian_national_revolution }
 			AST = {
 				owns_state = 523
 			}
@@ -371,30 +287,6 @@ INS_expansion_category = {
 		fire_only_once = yes
 		ai_will_do = {
 			base = 0
-			# modifier = {
-			# 	factor = 0
-			# 	ROOT_is_threatened = yes
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	date < 1939.9.1
-			# }
 		}
 	}
 
@@ -404,19 +296,10 @@ INS_expansion_category = {
 			original_tag = INS
 		}
 		available = {
-			country_exists = GEA
-			GEA = {
-				NOT = {
-					has_capitulated = yes
-				}
-			}
-			NOT = {
-				has_war_with = GEA
-			}
+			GEA = { has_capitulated = no }
+			NOT = { has_war_with = GEA }
 		}
 		visible = {
-			is_subject = no
-			NOT = { has_idea = INS_idea_insulindian_national_revolution }
 			country_exists = GEA
 		}
 		cost = 50
@@ -444,30 +327,6 @@ INS_expansion_category = {
 		fire_only_once = yes
 		ai_will_do = {
 			base = 0
-			# modifier = {
-			# 	factor = 0
-			# 	ROOT_is_threatened = yes
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	date < 1939.9.1
-			# }
 		}
 	}
 
@@ -478,7 +337,6 @@ INS_expansion_category = {
 		}
 		available = {
 			SAR = {
-				exists = yes
 				has_capitulated = no
 			}
 			INS = {
@@ -487,8 +345,6 @@ INS_expansion_category = {
 			}
 		}
 		visible = {
-			is_subject = no
-			NOT = { has_idea = INS_idea_insulindian_national_revolution }
 			country_exists = SAR
 		}
 		cost = 50
@@ -502,30 +358,6 @@ INS_expansion_category = {
 		fire_only_once = yes
 		ai_will_do = {
 			base = 0
-			# modifier = {
-			# 	factor = 0
-			# 	ROOT_is_threatened = yes
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			# }
-			# modifier = {
-			# 	factor = 0
-			# 	date < 1939.9.1
-			# }
 		}
 	}
 }

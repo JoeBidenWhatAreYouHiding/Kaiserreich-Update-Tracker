@@ -1529,6 +1529,7 @@ focus_tree = {
 						set_autonomy = {
 							target = ROOT
 							autonomy_state = kr_autonomous_puppet
+							end_wars = no
 						}
 					}
 				}
@@ -1538,9 +1539,11 @@ focus_tree = {
 					set_autonomy = {
 						target = ROOT
 						autonomy_state = kr_autonomous_puppet
+						end_wars = no
 					}
 				}
 			}
+			restore_previous_government_type = yes
 		}
 	}
 

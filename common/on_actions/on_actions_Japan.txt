@@ -77,7 +77,10 @@ on_actions = {
 		effect = {
 			if = {
 				limit = { FROM = { original_tag = JAP } }
-				JAP = { country_event = japfor.250 }
+				FROM = {
+					save_event_target_as = was_faction_leader
+					country_event = japfor.250
+				}
 			}
 		}
 	}

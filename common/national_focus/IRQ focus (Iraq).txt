@@ -770,7 +770,7 @@ focus_tree = {
 				limit = {
 					is_core_of = IRQ
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			add_ideas = IRQ_Miri_Distribution
 			custom_effect_tooltip = irq_program_redistribution_land
@@ -1311,45 +1311,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRQ_Expand_Iraqi_State_Railways"
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 20
+				producer = GER
+			}
 			if = {
 				limit = { 677 = { is_owned_and_controlled_by = ROOT } }
 				build_railway = {
 					path = { 12473 7671 1606 6883 1634 901 1938 10106 3916 8123 10793 2097 5095 78 12726 2089 8085 }
 				}
-				676 = {
-					add_extra_state_shared_building_slots = 1
-				}
-				291 = {
-					add_extra_state_shared_building_slots = 1
-				}
-				812 = {
-					add_extra_state_shared_building_slots = 1
-				}
 			}
 			else = {
 				build_railway = {
 					path = { 10106 3916 8123 10793 2097 5095 78 12726 2089 8085 }
-				}
-				676 = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-					}
-				}
-				291 = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-					}
-				}
-				812 = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-					}
 				}
 			}
 		}
@@ -1693,7 +1668,37 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRQ_Reorganise_Ottoman_Sixth_Army"
 			hidden_effect = {
-				load_oob = "IRQ_extra"
+				if = {
+					limit = { has_template = "Sixth Army Division" }
+					delete_unit_template_and_units = { division_template = "Sixth Army Division" disband = yes } #no cheating
+				}
+			}
+			division_template = {
+				name = "Sixth Army Division"
+				division_names_group = "SYR_INF_01"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 291 }
+				create_unit = {
+					division = "division_template = \"Sixth Army Division\" start_experience_factor = 0.1"
+					allow_spawning_on_enemy_provs = yes
+					owner = PREV
+					count = 2
+				}
+			}
+			if = {
+				limit = { has_character = IRQ_taha_al_hashimi }
 				add_corps_commander_role = {
 					character = IRQ_taha_al_hashimi
 					traits = {
@@ -1707,7 +1712,6 @@ focus_tree = {
 					logistics_skill = 1
 				}
 			}
-			custom_effect_tooltip = irq_extra_oob_tt
 		}
 	}
 
@@ -2502,7 +2506,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRQ_Iraqi_Egyptian_Cooperation"
 			random_owned_controlled_state = {
 				limit = {
-					state_population > 500000
+					state_population_k > 500
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2512,7 +2516,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
-					state_population > 500000
+					state_population_k > 500
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2883,7 +2887,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			random_owned_controlled_state = {
 				limit = {
-					state_population > 500000
+					state_population_k > 500
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {

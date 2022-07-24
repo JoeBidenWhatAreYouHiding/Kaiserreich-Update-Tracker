@@ -431,11 +431,13 @@ ideas = {
 
 		austro_daimler = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea austro_daimler" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			available = {
-				has_completed_focus = AUS_daimler
+				if = {
+					limit = { tag = AUS }
+					has_completed_focus = AUS_daimler
+				}
 			}
 			traits = {
 				industrial_manufacturer
@@ -451,9 +453,8 @@ ideas = {
 
 		austria_montage = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea austria_montage" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 775 }
 			traits = {
 				industrial_manufacturer
 			}
@@ -468,9 +469,8 @@ ideas = {
 
 		kapsch = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea kapsch" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				electronics_manufacturer
 			}
@@ -485,9 +485,8 @@ ideas = {
 
 		bayer_austria = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea bayer_austria" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				chemical_producer
 			}
@@ -502,9 +501,8 @@ ideas = {
 
 		semperit = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea semperit" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				chemical_producer
 			}
@@ -524,9 +522,8 @@ ideas = {
 
 		steyr = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea steyr" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 152 }
 			traits = {
 				steyr_arms_facility
 			}
@@ -537,9 +534,8 @@ ideas = {
 
 		leopold_gasser_waffenfabrik = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea leopold_gasser_waffenfabrik" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				infantry_equipment_producer_defense_1
 			}
@@ -550,9 +546,8 @@ ideas = {
 
 		bohler = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea bohler" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				artillery_producer_offense_1
 			}
@@ -563,9 +558,8 @@ ideas = {
 
 		hirtenberger = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea hirtenberger" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				artillery_producer_defense_1
 			}
@@ -576,9 +570,8 @@ ideas = {
 
 		puch = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea puch" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 775 }
 			traits = {
 				motorised_equipment_producer_offense_1
 			}
@@ -589,9 +582,8 @@ ideas = {
 
 		sauerwerke = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea sauerwerke" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				motorised_equipment_producer_mass_1
 			}
@@ -608,8 +600,17 @@ ideas = {
 		skoda = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea skoda" }
 			picture = skodove_zavody
-			allowed = { original_tag = AUS }
-			available = { has_completed_focus = AUS_skoda }
+			allowed = {
+				is_danubian_tag = yes
+				NOT = { tag = CZE }
+			}
+			visible = { owns_state = 4 }
+			available = {
+				if = {
+					limit = { tag = AUS }
+					has_completed_focus = AUS_skoda
+				}
+			}
 			traits = {
 				skoda_tank_factories
 			}
@@ -620,9 +621,8 @@ ideas = {
 
 		simmering_graz_pauker = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea simmering_graz_pauker" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				heavy_tank_producer_defense_1
 			}
@@ -633,9 +633,8 @@ ideas = {
 
 		wiener_neu_lokomotiv = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea wiener_neu_lokomotiv" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				medium_tank_producer_offense_2
 			}
@@ -646,9 +645,8 @@ ideas = {
 
 		graef_stift = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea graef_stift" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				small_tank_producer_mass_1
 			}
@@ -664,9 +662,8 @@ ideas = {
 
 		stabilimento_tecnico_triestino = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea stabilimento_tecnico_triestino" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 488 }
 			traits = {
 				capital_ship_producer_offense_1
 			}
@@ -677,11 +674,11 @@ ideas = {
 
 		ganz_danubius = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ganz_danubius" }
-			allowed = {
+			allowed = { is_danubian_tag = yes }
+			visible = {
 				OR = {
-					original_tag = AUS
-					original_tag = CZE
-					original_tag = HUN
+					owns_state = 4
+					owns_state = 43
 				}
 			}
 			traits = {
@@ -698,11 +695,13 @@ ideas = {
 
 		phoenix = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea phoenix" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			available = {
-				has_completed_focus = AUS_phoenix
+				if = {
+					limit = { tag = AUS }
+					has_completed_focus = AUS_phoenix
+				}
 			}
 			traits = {
 				phoenix_fighters
@@ -714,9 +713,8 @@ ideas = {
 
 		wiener_neu_flugzeug = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea wiener_neu_flugzeug" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				fighter_producer_defense_1
 			}
@@ -727,9 +725,8 @@ ideas = {
 
 		aviatik = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea aviatik" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				bomber_producer_offense_1
 			}
@@ -740,9 +737,8 @@ ideas = {
 
 		hansa_brandenburg_aus = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea hansa_brandenburg_aus" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				bomber_producer_defense_1
 			}
@@ -753,9 +749,8 @@ ideas = {
 
 		oeffag = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea oeffag" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				nav_cas_producer_offense_1
 			}
@@ -766,9 +761,8 @@ ideas = {
 
 		lohner = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea lohner" }
-			allowed = {
-				original_tag = AUS
-			}
+			allowed = { is_danubian_tag = yes }
+			visible = { owns_state = 4 }
 			traits = {
 				nav_cas_producer_mass_1
 			}

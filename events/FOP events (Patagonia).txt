@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # Patagonian Events
 ###########################
 # By WordZero, P.A.S.C., Drozdovite, and Fort
@@ -135,27 +135,12 @@ country_event = { # calling for chilean volunteers
 
 	option = { # yay
 		name = fop.3.a
-		division_template = {
-			name = "Chilean Volunteers"
-			division_names_group = SPAN_MIL_01
-			is_locked = yes
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 0 y = 3 }
-				infantry = { x = 0 y = 4 }
-			}
-			template_counter = 68
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = CHL
 		}
-		random_owned_controlled_state = {
-			prioritize = { 512 }
-			create_unit = {
-				division = "name = \"Chilean Volunteers\" division_template = \"Chilean Volunteers\" start_experience_factor = 0.2"
-				owner = ROOT
-				count = 1
-			}
-		}
+		add_manpower = 6000
 		add_opinion_modifier = {
 			target = CHL
 			modifier = KR_pleased
@@ -2525,13 +2510,22 @@ country_event = {#FROM or War!
 	option = {#back FROM
 		name = fop.223.a
 		ai_chance = {
-			base = 50
+			base = 15
 			modifier = {
-				factor = 8
-				OR = {
-					has_government = radical_socialist
-					has_government = syndicalist
-				}
+				add = -5
+				has_government = totalist
+			}
+			modifier = {
+				add = -5
+				FOP = { has_country_flag = FOP_assisted_INT_1 }
+			}
+			modifier = {
+				add = -10
+				FOP = { has_country_flag = FOP_assisted_INT_2 }
+			}
+			modifier = {
+				add = -15
+				FOP = { has_country_flag = FOP_assisted_INT_3 }
 			}
 		}
 		remove_from_faction = FROM
@@ -2542,11 +2536,7 @@ country_event = {#FROM or War!
 	option = {#back Argentina
 		name = fop.223.b
 		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 8
-				has_government = totalist
-			}
+			base = 15
 		}
 		remove_from_faction = event_target:andesia_crisis_tag
 		FROM = {
@@ -2609,7 +2599,6 @@ country_event = {#UASS Collapses
 
 	option = {
 		name = fop.226.a
-		remove_ideas = FOP_resistance_to_andesia
 		drop_cosmetic_tag = yes
 		every_enemy_country = {
 			limit = {
@@ -2620,6 +2609,24 @@ country_event = {#UASS Collapses
 		}
 		clear_array = FOP_collapse_tags_array
 		hidden_effect = {
+			remove_ideas = {
+				FOP_resistance_to_andesia_political
+				FOP_resistance_to_andesia_political_1
+				FOP_resistance_to_andesia_political_2
+				FOP_resistance_to_andesia_political_3
+				FOP_resistance_to_andesia_political_4
+				FOP_resistance_to_andesia_political_5
+				FOP_resistance_to_andesia_political_6
+				FOP_resistance_to_andesia_economical
+				FOP_resistance_to_andesia_economical_1
+				FOP_resistance_to_andesia_economical_2
+				FOP_resistance_to_andesia_economical_3
+				FOP_resistance_to_andesia_economical_4
+				FOP_resistance_to_andesia_economical_5
+				FOP_andesian_red_army
+				FOP_AND_federalised
+				FOP_AND_unitary
+			}
 			country_event = { id = fop.336 days = 7 }
 			every_state = {
 				limit = {
@@ -2880,22 +2887,30 @@ country_event = {#Negotiations with old military and bureacracy
 			character_list_tooltip = {
 				limit = {
 					OR = {
+						# Military
+						is_character = ARG_juan_pistarini
 						is_character = ARG_enrique_mosconi
+						is_character = ARG_bernardo_alberte
+						# Civilians
 						is_character = ARG_jose_maria_sobral
 						is_character = ARG_manuel_savio
-						is_character = ARG_juan_pistarini
-						is_character = ARG_pedro_eugenio_aramburu
+						is_character = ARG_luis_costa
+						is_character = ARG_juan_cooke
+						is_character = ARG_carlos_sanchez_viamonte
 					}
 				}
 			}
 		}
 		hidden_effect = {
 			ARG = {
+				ARG_juan_pistarini = { set_nationality = ROOT }
 				ARG_enrique_mosconi = { set_nationality = ROOT }
 				ARG_jose_maria_sobral = { set_nationality = ROOT }
+				ARG_bernardo_alberte = { set_nationality = ROOT }
 				ARG_manuel_savio = { set_nationality = ROOT }
-				ARG_juan_pistarini = { set_nationality = ROOT }
-				ARG_pedro_eugenio_aramburu = { set_nationality = ROOT }
+				ARG_luis_costa = { set_nationality = ROOT }
+				ARG_juan_cooke = { set_nationality = ROOT }
+				ARG_carlos_sanchez_viamonte = { set_nationality = ROOT }
 			}
 		}
 	}
@@ -3763,7 +3778,7 @@ country_event = {#Asking England for Submarine designs
 	}
 }
 
-country_event = {#Failed resistance Buenos Aires
+country_event = {
 	id = fop.357
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.357 FROM = [From.GetName]" }
 	title = fop.357.t
@@ -3803,6 +3818,247 @@ country_event = { # uruguay refused!
 	}
 }
 
+### 400+ - Support the Internationale ###
+country_event = { # Select how much can we spare
+	id = fop.400
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.400 FROM = [From.GetName]" }
+	title = fop.400.t
+	desc = fop.400.d
+	picture = GFX_report_event_generic_food
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Food only
+		name = fop.400.a
+		ai_chance = { base = 5 }
+		if = {
+			limit = { ENG = { has_socialist_government = yes }}
+			ENG = { 
+				add_ideas = FOP_economic_support_1
+				country_event =  fop.401
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		if = {
+			limit = { FRA = { has_socialist_government = yes }}
+			FRA = { 
+				add_ideas = FOP_economic_support_1
+				country_event =  fop.401
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		add_ideas = FOP_economic_support_idea_for_FOP_1
+	}
+	option = { # Limited support
+		name = fop.400.b
+		ai_chance = { base = 15 }
+		if = {
+			limit = { ENG = { has_socialist_government = yes }}
+			ENG = { 
+				add_ideas = FOP_economic_support_2
+				country_event =  fop.402
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		if = {
+			limit = { FRA = { has_socialist_government = yes }}
+			FRA = { 
+				add_ideas = FOP_economic_support_2
+				country_event =  fop.402
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		add_ideas = FOP_economic_support_idea_for_FOP_2
+		set_country_flag = FOP_assisted_INT_1
+	}
+	option = { # Extensive support
+		name = fop.400.c
+		ai_chance = { 
+			base = 25
+			modifier = {
+				factor = 0
+				has_government = radical_socialist
+			}
+		}
+		if = {
+			limit = { ENG = { has_socialist_government = yes }}
+			ENG = { 
+				add_ideas = FOP_economic_support_3
+				country_event =  fop.403
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		if = {
+			limit = { FRA = { has_socialist_government = yes }}
+			FRA = { 
+				add_ideas = FOP_economic_support_3
+				country_event =  fop.403
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		add_ideas = FOP_economic_support_idea_for_FOP_3
+		set_country_flag = FOP_assisted_INT_2
+	}
+	option = { # Send as much as we can
+		name = fop.400.e
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				has_government = radical_socialist
+			}
+		}
+		if = {
+			limit = { ENG = { has_socialist_government = yes }}
+			ENG = { 
+				add_ideas = FOP_economic_support_4
+				country_event =  fop.404
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		if = {
+			limit = { FRA = { has_socialist_government = yes }}
+			FRA = { 
+				add_ideas = FOP_economic_support_4 
+				country_event =  fop.404
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		add_ideas = FOP_economic_support_idea_for_FOP_4
+		set_country_flag = FOP_assisted_INT_3
+	}
+}
+
+country_event = { # Notification - food only
+	id = fop.401
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.401 FROM = [From.GetName]" }
+	title = fop.401.t
+	desc = fop.401.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = { # Thanks I guess
+		name = fop.401.a
+		effect_tooltip = {
+			add_ideas = FOP_economic_support_1
+		}
+	}
+}
+
+country_event = { # Notification - limited support
+	id = fop.402
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.402 FROM = [From.GetName]" }
+	title = fop.402.t
+	desc = fop.402.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = { # Thanks
+		name = fop.402.a
+		effect_tooltip = {
+			add_ideas = FOP_economic_support_2
+		}
+		# small relationship boost here
+	}
+}
+
+country_event = { # Notification - extended support
+	id = fop.403
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.403 FROM = [From.GetName]" }
+	title = fop.403.t
+	desc = fop.403.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = { # Thanks comrades!
+		name = fop.403.a
+		effect_tooltip = {
+			add_ideas = FOP_economic_support_3
+		}
+		# bigger relationship boost here
+	}
+}
+
+country_event = { # Notification - full support
+	id = fop.404
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.404 FROM = [From.GetName]" }
+	title = fop.404.t
+	desc = fop.404.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = { # Solidarity forever!
+		name = fop.404.a
+		effect_tooltip = {
+			add_ideas = FOP_economic_support_4
+		}
+		# bigger relationship boost here
+	}
+}
+
+country_event = { # A question of andesia
+	id = fop.499
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.499 FROM = [From.GetName]" }
+	title = fop.499.t
+	desc = fop.499.d
+	picture = GFX_report_event_ARG_parliament
+	trigger = {
+		has_government = totalist
+		is_ai = no
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Unlock Andesia decisions
+		name = fop.499.a
+		set_country_flag = FOP_decided_to_form_andesia
+		custom_effect_tooltip = FOP_AND_will_unlock_andesia_tt
+		custom_effect_tooltip = FOP_AND_internationale_warning_tt
+		add_stability = -0.05
+	}
+	option = { # Nope
+		name = fop.499.b
+	}
+}
+
+country_event = { # Declaration of andesia
+	id = fop.500
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.500 FROM = [From.GetName]" }
+	title = fop.500.t
+	desc = fop.500.d
+	picture = GFX_report_event_ELS_parade
+
+	is_triggered_only = yes
+
+	option = { # Solidarity forever!
+		name = fop.500.a
+		add_political_power = 15
+	}
+}
+
+country_event = { # Unitary or federal
+	id = fop.501
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fop.501 FROM = [From.GetName]" }
+	title = fop.501.t
+	desc = fop.501.d
+	picture = GFX_report_event_ARG_parliament
+
+	is_triggered_only = yes
+
+	option = { # Federalism
+		name = fop.501.a
+		add_ideas = FOP_AND_federalised
+	}
+	option = { # Unitary
+		name = fop.501.b
+		add_ideas = FOP_AND_unitary
+	}
+}
 ############ Coup Event Chains start ######################
 
 country_event = { #Communist Battle of Buenos Aires
@@ -4373,7 +4629,6 @@ country_event = { #The Government Falls
 			retire_character = RUS_iosib_dzugashvili
 			clear_global_event_target = RUS_iosib_dzugashvili_target
 		}
-		delete_unit_template_and_units = { division_template = "Third Internationale Expeditionary Force" }
 		hidden_effect = {
 			country_event = {
 				id = fopcoup.103
@@ -5207,7 +5462,6 @@ country_event = { #Expeditionary Force Returns to France (FOP)
 	option = {
 		name = fopcoup.42.a
 		trigger = { country_exists = INT }
-		delete_unit_template_and_units = { division_template = "Third Internationale Expeditionary Force" }
 		effect_tooltip = { FRA_nestor_makhno = { set_nationality = INT } }
 		hidden_effect = {
 			FRA_nestor_makhno = { remove_army_chief_role = yes }
@@ -5233,10 +5487,6 @@ country_event = { #Expeditionary Force Returns to France (FOP)
 	option = {
 		name = fopcoup.42.b
 		trigger = { NOT = { country_exists = INT } }
-		set_division_template_lock = {
-			division_template = "Third Internationale Expeditionary Force"
-			is_locked = no
-		}
 	}
 }
 
@@ -5294,6 +5544,8 @@ country_event = { #Expeditionary Force Returns to France (FRA)
 				character = FRA_nestor_makhno
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = FRA_nestor_makhno_advisor
 					available = {
 						has_government = radical_socialist

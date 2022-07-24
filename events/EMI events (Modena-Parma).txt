@@ -297,8 +297,10 @@ country_event = { #Roatta and Malaguti to serve the new Emilian state
 		event_target:SRD_mario_roatta_target = { set_nationality = EMI }
 		if = {
 			limit = { has_character = SRD_mario_roatta }
-			promote_character = { ideology = paternal_autocrat_subtype }
-			promote_character = { ideology = national_populist_subtype }
+			SRD_mario_roatta = {
+				promote_character = paternal_autocrat_subtype
+				promote_character = national_populist_subtype
+			}
 		}
 		event_target:SRD_bruno_malaguti_target = { set_nationality = EMI }
 	}

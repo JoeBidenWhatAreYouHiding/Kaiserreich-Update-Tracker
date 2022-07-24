@@ -1241,7 +1241,6 @@ technologies = {
 
 		enable_equipment_modules = {
 			ship_torpedo_2
-			ship_modules_tech
 		}
 
 		folder = {

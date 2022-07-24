@@ -1,4 +1,4 @@
-﻿###################################
+###################################
 # Iraqi Events by Jeankedezeehond #
 ###################################
 add_namespace = irqrev
@@ -24,14 +24,7 @@ country_event = {	#Iraqi Revolt
 
 	immediate = {
 		if = {
-			limit = {
-				291 = {
-					is_owned_and_controlled_by = OTT
-				}
-			}
-			291 = {
-				force_disable_resistance = { clear = yes }
-			}
+			limit = { 291 = { is_owned_and_controlled_by = OTT } }
 			IRQ = {
 				transfer_technology_without_doctrines = yes
 				transfer_state = 291
@@ -67,7 +60,7 @@ country_event = {	#Iraqi Revolt
 					type = annex_everything
 				}
 				add_ideas = ott_syrian_uprising
-				load_oob = IRQ_revolt
+				IRQ_spawn_initial_units = yes
 			}
 			EGY = {
 				add_to_faction = IRQ
@@ -104,7 +97,10 @@ country_event = { #Yasin al-Hashimi takes control
 
 	immediate = {
 		hidden_effect = {
-			load_oob = "IRQ"
+			if = {
+				limit = { num_divisions < 1 }
+				IRQ_spawn_initial_units = yes
+			}
 			every_country = {
 				limit = {
 					is_in_faction_with = EGY
@@ -714,6 +710,8 @@ country_event = { #Coup d'Etat in Baghdad
 				character = IRQ_rashid_al_gaylani
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = IRQ_rashid_al_gaylani_political_advisor
 					traits = { KR_conniving_opportunist }
 					removal_cost = -1 #intended - he is only supposed to be able to be removed via event

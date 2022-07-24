@@ -72,21 +72,19 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_country_leader = { character = CAN_george_v }
+		has_country_leader = { character = GBR_george_frederick_windsor }
 	}
 
 	option = {
 		name = canada.4.a
-		clr_global_flag = CAN_king_george_V
-		set_global_flag = CAN_king_edward_VIII
-		retire_character = CAN_george_v
-		clear_global_event_target = CAN_george_v_target
+		GBR_george_frederick_windsor = { set_character_flag = is_dead }
+		retire_character = GBR_george_frederick_windsor
 		set_variable = { king_popularity = 2 }
 		set_variable = { global.king_edward_story = 0 }
 		add_stability = -0.05
 		custom_effect_tooltip = CAN_king_speech_unlocked
 		hidden_effect = {
-			CAN_create_monarchy = yes
+			GBR_create_edward = yes
 			# official coronation
 			country_event = { id = canada.5 days = 90 }
 			# country-specific death events
@@ -127,7 +125,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_country_leader = { character = CAN_edward_windsor }
+		has_country_leader = { character = GBR_edward_windsor }
 	}
 
 	option = {
@@ -1249,12 +1247,16 @@ country_event = {
 		trigger = { country_exists = ENG }
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0.2
+				threat > 0.5
+			}
 		}
 		add_named_threat = {
-			threat = 7
+			threat = 4
 			name = CAN_provocative_naval_exercise
 		}
-		navy_experience = 50
+		navy_experience = 75
 		ENG = {
 			add_opinion_modifier = { target = ROOT modifier = KR_disapproves_of_govt }
 			country_event = canada.40
@@ -1270,7 +1272,7 @@ country_event = {
 			base = 10
 		}
 		add_named_threat = {
-			threat = 4
+			threat = 2
 			name = CAN_provocative_naval_exercise
 		}
 		navy_experience = 50
@@ -1293,10 +1295,10 @@ country_event = {
 			base = 10
 		}
 		add_named_threat = {
-			threat = 3
+			threat = 1
 			name = CAN_provocative_naval_exercise
 		}
-		navy_experience = 50
+		navy_experience = 35
 		USA = {
 			add_opinion_modifier = { target = ROOT modifier = KR_disapproves_of_govt }
 			country_event = canada.40
@@ -2443,6 +2445,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_robert_manion }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_robert_manion = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -2464,6 +2477,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_robert_manion }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_robert_manion = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 					activate = yes
 				}
@@ -2478,6 +2502,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_robert_manion }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_robert_manion = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -2879,6 +2914,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_robert_manion }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_robert_manion = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -2900,6 +2946,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_robert_manion }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_robert_manion = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 					activate = yes
 				}
@@ -2914,6 +2971,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_robert_manion }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_robert_manion = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -2958,6 +3026,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_major_james_coldwell }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_major_james_coldwell = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -2978,6 +3057,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_major_james_coldwell }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_major_james_coldwell = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 					activate = yes
 				}
@@ -2992,6 +3082,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_major_james_coldwell }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_major_james_coldwell = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -3281,6 +3382,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_john_bracken }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_john_bracken = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -3302,6 +3414,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_john_bracken }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_john_bracken = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 					activate = yes
 				}
@@ -3316,6 +3439,17 @@ country_event = {
 						modifier = { custom_modifier_tooltip = cannot_replace_character }
 						cost = 0
 						removal_cost = -1
+						on_add = {
+							random_character = {
+								limit = { is_character = CAN_john_bracken }
+								set_character_flag = is_second_in_command
+								set_variable = { PREV.current_second_in_command_character = THIS }
+							}
+						}
+						on_remove = {
+							CAN_john_bracken = { clr_character_flag = is_second_in_command }
+							clear_variable = current_second_in_command_character
+						}
 					}
 				}
 			}
@@ -4410,9 +4544,8 @@ country_event = {
 			idea = CAN_imp_investment_1
 			days = 180
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
-				is_controlled_by = IRE
 				is_core_of = IRE
 				industrial_complex > 0
 			}
@@ -4433,9 +4566,8 @@ country_event = {
 			idea = CAN_imp_advisors_1
 			days = 180
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
-				is_controlled_by = IRE
 				is_core_of = IRE
 				arms_factory > 0
 			}
@@ -4456,9 +4588,8 @@ country_event = {
 			idea = CAN_iedc_naval1
 			days = 180
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
-				is_controlled_by = IRE
 				is_core_of = IRE
 				dockyard > 0
 			}
@@ -5599,7 +5730,7 @@ country_event = {
 				has_state_flag = CAN_american_refugee_2
 			}
 			any_neighbor_state = {
-				check_variable = { state_population > 750000 }
+				state_population_k > 750
 				OR = {
 					is_owned_by = CSA
 					controller = {
@@ -5625,15 +5756,14 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
-					is_controlled_by = CAN
 					NOT = {
 						has_state_flag = CAN_american_refugee_1
 						has_state_flag = CAN_american_refugee_2
 					}
 					any_neighbor_state = {
-						check_variable = { state_population > 750000 }
+						state_population_k > 750
 						OR = {
 							is_owned_by = CSA
 							controller = {
@@ -5646,7 +5776,7 @@ country_event = {
 				save_event_target_as = refugee_state
 				random_neighbor_state = {
 					limit = {
-						check_variable = { state_population > 750000 }
+						state_population_k > 750
 						OR = {
 							is_owned_by = CSA
 							controller = {
@@ -5712,7 +5842,7 @@ country_event = {
 			is_controlled_by = CAN
 			has_state_flag = CAN_american_refugee_1
 			any_neighbor_state = {
-				check_variable = { state_population > 1250000 }
+				state_population_k > 1250
 				OR = {
 					is_owned_by = CSA
 					controller = {
@@ -5734,12 +5864,11 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
-					is_controlled_by = CAN
 					has_state_flag = CAN_american_refugee_1
 					any_neighbor_state = {
-						check_variable = { state_population > 1250000 }
+						state_population_k > 1250
 						OR = {
 							is_owned_by = CSA
 							controller = {
@@ -5752,7 +5881,7 @@ country_event = {
 				save_event_target_as = refugee_state
 				random_neighbor_state = {
 					limit = {
-						check_variable = { state_population > 1250000 }
+						state_population_k > 1250
 						OR = {
 							is_owned_by = CSA
 							controller = {
@@ -6586,6 +6715,7 @@ country_event = {
 						tag = CAN
 						is_in_faction_with = CAN
 					}
+					is_in_central_america = no
 				}
 				country_event = canada.221
 			}
@@ -7312,7 +7442,7 @@ country_event = {
 
 	option = { # appoint Prince Albert
 		name = canada.302.a
-		trigger = { has_global_flag = CAN_king_edward_VIII }
+		trigger = { ENT_king_edward_viii = yes }
 		ai_chance = {
 			base = 60
 		}
@@ -7391,10 +7521,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = CAN_gov_gen_albert }
-				CAN_albert_windsor = {
-					set_character_name = CAN_albert_windsor_governor
-					set_nationality = PREV
-				}
+				GBR_albert_windsor = { set_nationality = PREV }
 			}
 			else_if = {
 				limit = { has_country_flag = CAN_gov_gen_mountbatten }
@@ -7411,7 +7538,10 @@ country_event = {
 		name = canada.303.a
 		if = {
 			limit = { has_country_flag = CAN_gov_gen_albert }
-			CAN_albert_windsor = {
+			hidden_effect = {
+				GBR_albert_windsor = { remove_all_country_leader_roles = yes }
+			}
+			GBR_albert_windsor = {
 				add_country_leader_role = {
 					country_leader = { ideology = social_democrat_subtype }
 					promote_leader = yes

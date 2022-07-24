@@ -868,10 +868,6 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CAN_special_branch_idea_lar" }
 			picture = generic_spy_intel
 			allowed = { always = no }
-			research_bonus = {
-				decryption_tech = 0.10
-				encryption_tech = 0.10
-			}
 			modifier = {
 				operative_slot = 1
 				intel_network_gain = 0.20

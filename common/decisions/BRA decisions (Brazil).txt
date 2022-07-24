@@ -812,6 +812,7 @@ BRA_brazil_war_decisions = {
 		allowed = { always = no }			# Activated by event
 
 		available = {
+			has_global_flag = second_weltkrieg_has_started
 			BRA = { controls_all_owned_states = yes }
 			OR = {
 				is_in_faction = no

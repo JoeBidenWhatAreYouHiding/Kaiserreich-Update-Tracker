@@ -55,6 +55,8 @@ if = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
 		basic_heavy_tank_chassis = 1
+		armor_tech_1 = 1
+		engine_tech_1 = 1
 	}
 }
 
@@ -214,14 +216,6 @@ country_event = { id = literature.15 days = 952 } #Tintin and the Blue Lotus
 country_event = { id = gerdom.40 days = 1354 } #The first SPD Reichskanzler is dead!
 country_event = { id = gerdom.41 days = 1354 } #Otto Wels dies
 
-# End WK2 AI boosts
-country_event = { id = ai_events.302 days = 2558 }
-FRA = { country_event = { id = ai_events.302 days = 2558 } }
-ENG = { country_event = { id = ai_events.302 days = 2558 } }
-RUS = { country_event = { id = ai_events.302 days = 2558 } }
-SOV = { country_event = { id = ai_events.302 days = 2558 } }
-AUS = { country_event = { id = ai_events.302 days = 2558 } }
-
 ### Country Leaders ###
 recruit_character = GER_wilhelm_ii #order matters - first one takes precedence
 recruit_character = GER_wilhelm_iii
@@ -240,7 +234,7 @@ recruit_character = GER_heinrich_class
 
 ### Field Marshals ###
 recruit_character = GER_gerd_von_rundstedt
-recruit_character = GER_rupprecht_von_bayern
+recruit_character = GER_alfred_von_vollard_bockelberg
 recruit_character = GER_august_von_mackensen
 
 ### Generals ###
@@ -264,6 +258,7 @@ recruit_character = GER_hermann_hoth
 recruit_character = GER_franz_von_bayern
 recruit_character = GER_curt_haase
 recruit_character = GER_walther_von_reichenau
+recruit_character = GER_rupprecht_von_bayern
 
 ### Admirals ###
 recruit_character = GER_karl_donitz
@@ -341,10 +336,6 @@ random_character = {
 random_character = {
 	limit = { is_character = GER_wilhelm_iii }
 	save_global_event_target_as = GER_wilhelm_iii_target
-}
-random_character = {
-	limit = { is_character = GER_rupprecht_von_bayern }
-	save_global_event_target_as = GER_rupprecht_von_bayern_target
 }
 
 if = {

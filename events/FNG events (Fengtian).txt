@@ -1208,7 +1208,7 @@ country_event = { #Mantetsu Protests Railway Construction
 	id = fengtian.25
 	title = fengtian.25.t
 	desc = fengtian.25.d
-	picture = GFX_report_event_JAP_japan_foreign_minister
+	picture = GFX_report_event_JAP_foreign_minister
 
 	is_triggered_only = yes
 
@@ -1414,127 +1414,22 @@ country_event = { #Mantetsu Lifts Railway Restrictions
 	desc = fengtian.30.d
 	picture = GFX_report_event_FNG_railway_construction_1
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	trigger = {
 		has_war = yes
-		NOT = {
-			has_war_with = JAP
-		}
-		OR = {
-			controls_state = 715
-			controls_state = 716
-			controls_state = 885
-			controls_state = 886
-			controls_state = 328
-		}
-		OR = {
-			715 = {
-				has_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-			716 = {
-				has_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-			885 = {
-				has_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-			886 = {
-				has_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-			328 = {
-				has_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
+		NOT = { has_war_with = JAP }
+		any_owned_state = {
+			has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 		}
 	}
 
 	option = { #Finally!
 		name = fengtian.30.a
-		if = {
-			limit = {
-				715 = {
-					has_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
-				}
-			}
-			set_country_flag = FNG_715_monopoly
-			715 = {
-				remove_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				716 = {
-					has_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
-				}
-			}
-			set_country_flag = FNG_716_monopoly
-			716 = {
-				remove_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				885 = {
-					has_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
-				}
-			}
-			set_country_flag = FNG_885_monopoly
-			885 = {
-				remove_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				886 = {
-					has_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
-				}
-			}
-			set_country_flag = FNG_886_monopoly
-			886 = {
-				remove_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				328 = {
-					has_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
-				}
-			}
-			set_country_flag = FNG_328_monopoly
-			328 = {
-				remove_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
+		every_owned_state = {
+			limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
+			set_state_flag = FNG_monopoly
+			remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 		}
 	}
 }
@@ -1545,72 +1440,19 @@ country_event = { #Mantetsu Reimposes Railway Restrictions
 	desc = fengtian.31.d
 	picture = GFX_report_event_FNG_railway_construction_1
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	trigger = {
-		FNG = {
-			has_war = no
-		}
+		has_war = no
+		any_owned_state = { has_state_flag = FNG_monopoly }
 	}
 
 	option = { #Naturally...
 		name = fengtian.31.a
-		if = {
-			limit = {
-				has_country_flag = FNG_715_monopoly
-			}
-			clr_country_flag = FNG_715_monopoly
-			715 = {
-				add_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = FNG_716_monopoly
-			}
-			clr_country_flag = FNG_716_monopoly
-			716 = {
-				add_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = FNG_885_monopoly
-			}
-			clr_country_flag = FNG_885_monopoly
-			885 = {
-				add_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = FNG_886_monopoly
-			}
-			clr_country_flag = FNG_886_monopoly
-			886 = {
-				add_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = FNG_328_monopoly
-			}
-			clr_country_flag = FNG_328_monopoly
-			328 = {
-				add_dynamic_modifier = {
-					modifier = FNG_mantetsu_monopoly
-				}
-			}
+		every_owned_state = {
+			limit = { has_state_flag = FNG_monopoly }
+			clr_state_flag = FNG_monopoly
+			add_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 		}
 	}
 }
@@ -2437,14 +2279,15 @@ country_event = { #Resume the Wang Yongjiang Reforms
 			}
 		}
 		activate_advisor = FNG_sun_qichang
-		set_temp_variable = { ZCPOP = 5 }
-		FNG_ZCPOP = yes
+		set_temp_variable = { CAPOP = 5 }
+		FNG_CAPOP = yes
 		ai_chance = {
-			base = 0
+			base = 33
 			modifier = {
-				set_temp_variable = { FNG_concordia_positive_factor = party_popularity@market_liberal }
-				multiply_temp_variable = { FNG_concordia_positive_factor = 165 } #33 at 20%
-				add = FNG_concordia_positive_factor
+				has_political_power > 0
+				set_temp_variable = { FNG_concordia_negative_factor = party_popularity@market_liberal }
+				multiply_temp_variable = { FNG_concordia_negative_factor = -165 } #-33 at 20%
+				add = FNG_concordia_negative_factor
 			}
 		}
 	}
@@ -12724,6 +12567,7 @@ country_event = { #Yuting Takes Over
 				set_autonomy = {
 					target = ROOT
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 				country_event = {
 					id = fengtian.300
@@ -12735,7 +12579,7 @@ country_event = { #Yuting Takes Over
 		retire_character = FNG_zhang_xueliang
 		retire_character = FNG_wu_junsheng
 		hidden_effect = {
-			remove_ideas = FNG_Assertive_Governance
+			remove_dynamic_modifier = { modifier = FNG_factionalism_modifier }
 			default_party_popularity_PP_gain = yes
 			set_popularities = {
 				totalist = FNG_totalist

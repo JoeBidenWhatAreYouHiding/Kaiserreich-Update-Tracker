@@ -367,6 +367,7 @@ country_event = { #Re-establish German rule
 		set_autonomy = {
 			target = SWA
 			autonomy_state = kr_colonial_government
+			end_wars = no
 		}
 		hidden_effect = {
 			SWA = {

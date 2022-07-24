@@ -5377,7 +5377,7 @@ QIE_defensive_preparations_category = {
 		}
 
 		highlight_states = {
-			highlight_provinces = { 7129 7656 9958 1004 11931 }
+			highlight_state_targets = { state = 1059 }
 		}
 
 		ai_will_do = { factor = 100 }
@@ -5505,10 +5505,9 @@ QIE_defensive_preparations_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove QIE_withdraw_civilian_factories_to_hubei"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					is_controlled_by_ROOT_or_ally = yes
 					industrial_complex > 0
 					NOT = {
 						state = 1048
@@ -5520,10 +5519,8 @@ QIE_defensive_preparations_category = {
 					level = 1
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
-					is_controlled_by_ROOT_or_ally = yes
-					industrial_complex > 0
 					OR = {
 						state = 1048
 						state = 620
@@ -5616,10 +5613,9 @@ QIE_defensive_preparations_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove QIE_withdraw_arms_factories_to_hubei"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					is_controlled_by_ROOT_or_ally = yes
 					arms_factory > 0
 					NOT = {
 						state = 1048
@@ -5631,10 +5627,8 @@ QIE_defensive_preparations_category = {
 					level = 1
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
-					is_controlled_by_ROOT_or_ally = yes
-					arms_factory > 0
 					OR = {
 						state = 1048
 						state = 620

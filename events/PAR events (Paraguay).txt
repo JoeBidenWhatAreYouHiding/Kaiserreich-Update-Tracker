@@ -77,8 +77,8 @@ country_event = { #black monday
 		name = par.3.a
 		add_ideas = PAR_bm
 		set_country_flag = PAR_black_monday
-		add_political_power = -100
-		add_stability = -0.2
+		add_war_support = -0.20
+		add_stability = -0.20
 		hidden_effect = {
 			country_event = {
 				id = par.26
@@ -123,8 +123,8 @@ country_event = { #pensionists protest
 
 	option = {
 		name = par.5.a
-		add_political_power = -50
-		add_stability = -0.1
+		add_stability = -0.10
+		add_war_support = -0.10
 	}
 }
 
@@ -139,7 +139,7 @@ country_event = { #military discontent
 
 	option = {
 		name = par.6.a
-		add_stability = -0.1
+		add_stability = -0.10
 	}
 }
 
@@ -158,7 +158,9 @@ country_event = { #franco in chile
 
 	option = {
 		name = par.7.a
-		add_political_power = -20
+		add_popularity = {
+			ideology = totalist popularity = 0.02
+		}
 		hidden_effect = {
 			CHL = {
 				country_event = {
@@ -292,7 +294,7 @@ country_event = { #aid the AUS?
 		ai_chance = {
 			base = 30
 		}
-		add_political_power = -100
+		add_political_power = -25
 	}
 }
 
@@ -928,7 +930,9 @@ country_event = { #Paraguay in the Internationale - DENIED
 
 	option = {
 		name = par.201.a
-		add_political_power = -50
+		add_popularity = {
+			ideology = totalist popularity = -0.05
+		}
 	}
 }
 
@@ -1099,6 +1103,7 @@ country_event = { #Aftermath of the Chaco war
 		name = par.24.a
 		add_manpower = 10000
 		army_experience = 25
+		add_political_power = 25
 	}
 }
 
@@ -1271,7 +1276,7 @@ country_event = { #Augustin Barrios tours the Longist states
 
 	option = { #every man a king played on an acoustic guitar
 		name = par.30.a
-		add_political_power = 10
+		add_political_power = 20
 	}
 }
 
@@ -1401,7 +1406,7 @@ country_event = {
 
 	option = {
 		name = par.34.a
-		add_political_power = 50
+		add_political_power = 100
 		if = {
 			limit = {
 				has_socialist_government = yes
@@ -1411,3 +1416,104 @@ country_event = {
 	}
 }
 
+country_event = { #Paraguay offers help to build Uruguay's military, Uruguay's POV
+	id = par.35
+	immediate = { log = "[GetDateText]: [Root.GetName]: event par.35 FROM = [From.GetName]" }
+
+	title = par.35.t
+	desc = par.35.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #oh my, thank you!
+		name = par.35.a
+		add_ideas = URG_paraguay_military_help
+		ai_chance = {
+			base = 25
+		}
+		hidden_effect = {
+			PAR = {
+				country_event = par.36
+			}
+		}
+	}
+	option = { #thanks, but we are doing fine by ourselves
+		name = par.35.b
+		ai_chance = {
+			base = 1
+		}
+		hidden_effect = {
+			PAR = {
+				country_event = par.37
+			}
+		}
+	}
+}
+
+country_event = { #Uruguay accepts the above, Paraguay's POV
+	id = par.36
+	immediate = { log = "[GetDateText]: [Root.GetName]: event par.36 FROM = [From.GetName]" }
+
+	title = par.36.t
+	desc = par.36.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #great!
+		name = par.36.a
+		add_political_power = 25
+	}
+}
+
+country_event = { #Uruguay accepts the above, Paraguay's POV
+	id = par.37
+	immediate = { log = "[GetDateText]: [Root.GetName]: event par.37 FROM = [From.GetName]" }
+
+	title = par.37.t
+	desc = par.37.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #bruh, seriously?
+		name = par.37.a
+		add_political_power = -1
+	}
+}
+
+country_event = { #Paraguayan military advisors study Uruguayan forts
+	id = par.38
+
+	title = par.38.t
+	desc = par.38.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #hope you had a good staying
+		name = par.38.a
+		add_political_power = 25
+	}
+}
+
+country_event = { #Joint exercises with Paraguay's military
+	id = par.39
+
+	title = par.39.t
+	desc = par.39.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #more experience is always better
+		name = par.39.a
+		army_experience = 40
+		air_experience = 5
+		swap_ideas = {
+			remove_idea = URG_paraguay_military_help
+			add_idea = URG_paraguay_military_help_2
+		}
+	}
+}

@@ -177,7 +177,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RIG_mass_housing"
 			842 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -1445,12 +1445,12 @@ focus_tree = {
 			add_state_core = 12
 			hidden_effect = {
 				12 = {
+					force_enable_resistance = { occupier = BAT occupied = LAT clear = yes }
 					cancel_resistance = yes
-					force_disable_resistance = { clear = yes }
 				}
 				190 = {
+					force_enable_resistance = { occupier = BAT occupied = LAT clear = yes }
 					cancel_resistance = yes
-					force_disable_resistance = { clear = yes }
 				}
 			}
 			add_state_claim = 880
@@ -1483,12 +1483,12 @@ focus_tree = {
 			add_state_core = 13
 			hidden_effect = {
 				13 = {
+					force_enable_resistance = { occupier = BAT occupied = EST clear = yes }
 					cancel_resistance = yes
-					force_disable_resistance = { clear = yes }
 				}
 				191 = {
+					force_enable_resistance = { occupier = BAT occupied = EST clear = yes }
 					cancel_resistance = yes
-					force_disable_resistance = { clear = yes }
 				}
 			}
 			add_stability = -0.1

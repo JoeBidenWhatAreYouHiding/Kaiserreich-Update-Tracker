@@ -6,10 +6,17 @@ on_actions = {
 			if = {
 				limit = {
 					is_spanish_civil_war_tag = yes
-					is_in_faction = no
 					FROM = { is_spanish_civil_war_tag = yes }
 				}
 				transfer_navy = { target = FROM }
+			}
+			if = {
+				limit = {
+					tag = SPA
+					FROM = { tag = SWF }
+					spanish_civil_war = yes
+				}
+				SPR = { country_event = sprc.500 }
 			}
 		}
 	}
@@ -87,5 +94,29 @@ on_actions = {
 			}
 		}
 	}
-}
 
+	#ROOT is winner #FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = SWF
+					spanish_civil_war = yes
+					NOT = {
+						country_exists = SPA
+						country_exists = SPR
+					}
+				}
+				var:967.owner = { country_event = { id = sprc.503 days = 2 } } #Equatorial Guinea
+				var:539.owner = { country_event = { id = sprc.501 days = 1 } } #Rio de Oro
+				if = {
+					limit = { MOR = { is_subject = yes } }
+					var:MOR.overlord = { country_event = { id = sprc.507 days = 1 } } #Rif
+				}
+				else = {
+					var:461.owner = { country_event = { id = sprc.507 days = 1 } } #Rif
+				}
+			}
+		}
+	}
+}

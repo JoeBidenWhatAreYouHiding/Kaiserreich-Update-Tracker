@@ -484,6 +484,7 @@ WIF_puppet_setup = {
 				set_autonomy = {
 					target = var:tag_to_release
 					autonomy_state = kr_initial_wif_puppet
+					end_wars = no
 				}
 			}
 			WIF = {
@@ -508,22 +509,22 @@ WIF_puppet_setup = {
 					if = {
 						limit = { has_character = WIF_eustace_fiennes }
 						WIF_eustace_fiennes = {
-							promote_character = { ideology = social_democrat_subtype }
-							promote_character = { ideology = social_liberal_subtype }
-							promote_character = { ideology = market_liberal_subtype }
-							promote_character = { ideology = social_conservative_subtype }
-							promote_character = { ideology = authoritarian_democrat_subtype }
-							promote_character = { ideology = paternal_autocrat_subtype }
+							promote_character = social_democrat_subtype
+							promote_character = social_liberal_subtype
+							promote_character = market_liberal_subtype
+							promote_character = social_conservative_subtype
+							promote_character = authoritarian_democrat_subtype
+							promote_character = paternal_autocrat_subtype
 						}
 					}
 					else = {
 						WIF_gordon_james_lethem = {
-							promote_character = { ideology = social_democrat_subtype }
-							promote_character = { ideology = social_liberal_subtype }
-							promote_character = { ideology = market_liberal_subtype }
-							promote_character = { ideology = social_conservative_subtype }
-							promote_character = { ideology = authoritarian_democrat_subtype }
-							promote_character = { ideology = paternal_autocrat_subtype }
+							promote_character = social_democrat_subtype
+							promote_character = social_liberal_subtype
+							promote_character = market_liberal_subtype
+							promote_character = social_conservative_subtype
+							promote_character = authoritarian_democrat_subtype
+							promote_character = paternal_autocrat_subtype
 						}
 					}
 				}

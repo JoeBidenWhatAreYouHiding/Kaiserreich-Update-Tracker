@@ -683,7 +683,7 @@ country_event = {
 
 	option = {
 		name = bra.29.a
-		random_owned_state = {
+		random_owned_controlled_state = {
 			prioritize = { 501 } #Sao Paulo
 			limit = {
 				industrial_complex > 0
@@ -693,7 +693,7 @@ country_event = {
 				level = 1
 			}
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			prioritize = { 500 } #Rio De Janeiro
 			limit = {
 				industrial_complex > 0
@@ -3258,6 +3258,17 @@ country_event = {
 				traits = { BRA_royal_legitimist_sic second_in_command_trait }
 				cost = 0
 				removal_cost = -1
+				on_add = {
+					random_character = {
+						limit = { is_character = BRA_arlindo_veiga_dos_santos }
+						set_character_flag = is_second_in_command
+						set_variable = { PREV.current_second_in_command_character = THIS }
+					}
+				}
+				on_remove = {
+					BRA_arlindo_veiga_dos_santos = { clr_character_flag = is_second_in_command }
+					clear_variable = current_second_in_command_character
+				}
 			}
 			activate = yes
 		}
@@ -9885,6 +9896,17 @@ country_event = {
 				traits = { KR_local_tyrant_sic second_in_command_trait }
 				cost = 0
 				removal_cost = -1
+				on_add = {
+					random_character = {
+						limit = { is_character = BRA_gustavo_dodt_barroso }
+						set_character_flag = is_second_in_command
+						set_variable = { PREV.current_second_in_command_character = THIS }
+					}
+				}
+				on_remove = {
+					BRA_gustavo_dodt_barroso = { clr_character_flag = is_second_in_command }
+					clear_variable = current_second_in_command_character
+				}
 			}
 			activate = yes
 		}
@@ -10082,7 +10104,7 @@ country_event = {
 
 	option = {
 		name = bra.759.a
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				is_in_home_area = yes
 				industrial_complex > 0
@@ -10094,7 +10116,7 @@ country_event = {
 				instant_build = yes
 			}
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				is_in_home_area = yes
 				industrial_complex > 0

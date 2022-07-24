@@ -98,8 +98,6 @@ add_offsite_building = {
 add_ideas = {
 	SQI_Rampant_drug_trade
 	SQI_flight_north
-
-	partial_economic_mobilisation
 }
 
 country_event = { id = shandong.1 days = 1 }

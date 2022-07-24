@@ -978,6 +978,10 @@ country_event = { #NP takes control
 			ruling_party = paternal_autocrat
 			elections_allowed = no
 		}
+		set_political_party = {
+			ideology = authoritarian_democrat
+			popularity = 0
+		}
 		add_popularity = {
 			ideology = paternal_autocrat
 			popularity = 0.2
@@ -1004,6 +1008,10 @@ country_event = { #KP takes control
 		set_politics = {
 			ruling_party = social_conservative
 			elections_allowed = no
+		}
+		set_political_party = {
+			ideology = authoritarian_democrat
+			popularity = 0
 		}
 	}
 }
@@ -1039,6 +1047,10 @@ country_event = { #Soc Lib take control
 			ruling_party = social_liberal
 			elections_allowed = no
 		}
+		set_political_party = {
+			ideology = authoritarian_democrat
+			popularity = 0
+		}
 	}
 }
 
@@ -1056,6 +1068,10 @@ country_event = { #Soc Dem take control
 		set_politics = {
 			ruling_party = social_democrat
 			elections_allowed = no
+		}
+		set_political_party = {
+			ideology = authoritarian_democrat
+			popularity = 0
 		}
 	}
 }
@@ -1075,6 +1091,10 @@ country_event = { #Syndies take control
 		set_politics = {
 			ruling_party = syndicalist
 			elections_allowed = no
+		}
+		set_political_party = {
+			ideology = authoritarian_democrat
+			popularity = 0
 		}
 		hidden_effect = {
 			LEC = { country_event = { id = lec.48 days = 4 } }
@@ -3355,6 +3375,7 @@ country_event = { #Flanders makes a deal with Germany
 				set_autonomy = {
 					target = WAL
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			WAL = {
@@ -3398,6 +3419,7 @@ country_event = { #Flanders makes a deal with Germany
 				set_autonomy = {
 					target = WAL
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			WAL = { restore_previous_government_type = yes }
@@ -3611,6 +3633,7 @@ country_event = { #Treaty of Terneuzen goes in effect
 				set_autonomy = {
 					target = WAL
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			WAL = {
@@ -3638,6 +3661,7 @@ country_event = { #Treaty of Terneuzen goes in effect
 				set_autonomy = {
 					target = WAL
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			WAL = {
@@ -7237,6 +7261,7 @@ country_event = { #Council declares the Duchy of Flanders!
 				set_autonomy = {
 					target = WAL
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			WAL = { restore_previous_government_type = yes }

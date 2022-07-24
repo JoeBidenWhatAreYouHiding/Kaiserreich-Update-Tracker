@@ -1,5 +1,5 @@
 ﻿#KAISERREICH for HEARTS of IRON 4
-Beta 0.21.2 - 'A World Aflame'
+Beta 0.21.3 - 'A World Aflame'
 
 #Created by the Kaiserreich 4 team
 Talented friends, every single one
@@ -45,7 +45,6 @@ RagnoStrangeros
 Rei-VL
 Retrocognition
 Rnk
-Rylock
 Shiroe
 Sonny O'Cad
 Story
@@ -133,6 +132,7 @@ Rebi-chan
 Rinbro
 Roniius
 Roparex
+Rylock
 SPQR
 Saladenicoise
 Satellite Yung

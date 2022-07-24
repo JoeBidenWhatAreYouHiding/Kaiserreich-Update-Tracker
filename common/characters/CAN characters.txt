@@ -1,90 +1,7 @@
 characters = {
-	################
-	### Monarchs ###
-	################
-	CAN_george_v = {
-		name = CAN_george_v
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/CAN/Portrait_Canada_King_George.png"
-			}
-		}
-		country_leader = {
-			desc = CAN_george_v_leader_desc
-			ideology = social_democrat_subtype
-		}
-		country_leader = {
-			desc = CAN_george_v_leader_desc
-			ideology = social_liberal_subtype
-		}
-		country_leader = {
-			desc = CAN_george_v_leader_desc
-			ideology = market_liberal_subtype
-		}
-		country_leader = {
-			desc = CAN_george_v_leader_desc
-			ideology = social_conservative_subtype
-		}
-		country_leader = {
-			desc = CAN_george_v_leader_desc
-			ideology = authoritarian_democrat_subtype
-		}
-		country_leader = {
-			desc = CAN_george_v_leader_desc
-			ideology = paternal_autocrat_subtype
-		}
-	}
-	CAN_edward_windsor = {
-		name = CAN_edward_windsor
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII.png"
-			}
-		}
-	}
-	CAN_albert_windsor = {
-		name = CAN_albert_windsor
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
-			}
-		}
-	}
-	CAN_henry_windsor = {
-		name = CAN_henry_windsor
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/CAN/Portrait_Canada_Prince_Henry.png"
-			}
-			army = {
-				large = "gfx/leaders/CAN/Portrait_Canada_Prince_Henry.png"
-				small = "gfx/interface/advisors/CAN/CAN_henry_windsor.png"
-			}
-		}
-		corps_commander = {
-			traits = {
-				politically_connected
-				CAN_british_exile_trait
-			}
-			skill = 2
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 1
-		}
-	}
-	CAN_george_windsor = {
-		name = CAN_george_windsor
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/CAN/Portrait_Canada_Prince_George.png"
-			}
-		}
-	}
-
-	###################
-	### Republicans ###
-	###################
+	#######################
+	### Country Leaders ###
+	#######################
 	CAN_timothy_buck = {
 		name = CAN_timothy_buck
 		portraits = {
@@ -98,6 +15,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_timothy_buck
 			available = {
 				OR = {
@@ -167,9 +86,22 @@ characters = {
 			traits = { KR_pragmatic_statesman_sic second_in_command_trait }
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = CAN_louis_st_laurent }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				CAN_louis_st_laurent = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_louis_st_laurent
 			available = {
 				OR = {
@@ -199,6 +131,17 @@ characters = {
 			traits = { KR_pragmatic_statesman_sic second_in_command_trait }
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = CAN_william_lyon_mackenzie_king }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				CAN_william_lyon_mackenzie_king = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	CAN_charles_gavan_power = {
@@ -230,6 +173,17 @@ characters = {
 			traits = { KR_silent_workhorse_sic second_in_command_trait }
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = CAN_richard_bedford_bennett }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				CAN_richard_bedford_bennett = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	CAN_john_bracken = {
@@ -242,6 +196,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_john_bracken
 			available = {
 				OR = {
@@ -264,6 +220,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_robert_manion
 			available = {
 				OR = {
@@ -293,6 +251,17 @@ characters = {
 			traits = { KR_naive_optimist_sic second_in_command_trait }
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = CAN_arthur_meighen }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				CAN_arthur_meighen = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	CAN_john_horne_blackmore = {
@@ -361,6 +330,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_john_diefenbaker
 			available = {
 				OR = {
@@ -389,6 +360,17 @@ characters = {
 			traits = { KR_parliament_sic second_in_command_trait }
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = CAN_canadian_parliament }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				CAN_canadian_parliament = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 
@@ -404,6 +386,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_maurice_le_noblet_duplessis
 			available = {
 				has_completed_focus = CAN_montreal_conference
@@ -420,6 +404,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_clarence_decatur_howe
 			available = {
 				OR = {
@@ -439,6 +425,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_ernest_lapointe
 			available = {
 				OR = {
@@ -458,6 +446,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_ernest_charles_manning
 			available = {
 				OR = {
@@ -477,6 +467,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_humphrey_mitchell
 			available = {
 				OR = {
@@ -497,6 +489,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_henry_norman_bethune
 			available = {
 				OR = {
@@ -516,6 +510,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_thomas_clement_douglas
 			traits = { KR_public_health_advocate }
 		}
@@ -529,6 +525,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_george_alexander_drew
 			traits = { KR_construction_magnate }
 		}
@@ -542,6 +540,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_arthur_blaikie_purvis
 			traits = { KR_captain_of_industry }
 		}
@@ -555,6 +555,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = CAN_william_samuel_stephenson
 			allowed = {
 				has_dlc = "La Resistance"

@@ -200,7 +200,7 @@ special_projects = {
 		days_remove = 365
 		cancel_trigger = {
 			has_navy_size = {
-				unit = battleship
+				unit = battle_cruiser
 				size > 0
 			}
 		}
@@ -225,7 +225,7 @@ special_projects = {
 
 		available = {
 			has_navy_size = {
-				unit = battleship
+				unit = battle_cruiser
 				size > 0
 			}
 		}

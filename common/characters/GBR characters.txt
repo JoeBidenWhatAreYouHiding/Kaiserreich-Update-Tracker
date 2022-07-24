@@ -1,4 +1,159 @@
 characters = {
+	################
+	### Monarchs ###
+	################
+	GBR_george_frederick_windsor = {
+		name = GBR_george_frederick_windsor
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CAN/Portrait_Canada_King_George.png"
+			}
+		}
+		country_leader = {
+			desc = GBR_george_frederick_windsor_leader_desc
+			ideology = social_democrat_subtype
+		}
+		country_leader = {
+			desc = GBR_george_frederick_windsor_leader_desc
+			ideology = social_liberal_subtype
+		}
+		country_leader = {
+			desc = GBR_george_frederick_windsor_leader_desc
+			ideology = market_liberal_subtype
+		}
+		country_leader = {
+			desc = GBR_george_frederick_windsor_leader_desc
+			ideology = social_conservative_subtype
+		}
+		country_leader = {
+			desc = GBR_george_frederick_windsor_leader_desc
+			ideology = authoritarian_democrat_subtype
+		}
+		country_leader = {
+			desc = GBR_george_frederick_windsor_leader_desc
+			ideology = paternal_autocrat_subtype
+		}
+	}
+	GBR_edward_windsor = {
+		name = GBR_edward_windsor
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII.png"
+			}
+		}
+	}
+	GBR_albert_windsor = {
+		name = GBR_albert_windsor
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
+			}
+		}
+		country_leader = {
+			ideology = social_democrat_subtype
+			traits = { CAN_popular_figurehead CAN_humble }
+		}
+		country_leader = {
+			ideology = social_liberal_subtype
+			traits = { CAN_popular_figurehead CAN_humble }
+		}
+		country_leader = {
+			ideology = market_liberal_subtype
+			traits = { CAN_popular_figurehead CAN_humble }
+		}
+		country_leader = {
+			ideology = social_conservative_subtype
+			traits = { CAN_popular_figurehead CAN_humble }
+		}
+		country_leader = {
+			ideology = authoritarian_democrat_subtype
+			traits = { CAN_popular_figurehead CAN_humble }
+		}
+		country_leader = {
+			ideology = paternal_autocrat_subtype
+			traits = { CAN_popular_figurehead CAN_humble }
+		}
+	}
+	GBR_henry_windsor = {
+		name = GBR_henry_windsor
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CAN/Portrait_Canada_Prince_Henry.png"
+			}
+			army = {
+				large = "gfx/leaders/CAN/Portrait_Canada_Prince_Henry.png"
+				small = "gfx/interface/advisors/CAN/CAN_henry_windsor.png"
+			}
+		}
+		country_leader = {
+			ideology = social_democrat_subtype
+			traits = { CAN_biddable CAN_army_experience }
+		}
+		country_leader = {
+			ideology = social_liberal_subtype
+			traits = { CAN_biddable CAN_army_experience }
+		}
+		country_leader = {
+			ideology = market_liberal_subtype
+			traits = { CAN_biddable CAN_army_experience }
+		}
+		country_leader = {
+			ideology = social_conservative_subtype
+			traits = { CAN_biddable CAN_army_experience }
+		}
+		country_leader = {
+			ideology = authoritarian_democrat_subtype
+			traits = { CAN_biddable CAN_army_experience }
+		}
+		country_leader = {
+			ideology = paternal_autocrat_subtype
+			traits = { CAN_biddable CAN_army_experience }
+		}
+		corps_commander = {
+			traits = {
+				politically_connected
+				CAN_british_exile_trait
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	GBR_george_windsor = {
+		name = GBR_george_windsor
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CAN/Portrait_Canada_Prince_George.png"
+			}
+		}
+		country_leader = {
+			ideology = social_democrat_subtype
+			traits = { CAN_smooth_talking_charmer CAN_hedonist }
+		}
+		country_leader = {
+			ideology = social_liberal_subtype
+			traits = { CAN_smooth_talking_charmer CAN_hedonist }
+		}
+		country_leader = {
+			ideology = market_liberal_subtype
+			traits = { CAN_smooth_talking_charmer CAN_hedonist }
+		}
+		country_leader = {
+			ideology = social_conservative_subtype
+			traits = { CAN_smooth_talking_charmer CAN_hedonist }
+		}
+		country_leader = {
+			ideology = authoritarian_democrat_subtype
+			traits = { CAN_smooth_talking_charmer CAN_hedonist }
+		}
+		country_leader = {
+			ideology = paternal_autocrat_subtype
+			traits = { CAN_smooth_talking_charmer CAN_hedonist }
+		}
+	}
+
 	##########################
 	### Republican Leaders ###
 	##########################
@@ -109,6 +264,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_austen_chamberlain
 			traits = { GBR_british_pm_in_exile }
 			modifier = {
@@ -133,6 +290,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_anthony_eden
 			traits = { GBR_british_pm_in_exile }
 			modifier = {
@@ -158,6 +317,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_robert_gascoyne_cecil
 			traits = { GBR_british_pm_in_exile }
 			modifier = {
@@ -183,6 +344,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_robert_vansittart
 			traits = { GBR_british_pm_in_exile }
 			modifier = {
@@ -208,6 +371,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_henry_page_croft
 			traits = { GBR_british_pm_in_exile }
 			modifier = {
@@ -240,6 +405,17 @@ characters = {
 			traits = { KR_parliament_sic second_in_command_trait }
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = GBR_houses_of_parliament }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				GBR_houses_of_parliament = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	GBR_hugh_gaitskell = {
@@ -254,10 +430,24 @@ characters = {
 			idea_token = GBR_hugh_gaitskell_sic
 			traits = { GBR_little_hugh second_in_command_trait }
 			on_add = {
-				GBR_hugh_gaitskell = { save_global_event_target_as = GBR_prime_minister }
+				random_character = {
+					limit = { is_character = GBR_hugh_gaitskell }
+					save_global_event_target_as = GBR_prime_minister
+				}
 			}
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = GBR_hugh_gaitskell }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				GBR_hugh_gaitskell = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	GBR_clement_attlee = {
@@ -279,6 +469,17 @@ characters = {
 			}
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = GBR_clement_attlee }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				GBR_clement_attlee = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	GBR_john_simon = {
@@ -300,6 +501,17 @@ characters = {
 			}
 			cost = 0
 			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = GBR_john_simon }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				GBR_john_simon = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 
@@ -307,6 +519,7 @@ characters = {
 	### Political Advisors ###
 	##########################
 
+	### starting in CAN
 	GBR_william_maxwell_aitken = {
 		name = GBR_william_maxwell_aitken
 		portraits = {
@@ -316,6 +529,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_william_maxwell_aitken
 			traits = { KR_war_industrialist }
 		}
@@ -331,6 +546,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_joseph_kenworthy
 			available = {
 				has_elected_government = yes
@@ -347,6 +564,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_philip_noel_baker
 			available = {
 				has_elected_government = yes
@@ -363,6 +582,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_percy_harris
 			available = {
 				has_elected_government = yes
@@ -379,6 +600,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_norman_birkett
 			available = {
 				has_elected_government = yes
@@ -395,6 +618,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_arthur_kenneth_chesterton
 			available = {
 				has_authoritarian_government = yes
@@ -411,6 +636,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_frank_cyril_tiarks
 			available = {
 				has_authoritarian_government = yes
@@ -427,6 +654,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_barry_domvile
 			available = {
 				has_authoritarian_government = yes
@@ -443,6 +672,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_walter_runciman
 			available = {
 				has_elected_government = yes
@@ -459,6 +690,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_oliver_lyttlelton
 			available = {
 				has_elected_government = yes
@@ -475,6 +708,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_edward_cavendish
 			available = {
 				has_elected_government = yes
@@ -491,6 +726,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_desmond_morton
 			available = {
 				has_elected_government = yes
@@ -507,6 +744,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_gerald_wallop
 			available = {
 				has_authoritarian_government = yes
@@ -523,6 +762,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_john_anderson
 			traits = { KR_administrative_genius }
 		}
@@ -536,6 +777,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_montagu_norman
 			traits = { KR_bank_president }
 		}
@@ -549,6 +792,8 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = GBR_charles_henry_maxwell_knight
 			allowed = {
 				has_dlc = "La Resistance"

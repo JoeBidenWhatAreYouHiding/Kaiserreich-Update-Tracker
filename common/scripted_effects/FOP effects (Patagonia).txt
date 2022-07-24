@@ -281,7 +281,10 @@ FOP_setup_araucania = {
 			FOP_commie_secret_police
 			FOP_suspended_constitution
 			FOP_revolutionary_democracy
-			FOP_economic_support
+			FOP_economic_support_idea_for_FOP_1
+			FOP_economic_support_idea_for_FOP_2
+			FOP_economic_support_idea_for_FOP_3
+			FOP_economic_support_idea_for_FOP_4
 			FOP_new_hierarchy
 			FOP_new_hierarchy2
 			FOP_new_hierarchy3
@@ -327,7 +330,6 @@ FOP_setup_araucania = {
 			FOP_united_kingdom
 			FOP_patagonian_resistance
 			FOP_illegitimate_republic
-			FOP_resistance_to_andesia
 			FOP_morality_ban
 			FOP_morality_ban_2
 			FOP_war_preparations

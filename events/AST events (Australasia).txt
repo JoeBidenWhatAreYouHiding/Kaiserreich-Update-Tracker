@@ -440,7 +440,7 @@ country_event = {
 		}
 		retire_character = AST_william_riddell_birdwood
 		if = {
-			limit = { has_global_flag = CAN_king_george_VI }
+			limit = { ENT_king_george_vi = yes }
 			AST_create_governor_general_prince_henry = yes
 		}
 		else = {
@@ -2601,9 +2601,9 @@ country_event = {
 		}
 		NOT = {
 			has_completed_focus = AST_australasian_republic
-			has_global_flag = CAN_king_henry_IX
-			has_country_leader = { character = CAN_henry_windsor }
-			has_country_leader = { character = CAN_george_windsor }
+			ENT_king_henry_ix = yes
+			has_country_leader = { character = GBR_henry_windsor }
+			has_country_leader = { character = GBR_george_windsor }
 		}
 	}
 
@@ -4399,7 +4399,6 @@ country_event = {
 					has_character_flag = NZL_character
 				}
 			}
-			set_nationality = NZL
 		}
 		custom_effect_tooltip = AST_ships_defect_to_nzl
 		hidden_effect = {
@@ -4939,16 +4938,16 @@ country_event = {
 	desc = {
 		text = austral.175.d.henry
 		trigger = {
-			NOT = { has_global_flag = CAN_king_henry_IX }
-			has_global_flag = CAN_prince_george_dead
+			NOT = { ENT_king_henry_ix = yes }
+			ENT_prince_george_is_dead = yes
 		}
 	}
 	desc = {
 		text = austral.175.d.george
 		trigger = {
 			NOT = {
-				has_global_flag = CAN_king_george_VI
-				has_global_flag = CAN_prince_george_dead
+				ENT_king_george_vi = yes
+				ENT_prince_george_is_dead = yes
 			}
 		}
 	}
@@ -4956,10 +4955,10 @@ country_event = {
 		text = austral.175.d.hore_ruthven
 		trigger = {
 			OR = {
-				has_global_flag = CAN_king_george_VI
+				ENT_king_george_vi = yes
 				AND = {
-					has_global_flag = CAN_prince_george_dead
-					has_global_flag = CAN_king_henry_IX
+					ENT_prince_george_is_dead = yes
+					ENT_king_henry_ix = yes
 				}
 			}
 		}
@@ -6595,7 +6594,6 @@ country_event = {
 		custom_effect_tooltip = characters_will_be_retired
 		character_list_tooltip = {
 			limit = { has_character_flag = NZL_character }
-			set_nationality = NZL
 		}
 		custom_effect_tooltip = AST_ships_defect_to_nzl
 		hidden_effect = {
@@ -7188,21 +7186,21 @@ country_event = {
 	desc = {
 		text = austral.300.d
 		trigger = {
-			NOT = { has_global_flag = CAN_king_henry_IX }
+			NOT = { ENT_king_henry_ix = yes }
 		}
 	}
 	desc = {
 		text = austral.300.d.albert
 		trigger = {
-			has_global_flag = CAN_king_henry_IX
-			NOT = { CAN = {	has_country_leader = { character = CAN_albert_windsor } } }
+			ENT_king_henry_ix = yes
+			NOT = { CAN = {	has_country_leader = { character = GBR_albert_windsor } } }
 		}
 	}
 	desc = {
 		text = austral.300.d.hore_ruthven
 		trigger = {
-			has_global_flag = CAN_king_henry_IX
-			CAN = {	has_country_leader = { character = CAN_albert_windsor } }
+			ENT_king_henry_ix = yes
+			CAN = {	has_country_leader = { character = GBR_albert_windsor } }
 		}
 	}
 
@@ -7211,7 +7209,7 @@ country_event = {
 	trigger = {
 		tag = AST
 		date > 1942.8.15
-		has_country_leader = { character = CAN_george_windsor }
+		has_country_leader = { character = GBR_george_windsor }
 		NOT = {
 			has_game_rule = {
 				rule = CAN_british_king
@@ -7235,11 +7233,9 @@ country_event = {
 	option = {
 		name = austral.300.a
 		trigger = {
-			NOT = { has_global_flag = CAN_king_henry_IX }
+			NOT = { ENT_king_henry_ix = yes }
 		}
-		set_global_flag = CAN_prince_george_dead
-		retire_character = CAN_george_windsor
-		clear_global_event_target = CAN_george_windsor_target
+		retire_character = GBR_george_windsor
 		add_stability = -0.05
 		AST_create_governor_general_prince_henry = yes
 	}
@@ -7247,12 +7243,10 @@ country_event = {
 	option = {
 		name = austral.300.a
 		trigger = {
-			has_global_flag = CAN_king_henry_IX
-			NOT = { CAN = {	has_country_leader = { character = CAN_albert_windsor } } }
+			ENT_king_henry_ix = yes
+			NOT = { CAN = {	has_country_leader = { character = GBR_albert_windsor } } }
 		}
-		set_global_flag = CAN_prince_george_dead
-		retire_character = CAN_george_windsor
-		clear_global_event_target = CAN_george_windsor_target
+		retire_character = GBR_george_windsor
 		add_stability = -0.05
 		AST_create_governor_general_prince_albert = yes
 	}
@@ -7260,12 +7254,10 @@ country_event = {
 	option = {
 		name = austral.300.a
 		trigger = {
-			has_global_flag = CAN_king_henry_IX
-			CAN = { has_country_leader = { character = CAN_albert_windsor } }
+			ENT_king_henry_ix = yes
+			CAN = { has_country_leader = { character = GBR_albert_windsor } }
 		}
-		set_global_flag = CAN_prince_george_dead
-		retire_character = CAN_george_windsor
-		clear_global_event_target = CAN_george_windsor_target
+		retire_character = GBR_george_windsor
 		add_stability = -0.05
 		AST_create_governor_general_hore_ruthven = yes
 	}
@@ -7280,13 +7272,13 @@ country_event = {
 	desc = {
 		text = austral.300.d
 		trigger = {
-			NOT = { has_global_flag = CAN_king_henry_IX }
+			NOT = { ENT_king_henry_ix = yes }
 		}
 	}
 	desc = {
 		text = austral.300.d.albert
 		trigger = {
-			has_global_flag = CAN_king_henry_IX
+			ENT_king_henry_ix = yes
 		}
 	}
 
@@ -7404,6 +7396,7 @@ country_event = {
 				has_government = social_conservative
 				AST_is_dominion = yes
 			}
+			clear_sic_slot = yes
 			add_advisor_role = {
 				character = AST_robert_gordon_menzies
 				advisor = {
@@ -7412,6 +7405,17 @@ country_event = {
 					traits = { KR_flamboyant_brute_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = AST_robert_gordon_menzies }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						AST_robert_gordon_menzies = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 				activate = yes
 			}
@@ -7425,6 +7429,17 @@ country_event = {
 					traits = { KR_flamboyant_brute_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = AST_robert_gordon_menzies }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						AST_robert_gordon_menzies = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 			}
 		}
@@ -7463,6 +7478,7 @@ country_event = {
 				has_government = social_conservative
 				AST_is_dominion = yes
 			}
+			clear_sic_slot = yes
 			add_advisor_role = {
 				character = NZL_sidney_george_holland
 				advisor = {
@@ -7471,6 +7487,17 @@ country_event = {
 					traits = { AST_defender_of_the_individual_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = NZL_sidney_george_holland }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						NZL_sidney_george_holland = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 				activate = yes
 			}
@@ -7484,6 +7511,17 @@ country_event = {
 					traits = { AST_defender_of_the_individual_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = NZL_sidney_george_holland }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						NZL_sidney_george_holland = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 			}
 		}
@@ -7576,6 +7614,7 @@ country_event = {
 				has_government = market_liberal
 				AST_is_dominion = yes
 			}
+			clear_sic_slot = yes
 			add_advisor_role = {
 				character = AST_arthur_william_fadden
 				advisor = {
@@ -7584,6 +7623,17 @@ country_event = {
 					traits = { KR_administrative_genius_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = AST_arthur_william_fadden }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						AST_arthur_william_fadden = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 				activate = yes
 			}
@@ -7597,6 +7647,17 @@ country_event = {
 					traits = { KR_pragmatic_statesman_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = AST_joseph_benedict_chifley }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						AST_joseph_benedict_chifley = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 			}
 		}
@@ -7754,6 +7815,7 @@ country_event = {
 				has_government = social_democrat
 				AST_is_dominion = yes
 			}
+			clear_sic_slot = yes
 			add_advisor_role = {
 				character = AST_joseph_benedict_chifley
 				advisor = {
@@ -7762,6 +7824,17 @@ country_event = {
 					traits = { KR_administrative_genius_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = AST_joseph_benedict_chifley }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						AST_joseph_benedict_chifley = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 				activate = yes
 			}
@@ -7775,6 +7848,17 @@ country_event = {
 					traits = { KR_administrative_genius_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = AST_joseph_benedict_chifley }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						AST_joseph_benedict_chifley = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 			}
 		}
@@ -7833,6 +7917,7 @@ country_event = {
 				has_government = social_democrat
 				AST_is_dominion = yes
 			}
+			clear_sic_slot = yes
 			add_advisor_role = {
 				character = NZL_peter_fraser
 				advisor = {
@@ -7841,6 +7926,17 @@ country_event = {
 					traits = { AST_pragmatic_labour_man_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = NZL_peter_fraser }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						NZL_peter_fraser = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 				activate = yes
 			}
@@ -7854,6 +7950,17 @@ country_event = {
 					traits = { AST_pragmatic_labour_man_sic second_in_command_trait }
 					cost = 0
 					removal_cost = -1
+					on_add = {
+						random_character = {
+							limit = { is_character = NZL_peter_fraser }
+							set_character_flag = is_second_in_command
+							set_variable = { PREV.current_second_in_command_character = THIS }
+						}
+					}
+					on_remove = {
+						NZL_peter_fraser = { clr_character_flag = is_second_in_command }
+						clear_variable = current_second_in_command_character
+					}
 				}
 			}
 		}

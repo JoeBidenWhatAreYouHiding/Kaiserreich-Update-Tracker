@@ -1904,6 +1904,7 @@ country_event = { #Conservative party formed under Emiliano Chamorro Vargas
 
 	option = {
 		name = nic.55.a
+		promote_character = { character = NIC_emiliano_chamorro_vargas ideology = social_conservative_subtype }
 		add_popularity = {
 			ideology = social_conservative
 			popularity = 0.07
@@ -2916,7 +2917,7 @@ country_event = { #Industry hurt
 		name = nic.109.a
 		random_list = {
 			50 = {
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						non_damaged_building_level = { building = infrastructure level > 0 }
 					}
@@ -2927,7 +2928,7 @@ country_event = { #Industry hurt
 				}
 			}
 			20 = {
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						non_damaged_building_level = { building = infrastructure level > 0 }
 					}
@@ -2938,7 +2939,7 @@ country_event = { #Industry hurt
 				}
 			}
 			10 = {
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						industrial_complex > 1
 					}
@@ -2949,7 +2950,7 @@ country_event = { #Industry hurt
 				}
 			}
 			20 = {
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						arms_factory > 1
 					}
@@ -4451,7 +4452,7 @@ country_event = { #Socialist deciding what to give Nicaragua
 				factor = 1.5
 			}
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				is_core_of = ROOT
 				is_on_continent = europe
@@ -4478,7 +4479,7 @@ country_event = { #Socialist deciding what to give Nicaragua
 				factor = 1.5
 			}
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				is_core_of = ROOT
 				is_on_continent = europe
@@ -4575,7 +4576,7 @@ country_event = { #Canada/Germany deciding what to give Nicaragua
 				factor = 1.5
 			}
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				is_core_of = ROOT
 			}
@@ -4601,7 +4602,7 @@ country_event = { #Canada/Germany deciding what to give Nicaragua
 				factor = 1.5
 			}
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				is_core_of = ROOT
 			}

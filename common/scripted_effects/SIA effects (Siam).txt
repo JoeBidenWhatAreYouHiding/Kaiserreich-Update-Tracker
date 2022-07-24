@@ -14,7 +14,7 @@ SIA_add_government_generals = {
 		}
 		event_target:SIA_plaek_phibunsongkhram_target = { set_nationality = PREV }
 		SIA_plaek_phibunsongkhram = {
-			promote_character = { ideology = national_populist_subtype }
+			promote_character = national_populist_subtype
 		}
 	}
 	if = {
@@ -332,6 +332,11 @@ SIA_setup_Khanagummakarn_Ratsadon_government = {
 ###################
 
 SIA_setup_Elected_SocDem_government = {
+	hidden_effect = {
+		event_target:SIA_pridi_phanomyong_target = {
+			set_nationality = PREV #make sure he's in SIA
+		}
+	}
 	clr_country_flag = SIA_SENI_PRAMOJ_ELECTED
 	set_country_flag = SIA_PRIDI_PANOMYONG_ELECTED_ELECTED
 	clr_country_flag = SIA_PHRAYA_PHAHON_ELECTED
@@ -366,6 +371,11 @@ SIA_setup_Elected_SocDem_government = {
 }
 
 SIA_setup_Elected_Liberal_government = {
+	hidden_effect = {
+		SIA = {
+			SIA_sawaet_piampongsarn = { set_nationality = PREV } #make sure he's in SIA
+		}
+	}
 	clr_country_flag = SIA_SENI_PRAMOJ_ELECTED
 	clr_country_flag = SIA_PRIDI_PANOMYONG_ELECTED_ELECTED
 	set_country_flag = SIA_PHRAYA_PHAHON_ELECTED
@@ -396,6 +406,11 @@ SIA_setup_Elected_Liberal_government = {
 }
 
 SIA_setup_Elected_Conservative_government = {
+	hidden_effect = {
+		event_target:SIA_seni_pramoj_target = {
+			set_nationality = PREV #make sure he's in SIA
+		}
+	}
 	set_country_flag = SIA_SENI_PRAMOJ_ELECTED
 	clr_country_flag = SIA_PRIDI_PANOMYONG_ELECTED_ELECTED
 	clr_country_flag = SIA_PHRAYA_PHAHON_ELECTED
@@ -479,7 +494,7 @@ SIA_setup_Sarit_government = {
 			SIA_sarit_thanarat = {
 				if = {
 					limit = { has_ideology = authoritarian_democrat_subtype }
-					promote_character = { ideology = authoritarian_democrat_subtype }
+					promote_character = authoritarian_democrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -493,7 +508,7 @@ SIA_setup_Sarit_government = {
 				}
 				if = {
 					limit = { has_ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -507,7 +522,7 @@ SIA_setup_Sarit_government = {
 				}
 				if = {
 					limit = { has_ideology = national_populist_subtype }
-					promote_character = { ideology = national_populist_subtype }
+					promote_character = national_populist_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -554,6 +569,9 @@ SIA_setup_Phao_government = {
 		event_target:SIA_phao_sriyanond_target = {
 			set_nationality = PREV #make sure he's in SIA
 		}
+		event_target:SIA_pridi_phanomyong_target = {
+			set_nationality = PREV
+		}
 	}
 	custom_effect_tooltip = SIA_phao_leader_tt
 	hidden_effect = {
@@ -562,7 +580,7 @@ SIA_setup_Phao_government = {
 			SIA_phao_sriyanond = {
 				if = {
 					limit = { has_ideology = authoritarian_democrat_subtype }
-					promote_character = { ideology = authoritarian_democrat_subtype }
+					promote_character = authoritarian_democrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -576,7 +594,7 @@ SIA_setup_Phao_government = {
 				}
 				if = {
 					limit = { has_ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -590,7 +608,7 @@ SIA_setup_Phao_government = {
 				}
 				if = {
 					limit = { has_ideology = national_populist_subtype }
-					promote_character = { ideology = national_populist_subtype }
+					promote_character = national_populist_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -1051,7 +1069,7 @@ SIA_create_republican_leaders = {
 		SIA_supha_sirimanon = {
 			if = {
 				limit = { has_ideology = totalist_subtype }
-				promote_character = { ideology = totalist_subtype }
+				promote_character = totalist_subtype
 			}
 			else = {
 				add_country_leader_role = {
@@ -1065,7 +1083,7 @@ SIA_create_republican_leaders = {
 			}
 			if = {
 				limit = { has_ideology = syndicalist_subtype }
-				promote_character = { ideology = syndicalist_subtype }
+				promote_character = syndicalist_subtype
 			}
 			else = {
 				add_country_leader_role = {
@@ -1084,7 +1102,7 @@ SIA_create_republican_leaders = {
 		SIA_pridi_phanomyong = {
 			if = {
 				limit = { has_ideology = radical_socialist_subtype }
-				promote_character = { ideology = radical_socialist_subtype }
+				promote_character = radical_socialist_subtype
 			}
 			else = {
 				add_country_leader_role = {
@@ -1097,7 +1115,7 @@ SIA_create_republican_leaders = {
 			}
 			if = {
 				limit = { has_ideology = social_democrat_subtype }
-				promote_character = { ideology = social_democrat_subtype }
+				promote_character = social_democrat_subtype
 			}
 			else = {
 				add_country_leader_role = {
@@ -1115,7 +1133,7 @@ SIA_create_republican_leaders = {
 		SIA_thawan_thamrongnawasawat = {
 			if = {
 				limit = { has_ideology = social_liberal_subtype }
-				promote_character = { ideology = social_liberal_subtype }
+				promote_character = social_liberal_subtype
 			}
 			else = {
 				add_country_leader_role = {
@@ -1133,7 +1151,7 @@ SIA_create_republican_leaders = {
 		SIA_pote_sarasin = {
 			if = {
 				limit = { has_ideology = market_liberal_subtype }
-				promote_character = { ideology = market_liberal_subtype }
+				promote_character = market_liberal_subtype
 			}
 			else = {
 				add_country_leader_role = {
@@ -1151,7 +1169,7 @@ SIA_create_republican_leaders = {
 		SIA_seni_pramoj = {
 			if = {
 				limit = { has_ideology = social_conservative_subtype }
-				promote_character = { ideology = social_conservative_subtype }
+				promote_character = social_conservative_subtype
 			}
 			else = {
 				add_country_leader_role = {
@@ -1176,7 +1194,7 @@ SIA_create_republican_leaders = {
 			SIA_sarit_thanarat = {
 				if = {
 					limit = { has_ideology = national_populist_subtype }
-					promote_character = { ideology = national_populist_subtype }
+					promote_character = national_populist_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -1197,7 +1215,7 @@ SIA_create_republican_leaders = {
 				SIA_plaek_phibunsongkhram = {
 					if = {
 						limit = { has_ideology = authoritarian_democrat_subtype }
-						promote_character = { ideology = authoritarian_democrat_subtype }
+						promote_character = authoritarian_democrat_subtype
 					}
 					else = {
 						add_country_leader_role = {
@@ -1211,7 +1229,7 @@ SIA_create_republican_leaders = {
 					}
 					if = {
 						limit = { has_ideology = paternal_autocrat_subtype }
-						promote_character = { ideology = paternal_autocrat_subtype }
+						promote_character = paternal_autocrat_subtype
 					}
 					else = {
 						add_country_leader_role = {
@@ -1225,7 +1243,7 @@ SIA_create_republican_leaders = {
 					}
 					if = {
 						limit = { has_ideology = national_populist_subtype }
-						promote_character = { ideology = national_populist_subtype }
+						promote_character = national_populist_subtype
 					}
 					else = {
 						add_country_leader_role = { #need to re-add his original role
@@ -1246,7 +1264,7 @@ SIA_create_republican_leaders = {
 				SIA_phao_sriyanond = {
 					if = {
 						limit = { has_ideology = authoritarian_democrat_subtype }
-						promote_character = { ideology = authoritarian_democrat_subtype }
+						promote_character = authoritarian_democrat_subtype
 					}
 					else = {
 						add_country_leader_role = {
@@ -1260,7 +1278,7 @@ SIA_create_republican_leaders = {
 					}
 					if = {
 						limit = { has_ideology = paternal_autocrat_subtype }
-						promote_character = { ideology = paternal_autocrat_subtype }
+						promote_character = paternal_autocrat_subtype
 					}
 					else = {
 						add_country_leader_role = {
@@ -2033,7 +2051,7 @@ SIA_repub_template = {
 			artillery = { x = 0 y = 1 }
 		}
 	}
-	random_owned_state = {
+	random_owned_controlled_state = {
 		prioritize = { 289 }
 		create_unit = {
 			division = "name = \"Korngpon Thi 1 'Pokpak-Sataranarath'\" division_template = \"Korngpon Taharn Rarb Luang\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
@@ -2071,7 +2089,7 @@ SIA_royal_template = {
 			artillery = { x = 0 y = 1 }
 		}
 	}
-	random_owned_state = {
+	random_owned_controlled_state = {
 		prioritize = { 289 }
 		create_unit = {
 			division = "name = \"Korngpon Thi 1 'Raksa Pra-ong'\" division_template = \"Korngpon Taharn Rarb Raksa Pra-ong\" start_experience_factor = 0.5 start_equipment_factor = 1.0"

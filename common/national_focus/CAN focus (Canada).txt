@@ -24,7 +24,7 @@ focus_tree = {
 		y = 0
 
 		available = {
-			has_global_flag = CAN_king_edward_VIII
+			ENT_king_edward_viii = yes
 		}
 
 		ai_will_do = {
@@ -709,7 +709,7 @@ focus_tree = {
 			modifier = {
 				add = 25
 				NOT = {
-					has_global_flag = CAN_king_henry_IX
+					ENT_king_henry_ix = yes
 					has_idea = GBR_robert_gascoyne_cecil
 				}
 				OR = {
@@ -721,7 +721,7 @@ focus_tree = {
 			modifier = {
 				factor = 0.2
 				OR = {
-					has_global_flag = CAN_king_albert_I
+					ENT_king_albert_i = yes
 					has_idea = GBR_anthony_eden
 				}
 			}
@@ -1210,7 +1210,7 @@ focus_tree = {
 						state = 832 #Montreal
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -1460,10 +1460,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAN_we_need_industry"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					industrial_complex > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1473,10 +1472,9 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					industrial_complex > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1486,10 +1484,9 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					industrial_complex > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1547,10 +1544,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAN_we_need_munitions"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					arms_factory > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1560,10 +1556,9 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					arms_factory > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1573,10 +1568,9 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					arms_factory > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1634,10 +1628,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAN_we_need_ships"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					dockyard > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1647,10 +1640,9 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					dockyard > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1660,10 +1652,9 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = CAN
-					is_controlled_by = CAN
 					dockyard > 0
 				}
 				add_extra_state_shared_building_slots = 1
@@ -4174,10 +4165,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAN_eyes_to_the_south"
 			add_ideas = CAN_war_of_1812_idea
-			unlock_decision_tooltip = CAN_reinforce_ottawa
-			unlock_decision_tooltip = CAN_reinforce_montreal
-			unlock_decision_tooltip = CAN_reinforce_vancouver
-			unlock_decision_tooltip = CAN_reinforce_halifax
+			activate_targeted_decision = { target = 739 decision = CAN_reinforce_ottawa }
+			activate_targeted_decision = { target = 832 decision = CAN_reinforce_montreal }
+			activate_targeted_decision = { target = 473 decision = CAN_reinforce_vancouver }
+			activate_targeted_decision = { target = 464 decision = CAN_reinforce_halifax }
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_ANNEXATION }
 	}
@@ -4670,19 +4661,9 @@ focus_tree = {
 				}
 				country_event = canada.213
 			}
-			if = {
-				limit = {
-					932 = { is_owned_by = CAN } #Massachusetts
-				}
-				unlock_decision_tooltip = CAN_nee_recruitment1
-				unlock_decision_tooltip = CAN_develop_boston_synth
-			}
-			if = {
-				limit = {
-					357 = { is_owned_by = CAN } #Massachusetts
-				}
-				unlock_decision_tooltip = CAN_develop_maine_steel
-			}
+			activate_targeted_decision = { target = 932 decision = CAN_nee_recruitment1 }
+			activate_targeted_decision = { target = 932 decision = CAN_develop_boston_synth }
+			activate_targeted_decision = { target = 357 decision = CAN_develop_maine_steel }
 		}
 	}
 

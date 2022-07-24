@@ -2130,7 +2130,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CENmil_equi_developping
+		id = CENmil_equi_developing
 		icon = GFX_focus_secret_rearmament
 		cost = 5
 		prerequisite = {
@@ -2145,9 +2145,9 @@ focus_tree = {
 		x = 41
 		y = 4
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus CENmil_equi_developping"
+			log = "[GetDateText]: [Root.GetName]: Focus CENmil_equi_developing"
 			add_tech_bonus = {
-				name = CENmil_equi_developping
+				name = CENmil_equi_developing
 				bonus = 1
 				uses = 1
 				category = infantry_weapons

@@ -1084,7 +1084,7 @@ country_event = {
 
 	option = {
 		name = romania.30.a
-		add_stability = -0.06
+		add_stability = -0.04
 		add_popularity = {
 			ideology = national_populist
 			popularity = 0.04
@@ -1457,10 +1457,6 @@ country_event = {
 	immediate = {
 		var:84.owner = {
 			save_event_target_as = ROM_transylvania_target
-			if = {
-				limit = { is_subject = yes }
-				overlord = { save_event_target_as = ROM_transylvania_overlord }
-			}
 		}
 	}
 
@@ -1479,22 +1475,22 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = ROM_TRS_revolt
 			event_target:ROM_transylvania_target = {
+				country_event = romania.50 #Inform the owner of TRS
+				if = {
+					limit = { is_subject = yes }
+					overlord = { country_event = romania.50 }
+				}
 				if = {
 					limit = {
 						tag = TRS
 						is_subject = yes
 					}
 					delete_unit = { disband = yes }
-					become_exiled_in = { target = event_target:ROM_transylvania_overlord legitimacy = 0 } #Collapse TRS
-				}
-				country_event = romania.50 #Inform the owner of TRS
-				if = {
-					limit = { is_subject = yes }
-					overlord = { country_event = romania.50 }
+					ROOT = { annex_country = { target = PREV } }
 				}
 			}
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 
 				#Remove AUS/HUN armies
 				teleport_armies = {
@@ -1623,10 +1619,6 @@ country_event = {
 	immediate = {
 		var:84.owner = {
 			save_event_target_as = ROM_transylvania_target
-			if = {
-				limit = { is_subject = yes }
-				overlord = { save_event_target_as = ROM_transylvania_overlord }
-			}
 		}
 	}
 
@@ -1674,7 +1666,7 @@ country_event = {
 		}
 		hidden_effect = {
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				clear_variable = ROM_transylvanian_resistance_target
 				clear_variable = ROM_transylvanian_resistance_activity
 				clear_variable = ROM_transylvanian_resistance_garrison
@@ -1686,7 +1678,6 @@ country_event = {
 				}
 			}
 		}
-		clear_array = global.ROM_transylvania_states
 	}
 }
 #Transylvania has revolted (for HUN)
@@ -2932,9 +2923,9 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			ROM_mihai_i = {
-				promote_character = { ideology = authoritarian_democrat_subtype }
-				promote_character = { ideology = paternal_autocrat_subtype }
-				promote_character = { ideology = national_populist_subtype }
+				promote_character = authoritarian_democrat_subtype
+				promote_character = paternal_autocrat_subtype
+				promote_character = national_populist_subtype
 			}
 			set_country_flag = ROM_Michael_I
 			set_country_flag = ROM_carol_exile
@@ -3397,9 +3388,9 @@ country_event = {
 			if = {
 				limit = { has_country_leader = { character = ROM_nicolae_i } }
 				ROM_mihai_i = {
-					promote_character = { ideology = authoritarian_democrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = national_populist_subtype }
+					promote_character = authoritarian_democrat_subtype
+					promote_character = paternal_autocrat_subtype
+					promote_character = national_populist_subtype
 				}
 			}
 			country_event = {
@@ -4319,9 +4310,9 @@ country_event = {
 			if = {
 				limit = { has_country_leader = { character = ROM_nicolae_i }}
 				ROM_mihai_i = {
-					promote_character = { ideology = authoritarian_democrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = national_populist_subtype }
+					promote_character = authoritarian_democrat_subtype
+					promote_character = paternal_autocrat_subtype
+					promote_character = national_populist_subtype
 				}
 			}
 			country_event = {
@@ -4390,6 +4381,7 @@ country_event = {
 				remove_ideas = ROM_legionary_worker_corps1
 				remove_ideas = ROM_legionary_worker_corps2
 				remove_ideas = ROM_cross_brotherhoods_idea
+				remove_ideas = ROM_echipa_mortii
 			}
 			if = {
 				limit = { NOT = { has_country_flag = ROM_Michael_I } }

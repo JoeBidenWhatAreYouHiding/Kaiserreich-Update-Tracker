@@ -759,7 +759,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus INC_Rural_Cooperatives"
 			INC = {
 				every_owned_state = {
-					add_extra_state_shared_building_slots = 1
+					increase_state_category_by_one_level = yes
 				}
 			}
 		}
@@ -1261,7 +1261,7 @@ focus_tree = {
 			}
 			INC = {
 				every_owned_state = {
-					add_extra_state_shared_building_slots = 1
+					increase_state_category_by_one_level = yes
 				}
 			}
 			set_country_flag = INC_research_slot_2
@@ -2250,29 +2250,14 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus INC_Transindochinese_Railway_Resconstruction"
 			build_railway = {
-				level = 1
+				level = 2
 				start_province = 4401
 				target_province = 4075
 			}
 			add_equipment_to_stockpile = {
 				type = train_equipment
-				amount = 10
+				amount = 20
 				producer = FRA
-			}
-			857 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			827 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			856 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			286 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			671 = {
-				add_extra_state_shared_building_slots = 1
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2295,7 +2280,7 @@ focus_tree = {
 				state = 671
 			}
 			671 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3612,7 +3597,7 @@ focus_tree = {
 						infantry = { x = 2 y = 2 }
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					prioritize = { 826 }
 					create_unit = {
 						division = "name = \"Khmer Issarak 1st Division'\" division_template = \"Khmer Issarak\" start_experience_factor = 0.4"
@@ -3676,7 +3661,7 @@ focus_tree = {
 						infantry = { x = 2 y = 2 }
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					prioritize = { 670 }
 					create_unit = {
 						division = "name = \"Pathet Lao 1st Division'\" division_template = \"Pathet Lao\" start_experience_factor = 0.4"
@@ -3743,7 +3728,7 @@ focus_tree = {
 						engineer = { x = 0 y = 1 }
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					prioritize = { 286 }
 					create_unit = {
 						division = "name = \"Seri Thai Liberation Division'\" division_template = \"Seri Thai\" start_experience_factor = 0.5   start_equipment_factor = 0.5"

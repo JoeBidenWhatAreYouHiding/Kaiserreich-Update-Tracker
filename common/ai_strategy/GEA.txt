@@ -2,9 +2,6 @@ GEA_naval_focus = {
 	allowed = {
 		original_tag = GEA
 	}
-	enable = {
-		always = yes
-	}
 
 	ai_strategy = {
 		type = dockyard_to_military_factory_ratio

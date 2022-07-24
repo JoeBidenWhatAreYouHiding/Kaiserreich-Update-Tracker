@@ -2532,57 +2532,6 @@ country_event = {
 	}
 }
 
-# Seizing Equatorial Guinea
-country_event = {
-	id = sprc.327
-	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.327 FROM = [From.GetName]" }
-	title = sprc.327.t
-	desc = sprc.327.d
-	picture = GFX_report_event_generic_ruins
-
-	fire_only_once = yes
-
-	trigger = {
-		OR = {
-			tag = MAF
-			tag = GER
-		}
-		927 = { is_owned_and_controlled_by = ROOT } #Kamerun
-		297 = { is_owned_and_controlled_by = SWF } #Equatorial Guinea
-		has_socialist_government = no
-	}
-
-	mean_time_to_happen = {
-		days = 3
-	}
-
-	option = {
-		name = sprc.327.a
-		add_political_power = 20
-		transfer_state = 297
-		297 = {
-			add_claim_by = SWF
-			if = {
-				limit = {
-					country_exists = SPA
-				}
-				add_claim_by = SPA
-			}
-			if = {
-				limit = {
-					country_exists = SPR
-				}
-				add_claim_by = SPR
-			}
-		}
-	}
-	option = {
-		name = sprc.327.b
-		ai_chance = { base = 0 }
-		add_political_power = -20
-	}
-}
-
 country_event = { #Damn it CNT-FAI
 	id = sprc.255
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.255 FROM = [From.GetName]" }
@@ -2654,5 +2603,327 @@ news_event = { #Spanish Civil War
 				name = SPA_civil_war_threat
 			}
 		}
+	}
+}
+
+
+# Collapse of the Spanish Colonial Empire
+country_event = { #Spanish Africa Switches Sides
+	id = sprc.500
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.500 FROM = [From.GetName]" }
+	title = sprc.500.t
+	desc = sprc.500.d
+	picture = GFX_report_event_generic_ruins
+	
+	trigger = {
+		has_war_with = FROM
+		has_capitulated = no
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT } }
+				transfer_state_to = SPR
+			}
+		}
+	}
+
+	option = {
+		name = sprc.500.a
+		effect_tooltip = {
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT } }
+				transfer_state_to = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sprc.501
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.501 FROM = [From.GetName]" }
+	title = sprc.501.t
+	desc = sprc.501.d
+	picture = GFX_report_event_generic_ruins
+
+	trigger = {
+		OR = {
+			297 = { is_core_of = ROOT }
+			has_socialist_government = no
+		}
+		SWF = { owns_state = 297 }
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = sprc.501.a
+		transfer_state = 297
+		SWF = { country_event = sprc.502 }
+	}
+	option = {
+		name = sprc.501.b
+		ai_chance = { base = 0 }
+		if = {
+			limit = { NOT = { owns_state = 927 } }
+			add_political_power = -10
+			var:927.owner = { country_event = sprc.501 }
+		}
+		else = {
+			add_political_power = -100
+		}
+	}
+}
+
+country_event = { #Conflict in Africa seized equatorial guinea
+	id = sprc.502
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.502 FROM = [From.GetName]" }
+	title = sprc.502.t
+	desc = sprc.502.d
+	picture = GFX_report_event_NFA_event_NFAGenericArmy
+
+	is_triggered_only = yes
+
+	option = {
+		name = sprc.502.a #Let them take them
+		add_opinion_modifier = { target = FROM modifier = KR_hates_govt }
+	}
+
+	option = {
+		name = sprc.502.c #Offer what resistance we can.....
+		ai_chance = { base = 0 }
+		add_opinion_modifier = { target = FROM modifier = KR_hates_govt }
+		add_political_power = -40
+		297 = {
+			add_resistance = 20
+			add_resistance_target = {
+				amount = 20
+				days = 730
+				tooltip = SWF_colonial_resistance
+			}
+		}
+	}
+}
+
+country_event = { #SWF in Africa what to do with Rio de Oro
+	id = sprc.503
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.503 FROM = [From.GetName]" }
+	title = sprc.503.t
+
+	desc = {
+		text = sprc.503.d.mrt
+		trigger = { original_tag = MRT }
+	}
+	desc = {
+		text = sprc.503.d.not_mrt
+		trigger = { NOT = { original_tag = MRT } }
+	}
+
+	picture = GFX_report_event_NFA_event_ArmyReview
+
+	trigger = {
+		OR = {
+			tag = MRT
+			has_socialist_government = no
+		}
+		SWF = { owns_state = 699 }
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = sprc.503.a #Occupy those territories
+		trigger = { original_tag = MRT }
+		add_state_core = 699
+		transfer_state = 699
+		SWF = { country_event = sprc.506 }
+	}
+
+	option = {
+		name = sprc.503.b #Occupy those territories
+		trigger = { NOT = { original_tag = MRT } }
+		add_manpower = -1000
+		add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
+		add_state_claim = 699
+		transfer_state = 699
+		SWF = { country_event = sprc.505 }
+	}
+
+	option = {
+		name = sprc.503.c #Don't
+		trigger = { NOT = { original_tag = MRT } }
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		if = {
+			limit = {
+				NOT = { tag = MOR }
+				country_exists = MOR
+				MOR = { has_capitulated = no }
+			}
+			add_political_power = -10
+			MOR = { country_event = sprc.503 }
+		}
+		else = {
+			add_political_power = -100
+		}
+	}
+}
+
+country_event = { #SWF - Conflict in Africa seized rio de oro
+	id = sprc.505
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.505 FROM = [From.GetName]" }
+	title = sprc.505.t
+	desc = sprc.505.d
+	picture = GFX_report_event_NFA_event_NFAGenericArmy
+
+	is_triggered_only = yes
+
+	option = {
+		name = sprc.505.a #Let them take them
+		add_opinion_modifier = { target = FROM modifier = KR_hates_govt }
+	}
+
+	option = {
+		name = sprc.505.b #To war!
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		create_wargoal = { target = FROM type = annex_everything }
+	}
+
+	option = {
+		name = sprc.505.c #Offer what resistance we can.....
+		ai_chance = { base = 0 }
+		add_opinion_modifier = { target = FROM modifier = KR_hates_govt }
+		add_political_power = -40
+		699 = {
+			add_resistance = 20
+			add_resistance_target = {
+				amount = 20
+				days = 699
+				tooltip = SWF_colonial_resistance
+			}
+		}
+	}
+}
+
+country_event = { #SWF - Conflict in Africa seized rio de oro (MRT)
+	id = sprc.506
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.506 FROM = [From.GetName]" }
+	title = sprc.506.t
+	desc = sprc.506.d
+	picture = GFX_report_event_NFA_event_NFAGenericArmy
+
+	is_triggered_only = yes
+
+	option = {
+		name = sprc.506.a #Let them take them
+		add_opinion_modifier = { target = FROM modifier = KR_hates_govt }
+	}
+
+	option = {
+		name = sprc.506.b #To war!
+		ai_chance = { base = 0 }
+		add_political_power = -200
+		create_wargoal = { target = FROM type = annex_everything }
+	}
+}
+
+country_event = { #SWF in Africa what to do with the Rif
+	id = sprc.507
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.507 FROM = [From.GetName]" }
+	title = sprc.507.t
+	desc = {
+		text = sprc.507.d_ger
+		trigger = { has_subject = MOR }
+	}
+	desc = {
+		text = sprc.507.d_other
+		trigger = { NOT = { has_subject = MOR } }
+	}
+	picture = GFX_report_event_NFA_event_ArmyReview
+
+	trigger = {
+		OR = {
+			tag = MOR
+			has_socialist_government = no
+		}
+		SWF = { any_owned_state = { is_core_of = MOR } }
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = sprc.507.a #Occupy those territories
+		trigger = { has_subject = MOR }
+		add_manpower = -1000
+		add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
+		SWF = {
+			every_owned_state = {
+				limit = { is_core_of = MOR }
+				teleport_armies = { to_state = 169 } #Sevilla
+				transfer_state_to = MOR
+			}
+			country_event = sprc.508
+		}
+	}
+
+	option = {
+		name = sprc.507.b #Occupy those territories
+		trigger = {
+			NOT = { tag = GER }
+		}
+		add_manpower = -1000
+		add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
+		SWF = {
+			every_owned_state = {
+				limit = { is_core_of = MOR }
+				teleport_armies = { to_state = 169 } #Sevilla
+				transfer_state_to = ROOT
+			}
+			country_event = sprc.508
+		}
+	}
+
+	option = {
+		name = sprc.507.c #Don't
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		if = {
+			limit = {
+				NOT = { tag = NFA }
+				country_exists = NFA
+				NFA = { has_capitulated = no }
+			}
+			add_political_power = -10
+			NFA = { country_event = sprc.507 }
+		}
+		else = {
+			add_political_power = -100
+		}
+	}
+}
+country_event = { # German Empire occupies Spanish Morocco
+	id = sprc.508
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sprc.508 FROM = [From.GetName]" }
+	title = sprc.508.t
+	desc = sprc.508.d
+
+	is_triggered_only = yes
+
+	option = { # Nothing we can do
+		name = sprc.508.a
+		add_opinion_modifier = { target = FROM modifier = KR_hates_govt }
+	}
+
+	option = { # War
+		name = sprc.508.b
+		ai_chance = { base = 0 }
+		add_political_power = -200
+		create_wargoal = { target = FROM type = annex_everything }
 	}
 }

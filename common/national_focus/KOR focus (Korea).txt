@@ -124,7 +124,6 @@ focus_tree = {
 			add_stability = -0.15
 			KOR_kim_suk_won = {
 				add_corps_commander_role = {
-					traits = { }
 					skill = 1
 					attack_skill = 2
 					defense_skill = 2
@@ -257,9 +256,6 @@ focus_tree = {
 					add_idea = KOR_scarred_nation5
 				}
 			}
-			525 = {
-				add_extra_state_shared_building_slots = 2
-			}
 		}
 	}
 	focus = {
@@ -325,7 +321,7 @@ focus_tree = {
 				add_idea = KOR_agriculture_focus
 			}
 			525 = {
-				add_extra_state_shared_building_slots = 3
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -518,10 +514,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus KOR_begin_the_land_reform"
 			add_stability = -0.20
 			525 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			527 = {
-				add_extra_state_shared_building_slots = 3
+				increase_state_category_by_one_level = yes
 			}
 
 		}
@@ -1029,7 +1025,7 @@ focus_tree = {
 					KOR_lee_beom_seok = {
 						if = {
 							limit = { has_ideology = national_populist_subtype }
-							promote_character = { ideology = national_populist_subtype }
+							promote_character = national_populist_subtype
 						}
 						else = {
 							add_country_leader_role = {
@@ -1199,6 +1195,14 @@ focus_tree = {
 			}
 			set_cosmetic_tag = KOR_KING
 			hidden_effect = {
+				if = {
+					limit = { NOT = { has_character = KOR_yi_kang } }
+					KOR_yi_kang = { set_nationality = PREV }
+				}
+				if = {
+					limit = { NOT = { has_character = KOR_yi_un } }
+					KOR_yi_un = { set_nationality = PREV }
+				}
 				random_list = {
 					60 = {
 						KOR_yi_kang = {
@@ -1224,6 +1228,8 @@ focus_tree = {
 						}
 					}
 				}
+				clear_sic_slot = yes
+				activate_advisor = KOR_kim_koo_sic #promote Kim Koo to SiC
 			}
 		}
 	}
@@ -1652,10 +1658,10 @@ focus_tree = {
 				}
 			}
 			525 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			527 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -2067,9 +2073,6 @@ focus_tree = {
 					add_idea = KOR_three_principles_3
 				}
 			}
-			527 = {
-				add_extra_state_shared_building_slots = 2
-			}
 		}
 	}
 	focus = {
@@ -2204,18 +2207,16 @@ focus_tree = {
 			focus = KOR_land_to_the_tiller
 		}
 		on_uncomplete = {
-			add_political_power = 100
 			add_stability = 0.15
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KOR_expropriate_the_landlords"
-			add_political_power = -100
 			add_stability = -0.15
 			525 = {
-				add_extra_state_shared_building_slots = 4
+				increase_state_category_by_one_level = yes
 			}
 			527 = {
-				add_extra_state_shared_building_slots = 4
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -2252,10 +2253,10 @@ focus_tree = {
 				popularity = -0.05
 			}
 			525 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			527 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}

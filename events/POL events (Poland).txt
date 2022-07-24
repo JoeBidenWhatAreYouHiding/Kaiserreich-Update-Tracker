@@ -5039,9 +5039,20 @@ country_event = { # Austria notified of Karol's election
 
 	option = {
 		name = poland.235.a
-		set_faction_name = austrian_sphere
-		add_to_faction = FROM
-		set_global_flag = AUS_created_donau_adriabund
+		if = {
+			limit = {
+				is_faction_leader = yes
+				NOT = { has_global_flag = AUS_created_donau_adriabund }
+			}
+			set_faction_name = austrian_sphere
+			set_global_flag = AUS_created_donau_adriabund
+		}
+		if = {
+			limit = {
+				FROM = { NOT = { is_in_faction_with = ROOT }}
+			}
+			add_to_faction = FROM
+		}
 	}
 }
 

@@ -264,6 +264,8 @@ country_event = {	#End of an Era
 		name = cp.1.a
 		set_country_flag = OTT_change_to_turkey
 		remove_ideas = OTT_Ottoman_Stand
+		OTT_post_defeat_setup = yes
+		OTT_remove_ottoman_ambitions_claims = yes
 		EGY = { country_event = cp.2 }
 		hidden_effect = {
 			country_event = { id = cp.10 days = 10 random_days = 8 }
@@ -540,8 +542,12 @@ country_event = { #Victory in the Mashriq
 					}
 				}
 			}
+			SYR = {
+				delete_unit_template_and_units = { division_template = "Militia Damascus" }
+				delete_unit_template_and_units = { division_template = "Druze Cavalry" }
+			}
 
-			### Iraqi Declaration of Independence
+			### Hand over Iraqi Land
 			if = {
 				limit = { NOT = { country_exists = IRQ } }
 				OTT = {
@@ -563,10 +569,6 @@ country_event = { #Victory in the Mashriq
 						transfer_state_to = IRQ
 					}
 				}
-			}
-			if = {
-				limit = { country_exists = IRQ }
-				country_event = { id = cp.7 hours = 4 }
 			}
 
 			### Hand over Iranian Land
@@ -920,61 +922,6 @@ country_event = { #Victory in the Mashriq
 					}
 				}
 			}
-
-			### Clear Ottoman state effects
-			every_state = {
-				limit = { NOT = { is_owned_by = OTT } }
-				if = {
-					limit = {
-						has_dynamic_modifier = { modifier = autonomous_region }
-					}
-					remove_dynamic_modifier = { modifier = autonomous_region }
-				}
-				if = {
-					limit = {
-						has_dynamic_modifier = { modifier = vilayet }
-					}
-					remove_dynamic_modifier = { modifier = vilayet }
-				}
-				if = {
-					limit = {
-						has_dynamic_modifier = { modifier = high_revolt_risk }
-					}
-					remove_dynamic_modifier = { modifier = high_revolt_risk }
-				}
-				if = {
-					limit = {
-						has_dynamic_modifier = { modifier = very_high_revolt_risk }
-					}
-					remove_dynamic_modifier = { modifier = very_high_revolt_risk }
-				}
-				if = {
-					limit = {
-						check_variable = { corruption = 2 }
-						has_state_flag = OTT_corruption_applied
-					}
-					clr_state_flag = OTT_corruption_applied
-					add_state_modifier = {
-						modifier = {
-							local_building_slots_factor = 0.20
-							local_manpower = 0.50
-						}
-					}
-				}
-				else_if = {
-					limit = {
-						check_variable = { corruption = 1 }
-						has_state_flag = OTT_corruption_applied
-					}
-					clr_state_flag = OTT_corruption_applied
-					add_state_modifier = {
-						modifier = {
-							local_building_slots_factor = 0.10
-							local_manpower = 0.25
-						}
-					}
-				}
-			}
 		}
 	}
 
@@ -989,6 +936,19 @@ country_event = { #Victory in the Mashriq
 					option = EGY_SYR_Annexed
 				}
 			}
+		}
+		every_owned_state = {
+			limit = {
+				OR = {
+					is_core_of = SYR
+					is_claimed_by = SYR
+				}
+			}
+			remove_claim_by = EGY
+		}
+		if = {
+			limit = { NOT = { country_exists = SYR } }
+			save_event_target_as = syria_did_not_exist
 		}
 		every_owned_state = {
 			limit = {
@@ -1015,43 +975,47 @@ country_event = { #Victory in the Mashriq
 				344 = {
 					force_enable_resistance = SYR
 					if = {
-						limit = { has_resistance = no }
+						limit = {
+							is_owned_by = SYR
+							has_resistance = no
+						}
 						start_resistance = yes
 					}
 				}
 				553 = {
 					force_enable_resistance = SYR
 					if = {
-						limit = { has_resistance = no }
+						limit = {
+							is_owned_by = SYR
+							has_resistance = no
+						}
 						start_resistance = yes
 					}
 				}
 				350 = {
 					force_enable_resistance = SYR
 					if = {
-						limit = { has_resistance = no }
+						limit = {
+							is_owned_by = SYR
+							has_resistance = no
+						}
 						start_resistance = yes
 					}
 				}
 				680 = {
 					force_enable_resistance = SYR
 					if = {
-						limit = { has_resistance = no }
+						limit = {
+							is_owned_by = SYR
+							has_resistance = no
+						}
 						start_resistance = yes
 					}
 				}
-
-				delete_unit_template_and_units = {
-					division_template = "Militia Damascus"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Druze Cavalry"
-				}
-				load_oob = SYR_army
-				transfer_technology = yes
-				every_owned_state = { #added this to prevent the situation where EGY claimed Syria in the confrence, released them as indpendent, but EGY still kept claims (which can lead to odd EGY-SYR war)
-					limit = { is_claimed_by = EGY }
-					remove_claim_by = EGY
+				if = {
+					limit = { has_event_target = syria_did_not_exist }
+					transfer_technology = yes
+					SYR_spawn_initial_units = yes
 				}
 			}
 		}
@@ -1373,34 +1337,38 @@ country_event = { #Iraqi Declaration of Independence
 	immediate = { log = "[GetDateText]: [Root.GetName]: event cp.7 FROM = [From.GetName]" }
 	title = cp.7.t
 	desc = cp.7.d
+	
+	trigger = {
+		country_exists = IRQ
+		IRQ = {
+			has_capitulated = no
+			is_subject = no
+			OR = {
+				is_in_faction = no
+				is_in_faction_with = ROOT
+			}
+			NOT = { has_war_with = PER }
+			NOT = { has_war_with = OTT }
+		}
+	}
 
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
 		name = cp.7.a
-		ai_chance = {
-			base = 100
-		}
 		IRQ = {
-			if = {
-				limit = { is_in_faction_with = ROOT }
-				leave_faction = yes
-			}
+			leave_faction = yes
 			country_event = irq.1
 		}
 	}
 
 	option = {
 		name = cp.7.b
-		ai_chance = {
-			base = 0
-		}
+		ai_chance = { base = 0 }
 		IRQ = {
-			if = {
-				limit = { is_in_faction_with = ROOT }
-				leave_faction = yes
-			}
-			country_event = irq.1
+			leave_faction = yes
+			country_event = { id = irq.1 hours = 2 }
 			change_tag_from = ROOT
 		}
 	}
@@ -1696,9 +1664,58 @@ country_event = { #Formation of the Israel Defence Force
 			amount = 1200
 			producer = PAL
 		}
-		custom_effect_tooltip = OTT_jews_tt
 		hidden_effect = {
-			load_oob = OTT_jews
+			if = {
+				limit = { has_template = "Yahudi Piyade Fırkası" }
+				delete_unit_template_and_units = { division_template = "Yahudi Piyade Fırkası" disband = yes } #no cheating
+			}
+			if = {
+				limit = { has_template = "Yahudi Süvari Fırkası" }
+				delete_unit_template_and_units = { division_template = "Yahudi Süvari Fırkası" disband = yes } #no cheating
+			}
+		}
+		division_template = {
+			name = "Yahudi Piyade Fırkası"
+			division_names_group = OTT_INF_01
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 2 y = 2 }
+			}
+		}
+
+		division_template = {
+			name = "Yahudi Süvari Fırkası"
+			division_names_group = OTT_CAV_01
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 0 y = 1 }
+				cavalry = { x = 0 y = 2 }
+				cavalry = { x = 1 y = 0 }
+				cavalry = { x = 1 y = 1 }
+				cavalry = { x = 1 y = 2 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 454 }
+			limit = {
+				is_core_of = ROOT
+				is_in_home_area = yes
+			}
+			create_unit = {
+				division = "name = \"Haganah Piyade Fırkası\" division_template = \"Yahudi Piyade Fırkası\""
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"'Parashei Zion' Süvari Fırkası\" division_template = \"Yahudi Süvari Fırkası\""
+				owner = ROOT
+			}
 		}
 		every_owned_state = {
 			limit = {
@@ -2162,15 +2179,6 @@ country_event = { #Egypt Accepts Peace (PER)
 				relation = non_aggression_pact
 			}
 			set_truce = { target = ROOT days = 730 }
-		}
-		hidden_effect = {
-			if = {
-				limit = { is_ai = no }
-				country_event = { id = cp.7 days = 2 }
-			}
-			else = {
-				FROM = { country_event = { id = cp.7 days = 2 } }
-			}
 		}
 	}
 }

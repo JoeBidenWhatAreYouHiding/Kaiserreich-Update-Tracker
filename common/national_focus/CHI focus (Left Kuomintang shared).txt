@@ -16,10 +16,6 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 100
-		modifier = {
-			factor = 0
-			NOT = { has_country_flag = choice_made }
-		}
 	}
 
 	available = {
@@ -339,12 +335,7 @@ shared_focus = {
 		log = "[GetDateText]: [Root.GetName]: Focus CHI_jiangxi_rail"
 		add_political_power = 50
 		1067 = { # Jinhua
-			if = {
-				limit = {
-					free_building_slots = { building = infrastructure size > 0 }
-				}
-				add_extra_state_shared_building_slots = 1
-			}
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
@@ -822,11 +813,7 @@ shared_focus = {
 	cost = 2
 
 	ai_will_do = {
-		factor = 95
-		modifier = {
-			factor = 0
-			NOT = { has_country_flag = choice_made }
-		}
+		factor = 50
 	}
 
 	completion_reward = {
@@ -1668,7 +1655,7 @@ shared_focus = {
 					is_coastal = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_coastal = yes
 					free_building_slots = {
@@ -2193,31 +2180,24 @@ shared_focus = {
 			category = industry
 		}
 		capital_scope = {
-			if = {
-				limit = {
-					free_building_slots = { building = infrastructure size > 0 }
-				}
-				add_extra_state_shared_building_slots = 1
-			}
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
 				instant_build = yes
 			}
 		}
-		hidden_effect = {
-			activate_targeted_decision = { target = THIS decision = CHI_dec_pop_industrialise }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_1 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_2 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_3 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_4 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_5 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_6 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_7 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_8 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_9 }
-			activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_10 }
-		}
+		activate_targeted_decision = { target = THIS decision = CHI_dec_pop_industrialise }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_1 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_2 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_3 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_4 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_5 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_6 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_7 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_8 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_9 }
+		activate_targeted_decision = { target = THIS decision = CHI_dec_civ_industrialise_10 }
 	}
 	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 }
@@ -2774,6 +2754,7 @@ shared_focus = {
 	icon = GFX_goal_generic_national_unity
 	prerequisite = { focus = CHI_rec_syndies }
 	mutually_exclusive = { focus = CHI_continued_tutelage }
+	mutually_exclusive = { focus = CHI_dais_coup }
 	x = -1
 	y = 1
 	relative_position_id = CHI_rec_syndies
@@ -2834,6 +2815,7 @@ shared_focus = {
 	icon = GFX_goal_ideology_totalist
 	prerequisite = { focus = CHI_unitary_state focus = CHI_ethnic_autonomy }
 	prerequisite = { focus = CHI_national_labor focus = CHI_rec_syndies }
+	mutually_exclusive = { focus = CHI_local_democracy }
 	mutually_exclusive = { focus = CHI_continued_tutelage }
 	x = 1
 	y = 1
@@ -3441,13 +3423,11 @@ shared_focus = {
 		}
 		modifier = {
 			factor = 0
-			LEC = {
-				OR = {
-					overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
-					faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
-					guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
-				}
-			}
+			LEC = { dont_start_major_faction_wars = yes }
+		}
+		modifier = {
+			factor = 0
+			LEC = { default_attack_AI_trigger_FROM = yes }
 		}
 	}
 

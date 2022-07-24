@@ -8015,6 +8015,10 @@ spriteTypes = {
 		name = "GFX_report_event_WHR_tractor"
 		texturefile = "gfx/event_pictures/Europe/White_Ruthenia/GFX_report_event_WHR_tractor.png"
 	}
+	spriteType = {
+		name = "GFX_report_event_WHR_incident"
+		texturefile = "gfx/event_pictures/Europe/White_Ruthenia/GFX_report_event_WHR_incident.png"
+	}
 
 	## WAL - Wallonia
 	spriteType = {

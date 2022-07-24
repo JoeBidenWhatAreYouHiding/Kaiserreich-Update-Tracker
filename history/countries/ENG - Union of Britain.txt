@@ -6,6 +6,7 @@ set_stability = 0.75
 set_war_support = 0.3
 set_research_slots = 4
 starting_train_buffer = 2
+set_fuel_ratio = 0.8
 
 ### Starting Technologies ###
 set_technology = {
@@ -44,7 +45,6 @@ if = {
 	set_technology = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
-		basic_heavy_tank_chassis = 1
 	}
 }
 
@@ -54,7 +54,6 @@ if = {
 	set_technology = {
 		gwtank = 1
 		basic_light_tank = 1
-		basic_heavy_tank = 1
 	}
 }
 

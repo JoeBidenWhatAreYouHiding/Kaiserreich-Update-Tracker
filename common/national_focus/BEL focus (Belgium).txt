@@ -1123,24 +1123,15 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				is_in_faction = yes
-				var:980.owner = { is_in_faction = yes }
-			}
-			modifier = {
-				factor = 0
 				ROOT_is_threatened_cautious = yes
 			}
 			modifier = {
 				factor = 0
-				HOL = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				HOL = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				HOL = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				HOL = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				HOL = { default_attack_AI_trigger_FROM = yes }
 			}
 		}
 		will_lead_to_war_with = HOL
@@ -1216,24 +1207,15 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				is_in_faction = yes
-				var:980.owner = { is_in_faction = yes }
-			}
-			modifier = {
-				factor = 0
 				ROOT_is_threatened_cautious = yes
 			}
 			modifier = {
 				factor = 0
-				var:980.owner = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+				var:980.owner = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
-				var:980.owner = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				var:980.owner = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				var:980.owner = { default_attack_AI_trigger_FROM = yes }
 			}
 		}
 		will_lead_to_war_with = FRA
@@ -3172,7 +3154,7 @@ shared_focus = {
 shared_focus = {
 	id = BEL_Mobilise_the_Reserves
 	icon = GFX_goal_BEL_Valiant_Defence3
-	cost = 3
+	cost = 6
 	prerequisite = {
 		focus = BEL_Increase_Flemish_Conscription
 	}
@@ -3191,59 +3173,8 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus BEL_Mobilise_the_Reserves"
-		if = {
-			limit = { has_cosmetic_tag = BEL_flanders_wallonia }
-			division_template = {
-				name = "Flemish-Wallonian Reserve Division"
-				division_names_group = BEL_INF_01
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 2 y = 0 }
-					infantry = { x = 2 y = 1 }
-					infantry = { x = 2 y = 2 }
-				}
-			}
-			random_owned_controlled_state = {
-				prioritize = { 925 }
-				limit = { is_in_home_area = yes }
-				create_unit = {
-					division = "division_template = \"Flemish-Wallonian Reserve Division\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
-					owner = ROOT
-					count = 5
-				}
-			}
-		}
-		else = {
-			division_template = {
-				name = "Belgian Reserve Division"
-				division_names_group = BEL_INF_01
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 2 y = 0 }
-					infantry = { x = 2 y = 1 }
-					infantry = { x = 2 y = 2 }
-				}
-			}
-			random_owned_controlled_state = {
-				prioritize = { 925 }
-				limit = { is_in_home_area = yes }
-				create_unit = {
-					division = "division_template = \"Belgian Reserve Division\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
-					owner = ROOT
-					count = 5
-				}
-			}
-		}
+		add_war_support = 0.1
+		add_manpower = 100000
 	}
 	search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 }
@@ -3251,7 +3182,7 @@ shared_focus = {
 shared_focus = {
 	id = BEL_Last_Stand
 	icon = GFX_goal_generic_defence
-	cost = 2
+	cost = 5
 	prerequisite = {
 		focus = BEL_Mobilise_the_Reserves
 	}
@@ -3277,7 +3208,7 @@ shared_focus = {
 shared_focus = {
 	id = BEL_Push_Forwards
 	icon = GFX_goal_generic_military_sphere
-	cost = 2
+	cost = 5
 	prerequisite = {
 		focus = BEL_Mobilise_the_Reserves
 	}
@@ -3362,7 +3293,7 @@ shared_focus = {
 			add_building_construction = {
 				type = bunker
 				level = 2
-				province = 13661
+				province = 3516
 				instant_build = yes
 			}
 			add_building_construction = {
@@ -3714,7 +3645,13 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus BEL_Cooperation_with_the_Universities"
-		add_research_slot = 1
+		if = {
+			limit = { amount_research_slots > 4 }
+			add_ideas = BEL_State_Funded_Research
+		}
+		else = {
+			add_research_slot = 1
+		}
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }
@@ -4024,7 +3961,7 @@ shared_focus = {
 			add_building_construction = {
 				type = naval_base
 				level = 2
-				province = 13659
+				province = 6446
 				instant_build = yes
 			}
 		}

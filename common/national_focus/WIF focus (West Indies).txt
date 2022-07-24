@@ -21,6 +21,7 @@ focus_tree = {
 		x = 42
 		y = 0
 		cost = 7
+		dynamic = yes
 		ai_will_do = {
 			factor = 2
 		}
@@ -156,7 +157,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		cost = 8
-
+		dynamic = yes
 		relative_position_id = WIF_arms_shipments
 
 		prerequisite = {
@@ -928,7 +929,7 @@ focus_tree = {
 		x = 33
 		y = 0
 		cost = 8
-
+		dynamic = yes
 		ai_will_do = {
 			factor = 2
 		}
@@ -2579,7 +2580,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WIF_heavy_industry"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -2616,7 +2617,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WIF_naval_bases"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = dockyard
@@ -2669,7 +2670,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WIF_war_effort"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -3432,6 +3433,7 @@ focus_tree = {
 					set_autonomy = {
 						target = WIF
 						autonomy_state = kr_soclib_wif_puppet
+						end_wars = no
 					}
 				}
 			}

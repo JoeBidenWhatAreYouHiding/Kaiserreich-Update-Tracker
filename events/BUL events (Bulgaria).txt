@@ -61,6 +61,7 @@ country_event = { # Fate of the State Protection Act
 		set_variable = { BUL_tsar_perception = 70 } # 100 is max positive, 0 is max negative
 		set_variable = { BUL_parliamentary_support = 100 } # 280 is max positive, 0 is max negative
 		set_variable = { BUL_coup_success_chance = 0 } # 0-100
+		set_variable = { BUL_curtail_focus_amount_var = 0 } #how many times you took BUL_curtail_military_league focus
 		activate_mission = BUL_operation_nishava_fallout
 		custom_effect_tooltip = BUL_operation_nishava_fallout_tt
 		hidden_effect = {
@@ -592,6 +593,7 @@ country_event = { # Zveno coup - You are allied with Zveno
 		}
 		add_stability = -0.1
 		remove_mission = BUL_operation_nishava_fallout
+		clear_variable = BUL_curtail_focus_amount_var #clear the var as the focus isn't relevent anymore
 		remove_ideas = BUL_angry_military
 		hidden_effect = {
 			end_coalition = yes
@@ -683,6 +685,7 @@ country_event = { # Zveno coup - You are allied with Zveno
 		}
 		add_stability = -0.2
 		remove_mission = BUL_operation_nishava_fallout
+		clear_variable = BUL_curtail_focus_amount_var #clear the var as the focus isn't relevent anymore
 		remove_ideas = BUL_angry_military
 		hidden_effect = {
 			end_coalition = yes
@@ -767,6 +770,7 @@ country_event = { # Zveno coup - You are not allied with Zveno
 		}
 		add_stability = -0.2
 		remove_mission = BUL_operation_nishava_fallout
+		clear_variable = BUL_curtail_focus_amount_var #clear the var as the focus isn't relevent anymore
 		clr_country_flag = BUL_stands_with_opposition
 		clr_country_flag = BUL_stands_with_prince
 		remove_ideas = BUL_angry_military
@@ -874,6 +878,7 @@ country_event = { # The Non-Partisan Regime
 			popularity = 0.1
 		}
 		news_event = bulgariaflavour.30
+		clear_variable = BUL_curtail_focus_amount_var #clear the var as the focus isn't relevent anymore
 	}
 	option = {
 		name = bulgaria.18.b
@@ -890,6 +895,7 @@ country_event = { # The Non-Partisan Regime
 		clear_sic_slot = yes
 		activate_advisor = BUL_georgi_kyoseivanov_sic
 		news_event = bulgariaflavour.30
+		clear_variable = BUL_curtail_focus_amount_var #clear the var as the focus isn't relevent anymore
 	}
 }
 country_event = { # Democracy back on track
@@ -955,6 +961,7 @@ country_event = { # Democracy back on track
 		add_to_coalition = yes
 		mark_focus_tree_layout_dirty = yes
 		news_event = bulgariaflavour.31
+		clear_variable = BUL_curtail_focus_amount_var #clear the var as the focus isn't relevent anymore
 	}
 	option = {
 		name = bulgaria.19.b
@@ -1000,6 +1007,7 @@ country_event = { # Democracy back on track
 		activate_advisor = BUL_atanas_burov_sic
 		mark_focus_tree_layout_dirty = yes
 		news_event = bulgariaflavour.31
+		clear_variable = BUL_curtail_focus_amount_var #clear the var as the focus isn't relevent anymore
 	}
 }
 country_event = { # Vidovdan Speech event
@@ -2070,6 +2078,7 @@ country_event = { # Zveno monarchy
 		clear_sic_slot = yes
 		activate_advisor = BUL_pencho_zlatev_sic
 		remove_unit_leader_role = { character = BUL_kimon_georgiev }
+		retire_character = BUL_damyan_velchev
 	}
 }
 
@@ -3717,6 +3726,8 @@ country_event = { #Germany proposes deal with Bulgaria
 			type = infantry_equipment
 			amount = 1000
 		}
+		BUL = { save_event_target_as = volunteer_target }
+		send_volunteers_to_TARGET = yes
 		BUL = {
 			add_ideas = GER_mil_support_idea
 			army_experience = 50

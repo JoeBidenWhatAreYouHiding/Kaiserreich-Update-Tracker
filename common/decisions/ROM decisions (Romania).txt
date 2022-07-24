@@ -43,12 +43,12 @@ ROM_reconquest_category = {
 			set_country_flag = ROM_funded_separatist
 			add_to_variable = { ROM.revolt = 1 } #1
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_tooltip
 				hidden_effect = {
-					force_enable_resistance = { occupier = AUS }
-					force_enable_resistance = { occupier = HUN }
-					force_enable_resistance = { occupier = TRS }
+					force_enable_resistance = { occupier = AUS occupied = TRS }
+					force_enable_resistance = { occupier = HUN occupied = TRS }
+					force_enable_resistance = { occupier = TRS occupied = TRS }
 					if = {
 						limit = {
 							84 = { has_active_resistance = no }
@@ -95,7 +95,7 @@ ROM_reconquest_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ROM_propaganda_campaign"
 			add_to_variable = { var = ROM.revolt value = 1 } #2
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_target = 0.1
@@ -166,7 +166,7 @@ ROM_reconquest_category = {
 				}
 			}
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_target = 0.05
@@ -274,7 +274,7 @@ ROM_reconquest_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ROM_smuggle_arms"
 			add_to_variable = { var = ROM.revolt value = 1 } #5
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_target = 0.1
@@ -335,7 +335,7 @@ ROM_reconquest_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ROM_undercover_mission"
 			add_to_variable = { var = ROM.revolt value = 1 } #6
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_target = 0.05
@@ -387,7 +387,7 @@ ROM_reconquest_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ROM_sabotage_railways"
 			add_to_variable = { var = ROM.revolt value = 1 } #7
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_activity = 0.2
@@ -451,7 +451,7 @@ ROM_reconquest_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ROM_hit_garrisons"
 			add_to_variable = { var = ROM.revolt value = 1 } #8
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_garrison = 0.2
@@ -519,7 +519,7 @@ ROM_reconquest_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ROM_wreck_airfields"
 			add_to_variable = { var = ROM.revolt value = 1 } #9
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_activity = 0.2
@@ -580,7 +580,7 @@ ROM_reconquest_category = {
 			add_to_variable = { var = ROM.revolt value = 1 } #10
 			set_country_flag = ROM_TRS_prepared
 			for_each_scope_loop = {
-				array = global.ROM_transylvania_states
+				array = TRS.core_states
 				tooltip = ROM_transylvanian_resistance_effect_tooltip
 				add_to_variable = {
 					ROM_transylvanian_resistance_target = 0.1
@@ -1902,7 +1902,9 @@ ROM_reunion_category = {
 						limit = { has_dynamic_modifier = { modifier = ROM_transylvanian_collaboration } }
 						remove_dynamic_modifier = { modifier = ROM_transylvanian_collaboration }
 					}
-					force_disable_resistance = { clear = yes }
+					force_enable_resistance = { occupier = AUS occupied = TRS clear = yes }
+					force_enable_resistance = { occupier = HUN occupied = TRS clear = yes }
+					force_enable_resistance = { occupier = TRS occupied = TRS clear = yes }
 				}
 			}
 		}
@@ -1998,7 +2000,9 @@ ROM_reunion_category = {
 			hidden_effect = {
 				789 = {
 					remove_dynamic_modifier = { modifier = ROM_transylvanian_collaboration }
-					force_disable_resistance = { clear = yes }
+					force_enable_resistance = { occupier = AUS occupied = TRS clear = yes }
+					force_enable_resistance = { occupier = HUN occupied = TRS clear = yes }
+					force_enable_resistance = { occupier = TRS occupied = TRS clear = yes }
 				}
 			}
 		}
@@ -3285,7 +3289,7 @@ ROM_michael_category = {
 
 		available = { NOT = { has_idea = ROM_rebuilding_the_democracy } }
 
-		cost = 50
+		cost = 40
 		days_remove = 120
 		fire_only_once = yes
 
@@ -3305,7 +3309,7 @@ ROM_michael_category = {
 		icon = decision_hol_draw_up_staff_plans
 
 		visible = { has_completed_focus = ROM_PNT_victory }
-		cost = 100
+		cost = 75
 		days_remove = 120
 		fire_only_once = yes
 
@@ -3331,7 +3335,7 @@ ROM_michael_category = {
 				has_completed_focus = ROM_second_legionary_victory
 			}
 		}
-		cost = 75
+		cost = 60
 		days_remove = 90
 		fire_only_once = yes
 
@@ -3353,7 +3357,7 @@ ROM_michael_category = {
 		icon = decision_generic_political_rally
 
 		visible = { has_completed_focus = ROM_PNT_victory }
-		cost = 50
+		cost = 40
 		days_remove = 60
 		fire_only_once = yes
 
@@ -3376,7 +3380,7 @@ ROM_michael_category = {
 		icon = decision_hol_attract_foreign_investors
 
 		visible = { has_completed_focus = ROM_PNT_victory }
-		cost = 100
+		cost = 75
 		days_remove = 90
 		days_re_enable = 30
 
@@ -3398,7 +3402,7 @@ ROM_michael_category = {
 		icon = decision_hol_draw_up_staff_plans
 
 		visible = { has_completed_focus = ROM_PNL_victory }
-		cost = 75
+		cost = 55
 		days_remove = 120
 		fire_only_once = yes
 
@@ -3419,7 +3423,7 @@ ROM_michael_category = {
 		icon = decision_generic_speech
 
 		visible = { has_completed_focus = ROM_PNL_victory }
-		cost = 50
+		cost = 40
 		days_remove = 90
 		fire_only_once = yes
 
@@ -3440,7 +3444,7 @@ ROM_michael_category = {
 		icon = decision_gre_paying_ifc_debt
 
 		visible = { has_completed_focus = ROM_PNL_victory }
-		cost = 75
+		cost = 50
 		days_remove = 120
 		days_re_enable = 10
 
@@ -3460,7 +3464,7 @@ ROM_michael_category = {
 		icon = decision_generic_factory
 
 		visible = { has_completed_focus = ROM_second_legionary_victory }
-		cost = 60
+		cost = 40
 		days_remove = 60
 
 		ai_will_do = {
@@ -3480,7 +3484,7 @@ ROM_michael_category = {
 		icon = decision_hol_attract_foreign_investors
 
 		visible = { has_completed_focus = ROM_second_legionary_victory }
-		cost = 100
+		cost = 75
 		days_remove = 90
 		days_re_enable = 10
 

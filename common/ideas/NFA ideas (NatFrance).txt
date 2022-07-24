@@ -1385,7 +1385,7 @@ ideas = {
 
 			modifier = {
 				political_power_gain = 0.15
-				encryption = 1
+				enemy_operative_detection_chance_factor = 0.1
 				research_speed_factor = -0.03
 				production_speed_buildings_factor = -0.04
 				land_reinforce_rate = -0.04

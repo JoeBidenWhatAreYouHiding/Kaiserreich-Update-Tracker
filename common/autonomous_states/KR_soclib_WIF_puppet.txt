@@ -31,12 +31,15 @@ autonomy_state = {
 	}
 
 	ai_overlord_wants_garrison = {
-		always = yes
+		always = no
 	}
 
 	allowed = {
 		tag = WIF
-		overlord = { tag = CAN }
+		overlord = {
+			tag = CAN
+			CAN_is_dominion = yes
+		}
 	}
 
 	allowed_levels_filter = {

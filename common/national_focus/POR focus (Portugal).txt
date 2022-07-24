@@ -505,11 +505,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_raise_regulos"
 			hidden_effect = {
 				if = {
-					limit = { has_template = "Força de Defesa de Mozambique" } #no cheating
-					delete_unit_template_and_units = {
-						division_template = "Força de Defesa de Mozambique"
-						disband = yes
-					}
+					limit = { has_template = "Força de Defesa de Mozambique" }
+					delete_unit_template_and_units = { division_template = "Força de Defesa de Mozambique" disband = yes } #no cheating
 				}
 			}
 			division_template = {
@@ -567,11 +564,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_colonial_war_effort"
 			hidden_effect = {
 				if = {
-					limit = { has_template = "Divisão de Infantaria da Guarda" } #no cheating
-					delete_unit_template_and_units = {
-						division_template = "Divisão de Infantaria da Guarda"
-						disband = yes
-					}
+					limit = { has_template = "Divisão de Infantaria da Guarda" }
+					delete_unit_template_and_units = { division_template = "Divisão de Infantaria da Guarda" disband = yes } #no cheating
 				}
 			}
 			division_template = {
@@ -820,7 +814,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_capital_shipyrds"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_coastal = yes
 					free_building_slots = {
@@ -828,6 +822,7 @@ focus_tree = {
 						size > 1
 						include_locked = yes
 					}
+					prefer_home_area_states_unless_filled = yes
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1145,7 +1140,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_redouble_investments"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				prioritize = { 544 }
 				limit = {
 					free_building_slots = {
@@ -1182,7 +1177,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_luanda_imperial"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				prioritize = { 540 }
 				limit = {
 					free_building_slots = {
@@ -1367,7 +1362,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_construction"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1492,7 +1487,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_railways"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
@@ -1520,7 +1515,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
@@ -1664,7 +1659,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_state_construction"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1729,7 +1724,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus POR_civfac"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -2136,7 +2131,7 @@ focus_tree = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = air_base

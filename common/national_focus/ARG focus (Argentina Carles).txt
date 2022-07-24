@@ -534,6 +534,7 @@ focus_tree = {
 		x = 0
 		y = 7
 		relative_position_id = ARG_Woes_of_the_Christmas_Coup
+		dynamic = yes
 
 		ai_will_do = {
 			factor = 2000

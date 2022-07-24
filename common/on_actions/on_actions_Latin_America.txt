@@ -1,13 +1,6 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			512 = {
-				create_unit = {
-					division = "division_template = \"Third Internationale Expeditionary Force\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
-					owner = FOP
-					prioritize_location = 10953
-				}
-			}
 			FOP = { FOP_recruit_internationale_advisors = yes }
 
 			add_to_array = { global.CEN_tags_array = GUA }
@@ -99,6 +92,22 @@ on_actions = {
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation_immediate = {
 		effect = {
+			### ARG naval transfer
+			if = {
+				limit = {
+					original_tag = ARG
+					has_war_with = FOP
+				}
+				transfer_navy = { target = FOP }
+			}
+			else_if = {
+				limit = {
+					original_tag = FOP
+					has_war_with = ARG
+				}
+				transfer_navy = { target = ARG }
+			}
+
 			# CEN/MEX vs ENT/GER peace deal
 			if = {
 				limit = {
@@ -672,7 +681,6 @@ on_actions = {
 						}
 					}
 				}
-				URG = { country_event = urg.9 } # argentine navy join URG (will only actually happen when ARG is above 80% capitulation)
 				if = {
 					Limit = {
 						FROM.FROM = { state = 278 } #Buenos Aires

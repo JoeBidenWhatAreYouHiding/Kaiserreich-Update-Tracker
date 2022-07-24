@@ -2743,10 +2743,6 @@ BAT_devolution_decision_category = {
 			has_full_control_of_state = 190
 		}
 
-		visible = {
-			has_completed_focus = BAT_devolved_education
-		}
-
 		on_map_mode = map_only
 		highlight_states = {
 			highlight_state_targets = { state = 190 }
@@ -2774,10 +2770,6 @@ BAT_devolution_decision_category = {
 		available = {
 			has_completed_focus = BAT_devolve_curonia
 			has_full_control_of_state = 190
-		}
-
-		visible = {
-			has_completed_focus = BAT_devolved_culture
 		}
 
 		on_map_mode = map_only
@@ -2809,10 +2801,6 @@ BAT_devolution_decision_category = {
 			has_full_control_of_state = 190
 		}
 
-		visible = {
-			has_completed_focus = BAT_devolved_economics
-		}
-
 		on_map_mode = map_only
 		highlight_states = {
 			highlight_state_targets = { state = 190 }
@@ -2840,10 +2828,6 @@ BAT_devolution_decision_category = {
 		available = {
 			has_completed_focus = BAT_devolve_livonia
 			has_full_control_of_state = 12
-		}
-
-		visible = {
-			has_completed_focus = BAT_devolved_education
 		}
 
 		on_map_mode = map_only
@@ -2874,10 +2858,6 @@ BAT_devolution_decision_category = {
 		available = {
 			has_completed_focus = BAT_devolve_livonia
 			has_full_control_of_state = 12
-		}
-
-		visible = {
-			has_completed_focus = BAT_devolved_culture
 		}
 
 		on_map_mode = map_only
@@ -2911,10 +2891,6 @@ BAT_devolution_decision_category = {
 			has_full_control_of_state = 191
 		}
 
-		visible = {
-			has_completed_focus = BAT_devolved_economics
-		}
-
 		on_map_mode = map_only
 		highlight_states = {
 			highlight_state_targets = { state = 12 }
@@ -2943,10 +2919,6 @@ BAT_devolution_decision_category = {
 		available = {
 			has_completed_focus = BAT_devolve_estonia
 			has_full_control_of_state = 13
-		}
-
-		visible = {
-			has_completed_focus = BAT_devolved_education
 		}
 
 		on_map_mode = map_only
@@ -2978,10 +2950,6 @@ BAT_devolution_decision_category = {
 			has_full_control_of_state = 13
 		}
 
-		visible = {
-			has_completed_focus = BAT_devolved_culture
-		}
-
 		on_map_mode = map_only
 		highlight_states = {
 			highlight_state_targets = { state = 13 }
@@ -3009,10 +2977,6 @@ BAT_devolution_decision_category = {
 		available = {
 			has_completed_focus = BAT_devolve_estonia
 			has_full_control_of_state = 13
-		}
-
-		visible = {
-			has_completed_focus = BAT_devolved_economics
 		}
 
 		on_map_mode = map_only

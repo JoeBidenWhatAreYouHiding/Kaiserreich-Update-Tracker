@@ -1329,27 +1329,27 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_BAT_basic_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/GER_light_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/ger_light_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_improved_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/GER_light_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/ger_light_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_advanced_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/GER_light_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/ger_light_chassis_3.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_basic_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/GER_medium_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/ger_medium_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_improved_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/GER_medium_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/ger_medium_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_advanced_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/GER_medium_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/ger_medium_chassis_3.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_super_heavy_tank_chassis_medium"
@@ -1365,11 +1365,11 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_BAT_basic_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/GER_heavy_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/ger_heavy_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_improved_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/GER_heavy_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/ger_heavy_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_BAT_advanced_heavy_tank_chassis_medium"
@@ -13618,27 +13618,27 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_GEA_basic_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/GER_light_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/ger_light_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_improved_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/GER_light_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/ger_light_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_advanced_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/GER_light_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/ger_light_chassis_3.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_basic_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/GER_medium_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/ger_medium_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_improved_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/GER_medium_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/ger_medium_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_advanced_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/GER_medium_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/ger_medium_chassis_3.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_super_heavy_tank_chassis_medium"
@@ -13654,15 +13654,15 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_GEA_basic_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/GER_heavy_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/ger_heavy_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_improved_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/GER_heavy_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/ger_heavy_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_advanced_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_3/GER_heavy_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_3/ger_heavy_chassis_3.png"
 	}
 
 	### Tanks
@@ -14731,64 +14731,64 @@ spriteTypes = {
 
 	### Tank Chassis
 	SpriteType = {
-		name = "GFX_GER_gwtank_chassis_medium"
+		name = "GFX_ger_gwtank_chassis_medium"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_0/ger_light_chassis_0.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_medium_tank_chassis_0_medium"
+		name = "GFX_ger_medium_tank_chassis_0_medium"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_0/ger_medium_chassis_0.dds"
 	}
 	SpriteType = {
-		name = "GFX_GER_heavy_tank_chassis_0_medium"
+		name = "GFX_ger_heavy_tank_chassis_0_medium"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_0/ger_heavy_chassis_0.dds"
 	}
 	SpriteType = {
-		name = "GFX_GER_basic_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/GER_light_chassis_1.png"
+		name = "GFX_ger_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/ger_light_chassis_1.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_improved_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/GER_light_chassis_2.png"
+		name = "GFX_ger_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/ger_light_chassis_2.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_advanced_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/GER_light_chassis_3.png"
+		name = "GFX_ger_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/ger_light_chassis_3.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_basic_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/GER_medium_chassis_1.png"
+		name = "GFX_ger_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/ger_medium_chassis_1.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_improved_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/GER_medium_chassis_2.png"
+		name = "GFX_ger_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/ger_medium_chassis_2.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_advanced_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/GER_medium_chassis_3.png"
+		name = "GFX_ger_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/ger_medium_chassis_3.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_super_heavy_tank_chassis_medium"
+		name = "GFX_ger_super_heavy_tank_chassis_medium"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/super_heavy/ger_super_heavy_chassis_0.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_main_battle_tank_chassis_medium"
+		name = "GFX_ger_main_battle_tank_chassis_medium"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/modern/ger_modern_chassis_0.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_amphibious_tank_chassis_medium"
+		name = "GFX_ger_amphibious_tank_chassis_medium"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/amphibious/ger_amphibious_chassis_0.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_basic_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/GER_heavy_chassis_1.png"
+		name = "GFX_ger_basic_heavy_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/ger_heavy_chassis_1.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_improved_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/GER_heavy_chassis_2.png"
+		name = "GFX_ger_improved_heavy_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/ger_heavy_chassis_2.png"
 	}
 	SpriteType = {
-		name = "GFX_GER_advanced_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_3/GER_heavy_chassis_3.png"
+		name = "GFX_ger_advanced_heavy_tank_chassis_medium"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_3/ger_heavy_chassis_3.png"
 	}
 
 	### Tanks
@@ -22611,27 +22611,27 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_MAF_basic_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/GER_light_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_1/ger_light_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_improved_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/GER_light_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_2/ger_light_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_advanced_light_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/GER_light_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/light_3/ger_light_chassis_3.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_basic_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/GER_medium_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_1/ger_medium_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_improved_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/GER_medium_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_2/ger_medium_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_advanced_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/GER_medium_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/medium_3/ger_medium_chassis_3.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_super_heavy_tank_chassis_medium"
@@ -22647,15 +22647,15 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_MAF_basic_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/GER_heavy_chassis_1.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_1/ger_heavy_chassis_1.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_improved_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/GER_heavy_chassis_2.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_2/ger_heavy_chassis_2.png"
 	}
 	SpriteType = {
 		name = "GFX_MAF_advanced_heavy_tank_chassis_medium"
-		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_3/GER_heavy_chassis_3.png"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/designer/Reichspakt/GER/heavy_3/ger_heavy_chassis_3.png"
 	}
 
 	### Tanks

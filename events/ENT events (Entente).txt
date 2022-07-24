@@ -1716,7 +1716,7 @@ country_event = {
 			base = 10
 			modifier = {
 				factor = 0.5
-				has_global_flag = CAN_king_albert_I
+				ENT_king_albert_i = yes
 			}
 			modifier = {
 				factor = 0.75
@@ -1733,11 +1733,11 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 0.5
-				has_global_flag = CAN_king_albert_I
+				ENT_king_albert_i = yes
 			}
 			modifier = {
 				factor = 2
-				has_global_flag = CAN_king_george_VI
+				ENT_king_george_vi = yes
 			}
 			modifier = {
 				factor = 0.75
@@ -1770,7 +1770,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 0.5
-				has_global_flag = CAN_king_george_VI
+				ENT_king_george_vi = yes
 			}
 		}
 		FROM = {
@@ -1784,8 +1784,8 @@ country_event = {
 			modifier = {
 				factor = 0.5
 				OR = {
-					has_global_flag = CAN_king_albert_I
-					has_global_flag = CAN_king_henry_IX
+					ENT_king_albert_i = yes
+					ENT_king_henry_ix = yes
 				}
 			}
 			modifier = {
@@ -1811,7 +1811,7 @@ country_event = {
 			base = 7
 			modifier = {
 				factor = 1.5
-				has_global_flag = CAN_king_albert_I
+				ENT_king_albert_i = yes
 			}
 			modifier = {
 				factor = 0.75
@@ -1836,7 +1836,7 @@ country_event = {
 			base = 65
 			modifier = {
 				factor = 1.2
-				has_global_flag = CAN_king_henry_IX
+				ENT_king_henry_ix = yes
 			}
 		}
 	}
@@ -2708,11 +2708,11 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 2
-				has_global_flag = CAN_king_george_VI
+				ENT_king_george_vi = yes
 			}
 			modifier = {
 				factor = 0.5
-				has_global_flag = CAN_king_henry_IX
+				ENT_king_henry_ix = yes
 			}
 			modifier = {
 				factor = 0.2
@@ -2746,11 +2746,11 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 2
-				has_global_flag = CAN_king_albert_I
+				ENT_king_albert_i = yes
 			}
 			modifier = {
 				factor = 0.5
-				has_global_flag = CAN_king_henry_IX
+				ENT_king_henry_ix = yes
 			}
 			modifier = {
 				factor = 0.2
@@ -2784,11 +2784,11 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 2
-				has_global_flag = CAN_king_george_VI
+				ENT_king_george_vi = yes
 			}
 			modifier = {
 				factor = 2
-				has_global_flag = CAN_king_edward_VIII
+				ENT_king_edward_viii = yes
 			}
 			modifier = {
 				factor = 0
@@ -2822,7 +2822,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 2
-				has_global_flag = CAN_king_henry_IX
+				ENT_king_henry_ix = yes
 			}
 			modifier = {
 				factor = 2
@@ -2858,7 +2858,7 @@ country_event = {
 		name = AI_OPTION #EDWARD_STORYLINE
 		trigger = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
-			has_global_flag = CAN_king_edward_VIII
+			ENT_king_edward_viii = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
 			check_variable = { var = global.king_edward_story value = 12 compare = less_than }
 			if = {
@@ -2984,7 +2984,7 @@ country_event = {
 		name = AI_OPTION #ALBERT_STORYLINE
 		trigger = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
-			has_global_flag = CAN_king_albert_I
+			ENT_king_albert_i = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
 			check_variable = { var = global.king_albert_story value = 3 compare = less_than }
 			if = {
@@ -3000,7 +3000,7 @@ country_event = {
 			}
 			if = {
 				limit = { check_variable = { var = global.king_albert_story value = 2 compare = equals } }
-				has_global_flag = { flag = CAN_king_albert_I days > 1095 }
+				GBR = { GBR_albert_windsor = { has_character_flag = { flag = GBR_british_king days > 1095 } } }
 			}
 		}
 		ai_chance = {
@@ -3023,7 +3023,7 @@ country_event = {
 		name = AI_OPTION #HENRY_STORYLINE
 		trigger = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
-			has_global_flag = CAN_king_henry_IX
+			ENT_king_henry_ix = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
 			check_variable = { var = global.king_henry_story value = 3 compare = less_than }
 			if = {
@@ -3035,7 +3035,7 @@ country_event = {
 			}
 			if = {
 				limit = { check_variable = { var = global.king_henry_story value = 1 compare = equals } }
-				has_global_flag = { flag = CAN_king_henry_IX days > 120 }
+				GBR = { GBR_henry_windsor = { has_character_flag = { flag = GBR_british_king days > 120 } } }
 				date > 1940.1.1
 			}
 			if = {
@@ -3063,7 +3063,7 @@ country_event = {
 		name = AI_OPTION #GEORGE_STORYLINE
 		trigger = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
-			has_global_flag = CAN_king_george_VI
+			ENT_king_george_vi = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
 			check_variable = { var = global.king_george_story value = 3 compare = less_than }
 			if = {
@@ -3075,11 +3075,11 @@ country_event = {
 			}
 			if = {
 				limit = { check_variable = { var = global.king_george_story value = 1 compare = equals } }
-				has_global_flag = { flag = CAN_king_george_VI days > 120 }
+				GBR = { GBR_george_windsor = { has_character_flag = { flag = GBR_british_king days > 120 } } }
 			}
 			if = {
 				limit = { check_variable = { var = global.king_george_story value = 2 compare = equals } }
-				has_global_flag = { flag = CAN_king_george_VI days > 730 }
+				GBR = { GBR_george_windsor = { has_character_flag = { flag = GBR_british_king days > 730 } } }
 				NOT = { has_global_flag = { flag = CAN_king_busy value > 0 } }
 			}
 		}
@@ -5122,8 +5122,7 @@ country_event = {
 				}
 			}
 		}
-		retire_character = CAN_edward_windsor
-		clear_global_event_target = CAN_edward_windsor_target
+		custom_effect_tooltip = CAN_edward_will_step_down
 		if = {
 			limit = {
 				check_variable = { king_popularity > 1 }
@@ -5229,11 +5228,11 @@ country_event = {
 
 	desc = {
 		text = entente.108.d.george
-		trigger = { NOT = { has_global_flag = CAN_prince_george_dead } }
+		trigger = { ENT_prince_george_is_dead = no }
 	}
 	desc = {
 		text = entente.108.d.nogeorge
-		trigger = { has_global_flag = CAN_prince_george_dead }
+		trigger = { ENT_prince_george_is_dead = yes }
 	}
 
 	is_triggered_only = yes
@@ -5264,11 +5263,9 @@ country_event = {
 		custom_effect_tooltip = CAN_prince_albert_king
 		hidden_effect = {
 			clr_global_flag = CAN_king_busy
-			clr_global_flag = CAN_king_edward_VIII
-			set_global_flag = CAN_king_albert_I
 			set_variable = { king_popularity = 2 }
 			set_variable = { global.king_albert_story = 0 }
-			CAN_create_monarchy = yes
+			GBR_create_albert = yes
 
 			news_event = { id = entente.111 days = 1 }
 			country_event = { id = entente.50 days = 90 random = 1440 }
@@ -5306,18 +5303,19 @@ country_event = {
 		custom_effect_tooltip = CAN_prince_henry_king
 		hidden_effect = {
 			clr_global_flag = CAN_king_busy
-			clr_global_flag = CAN_king_edward_VIII
-			set_global_flag = CAN_king_henry_IX
 			set_variable = { king_popularity = 2 }
 			set_variable = { global.king_henry_story = 0 }
 			AST = {
 				if = {
-					limit = { has_country_leader = { character = CAN_henry_windsor } }
-					event_target:CAN_henry_windsor_target = { save_event_target_as = windsor }
+					limit = { has_country_leader = { character = GBR_henry_windsor } }
+					random_character = {
+						limit = { is_country_leader = yes }
+						save_event_target_as = windsor
+					}
 					country_event = entente.113
 				}
 			}
-			CAN_create_monarchy = yes
+			GBR_create_henry = yes
 
 			news_event = { id = entente.111 days = 1 }
 			country_event = { id = entente.50 days = 90 random = 1440 }
@@ -5325,7 +5323,7 @@ country_event = {
 	}
 	option = {
 		name = entente.108.c #George
-		trigger = { NOT = { has_global_flag = CAN_prince_george_dead } }
+		trigger = { ENT_prince_george_is_dead = no }
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -5346,18 +5344,19 @@ country_event = {
 		custom_effect_tooltip = CAN_prince_george_king
 		hidden_effect = {
 			clr_global_flag = CAN_king_busy
-			clr_global_flag = CAN_king_edward_VIII
-			set_global_flag = CAN_king_george_VI
 			set_variable = { king_popularity = 2 }
 			set_variable = { global.king_george_story = 0 }
 			AST = {
 				if = {
-					limit = { has_country_leader = { character = CAN_george_windsor } }
-					event_target:CAN_george_windsor_target = { save_event_target_as = windsor }
+					limit = { has_country_leader = { character = GBR_george_windsor } }
+					random_character = {
+						limit = { is_country_leader = yes }
+						save_event_target_as = windsor
+					}
 					country_event = entente.113
 				}
 			}
-			CAN_create_monarchy = yes
+			GBR_create_george = yes
 
 			news_event = { id = entente.111 days = 1 }
 			country_event = { id = entente.50 days = 90 random = 1440 }
@@ -5416,15 +5415,15 @@ news_event = {
 
 	desc = {
 		text = entente.111.d.albert
-		trigger = { has_global_flag = CAN_king_albert_I }
+		trigger = { ENT_king_albert_i = yes }
 	}
 	desc = {
 		text = entente.111.d.henry
-		trigger = { has_global_flag = CAN_king_henry_IX }
+		trigger = { ENT_king_henry_ix = yes }
 	}
 	desc = {
 		text = entente.111.d.george
-		trigger = { has_global_flag = CAN_king_george_VI }
+		trigger = { ENT_king_george_vi = yes }
 	}
 
 	major = yes
@@ -5474,7 +5473,7 @@ unit_leader_event = {
 	option = {
 		name = entente.112.a
 		effect_tooltip = {
-			event_target:CAN_henry_windsor_target = { set_nationality = AST }
+			THIS = { set_nationality = AST }
 		}
 	}
 }

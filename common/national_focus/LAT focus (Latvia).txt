@@ -591,7 +591,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = LAT_developp_forestry
+		id = LAT_develop_forestry
 		icon = GFX_goal_generic_forestry
 		cost = 6
 		prerequisite = {
@@ -603,7 +603,7 @@ focus_tree = {
 		y = 1
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_PRODUCTION }
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LAT_developp_forestry"
+			log = "[GetDateText]: [Root.GetName]: Focus LAT_develop_forestry"
 			12 = {
 				add_building_construction = {
 					type = infrastructure
@@ -632,9 +632,9 @@ focus_tree = {
 		icon = GFX_goal_new_treaty
 		cost = 6
 		prerequisite = {
-			focus = LAT_developp_forestry
+			focus = LAT_develop_forestry
 		}
-		relative_position_id = LAT_developp_forestry
+		relative_position_id = LAT_develop_forestry
 		x = -2
 		y = 1
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -690,9 +690,9 @@ focus_tree = {
 		icon = GFX_goal_basic_oil
 		cost = 6
 		prerequisite = {
-			focus = LAT_developp_forestry
+			focus = LAT_develop_forestry
 		}
-		relative_position_id = LAT_developp_forestry
+		relative_position_id = LAT_develop_forestry
 		x = 0
 		y = 1
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -734,19 +734,19 @@ focus_tree = {
 		icon = GFX_goal_SZC_improvised_farming_machinery
 		cost = 6
 		prerequisite = {
-			focus = LAT_developp_forestry
+			focus = LAT_develop_forestry
 		}
-		relative_position_id = LAT_developp_forestry
+		relative_position_id = LAT_develop_forestry
 		x = 2
 		y = 1
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LAT_space_for_farms"
 			12 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 			190 = {
-				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -2374,12 +2374,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LAT_SOV_world_revolution"
-			if = {
-				limit = {
-					is_in_faction = yes
-				}
-				leave_faction = yes
-			}
+			leave_faction = yes
+			FRA_remove_from_phalanstere = yes
 			create_faction = LAT_SOV_faction
 			add_ideas = LAT_SOV_world_revolution_idea
 		}

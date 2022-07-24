@@ -660,6 +660,17 @@ country_event = { #Kornilov-Savinkov Alliance
 				traits = { RUS_vozhd_sic second_in_command_trait }
 				cost = 0
 				removal_cost = -1
+				on_add = {
+					random_character = {
+						limit = { is_character = RUS_boris_savinkov }
+						set_character_flag = is_second_in_command
+						set_variable = { PREV.current_second_in_command_character = THIS }
+					}
+				}
+				on_remove = {
+					RUS_boris_savinkov = { clr_character_flag = is_second_in_command }
+					clear_variable = current_second_in_command_character
+				}
 			}
 			activate = yes
 		}
@@ -1379,6 +1390,78 @@ country_event = { #Democratic republic
 			limit = { date < 1937.6.9 }
 			custom_effect_tooltip = pres_elections_dem_rep
 		}
+	}
+}
+
+country_event = { #Russian capitulation system event
+	id = russia.1900
+	immediate = { log = "[GetDateText]: [Root.GetName]: event russia.1900 FROM = [From.GetName]" }
+	hidden = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			is_faction_leader = yes
+			tag = event_target:was_faction_leader
+		}
+	}
+
+	option = {
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+				is_subject = no
+				surrender_progress < 0.8
+			}
+			leave_faction = yes
+			country_event = capt.4200
+			country_event = russia.1901
+		}
+		every_country = {
+			limit = { is_in_tech_sharing_group = russian_research }
+			remove_from_tech_sharing_group = russian_research
+		}
+		faction_leader = { dismantle_faction = yes }
+		news_event = { id = russia.1902 hours = 30 }
+	}
+}
+
+country_event = { #Inform former faction members of peace
+	id = russia.1901
+	immediate = { log = "[GetDateText]: [Root.GetName]: event russia.1901 FROM = [From.GetName]" }
+	title = russia.1901.t
+	desc = russia.1901.d
+	picture = GFX_report_event_japanese_chinese_surrender
+
+	trigger = { is_ai = no }
+
+	is_triggered_only = yes
+
+	option = {
+		name = russia.1901.a
+	}
+}
+
+# The Fall of Russia
+news_event = {
+	id = russia.1902
+	immediate = { log = "[GetDateText]: [Root.GetName]: event russia.1902 FROM = [From.GetName]" }
+	title = russia.1902.t
+	desc = russia.1902.d
+	picture = GFX_news_event_RUS_collapse
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	major = yes
+	fire_for_sender = no
+	is_triggered_only = yes
+
+	option = {
+		name = russia.1902.a
 	}
 }
 
@@ -2740,7 +2823,7 @@ country_event = { #Clashes in [state]
 			random_owned_controlled_state = {
 				limit = {
 					impassable = no
-					state_population > 700000
+					state_population_k > 700
 				}
 				save_event_target_as = RUS_clashes_state
 			}
@@ -6177,6 +6260,7 @@ country_event = { #Berlin Betrays us!
 				set_autonomy = {
 					target = ROOT
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			restore_previous_government_type = yes
@@ -6234,6 +6318,7 @@ country_event = { #The Don-Kuban Protectorate
 		set_autonomy = {
 			target = DKB
 			autonomy_state = kr_default_puppet
+			end_wars = no
 		}
 		hidden_effect = {
 			DKB = {
@@ -6615,171 +6700,6 @@ country_event = { #Great Patriotic War
 		add_stability = 0.2
 		add_war_support = 0.25
 		increase_conscription = yes
-	}
-}
-
-country_event = { #A New 1812
-	id = rusfor.51
-	immediate = { log = "[GetDateText]: [Root.GetName]: event rusfor.51 FROM = [From.GetName]" }
-
-	title = {
-		text = rusfor.51.t.1812
-		trigger = {
-			NOT = {
-				controls_state = 252
-				controls_state = 255
-			}
-		}
-	}
-	title = {
-		text = rusfor.51.t.1328
-		trigger = {
-			NOT = {
-				controls_state = 205
-				controls_state = 242
-				controls_state = 246
-			}
-		}
-	}
-	desc = rusfor.51.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	trigger = {
-		is_subject = no
-		has_war = yes
-		NOT = { country_exists = SOV }
-		controls_state = 219
-		OR = {
-			NOT = {
-				controls_state = 252
-				controls_state = 255
-			}
-			NOT = {
-				controls_state = 205
-				controls_state = 242
-				controls_state = 246
-			}
-		}
-	}
-
-	option = {
-		name = rusfor.51.a #There is nowhere to retreat, Moscow is behind us!
-		add_political_power = -40
-		add_equipment_to_stockpile = {
-			type = infantry_equipment
-			amount = 5000
-			producer = RUS
-		}
-		add_manpower = 30000
-		division_template = {
-			name = "Opolcheniye Diviziya"
-			division_names_group = RUS_INF_01
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 0 y = 3 }
-				infantry = { x = 1 y = 0 }
-				infantry = { x = 1 y = 1 }
-				infantry = { x = 1 y = 2 }
-				infantry = { x = 2 y = 0 }
-				infantry = { x = 2 y = 1 }
-				infantry = { x = 2 y = 2 }
-			}
-			support = {
-				artillery = { x = 0 y = 0 }
-			}
-		}
-		219 = {
-			create_unit = {
-				division = "division_template = \"Opolcheniye Diviziya\" start_experience_factor = 0 start_equipment_factor = 0.8"
-				owner = ROOT
-				count = 12
-			}
-			if = {
-				limit = { ROOT = { controls_province = 3391 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 3391
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 6414 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 6414
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 9348 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 9348
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 301 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 301
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 9378 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 9378
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 6283 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 6283
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 3259 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 3259
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 11282 } }
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 11282
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = { ROOT = { controls_province = 6380 } }
-				add_building_construction = {
-					type = bunker
-					level = 4
-					province = 6380
-					instant_build = yes
-				}
-			}
-		}
 	}
 }
 

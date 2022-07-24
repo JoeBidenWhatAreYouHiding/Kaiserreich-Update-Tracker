@@ -5,7 +5,7 @@ ideas = {
 ##############
 
 	country = {
-	   ## economic ideas ##
+	## economic ideas ##
 		MAF_colonial_budget_idea = {
 			picture = GER_shield
 			allowed = { always = no }
@@ -127,7 +127,7 @@ ideas = {
 			}
 		}
 
-	   ## stability ideas ##
+	## stability ideas ##
 		MAF_border_shit_show = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_border_shit_show" }
 			picture = tfv_can_conscription_crisis
@@ -158,6 +158,7 @@ ideas = {
 			}
 		}
 
+	## Göring tree ideas ##
 		MAF_Secular_Education = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Secular_Education" }
 			picture = generic_research_bonus
@@ -176,15 +177,7 @@ ideas = {
 			}
 		}
 
-		MAF_Good_Supply = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Good_Supply" }
-			picture = ast_all_in
-			allowed = { always = no }
-			modifier = {
-				supply_consumption_factor = -0.05
-			}
-		}
-
+	## New Admin tree ideas ##
 		MAF_Honorary_Officers_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Honorary_Officers_idea" }
 			picture = por_colonial_army
@@ -212,6 +205,91 @@ ideas = {
 			}
 		}
 
+		MAF_Landtag = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Landtag" }
+			picture = government
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+
+	## military ideas ##
+		MAF_Good_Supply = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Good_Supply" }
+			picture = ast_all_in
+			allowed = { always = no }
+			modifier = {
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		MAF_Vorbeck_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Vorbeck_idea" }
+			picture = MAF_Vorbeck_hat
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.2
+				army_morale_factor = 0.05
+				army_speed_factor = 0.1
+			}
+		}
+
+		MAF_air_field_construction_idea = {
+			picture = MAF_Black_hat
+			allowed = { always = no }
+			modifier = {
+				production_speed_air_base_factor = 0.25
+			}
+		}
+
+		MAF_ground_crews_idea = {
+			picture = MAF_Black_hat
+			allowed = { always = no }
+			modifier = {
+				production_speed_air_base_factor = 0.25
+				air_manpower_requirement_factor = -0.85
+			}
+		}
+
+		MAF_pilot_training_idea = {
+			picture = MAF_Merc_hat
+			allowed = { always = no }
+			modifier = {
+				air_ace_generation_chance_factor = 0.25
+				air_agility_factor = 0.1
+				air_weather_penalty = -0.5
+				air_accidents_factor = -0.1
+				air_untrained_pilots_penalty_factor = -0.25
+			}
+		}
+
+		MAF_air_volunteer_idea = {
+			picture = MAF_Merc_hat
+			allowed = { always = no }
+			modifier = {
+				air_ace_generation_chance_factor = 0.25
+				air_agility_factor = 0.1
+				air_weather_penalty = -0.5
+				air_accidents_factor = -0.1
+				air_untrained_pilots_penalty_factor = -0.25
+				air_volunteer_cap = 750
+				air_mission_xp_gain_factor = 0.2
+			}
+		}
+
+		MAF_Sturdy_Trucks = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Sturdy_Trucks" }
+			picture = FRA_motorized_focus
+			allowed = { always = no }
+			equipment_bonus = {
+				motorized_equipment = {
+					reliability = 0.15 instant = yes
+				}
+			}
+		}
+
+	## misc. ideas ##
 		MAF_Opium_Profit = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Opium_Profit" }
 			picture = SZC_opium_monopoly
@@ -228,90 +306,6 @@ ideas = {
 			modifier = {
 				production_factory_max_efficiency_factor = -0.05
 				army_morale_factor = -0.05
-			}
-		}
-
-		MAF_Vorbeck_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Vorbeck_idea" }
-			picture = MAF_Vorbeck_hat
-			allowed = { always = no }
-			modifier = {
-				stability_factor = 0.2
-				army_morale_factor = 0.05
-				army_speed_factor = 0.1
-			}
-		}
-
-		MAF_Landtag = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Landtag" }
-			picture = government
-			allowed = { always = no }
-			modifier = {
-				political_power_gain = 0.1
-			}
-		}
-
-		MAF_Black_Pilots = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Black_Pilots" }
-			picture = MAF_Black_hat
-			allowed = { always = no }
-			equipment_bonus = {
-				fighter_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				cv_fighter_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				CAS_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				cv_CAS_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				cv_nav_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				nav_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				tac_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				heavy_fighter_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				strat_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-			}
-		}
-
-		MAF_Mercenary_Pilots = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Mercenary_Pilots" }
-			picture = MAF_Merc_hat
-			allowed = { always = no }
-			modifier = {
-				air_attack_factor = 0.05
-			}
-		}
-
-		MAF_Sturdy_Trucks = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_Sturdy_Trucks" }
-			picture = FRA_motorized_focus
-			allowed = { always = no }
-			equipment_bonus = {
-				motorized_equipment = {
-					reliability = 0.15 instant = yes
-				}
 			}
 		}
 
@@ -406,7 +400,7 @@ ideas = {
 			}
 		}
 
-		### Germany in Exile ideas ###
+	### Germany in Exile ideas ###
 		MAF_on_borrowed_time = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_on_borrowed_time" }
 			picture = tfv_can_conscription_crisis
@@ -775,7 +769,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea goring_flugzeugwerke" }
 			allowed = { original_tag = MAF }
 			available = { has_country_leader = { character = MAF_Hermann_von_Goering } }
-			traits = { bomber_producer_mass_1 }
+			traits = { bomber_producer_offense_1 }
 			research_bonus = {
 				air_equipment = 0.1
 			}

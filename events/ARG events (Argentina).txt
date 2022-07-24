@@ -4,12 +4,12 @@
 # By Jeankedezeehond
 ###########################
 
-add_namespace = argbla
-add_namespace = argcar
-add_namespace = argim
-add_namespace = argfor
-add_namespace = argmil
-add_namespace = arg_chl_war
+add_namespace = argbla		# Black monday
+add_namespace = argcar		# Carles
+add_namespace = argim		# Immigration
+add_namespace = argfor		# Foreign policy
+add_namespace = argmil		# Military events
+add_namespace = arg_chl_war	# ARG-CHL war events
 
 ### ARG - CHL war ###
 country_event = { # loop event for unit desertions during ARG-CHL war (donotlog)
@@ -70,6 +70,7 @@ country_event = { # ARG-FOP desertion event for ARG
 	trigger = {
 		has_war_with = FOP
 		surrender_progress > 0.4
+		FOP = { num_divisions > 1 }
 	}
 
 	option = {
@@ -100,6 +101,7 @@ country_event = { # ARG-FOP desertion event for FOP
 	trigger = {
 		has_war_with = ARG
 		surrender_progress > 0.4
+		ARG = { num_divisions > 1 }
 	}
 
 	option = {
@@ -131,7 +133,7 @@ country_event = { # ARG-FOP desertion event for CHL - deplete manpower and inf e
 
 	option = {
 		hidden_effect = {
-			add_manpower = -10000
+			add_manpower = -3000
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = -1000
@@ -152,42 +154,6 @@ country_event = { # ARG-FOP desertion event - notification for the tag that rece
 	option = {
 		name = arg_chl_war.104.a
 		custom_effect_tooltip = ARG_FOP_enemy_defection_tooltip
-	}
-}
-
-country_event = { # ARG losing the war - triggered for AI by war mission
-	id = arg_chl_war.120
-	immediate = { log = "[GetDateText]: [Root.GetName]: event arg_chl_war.120 FROM = [From.GetName]" }
-	title = arg_chl_war.120.t
-	desc = arg_chl_war.120.d
-
-	picture = GFX_report_event_spr_civil_war_faction_defeated
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	trigger = {
-		is_ai = yes
-	}
-
-	option = {
-		name = arg_chl_war.120.a
-		custom_effect_tooltip = ARG_lost_the_war
-	}
-}
-
-country_event = { # FOP losing the war - triggered for AI by war mission
-	id = arg_chl_war.121
-	immediate = { log = "[GetDateText]: [Root.GetName]: event arg_chl_war.121 FROM = [From.GetName]" }
-	title = arg_chl_war.121.t
-	desc = arg_chl_war.121.d
-
-	picture = GFX_report_event_spr_civil_war_faction_defeated
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = arg_chl_war.121.a
-		custom_effect_tooltip = FOP_lost_the_war
 	}
 }
 
@@ -397,6 +363,46 @@ country_event = { #Officer Alberte joins the GOU
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
+		}
+	}
+}
+
+# Military - focus tree events
+country_event = { #Select chief of army
+	id = argmil.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event argmil.24 FROM = [From.GetName]" }
+	title = argmil.30.t
+	desc = argmil.30.d
+
+	picture = GFX_report_event_ARG_car93
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = argmil.30.a		# Liga candidate
+		custom_effect_tooltip = ARG_NAVY
+		activate_advisor = ARG_manuel_domecq_garcia
+		hidden_effect = {
+			ARG_interservice_rivalry_towards_navy = yes
+		}
+	}
+	option = {
+		name = argmil.30.b		# Neutral candidate
+		custom_effect_tooltip = ARG_ARMY
+		activate_advisor = ARG_pedro_eugenio_aramburu
+	}
+	option = {
+		name = argmil.30.c		# Neutral candidate2
+		custom_effect_tooltip = ARG_ARMY
+		activate_advisor = ARG_juan_pistarini
+	}
+	option = {
+		name = argmil.30.d		# Possible GOU candidate
+		custom_effect_tooltip = ARG_ARMY
+		activate_advisor = ARG_agustin_pedro_justo_army_chief
+		hidden_effect = {
+			ARG_interservice_rivalry_towards_army = yes
 		}
 	}
 }
@@ -3429,7 +3435,7 @@ country_event = { #Navy surrenders
 				limit = {
 					has_country_flag = ARG_gendarmeria_expanded
 				}
-				load_oob = ARG_Gendarmeria
+				add_manpower = 20000
 			}
 			every_owned_state = {
 				set_demilitarized_zone = no
@@ -3504,7 +3510,7 @@ country_event = { #Carles instates cabinet
 				limit = {
 					has_country_flag = ARG_gendarmeria_expanded
 				}
-				load_oob = ARG_Gendarmeria
+				add_manpower = 20000
 			}
 		}
 		custom_effect_tooltip = ARG_fulloob_tt
@@ -5065,14 +5071,6 @@ country_event = {
 		}
 		name = argdem.6.a
 		add_stability = 0.35
-		add_country_leader_role = {
-			character = ARG_marcelo_alvear
-			country_leader = {
-				desc = ARG_marcelo_alvear_leader_desc
-				ideology = social_liberal_subtype
-			}
-			promote_leader = yes
-		}
 		set_politics = {
 			ruling_party = social_liberal
 			elections_allowed = yes
@@ -5473,6 +5471,10 @@ country_event = {
 
 	fire_only_once = yes
 	is_triggered_only = yes
+
+	trigger = {
+		tag = ARG
+	}
 
 	option = {
 		name = argdem.10.a

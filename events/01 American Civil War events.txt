@@ -129,8 +129,8 @@ country_event = {
 		name = amcivwar.1.a
 		USA_restore_deleted_factories_CSA = yes
 		CSA = { set_country_flag = choice_made }
-		add_stability = 0.15
-		add_war_support = 0.2
+		add_stability = 0.1
+		add_war_support = 0.1
 		hidden_effect = {
 			CSA_initial_events = yes
 			if = {
@@ -169,8 +169,8 @@ country_event = {
 		USA_restore_deleted_factories_PSA = yes
 		USA_restore_deleted_factories_USA = yes
 		USA_restore_deleted_factories_NEE = yes
-		add_stability = 0.15
-		add_war_support = 0.2
+		add_stability = 0.1
+		add_war_support = 0.1
 		hidden_effect = {
 			CSA_initial_events = yes
 			if = {
@@ -350,8 +350,8 @@ country_event = {
 		name = amcivwar.2.a
 		USA_restore_deleted_factories_TEX = yes
 		TEX = { set_country_flag = choice_made }
-		add_stability = 0.15
-		add_war_support = 0.2
+		add_stability = 0.1
+		add_war_support = 0.1
 		hidden_effect = {
 			TEX_initial_events = yes
 			if = {
@@ -444,8 +444,8 @@ country_event = {
 		name = amcivwar.3.a
 		USA_restore_deleted_factories_PSA = yes
 		PSA = { set_country_flag = choice_made }
-		add_stability = 0.15
-		add_war_support = 0.2
+		add_stability = 0.1
+		add_war_support = 0.1
 		hidden_effect = {
 			PSA_initial_events = yes
 			USA_initial_events = yes
@@ -458,8 +458,8 @@ country_event = {
 		USA_restore_deleted_factories_TEX = yes
 		USA_restore_deleted_factories_USA = yes
 		USA_restore_deleted_factories_NEE = yes
-		add_stability = 0.15
-		add_war_support = 0.2
+		add_stability = 0.1
+		add_war_support = 0.1
 		hidden_effect = {
 			PSA_initial_events = yes
 			USA_initial_events = yes
@@ -4009,20 +4009,8 @@ country_event = {
 			base = 65
 		}
 		add_stability = 0.05
-		ROOT = {
-			save_event_target_as = survivor
-		}
-		PSA = {
-			country_event = { id = amcivwar.201 days = 2 }
-		}
-		hidden_effect = {
-			country_event = { id = amcivwar.202 days = 5 }
-			PSA = {
-				country_event = { id = amcivwar.202 days = 5 }
-			}
-			country_event = { id = amcivwar.203 days = 7 }
-			country_event = { id = amcivwar.204 days = 7 }
-		}
+		save_event_target_as = survivor
+		PSA = { country_event = { id = amcivwar.201 days = 2 } }
 	}
 	option = {
 		name = amcivwar.200.b #No, there's no point
@@ -4050,23 +4038,21 @@ country_event = { # The Denver Conference
 	picture = GFX_report_event_generic_diplomacy2
 
 	is_triggered_only = yes
-	major = yes
-
-	show_major = {
-		OR = {
-			tag = PSA
-			tag = FROM
-		}
-	}
 
 	trigger = {
-		PSA = {
-			has_war_with = event_target:survivor
-		}
+		has_war_with = FROM
 	}
 
 	option = {
-		name = amcivwar.201.a
+		name = amcivwar.201.a #Agree
+		ai_chance = { base = 85 }
+		FROM = { country_event = { id = amcivwar.202 days = 3 } }
+	}
+
+	option = {
+		name = amcivwar.201.b #Refuse
+		ai_chance = { base = 15 }
+		FROM = { country_event = { id = amcivwar.204 days = 3 } }
 	}
 }
 
@@ -4081,25 +4067,24 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		PSA = {
-			has_war_with = event_target:survivor
-		}
+		has_war_with = FROM
 	}
 
 	option = {
 		name = amcivwar.202.a #This will do
-		ai_chance = {
-			base = 85
-		}
-		set_country_flag = ACW_ceasefire_agreed
 		custom_effect_tooltip = ACW_agree_proposal
+		hidden_effect = {
+			country_event = { id = amcivwar.204 days = 2 }
+		}
 	}
+
 	option = {
 		name = amcivwar.202.b #They ask for too much!
-		ai_chance = {
-			base = 15
-		}
+		ai_chance = { base = 0 }
 		custom_effect_tooltip = ACW_we_will_try_again
+		hidden_effect = {
+			country_event = { id = amcivwar.203 days = 2 }
+		}
 	}
 }
 
@@ -4122,39 +4107,23 @@ country_event = {
 	}
 
 	trigger = {
-		PSA = {
-			has_war_with = event_target:survivor
-		}
-
-		NOT = {
-			AND = {
-				event_target:survivor = {
-					has_country_flag = ACW_ceasefire_agreed
-				}
-				PSA = {
-					has_country_flag = ACW_ceasefire_agreed
-				}
-			}
-		}
+		PSA = { has_war_with = event_target:survivor }
 	}
 
 	option = {
 		name = amcivwar.203.a
-		clr_country_flag = ACW_ceasefire_agreed
 		add_war_support = 0.05
 		if = {
-			limit = {
-				tag = PSA
-			}
+			limit = { tag = PSA }
 			add_opinion_modifier = {
 				target = event_target:survivor
 				modifier = KR_disapproves_of_govt
 			}
-			else = {
-				add_opinion_modifier = {
-					target = PSA
-					modifier = KR_disapproves_of_govt
-				}
+		}
+		else = {
+			add_opinion_modifier = {
+				target = PSA
+				modifier = KR_disapproves_of_govt
 			}
 		}
 	}
@@ -4171,16 +4140,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		PSA = {
-			has_war_with = event_target:survivor
-		}
-
-		event_target:survivor = {
-			has_country_flag = ACW_ceasefire_agreed
-		}
-		PSA = {
-			has_country_flag = ACW_ceasefire_agreed
-		}
+		PSA = { has_war_with = event_target:survivor }
 	}
 
 	immediate = {
@@ -4389,12 +4349,12 @@ country_event = {
 				set_country_flag = PSA_rocky_ceasefire_name
 			}
 		}
-		set_global_flag = { flag = USA_ai_do_not_break_ceasefire days = 30 value = 1 }
 	}
 
 	option = {
 		name = amcivwar.204.a
 		add_stability = 0.05
+		set_global_flag = { flag = USA_ai_do_not_break_ceasefire days = 30 value = 1 }
 		PSA = {
 			white_peace_with_ROOT = yes
 			diplomatic_relation = {
@@ -4406,9 +4366,7 @@ country_event = {
 			limit = {
 				OR = {
 					is_owned_by = ROOT
-					owner = {
-						is_subject_of = ROOT
-					}
+					owner = { is_subject_of = ROOT }
 				}
 				OR = {
 					region = 118 #California
@@ -4420,14 +4378,10 @@ country_event = {
 					has_state_flag = ACW_ceasefire_state
 				}
 			}
-			PSA = {
-				transfer_state = PREV
-			}
+			transfer_state_to = PSA
 		}
 		hidden_effect = {
-			PSA = {
-				country_event = { id = amcivwar.205 hours = 8 }
-			}
+			PSA = { country_event = amcivwar.205 }
 			news_event = { id = amcivwar.206 hours = 12 }
 		}
 	}
@@ -4452,9 +4406,7 @@ country_event = {
 			limit = {
 				OR = {
 					is_owned_by = ROOT
-					owner = {
-						is_subject_of = ROOT
-					}
+					owner = { is_subject_of = ROOT }
 				}
 				is_mainland_america = yes
 				NOT = {

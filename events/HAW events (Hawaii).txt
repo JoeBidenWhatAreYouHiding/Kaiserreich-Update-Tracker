@@ -1780,6 +1780,7 @@ country_event = { #Hawaii Rejoins America
 			set_autonomy = {
 				target = FROM
 				autonomy_state = kr_autonomous_puppet
+				end_wars = no
 			}
 			FROM = { restore_previous_government_type = yes }
 		}

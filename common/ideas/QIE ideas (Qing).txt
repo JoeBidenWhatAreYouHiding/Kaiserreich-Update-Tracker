@@ -174,7 +174,8 @@ ideas = {
 			picture = ROM_king_carol_ii_hedonist
 			allowed = { always = no }
 			modifier = {
-				trade_opinion_factor = 0.20
+				trade_opinion_factor = 0.50
+				consumer_goods_factor = -0.05
 			}
 		}
 #integrating province - anytime you annex someone you get this idea for a while

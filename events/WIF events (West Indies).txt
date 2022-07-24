@@ -1493,6 +1493,7 @@ country_event = { #governor revolt
 				set_autonomy = {
 					target = WIF
 					autonomy_state = kr_initial_wif_puppet
+					end_wars = no
 				}
 			}
 			restore_previous_government_type = yes
@@ -3538,7 +3539,7 @@ country_event = { #Results
 			}
 			random_list = {
 				1 = {
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							industrial_complex > 0
 							is_core_of = WIF
@@ -4257,7 +4258,6 @@ country_event = { #NCP
 			var = WIF_2nd_cayenne_meeting_against
 			value = -5
 		}
-		set_country_flag = WIF_concessions_to_x_ncp
 		custom_effect_tooltip = WIF_forging_new_agreement_effect_gain_votes
 		add_political_power = 40
 	}
@@ -4291,7 +4291,6 @@ country_event = { #Unity
 			var = WIF_2nd_cayenne_meeting_against
 			value = -5
 		}
-		set_country_flag = WIF_concessions_to_x_unity
 		custom_effect_tooltip = WIF_forging_new_agreement_effect_gain_votes
 		add_political_power = 60
 	}
@@ -4325,7 +4324,6 @@ country_event = { #SocDem
 			var = WIF_2nd_cayenne_meeting_against
 			value = -5
 		}
-		set_country_flag = WIF_concessions_to_x_socdem
 		custom_effect_tooltip = WIF_forging_new_agreement_effect_gain_votes
 		add_political_power = 60
 	}
@@ -4533,12 +4531,6 @@ country_event = { #Form majority coalition
 		ai_chance = {
 			base = 90
 		}
-		trigger = {
-			OR = {
-				has_completed_focus = WIF_ties_unity
-				has_country_flag = WIF_concessions_to_x_unity
-			}
-		}
 		set_variable = {
 			var = palpcoaltion_coalition_path
 			value = 2
@@ -4547,9 +4539,6 @@ country_event = { #Form majority coalition
 
 	option = { #NCP
 		name = wifpol.623.b
-		trigger = {
-			has_country_flag = WIF_concessions_to_x_ncp
-		}
 		set_variable = {
 			var = palpcoaltion_coalition_path
 			value = 1
@@ -4580,12 +4569,6 @@ country_event = { #Form majority coalition
 		set_variable = {
 			var = palpcoaltion_coalition_path
 			value = 3
-		}
-		trigger = {
-			OR = {
-				has_completed_focus = WIF_reconcile_socialists
-				has_country_flag = WIF_concessions_to_x_socdem
-			}
 		}
 	}
 }

@@ -250,7 +250,7 @@ GEA_indochina_war_decisions = {
 					recon = { x = 0 y = 1 }
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				prioritize = { 336 }
 				create_unit = {
 					division = "name = \"Fernspählehrbrigade 1\" division_template = \"Ostasiatische Fernspäher\" start_experience_factor = 0.8"

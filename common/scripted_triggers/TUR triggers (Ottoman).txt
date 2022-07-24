@@ -48,14 +48,14 @@ OTT_revolt_risk_medium = {
 
 OTT_revolt_risk_high = {
 	custom_trigger_tooltip = {
-		tooltip = OTT_revolt_risk_medium
+		tooltip = OTT_revolt_risk_high
 		check_variable = { OTT_revolt_risk > 3 }
 	}
 }
 
 OTT_revolt_risk_very_high = {
 	custom_trigger_tooltip = {
-		tooltip = OTT_revolt_risk_medium
+		tooltip = OTT_revolt_risk_very_high
 		check_variable = { OTT_revolt_risk > 4 }
 	}
 }

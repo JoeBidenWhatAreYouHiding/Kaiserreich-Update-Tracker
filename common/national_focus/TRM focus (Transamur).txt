@@ -2852,7 +2852,7 @@ focus_tree = {
 						is_guaranteed_by = JAP
 					}
 				}
-				log = "KR_Event_Logging;TRM DECLARES ON RUS WITH JAP BACKUP;[GetDateText];[ROOT.GetName];[FROM.GetName]"
+				log = "KR_Event_Logging;TRM DECLARES ON RUS;[GetDateText];[ROOT.GetName];[FROM.GetName]"
 			}
 			if = {
 				limit = { can_declare_war_on = RUS }

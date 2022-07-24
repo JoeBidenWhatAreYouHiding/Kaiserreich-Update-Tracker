@@ -2102,6 +2102,7 @@ country_event = { #Iceland's new government (ENG)
 		set_autonomy = {
 			target = ICE
 			autonomy_state = kr_occupied_puppet
+			end_wars = no
 		}
 		ICE = {
 			restore_previous_government_type = yes
@@ -3240,8 +3241,8 @@ country_event = {
 		ai_chance = {
 			base = 70
 			modifier = {
-				factor = 1.5
-				has_country_flag = ICE_Disloyal_DEN
+				factor = 0
+				has_country_flag = ICE_Loyal_DEN
 			}
 			modifier = {
 				factor = 0
@@ -3265,8 +3266,8 @@ country_event = {
 		ai_chance = {
 			base = 30
 			modifier = {
-				factor = 2
-				has_country_flag = ICE_Loyal_DEN
+				factor = 0
+				has_country_flag = ICE_Disloyal_DEN
 			}
 			modifier = {
 				factor = 0

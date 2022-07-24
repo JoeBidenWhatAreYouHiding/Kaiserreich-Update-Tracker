@@ -620,3 +620,76 @@ units = {
 	}
 }
 
+### Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_2
+			creator = "CAN"
+			version_name = "King George V Class"
+		}
+		requested_factories = 1
+		progress = 0.20
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "CAN"
+			version_name = "Moncton Class"
+		}
+		requested_factories = 1
+		progress = 0.95
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "CAN"
+			version_name = "Moncton Class"
+		}
+		requested_factories = 1
+		progress = 0.5
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "CAN"
+			version_name = "Moncton Class"
+		}
+		requested_factories = 1
+		progress = 0.45
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_1
+			creator = "CAN"
+			version_name = "Acasta Class"
+		}
+		requested_factories = 1
+		progress = 0.70
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_1
+			creator = "CAN"
+			version_name = "Acasta Class"
+		}
+		requested_factories = 1
+		progress = 0.60
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_2
+			creator = "CAN"
+			version_name = "N Type"
+		}
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+}

@@ -1348,7 +1348,7 @@ BUL_spawn_chetnik_revolt = {
 				}
 				if = {
 					limit = { has_ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
 				}
 				else = {
 					add_country_leader_role = {

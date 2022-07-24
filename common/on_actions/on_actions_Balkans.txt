@@ -13,15 +13,6 @@ on_actions = {
 			ROM = {
 				give_resource_rights = { state = 46 receiver = GER }
 			}
-
-			#Transylvanian state array
-			for_each_scope_loop = {
-				array = HUN.owned_states
-				if = {
-					limit = { is_core_of = TRS }
-					add_to_array = { global.ROM_transylvania_states = THIS }
-				}
-			}
 		}
 	}
 
@@ -263,6 +254,14 @@ on_actions = {
 					}
 					clr_global_flag = SER_keeping_the_pact
 				}
+				if = {
+					limit = {
+						has_country_flag = SER_will_attack_austria
+						NOT = { ROOT = { is_ally_with = BPL } }
+					}
+					clr_country_flag = SER_will_attack_austria
+					remove_from_array = { SER.SER_will_attack_austria = THIS }
+				}
 				country_event = pact.101 #disable BP major status
 			}
 			### Logalyzer logging
@@ -327,7 +326,7 @@ on_actions = {
 					FROM = { tag = ROM }
 				}
 				for_each_scope_loop = {
-					array = global.ROM_transylvania_states
+					array = TRS.core_states
 					clear_variable = ROM_transylvanian_resistance_target
 					clear_variable = ROM_transylvanian_resistance_activity
 					clear_variable = ROM_transylvanian_resistance_garrison
@@ -337,7 +336,9 @@ on_actions = {
 						}
 						remove_dynamic_modifier = { modifier = ROM_transylvanian_resistance }
 					}
-					force_disable_resistance = { occupier = TRS clear = yes }
+					force_enable_resistance = { occupier = AUS occupied = TRS clear = yes }
+					force_enable_resistance = { occupier = HUN occupied = TRS clear = yes }
+					force_enable_resistance = { occupier = TRS occupied = TRS clear = yes }
 				}
 			}
 

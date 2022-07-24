@@ -276,15 +276,15 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_land_reform"
 			if = {
 				limit = { 47 = { is_owned_and_controlled_by = ROOT } }
-				47 = { add_extra_state_shared_building_slots = 2 }
+				47 = { increase_state_category_by_two_levels = yes }
 			}
 			if = {
 				limit = { 768 = { is_owned_and_controlled_by = ROOT } }
-				768 = { add_extra_state_shared_building_slots = 1 }
+				768 = { increase_state_category_by_one_level = yes }
 			}
 			if = {
 				limit = { 989 = { is_owned_and_controlled_by = ROOT } }
-				989 = { add_extra_state_shared_building_slots = 1 }
+				989 = { increase_state_category_by_one_level = yes }
 			}
 		}
 	}
@@ -396,13 +396,13 @@ focus_tree = {
 			hidden_effect = {
 				modify_country_flag = { flag = gre_monarchist_sympathies value = -1 }
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				prioritize = { 47 } #Attica
 				limit = { arms_factory > 0 }
 				remove_building = { type = arms_factory level = 1 }
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				prioritize = { 895 } #Salonika
 				limit = { arms_factory > 0 }
 				remove_building = { type = arms_factory level = 1 }
@@ -436,7 +436,7 @@ focus_tree = {
 			hidden_effect = {
 				modify_country_flag = { flag = gre_monarchist_sympathies value = 1 }
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				prioritize = { 47 } #Attica
 				limit = {
 					is_in_home_area = yes
@@ -5052,15 +5052,10 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			controls_all_owned_states = yes
-			owns_state = 731 #Western Macedonia
-			owns_state = 769 #Eastern Macedonia
-			owns_state = 1076 #Southern Macedonia
-			owns_state = 989 #Salonika
-			owns_state = 768 #Thessalia
-			owns_state = 185 #Epirus
-			owns_state = 47 #Attica
-			owns_state = 186 #Peloponnesia
+			OR = {
+				owns_state = 731 #Western Macedonia
+				has_army_manpower = { size > 200000 }
+			}
 		}
 
 		ai_will_do = {
@@ -5162,14 +5157,11 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			controls_all_owned_states = yes
-			custom_trigger_tooltip = {
-				tooltip = GRE_turks_exist_and_peaceful
-				TUR = {
-					exists = yes
-					is_subject = no
-					controls_all_owned_states = yes
-				}
+			country_exists = TUR
+			NOT = { has_war_with = TUR }
+			TUR = {
+				is_subject = no
+				controls_all_owned_states = yes
 			}
 		}
 
@@ -5195,22 +5187,16 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			controls_all_owned_states = yes
-			custom_trigger_tooltip = {
-				tooltip = GRE_turks_exist_and_peaceful
-				country_exists = TUR
-				TUR = {
-					is_subject = no
-					controls_all_owned_states = yes
-					NOT = { has_war_with = ROOT }
-					NOT = { has_completed_focus = OTT_Greek_Turkish_Population_Exchange }
-				}
+			has_war = no
+			country_exists = TUR
+			TUR = {
+				is_subject = no
+				controls_all_owned_states = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = GRE_turks_own_limited_greece
 				NOT = {
-					any_of_scopes = {
-						array = core_states
+					any_core_state = {
 						is_owned_by = TUR
 						NOT = {
 							state = 164 #Dodecanese
@@ -5221,6 +5207,9 @@ focus_tree = {
 				}
 			}
 			has_country_flag = GRE_has_thaw_with_turks
+		}
+		bypass = {
+			TUR = { has_completed_focus = OTT_Greek_Turkish_Population_Exchange }
 		}
 
 		ai_will_do = {
@@ -5304,16 +5293,10 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			controls_all_owned_states = yes
-			owns_state = 731 #Western Salonica
-			owns_state = 769 #Eastern Salonica
-			owns_state = 989 #Chalcidice
-			owns_state = 768 #Thessaly
-			owns_state = 1076 #Keraferia
-			owns_state = 185 #Epirus
-			owns_state = 47 #Attica
-			owns_state = 186 #Peloponnesia
-			owns_state = 182 #Crete
+			OR = {
+				owns_state = 731 #Western Macedonia
+				has_army_manpower = { size > 200000 }
+			}
 		}
 
 		ai_will_do = {

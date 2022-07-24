@@ -2300,25 +2300,19 @@ FNG_railways = {
 			885 = {
 				if = {
 					limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
-					remove_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
+					remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 				}
 			}
 			886 = {
 				if = {
 					limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
-					remove_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
+					remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 				}
 			}
 			328 = {
 				if = {
 					limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
-					remove_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
+					remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 				}
 			}
 			if = {
@@ -2326,9 +2320,7 @@ FNG_railways = {
 				716 = {
 					if = {
 						limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
-						remove_dynamic_modifier = {
-							modifier = FNG_mantetsu_monopoly
-						}
+						remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 					}
 				}
 			}
@@ -2407,29 +2399,26 @@ FNG_railways = {
 				path = { 9831 930 1499 4561 }
 			}
 			715 = {
+				clr_state_flag = FNG_monopoly
 				if = {
 					limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
-					remove_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
+					remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 				}
 			}
 			714 = {
+				clr_state_flag = FNG_monopoly
 				if = {
 					limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
-					remove_dynamic_modifier = {
-						modifier = FNG_mantetsu_monopoly
-					}
+					remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 				}
 			}
 			if = {
 				limit = { has_country_flag = FNG_Jilin_Hailong_complete }
 				716 = {
+					clr_state_flag = FNG_monopoly
 					if = {
 						limit = { has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly } }
-						remove_dynamic_modifier = {
-							modifier = FNG_mantetsu_monopoly
-						}
+						remove_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 					}
 				}
 			}
@@ -2860,8 +2849,6 @@ FNG_foreign_policy = { #The Road to Reclamation
 
 	FNG_Integrate_Faction_Members = {
 		icon = infiltrate_state
-
-		allowed = { always = no }
 
 		available = {
 			is_neighbor_of = FROM

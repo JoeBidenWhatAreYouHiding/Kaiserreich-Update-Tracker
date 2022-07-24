@@ -175,13 +175,13 @@ focus_tree = {
 			focus = LEC_GEA_cooperation
 		}
 		available = {
-			has_global_flag = LEP_victory
 			has_government = paternal_autocrat
+			country_exists = LEP
 			LEP = {
-				exists = yes
-				has_capitulated = no
 				NOT = {
-					has_war_with = LEC
+					has_war_with = CHI
+					has_war_with = ANQ
+					has_war_with = SQI
 				}
 			}
 		}
@@ -236,11 +236,9 @@ focus_tree = {
 		}
 		available = {
 			has_government = paternal_autocrat
-			GEA = {
-				exists = yes
-				has_capitulated = no
-			}
+			GER = { is_faction_leader = yes }
 		}
+		bypass_if_unavailable = yes
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_GEA_cooperation"
 			add_popularity = {
@@ -273,7 +271,9 @@ focus_tree = {
 		}
 		available = {
 			has_government = paternal_autocrat
+			GER = { is_faction_leader = yes }
 		}
+		bypass_if_unavailable = yes
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_fight_jap_influence"
 			add_popularity = {
@@ -718,7 +718,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LEC_manchus_in_tianjin
+		id = LEC_fengtian_troops_in_tianjin
 		icon = GFX_goal_ANQ_fengtian_loyalty
 		cost = 10
 		relative_position_id = LEC_new_status_quo
@@ -735,7 +735,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_manchus_in_tianjin"
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_fengtian_troops_in_tianjin"
 			FNG = {
 				country_event = lectianjap.30
 			}
@@ -904,7 +904,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = LEC_supply_lines
-			focus = LEC_manchus_in_tianjin
+			focus = LEC_fengtian_troops_in_tianjin
 		}
 		available = {
 			has_government = national_populist
@@ -1094,7 +1094,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_war_industrialists"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -1110,7 +1110,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -1357,7 +1357,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_illicit_industries"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -1813,11 +1813,8 @@ focus_tree = {
 			focus = LEC_secure_the_streets
 		}
 		available = {
-			GEA = {
-				exists = yes
-				is_subject_of = GER
-			}
 			is_subject_of = GER
+			GEA = { is_subject_of = GER }
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_ties_to_the_aog"
@@ -1962,9 +1959,9 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 25
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 			modifier = {
@@ -2039,16 +2036,9 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0.1
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
-				}
-			}
-			modifier = {
-				factor = 0.1
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 		}
@@ -2139,9 +2129,9 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0.1
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 		}
@@ -2196,9 +2186,9 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0.1
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 		}
@@ -2251,9 +2241,9 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0.1
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 		}
@@ -2297,9 +2287,9 @@ focus_tree = {
 			factor = 65
 			modifier = {
 				factor = 25
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 			modifier = {
@@ -2345,9 +2335,9 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 25
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 			modifier = {
@@ -2391,7 +2381,7 @@ focus_tree = {
 				add_idea = LEC_black_monday2
 				remove_idea = LEC_black_monday
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = dockyard
@@ -2462,9 +2452,9 @@ focus_tree = {
 			factor = 75
 			modifier = {
 				factor = 25
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 		}
@@ -2484,7 +2474,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_improving_infrastructure"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
@@ -2502,7 +2492,7 @@ focus_tree = {
 				limit = {
 					check_variable = { num_owned_states > 1 }
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = infrastructure
@@ -2521,7 +2511,7 @@ focus_tree = {
 				limit = {
 					check_variable = { num_owned_states > 2 }
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = infrastructure
@@ -2595,9 +2585,9 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 25
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 			modifier = {
@@ -2772,9 +2762,9 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0.1
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 		}
@@ -3051,7 +3041,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_pieces_of_a_puzzle"
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = dockyard
@@ -3069,7 +3059,7 @@ focus_tree = {
 				limit = {
 					check_variable = { num_owned_states > 1 }
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = arms_factory
@@ -3088,7 +3078,7 @@ focus_tree = {
 				limit = {
 					check_variable = { num_owned_states > 2 }
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = industrial_complex
@@ -3256,9 +3246,9 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0.1
-				has_game_rule = {
-					rule = LEC_path
-					option = LEC_COLLAPSE
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
 			}
 		}

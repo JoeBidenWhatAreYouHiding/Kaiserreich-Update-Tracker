@@ -256,34 +256,6 @@ country_event = { # anti_syndie pact with paraguay
 	}
 }
 
-country_event = { # argentine navy join us (got ya fam)
-	id = urg.9
-	immediate = { log = "[GetDateText]: [Root.GetName]: event urg.9 FROM = [From.GetName]" }
-	title = urg.9.t
-	desc = urg.9.d
-	picture = GFX_report_event_merchant_ship_01
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	trigger = {
-		ARG = {
-			is_ai = yes
-			has_war_with = FOP
-			surrender_progress > 0.8
-		}
-	}
-
-	option = {
-		name = urg.9.a
-		ARG = {
-			transfer_navy = {
-				target = URG
-			}
-		}
-	}
-}
-
 country_event = { # socialist protests
 	id = urg.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event urg.10 FROM = [From.GetName]" }
@@ -452,6 +424,7 @@ country_event = { # EVENT FOR PARAGUAY - anti syndie pakt with urg?
 		ai_chance = {
 			base = 80
 		}
+		complete_national_focus = PAR_cooperation_with_URG
 		hidden_effect = {
 			URG = {
 				country_event = {

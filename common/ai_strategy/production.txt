@@ -44,10 +44,6 @@ division_limiter = {
 }
 
 default_unit_production = {
-	enable = {
-		always = yes
-	}
-
 	ai_strategy = {
 		type = role_ratio
 		id = armor
@@ -187,7 +183,6 @@ extra_marine_production = {
 			original_tag = CAN
 			original_tag = GBR
 			original_tag = NFA
-			original_tag = ENG
 			original_tag = JAP
 			original_tag = HOL
 			is_american_tag = yes

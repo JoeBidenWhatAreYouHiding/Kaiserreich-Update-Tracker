@@ -419,7 +419,7 @@ FIN_integration_decisions = {
 		on_map_mode = map_and_decisions_view
 
 		state_target = yes
-		targets = { 215 }
+		targets = { 215 216 }
 		target_trigger = {
 			FROM = {
 				is_owned_and_controlled_by = ROOT

@@ -2139,15 +2139,18 @@ focus_tree = {
 		relative_position_id = CSA_the_long_haul
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CSA_reactivate_the_officer_corps"
-			swap_ideas = {
-				remove_idea = CSA_red_guard_militias_8
-				add_idea = CSA_red_guard_militias_9
+			army_experience = 30
+			if = {
+				limit = { NOT = { has_global_flag = USA_civil_war_over_flag } }
+				swap_ideas = {
+					remove_idea = CSA_red_guard_militias_8
+					add_idea = CSA_red_guard_militias_9
+				}
 			}
 			swap_ideas = {
 				remove_idea = CSA_political_officers
 				add_idea = CSA_revolutionary_NCOs
 			}
-			army_experience = 30
 
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP }
@@ -4021,14 +4024,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				MEX = {
-					OR = {
-						is_stronger_than_ROOT_and_not_vulnerable = yes
-						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
-						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
-						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
-					}
-				}
+				MEX = { default_attack_AI_trigger_FROM = yes }
 			}
 		}
 		completion_reward = {
@@ -4077,14 +4073,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				CAN = {
-					OR = {
-						is_stronger_than_ROOT_and_not_vulnerable = yes
-						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
-						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
-						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
-					}
-				}
+				CAN = { default_attack_AI_trigger_FROM = yes }
 			}
 		}
 		completion_reward = {

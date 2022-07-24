@@ -4829,7 +4829,7 @@ country_event = {
 			uses = 2
 			category = industry
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				free_building_slots = {
 					building = industrial_complex

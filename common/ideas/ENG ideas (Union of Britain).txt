@@ -52,14 +52,6 @@ ideas = {
 				synth_resources = 0.2
 			}
 		}
-		ENG_home_front_victory_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_home_front_victory_idea" }
-			picture = generic_production_bonus
-			allowed = { always = no }
-			modifier = {
-				consumer_goods_factor = -0.1
-			}
-		}
 		ENG_peace_boom_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_peace_boom_idea" }
 			picture = generic_production_bonus
@@ -322,29 +314,38 @@ ideas = {
 				research_speed_factor = 0.1
 			}
 		}
-		ENG_never_surrender_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_never_surrender_idea" }
-			picture = generic_research_bonus
-			allowed = { always = no }
-			available = {
-				has_war = yes
-				has_capitulated = no
-			}
-			modifier = {
-				army_core_attack_factor = 0.08
-				army_core_defence_factor = 0.08
-				army_morale_factor = 0.05
-			}
-		}
 		ENG_class_war_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_class_war_idea" }
 			picture = generic_production_bonus
 			allowed = { always = no }
 			modifier = {
-				army_org_Factor = 0.05
-				conscription = 0.03
-				training_time_factor = -0.1
-				political_power_gain = 0.05
+				conscription = 0.02
+				industrial_capacity_factory = 0.1
+			}
+		}
+		ENG_class_war_idea_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_class_war_idea_2" }
+			name = ENG_class_war_idea
+			picture = generic_research_bonus
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.02
+				industrial_capacity_factory = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		ENG_class_war_idea_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_class_war_idea_3" }
+			name = ENG_class_war_idea
+			picture = generic_research_bonus
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.02
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.15
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
 			}
 		}
 		ENG_silence_idea = {

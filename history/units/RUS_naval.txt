@@ -343,3 +343,46 @@ units = {
 	}
 }
 
+### Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_1
+			creator = "RUS"
+			version_name = "Gromoboy Class"
+		}
+		requested_factories = 1
+		progress = 0.10
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "RUS"
+			version_name = "Besstrashny Class"
+		}
+		requested_factories = 1
+		progress = 0.70
+		amount = 2
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "RUS"
+			version_name = "Besstrashny Class"
+		}
+		requested_factories = 1
+		progress = 0.60
+		amount = 2
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_2
+			creator = "RUS"
+			version_name = "Akula Class"
+		}
+		requested_factories = 1
+		progress = 0.80
+		amount = 12
+	}
+}

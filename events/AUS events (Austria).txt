@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # Austrian Events
 ###########################
 # By ~mw~
@@ -46,6 +46,25 @@ country_event = {
 				}
 				set_country_flag = AUS_will_choose_military_occupation
 			}
+		}
+	}
+}
+
+### Black Monday Hits Austria
+country_event = {
+	id = austria.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event austria.2 FROM = [From.GetName]" }
+	title = austria.2.t
+	desc = austria.2.d
+	picture = GFX_report_event_GER_Blackweekover
+
+	is_triggered_only = yes
+
+	option = {
+		name = austria.2.a
+		add_ideas = AUS_black_monday
+		hidden_effect = {
+			country_event = { id = ita.150 days = 5 }
 		}
 	}
 }
@@ -180,6 +199,8 @@ country_event = {
 				character = AUS_hans_lauda
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = AUS_karl_von_skoda
 					traits = { KR_war_industrialist }
 				}
@@ -192,6 +213,8 @@ country_event = {
 				character = AUS_hans_lauda
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = AUS_karl_von_skoda
 					traits = { KR_war_industrialist }
 				}

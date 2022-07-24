@@ -121,6 +121,17 @@ units = {
 		start_equipment_factor = 1.0
 	}
 	division = {
+		#name = "5a Guardia de Asalto"
+		division_name = {	# New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = 884 #174
+		division_template = "Guardia de Asalto"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
 		#name = "6a Guardia de Asalto"
 		division_name = {	# New syntax for compatibility with name lists
 			is_name_ordered = yes
@@ -202,6 +213,28 @@ units = {
 		division_name = {	# New syntax for compatibility with name lists
 			is_name_ordered = yes
 			name_order = 4
+		}
+		location = 9800
+		division_template = "Carlist Militia"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		#name = "4a Guardias Orgánica"
+		division_name = {	# New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 10
+		}
+		location = 9800
+		division_template = "Carlist Militia"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		#name = "4a Guardias Orgánica"
+		division_name = {	# New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 11
 		}
 		location = 9800
 		division_template = "Carlist Militia"

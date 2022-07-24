@@ -9,6 +9,13 @@ on_actions = {
 					country_event = { id = asiapeace.1 days = 7 }
 				}
 			}
+			### GEA generals flee
+			if = {
+				limit = { tag = GEA }
+				GEA = {
+					GEA_generals_flee = yes
+				}
+			}
 		}
 	}
 

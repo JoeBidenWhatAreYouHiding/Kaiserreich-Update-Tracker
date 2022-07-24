@@ -338,22 +338,22 @@ defined_text = {
 	name = GetStateName_29
 	text = {
 		trigger = { original_tag = BEL }
-		localization_key = STATE_29_DUTCH #Frans-Vlaanderen
+		localization_key = STATE_29_DUTCH #Duinkerke
 	}
 	text = {
 		trigger = { is_dutch_tag = yes }
-		localization_key = STATE_29_DUTCH #Frans-Vlaanderen
+		localization_key = STATE_29_DUTCH #Duinkerke
 	}
 	text = {
 		trigger = { is_french_speaking_tag = yes }
-		localization_key = STATE_29_FRENCH #Flandre Maritime
+		localization_key = STATE_29_FRENCH #Dunkerque
 	}
 	text = {
 		trigger = { is_german_tag = yes }
 		localization_key = STATE_29_GERMAN #Dünkirchen
 	}
 	text = {
-		localization_key = STATE_29 #Maritime Flanders
+		localization_key = STATE_29 #Dunkirk
 	}
 }
 defined_text = {
@@ -1583,10 +1583,6 @@ defined_text = {
 defined_text = {
 	name = GetStateName_119
 	text = {
-		trigger = { original_tag = IRE }
-		localization_key = STATE_119_IRISH #Ulster
-	}
-	text = {
 		localization_key = STATE_119 #Northern Ireland
 	}
 }
@@ -2047,6 +2043,10 @@ defined_text = {
 defined_text = {
 	name = GetStateName_165
 	text = {
+		trigger = { original_tag = CAT }
+		localization_key = STATE_165_CATALAN #Catalunya
+	}
+	text = {
 		trigger = { is_spanish_speaking_tag = yes }
 		localization_key = STATE_165_SPANISH #Cataluña
 	}
@@ -2121,6 +2121,10 @@ defined_text = {
 defined_text = {
 	name = GetStateName_172
 	text = {
+		trigger = { original_tag = BAS }
+		localization_key = STATE_172_BASQUE #Nafarroa
+	}
+	text = {
 		trigger = { is_spanish_speaking_tag = yes }
 		localization_key = STATE_172_SPANISH #Navarra
 	}
@@ -2170,6 +2174,10 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_177
+	text = {
+		trigger = { tag = CAT }
+		localization_key = STATE_177_CATALAN #Islas Balearas
+	}
 	text = {
 		trigger = { is_spanish_speaking_tag = yes }
 		localization_key = STATE_177_SPANISH #Islas Balearas
@@ -8352,11 +8360,11 @@ defined_text = {
 defined_text = {
 	name = GetStateName_779
 	text = {
-		trigger = { is_german_tag = yes }
-		localization_key = STATE_779_GERMAN #Nanzig
+		trigger = { original_tag = BAS }
+		localization_key = STATE_779_BASQUE #Biarno
 	}
 	text = {
-		localization_key = STATE_779 #Nancy
+		localization_key = STATE_779 #Béarn
 	}
 }
 defined_text = {
@@ -8420,11 +8428,7 @@ defined_text = {
 defined_text = {
 	name = GetStateName_785
 	text = {
-		trigger = { is_french_speaking_tag = yes }
-		localization_key = STATE_785_FRENCH #Plateau Lorrain
-	}
-	text = {
-		localization_key = STATE_785 #Lorraine Plateau
+		localization_key = STATE_785 #Lorraine
 	}
 }
 defined_text = {
@@ -10380,19 +10384,11 @@ defined_text = {
 defined_text = {
 	name = GetStateName_980
 	text = {
-		trigger = { original_tag = BEL }
-		localization_key = STATE_980_FRENCH #Hainaut Français
-	}
-	text = {
-		trigger = { is_french_speaking_tag = yes }
-		localization_key = STATE_980_FRENCH #Hainaut Français
-	}
-	text = {
 		trigger = { is_dutch_tag = yes }
-		localization_key = STATE_980_DUTCH #Frans Henegouwen
+		localization_key = STATE_980_DUTCH #Rijsel
 	}
 	text = {
-		localization_key = STATE_980 #French Hainaut
+		localization_key = STATE_980 #Lille
 	}
 }
 defined_text = {

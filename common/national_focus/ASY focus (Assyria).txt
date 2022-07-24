@@ -938,7 +938,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ASY_Cathedral_St_Hurmzid"
 			add_stability = 0.05
 			812 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			country_event = ass.25
 		}
@@ -1999,7 +1999,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ASY_Land_Reclamation"
 			812 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			add_tech_bonus = {
 				name = ASY_Land_Reclamation
@@ -2037,7 +2037,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ASY_Madan_Land_Seizures"
 			add_stability = -0.05
 			812 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			unlock_decision_tooltip = ASY_Clear_Marsh_Arabs_decision
 			hidden_effect = {

@@ -12,7 +12,20 @@ news_event = {
 	id = worldnews.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.1 FROM = [From.GetName]" }
 	title = worldnews.1.t
-	desc = worldnews.1.d
+
+	desc = {
+		text = worldnews.1.d.starts_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+	desc = {
+		text = worldnews.1.d.joins_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+
 	picture = GFX_news_event_soviet_tanks
 
 	major = yes
@@ -105,7 +118,20 @@ news_event = {
 	id = worldnews.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.2 FROM = [From.GetName]" }
 	title = worldnews.2.t
-	desc = worldnews.2.d
+
+	desc = {
+		text = worldnews.2.d.starts_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+	desc = {
+		text = worldnews.2.d.joins_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+
 	picture = GFX_news_event_second_weltkrieg
 
 	major = yes
@@ -207,7 +233,20 @@ news_event = {
 	id = worldnews.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.3 FROM = [From.GetName]" }
 	title = worldnews.3.t
-	desc = worldnews.3.d
+
+	desc = {
+		text = worldnews.3.d.starts_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+	desc = {
+		text = worldnews.3.d.joins_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+
 	picture = GFX_news_event_generic_panzer_attack
 
 	major = yes
@@ -300,7 +339,20 @@ news_event = {
 	id = worldnews.4
 	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.4 FROM = [From.GetName]" }
 	title = worldnews.4.t
-	desc = worldnews.4.d
+
+	desc = {
+		text = worldnews.4.d.starts_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+	desc = {
+		text = worldnews.4.d.joins_wk
+		trigger = {
+			has_global_flag = { flag = second_weltkrieg_has_started days < 10 }
+		}
+	}
+
 	picture = GFX_news_event_ger_civil_war
 
 	major = yes
@@ -1341,6 +1393,17 @@ news_event = {
 
 	option = {
 		name = worldnews.50.a
+		trigger = { NOT = { tag = OTT } }
+		effect_tooltip = {
+			add_named_threat = {
+				threat = 6
+				name = war_in_the_desert_threat
+			}
+		}
+	}
+	option = {
+		name = worldnews.50.b
+		trigger = { tag = OTT }
 		effect_tooltip = {
 			add_named_threat = {
 				threat = 6
@@ -7754,7 +7817,12 @@ news_event = {
 	}
 
 	option = {
+		trigger = { NOT = { tag = OTT } }
 		name = worldnews.424.a
+	}
+	option = {
+		trigger = { tag = OTT }
+		name = worldnews.424.b
 	}
 }
 
@@ -7783,7 +7851,12 @@ news_event = {
 	}
 
 	option = {
+		trigger = { NOT = { tag = OTT } }
 		name = worldnews.425.a
+	}
+	option = {
+		trigger = { tag = OTT }
+		name = worldnews.425.b
 	}
 }
 
@@ -7812,7 +7885,12 @@ news_event = {
 	}
 
 	option = {
+		trigger = { NOT = { tag = OTT } }
 		name = worldnews.426.a
+	}
+	option = {
+		trigger = { tag = OTT }
+		name = worldnews.426.b
 	}
 }
 
@@ -7900,7 +7978,12 @@ news_event = {
 	}
 
 	option = {
+		trigger = { NOT = { tag = OTT } }
 		name = worldnews.429.a
+	}
+	option = {
+		trigger = { tag = OTT }
+		name = worldnews.429.b
 	}
 }
 
@@ -8159,7 +8242,12 @@ news_event = {
 	}
 
 	option = {
+		trigger = { NOT = { tag = OTT } }
 		name = worldnews.438.a
+	}
+	option = {
+		trigger = { tag = OTT }
+		name = worldnews.438.b
 	}
 }
 
@@ -10201,10 +10289,28 @@ news_event = { # 1936 Irish Olympics
 		}
 	}
 
-	option = { # We did our best!
+	option = { # Absent - NFA
 		name = worldnews.482.b
 		trigger = {
-			NOT = { tag = IRE }
+			tag = NFA
+		}
+	}
+
+	option = { # Absent - Internationale
+		name = worldnews.482.c
+		trigger = {
+			has_socialist_government = yes
+		}
+	}
+
+	option = { # We did our best!
+		name = worldnews.482.e
+		trigger = {
+			NOT = {
+				tag = IRE
+				tag = NFA
+				has_socialist_government = yes
+			}
 		}
 	}
 }

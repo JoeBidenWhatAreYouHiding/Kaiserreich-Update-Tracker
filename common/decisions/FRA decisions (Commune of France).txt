@@ -832,9 +832,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { ENG }
@@ -846,10 +848,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_ENG target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -878,9 +884,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { SRI }
@@ -892,10 +900,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_SRI target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -929,10 +941,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
-			FROM = { has_country_flag = aftermath_of_the_civil_war }
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { SWF }
@@ -945,10 +958,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_SWF target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -982,9 +999,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { NOR }
@@ -996,10 +1015,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_NOR target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -1028,9 +1051,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { HND }
@@ -1042,7 +1067,6 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 3
@@ -1051,6 +1075,11 @@ FRA_phalanstere_category = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision FRA_Develop_HND target: [From.GetName]"
 			set_global_flag = { flag = FRA_ongoing_phalanstere_development days = @FRA_phalantere_decision_time value = 1 }
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_HND target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		remove_effect = {
@@ -1079,9 +1108,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { MEX }
@@ -1093,10 +1124,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_MEX target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -1130,9 +1165,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { GUA ELS HON NIC COS PAN }
@@ -1144,10 +1181,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_Central_America target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -1174,9 +1215,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { CUB HAI DOM WIF }
@@ -1188,10 +1231,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_Caribbean target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -1218,9 +1265,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { CEN }
@@ -1232,10 +1281,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_CEN target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -1262,9 +1315,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { BRA }
@@ -1280,6 +1335,11 @@ FRA_phalanstere_category = {
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_BRA target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -1313,10 +1373,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
-			NOT = { country_exists = ARG }
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { FOP }
@@ -1331,10 +1392,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_FOP target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {
@@ -1368,9 +1433,11 @@ FRA_phalanstere_category = {
 			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
 		}
 
-		visible = {
-			country_exists = FROM
-			FRA_phalanstere_target = yes
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = FROM }
+				FRA_phalanstere_target = no
+			}
 		}
 
 		targets = { CHL URG PAR BOL PRU ECU COL VEN }
@@ -1382,10 +1449,14 @@ FRA_phalanstere_category = {
 		fire_only_once = yes
 		cost = @FRA_phalantere_decision_cost
 		days_remove = @FRA_phalantere_decision_time
-		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 4
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FRA_Develop_South_America target: [From.GetName]"
+			hidden_effect = { add_political_power = @FRA_phalantere_decision_cost }
 		}
 
 		complete_effect = {

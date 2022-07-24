@@ -336,17 +336,11 @@ country_event = { #Fate of Canada
 			}
 			GBR = { CAN_convert_british_pm_slots = yes }
 			if = {
-				limit = {
-					GBR = { is_ally_of_ROOT = yes }
-					NOT = { tag = GBR }
-				}
+				limit = { GBR = { is_ally_of_ROOT = yes } }
 				GBR = { save_event_target_as = british_target }
 			}
 			else_if = {
-				limit = {
-					ENT = { is_ally_of_ROOT = yes }
-					NOT = { tag = ENT }
-				}
+				limit = { ENT = { is_ally_of_ROOT = yes } }
 				ENT = { save_event_target_as = british_target }
 			}
 			if = {
@@ -871,6 +865,15 @@ country_event = { # The fate of Central America
 		HON = { every_core_state = { add_core_of = var:tag_to_release } }
 		NIC = { every_core_state = { add_core_of = var:tag_to_release } }
 		if = {
+			limit = {
+				OR = {
+					NOT = { 311 = { is_core_of = ROOT } }
+					NOT = { 311 = { is_claimed_by = ROOT } }
+				}
+			}
+			var:tag_to_release = { add_state_claim = 311 } #Belize
+		}
+		else_if = {
 			limit = { NOT = { 311 = { is_core_of = GUA } } } #Belize
 			var:tag_to_release = { add_state_claim = 311 } #Belize
 		}
@@ -1324,13 +1327,13 @@ country_event = { #The Fate of Costa Rica
 			COS = {
 				COS_rafael_angel_calderon_guardia = {
 					set_nationality = PREV
-					promote_character = { ideology = social_democrat_subtype }
+					promote_character = social_democrat_subtype
 				}
 				COS_jose_figueres_ferrer = {
 					set_nationality = PREV
 					if = {
 						limit = { has_ideology = social_democrat_subtype }
-						promote_character = { ideology = social_democrat_subtype }
+						promote_character = social_democrat_subtype
 					}
 				}
 			}
@@ -2481,6 +2484,13 @@ country_event = { #Fate of Bolivia
 				promote_character = BOL_carlos_quintanilla_quiroga
 				promote_character = BOL_german_busch_becerra
 				promote_character = BOL_bernardino_bilbao_rioja
+			}
+			if = {				# Add claim to Tarija if ROOT is natpop ARG
+				limit = {
+					tag = ARG
+					has_government = national_populist
+				}
+				1073 = { add_claim_by = ROOT }
 			}
 		}
 	}

@@ -43,6 +43,7 @@ occupy_massive_country = {
 # state scope
 retain_state = {
 	set_state_flag = { flag = retain_state_@PREV days = 16 value = 1 }
+	set_temp_variable = { retain_state_@THIS = 1 }
 }
 
 # state scope
@@ -54,7 +55,7 @@ transfer_state_without_overriding_occupation = {
 	else = {
 		set_state_owner_to = var:tag_to_release
 		set_state_province_controller = {
-			controller = owner
+			controller = var:tag_to_release
 			limit = { NOT = { has_war_with = var:tag_to_release } }
 		}
 	}
@@ -251,8 +252,9 @@ transfer_territory_from_core_regions = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -264,6 +266,7 @@ transfer_territory_from_core_regions = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			transfer_state_to = var:tag_to_release
 		}
@@ -276,6 +279,7 @@ transfer_territory_from_core_regions = {
 					is_core_of = var:v
 				}
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			clr_state_flag = retain_state_@PREV
 		}
@@ -295,9 +299,10 @@ transfer_territory_from_core_regions_and_add_claims = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			add_claim_by = var:tag_to_release
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -309,6 +314,7 @@ transfer_territory_from_core_regions_and_add_claims = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			add_claim_by = var:tag_to_release
 			transfer_state_to = var:tag_to_release
@@ -322,6 +328,7 @@ transfer_territory_from_core_regions_and_add_claims = {
 					is_core_of = var:v
 				}
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			clr_state_flag = retain_state_@PREV
 		}
@@ -341,9 +348,10 @@ transfer_territory_from_core_regions_and_add_cores = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			add_core_of = var:tag_to_release
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -355,6 +363,7 @@ transfer_territory_from_core_regions_and_add_cores = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			add_core_of = var:tag_to_release
 			transfer_state_to = var:tag_to_release
@@ -368,6 +377,7 @@ transfer_territory_from_core_regions_and_add_cores = {
 					is_core_of = var:v
 				}
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			clr_state_flag = retain_state_@PREV
 		}
@@ -399,8 +409,9 @@ release_targeted_tag_with_claims = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -412,6 +423,7 @@ release_targeted_tag_with_claims = {
 				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			transfer_state_to = var:tag_to_release
 		}
@@ -424,6 +436,7 @@ release_targeted_tag_with_claims = {
 					is_claimed_by = var:tag_to_release
 				}
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			clr_state_flag = retain_state_@PREV
 		}
@@ -440,8 +453,9 @@ release_targeted_tag = {
 				is_core_of = var:tag_to_release
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -450,6 +464,7 @@ release_targeted_tag = {
 				is_core_of = var:tag_to_release
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			transfer_state_to = var:tag_to_release
 		}
@@ -459,6 +474,7 @@ release_targeted_tag = {
 			limit = {
 				is_core_of = var:tag_to_release
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			clr_state_flag = retain_state_@PREV
 		}
@@ -475,8 +491,9 @@ release_targeted_tag_nocosmetic = {
 				is_core_of = var:tag_to_release
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -485,6 +502,7 @@ release_targeted_tag_nocosmetic = {
 				is_core_of = var:tag_to_release
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			transfer_state_to = var:tag_to_release
 		}
@@ -494,6 +512,7 @@ release_targeted_tag_nocosmetic = {
 			limit = {
 				is_core_of = var:tag_to_release
 				NOT = { has_state_flag = retain_state_@PREV }
+				NOT = { has_variable = retain_state_@THIS }
 			}
 			clr_state_flag = retain_state_@PREV
 		}
@@ -503,7 +522,7 @@ release_targeted_tag_nocosmetic = {
 
 # global scope
 puppet_released_tag = {
-	puppet_released_tag_nocosmetic = yes
+	puppet = var:tag_to_release
 	var:tag_to_release = {
 		drop_cosmetic_tag = yes
 		mark_focus_tree_layout_dirty = yes
@@ -533,20 +552,6 @@ puppet_released_tag_nocosmetic = {
 		}
 	}
 	recheck_annexations = yes
-}
-
-transfer_state_during_war_target_tag_to_release = {
-	if = {
-		limit = { is_fully_controlled_by = owner }
-		transfer_state_to = var:tag_to_release
-	}
-	else = {
-		set_state_owner_to = var:tag_to_release
-		set_state_province_controller = {
-			controller = var:tag_to_release
-			limit = { NOT = { has_war_with = PREV.owner } }
-		}
-	}
 }
 
 ### COUNTRY-SPECIFIC EFFECTS ###
@@ -597,31 +602,11 @@ release_france = {
 				transfer_state_during_war = yes
 			}
 			else = {
-				transfer_state_during_war_target_tag_to_release = yes
+				transfer_state_without_overriding_occupation = yes
 			}
 		}
 	}
-	if = {
-		limit = {
-			is_in_faction = yes
-			var:tag_to_release = {
-				OR = {
-					tag = FRA
-					tag = NFA
-				}
-			}
-		}
-		if = {
-			limit = { is_faction_leader = yes }
-			add_to_faction = var:tag_to_release
-		}
-		else = {
-			faction_leader = { add_to_faction = var:tag_to_release }
-		}
-	}
-	else = {
-		puppet_released_tag = yes
-	}
+	puppet_released_tag = yes
 	hidden_effect = {
 		if = {
 			limit = { var:tag_to_release = { has_completed_focus = NATFRA_Reconstruction_Commission } }
@@ -648,26 +633,26 @@ release_spain = {
 				OR = {
 					NOT = { is_core_of = BAS }
 					NOT = {
-						BAS = { is_ally_with = ROOT }
+						BAS = { is_ally_of_ROOT = yes }
 						has_variable = will_balkanise_spain
 					}
 				}
 				OR = {
 					NOT = { is_core_of = GLC }
 					NOT = {
-						GLC = { is_ally_with = ROOT }
+						GLC = { is_ally_of_ROOT = yes }
 						has_variable = will_balkanise_spain
 					}
 				}
 				OR = {
 					NOT = { is_core_of = CAT }
 					NOT = {
-						CAT = { is_ally_with = ROOT }
+						CAT = { is_ally_of_ROOT = yes }
 						has_variable = will_balkanise_spain
 					}
 				}
 			}
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	hidden_effect = {
@@ -691,26 +676,26 @@ release_spain = {
 					OR = {
 						NOT = { is_core_of = BAS }
 						NOT = {
-							BAS = { is_ally_with = ROOT }
+							BAS = { is_ally_of_ROOT = yes }
 							has_variable = will_balkanise_spain
 						}
 					}
 					OR = {
 						NOT = { is_core_of = GLC }
 						NOT = {
-							GLC = { is_ally_with = ROOT }
+							GLC = { is_ally_of_ROOT = yes }
 							has_variable = will_balkanise_spain
 						}
 					}
 					OR = {
 						NOT = { is_core_of = CAT }
 						NOT = {
-							CAT = { is_ally_with = ROOT }
+							CAT = { is_ally_of_ROOT = yes }
 							has_variable = will_balkanise_spain
 						}
 					}
 				}
-				transfer_state_during_war_target_tag_to_release = yes
+				transfer_state_without_overriding_occupation = yes
 			}
 		}
 		var:tag_to_release = { set_capital = { state = 41 remember_old_capital = no } }
@@ -725,12 +710,12 @@ setup_romanian_puppet_leaders = {
 				limit = {
 					ROOT = {
 						OR = {
+							tag = UPC
 							is_american_tag = yes
 							AND = {
 								is_russian_tag = yes
 								has_elected_government = yes
 							}
-							tag = UPC
 						}
 					}
 				}
@@ -774,7 +759,7 @@ release_chinese_government = {
 				NOT = { has_variable = ambition_area_@ROOT }
 			}
 			add_claim_by = var:tag_to_release
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -797,6 +782,7 @@ release_chinese_government = {
 		set_autonomy = {
 			target = var:tag_to_release
 			autonomy_state = kr_special_autonomous_dependency
+			end_wars = no
 		}
 	}
 }
@@ -814,7 +800,7 @@ release_chinese_government_in_manchuria = {
 				NOT = { has_variable = ambition_area_@ROOT }
 			}
 			add_claim_by = var:tag_to_release
-			transfer_state_during_war_target_tag_to_release = yes
+			transfer_state_without_overriding_occupation = yes
 		}
 	}
 	else = {
@@ -833,6 +819,7 @@ release_chinese_government_in_manchuria = {
 		set_autonomy = {
 			target = var:tag_to_release
 			autonomy_state = kr_special_autonomous_dependency
+			end_wars = no
 		}
 	}
 }

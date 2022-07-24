@@ -990,7 +990,7 @@ country_event = {
 			PRU_manuel_arturo_odria_amoretti = {
 				if = {
 					limit = { has_ideology = authoritarian_democrat_subtype }
-					promote_character = { ideology = authoritarian_democrat_subtype }
+					promote_character = authoritarian_democrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -1003,7 +1003,7 @@ country_event = {
 				}
 				if = {
 					limit = { has_ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
 				}
 				else = {
 					add_country_leader_role = {

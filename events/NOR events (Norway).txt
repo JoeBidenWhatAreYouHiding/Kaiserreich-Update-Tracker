@@ -1850,7 +1850,7 @@ country_event = {
 
 	option = {
 		name = norway.123.a
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				free_building_slots = {
 					building = arms_factory
@@ -1866,7 +1866,7 @@ country_event = {
 				instant_build = yes
 			}
 		}
-		random_owned_state = {
+		random_owned_controlled_state = {
 			limit = {
 				free_building_slots = {
 					building = industrial_complex
@@ -3600,7 +3600,7 @@ country_event = {
 		NOR_martin_tranmael = {
 			if = {
 				limit = { has_ideology = radical_socialist_subtype }
-				promote_character = { ideology = radical_socialist_subtype }
+				promote_character = radical_socialist_subtype
 			}
 			else = {
 				add_country_leader_role = {

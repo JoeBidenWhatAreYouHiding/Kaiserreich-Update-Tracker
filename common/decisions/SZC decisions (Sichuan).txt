@@ -628,7 +628,7 @@ Sichuan_Famine_decisions = {
 		}
 
 		visible = {
-			has_idea = SZC_famine_idea
+			has_dynamic_modifier = { modifier = SZC_major_famine }
 			country_exists = FROM
 			FROM = {
 				if = {
@@ -732,7 +732,7 @@ Sichuan_Famine_decisions = {
 		}
 
 		visible = {
-			has_idea = SZC_famine_idea
+			has_dynamic_modifier = { modifier = SZC_major_famine }
 			FROM = {
 				exists = yes
 				if = {
@@ -794,6 +794,28 @@ Sichuan_Famine_decisions = {
 			SZC_reduce_famine_medium = yes
 			hidden_effect = {
 				remove_targeted_decision = { decision = SZC_Import_Grain target = FROM }
+			}
+		}
+	}
+	SZC_Fading_Famine = {
+		icon = hol_drain_water_lines
+
+		allowed = { always = no } #manually activated
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		is_good = yes
+		days_mission_timeout = 24
+		fire_only_once = yes
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SZC_Fading_Famine"
+			SZC_reduce_famine_medium = yes
+			if = {
+				limit = { check_variable = { SZC_famine_monthly_population < 0 } }
+				hidden_effect = { activate_mission = SZC_Fading_Famine }
 			}
 		}
 	}
@@ -2927,7 +2949,7 @@ Sichuan_Arms_Purchases_decisions = {
 			}
 			modifier = {
 				add = -1000
-				has_idea = SZC_famine_idea
+				has_dynamic_modifier = { modifier = SZC_major_famine }
 			}
 		}
 
@@ -2980,7 +3002,7 @@ Sichuan_Arms_Purchases_decisions = {
 			}
 			modifier = {
 				add = -1000
-				has_idea = SZC_famine_idea
+				has_dynamic_modifier = { modifier = SZC_major_famine }
 			}
 		}
 
@@ -3033,7 +3055,7 @@ Sichuan_Arms_Purchases_decisions = {
 			}
 			modifier = {
 				add = -1000
-				has_idea = SZC_famine_idea
+				has_dynamic_modifier = { modifier = SZC_major_famine }
 			}
 		}
 

@@ -510,11 +510,15 @@ ideas = {
 				production_speed_arms_factory_factor = 0.15
 			}
 		}
-		FOP_economic_support = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support" }
-			picture = generic_coins
+		FOP_economic_support_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_1" }
+			on_remove = {
+				FOP = { remove_ideas = FOP_economic_support_idea_for_FOP_1 }
+			}
+			picture = generic_syndicalist_worker
 			allowed = { always = no }
 			available = {
+				ROOT = { has_war_with = GER }
 				FOP = {
 					exists = yes
 					NOT = { has_war_with = ROOT }
@@ -523,7 +527,146 @@ ideas = {
 			}
 			modifier = {
 				stability_factor = 0.05
-				industrial_factory_donations = 2
+				monthly_population = 0.2
+			}
+		}
+		FOP_economic_support_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_2" }
+			on_remove = {
+				FOP = { remove_ideas = FOP_economic_support_idea_for_FOP_2 }
+			}
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+			available = {
+				ROOT = { has_war_with = GER }
+				FOP = {
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					has_socialist_government = yes
+				}
+			}
+			modifier = {
+				stability_factor = 0.05
+				monthly_population = 0.25
+				custom_modifier_tooltip = FOP_economic_support_modifier_2_tt
+			}
+		}
+		FOP_economic_support_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_3" }
+			on_remove = {
+				FOP = { remove_ideas = FOP_economic_support_idea_for_FOP_3 }
+			}
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+			available = {
+				ROOT = { has_war_with = GER }
+				FOP = {
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					has_socialist_government = yes
+				}
+			}
+			modifier = {
+				stability_factor = 0.075
+				monthly_population = 0.30
+				custom_modifier_tooltip = FOP_economic_support_modifier_3_tt
+			}
+		}
+		FOP_economic_support_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_4" }
+			on_remove = {
+				FOP = { remove_ideas = FOP_economic_support_idea_for_FOP_4 }
+			}
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+			available = {
+				ROOT = { has_war_with = GER }
+				FOP = {
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					has_socialist_government = yes
+				}
+			}
+			modifier = {
+				stability_factor = 0.075
+				monthly_population = 0.40
+				custom_modifier_tooltip = FOP_economic_support_modifier_4_tt
+			}
+		}
+		FOP_economic_support_idea_for_FOP_1 = {
+			name = FOP_economic_support_idea_for_FOP
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_idea_for_FOP_2" }
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+			available = {
+				ENG = { exists = yes }
+				FRA = { exists = yes }
+			}
+			modifier = {
+				political_power_factor = 0.05
+			}
+		}
+		FOP_economic_support_idea_for_FOP_2 = {
+			name = FOP_economic_support_idea_for_FOP
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_idea_for_FOP_2" }
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+			available = {
+				ENG = { exists = yes }
+				FRA = { exists = yes }
+			}
+			modifier = {
+				political_power_factor = 0.10
+			}
+			targeted_modifier = {
+				tag = ENG
+				cic_to_target_factor = 0.02
+			}
+			targeted_modifier = {
+				tag = FRA
+				cic_to_target_factor = 0.02
+			}
+		}
+		FOP_economic_support_idea_for_FOP_3 = {
+			name = FOP_economic_support_idea_for_FOP
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_idea_for_FOP_3" }
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+			available = {
+				ENG = { exists = yes }
+				FRA = { exists = yes }
+			}
+			modifier = {
+				political_power_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = ENG
+				cic_to_target_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = FRA
+				cic_to_target_factor = 0.05
+			}
+		}
+		FOP_economic_support_idea_for_FOP_4 = {
+			name = FOP_economic_support_idea_for_FOP
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_economic_support_idea_for_FOP_4" }
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+			available = {
+				ENG = { exists = yes }
+				FRA = { exists = yes }
+			}
+			modifier = {
+				political_power_factor = 0.20
+			}
+			targeted_modifier = {
+				tag = ENG
+				cic_to_target_factor = 0.10
+			}
+			targeted_modifier = {
+				tag = FRA
+				cic_to_target_factor = 0.10
 			}
 		}
 		FOP_new_hierarchy = {
@@ -616,7 +759,7 @@ ideas = {
 			picture = generic_agrarian_society
 			allowed = { always = no }
 			modifier = {
-				global_building_slots_factor = 0.05
+				global_building_slots_factor = 0.10
 				monthly_population = 0.5
 				political_power_gain = 0.15
 			}
@@ -964,6 +1107,7 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				encryption = 1
+				crypto_strength = 1
 			}
 		}
 		FOP_natpop_agrarian_reforms_idea = {
@@ -1049,20 +1193,222 @@ ideas = {
 				political_power_gain = -0.15
 			}
 		}
-		FOP_resistance_to_andesia = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia" }
+		FOP_resistance_to_andesia_political = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_political" }
 			picture = FOP_resistance_to_andesia
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.30
 				political_power_gain = -0.50
-				consumer_goods_factor = 0.1
 				resistance_growth = 0.5
-				resistance_damage_to_garrison = 0.2
+				resistance_damage_to_garrison = 0.4
 				resistance_target = 0.3
-				compliance_gain = -0.025
+				compliance_gain = -0.03
 			}
 		}
+		FOP_resistance_to_andesia_political_1 = {
+			name = FOP_resistance_to_andesia_political
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_political_1" }
+			picture = FOP_resistance_to_andesia
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.25
+				political_power_gain = -0.35
+				resistance_growth = 0.5
+				resistance_damage_to_garrison = 0.4
+				resistance_target = 0.3
+				compliance_gain = -0.03
+			}
+		}
+		FOP_resistance_to_andesia_political_2 = {
+			name = FOP_resistance_to_andesia_political
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_political_2" }
+			picture = FOP_resistance_to_andesia
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.25
+				political_power_gain = -0.35
+				resistance_growth = 0.4
+				resistance_damage_to_garrison = 0.4
+				resistance_target = 0.2
+				compliance_gain = -0.02
+			}
+		}
+		FOP_resistance_to_andesia_political_3 = {
+			name = FOP_resistance_to_andesia_political
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_political_3" }
+			picture = FOP_resistance_to_andesia
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.20
+				resistance_growth = 0.5
+				resistance_damage_to_garrison = 0.4
+				resistance_target = 0.3
+				compliance_gain = -0.03
+			}
+		}
+		FOP_resistance_to_andesia_political_4 = {
+			name = FOP_resistance_to_andesia_political
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_political_4" }
+			picture = FOP_resistance_to_andesia
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.20
+				resistance_growth = 0.4
+				resistance_damage_to_garrison = 0.4
+				resistance_target = 0.2
+				compliance_gain = -0.02
+			}
+		}
+		FOP_resistance_to_andesia_political_5 = {
+			name = FOP_resistance_to_andesia_political_lingering
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_political_5" }
+			picture = FOP_resistance_to_andesia
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.20
+				resistance_growth = 0.2
+				resistance_damage_to_garrison = 0.4
+				resistance_target = 0.1
+				compliance_gain = -0.02
+			}
+		}
+		FOP_resistance_to_andesia_political_6 = {
+			name = FOP_resistance_to_andesia_political_instability
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_political_6" }
+			picture = generic_scales
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.15
+				resistance_growth = 0.1
+				resistance_damage_to_garrison = 0.4
+				resistance_target = 0.1
+				compliance_gain = -0.01
+			}
+		}
+		FOP_resistance_to_andesia_economical = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_economical" }
+			picture = KTG_Industrial_Crisis_Factories
+			allowed = { always = no }
+			modifier = {
+				monthly_population = -0.50
+				consumer_goods_factor = 0.40
+				production_speed_buildings_factor = -0.25
+				industrial_capacity_factory = -0.25
+			}
+		}
+
+		FOP_resistance_to_andesia_economical_1 = {
+			name = FOP_resistance_to_andesia_economical
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_economical_1" }
+			picture = KTG_Industrial_Crisis_Factories
+			allowed = { always = no }
+			modifier = {
+				monthly_population = -0.50
+				consumer_goods_factor = 0.35
+				production_speed_buildings_factor = -0.10
+				industrial_capacity_factory = -0.25
+			}
+		}
+
+		FOP_resistance_to_andesia_economical_2 = {
+			name = FOP_resistance_to_andesia_economical
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_economical_2" }
+			picture = KTG_Industrial_Crisis_Factories
+			allowed = { always = no }
+			modifier = {
+				monthly_population = -0.50
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.10
+				industrial_capacity_factory = -0.25
+			}
+		}
+
+		FOP_resistance_to_andesia_economical_3 = {
+			name = FOP_resistance_to_andesia_economical
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_economical_3" }
+			picture = KTG_Industrial_Crisis_Factories
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.35
+				production_speed_buildings_factor = -0.10
+				industrial_capacity_factory = -0.25
+			}
+		}
+
+		FOP_resistance_to_andesia_economical_4 = {
+			name = FOP_resistance_to_andesia_economical
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_economical_4" }
+			picture = KTG_Industrial_Crisis_Factories
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.10
+				industrial_capacity_factory = -0.25
+			}
+		}
+
+		FOP_resistance_to_andesia_economical_5 = {
+			name = FOP_resistance_to_andesia_economical_lingering
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_resistance_to_andesia_economical_5" }
+			picture = SOV_fourth_five_year_plan
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.10
+				production_speed_buildings_factor = -0.10
+				industrial_capacity_factory = -0.15
+			}
+		}
+
+		FOP_andesian_red_army = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_andesian_red_army" }
+			picture = SOV_war_heroes
+			allowed = { always = no }
+			modifier = {
+				army_org_regain = 0.1
+				org_loss_when_moving = -0.1
+				supply_consumption_factor = -0.1
+			}
+		}
+
+		FOP_AND_federalised = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_AND_federalised" }
+			picture = UK_politics_syn_idea
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.1
+				resistance_growth = -0.1
+			}
+		}
+
+		FOP_AND_unitary = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_AND_federalised" }
+			picture = TUS_syndie_economy
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.1
+				resistance_growth = 0.1
+				resistance_damage_to_garrison = 0.1
+				resistance_target = 0.1
+			}
+		}
+
+		FOP_AND_expanded_intelligence_agency = {
+			name = FOP_commie_secret_police
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_commie_secret_police" }
+			picture = nkvd_2
+			allowed = { always = no }
+			modifier = {
+				operative_slot = 2
+				agency_upgrade_time = -0.2
+				consumer_goods_factor = 0.02
+			}
+		}
+
 		FOP_morality_ban = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea FOP_morality_ban" }
 			picture = UK_politics_syn_idea

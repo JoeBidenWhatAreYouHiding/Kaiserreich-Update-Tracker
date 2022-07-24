@@ -1800,7 +1800,11 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			set_country_flag = ITA_claimed_libya
 			every_state = {
 				limit = {
-					region = 238 #Tripolitania
+					OR = {
+						region = 238 #Tripolitania
+						state = 273 #Fezzan
+						state = 1009 #Kufra
+					}
 					is_not_claim_or_core_of_ROOT = yes
 				}
 				add_claim_by = ROOT
@@ -2705,6 +2709,14 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			factor = 5
 			modifier = {
 				factor = 0
+				SRI = {
+					exists = yes
+					NOT = { has_war_with = FROM }
+				}
+				country_exists = GER #after Germany is dead, all bets are off
+			}
+			modifier = {
+				factor = 0
 				has_country_flag = { flag = ITA_recent_peace days < 30 }
 			}
 			modifier = {
@@ -2953,7 +2965,7 @@ ITA_resorgimento_decisions = {
 				create_unit = {
 					division = "name = \"3i Partigiano Sindacalisti\" division_template = \"Partigiani\" start_experience_factor = 0.3"
 					allow_spawning_on_enemy_provs = yes
-					prioritize_location = 115857
+					prioritize_location = 11587
 					owner = SRI
 				}
 			}
@@ -3921,161 +3933,6 @@ ITA_resorgimento_decisions = {
 		}
 	}
 
-	SIC_attack_sri = {
-		icon = generic_prepare_civil_war
-		allowed = { tag = SIC }
-
-		available = {
-			has_completed_focus = SIC_he_atacc
-			is_subject = no
-			if = {
-				limit = { has_global_flag = KR_italy_balance }
-				has_war = no
-			}
-			else = {
-				controls_all_owned_states = yes
-			}
-			is_neighbor_of = FROM
-		}
-
-		targets = { SRI }
-		target_trigger = {
-			can_declare_war_on = FROM
-		}
-
-		cost = 0
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 50
-			modifier = {
-				factor = 0
-				has_global_flag = KR_italy_balance
-				SRI = { has_war = no }
-			}
-			modifier = {
-				factor = 0
-				is_in_faction = yes
-				date < 1941.1.1
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_war = yes
-					AND = {
-						strength_ratio = { tag = FROM ratio < 0.50 }
-						FROM = { surrender_progress < 0.30 }
-					}
-					# neither of us is in a faction and FROM is stronger
-					AND = {
-						FROM = {
-							is_in_faction = no
-							is_subject = no
-						}
-						is_in_faction = no
-						strength_ratio = { tag = FROM ratio < 1.0 }
-					}
-					# they're in a faction which is not at war
-					FROM = {
-						OR = {
-							is_in_faction = yes
-							is_subject = yes
-						}
-						has_war = no
-					}
-					# they're in a faction which is at war but not with a major and not losing
-					FROM = {
-						is_in_faction = yes
-						has_war = yes
-						NOT = {
-							any_enemy_country = {
-								OR = {
-									tag = GER
-									tag = AUS
-									tag = FRA
-								}
-							}
-							surrender_progress > 0.10
-							faction_leader = {
-								surrender_progress > 0.20
-							}
-						}
-					}
-				}
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SIC_attack_sri target: [From.GetName]"
-			add_war_support = 0.10
-			set_country_flag = attacked_SRI_first
-			if = {
-				limit = {
-					has_global_flag = KR_italy_balance
-					is_in_faction = yes
-				}
-				custom_effect_tooltip = SRI_balance_will_be_broken
-				clr_global_flag = KR_italy_balance
-			}
-			else_if = {
-				limit = {
-					has_global_flag = KR_italy_balance
-					is_in_faction = no
-				}
-				custom_effect_tooltip = SRI_balance_explanation
-			}
-			every_state = {
-				limit = {
-					is_core_of = FROM
-					is_not_claim_or_core_of_ROOT = yes
-				}
-				add_claim_by = SIC
-			}
-			declare_war_on = {
-				target = FROM
-				type = annex_everything
-			}
-			italy_add_reunification_wars_threat = yes
-		}
-	}
-
-	SIC_claim_sri = {
-		icon = generic_flags
-		allowed = { tag = SIC }
-
-		visible = {
-			has_war_with = FROM
-			is_subject = no
-			158 = {
-				NOT = { is_claimed_by = SIC }
-			}
-		}
-
-		targets = { SRI }
-
-		target_trigger = {
-			has_war_with = FROM
-		}
-
-		fire_only_once = yes
-		cost = 50
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SIC_claim_sri target: [From.GetName]"
-			every_state = {
-				limit = {
-					is_core_of = SRI
-					is_not_claim_or_core_of_ROOT = yes
-				}
-				add_claim_by = SIC
-			}
-		}
-	}
-
 	SRD_attack_sri = {
 		icon = generic_prepare_civil_war
 		allowed = { tag = SRD }
@@ -4655,133 +4512,6 @@ ITA_resorgimento_decisions = {
 		}
 	}
 
-	SRD_unite_italy = {
-		icon = italy_flag
-		allowed = { always = no }
-		available = {
-			owns_state = 158
-			159 = { is_owned_by_ROOT_or_subject = yes }
-			160 = { is_owned_by_ROOT_or_subject = yes }
-			161 = { is_owned_by_ROOT_or_subject = yes }
-			162 = { is_owned_by_ROOT_or_subject = yes }
-			2 = { is_owned_by_ROOT_or_subject = yes }
-			117 = { is_owned_by_ROOT_or_subject = yes }
-			controls_all_owned_states = yes
-		}
-		fire_only_once = yes
-		cost = 0
-		ai_will_do = { factor = 100 }
-		priority = 100
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SRD_unite_italy"
-			log = "KR_Event_Logging;SRD UNIFIES ITALY;[GetDateText];[ROOT.GetName]"
-			if = {
-				limit = {
-					has_global_flag = KR_italy_balance
-					country_exists = SRI
-				}
-				custom_effect_tooltip = SRI_balance_will_be_broken
-				clr_global_flag = KR_italy_balance
-			}
-			set_country_flag = ITA_united_italia
-			add_political_power = 250
-			every_state = {
-				limit = { is_european_italy = yes }
-				if = {
-					limit = {
-						owner = {
-							is_italian_tag = yes
-							is_subject_of = ROOT
-						}
-						is_claimed_by = SRD
-					}
-					hidden_effect = { remove_claim_by = SRD }
-				}
-				if = {
-					limit = {
-						owner = {
-							is_italian_tag = yes
-							is_subject_of = ROOT
-						}
-						NOT = { is_core_of = SRD }
-					}
-					add_core_of = SRD
-				}
-				if = {
-					limit = {
-						NOT = {
-							owner = {
-								is_italian_tag = yes
-								is_subject_of = ROOT
-							}
-						}
-						is_claim_or_core_of_ROOT = no
-					}
-					add_claim_by = SRD
-				}
-			}
-			every_subject_country = {
-				limit = { is_italian_tag = yes }
-				ROOT = { annex_country = { target = PREV transfer_troops = yes } }
-			}
-			set_capital = { state = 2 remember_old_capital = no }
-			hidden_effect = {
-				every_owned_state = {
-					limit = { is_core_of = ROOT }
-					ITA_remove_italian_cores = yes
-				}
-				news_event = worldnews.220
-				country_event = { id = srd.45 days = 20 random_days = 10 }
-				SWI = { country_event = { id = swiss.211 days = 4 random_days = 8 } } #Campione
-				if = {
-					limit = {
-						has_idea = SRD_royalist_fervor_upgrade_idea
-					}
-					swap_ideas = {
-						remove_idea = SRD_royalist_fervor_upgrade_idea
-						add_idea = SRD_royalist_fervor_upgrade_halved_idea
-					}
-				}
-				if = {
-					limit = {
-						has_idea = SRD_avanti_sardegna_centralism_cisl
-					}
-					swap_ideas = {
-						remove_idea = SRD_avanti_sardegna_centralism_cisl
-						add_idea = SRD_avanti_sardegna_centralism_cisl_halved
-					}
-				}
-				if = {
-					limit = {
-						has_idea = SRD_avanti_sardegna_centralism_free_unions
-					}
-					swap_ideas = {
-						remove_idea = SRD_avanti_sardegna_centralism_free_unions
-						add_idea = SRD_avanti_sardegna_centralism_free_unions_halved
-					}
-				}
-				if = {
-					limit = {
-						has_idea = SRD_avanti_sardegna_autonomism_cisl
-					}
-					swap_ideas = {
-						remove_idea = SRD_avanti_sardegna_autonomism_cisl
-						add_idea = SRD_avanti_sardegna_autonomism_cisl_halved
-					}
-				}
-				if = {
-					limit = {
-						has_idea = SRD_avanti_sardegna_autonomism_free_unions
-					}
-					swap_ideas = {
-						remove_idea = SRD_avanti_sardegna_autonomism_free_unions
-						add_idea = SRD_avanti_sardegna_autonomism_free_unions_halved
-					}
-				}
-			}
-		}
-	}
-
 	SIC_declare_italian_empire = {
 		icon = italy_flag
 
@@ -5167,6 +4897,7 @@ ITA_resorgimento_decisions = {
 						set_autonomy = {
 							target = PREV
 							autonomy_state = kr_federated_state
+							end_wars = no
 						}
 					}
 					restore_previous_government_type = yes
@@ -6773,7 +6504,7 @@ ITA_resorgimento_decisions = {
 
 		available = {
 			OR = {
-				759 = { is_claim_or_core_of_ROOT = yes }
+				160 = { is_claim_or_core_of_ROOT = yes }
 				736 = { is_claim_or_core_of_ROOT = yes }
 			}
 			if = {
@@ -6871,6 +6602,131 @@ ITA_resorgimento_decisions = {
 						NOT = { owns_state = 163 }
 						OR = {
 							163 = { is_claim_or_core_of_PREV = yes }
+							is_faction_leader = yes
+						}
+					}
+					country_event = ita.171
+				}
+				leave_faction = yes
+			}
+		}
+	}
+
+	ITA_claim_cattaro = {
+		icon = GFX_decision_category_patriotic
+
+		allowed = {
+			OR = {
+				tag = ITA
+				tag = SRI
+				tag = SIC
+				tag = SRD
+				tag = VNC
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 841 }
+		}
+
+		available = {
+			OR = {
+				160 = { is_claim_or_core_of_ROOT = yes }
+				163 = { is_claim_or_core_of_ROOT = yes }
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 841 }
+					is_in_faction = yes
+					any_allied_country = {
+						841 = { is_claim_or_core_of_PREV = yes }
+					}
+				}
+				has_war = no
+			}
+			else = {
+				has_capitulated = no
+			}
+			is_subject = no
+			ITA_has_irridentist_focus = yes
+		}
+		visible = {
+			841 = {
+				is_claim_or_core_of_ROOT = no
+				OR = {
+					owner = { has_war_with = ROOT }
+					is_owned_by = ROOT
+					ROOT = { ITA_has_irridentist_focus = yes }
+				}
+			}
+			if = {
+				limit = { is_subject = yes }
+				overlord = {
+					841 = { is_claim_or_core_or_ambition_of_PREV = no }
+				}
+			}
+			OR = {
+				NOT = { tag = SIC }
+				has_country_flag = SIC_empire
+			}
+			OR = {
+				NOT = { tag = SRD }
+				has_cosmetic_tag = SRD_ITA
+			}
+			OR = {
+				NOT = { tag = VNC }
+				has_completed_focus = VNC_stato_da_mar
+			}
+		}
+
+		fire_only_once = no
+		cost = 100
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { owns_state = 841 }
+				is_in_faction = yes
+				any_allied_country = {
+					841 = { is_claim_or_core_of_PREV = yes }
+				}
+			}
+			modifier = {
+				factor = 0
+				841 = {
+					owner = {
+						NOT = { tag = ROOT }
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_claim_dalmatia"
+			841 = {
+				save_event_target_as = claimed_state
+				add_claim_by = ROOT
+			}
+			if = {
+				limit = { NOT = { owns_state = 841 } }
+				var:841.owner = { country_event = ita.170 }
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 841 }
+					is_in_faction = yes
+					any_allied_country = {
+						841 = { is_claim_or_core_of_PREV = yes }
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						is_in_faction_with = ROOT
+						NOT = { owns_state = 841 }
+						OR = {
+							841 = { is_claim_or_core_of_PREV = yes }
 							is_faction_leader = yes
 						}
 					}
@@ -7256,12 +7112,6 @@ ITA_resorgimento_decisions = {
 ITA_occupation_decisions = {
 	ITA_erode_italian_legitimacy = {
 		icon = eng_propaganda_campaigns
-		available = {
-			FROM = {
-				is_government_in_exile = yes
-				has_legitimacy > 20
-			}
-		}
 
 		visible = {
 			is_subject = no
@@ -7345,259 +7195,228 @@ ITA_occupation_decisions = {
 prospect_for_resources = {
 	SIC_develop_campania_steel_mines = {
 		icon = steel
-		allowed = { is_italian_tag = yes }
 
-		highlight_states = {
-			highlight_state_targets = { state = 117 }
-		}
+		allowed = { always = no } #activated in history/general/italy_decisions
 
 		available = {
-			num_of_civilian_factories_available_for_projects > 2
-			117 = { is_owned_and_controlled_by = ROOT }
 			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			controls_state = FROM
 		}
 
 		visible = {
-			117 = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = SIC_steel_mines_developed }
-			}
-			if = {
-				limit = { tag = SIC }
-				has_completed_focus = SIC_dig_deeply_and_greedily
-			}
+			owns_state = FROM
 		}
 
 		fire_only_once = yes
 
 		cost = 25
 		days_remove = 60
+		state_target = yes
 
 		modifier = {
 			civilian_factory_use = 3
 		}
 
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SIC_develop_campania_steel_mines"
-		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SIC_develop_campania_steel_mines"
-			117 = {
-				set_state_flag = SIC_steel_mines_developed
-				add_resource = {
-					type = steel
-					amount = 12
-				}
+			FROM = { set_state_flag = campania_steel_developed }
+			add_resource = {
+				type = steel
+				amount = 12
+				state = FROM
 			}
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = {
+				factor = 5
+				has_available_resources_in_country = {
+					resource = steel
+					amount < 1
+				}
+			}
 		}
 	}
 
 	SIC_develop_campania_aluminium_mines = {
 		icon = aluminium
-		allowed = { is_italian_tag = yes }
 
-		highlight_states = {
-			highlight_state_targets = { state = 117 }
-		}
+		allowed = { always = no } #activated in history/general/italy_decisions
 
 		available = {
-			num_of_civilian_factories_available_for_projects > 2
-			117 = { is_owned_and_controlled_by = ROOT }
 			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			controls_state = FROM
 		}
 
 		visible = {
-			117 = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = SIC_aluminium_mines_developed }
-			}
-			if = {
-				limit = { tag = SIC }
-				has_completed_focus = SIC_aluminium
-			}
+			owns_state = FROM
 		}
 
 		fire_only_once = yes
 
 		cost = 25
 		days_remove = 60
+		state_target = yes
 
 		modifier = {
 			civilian_factory_use = 3
 		}
 
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SIC_develop_campania_aluminium_mines"
-		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SIC_develop_campania_aluminium_mines"
-			117 = {
-				set_state_flag = SIC_aluminium_mines_developed
-				add_resource = {
-					type = aluminium
-					amount = 20
-				}
+			FROM = { set_state_flag = campania_aluminium_developed }
+			add_resource = {
+				type = aluminium
+				amount = 20
+				state = FROM
 			}
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = {
+				factor = 5
+				has_available_resources_in_country = {
+					resource = aluminium
+					amount < 1
+				}
+			}
 		}
 	}
 
 	SRD_develop_cagliari_coal_mines = {
 		icon = steel
 
-		allowed = {
-			is_italian_tag = yes
-			NOT = { tag = SRD } #focus
-		}
-
-		highlight_states = {
-			highlight_state_targets = { state = 114 }
-		}
+		allowed = { always = no } #activated in history/general/italy_decisions
 
 		available = {
-			num_of_civilian_factories_available_for_projects > 1
-			114 = { is_owned_and_controlled_by = ROOT }
 			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			controls_state = FROM
 		}
 
 		visible = {
-			114 = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = SRD_coal_mines_developed }
-			}
+			owns_state = FROM
 		}
 
 		fire_only_once = yes
 
 		cost = 25
 		days_remove = 60
+		state_target = yes
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SRD_develop_cagliari_coal_mines"
+			FROM = { set_state_flag = sardinia_coal_mines_developed }
+			add_resource = {
+				type = steel
+				amount = 12
+				state = FROM
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = {
+				factor = 5
+				has_available_resources_in_country = {
+					resource = steel
+					amount < 1
+				}
+			}
+		}
+	}
+
+	LOM_develop_lombardy_coal_mines = {
+		icon = steel
+
+		allowed = { always = no } #activated in history/general/italy_decisions
+
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 1
+			controls_state = FROM
+		}
+
+		visible = {
+			owns_state = FROM
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+		state_target = yes
 
 		modifier = {
 			civilian_factory_use = 2
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SRD_develop_cagliari_coal_mines"
-			114 = { set_state_flag = SRD_coal_mines_developed }
+			log = "[GetDateText]: [Root.GetName]: Decision remove LOM_develop_lombardy_coal_mines"
+			FROM = { set_state_flag = lombardy_coal_mines_developed }
 			add_resource = {
 				type = steel
-				amount = 12
-				state = 114
+				amount = 8
+				state = FROM
 			}
 		}
 
 		ai_will_do = {
-			factor = 100
-		}
-	}
-
-	LOM_develop_lombardy_coal_mines = {
-		icon = steel
-		allowed = { is_italian_tag = yes }
-
-		highlight_states = {
-			highlight_state_targets = { state = 159 }
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 2
-			159 = { is_owned_and_controlled_by = ROOT }
-			if = {
-				limit = { tag = LOM }
-				has_completed_focus = LOM_raw_materials
+			factor = 10
+			modifier = {
+				factor = 3
+				has_political_power > 200
 			}
-			else = {
-				has_tech = excavation3
-			}
-		}
-
-		visible = {
-			159 = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = LOM_coal_mines_developed }
-			}
-			if = {
-				limit = { tag = LOM }
-				has_completed_focus = LOM_raw_materials
-			}
-			else = {
-				has_tech = excavation3
-			}
-		}
-
-		fire_only_once = yes
-
-		cost = 25
-		days_remove = 60
-
-		modifier = {
-			civilian_factory_use = 3
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision LOM_develop_lombardy_coal_mines"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove LOM_develop_lombardy_coal_mines"
-			159 = {
-				set_state_flag = LOM_coal_mines_developed
-				add_resource = {
-					type = steel
-					amount = 8
+			modifier = {
+				factor = 5
+				has_available_resources_in_country = {
+					resource = steel
+					amount < 1
 				}
 			}
-		}
-
-		ai_will_do = {
-			factor = 100
 		}
 	}
 
 	TUS_develop_tuscany_coal_mines = {
 		icon = steel
-		allowed = { is_italian_tag = yes }
 
-		highlight_states = {
-			highlight_state_targets = { state = 162 }
-		}
+		allowed = { always = no } #activated in history/general/italy_decisions
 
 		available = {
+			has_tech = excavation3
 			num_of_civilian_factories_available_for_projects > 1
-			162 = { is_owned_and_controlled_by = ROOT }
-			if = {
-				limit = { tag = TUS }
-				has_completed_focus = TUS_expand_mineral_mines
-			}
-			else = {
-				has_tech = excavation3
-			}
+			controls_state = FROM
 		}
 
 		visible = {
-			162 = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = TUS_coal_mines_developed }
-			}
-			if = {
-				limit = { tag = TUS }
-				has_completed_focus = TUS_expand_mineral_mines
-			}
-			else = {
-				has_tech = excavation3
-			}
+			owns_state = FROM
 		}
 
 		fire_only_once = yes
 
 		cost = 25
 		days_remove = 60
+		state_target = yes
 
 		modifier = {
 			civilian_factory_use = 2
@@ -7605,17 +7424,27 @@ prospect_for_resources = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove TUS_develop_tuscany_coal_mines"
-			162 = {
-				set_state_flag = TUS_coal_mines_developed
-				add_resource = {
-					type = steel
-					amount = 8
-				}
+			FROM = { set_state_flag = tuscany_coal_mines_developed }
+			add_resource = {
+				type = steel
+				amount = 8
+				state = FROM
 			}
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = {
+				factor = 5
+				has_available_resources_in_country = {
+					resource = steel
+					amount < 1
+				}
+			}
 		}
 	}
 }

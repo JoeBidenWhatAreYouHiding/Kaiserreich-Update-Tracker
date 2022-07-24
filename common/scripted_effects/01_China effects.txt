@@ -91,13 +91,29 @@ set_potential_national_government = {
 	hidden_effect = {
 		every_state = {
 			limit = {
-				is_mainland_china = yes
+				OR = {
+					is_china_proper = yes
+					is_manchuria = yes
+				}
 				is_claim_or_core_of_ROOT = no
 				NOT = { has_variable = ambition_area_@PREV }
 			}
-			if = {
-				limit = { NOT = { region = 221 } } #Xinjiang
-				add_claim_by = PREV
+			add_claim_by = PREV
+			set_state_flag = china_added_ambition_from_national_government_@PREV
+			set_variable = { ambition_area_@PREV = 1 }
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = MON
+					is_core_of = TIB
+					region = 221 #Xinjiang
+					region = 222 #Inner Mongolia
+					state = 693 #Chamdo
+					state = 858 #Tawang
+				}
+				is_claim_or_core_of_ROOT = no
+				NOT = { has_variable = ambition_area_@PREV }
 			}
 			set_state_flag = china_added_ambition_from_national_government_@PREV
 			set_variable = { ambition_area_@PREV = 1 }
@@ -683,7 +699,7 @@ china_puppet_setup = {
 			FNG_tang_shaoyi = {
 				if = {
 					limit = { has_ideology = market_liberal_subtype }
-					promote_character = { ideology = market_liberal_subtype }
+					promote_character = market_liberal_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -800,6 +816,7 @@ china_integrate_ally_effect = {
 			set_autonomy = {
 				target = PREV
 				autonomy_state = kr_integrated_puppet
+				end_wars = no
 			}
 		}
 		restore_previous_government_type = yes

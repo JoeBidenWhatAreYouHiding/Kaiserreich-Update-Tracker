@@ -136,6 +136,7 @@ foreign_politics = {# Foreign Policy
 					has_war_with = FROM
 				}
 				set_country_flag = MEX_preparing_against_target
+				country_event = kr.political.30 #warning event
 				add_ai_strategy = {
 					type = prepare_for_war
 					id = ROOT

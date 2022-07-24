@@ -783,35 +783,60 @@ units = {
 	}
 }
 
+### Production ###
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
-			type = ship_hull_super_heavy_1
-			creator = ENG
-			version_name = "Union Class"
+			type = ship_hull_carrier_1
+			creator = "ENG"
+			version_name = "Republic Class"
 		}
 		requested_factories = 1
-		progress = 0.85
+		progress = 0.10
 		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
-			type = ship_hull_heavy_2
-			creator = ENG
-			version_name = "Bondfield Class"
+			type = ship_hull_cruiser_2
+			creator = "ENG"
+			version_name = "Measureless Class"
 		}
+		name = "HMS Apollo"
 		requested_factories = 1
-		progress = 0.75
+		progress = 0.95
 		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
-			type = ship_hull_heavy_2
-			creator = ENG
-			version_name = "Bondfield Class"
+			type = ship_hull_cruiser_2
+			creator = "ENG"
+			version_name = "Measureless Class"
 		}
+		name = "HMS Amphion"
 		requested_factories = 1
-		progress = 0.75
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG"
+			version_name = "Measureless Class"
+		}
+		name = "HMS Penelope"
+		requested_factories = 1
+		progress = 0.15
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG"
+			version_name = "Measureless Class"
+		}
+		name = "HMS Aurora"
+		requested_factories = 1
+		progress = 0.15
 		amount = 1
 	}
 	add_equipment_production = {
@@ -822,7 +847,7 @@ instant_effect = {
 		}
 		requested_factories = 1
 		progress = 0.5
-		amount = 1
+		amount = 2
 	}
 	add_equipment_production = {
 		equipment = {
@@ -832,46 +857,106 @@ instant_effect = {
 		}
 		requested_factories = 1
 		progress = 0.5
+		amount = 2
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG"
+			version_name = "E/F/G/H Class"
+		}
+		requested_factories = 1
+		progress = 0.90
 		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
-			type = ship_hull_cruiser_2
+			type = ship_hull_light_2
 			creator = "ENG"
-			version_name = "Measureless Class"
+			version_name = "E/F/G/H Class"
 		}
 		requested_factories = 1
-		progress = 0.2
+		progress = 0.80
 		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
-			type = ship_hull_cruiser_2
+			type = ship_hull_light_2
 			creator = "ENG"
-			version_name = "Measureless Class"
+			version_name = "E/F/G/H Class"
 		}
 		requested_factories = 1
-		progress = 0.2
+		progress = 0.90
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG"
+			version_name = "E/F/G/H Class"
+		}
+		requested_factories = 1
+		progress = 0.95
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG"
+			version_name = "E/F/G/H Class"
+		}
+		requested_factories = 1
+		progress = 0.80
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG"
+			version_name = "E/F/G/H Class"
+		}
+		requested_factories = 1
+		progress = 0.80
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG"
+			version_name = "E/F/G/H Class"
+		}
+		requested_factories = 1
+		progress = 0.95
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG"
+			version_name = "E/F/G/H Class"
+		}
+		requested_factories = 1
+		progress = 0.80
 		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
 			type = ship_hull_submarine_2
 			creator = "ENG"
-			version_name = "T/U Type"
+			version_name = "S Type"
 		}
 		requested_factories = 1
-		progress = 0.25
-		amount = 2
+		progress = 0.50
+		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
 			type = ship_hull_submarine_2
 			creator = "ENG"
-			version_name = "T/U Type"
+			version_name = "S Type"
 		}
 		requested_factories = 1
-		progress = 0.05
-		amount = 2
+		progress = 0.40
+		amount = 1
 	}
 }

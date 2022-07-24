@@ -241,6 +241,7 @@ is_china_proper = {
 		region = 216 #Lingnan
 		region = 217 #Dongnan
 		region = 220 #Xibei
+		state = 524 #Taiwan
 	}
 }
 

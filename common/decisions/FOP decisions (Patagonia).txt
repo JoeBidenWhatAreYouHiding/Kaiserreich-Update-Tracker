@@ -451,7 +451,7 @@ FOP_resource_exploitation_decisions = {
 			1029 = {
 				add_resource = {
 					type = oil
-					amount = 6
+					amount = 3
 				}
 			}
 			add_manpower = 150
@@ -489,7 +489,7 @@ FOP_resource_exploitation_decisions = {
 			1029 = {
 				add_resource = {
 					type = oil
-					amount = 6
+					amount = 3
 				}
 			}
 			add_manpower = 150
@@ -538,7 +538,7 @@ FOP_resource_exploitation_decisions = {
 			1029 = {
 				add_resource = {
 					type = oil
-					amount = 6
+					amount = 2
 				}
 			}
 			add_manpower = 200
@@ -871,6 +871,7 @@ FOP_Andesian_formation_decisions = {
 		available = {
 			FOP_has_economic_fallout = no
 			FOP_has_resistance_to_socialism = no
+			has_war_support > 0.5
 		}
 
 		cancel_trigger = {
@@ -887,13 +888,6 @@ FOP_Andesian_formation_decisions = {
 		}
 
 		targets = { COL VEN ECU PRU BOL CHL PAR URG }
-		target_root_trigger = {
-			is_ai = no
-			OR = {
-				NOT = { country_exists = FRA }
-				NOT = { country_exists = GER }
-			}
-		}
 		target_trigger = {
 			is_neighbor_of = FROM
 			OR = {
@@ -905,7 +899,7 @@ FOP_Andesian_formation_decisions = {
 			}
 		}
 
-		cost = 0
+		cost = 20
 		days_remove = 30
 		fire_only_once = yes
 		war_with_target_on_remove = yes
@@ -990,25 +984,14 @@ FOP_Andesian_formation_decisions = {
 
 		visible = {
 			has_subject = FROM
-			OR = {
-				NOT = { country_exists = FRA }
-				NOT = { country_exists = GER }
-			}
 		}
 
 		targets = { COL VEN ECU PRU BOL CHL PAR URG }
-		target_root_trigger = {
-			is_ai = no
-			OR = {
-				NOT = { country_exists = FRA }
-				NOT = { country_exists = GER }
-			}
-		}
 		target_trigger = {
 			FROM = { is_subject_of = ROOT }
 		}
 
-		cost = 0
+		cost = 20
 		fire_only_once = yes
 
 		ai_will_do = {
@@ -1041,21 +1024,17 @@ FOP_Andesian_formation_decisions = {
 
 		available = {
 			has_war = no
+			279 = { is_owned_and_controlled_by = ROOT }
+			300 = { is_owned_and_controlled_by = ROOT }
+			301 = { is_owned_and_controlled_by = ROOT }
+			302 = { is_owned_and_controlled_by = ROOT }
+			303 = { is_owned_and_controlled_by = ROOT }
+			305 = { is_owned_and_controlled_by = ROOT }
+			306 = { is_owned_and_controlled_by = ROOT }
+			307 = { is_owned_and_controlled_by = ROOT }
 			custom_trigger_tooltip = {
-				tooltip = FOP_weltkrieg_is_over
-				OR = {
-					NOT = { country_exists = FRA }
-					NOT = { country_exists = GER }
-				}
+				tooltip = FOP_AND_declare_andesia_tt
 			}
-			owns_state = 279
-			owns_state = 300
-			owns_state = 301
-			owns_state = 302
-			owns_state = 303
-			owns_state = 305
-			owns_state = 306
-			owns_state = 307
 		}
 
 		cost = 0
@@ -1068,11 +1047,13 @@ FOP_Andesian_formation_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision FOP_declare_Andesia"
 			set_cosmetic_tag = FOP_AND
-			add_timed_idea = {
-				idea = FOP_resistance_to_andesia
-				days = 3650
-			}
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = FOP_AND_andesia_declared
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = FOP_resistance_to_andesia_political
+			add_ideas = FOP_resistance_to_andesia_economical
 			hidden_effect = {
+				country_event = fop.500
 				every_state = {
 					limit = {
 						is_on_continent = south_america
@@ -1088,6 +1069,240 @@ FOP_Andesian_formation_decisions = {
 					set_state_flag = FOP_andesian_claim
 				}
 			}
+		}
+	}
+	FOP_AND_liberate_south_america = {
+		name = FOP_AND_invade_target
+		icon = hol_draw_up_staff_plans
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+
+		target_array = global.south_american_tags_array
+		target_root_trigger = {
+			has_completed_focus = FOP_AND_liberate_south_america
+		}
+		target_trigger = {
+			can_declare_war_on = FROM
+		}
+
+		cost = 10
+		days_remove = 20
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
+			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FOP_AND_liberate_south_america target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision FOP_AND_liberate_south_america target: [From.GetName]"
+			FROM = { country_event = kr.political.30 } #warning event
+			setup_decision_attack_AI = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FOP_AND_liberate_south_america target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				target = FROM
+				type = puppet_wargoal_focus
+			}
+			if = {
+				limit = { FROM = { has_socialist_government = yes }}
+				custom_effect_tooltip = FOP_AND_liberate_attacking_socialists_tt
+				add_stability = -0.05
+				add_war_support = -0.05
+				every_owned_state = {
+					limit = {
+						is_controlled_by = ROOT
+						has_state_flag = FOP_andesian_claim
+						NOT = { is_core_of = ROOT }
+					}
+					add_resistance = 7.5
+				}
+			}
+		}
+	}
+	FOP_AND_liberate_central_america = {
+		name = FOP_AND_invade_target
+		icon = hol_draw_up_staff_plans
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+
+		target_array = global.central_american_tags_array
+		target_root_trigger = {
+			has_completed_focus = FOP_AND_liberate_central_america
+		}
+		target_trigger = {
+			can_declare_war_on = FROM
+		}
+
+		cost = 10
+		days_remove = 20
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
+			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FOP_AND_liberate_central_america target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision FOP_AND_liberate_central_america target: [From.GetName]"
+			FROM = { country_event = kr.political.30 } #warning event
+			setup_decision_attack_AI = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FOP_AND_liberate_central_america target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				target = FROM
+				type = puppet_wargoal_focus
+			}
+			if = {
+				limit = { FROM = { has_socialist_government = yes }}
+				custom_effect_tooltip = FOP_AND_liberate_attacking_socialists_tt
+				add_stability = -0.05
+				add_war_support = -0.05
+				every_owned_state = {
+					limit = {
+						is_controlled_by = ROOT
+						has_state_flag = FOP_andesian_claim
+						NOT = { is_core_of = ROOT }
+					}
+					add_resistance = 7.5
+				}
+			}
+		}
+	}
+	FOP_AND_liberate_north_america = {
+		name = FOP_AND_invade_target
+		icon = hol_draw_up_staff_plans
+
+		visible = {
+			can_declare_war_on = FROM
+			FROM = { NOT = { has_socialist_government = yes }}
+		}
+
+		target_array = global.north_american_tags_array
+		target_root_trigger = {
+			has_completed_focus = FOP_AND_liberate_north_america
+		}
+		target_trigger = {
+			can_declare_war_on = FROM
+		}
+
+		cost = 10
+		days_remove = 20
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
+			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled FOP_AND_liberate_central_america target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision FOP_AND_liberate_central_america target: [From.GetName]"
+			FROM = { country_event = kr.political.30 } #warning event
+			setup_decision_attack_AI = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FOP_AND_liberate_central_america target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				target = FROM
+				type = puppet_wargoal_focus
+			}
+			if = {
+				limit = { FROM = { has_socialist_government = yes }}
+				custom_effect_tooltip = FOP_AND_liberate_attacking_socialists_tt
+				add_stability = -0.05
+				add_war_support = -0.05
+				every_owned_state = {
+					limit = {
+						is_controlled_by = ROOT
+						has_state_flag = FOP_andesian_claim
+						NOT = { is_core_of = ROOT }
+					}
+					add_resistance = 7.5
+				}
+			}
+		}
+	}
+	FOP_AND_integrate_new_state = {
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = { always = no }
+		visible = {
+			FROM = {
+				is_owned_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				compliance > 80
+				resistance < 10
+			}
+		}
+
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		state_target = yes
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision FOP_AND_integrate_new_state"
+			add_state_core = FROM
 		}
 	}
 }
@@ -1432,7 +1647,7 @@ FOP_infrastructure_decisions = { #The Trains shall run on time
 			has_manpower > 1000
 		}
 
-		days_remove = 90
+		days_remove = 45
 		fire_only_once = yes
 		on_map_mode = map_only
 
@@ -1451,7 +1666,6 @@ FOP_infrastructure_decisions = { #The Trains shall run on time
 			add_manpower = 800
 			FROM = {
 				set_state_flag = FOP_developed_rails
-				increase_state_category_by_one_level = yes
 				add_building_construction = {
 					type = infrastructure
 					level = 1

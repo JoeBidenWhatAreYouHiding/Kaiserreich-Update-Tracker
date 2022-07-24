@@ -4365,37 +4365,37 @@ country_event = { # Reed calls Landon a tool of wall street
 		name = ustates.107.a
 		custom_effect_tooltip = USA_SPA_loses_strength
 		395 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		394 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		396 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		393 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		261 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		929 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		975 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		360 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		359 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		358 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		392 = {
-			USA_increase_SPA_state_support = yes
+			USA_decrease_SPA_state_support = yes
 		}
 		hidden_effect = {
 			subtract_from_variable = { var = SPA_strength value = 1 }
@@ -4421,40 +4421,40 @@ country_event = { # Huey Long calls Landon Corrupt
 		name = ustates.108.a
 		custom_effect_tooltip = USA_AFP_loses_strength
 		150 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		371 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		374 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		375 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		372 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		370 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		367 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		364 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		365 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		366 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		368 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		833 = {
-			USA_increase_AFP_state_support = yes
+			USA_decrease_AFP_state_support = yes
 		}
 		hidden_effect = {
 			subtract_from_variable = { var = AFP_strength value = 1 }

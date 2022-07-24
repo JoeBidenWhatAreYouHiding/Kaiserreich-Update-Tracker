@@ -128,12 +128,6 @@ NFA_rebuild_metropole_cat = {
 	allowed = {
 		original_tag = NFA
 	}
-	visible = {
-		OR = {
-			has_completed_focus = NATFRA_Rebuild_South_Whole
-			has_completed_focus = NATFRA_Rebuild_North
-		}
-	}
 }
 
 NFA_fate_of_french_africa_cat = {

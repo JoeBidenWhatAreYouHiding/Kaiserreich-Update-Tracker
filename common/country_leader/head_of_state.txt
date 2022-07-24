@@ -352,7 +352,7 @@ leader_traits = {
 	MON_brooding_revolutionary = {
 		random = no
 		political_power_gain = 0.05
-		encryption = 1.5
+		operative_slot = 1
 	}
 
 	### Shandong
@@ -592,7 +592,7 @@ leader_traits = {
 		stability_factor = 0.05
 		targeted_modifier = {
 			tag = GER
-			cic_to_target_factor = 0.25
+			cic_to_target_factor = 0.15
 		}
 	}
 	BAT_absent = { # Adolf Friedrich journey
@@ -823,7 +823,7 @@ leader_traits = {
 		naval_doctrine_cost_factor = -0.1
 	}
 
-	### ETH
+	### Ethiopia
 	ETH_negusa_nagast_1 = { #Haile Selassie
 		random = no
 		stability_factor = 0.25
@@ -838,8 +838,7 @@ leader_traits = {
 		consumer_goods_factor = -0.05
 	}
 
-	### FNG
-
+	### Fengtian
 	FNG_old_marshal = { #Zhang Zuolin
 		random = no
 		planning_speed = -0.1
@@ -848,7 +847,6 @@ leader_traits = {
 		materiel_manufacturer_cost_factor = -0.25
 		compliance_gain = -0.05
 	}
-
 	FNG_light_in_the_north = { #Zhang Xueliang
 		random = no
 		stability_factor = 0.05
@@ -857,7 +855,6 @@ leader_traits = {
 	}
 
 	### Tibet
-
 	TIB_great_fuyama = { #Nicholas Roerich
 		random = no
 		political_power_factor = 0.1
@@ -886,7 +883,6 @@ leader_traits = {
 	}
 
 	### Ceylon
-
 	CEY_parippu_mahathmaya = {
 		random = no
 		stability_factor = 0.1
@@ -908,5 +904,12 @@ leader_traits = {
 		random = no
 		production_speed_buildings_factor = 0.1
 		party_popularity_stability_factor = 0.5
+	}
+
+	### Japan ###
+	JAP_imperial_regent = { #Yasuhito
+		random = no
+		stability_factor = 0.15
+		political_power_factor = -0.15
 	}
 }

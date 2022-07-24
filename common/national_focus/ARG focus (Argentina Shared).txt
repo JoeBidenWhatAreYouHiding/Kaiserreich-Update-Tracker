@@ -386,7 +386,10 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Banco_Central_de_la_Republica_Argentina"
-		add_ideas = ARG_Banco
+		swap_ideas = {
+			remove_idea = ARG_Black_Monday3
+			add_idea = ARG_Black_Monday3_1
+		}
 	}
 	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 }
@@ -394,9 +397,6 @@ shared_focus = {
 shared_focus = {
 	id = ARG_Stop_the_Economic_Downturn
 	icon = GFX_goal_generic_price_controls
-	available = {
-		has_idea = ARG_Black_Monday3
-	}
 	prerequisite = {
 		focus = ARG_Banco_Central_de_la_Republica_Argentina
 	}
@@ -414,7 +414,7 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Stop_the_Economic_Downturn"
 		swap_ideas = {
-			remove_idea = ARG_Black_Monday3
+			remove_idea = ARG_Black_Monday3_1
 			add_idea = ARG_Black_Monday4
 		}
 	}
@@ -670,6 +670,12 @@ shared_focus = {
 	prerequisite = {
 		focus = ARG_Modernise_Fishing
 	}
+	available = {
+		OR = {
+			has_completed_focus = ARG_War_Profiteering
+			has_completed_focus = ARG_Export_to_South_America
+		}	
+	}
 	cost = 8
 	x = 1
 	y = 1
@@ -684,7 +690,29 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Economic_Reinvigoration"
 		add_political_power = 100
-		add_ideas = ARG_Economic_Upswing
+		custom_effect_tooltip = tooltip_white_line
+		if = {
+			limit = { has_idea = ARG_Black_Monday_GER2 }
+			swap_ideas = {
+				remove_idea = ARG_Black_Monday_GER2
+				add_idea = ARG_Black_Monday_GER2_final
+			}
+		}
+		else_if = {
+			limit = { has_idea = ARG_Black_Monday_AUT }
+			swap_ideas = {
+				remove_idea = ARG_Black_Monday_AUT
+				add_idea = ARG_Black_Monday_AUT_final
+			}
+		}
+		else = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = ARG_Black_Monday_GER2
+					add_idea = ARG_Black_Monday_GER2_final
+				}	
+			}
+		}
 	}
 	search_filters = { FOCUS_FILTER_INDUSTRY }
 }
@@ -803,6 +831,8 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Domestic_Aircraft_Manufactories"
+		add_ideas = fabrica_militar_aviones
+		custom_effect_tooltip = tooltip_white_line
 		random_owned_controlled_state = {
 			prioritize = { 510 902 }
 			add_extra_state_shared_building_slots = 1
@@ -1179,7 +1209,6 @@ shared_focus = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Look_for_Allies"
 		activate_targeted_decision = { target = PRU decision = ARG_Cooperate_with_Peru }
 		activate_targeted_decision = { target = BOL decision = ARG_Bolivian_Negotiations }
-		add_political_power = 50
 	}
 	search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 }
@@ -1366,10 +1395,10 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Infrastructural_Expansion"
 		512 = {
-			add_extra_state_shared_building_slots = 1
+			increase_state_category_by_one_level = yes
 		}
 		1029 = {
-			add_extra_state_shared_building_slots = 1
+			increase_state_category_by_one_level = yes
 		}
 		build_railway = {
 			level = 1
@@ -1524,7 +1553,7 @@ shared_focus = {
 	prerequisite = {
 		focus = ARG_A_Catholic_Federation
 	}
-	cost = 1
+	cost = 6
 	x = -4
 	y = 1
 	relative_position_id = ARG_A_Catholic_Federation
@@ -1541,13 +1570,7 @@ shared_focus = {
 		}
 		modifier = {
 			factor = 0
-			PAR = {
-				OR = {
-					is_stronger_than_ROOT_and_not_vulnerable = yes
-					overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
-					faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
-				}
-			}
+			PAR = { default_attack_AI_trigger_FROM = yes }
 		}
 	}
 
@@ -1746,6 +1769,21 @@ shared_focus = {
 		is_subject = no
 		can_declare_war_on = URG
 		NOT = { has_country_flag = GOU_Control }
+		if = {
+			limit = {
+				BRA = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				URG = {
+					OR = {
+						is_guaranteed_by = BRA
+						is_in_faction_with = BRA
+					}
+				}
+			}
+			has_global_flag = second_weltkrieg_has_started
+		}
 	}
 	bypass = {
 		NOT = { can_declare_war_on = URG }
@@ -1753,7 +1791,7 @@ shared_focus = {
 	prerequisite = {
 		focus = ARG_A_Catholic_Federation
 	}
-	cost = 1
+	cost = 6
 	x = -2
 	y = 1
 	relative_position_id = ARG_A_Catholic_Federation
@@ -1770,13 +1808,7 @@ shared_focus = {
 		}
 		modifier = {
 			factor = 0
-			URG = {
-				OR = {
-					is_stronger_than_ROOT_and_not_vulnerable = yes
-					overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
-					faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
-				}
-			}
+			URG = { default_attack_AI_trigger_FROM = yes }
 		}
 	}
 	will_lead_to_war_with = URG
@@ -2024,7 +2056,7 @@ shared_focus = {
 	prerequisite = {
 		focus = ARG_A_Catholic_Federation
 	}
-	cost = 4
+	cost = 6
 	x = 2
 	y = 1
 	relative_position_id = ARG_A_Catholic_Federation
@@ -2036,14 +2068,8 @@ shared_focus = {
 			can_declare_war_on = 1073.owner
 			OR = {
 				ROOT_is_threatened = yes
-				var:1073.owner = {
-					dont_start_major_faction_wars = yes
-					OR = {
-						is_stronger_than_ROOT_and_not_vulnerable = yes
-						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
-						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
-					}
-				}
+				var:1073.owner = { dont_start_major_faction_wars = yes }
+				var:1073.owner = { default_attack_AI_trigger_FROM = yes }
 			}
 		}
 		modifier = {
@@ -2062,7 +2088,7 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Yacuiba_Dispute"
-		add_state_core = 1073
+		1073 = { add_claim_by = ROOT }
 		if = {
 			limit = { BOL = { owns_state = 1073 } }
 			create_wargoal = {
@@ -2289,6 +2315,15 @@ shared_focus = {
 		is_subject = no
 		can_declare_war_on = BRA
 		NOT = { has_country_flag = GOU_Control }
+		if = {
+			limit = {
+				BRA = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+			}
+			has_global_flag = second_weltkrieg_has_started
+		}
 	}
 	bypass = {
 		NOT = { can_declare_war_on = BRA }
@@ -2299,7 +2334,7 @@ shared_focus = {
 	prerequisite = {
 		focus = ARG_Ensure_Supply_Lines
 	}
-	cost = 4
+	cost = 6
 	x = 4
 	y = 4
 	relative_position_id = ARG_A_Catholic_Federation
@@ -2312,13 +2347,7 @@ shared_focus = {
 		}
 		modifier = {
 			factor = 0
-			BRA = {
-				OR = {
-					is_stronger_than_ROOT_and_not_vulnerable = yes
-					overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
-					faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
-				}
-			}
+			BRA = { default_attack_AI_trigger_FROM = yes }
 		}
 		modifier = {
 			factor = 0
@@ -2570,19 +2599,10 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus ARG_Rapid_Militarisation"
+		army_experience = 30
+		custom_effect_tooltip = ARG_ARMY
 		hidden_effect = {
 			ARG_interservice_rivalry_towards_army = yes
-		}
-		custom_effect_tooltip = ARG_ARMY
-		activate_advisor = ARG_juan_pistarini
-		random_owned_controlled_state = {
-			prioritize = { 278 510 }
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
 		}
 	}
 	search_filters = { FOCUS_FILTER_INDUSTRY }

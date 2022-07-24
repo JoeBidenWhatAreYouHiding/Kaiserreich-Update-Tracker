@@ -49,133 +49,63 @@ ARG_CHL_war_decisions = {
 		}
 
 		available = {
-			count_triggers = {
-				amount = 3
-				ARG = { NOT = { controls_state = 510 } } 		# La Mesopotamia
-				ARG = { NOT = { controls_state = 511 } } 		# Mendoza
-				ARG = { NOT = { controls_state = 902 } } 		# Cordoba
-				ARG = { NOT = { controls_state = 278 } }		# Buenos-Aires
-			}
-		}
-
-		cancel_trigger = {
-			ARG = { exists = no }
-		}
-
-		selectable_mission = yes
-		days_mission_timeout = 360
-		is_good = no
-		fire_only_once = yes
-
-		cancel_effect = {
-			add_political_power = 200
-			custom_effect_tooltip = FOP_has_achieved_success_in_war
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision FOP_successful_campaign"
-			add_political_power = 200
-			custom_effect_tooltip = FOP_has_achieved_success_in_war
-			hidden_effect = {
-				if = {
-					limit = {
-						ARG = {
-							exists = yes
-							is_ai = yes
-						}
-					}
-					ARG = {
-						country_event = arg_chl_war.120
-						add_ideas = ARG_losing_war
-					}
+			OR = {
+				NOT = { has_war_with = ARG }
+				count_triggers = {
+					amount = 3
+					NOT = { ARG = { controls_state = 510 } } # La Mesopotamia
+					NOT = { ARG = { controls_state = 511 } } # Mendoza
+					NOT = { ARG = { controls_state = 902 } } # Cordoba
+					NOT = { ARG = { controls_state = 278 } } # Buenos-Aires
 				}
 			}
 		}
 
-		timeout_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout FOP_successful_campaign"
-		}
+		selectable_mission = no
+		days_mission_timeout = 100
+		is_good = no
+		fire_only_once = yes
 
-		ai_will_do = {
-			factor = 200
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision FOP_successful_campaign"
+			add_stability = 0.05
+			add_political_power = 100
 		}
 	}
 
 	ARG_successful_campaign = {
 		icon = GFX_decision_infiltrate_state
+
 		allowed = {
 			always = no
 		}
 
 		available = {
-			count_triggers = {
-				amount = 3
-				controls_state = 512 							# Chubut
-				CHL = { NOT = { controls_state = 279 }} 		# Santiago
-				CHL = { NOT = { controls_state = 874 }} 		# Atacama
-				CHL = { NOT = { controls_state = 506 }} 		# Antofagasta
-				CHL = { NOT = { controls_state = 507 }} 		# Magallanes
-			}
-		}
-
-		cancel_trigger = {
-			CHL = {
-				OR = {
-					exists = no
-					has_socialist_government = no
+			OR = {
+				AND = {
+					NOT = { has_war_with = CHL }
+					FOP = { exists = no }
+				}
+				count_triggers = {
+					amount = 3
+					controls_state = 512					 # Chubut
+					NOT = { CHL = { controls_state = 279 } } # Santiago
+					NOT = { CHL = { controls_state = 874 } } # Atacama
+					NOT = { CHL = { controls_state = 506 } } # Antofagasta
+					NOT = { CHL = { controls_state = 507 } } # Magallanes
 				}
 			}
 		}
 
-		selectable_mission = yes
-		days_mission_timeout = 360
+		selectable_mission = no
+		days_mission_timeout = 100
 		is_good = no
 		fire_only_once = yes
 
-		cancel_effect = {
-			add_political_power = 200
-			custom_effect_tooltip = ARG_has_achieved_success_in_war
-		}
-
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision ARG_successful_campaign"
-			add_political_power = 200
-			custom_effect_tooltip = ARG_has_achieved_success_in_war
-			hidden_effect = {
-				if = {
-					limit = {
-						FOP = {
-							is_ai = yes
-							exists = yes
-						}
-					}
-					FOP = {
-						country_event = arg_chl_war.121
-						add_ideas = ARG_losing_war
-					}
-				}
-				if = {
-					limit = {
-						CHL = {
-							is_ai = yes
-							has_war_with = ARG
-							has_capitulated = no
-						}
-					}
-					CHL = {
-						country_event = arg_chl_war.121
-						add_ideas = ARG_losing_war
-					}
-				}
-			}
-		}
-
-		timeout_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout ARG_successful_campaign"
-		}
-
-		ai_will_do = {
-			factor = 200
+			add_stability = 0.05
+			add_political_power = 100
 		}
 	}
 }
@@ -317,19 +247,19 @@ ARG_infrastructure_decisions = {
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = has_black_monday
+				tooltip = ARG_has_black_monday_tt
 				NOT = {
-					has_black_monday = yes
+					ARG_has_black_monday = yes
 				}
 			}
 			has_country_flag = ARG_La_Mesopotamia_Rail_finished
 			has_country_flag = ARG_Neuquen_Rail_finished
 			has_country_flag = ARG_jujuy_rail_finished
 			has_country_flag = ARG_Mendoza_Rail_finished
-			num_of_factories > 30
+			num_of_factories > 40
 		}
 
-		selectable_mission = yes
+		selectable_mission = no
 		days_mission_timeout = 1825
 		is_good = no
 		fire_only_once = yes
@@ -346,10 +276,6 @@ ARG_infrastructure_decisions = {
 			custom_effect_tooltip = ARG_Failure_Five_Year_Plan
 			add_political_power = -100
 			add_stability = -0.07
-		}
-
-		ai_will_do = {
-			factor = 200
 		}
 	}
 }
@@ -1393,12 +1319,12 @@ ARG_shared_industry_decisions = {
 		cost = 20
 
 		available = {
-			num_of_civilian_factories_available_for_projects > 4
+			num_of_civilian_factories_available_for_projects > 3
 			FROM = { is_owned_by_ROOT_or_ally = yes }
 		}
 
 		modifier = {
-			civilian_factory_use = 5
+			civilian_factory_use = 4
 		}
 
 		days_remove = 90
@@ -1414,7 +1340,7 @@ ARG_shared_industry_decisions = {
 			FROM = {
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1450,7 +1376,7 @@ ARG_shared_industry_decisions = {
 			FROM = {
 				add_resource = {
 					type = oil
-					amount = 10
+					amount = 5
 				}
 			}
 		}
@@ -1484,7 +1410,7 @@ ARG_shared_industry_decisions = {
 			FROM = {
 				add_resource = {
 					type = oil
-					amount = 5
+					amount = 3
 				}
 			}
 		}

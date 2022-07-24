@@ -160,7 +160,7 @@ RAJ_election_socialist = {
 				}
 			}
 			else = {
-				promote_character = { ideology = radical_socialist_subtype }
+				promote_character = radical_socialist_subtype
 			}
 		}
 	}

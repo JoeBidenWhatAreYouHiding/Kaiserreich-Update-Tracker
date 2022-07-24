@@ -538,7 +538,7 @@ country_event = { #1951 Elections
 				}
 			}
 		}
-		promote_character = ECU_isidro_ayora
+		promote_character = ECU_isidro_ramon_antonio_ayora_cueva
 		set_politics = {
 			ruling_party = market_liberal
 			elections_allowed = yes

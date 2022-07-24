@@ -130,6 +130,7 @@ focus_tree = {
 				add_opinion_modifier = { target = ETS modifier = AST_close_allies }
 				reverse_add_opinion_modifier = { target = ETS modifier = AST_close_allies }
 			}
+			add_ideas = QIE_diplomatic_genius_idea
 			add_opinion_modifier = { target = ALO modifier = AST_close_allies }
 			reverse_add_opinion_modifier = { target = ALO modifier = AST_close_allies }
 			add_opinion_modifier = { target = TRK modifier = AST_close_allies }
@@ -419,7 +420,7 @@ focus_tree = {
 			add_manpower = -5000
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_0
-				amount = 2000
+				amount = 3000
 				producer = XSM
 			}
 			hidden_effect = {
@@ -861,6 +862,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus XSM_development"
+			283 = {
+				increase_state_category_by_one_level = yes
+			}
 			swap_ideas = {
 				remove_idea = XSM_destruction_gansu2
 				add_idea = XSM_destruction_gansu3
@@ -898,7 +902,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus XSM_raking_in"
-			add_political_power = 140
+			increase_mobilisation = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -1116,6 +1120,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus XSM_baojia"
 			add_political_power = 100
+			add_ideas = QIE_local_logistics
 			JAP = {
 				reverse_add_opinion_modifier = {
 					target = XSM

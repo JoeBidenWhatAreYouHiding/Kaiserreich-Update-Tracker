@@ -74,10 +74,10 @@ instant_effect = {
 units = {
 	fleet = {
 		name = "Smaldeel van Zeebrugge"
-		naval_base = 13659
+		naval_base = 6446
 		task_force = {
 			name = "Smaldeel van Zeebrugge"
-			location = 13659
+			location = 6446
 			ship = { name = "BNS Scaldis" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BEL version_name = "Gent Class" } } }
 			ship = { name = "BNS Ysara" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BEL version_name = "Gent Class" } } }
 			ship = { name = "BNS Mosa" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BEL version_name = "Gent Class" } } }

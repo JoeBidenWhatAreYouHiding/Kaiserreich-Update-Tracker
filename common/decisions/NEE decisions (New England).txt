@@ -422,11 +422,30 @@ NEE_reclaiming_america = {
 				#is_subject = no
 				controls_all_owned_states = yes
 			}
+			if = {
+				limit = {
+					CAN = { has_country_flag = CAN_supports_PSA }
+				}
+				NOT = { PSA = { is_in_faction_with = NEE } }
+			}
+			else_if = {
+				limit = {
+					CAN = { has_country_flag = CAN_supports_USA }
+				}
+				NOT = { USA = { is_in_faction_with = NEE } }
+			}
+			else_if = {
+				limit = {
+					CAN = { has_country_flag = CAN_supports_TEX }
+				}
+				NOT = { TEX = { is_in_faction_with = NEE } }
+			}
 		}
 
 		visible = {
-			has_global_flag = USA_civil_war_begun_flag
+			NOT = { has_global_flag = USA_civil_war_over_flag }
 			has_country_flag = NEE_denied_ENT_support_acw
+			has_global_flag = USA_civil_war_begun_flag
 		}
 
 		cost = 10
@@ -1879,7 +1898,7 @@ NEE_Great_Depression_decisions = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove NEE_New_Hampshire_Forests"
 			934 = {
-				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 			subtract_from_variable = { NEE_GD_timer_var = 3 }
 			clamp_variable = { var = NEE_GD_timer_var min = 5 max = 110 }
@@ -4542,7 +4561,7 @@ NEE_Congress_decisions = { # Congress Political Content
 					level = 1
 					instant_build = yes
 				}
-				PREV = { #from random_owned_state(#2nd) to random_country(#1st). [1,2,1]
+				PREV = { #from random_owned_controlled_state(#2nd) to random_country(#1st). [1,2,1]
 					random_owned_controlled_state = { #new second scope [1,2_old,1,2_new]
 						limit = {
 							is_core_of = NEE
@@ -4670,7 +4689,7 @@ NEE_Congress_decisions = { # Congress Political Content
 					level = 1
 					instant_build = yes
 				}
-				PREV = { #from random_owned_state(#2nd) to random_country(#1st). [1,2,1]
+				PREV = { #from random_owned_controlled_state(#2nd) to random_country(#1st). [1,2,1]
 					random_owned_controlled_state = { #new second scope [1,2_old,1,2_new]
 						limit = {
 							is_core_of = NEE
@@ -4761,7 +4780,7 @@ NEE_Congress_decisions = { # Congress Political Content
 					level = 1
 					instant_build = yes
 				}
-				PREV = { #from random_owned_state(#2nd) to random_country(#1st). [1,2,1]
+				PREV = { #from random_owned_controlled_state(#2nd) to random_country(#1st). [1,2,1]
 					random_owned_controlled_state = { #new second scope [1,2_old,1,2_new]
 						limit = {
 							is_core_of = NEE
@@ -5010,7 +5029,7 @@ NEE_Congress_decisions = { # Congress Political Content
 					level = 1
 					instant_build = yes
 				}
-				PREV = { #from random_owned_state(#2nd) to random_country(#1st). [1,2,1]
+				PREV = { #from random_owned_controlled_state(#2nd) to random_country(#1st). [1,2,1]
 					random_owned_controlled_state = { #new second scope [1,2_old,1,2_new]
 						limit = {
 							is_core_of = NEE
@@ -5141,7 +5160,7 @@ NEE_Congress_decisions = { # Congress Political Content
 					level = 1
 					instant_build = yes
 				}
-				PREV = { #from random_owned_state(#2nd) to random_country(#1st). [1,2,1]
+				PREV = { #from random_owned_controlled_state(#2nd) to random_country(#1st). [1,2,1]
 					random_owned_controlled_state = { #new second scope [1,2_old,1,2_new]
 						limit = {
 							is_core_of = NEE

@@ -15,10 +15,6 @@ SER_1936_election_panel = {
 		fire_only_once = yes
 		days_mission_timeout = 60
 
-		ai_will_do = {
-			factor = 100
-		}
-
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_black_monday_timer"
 			add_political_power = 50
@@ -49,10 +45,6 @@ SER_1936_election_panel = {
 		is_good = no
 		fire_only_once = yes
 		days_mission_timeout = 45
-
-		ai_will_do = {
-			factor = 100
-		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_revanchism_timer"
@@ -90,10 +82,6 @@ SER_socialist_workers_decisions = {
 
 		is_good = no
 		days_mission_timeout = 365
-
-		ai_will_do = {
-			factor = 100
-		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_prove_to_the_people"
@@ -161,10 +149,6 @@ SER_socialist_workers_decisions = {
 		is_good = no
 		days_mission_timeout = 365
 
-		ai_will_do = {
-			factor = 100
-		}
-
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_merge_the_coalition_parties"
 			add_stability = 0.05
@@ -191,10 +175,6 @@ SER_socialist_workers_decisions = {
 
 		is_good = no
 		days_mission_timeout = 150
-
-		ai_will_do = {
-			factor = 100
-		}
 
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout SER_complete_the_revolution"
@@ -1477,13 +1457,7 @@ SER_Economic_Development_decisions = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SER_Rural_Credit_Grants target: [From.GetName]"
 			FROM = {
-				if = {
-					limit = { has_state_category = three }
-					increase_state_category_by_one_level = yes
-				}
-				else = {
-					add_extra_state_shared_building_slots = 1
-				}
+				increase_state_category_by_one_level = yes
 			}
 		}
 	}
@@ -2128,25 +2102,21 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { dont_start_major_faction_wars = yes }
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
-			modifier = {
-				factor = 0
-				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Topple_Tyrants target: [From.GetName]"
+			clear_decision_attack_AI = yes	
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Topple_Tyrants target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -2200,25 +2170,21 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { dont_start_major_faction_wars = yes }
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
-			modifier = {
-				factor = 0
-				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Topple_Tyrants_2 target: [From.GetName]"
+			clear_decision_attack_AI = yes	
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Topple_Tyrants_2 target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -2270,25 +2236,21 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { dont_start_major_faction_wars = yes }
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
-			modifier = {
-				factor = 0
-				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Spread_Socialism target: [From.GetName]"
+			clear_decision_attack_AI = yes	
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Spread_Socialism target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -2359,19 +2321,11 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
-			}
-			modifier = {
-				factor = 0
-				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { dont_start_major_faction_wars = yes }
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
 		}
 
@@ -2382,7 +2336,6 @@ foreign_politics = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Southern_Expansion target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -2432,25 +2385,21 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { dont_start_major_faction_wars = yes }
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
-			modifier = {
-				factor = 0
-				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Invade_Albania target: [From.GetName]"
+			clear_decision_attack_AI = yes
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Invade_Albania target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -2500,25 +2449,21 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { dont_start_major_faction_wars = yes }
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
-			modifier = {
-				factor = 0
-				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Invade_Bulgaria target: [From.GetName]"
+			clear_decision_attack_AI = yes
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Invade_Bulgaria target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -2584,19 +2529,11 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
-			}
-			modifier = {
-				factor = 0
-				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+				OR = {
+					ROOT_is_threatened_cautious = yes
+					FROM = { dont_start_major_faction_wars = yes }
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
 			}
 		}
 
@@ -2607,7 +2544,6 @@ foreign_politics = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Western_Expansion target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -3452,6 +3388,11 @@ SER_The_Road_To_Unification_decisions = {
 			}
 		}
 
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_Attack_Austria target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SER_Attack_Austria target: [From.GetName]"
 			if = {
@@ -3462,7 +3403,7 @@ SER_The_Road_To_Unification_decisions = {
 				limit = { has_country_flag = SER_will_attack_austria }
 				country_event = serbia.32
 			}
-			FROM = { country_event = serbia.33 }
+			FROM = { country_event = serbia.33 } #warning event
 		}
 
 		remove_effect = {
@@ -3545,8 +3486,6 @@ SER_The_Road_To_Unification_decisions = {
 			105 = { is_owned_by_ROOT_or_subject = yes } #Montenegro
 			106 = { is_owned_by_ROOT_or_subject = yes } #Macedonia
 			109 = { is_owned_by_ROOT_or_subject = yes } #Central Croatia
-			794 = { is_owned_by_ROOT_or_subject = yes } #Syrmia
-			841 = { is_owned_by_ROOT_or_subject = yes } #Kotor
 			if = {
 				limit = {
 					has_government = radical_socialist
@@ -3710,7 +3649,7 @@ SER_The_Road_To_Unification_decisions = {
 				if = {
 					limit = {
 						NOT = {
-							has_government = national_populist
+							has_idea = SER_konspiracija_idea
 						}
 					}
 					set_party_name = {

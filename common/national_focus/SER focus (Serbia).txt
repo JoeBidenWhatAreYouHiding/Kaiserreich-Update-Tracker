@@ -2722,8 +2722,10 @@ focus_tree = {
 			else = {
 				remove_ideas = SER_revolution_purged_army_2b
 			}
-			SER_vukasin_markovic = {
+			if = {
+				limit = { has_character = SER_vukasin_markovic }
 				add_corps_commander_role = {
+					character = SER_vukasin_markovic
 					traits = {
 						harsh_leader
 						guerilla_fighter
@@ -2735,12 +2737,14 @@ focus_tree = {
 					planning_skill = 1
 					logistics_skill = 2
 				}
+				custom_effect_tooltip = Markovic_stats_tt
 			}
-			custom_effect_tooltip = Markovic_stats_tt
-			show_unit_leaders_tooltip = MNT_blazo_jovanovic
-			custom_effect_tooltip = Popovic_stats_tt
-			hidden_effect = {
-				event_target:MNT_blazo_jovanovic_target = { set_nationality = ROOT }
+			if = {
+				limit = { owns_state = 105 } #Montenegro
+				custom_effect_tooltip = Jovanovic_stats_tt
+				hidden_effect = {
+					event_target:MNT_blazo_jovanovic_target = { set_nationality = ROOT }
+				}
 			}
 		}
 	}
@@ -10812,6 +10816,7 @@ focus_tree = {
 				set_autonomy = {
 					target = SER
 					autonomy_state = kr_autonomous_puppet
+					end_wars = no
 				}
 			}
 			hidden_effect = {

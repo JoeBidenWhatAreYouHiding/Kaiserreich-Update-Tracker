@@ -1,4 +1,4 @@
-﻿######################
+######################
 # Qing Empire Events #
 ######################
 #  By MantisToboggan #
@@ -140,6 +140,8 @@ country_event = { #elections happen
 				character = QIE_yan_huiqing
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = QIE_yan_huiqing
 					traits = { KR_leading_diplomat }
 				}
@@ -277,6 +279,8 @@ country_event = { #Cao Kun gets booted
 				character = QIE_yan_huiqing
 				advisor = {
 					slot = political_advisor
+					on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+					on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 					idea_token = QIE_yan_huiqing
 					traits = { KR_leading_diplomat }
 				}
@@ -2790,6 +2794,7 @@ country_event = {
 				set_autonomy = {
 					target = MON
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			MON = { restore_previous_government_type = yes }
@@ -2801,6 +2806,7 @@ country_event = {
 				set_autonomy = {
 					target = TIB
 					autonomy_state = kr_default_puppet
+					end_wars = no
 				}
 			}
 			TIB = { restore_previous_government_type = yes }
@@ -6393,7 +6399,7 @@ country_event = {
 				}
 				retire = yes
 			}
-			event_target:QIE_gobulo_runqi_target = {
+			QIE_gobulo_runqi = {
 				set_nationality = LEC
 				unit_leader_event = qieflavor.14
 			}
@@ -6417,6 +6423,7 @@ country_event = {
 					is_character = QIE_aisin_gioro_putong
 					is_character = QIE_gobulo_runqi
 					is_character = QIE_lu_xiangting
+					is_character = QIE_li_bingzhi
 				}
 			}
 		}
@@ -6436,11 +6443,15 @@ country_event = {
 				}
 				retire = yes
 			}
-			event_target:QIE_gobulo_runqi_target = {
+			QIE_gobulo_runqi = {
 				set_nationality = LEC
 				unit_leader_event = qieflavor.14
 			}
-			event_target:QIE_lu_xiangting_target = {
+			QIE_lu_xiangting = {
+				set_nationality = LEC
+				unit_leader_event = qieflavor.14
+			}
+			QIE_li_bingzhi = {
 				set_nationality = LEC
 				unit_leader_event = qieflavor.14
 			}
@@ -6732,7 +6743,7 @@ country_event = {
 			QIE_aisin_gioro_puyi = {
 				if = {
 					limit = { has_ideology = paternal_autocrat_subtype }
-					promote_character = { ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
 				}
 				else = {
 					add_country_leader_role = {
@@ -7414,6 +7425,7 @@ country_event = {
 	option = {
 		name = qiefocus.8.a #pick Hu Shih
 		save_event_target_as = hu_picked
+		retire_character = QIE_cao_kun
 		country_event = {
 			id = qiefocus.9 #inaugurating the republic
 			days = 3
@@ -7421,6 +7433,7 @@ country_event = {
 	}
 	option = {
 		name = qiefocus.8.b #pick Welington Koo
+		retire_character = QIE_cao_kun
 		country_event = {
 			id = qiefocus.9 #inaugurating the republic
 			days = 3
@@ -8420,6 +8433,8 @@ country_event = {
 			character = QIE_kang_tongbi
 			advisor = {
 				slot = political_advisor
+				on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+				on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 				idea_token = QIE_kang_tongbi
 				traits = { KR_prominent_feminist }
 			}

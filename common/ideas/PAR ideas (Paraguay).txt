@@ -209,7 +209,8 @@ ideas = {
 			picture = general_staff_KR
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.03
+				land_doctrine_cost_factor = -0.03
+				air_doctrine_cost_factor = -0.03
 			}
 		}
 		PAR_concentrated_fire = {
@@ -217,7 +218,8 @@ ideas = {
 			picture = general_staff_KR
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.03
+				land_doctrine_cost_factor = -0.03
+				air_doctrine_cost_factor = -0.03
 				army_attack_factor = 0.05
 				army_morale_factor = 0.05
 			}
@@ -227,7 +229,8 @@ ideas = {
 			picture = general_staff_KR
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.03
+				land_doctrine_cost_factor = -0.03
+				air_doctrine_cost_factor = -0.03
 			}
 			equipment_bonus = {
 				artillery_equipment = {
@@ -242,7 +245,8 @@ ideas = {
 			picture = general_staff_KR
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.03
+				land_doctrine_cost_factor = -0.03
+				air_doctrine_cost_factor = -0.03
 				army_attack_factor = 0.05
 				army_morale_factor = 0.05
 			}
@@ -259,7 +263,8 @@ ideas = {
 			picture = general_staff_KR
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.03
+				land_doctrine_cost_factor = -0.03
+				air_doctrine_cost_factor = -0.03
 				army_attack_factor = 0.05
 				army_morale_factor = 0.05
 			}
@@ -277,7 +282,8 @@ ideas = {
 			picture = general_staff_KR
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.05
+				land_doctrine_cost_factor = -0.05
+				air_doctrine_cost_factor = -0.05
 				army_attack_factor = 0.05
 				army_morale_factor = 0.10
 				max_planning = 0.10
@@ -290,6 +296,32 @@ ideas = {
 					build_cost_ic = -0.1
 					instant = yes
 				}
+			}
+		}
+		PAR_fort_construction = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAR_unstoppable_army" }
+			picture = generic_fortify_the_borders
+			allowed = { always = no }
+			modifier = {
+				production_speed_bunker_factor = 0.10
+			}
+		}
+		PAR_copying_from_uruguay = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAR_unstoppable_army" }
+			picture = generic_fortify_the_borders
+			allowed = { always = no }
+			modifier = {
+				production_speed_bunker_factor = 0.10
+				research_speed_factor = 0.02
+			}
+		}
+		PAR_beat_back_fop = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAR_beat_back_fop" }
+			picture = guns_shield
+			targeted_modifier = {
+				tag = FOP
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
 			}
 		}
 		PAR_slash = {

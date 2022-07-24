@@ -4511,3 +4511,98 @@ news_event = {
 	}
 }
 
+# The Fall of Tsaritsyn
+news_event = {
+	id = worldnews.311
+	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.311 FROM = [From.GetName]" }
+	title = worldnews.311.t
+	desc = worldnews.311.d
+	picture = GFX_news_event_capture_tsaritsyn
+
+	major = yes
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	immediate = {
+		217 = {
+			set_state_flag = state_has_fallen
+			owner = { save_event_target_as = old_controller }
+			controller = { save_event_target_as = new_controller }
+		}
+	}
+
+	option = {
+		name = worldnews.311.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+
+	option = {
+		name = worldnews.311.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+
+	option = {
+		name = worldnews.311.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+# The Fall of Yekaterinburg
+news_event = {
+	id = worldnews.312
+	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.312 FROM = [From.GetName]" }
+	title = worldnews.312.t
+	desc = worldnews.312.d
+	picture = GFX_news_event_soviet_soldiers_ruins
+
+	major = yes
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	immediate = {
+		653 = {
+			set_state_flag = state_has_fallen
+			owner = { save_event_target_as = old_controller }
+			controller = { save_event_target_as = new_controller }
+		}
+	}
+
+	option = {
+		name = worldnews.312.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+
+	option = {
+		name = worldnews.312.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+
+	option = {
+		name = worldnews.312.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}

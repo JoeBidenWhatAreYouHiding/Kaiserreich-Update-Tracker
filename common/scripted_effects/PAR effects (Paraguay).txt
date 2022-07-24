@@ -1,30 +1,25 @@
 PAR_unlock_industry_decisions = {
-	if = {
-		limit = { owns_state = 301 }
-		activate_targeted_decision = { target = 301 decision = PAR_urbanize_asuncion }
-	}
-	if = {
-		limit = { owns_state = 688 }
-		activate_targeted_decision = { target = 688 decision = PAR_chaco_boreal_state_cat_up }
-		activate_targeted_decision = { target = 688 decision = PAR_chaco_boreal_industrialization }
-	}
-	if = {
-		limit = { owns_state = 1027 }
-		activate_targeted_decision = { target = 1027 decision = PAR_chaco_refineries }
-	}
+	# State category
+	activate_targeted_decision = { target = 301 decision = PAR_raise_state_category_decision }
+	activate_targeted_decision = { target = 688 decision = PAR_raise_state_category_decision }
+	activate_targeted_decision = { target = 901 decision = PAR_raise_state_category_decision }
+	# Resources
+	activate_targeted_decision = { target = 688 decision = PAR_chaco_boreal_industrialization }
+	activate_targeted_decision = { target = 1027 decision = PAR_chaco_refineries }
+	# Factories
+	activate_targeted_decision = { target = 301 decision = ARG_expand_cotton_production_dec }
+	activate_targeted_decision = { target = 688 decision = ARG_expand_cotton_production_dec }
+	activate_targeted_decision = { target = 901 decision = ARG_expand_cotton_production_dec }
+	activate_targeted_decision = { target = 901 decision = ARG_expand_forestry_dec }
 }
-PAR_unlock_industry_decision_misiones = {
-	if = {
-		limit = { owns_state = 1074 }
-		activate_targeted_decision = { target = 1074 decision = PAR_misiones_state_cat_up }
-	}
+
+PAR_fortify_the_south = {
+	activate_targeted_decision = { target = 301 decision = PAR_fortify_paraguay }
+	activate_targeted_decision = { target = 688 decision = PAR_fortify_northern_chaco }
+	activate_targeted_decision = { target = 901 decision = PAR_fortify_southern_chaco }
+	activate_targeted_decision = { target = 1074 decision = PAR_fortify_railway }
 }
-PAR_unlock_industry_decision_chaco_austral = {
-	if = {
-		limit = { owns_state = 901 }
-		activate_targeted_decision = { target = 901 decision = PAR_chaco_austral_state_cat_up }
-	}
-}
+
 PAR_become_syndie = {
 	if = {
 		limit = {
