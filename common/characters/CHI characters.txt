@@ -835,16 +835,16 @@ characters = {
 			cost = 100
 		}
 	}
-	CHI_zhou_zirou = {
-		name = CHI_zhou_zirou
+	CHI_zhou_zhirou = {
+		name = CHI_zhou_zhirou
 		portraits = {
 			army = {
-				small = "gfx/interface/advisors/CHI/CHI_zhou_zirou.png"
+				small = "gfx/interface/advisors/CHI/CHI_zhou_zhirou.png"
 			}
 		}
 		advisor = {
 			slot = air_chief
-			idea_token = CHI_zhou_zirou
+			idea_token = CHI_zhou_zhirou_token
 			traits = { KR_air_chief_reform_1 }
 			cost = 50
 		}

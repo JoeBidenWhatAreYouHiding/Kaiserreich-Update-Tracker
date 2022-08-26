@@ -61,6 +61,7 @@ characters = {
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FRA_marcel_cachin
 			available = {
+				not_already_hired_except_as = political_advisor
 				OR = {
 					has_government = syndicalist
 					AND = {
@@ -71,6 +72,27 @@ characters = {
 				is_country_leader = no
 			}
 			traits = { KR_compassionate_gentleman }
+		}
+		advisor = {
+			slot = second_in_command
+			idea_token = FRA_marcel_cachin_sic
+			traits = { KR_compassionate_gentleman_sic second_in_command_trait }
+			cost = 0
+			removal_cost = -1
+			visible = {
+				has_country_flag = FRA_cachin_sic_chosen
+			}
+			on_add = {
+				random_character = {
+					limit = { is_character = FRA_marcel_cachin }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				FRA_marcel_cachin = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	FRA_leon_jouhaux = {
@@ -1067,10 +1089,32 @@ characters = {
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FRA_jacque_duclos
 			available = {
+				not_already_hired_except_as = political_advisor
 				has_government = totalist
 				NOT = { has_country_leader = { character = FRA_georges_valois } }
 			}
 			traits = { KR_media_magnate }
+		}
+		advisor = {
+			slot = second_in_command
+			idea_token = FRA_jacque_duclos_sic
+			traits = { KR_war_propagandist_sic second_in_command_trait }
+			cost = 0
+			removal_cost = -1
+			visible = {
+				has_country_flag = FRA_duclos_sic_chosen
+			}
+			on_add = {
+				random_character = {
+					limit = { is_character = FRA_jacque_duclos }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				FRA_jacque_duclos = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
 		}
 	}
 	FRA_jean_zyromski = {

@@ -478,9 +478,8 @@ leader_traits = {
 	KR_the_capitanul_sic = { #Codreanu
 		sprite = 13
 		random = no
-		war_support_factor = 0.08
-		stability_factor = -0.04
-		political_power_gain = 0.06
+		war_support_factor = 0.1
+		political_power_gain = 0.1
 		custom_modifier_tooltip = cannot_replace_character
 	}
 
@@ -578,6 +577,14 @@ leader_traits = {
 		random = no
 		experience_gain_army = 0.1
 		consumer_goods_factor = -0.03
+		custom_modifier_tooltip = cannot_replace_character
+	}
+	KR_socialist_author = { #Aydemir
+		sprite = 5
+		random = no
+		political_power_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		stability_factor = 0.05
 		custom_modifier_tooltip = cannot_replace_character
 	}
 

@@ -667,9 +667,24 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus JBS_settle_bedouin"
-			every_owned_state = {
+			random_owned_state = {
 				limit = {
-					is_core_of = JBS
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -1533,6 +1548,8 @@ focus_tree = {
 		cost = 8
 
 		available_if_capitulated = yes
+		will_lead_to_war_with = HEJ
+		will_lead_to_war_with = OTT
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ANNEXATION }
 

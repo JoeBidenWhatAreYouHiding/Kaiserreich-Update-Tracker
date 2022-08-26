@@ -94,6 +94,19 @@ GEO_create_ioachim = {
 				promote_leader = yes
 			}
 		}
+		if = {
+			limit = { has_ideology = national_populist_subtype }
+			promote_character = national_populist_subtype
+		}
+		else = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = GEO_ioachim_von_hohenzollern_leader_desc
+					ideology = national_populist_subtype
+				}
+				promote_leader = yes
+			}
+		}
 	}
 }
 
@@ -189,6 +202,19 @@ GEO_create_giorgi = {
 				country_leader = {
 					desc = GEO_giorgi_bagration_mukhraneli_leader_desc
 					ideology = paternal_autocrat_subtype
+				}
+				promote_leader = yes
+			}
+		}
+		if = {
+			limit = { has_ideology = national_populist_subtype }
+			promote_character = national_populist_subtype
+		}
+		else = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = GEO_giorgi_bagration_mukhraneli_leader_desc
+					ideology = national_populist_subtype
 				}
 				promote_leader = yes
 			}

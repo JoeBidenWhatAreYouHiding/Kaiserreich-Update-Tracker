@@ -1063,7 +1063,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BAT_GER_russia_crusade"
-			activate_targeted_decision = { target = RUS decision = BAT_eastern_crusade_decision }
+			activate_targeted_decision = { target = RUS decision = BAT_GER_invade_russia }
+			hidden_effect = {
+				activate_targeted_decision = { target = SOV decision = BAT_GER_invade_russia }
+			}
 		}
 	}
 	focus = {

@@ -431,6 +431,7 @@ characters = {
 			}
 			traits = { KR_MHC_infantry_2 }
 			cost = 100
+			ai_will_do = { factor = 10 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -490,6 +491,7 @@ characters = {
 			idea_token = PAR_nicolas_delgado
 			traits = { KR_army_chief_defensive_2 }
 			cost = 100
+			ai_will_do = { factor = 10 }
 		}
 	}
 	PAR_leandro_aponte = {
@@ -533,7 +535,7 @@ characters = {
 			idea_token = PAR_paraguayan_high_command
 			ledger = military
 			available = {
-				has_completed_focus = PAR_extreme_army
+				has_completed_focus = PAR_an_army_with_no_equal
 			}
 			traits = { KR_council_of_theorists }
 			cost = 100

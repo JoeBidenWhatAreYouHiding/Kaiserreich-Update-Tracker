@@ -327,7 +327,11 @@ on_actions = {
 					limit = { will_have_dictatorship_government = yes }
 					activate_advisor = ITA_emilio_de_bono_sic
 				}
-				else = { #socialist/SocDem
+				else_if = { #SocDem
+					limit = { will_have_social_democrat_government = yes }
+					activate_advisor = ITA_meuccio_ruini_sic
+				}
+				else = { #socialist
 					activate_advisor = ITA_carlo_rosselli_sic
 				}
 			}

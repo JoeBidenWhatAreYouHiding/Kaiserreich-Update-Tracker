@@ -94,7 +94,7 @@ focus_tree = {
 			focus = KOR_pardon_the_collaborators
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KOR_investigate_the_traitors "
+			log = "[GetDateText]: [Root.GetName]: Focus KOR_investigate_the_traitors"
 			add_political_power = 50
 			add_stability = 0.10
 			retire_character = KOR_kim_suk_won
@@ -168,6 +168,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 		}
 	}
@@ -215,6 +216,9 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			527 = {
+				add_extra_state_shared_building_slots = 2
 			}
 			add_stability = -0.15
 			add_tech_bonus = {
@@ -290,6 +294,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 
 		}
@@ -693,6 +698,7 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
 			}
 			527 = {
 				add_building_construction = {
@@ -700,6 +706,7 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
 			}
 			swap_ideas = {
 				remove_idea = KOR_developing_industry
@@ -839,7 +846,7 @@ focus_tree = {
 			remove_ideas = KOR_army_of_the_republic
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KOR_establish_the_armed_forces "
+			log = "[GetDateText]: [Root.GetName]: Focus KOR_establish_the_armed_forces"
 			add_stability = 0.15
 			525 = {
 				add_building_construction = {
@@ -847,6 +854,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 			527 = {
 				add_building_construction = {
@@ -854,6 +862,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 			add_ideas = KOR_army_of_the_republic
 		}
@@ -1341,6 +1350,7 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
 			}
 			527 = {
 				add_building_construction = {
@@ -1348,6 +1358,7 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
 			}
 			swap_ideas = {
 				remove_idea = KOR_developing_industry
@@ -2029,6 +2040,7 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
 			}
 		}
 	}
@@ -2140,6 +2152,8 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
+
 			}
 			525 = {
 				add_building_construction = {
@@ -2147,6 +2161,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 			every_unit_leader = {
 				add_attack = 1
@@ -2287,6 +2302,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 			527 = {
 				add_building_construction = {
@@ -2294,6 +2310,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 			add_ideas = KOR_peoples_army
 		}

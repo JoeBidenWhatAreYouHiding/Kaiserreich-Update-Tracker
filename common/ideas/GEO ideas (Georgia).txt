@@ -337,8 +337,8 @@ ideas = {
 			}
 		}
 		GEO_secret_police_idea_lar = {
-			name = GEO_secret_police_idea
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEO_secret_police_idea_lar" }
+			name = GEO_secret_police_idea
 			picture = generic_spy_intel
 			allowed = { always = no }
 			modifier = {

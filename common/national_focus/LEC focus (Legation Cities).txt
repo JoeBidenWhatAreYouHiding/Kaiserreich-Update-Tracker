@@ -1958,27 +1958,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 60
 			modifier = {
-				factor = 25
-				OR = {
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
-				}
-			}
-			modifier = {
-				add = 30
-				currency_reserves_high = yes
-			}
-			modifier = {
-				add = 15
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = -10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = -20
-				currency_reserves_critical = yes
+				factor = LEC_currency_reserves
 			}
 		}
 		bypass = {
@@ -1992,9 +1972,8 @@ focus_tree = {
 			set_temp_variable = { LEC_currency_change = -1 }
 			LEC_change_currency_reserves = yes
 			add_equipment_to_stockpile = {
-				type = convoy_1
+				type = convoy
 				amount = 200
-				producer = GBR
 			}
 			add_doctrine_cost_reduction = {
 				name = LEC_jardines
@@ -2012,30 +1991,16 @@ focus_tree = {
 		relative_position_id = LEC_jardines
 		x = 2
 		y = 0
-		available = {
-			NOT = { has_idea = LEC_currency_10 }
-		}
 		search_filters = { FOCUS_FILTER_LEC_CURRENCY }
 		ai_will_do = {
 			factor = 70
 			modifier = {
-				add = -30
-				currency_reserves_high = yes
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
 			}
 			modifier = {
-				add = -10
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = 10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = 20
-				currency_reserves_critical = yes
-			}
-			modifier = {
-				factor = 0.1
+				factor = 0
 				OR = {
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
@@ -2105,30 +2070,16 @@ focus_tree = {
 		relative_position_id = LEC_jardines
 		x = 6
 		y = 0
-		available = {
-			NOT = { has_idea = LEC_currency_10 }
-		}
 		search_filters = { FOCUS_FILTER_LEC_CURRENCY }
 		ai_will_do = {
 			factor = 70
 			modifier = {
-				add = -30
-				currency_reserves_high = yes
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
 			}
 			modifier = {
-				add = -30
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = 10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = 20
-				currency_reserves_critical = yes
-			}
-			modifier = {
-				factor = 0.1
+				factor = 0
 				OR = {
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
@@ -2162,30 +2113,16 @@ focus_tree = {
 		prerequisite = {
 			focus = LEC_improving_infrastructure
 		}
-		available = {
-			NOT = { has_idea = LEC_currency_10 }
-		}
 		search_filters = { FOCUS_FILTER_LEC_CURRENCY }
 		ai_will_do = {
 			factor = 60
 			modifier = {
-				add = -30
-				currency_reserves_high = yes
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
 			}
 			modifier = {
-				add = -30
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = 10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = 20
-				currency_reserves_critical = yes
-			}
-			modifier = {
-				factor = 0.1
+				factor = 0
 				OR = {
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
@@ -2217,30 +2154,16 @@ focus_tree = {
 		prerequisite = {
 			focus = LEC_turn_a_blind_eye
 		}
-		available = {
-			NOT = { has_idea = LEC_currency_10 }
-		}
 		search_filters = { FOCUS_FILTER_LEC_CURRENCY }
 		ai_will_do = {
 			factor = 70
 			modifier = {
-				add = -30
-				currency_reserves_high = yes
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
 			}
 			modifier = {
-				add = -30
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = 10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = 20
-				currency_reserves_critical = yes
-			}
-			modifier = {
-				factor = 0.1
+				factor = 0
 				OR = {
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
@@ -2271,9 +2194,8 @@ focus_tree = {
 			LEC_change_currency_reserves = yes
 			navy_experience = 50
 			add_equipment_to_stockpile = {
-				type = convoy_1
+				type = convoy
 				amount = 200
-				producer = GBR
 			}
 			add_tech_bonus = {
 				name = LEC_wheelock_and_marden
@@ -2286,27 +2208,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 65
 			modifier = {
-				factor = 25
-				OR = {
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
-				}
-			}
-			modifier = {
-				add = 30
-				currency_reserves_high = yes
-			}
-			modifier = {
-				add = 15
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = -10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = -20
-				currency_reserves_critical = yes
+				factor = LEC_currency_reserves
 			}
 		}
 	}
@@ -2334,27 +2236,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 60
 			modifier = {
-				factor = 25
-				OR = {
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
-				}
-			}
-			modifier = {
-				add = 30
-				currency_reserves_high = yes
-			}
-			modifier = {
-				add = 15
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = -10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = -20
-				currency_reserves_critical = yes
+				factor = LEC_currency_reserves
 			}
 		}
 	}
@@ -2451,11 +2333,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 75
 			modifier = {
-				factor = 25
-				OR = {
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
-				}
+				factor = LEC_currency_reserves
 			}
 		}
 	}
@@ -2584,27 +2462,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 60
 			modifier = {
-				factor = 25
-				OR = {
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
-				}
-			}
-			modifier = {
-				add = 20
-				currency_reserves_high = yes
-			}
-			modifier = {
-				add = 15
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = -10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = -20
-				currency_reserves_critical = yes
+				factor = LEC_currency_reserves
 			}
 		}
 	}
@@ -2745,23 +2603,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 60
 			modifier = {
-				add = -30
-				currency_reserves_high = yes
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
 			}
 			modifier = {
-				add = -30
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = 10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = 20
-				currency_reserves_critical = yes
-			}
-			modifier = {
-				factor = 0.1
+				factor = 0
 				OR = {
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
@@ -2811,13 +2658,6 @@ focus_tree = {
 		prerequisite = {
 			focus = LEC_string_of_pearls_scheme
 		}
-		available = {
-			OR = {
-				controls_state = 746
-				controls_state = 747
-				controls_state = 801
-			}
-		}
 		bypass = {
 			NOT = {
 				owns_state = 746
@@ -2828,15 +2668,15 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_the_small_cities"
 			if = {
-				limit = { controls_state = 746 }
+				limit = { owns_state = 746 }
 				746 = { increase_state_category_by_one_level = yes }
 			}
 			if = {
-				limit = { controls_state = 747 }
+				limit = { owns_state = 747 }
 				747 = { increase_state_category_by_one_level = yes }
 			}
 			if = {
-				limit = { controls_state = 801 }
+				limit = { owns_state = 801 }
 				801 = { increase_state_category_by_one_level = yes }
 			}
 		}
@@ -3229,23 +3069,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 60
 			modifier = {
-				add = -30
-				currency_reserves_high = yes
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
 			}
 			modifier = {
-				add = -30
-				currency_reserves_medium = yes
-			}
-			modifier = {
-				add = 10
-				currency_reserves_low = yes
-			}
-			modifier = {
-				add = 20
-				currency_reserves_critical = yes
-			}
-			modifier = {
-				factor = 0.1
+				factor = 0
 				OR = {
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }

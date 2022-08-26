@@ -928,7 +928,10 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			NOT = { country_exists = OTT }
+			OR = {
+				NOT = { country_exists = OTT }
+				TUR = { has_country_flag = OTT_change_to_turkey }
+			}
 			can_declare_war_on = 907.owner
 		}
 		bypass = {
@@ -1006,6 +1009,7 @@ focus_tree = {
 			OR = {
 				has_war_with = OTT
 				NOT = { country_exists = OTT }
+				TUR = { has_country_flag = OTT_change_to_turkey }
 			}
 		}
 		prerequisite = {
@@ -1967,9 +1971,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = PER_army_funding
-		ai_will_do = {
-			factor = 0
-		}
+
 		cost = 5
 		dynamic = yes
 		prerequisite = {

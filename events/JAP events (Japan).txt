@@ -1917,12 +1917,12 @@ country_event = { #Hayashi Senjuro is dead!
 	title = japdom.58.t
 	desc = {
 		text = japdom.58.d.pataut
-		trigger = { has_government = paternal_autocrat }
+		trigger = { has_idea = JAP_hayashi_senjuro_sic }
 	}
 	desc = {
 		text = japdom.58.d.defaul
 		trigger = {
-			NOT = { has_government = paternal_autocrat }
+			NOT = { has_idea = JAP_hayashi_senjuro_sic }
 		}
 	}
 	picture = GFX_report_event_europe_funeral
@@ -2142,13 +2142,9 @@ country_event = { #Land Reform? Land Reform
 			check_variable = { JAP_land_reform_variable < 8 }
 		}
 		remove_ideas = JAP_bad_land
-		every_owned_state = {
-			limit = {
-				is_controlled_by = JAP
-				region = 154
-			}
-			increase_state_category_by_one_level = yes
-		}
+		534 = { increase_state_category_by_one_level = yes }
+		535 = { increase_state_category_by_one_level = yes }
+		536 = { increase_state_category_by_one_level = yes }
 	}
 	option = {
 		name = japdom.75.d
@@ -2156,13 +2152,12 @@ country_event = { #Land Reform? Land Reform
 			check_variable = { JAP_land_reform_variable > 7 }
 		}
 		remove_ideas = JAP_bad_land
-		every_owned_state = {
-			limit = {
-				is_controlled_by = JAP
-				region = 154
-			}
-			increase_state_category_by_two_levels = yes
-		}
+		529 = { increase_state_category_by_one_level = yes }
+		532 = { increase_state_category_by_one_level = yes }
+		533 = { increase_state_category_by_one_level = yes }
+		534 = { increase_state_category_by_one_level = yes }
+		535 = { increase_state_category_by_one_level = yes }
+		536 = { increase_state_category_by_one_level = yes }
 	}
 }
 
@@ -2285,14 +2280,10 @@ country_event = { #Black Monday
 	desc = japdom.242.d
 	picture = GFX_report_event_JAP_economy_building
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = japdom.242.a
-		ai_chance = {
-			base = 100
-		}
 		add_stability = -0.03
 	}
 }
@@ -3693,6 +3684,10 @@ country_event = { #My Raja, Japan brings us news!
 				factor = 5
 				FROM = { any_owned_state = { is_claim_or_core_of_ROOT = yes } }
 			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = PRF_forpol option = PRF_FORPOL_JAP }
+			}
 		}
 		FROM = {
 			add_opinion_modifier = { target = ROOT modifier = KR_disapproves_of_govt }
@@ -4631,7 +4626,7 @@ country_event = { # Fourth Negotiation - Political prisoners
 		name = japfor.516.a
 		add_political_power = -15
 		hidden_effect = {
-			country_event = { id = japfor.518 days = 3 }
+			country_event = { id = japfor.517 days = 3 }
 		}
 	}
 
@@ -6769,13 +6764,15 @@ country_event = { #Fading Sun system event
 			limit = {
 				is_in_faction_with = ROOT
 				is_subject = no
-				surrender_progress < 0.8
+				has_capitulated = no
 			}
-			leave_faction = yes
-			country_event = capt.4200
+			faction_collapse_member_peace_effect = yes
 			country_event = japfor.251
 		}
-		faction_leader = { dismantle_faction = yes }
+		if = {
+			limit = { is_in_faction = yes }
+			faction_leader = { dismantle_faction = yes }
+		}
 		news_event = { id = japfor.252 hours = 30 }
 	}
 }
@@ -6799,7 +6796,7 @@ country_event = { #Inform former faction members of peace
 # The Fading Sun
 news_event = {
 	id = japfor.252
-	immediate = { log = "[GetDateText]: [Root.GetName]: event japfor.251 FROM = [From.GetName]" }
+	immediate = { log = "[GetDateText]: [Root.GetName]: event japfor.252 FROM = [From.GetName]" }
 	title = japfor.252.t
 	desc = japfor.252.d
 	picture = GFX_news_event_JAP_coup

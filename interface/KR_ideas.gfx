@@ -204,6 +204,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/advisors_british_india.png"
 	}
 	spriteType = {
+		name = "GFX_idea_advisors_free_india"
+		texturefile = "gfx/interface/ideas/advisors_free_india.png"
+	}
+	spriteType = {
 		name = "GFX_idea_advisors_dutch"
 		texturefile = "gfx/interface/ideas/advisors_dutch.png"
 	}
@@ -374,6 +378,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_generic_loans"
 		texturefile = "gfx/interface/ideas/generic_loans.png"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_broken_champagne"
+		texturefile = "gfx/interface/ideas/generic_broken_champagne.png"
 	}
 }
 

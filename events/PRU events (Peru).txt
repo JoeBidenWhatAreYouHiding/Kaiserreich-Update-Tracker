@@ -99,9 +99,13 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = { add_ideas = PRU_BM_lvl3 }
+	}
+
 	option = {
 		name = pru.10.a
-		add_ideas = PRU_BM_lvl3
+		effect_tooltip = { add_ideas = PRU_BM_lvl3 }
 	}
 }
 

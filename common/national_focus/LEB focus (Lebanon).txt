@@ -1480,7 +1480,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEB_modernize_the_countryside"
 			553 = {
-				increase_state_category_by_two_levels = yes
+				increase_state_category_by_one_level = yes
 			}
 			LEB_improve_economic_crisis = yes
 		}

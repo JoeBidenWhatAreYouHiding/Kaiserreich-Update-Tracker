@@ -4854,6 +4854,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SER_raise_reserve_divisions"
 			custom_effect_tooltip = SER_reserve_divisions_tooltip
+			hidden_effect = {
+				if = {
+					limit = { has_template = "Mobilizana pešadijska divizija" }
+					delete_unit_template_and_units = { division_template = "Mobilizana pešadijska divizija" disband = yes } #no cheating
+				}
+			}
 			division_template = {
 				name = "Mobilizana pešadijska divizija"
 				division_names_group = SER_INF_01
@@ -4869,7 +4875,9 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				108 = {
+				random_owned_controlled_state = {
+					prioritize = { 108 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Mobilizana pešadijska divizija\" start_experience_factor = 0.2 start_equipment_factor = 1"
 						owner = ROOT
@@ -5628,6 +5636,7 @@ focus_tree = {
 				add_state_claim = 104 #Bosnia
 				add_state_claim = 109 #Central Croatia
 				add_state_claim = 163 #Dalmatia
+				add_state_claim = 683 #Gorizia
 				add_state_claim = 736 #Istria
 				add_state_claim = 794 #Syrmia
 				add_state_claim = 841 #Kotor
@@ -6617,6 +6626,10 @@ focus_tree = {
 			custom_effect_tooltip = mountain_training_tech_effect
 			hidden_effect = {
 				set_technology = { mountain_training_tech = 1 popup = no }
+				if = {
+					limit = { has_template = "Planinski Odred" }
+					delete_unit_template_and_units = { division_template = "Planinski Odred" disband = yes } #no cheating
+				}
 				division_template = {
 					name = "Planinski Odred"
 					division_names_group = SER_MTN_01
@@ -6631,6 +6644,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					prioritize = { 765 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
 						owner = ROOT
@@ -6638,6 +6652,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					prioritize = { 108 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
 						owner = ROOT
@@ -6645,6 +6660,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					prioritize = { 107 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
 						owner = ROOT
@@ -6652,6 +6668,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					prioritize = { 767 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
 						owner = ROOT

@@ -674,7 +674,6 @@ RUS_pick_zemstvo_states = {
 			limit = {
 				RUS_choose_zemstvo_group = yes
 				RUS_has_free_building_slots = yes
-				NOT = { state = event_target:RUS_zemstvo_state_1 }
 			}
 			save_event_target_as = RUS_zemstvo_state_2
 		}
@@ -685,10 +684,6 @@ RUS_pick_zemstvo_states = {
 			limit = {
 				RUS_choose_zemstvo_group = yes
 				RUS_has_free_building_slots = yes
-				NOT = {
-					state = event_target:RUS_zemstvo_state_1
-					state = event_target:RUS_zemstvo_state_2
-				}
 			}
 			save_event_target_as = RUS_zemstvo_state_3
 		}

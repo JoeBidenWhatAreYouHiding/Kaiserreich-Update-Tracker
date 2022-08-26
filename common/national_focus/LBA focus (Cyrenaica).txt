@@ -887,19 +887,24 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus LBA_Rally_Tribes"
 			add_ideas = LBA_tribal_loyalty
 			hidden_effect = {
-				division_template = {
-					name = "Senussi Horsemen"
-					division_names_group = EGY_CAV_01
-					regiments = {
-						cavalry = { x = 0 y = 0 }
-						cavalry = { x = 0 y = 1 }
-
-						cavalry = { x = 1 y = 0 }
-						cavalry = { x = 1 y = 1 }
-					}
+				if = {
+					limit = { has_template = "Senussi Horsemen" }
+					delete_unit_template_and_units = { division_template = "Senussi Horsemen" disband = yes } #no cheating
 				}
 			}
-			451 = {
+			division_template = {
+				name = "Senussi Horsemen"
+				division_names_group = EGY_CAV_01
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 451 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "name = \"Drasa Militia\" division_template = \"Senussi Horsemen\" start_experience_factor = 0.3"
 					owner = ROOT
@@ -1091,6 +1096,9 @@ focus_tree = {
 		x = 3
 		y = 2
 		cost = 8
+
+		will_lead_to_war_with = OTT
+
 		ai_will_do = {
 			factor = 90
 			modifier = {
@@ -1157,6 +1165,9 @@ focus_tree = {
 		x = 4
 		y = 3
 		cost = 8
+
+		will_lead_to_war_with = NFA
+
 		ai_will_do = {
 			factor = 100
 			modifier = {
@@ -1624,9 +1635,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LBA_Province_Fezzan"
-			273 = {
-				increase_state_category_by_two_levels = yes
-			}
+			448 = { add_extra_state_shared_building_slots = 1 }
 		}
 	}
 

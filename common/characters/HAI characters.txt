@@ -13,15 +13,15 @@ characters = {
 			ideology = totalist_subtype
 		}
 	}
-	HAI_jacques_romain = {
-		name = HAI_jacques_romain
+	HAI_jacques_roumain = {
+		name = HAI_jacques_roumain
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/HAI/Portrait_Haiti_Jacques_Romain.png"
+				large = "gfx/leaders/HAI/Portrait_Haiti_Jacques_Roumain.png"
 			}
 		}
 		country_leader = {
-			desc = HAI_jacques_romain_leader_desc
+			desc = HAI_jacques_roumain_leader_desc
 			ideology = syndicalist_subtype
 		}
 	}
@@ -204,6 +204,12 @@ characters = {
 			idea_token = HAI_elie_lescot
 			available = {
 				has_democratic_government = yes
+				NOT = {
+					has_country_leader = {
+						character = HAI_demosthenes_calixte
+						ruling_only = yes
+					}
+				}
 			}
 			traits = { KR_crime_fighter }
 		}

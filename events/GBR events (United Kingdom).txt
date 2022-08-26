@@ -334,8 +334,8 @@ country_event = { # The British Army
 		}
 		CAN = {
 			every_unit_leader = {
-				limit = { has_trait = CAN_british_exile_trait }
-				remove_unit_leader_trait = CAN_british_exile_trait
+				limit = { has_trait = GBR_british_exile_trait }
+				remove_unit_leader_trait = GBR_british_exile_trait
 				set_nationality = GBR
 			}
 		}
@@ -1429,7 +1429,7 @@ country_event = {
 		clear_sic_slot = yes
 		if = {
 			limit = { has_global_flag = GBR_cons_leader_cecil }
-			activate_advisor = GBR_henry_page_croft
+			activate_advisor = GBR_robert_gascoyne_cecil
 		}
 		else_if = {
 			limit = { has_global_flag = GBR_cons_leader_eden }
@@ -1437,7 +1437,7 @@ country_event = {
 		}
 		else_if = {
 			limit = { has_global_flag = GBR_cons_leader_croft }
-			activate_advisor = GBR_robert_gascoyne_cecil
+			activate_advisor = GBR_henry_page_croft
 		}
 		else = {
 			activate_advisor = GBR_robert_vansittart
@@ -1610,7 +1610,7 @@ country_event = {
 			clear_sic_slot = yes
 			if = {
 				limit = { has_global_flag = GBR_cons_leader_cecil }
-				activate_advisor = GBR_henry_page_croft
+				activate_advisor = GBR_robert_gascoyne_cecil
 			}
 			else_if = {
 				limit = { has_global_flag = GBR_cons_leader_eden }
@@ -1618,7 +1618,7 @@ country_event = {
 			}
 			else_if = {
 				limit = { has_global_flag = GBR_cons_leader_croft }
-				activate_advisor = GBR_robert_gascoyne_cecil
+				activate_advisor = GBR_henry_page_croft
 			}
 			else = {
 				activate_advisor = GBR_robert_vansittart
@@ -1995,10 +1995,7 @@ country_event = {
 					is_subject_of = ROOT
 				}
 				is_in_faction_with = ROOT
-				NOT = { has_idea = GBR_imperial_preference_idea }
-				NOT = { has_country_flag = GBR_asked_imperial_preference }
 			}
-			set_country_flag = GBR_asked_imperial_preference
 			country_event = uk.64
 		}
 		hidden_effect = {
@@ -3385,13 +3382,13 @@ country_event = {
 	desc = {
 		text = uk.112.d.spanish
 		trigger = {
-			event_target:gibraltar_owner = { is_spanish_tag = yes }
+			event_target:gibraltar_owner = { original_tag = SPA }
 		}
 	}
 	desc = {
 		text = uk.112.d
 		trigger = {
-			event_target:gibraltar_owner = { is_spanish_tag = no }
+			NOT = { event_target:gibraltar_owner = { original_tag = SPA } }
 		}
 	}
 

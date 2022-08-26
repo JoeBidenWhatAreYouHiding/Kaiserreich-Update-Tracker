@@ -43,7 +43,7 @@ ideas = {
 			}
 		}
 
-		SQI_flight_to_safety = { #Flee to Song Zheyuan
+		SQI_flight_to_safety = { #Flee to Qu Yingguang
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_flight_to_safety" }
 			picture = man_low_legitimacy3
 			allowed = { always = no }
@@ -82,7 +82,14 @@ ideas = {
 		}
 
 		SQI_Yiguandao_revolt = { #Yiguandao Revolt
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Yiguandao_revolt" }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SQI_Yiguandao_revolt"
+				activate_targeted_decision = { decision = SQI_end_Yiguandao_riot target = ROOT }
+			}
+			on_remove = {
+				log = "[GetDateText]: [Root.GetName]: remove idea SQI_Yiguandao_revolt"
+				remove_targeted_decision = { decision = SQI_end_Yiguandao_riot target = ROOT }
+			}
 			picture = saf_history_of_segregation_2
 			allowed = { always = no }
 			modifier = {
@@ -106,7 +113,14 @@ ideas = {
 		}
 
 		SQI_Peasant_revolt = { #Peasant Revolt
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Peasant_revolt" }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SQI_Peasant_revolt"
+				activate_targeted_decision = { decision = SQI_end_peasant_riot target = ROOT }
+			}
+			on_remove = {
+				log = "[GetDateText]: [Root.GetName]: remove idea SQI_Peasant_revolt"
+				remove_targeted_decision = { decision = SQI_end_peasant_riot target = ROOT }
+			}
 			picture = chi_war_of_resistance2
 			allowed = { always = no }
 			modifier = {
@@ -118,7 +132,14 @@ ideas = {
 		}
 
 		SQI_Zongchang_revolt = { #Zongchang Revolt
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Zongchang_revolt" }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SQI_Zongchang_revolt"
+				activate_targeted_decision = { decision = SQI_end_Zongchang_riot target = ROOT }
+			}
+			on_remove = {
+				log = "[GetDateText]: [Root.GetName]: remove idea SQI_Zongchang_revolt"
+				remove_targeted_decision = { decision = SQI_end_Zongchang_riot target = ROOT }
+			}
 			picture = death_men
 			allowed = { always = no }
 			modifier = {

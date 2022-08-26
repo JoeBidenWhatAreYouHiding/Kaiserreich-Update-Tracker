@@ -29,12 +29,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HUN_slovak_demonstrations" }
 			picture = generic_volunteer_expedition_bonus
 			allowed = { always = no }
-			available = {
-				OR = {
-					owns_state = 70
-					owns_state = 71
-				}
-			}
+			available = { owns_state = 70 }
 			modifier = {
 				political_power_gain = -0.5
 			}

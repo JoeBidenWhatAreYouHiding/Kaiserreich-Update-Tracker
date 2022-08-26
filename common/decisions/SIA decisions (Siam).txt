@@ -698,6 +698,7 @@ political_actions = {
 			log = "[GetDateText]: [Root.GetName]: Decision SIA_recrew_the_navy"
 		}
 		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SIA_recrew_the_navy"
 			SIA = { country_event = siam.19 }
 		}
 	}
@@ -765,13 +766,13 @@ political_actions = {
 		}
 
 		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancelled SIA_reclaim_left_bank_mekong target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SIA_reclaim_left_bank_mekong"
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SIA_reclaim_left_bank_mekong"
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SIA_reclaim_left_bank_mekong target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision remove SIA_reclaim_left_bank_mekong"
 			add_state_claim = 670
 			add_state_claim = 826
 		}

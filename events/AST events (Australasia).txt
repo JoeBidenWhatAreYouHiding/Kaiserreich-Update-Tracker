@@ -4358,19 +4358,15 @@ country_event = {
 		hidden_effect = {
 			NZL = {
 				transfer_technology = yes
-				add_ideas = extensive_conscription
-				load_oob = "NZL"
-				load_oob = "NZL_paramilitary"
-				load_oob = "NZL_naval"
+				NZL_initial_spawn = yes
+				AST_paramilitary_spawn = yes
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
 					amount = 2000
-					producer = CAN
 				}
 				add_equipment_to_stockpile = {
 					type = convoy
 					amount = 50
-					producer = CAN
 				}
 				add_popularity = {
 					ideology = paternal_autocrat
@@ -5367,15 +5363,18 @@ country_event = {
 
 	option = {
 		name = austral.211.a
-		custom_effect_tooltip = AST_upgrade_1
-		add_equipment_to_stockpile = {
-			type = convoy_1
-			amount = 25
-			producer = AST
-		}
-		hidden_effect = {
-			load_oob = AST_upgrade1
-		}
+		create_ship = { name = "HMS Vampire" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Vendetta" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Voyager" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Waterhen" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Wolsey" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Stronghold" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Walker" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Vimy" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Bruce" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Malcolm" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Veteran" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
+		create_ship = { name = "HMS Westcott" type = ship_hull_light_1 creator = AST equipment_variant = "V/W Class" }
 	}
 }
 
@@ -5409,10 +5408,11 @@ country_event = {
 
 	option = {
 		name = austral.211.a
-		custom_effect_tooltip = AST_upgrade_2
-		hidden_effect = {
-			load_oob = AST_upgrade2
-		}
+		create_ship = { name = "HMS Coventry" type = ship_hull_cruiser_1 creator = AST equipment_variant = "C-Class" }
+		create_ship = { name = "HMS Colombo" type = ship_hull_cruiser_1 creator = AST equipment_variant = "C-Class" }
+		create_ship = { name = "HMS Caledon" type = ship_hull_cruiser_1 creator = AST equipment_variant = "C-Class" }
+		create_ship = { name = "HMS Calypso" type = ship_hull_cruiser_1 creator = AST equipment_variant = "C-Class" }
+		create_ship = { name = "HMS Curacoa" type = ship_hull_cruiser_1 creator = AST equipment_variant = "C-Class" }
 	}
 }
 
@@ -5447,10 +5447,9 @@ country_event = {
 
 	option = {
 		name = austral.211.a
-		custom_effect_tooltip = AST_upgrade_3
-		hidden_effect = {
-			load_oob = AST_upgrade3
-		}
+		create_ship = { name = "HMS Barham" type = ship_hull_heavy_1 creator = AST equipment_variant = "Queen Elizabeth Class" }
+		create_ship = { name = "HMS Malaya" type = ship_hull_heavy_1 creator = AST equipment_variant = "Queen Elizabeth Class" }
+		create_ship = { name = "HMS Renown" type = ship_hull_heavy_1 creator = AST equipment_variant = "Renown Class" }
 	}
 }
 
@@ -6571,17 +6570,14 @@ country_event = {
 		hidden_effect = {
 			NZL = {
 				transfer_technology = yes
-				load_oob = "NZL"
-				load_oob = "NZL_naval"
+				NZL_initial_spawn = yes
 				add_equipment_to_stockpile = {
-					type = infantry_equipment_1
+					type = infantry_equipment
 					amount = 1000
-					producer = CAN
 				}
 				add_equipment_to_stockpile = {
-					type = convoy_1
+					type = convoy
 					amount = 25
-					producer = CAN
 				}
 				activate_targeted_decision = { target = 284 decision = AST_develop_new_zealand_coal_mines }
 				activate_targeted_decision = { target = 284 decision = AST_develop_new_zealand_oil_deposits }
@@ -6769,15 +6765,13 @@ country_event = {
 
 	trigger = {
 		tag = AST
-		is_in_faction_with = CAN
 		OR = {
 			has_war_with = ENG
 			has_war_with = GER
 		}
-		NOT = {
-			has_idea = volunteer_only
-		}
-		controls_all_owned_states = yes
+		is_in_faction_with = CAN
+		num_of_controlled_states > 0
+		NOT = { has_idea = volunteer_only }
 	}
 
 	mean_time_to_happen = {
@@ -6787,9 +6781,25 @@ country_event = {
 	option = {
 		name = austral.256.a
 		add_manpower = 20000
-		custom_effect_tooltip = AST_receives_corps
-		hidden_effect = {
-			load_oob = "AST_volunteer"
+		division_template = {
+			name = "Defence Corps"
+			division_names_group = AST_INF_02
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				infantry = { x = 0 y = 4 }
+			}
+			priority = 0
+		}
+		random_owned_controlled_state = {
+			limit = { valid_state_for_spawning_friendly_unit = yes }
+			create_unit = {
+				division = "division_template = \"Defence Corps\""
+				owner = ROOT
+				count = 4
+			}
 		}
 	}
 }
@@ -7028,16 +7038,9 @@ country_event = {
 	trigger = {
 		tag = AST
 		has_idea = AST_maori_rights
-		has_war = yes
-		OR = {
-			has_right_democratic_government = yes
-			has_government = social_democrat
-		}
-		284 = { #New Zealand
-			is_owned_and_controlled_by = AST
-			is_core_of = AST
-		}
-		date > 1941.1.1
+		any_enemy_country = { is_major = yes }
+		NOT = { country_exists = NZL }
+		has_elected_government = yes
 	}
 
 	mean_time_to_happen = {
@@ -7048,16 +7051,38 @@ country_event = {
 		name = austral.263.a #This will only help the war effort
 		ai_chance = {
 			base = 90
+			modifier = {
+				factor = 0.1
+				has_political_power < 0
+			}
 		}
 		add_political_power = -50
 		add_manpower = 10000
-		custom_effect_tooltip = AST_receives_maori
-		hidden_effect = {
-			if = {
-				limit = { has_template = "Maori Battalion" }
-				delete_unit_template_and_units = { division_template = "Maori Battalion" }
+		division_template = {
+			name = "Maori Battalion"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 2 y = 2 }
 			}
-			load_oob = AST_maori
+			support = {
+				recon = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 284 723 }
+			limit = { valid_state_for_spawning_friendly_unit = yes }
+			create_unit = {
+				division = "name = \"Māori Battalion\" division_template = \"Maori Battalion\" start_experience_factor = 0.1"
+				owner = ROOT
+			}
 		}
 	}
 	option = {

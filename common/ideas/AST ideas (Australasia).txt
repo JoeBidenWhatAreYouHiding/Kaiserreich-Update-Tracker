@@ -9,8 +9,8 @@ ideas = {
 	country = {
 		AST_oversized_fleet = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_oversized_fleet" }
-			picture = AST_oversized_fleet
-			allowed = { tag = AST }
+			picture = GBR_admiralty
+			allowed = { always = no }
 			available = {
 				OR = {
 					has_navy_size = { size > 1 type = carrier }

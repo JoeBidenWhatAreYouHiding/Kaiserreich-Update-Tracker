@@ -3050,10 +3050,40 @@ country_event = { # Female Red Guard units
 
 	option = {
 		name = socitaly.84.a
-		hidden_effect = {
-			load_oob = SRI_female_red_guard
-		}
 		add_war_support = 0.05
+		hidden_effect = {
+			if = {
+				limit = { has_template = "Gruppi di Difesa Della Donna" }
+				delete_unit_template_and_units = { division_template = "Gruppi di Difesa Della Donna" disband = yes } #no cheating
+			}
+		}
+		division_template = {
+			name = "Gruppi di Difesa Della Donna"
+			division_names_group = SRI_INF_01
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 2 y = 2 }
+			}
+			template_counter = 67
+		}
+		random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
+			create_unit = {
+				division = "name = \"1o Gruppo di Difesa Della Donna\" division_template = \"Gruppi di Difesa Della Donna\" start_experience_factor = 0.9"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"2o Gruppo di Difesa Della Donna\" division_template = \"Gruppi di Difesa Della Donna\" start_experience_factor = 0.9"
+				owner = ROOT
+			}
+		}
 	}
 }
 country_event = { # Jesus the Carpenter and the Worker Priests

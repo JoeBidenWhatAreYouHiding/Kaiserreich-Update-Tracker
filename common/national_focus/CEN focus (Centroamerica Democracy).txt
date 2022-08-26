@@ -30,6 +30,7 @@ focus_tree = {
 			factor = 100
 		}
 		select_effect = {
+			log = "[GetDateText]: [Root.GetName]: Select Focus CEN_DEM_Council_CON"
 			country_event = { id = cendem.1 days = 1 }
 		}
 		completion_reward = {
@@ -101,15 +102,9 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus CEN_DEM_kill_ufc"
 			add_timed_idea = { idea = CENdem_Soccon_UFC_Purged days = 90 }
 			add_popularity = { ideology = social_conservative popularity = 0.05 }
-			random_owned_controlled_state = {
-				increase_state_category_by_one_level = yes
-			}
-			random_owned_controlled_state = {
-				increase_state_category_by_one_level = yes
-			}
-			random_owned_controlled_state = {
-				increase_state_category_by_one_level = yes
-			}
+			312 = { increase_state_category_by_one_level = yes }
+			317 = { increase_state_category_by_one_level = yes }
+			1071 = { increase_state_category_by_one_level = yes }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -271,13 +266,15 @@ focus_tree = {
 		cost = 7
 		available = {
 			has_government = social_conservative
-			country_exists = COS
-			NOT = { has_war_with = COS }
-			COS = {
-				has_socialist_government = no
-				OR = {
+			is_subject = no
+			is_neighbor_of = COS
+			OR = {
+				has_subject = COS
+				COS = {
 					is_subject = no
-					is_subject_of = ROOT
+					is_in_faction = no
+					NOT = { has_war_with = ROOT }
+					has_socialist_government = no
 				}
 			}
 		}
@@ -345,13 +342,15 @@ focus_tree = {
 		cost = 7
 		available = {
 			has_government = social_conservative
-			country_exists = PAN
-			NOT = { has_war_with = PAN }
-			PAN = {
-				has_socialist_government = no
-				OR = {
+			is_subject = no
+			is_neighbor_of = PAN
+			OR = {
+				has_subject = PAN
+				PAN = {
 					is_subject = no
-					is_subject_of = ROOT
+					is_in_faction = no
+					NOT = { has_war_with = ROOT }
+					has_socialist_government = no
 				}
 			}
 		}
@@ -1062,6 +1061,8 @@ focus_tree = {
 		}
 		prerequisite = { focus = CEN_DEM_soclib_costa_rica }
 
+		will_lead_to_war_with = COS
+
 		ai_will_do = {
 			factor = 100
 			modifier = {
@@ -1761,7 +1762,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus CEN_DEM_federalism_is_socialism"
 			every_owned_state = {
 				limit = { is_core_of = ROOT }
-				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 1
 			}
 			custom_effect_tooltip = CENdem_centralisation_idea
 			hidden_effect = {

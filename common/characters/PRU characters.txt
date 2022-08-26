@@ -83,6 +83,7 @@ characters = {
 		portraits = {
 			army = {
 				small = "gfx/interface/advisors/PRU/PRU_oscar_raimundo_benavides_larrea.png"
+				large = "gfx/leaders/PRU/Portrait_Peru_Oscar_Benavides_Larrea_general.png"
 			}
 			civilian = {
 				large = "gfx/leaders/PRU/Portrait_Peru_Oscar_Benavides_Larrea.png"

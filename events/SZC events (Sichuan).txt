@@ -4062,7 +4062,7 @@ country_event = { #Continued ministerial infighting (QIE)
 			if = {
 				limit = {
 					QIE = {
-						has_government = authoritarian_democrat
+						has_character = QIE_wu_peifu
 					}
 				}
 				country_event = { id = sichuan.133 days = 2 } #NCERA pleased
@@ -4081,7 +4081,7 @@ country_event = { #Continued ministerial infighting (QIE)
 		SZC = { country_event = { id = sichuan.132 days = 2 } }
 		hidden_effect = {
 			if = {
-				limit = { has_government = authoritarian_democrat }
+				limit = { has_character = QIE_wu_peifu }
 				country_event = { id = sichuan.134 days = 4 } #NCERA protests
 			}
 		}
@@ -6592,7 +6592,7 @@ country_event = { #Notify LEP of Sichuan support
 	picture = GFX_report_event_QIE_soldiers_mobilize
 
 	trigger = {
-		SZC_has_armament_government = yes
+		SZC = { SZC_has_armament_government = yes }
 	}
 
 	is_triggered_only = yes

@@ -1,10 +1,10 @@
 PAR_foreign_policy = {
 	PAR_the_internationale = {
 		icon = GFX_decision_generic_nationalism
-		allowed = { always = no } # Activated by focus PAR_comrades
+		allowed = { always = no } # Activated by focus PAR_our_comrades
 		available = {
-			at_peace_or_same_enemies_as_FROM = yes
 			NOT = { country_exists = ARG }
+			at_peace_or_same_enemies_as_FROM = yes
 			OR = {
 				FOP = { is_in_faction_with = INT }
 				CHL = { is_in_faction_with = INT }
@@ -46,15 +46,15 @@ PAR_foreign_policy = {
 		}
 
 		visible = {
-			is_subject = no
 			can_declare_war_on = FROM
 			FROM = { owns_state = 901 }
 		}
 
 		cost = 20
-		days_remove = 20
+		days_remove = 25
 		fire_only_once = yes
 		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
 
 		targets = { 901.OWNER }
 		target_trigger = {
@@ -83,13 +83,11 @@ PAR_foreign_policy = {
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancelled PAR_reclaim_misiones target: [From.GetName]"
 			clear_decision_attack_AI = yes
-			clr_country_flag = imminent_war
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision PAR_reclaim_misiones target: [From.GetName]"
 			setup_decision_attack_AI = yes
-			set_country_flag = { flag = imminent_war days = 25 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 		}
 
@@ -133,20 +131,24 @@ PAR_foreign_policy = {
 	}
 	PAR_reclaim_bolivian_chaco = {
 		icon = GFX_decision_generic_civil_support
-		target_root_trigger = {	is_ai = no }
+
+		available = {
+			owns_state = 901
+		}
+
 		visible = {
-			is_subject = no
 			can_declare_war_on = FROM
-			ROOT = { owns_state = 901 }
 			FROM = { owns_state = 1027 }
 		}
 
 		cost = 20
-		days_remove = 45
+		days_remove = 25
 		fire_only_once = yes
 		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
 
 		targets = { 1027.OWNER }
+		target_root_trigger = {	is_ai = no }
 		target_trigger = {
 			can_declare_war_on = FROM
 		}
@@ -174,13 +176,11 @@ PAR_foreign_policy = {
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancelled PAR_reclaim_bolivian_chaco target: [From.GetName]"
 			clear_decision_attack_AI = yes
-			clr_country_flag = imminent_war
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision PAR_reclaim_bolivian_chaco target: [From.GetName]"
 			setup_decision_attack_AI = yes
-			set_country_flag = { flag = imminent_war days = 25 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 		}
 
@@ -195,8 +195,10 @@ PAR_foreign_policy = {
 	}
 	PAR_reclaim_igassu = {
 		icon = GFX_decision_generic_ignite_civil_war
-		target_root_trigger = {	is_ai = no }			# To limit checks - https://hackmd.io/@Yard1/targeted-decisions-performance
+
 		available = {
+			owns_state = 901
+			owns_state = 1027
 			FROM = {
 				OR = {
 					has_war_with = ENT #natpop Brazil going after French Guyana
@@ -211,18 +213,17 @@ PAR_foreign_policy = {
 		}
 
 		visible = {
-			is_subject = no
 			can_declare_war_on = FROM
-			ROOT = { owns_state = 901 }
-			ROOT = { owns_state = 1027 }
 		}
 
 		cost = 50
 		days_remove = 30
 		fire_only_once = yes
 		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
 
 		targets = { 1041.OWNER 1043.OWNER }
+		target_root_trigger = {	is_ai = no }			# To limit checks - https://hackmd.io/@Yard1/targeted-decisions-performance
 		target_trigger = {
 			can_declare_war_on = FROM
 		}
@@ -250,13 +251,11 @@ PAR_foreign_policy = {
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancelled PAR_reclaim_igassu target: [From.GetName]"
 			clear_decision_attack_AI = yes
-			clr_country_flag = imminent_war
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision PAR_reclaim_igassu target: [From.GetName]"
 			setup_decision_attack_AI = yes
-			set_country_flag = { flag = imminent_war days = 35 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 		}
 
@@ -308,7 +307,7 @@ PAR_get_cores = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision PAR_integrate_new_state"
+			log = "[GetDateText]: [Root.GetName]: Decision remove PAR_integrate_new_state target: [From.GetName]"
 			add_state_core = FROM
 			activate_targeted_decision = { target = FROM decision = PAR_raise_state_category_decision }
 			activate_targeted_decision = { target = FROM decision = ARG_expand_forestry_dec }
@@ -329,8 +328,8 @@ PAR_economic_development = {
 		fire_only_once = yes
 		state_target = yes
 		cancel_if_not_visible = yes
-		cost = 75
-		days_remove = 100
+		cost = 50
+		days_remove = 120
 		modifier = { civilian_factory_use = 3 }
 
 		ai_will_do = { factor = 100 }
@@ -343,7 +342,45 @@ PAR_economic_development = {
 	}
 
 	PAR_chaco_boreal_industrialization = {
-		icon = GFX_decision_cash_flow
+		icon = GFX_decision_generic_factory
+		allowed = { always = no }
+		visible = {
+			FROM = { is_owned_and_controlled_by = ROOT }
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		fire_only_once = yes
+		state_target = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		days_remove = 150
+		modifier = { civilian_factory_use = 3 }
+
+		ai_will_do = { factor = 100 }
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision PAR_chaco_boreal_industrialization target: [From.GetName]"
+			hidden_effect = {
+				country_event = par.27
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PAR_chaco_boreal_industrialization target: [From.GetName]"
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	PAR_arms_industry_investments = {
+		icon = GFX_decision_generic_industry
 		allowed = { always = no }
 		visible = {
 			FROM = { is_owned_and_controlled_by = ROOT }
@@ -361,26 +398,15 @@ PAR_economic_development = {
 
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision PAR_chaco_boreal_industrialization target: [From.GetName]"
-			hidden_effect = {
-				country_event = par.27
-			}
+			log = "[GetDateText]: [Root.GetName]: Decision PAR_arms_industry_investments target: [From.GetName]"
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove PAR_chaco_boreal_industrialization target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision remove PAR_arms_industry_investments target: [From.GetName]"
 			FROM = {
-				add_resource = {
-					type = steel
-					amount = 3
-				}
-				add_resource = {
-					type = tungsten
-					amount = 2
-				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
@@ -388,8 +414,48 @@ PAR_economic_development = {
 		}
 	}
 
+	PAR_chaco_boreal_resource_extraction = {
+		icon = GFX_decision_steel
+		allowed = { always = no }
+		visible = {
+			FROM = { is_owned_and_controlled_by = ROOT }
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		fire_only_once = yes
+		state_target = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		days_remove = 120
+		modifier = { civilian_factory_use = 3 }
+
+		ai_will_do = { factor = 100 }
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision PAR_chaco_boreal_resource_extraction target: [From.GetName]"
+			hidden_effect = {
+				country_event = par.27
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PAR_chaco_boreal_resource_extraction target: [From.GetName]"
+			FROM = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+			}
+		}
+	}
+
 	PAR_chaco_refineries = {
-		icon = GFX_decision_rubber
+		icon = GFX_decision_oil
 		allowed = { always = no }
 		visible = {
 			FROM = { is_owned_and_controlled_by = ROOT }
@@ -420,11 +486,15 @@ PAR_economic_development = {
 				set_technology = { synth_oil_experiments = 1 }
 			}
 			FROM = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = synthetic_refinery
-					level = 2
+					level = 1
 					instant_build = yes
+				}
+				add_resource = {
+					type = oil
+					amount = 3
 				}
 			}
 		}

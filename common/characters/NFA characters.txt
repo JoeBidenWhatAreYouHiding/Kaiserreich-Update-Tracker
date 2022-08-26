@@ -132,6 +132,7 @@ characters = {
 			idea_token = NFA_edouard_daladier
 			available = {
 				has_elected_government = yes
+				is_country_leader = no
 			}
 			traits = { KR_tireless_organiser }
 		}
@@ -156,6 +157,7 @@ characters = {
 			idea_token = NFA_pierre_etienne_flandin
 			available = {
 				has_elected_government = yes
+				is_country_leader = no
 			}
 			traits = { KR_the_pilot }
 		}
@@ -225,6 +227,7 @@ characters = {
 			idea_token = NFA_louis_marin
 			available = {
 				has_democratic_government = yes
+				is_country_leader = no
 			}
 			traits = { KR_compassionate_gentleman }
 		}

@@ -161,18 +161,9 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LIB_tax_exemption"
 			add_ideas = LIB_tax_exemption_idea
-			activate_targeted_decision = {
-				target = USA
-				decision = LIB_request_rifles_from_ally
-			}
-			activate_targeted_decision = {
-				target = USA
-				decision = LIB_request_artillery_from_ally
-			}
-			activate_targeted_decision = {
-				target = USA
-				decision = LIB_request_sup_equip_from_ally
-			}
+			activate_targeted_decision = { target = USA decision = LIB_request_rifles_from_ally }
+			activate_targeted_decision = { target = USA decision = LIB_request_artillery_from_ally }
+			activate_targeted_decision = { target = USA decision = LIB_request_sup_equip_from_ally }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -452,18 +443,9 @@ focus_tree = {
 				amount = 6
 				state = 298
 			}
-			activate_targeted_decision = {
-				target = GER
-				decision = LIB_request_rifles_from_ally
-			}
-			activate_targeted_decision = {
-				target = GER
-				decision = LIB_request_artillery_from_ally
-			}
-			activate_targeted_decision = {
-				target = GER
-				decision = LIB_request_sup_equip_from_ally
-			}
+			activate_targeted_decision = { target = GER decision = LIB_request_rifles_from_ally }
+			activate_targeted_decision = { target = GER decision = LIB_request_artillery_from_ally }
+			activate_targeted_decision = { target = GER decision = LIB_request_sup_equip_from_ally }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}

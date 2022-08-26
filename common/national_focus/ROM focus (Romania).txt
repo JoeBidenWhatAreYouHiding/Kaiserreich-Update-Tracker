@@ -101,6 +101,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ROM_reorient_economy"
 			custom_effect_tooltip = ROM_trade_tooltip
+			hidden_effect = {
+				activate_targeted_decision = { target = RUS decision = ROM_trade_decision }
+				activate_targeted_decision = { target = NFA decision = ROM_trade_decision }
+				activate_targeted_decision = { target = GRE decision = ROM_trade_decision }
+				activate_targeted_decision = { target = SER decision = ROM_trade_decision }
+			}
 		}
 	}
 
@@ -706,6 +712,7 @@ focus_tree = {
 				prioritize = { 46 }
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -713,6 +720,7 @@ focus_tree = {
 				prioritize = { 78 }
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -720,6 +728,7 @@ focus_tree = {
 				prioritize = { 79 }
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -727,6 +736,7 @@ focus_tree = {
 				prioritize = { 81 }
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -736,6 +746,7 @@ focus_tree = {
 					prioritize = { 77 }
 					limit = {
 						is_core_of = ROOT
+						is_in_home_area = yes
 					}
 					increase_state_category_by_one_level = yes
 				}
@@ -746,6 +757,7 @@ focus_tree = {
 					prioritize = { 772 }
 					limit = {
 						is_core_of = ROOT
+						is_in_home_area = yes
 					}
 					increase_state_category_by_one_level = yes
 				}
@@ -756,6 +768,7 @@ focus_tree = {
 					prioritize = { 84 }
 					limit = {
 						is_core_of = ROOT
+						is_in_home_area = yes
 					}
 					increase_state_category_by_one_level = yes
 				}
@@ -1140,6 +1153,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ROM_manoeuvres_in_the_carpathians"
 			add_war_support = 0.05
 			army_experience = 15
+			activate_targeted_decision = { target = HUN decision = ROM_issue_ultimatum }
 		}
 	}
 
@@ -1536,6 +1550,8 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
+				activate_targeted_decision = { target = THIS decision = ROM_leave_belgrade_pact_if_leader }
+				activate_targeted_decision = { target = RUS decision = ROM_negotiate_with_Russia }
 				country_event = romania.49
 				if = {
 					limit = {
@@ -1645,6 +1661,12 @@ focus_tree = {
 				limit = { has_country_flag = ROM_selectczc }
 				ROM_IG_CNTZ = yes
 				ROM_check_factions = yes
+			}
+			hidden_effect = {
+				activate_targeted_decision = { target = SER decision = ROM_demand_banat }
+				activate_targeted_decision = { target = THIS decision = ROM_economic_council_decision }
+				activate_targeted_decision = { target = THIS decision = ROM_economic_council_expansion }
+
 			}
 		}
 	}
@@ -3322,19 +3344,22 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = ROM
+					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = ROM
+					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = ROM
+					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -4848,15 +4873,24 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ROM_PNT_developmentalism"
 			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
 				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
 				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
 				increase_state_category_by_one_level = yes
 			}
 		}

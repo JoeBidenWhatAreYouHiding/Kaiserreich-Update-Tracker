@@ -476,6 +476,12 @@ focus_tree = {
 			focus = BAT_guest_workers
 		}
 
+		available = {
+			controls_state = 12
+			controls_state = 13
+			controls_state = 842
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BAT_public_works"
@@ -905,7 +911,7 @@ focus_tree = {
 			if = {
 				limit = { has_character = BAT_rolf_von_ungern_sternberg }
 				custom_effect_tooltip = tooltip_white_line
-				effect_tooltip = { deactivate_advisor = BAT_rolf_von_ungern_sternberg }
+				deactivate_advisor = BAT_rolf_von_ungern_sternberg
 				hidden_effect = { retire_character = BAT_rolf_von_ungern_sternberg }
 			}
 			custom_effect_tooltip = tooltip_white_line

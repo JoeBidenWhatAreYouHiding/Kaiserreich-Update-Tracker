@@ -1058,7 +1058,7 @@ shared_focus = {
 			add_idea = PUE_industrial_idea2
 		}
 		686 = {
-			increase_state_category_by_two_levels = yes
+			increase_state_category_by_one_level = yes
 		}
 	}
 }
@@ -1248,6 +1248,12 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus PUE_form_peoples_militias"
 		add_ideas = PUE_peoples_militias_idea
+		hidden_effect = {
+			if = {
+				limit = { has_template = "Milicia Nacional" }
+				delete_unit_template_and_units = { division_template = "Milicia Nacional" disband = yes } #no cheating
+			}
+		}
 		division_template = {
 			name = "Milicia Nacional"
 			regiments = {
@@ -1259,6 +1265,7 @@ shared_focus = {
 			priority = 0
 		}
 		random_owned_controlled_state = {
+			limit = { valid_state_for_spawning_friendly_unit = yes }
 			create_unit = {
 				division = "name = \"División San Juan\" division_template = \"Milicia Nacional\" start_experience_factor = 0.1 start_equipment_factor = 1"
 				owner = ROOT
@@ -1660,15 +1667,13 @@ shared_focus = {
 		log = "[GetDateText]: [Root.GetName]: Focus PUE_international_recognition_NAT"
 		custom_effect_tooltip = PUE_RECOGNITION_TT
 		hidden_effect = {
-			if = {
+			random_country_with_original_tag = {
+				original_tag_to_check = SPA
 				limit = {
-					SPA = { exists = yes }
+					has_socialist_government = no
+					has_civil_war = no
 				}
-				SPA = { country_event = pue.84 }
-				else_if = {
-					limit = { SPR = { exists = yes } }
-					SPR = { country_event = pue.84 }
-				}
+				country_event = pue.84
 			}
 			VEN = {
 				country_event = { id = pue.95 days = 3 }
@@ -1936,13 +1941,13 @@ shared_focus = {
 		add_political_power = 25
 		custom_effect_tooltip = PUE_RECOGNITION_TT
 		hidden_effect = {
-			if = {
-				limit = { country_exists = SPA }
-				SPA = { country_event = pue.84 }
-			}
-			else_if = {
-				limit = { country_exists = SPR }
-				SPR = { country_event = pue.84 }
+			random_country_with_original_tag = {
+				original_tag_to_check = SPA
+				limit = {
+					has_socialist_government = no
+					has_civil_war = no
+				}
+				country_event = pue.84
 			}
 			VEN = {
 				country_event = { id = pue.95 days = 3 }

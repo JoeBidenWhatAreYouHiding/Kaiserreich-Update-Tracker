@@ -258,6 +258,24 @@ characters = {
 			cost = 100
 		}
 	}
+	GEO_valerian_tevzadze = {
+		name = GEO_valerian_tevzadze
+		portraits = {
+
+			army = {
+				large = "gfx/leaders/GEO/Portrait_GEO_Valerian_Tevzadze.png"
+				small = "gfx/interface/advisors/GEO/Portrait_GEO_Valerian_Tevzadze.png"
+			}
+		}
+		corps_commander = {
+			traits = { commando }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
 	GEO_giorgi_abashvili = {
 		name = GEO_giorgi_abashvili
 		portraits = {

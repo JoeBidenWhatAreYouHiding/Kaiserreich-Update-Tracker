@@ -3209,17 +3209,28 @@ country_event = {
 	title = ice.200.t
 	desc = ice.200.d
 	picture = GFX_report_event_generic_run_on_the_banks
+
 	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			swap_ideas = {
+				remove_idea = ICE_ailing_economy
+				add_idea = ICE_failing_economy
+			}
+			activate_mission = ICE_Unemployment_Crisis
+		}
+	}
 
 	option = {
 		name = ice.200.a
 		add_stability = -0.25
-		swap_ideas = {
-			remove_idea = ICE_ailing_economy
-			add_idea = ICE_failing_economy
-		}
-		hidden_effect = {
-			set_country_flag = ICE_black_monday
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = ICE_ailing_economy
+				add_idea = ICE_failing_economy
+			}
+			activate_mission = ICE_Unemployment_Crisis
 		}
 	}
 }

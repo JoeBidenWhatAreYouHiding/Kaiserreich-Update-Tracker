@@ -1731,7 +1731,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = LAT_revolutionnary_soldiers
+		id = LAT_revolutionary_soldiers
 		icon = GFX_goal_reform_socialist_army
 		cost = 7
 		prerequisite = {
@@ -1745,7 +1745,7 @@ focus_tree = {
 		y = 1
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LAT_revolutionnary_soldiers"
+			log = "[GetDateText]: [Root.GetName]: Focus LAT_revolutionary_soldiers"
 			swap_ideas = {
 				remove_idea = LAT_army_1
 				add_idea = LAT_communist_army
@@ -2180,11 +2180,15 @@ focus_tree = {
 				limit = { has_trait = INT_russian_exile_trait }
 				remove_unit_leader_trait = INT_russian_exile_trait
 			}
-
+			hidden_effect = {
+				if = {
+					limit = { has_template = "Pekhotnaya Diviziya" }
+					delete_unit_template_and_units = { division_template = "Pekhotnaya Diviziya" disband = yes } #no cheating
+				}
+			}
 			division_template = {
 				name = "Pekhotnaya Diviziya"
 				division_names_group = SOV_INF_01
-				is_locked = yes
 				regiments = {
 					infantry = { x = 0 y = 0 }
 					infantry = { x = 0 y = 1 }
@@ -2200,6 +2204,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 195 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3"
 					owner = LAT
@@ -2208,6 +2213,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 219 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3"
 					owner = LAT

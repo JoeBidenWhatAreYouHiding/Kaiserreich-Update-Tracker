@@ -319,9 +319,16 @@ focus_tree = {
 					popularity = -0.05
 				}
 			}
-			add_popularity = {
-				ideology = social_conservative
-				popularity = -0.1
+			if = {
+				limit = {
+					NOT = {
+						has_government = social_conservative
+					}
+				}
+				add_popularity = {
+					ideology = social_conservative
+					popularity = -0.1
+				}
 			}
 			add_stability = 0.05
 			custom_effect_tooltip = tooltip_white_line
@@ -1252,6 +1259,9 @@ focus_tree = {
 			117 = { is_owned_by_ROOT_or_subject = yes }
 			controls_all_owned_states = yes
 		}
+		bypass = {
+			has_autonomy_state = kr_federated_state
+		}
 		relative_position_id = SRD_tackle_institutional_crisis
 		x = 12
 		y = 0
@@ -1407,6 +1417,9 @@ focus_tree = {
 		id = SRD_italian_irredentism
 		icon = GFX_SRD_irridentism
 		cost = 6
+		available = {
+			is_subject = no
+		}
 		prerequisite = {
 			focus = SRD_italia_riunita
 		}
@@ -1428,6 +1441,7 @@ focus_tree = {
 		icon = GFX_focus_chi_reach_out_to_france
 		cost = 6
 		available = {
+			is_subject = no
 			is_in_faction_with = NFA
 			NOT = { country_exists = FRA }
 		}
@@ -1519,6 +1533,9 @@ focus_tree = {
 		id = SRD_airports_for_italy
 		icon = GFX_goal_industry_air
 		cost = 5
+		available = {
+			owns_state = 2
+		}
 		relative_position_id = SRD_university_of_turin
 		x = -2
 		y = 1
@@ -1649,6 +1666,7 @@ focus_tree = {
 			focus = SRD_fate_of_fiat
 		}
 		available = {
+			owns_state = 2
 			surrender_progress < 0.05
 		}
 		ai_will_do = {
@@ -1830,8 +1848,8 @@ focus_tree = {
 			factor = 3
 		}
 		available = {
+			owns_state = 2
 			has_war = no
-			has_country_flag = ITA_united_italia
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRD_economic_miracle"
@@ -1908,7 +1926,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			add_tech_bonus = {
-				name = SRD_create_carbosarda
+				name = SRD_nationalise_sardinian_railways
 				ahead_reduction = 3
 				bonus = 1
 				uses = 1
@@ -1925,7 +1943,7 @@ focus_tree = {
 			controls_state = 114
 		}
 		bypass = {
-			114 = { has_state_flag = sardinia_coal_mines_developed }
+			has_global_flag = sardinia_coal_mines_developed
 		}
 		prerequisite = {
 			focus = SRD_finish_the_diga_di_santa_chiara
@@ -1938,6 +1956,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRD_create_carbosarda"
+			set_global_flag = sardinia_coal_mines_developed
 			add_resource = {
 				type = steel
 				amount = 12
@@ -2910,6 +2929,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
+				limit = { is_in_home_area = yes }
 				create_unit = {
 					division = "division_template = \"Arditi Distruttori della Regia Aeuronautica\" start_experience_factor = 0.8"
 					owner = ROOT
@@ -3336,6 +3356,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
+				limit = { is_in_home_area = yes }
 				create_unit = {
 					division = "division_template = \"Brigata Sassari\" start_experience_factor = 0.4"
 					owner = ROOT
@@ -3660,6 +3681,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
+				limit = { is_in_home_area = yes }
 				create_unit = {
 					division = "division_template = \"Fanteria di Marina\" start_experience_factor = 0.8"
 					owner = ROOT
@@ -3945,6 +3967,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
+				limit = { is_in_home_area = yes }
 				create_unit = {
 					division = "division_template = \"Bersaglieri\" start_experience_factor = 0.8"
 					owner = ROOT

@@ -96,7 +96,7 @@ characters = {
 		name = CZE_alois_podhajsky
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/CZE/Portrait_CZE_Alois_Podhajsky_alt.png"
+				large = "gfx/leaders/CZE/Portrait_CZE_Alois_Podhajsky.png"
 			}
 			army = {
 				large = "gfx/leaders/CZE/Portrait_CZE_Alois_Podhajsky.png"

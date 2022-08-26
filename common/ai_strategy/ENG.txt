@@ -73,6 +73,21 @@ ENG_the_wooden_wall = {
 	}
 }
 
+ENG_produce_synthetic_oil = {
+	allowed = {
+		original_tag = ENT
+	}
+	enable = {
+		date > 1938.1.1
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = 8
+	}
+}
+
 ENG_protect_atlantic_bases = {
 	allowed = {
 		original_tag = ENG
@@ -86,7 +101,7 @@ ENG_protect_atlantic_bases = {
 	ai_strategy = {
 		type = theatre_distribution_demand_increase
 		id = 704 #Saint Helena
-		value = 2
+		value = 1
 	}
 }
 

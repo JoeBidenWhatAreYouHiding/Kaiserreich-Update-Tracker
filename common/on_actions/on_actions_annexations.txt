@@ -119,14 +119,18 @@ on_actions = {
 			#set_variable = { HUN.release_event = 1024 }
 
 			#Slovakia
-			70 = { set_state_flag = annexation_trigger_state } #Western Slovakia
+			70 = { set_state_flag = annexation_trigger_state } #Slovakia
 			#set_variable = { SLO.release_event = 1025 }
 
-			#Southern Slovakia
-			664 = { set_state_flag = annexation_trigger_state } #Southern Slovakia
-			#set_variable = { 664.release_event = 1106 }
+			#Pressburg
+			1090 = { set_state_flag = annexation_trigger_state } #Pressburg
+			#set_variable = { 1090.release_event = 1111 }
 
-			#Slovakia - Transcarpathia
+			#Danubian Plain
+			71 = { set_state_flag = annexation_trigger_state } #Danubian Plain
+			#set_variable = { 71.release_event = 1106 }
+
+			#Transcarpathia
 			73 = { set_state_flag = annexation_trigger_state } #Transcarpathia
 			#set_variable = { 73.release_event = 1026 }
 
@@ -158,9 +162,17 @@ on_actions = {
 			102 = { set_state_flag = annexation_trigger_state } #Carniola
 			#set_variable = { SLV.release_event = 1033 }
 
-			#Austrian Littoral
+			#Istria
 			736 = { set_state_flag = annexation_trigger_state } #Istria
 			#set_variable = { 736.release_event = 1034 }
+
+			#Gorizia
+			683 = { set_state_flag = annexation_trigger_state } #Gorizia
+			#set_variable = { 683.release_event = 1109 }
+
+			#Fiume
+			103 = { set_state_flag = annexation_trigger_state } #Fiume
+			#set_variable = { 103.release_event = 1110 }
 
 			#Trieste
 			488 = { set_state_flag = annexation_trigger_state } #Trieste

@@ -425,9 +425,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HON_i_love_the_ufc"
 			add_political_power = -50
-			312 = {
-				increase_state_category_by_two_levels = yes
-			}
+			312 = { increase_state_category_by_one_level = yes }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 	}

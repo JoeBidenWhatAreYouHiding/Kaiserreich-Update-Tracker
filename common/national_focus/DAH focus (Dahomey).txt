@@ -490,14 +490,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus DAH_importing_arms"
-			activate_targeted_decision = {
-				target = NFA
-				decision = DAH_Import_Arms
-			}
-			activate_targeted_decision = {
-				target = CAN
-				decision = DAH_Import_Arms
-			}
+			activate_targeted_decision = { target = NFA decision = DAH_Import_Arms }
+			activate_targeted_decision = { target = CAN decision = DAH_Import_Arms }
 		}
 	}
 

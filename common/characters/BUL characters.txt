@@ -1,4 +1,78 @@
 characters = {
+	BUL_ferdinand_sakskoburggotski = {
+		name = BUL_ferdinand_sakskoburggotski_regnal
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BUL/Portrait_BUL_Tsar_Ferdinand.png"
+			}
+		}
+		country_leader = {
+			desc = BUL_ferdinand_sakskoburggotski_leader_desc
+			ideology = social_democrat_subtype
+			traits = { BUL_great_restorer }
+		}
+		country_leader = {
+			desc = BUL_ferdinand_sakskoburggotski_leader_desc
+			ideology = social_liberal_subtype
+			traits = { BUL_great_restorer }
+		}
+		country_leader = {
+			desc = BUL_ferdinand_sakskoburggotski_leader_desc
+			ideology = market_liberal_subtype
+			traits = { BUL_great_restorer }
+		}
+		country_leader = {
+			desc = BUL_ferdinand_sakskoburggotski_leader_desc
+			ideology = social_conservative_subtype
+			traits = { BUL_great_restorer }
+		}
+		country_leader = {
+			desc = BUL_ferdinand_sakskoburggotski_leader_desc
+			ideology = authoritarian_democrat_subtype
+			traits = { BUL_great_restorer }
+		}
+	}
+	BUL_boris_sakskoburggotski = {
+		name = BUL_boris_sakskoburggotski
+		portraits = {
+			army = {
+				small = "gfx/interface/advisors/BUL/BUL_boris_sakskoburggotski.png"
+				large = "gfx/leaders/BUL/Portrait_BUL_Boris.png"
+			}
+			civilian = {
+				large = "gfx/leaders/BUL/Portrait_BUL_Boris.png"
+			}
+		}
+		field_marshal = {
+			traits = { infantry_officer politically_connected inspirational_leader }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BUL_kyril_sakskoburggotski = {
+		name = BUL_kyril_sakskoburggotski
+		portraits = {
+			army = {
+				small = "gfx/interface/advisors/BUL/BUL_kyril_sakskoburggotski.png"
+				large = "gfx/leaders/BUL/Portrait_BUL_Prince_Kyril.png"
+			}
+			civilian = {
+				large = "gfx/leaders/BUL/Portrait_BUL_Prince_Kyril.png"
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
 	BUL_vladimir_vazov = {
 		name = BUL_vladimir_vazov
 		portraits = {
@@ -187,39 +261,6 @@ characters = {
 			ideology = radical_socialist_subtype
 		}
 	}
-	BUL_ferdinand_sakskoburggotski = {
-		name = BUL_ferdinand_sakskoburggotski_regnal
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BUL/Portrait_BUL_Tsar_Ferdinand.png"
-			}
-		}
-		country_leader = {
-			desc = BUL_ferdinand_sakskoburggotski_leader_desc
-			ideology = social_democrat_subtype
-			traits = { BUL_great_restorer }
-		}
-		country_leader = {
-			desc = BUL_ferdinand_sakskoburggotski_leader_desc
-			ideology = social_liberal_subtype
-			traits = { BUL_great_restorer }
-		}
-		country_leader = {
-			desc = BUL_ferdinand_sakskoburggotski_leader_desc
-			ideology = market_liberal_subtype
-			traits = { BUL_great_restorer }
-		}
-		country_leader = {
-			desc = BUL_ferdinand_sakskoburggotski_leader_desc
-			ideology = social_conservative_subtype
-			traits = { BUL_great_restorer }
-		}
-		country_leader = {
-			desc = BUL_ferdinand_sakskoburggotski_leader_desc
-			ideology = authoritarian_democrat_subtype
-			traits = { BUL_great_restorer }
-		}
-	}
 	BUL_kimon_georgiev = {
 		name = BUL_kimon_georgiev
 		portraits = {
@@ -280,50 +321,6 @@ characters = {
 			cost = 100
 		}
 	}
-	BUL_boris_sakskoburggotski = {
-		name = BUL_boris_sakskoburggotski
-		portraits = {
-			army = {
-				small = "gfx/interface/advisors/BUL/BUL_boris_sakskoburggotski.png"
-				large = "gfx/leaders/BUL/Portrait_BUL_Boris.png"
-			}
-			civilian = {
-				large = "gfx/leaders/BUL/Portrait_BUL_Boris.png"
-			}
-		}
-		field_marshal = {
-			traits = { infantry_officer politically_connected inspirational_leader }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-		}
-		country_leader = {
-			desc = BUL_boris_sakskoburggotski_leader_desc
-			ideology = social_democrat_subtype
-		}
-		country_leader = {
-			desc = BUL_boris_sakskoburggotski_leader_desc
-			ideology = social_liberal_subtype
-		}
-		country_leader = {
-			desc = BUL_boris_sakskoburggotski_leader_desc
-			ideology = market_liberal_subtype
-		}
-		country_leader = {
-			desc = BUL_boris_sakskoburggotski_leader_desc
-			ideology = social_conservative_subtype
-		}
-		country_leader = {
-			desc = BUL_boris_sakskoburggotski_leader_desc
-			ideology = authoritarian_democrat_subtype
-		}
-		country_leader = {
-			desc = BUL_boris_sakskoburggotski_leader_desc
-			ideology = paternal_autocrat_subtype
-		}
-	}
 	BUL_nikola_nedev = {
 		name = BUL_nikola_nedev
 		portraits = {
@@ -373,6 +370,9 @@ characters = {
 			defense_skill = 2
 			planning_skill = 3
 			logistics_skill = 2
+		}
+		country_leader = {
+			ideology = authoritarian_democrat_subtype
 		}
 		advisor = {
 			slot = second_in_command
@@ -560,26 +560,6 @@ characters = {
 			}
 			traits = { KR_MHC_army_logistics_2 }
 			cost = 100
-		}
-	}
-	BUL_kyril_sakskoburggotski = {
-		name = BUL_kyril_sakskoburggotski
-		portraits = {
-			army = {
-				small = "gfx/interface/advisors/BUL/BUL_kyril_sakskoburggotski.png"
-				large = "gfx/leaders/BUL/Portrait_BUL_Prince_Kyril.png"
-			}
-			civilian = {
-				large = "gfx/leaders/BUL/Portrait_BUL_Prince_Kyril.png"
-			}
-		}
-		corps_commander = {
-			traits = { politically_connected }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
 		}
 	}
 	BUL_ivan_variklechkov = {

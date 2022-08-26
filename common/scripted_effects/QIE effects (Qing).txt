@@ -356,3 +356,27 @@ QIE_recruit_new_zhili_generals = {
 	event_target:QIE_guo_jijiao_target = { set_nationality = ROOT }
 	event_target:QIE_wei_yisan_target = { set_nationality = ROOT }
 }
+
+QIE_reduce_fractured_empire = {
+	if = {
+		limit = { has_idea = QIE_fractured_empire }
+		swap_ideas = {
+			remove_idea = QIE_fractured_empire
+			add_idea = QIE_fractured_empire2
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_fractured_empire2 }
+		swap_ideas = {
+			remove_idea = QIE_fractured_empire2
+			add_idea = QIE_fractured_empire3
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_fractured_empire3 }
+		remove_ideas = QIE_fractured_empire3
+	}
+	else = {
+		add_stability = 0.025
+	}
+}

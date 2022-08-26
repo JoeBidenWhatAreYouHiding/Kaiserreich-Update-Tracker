@@ -899,7 +899,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 25
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -923,7 +923,6 @@ foreign_politics = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision BUL_Restore_Thrace target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -1006,6 +1005,34 @@ foreign_politics = {
 				}
 				second_weltkrieg_can_start = yes
 			}
+			if = {
+				limit = {
+					is_in_faction_with = INT
+					FROM = {
+						is_in_faction_with = SER 
+					}
+					SER = {
+						is_faction_leader = yes # If FROM is in Belgrade Pact, only attack if FRA/RSU is at war with GER
+					}
+				}
+				INT = {
+					has_war_with = GER
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction_with = RUS
+					FROM = {
+						is_in_faction_with = SER 
+					}
+					SER = {
+						is_faction_leader = yes # If FROM is in Belgrade Pact, only attack if FRA/RSU is at war with GER
+					}
+				}
+				RUS = {
+					has_war_with = GER
+				}
+			}
 		}
 
 		visible = {
@@ -1042,7 +1069,7 @@ foreign_politics = {
 		}
 
 		cost = 25
-		days_remove = 14
+		days_remove = 25
 		fire_only_once = yes
 		war_with_target_on_remove = yes
 
@@ -1070,7 +1097,6 @@ foreign_politics = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision BUL_Opportunistic_Strike target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -1132,7 +1158,7 @@ foreign_politics = {
 		}
 
 		cost = 20
-		days_remove = 20
+		days_remove = 25
 		fire_only_once = yes
 		war_with_target_on_remove = yes
 		cancel_if_not_visible = yes
@@ -1212,9 +1238,13 @@ foreign_politics = {
 			}
 		}
 
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled BUL_Attack_Austria target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision BUL_Attack_Austria target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -1386,7 +1416,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 25
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -1410,7 +1440,6 @@ foreign_politics = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision BUL_Invade_Ottomans target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
@@ -1496,7 +1525,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 25
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -1513,9 +1542,13 @@ foreign_politics = {
 			}
 		}
 
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled BUL_YUG_Subjugate_Balkan_States target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision BUL_YUG_Subjugate_Balkan_States target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}

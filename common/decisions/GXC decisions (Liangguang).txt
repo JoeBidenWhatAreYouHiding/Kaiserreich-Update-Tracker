@@ -1040,6 +1040,7 @@ GXC_UPC_reunification_decisions = {
 			if = {
 				limit = {
 					FROM = {
+						is_ai = yes
 						OR = {
 							has_country_flag = TIB_Democratic_path
 							AND = {

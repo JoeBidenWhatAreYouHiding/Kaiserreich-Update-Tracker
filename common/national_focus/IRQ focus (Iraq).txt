@@ -766,12 +766,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRQ_Program_Redistribution_Miri_Land"
-			every_owned_state = {
-				limit = {
-					is_core_of = IRQ
-				}
-				increase_state_category_by_one_level = yes
-			}
+			349 = { increase_state_category_by_one_level = yes }
+			676 = { increase_state_category_by_one_level = yes }
 			add_ideas = IRQ_Miri_Distribution
 			custom_effect_tooltip = irq_program_redistribution_land
 			add_to_variable = {
@@ -1690,6 +1686,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 291 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Sixth Army Division\" start_experience_factor = 0.1"
 					allow_spawning_on_enemy_provs = yes
@@ -1798,7 +1795,13 @@ focus_tree = {
 
 		available = {
 			has_tech = mechanised_infantry
-			has_design_based_on = light_tank_chassis
+			if = {
+				limit = { has_dlc = "No Step Back" }
+				has_design_based_on = light_tank_chassis
+			}
+			else = {
+				has_tech = basic_light_tank
+			}
 		}
 
 		x = -1
@@ -3523,12 +3526,13 @@ focus_tree = {
 			is_subject = no
 			NOT = { has_war_with = EGY }
 		}
+		bypass = {
+			EGY = { is_faction_leader = no }
+		}
 
 		x = 5
 		y = 1
 		relative_position_id = IRQ_Bismarck_of_the_Arabs
-
-		available_if_capitulated = yes
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRQ_Challenge_Egyptian_Domination"
@@ -3554,29 +3558,22 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { is_in_faction_with = EGY }
-				leave_faction = yes
-			}
-			every_other_country = {
-				limit = {
-					is_in_faction_with = EGY
-					OR = {
-						tag = HEJ
-						tag = IRQ
-						tag = SAU
-						tag = JBS
-						tag = YEM
-						tag = SOM
+				limit = { EGY = { is_faction_leader = yes } }
+				if = {
+					limit = { is_in_faction_with = EGY }
+					leave_faction = yes
+				}
+				every_other_country = {
+					limit = {
+						is_in_faction_with = EGY
+						is_subject = no
+						is_in_middle_east = yes
+						NOT = { tag = EGY }
 					}
+					country_event = { id = irqfor.7 hours = 2 random_hours = 8 }
+					custom_effect_tooltip = if_they_accept_tt
+					effect_tooltip = { leave_faction = yes }
 				}
-				leave_faction = yes
-			}
-			every_other_country = {
-				limit = {
-					is_in_faction_with = EGY
-					has_guaranteed = ROOT
-				}
-				diplomatic_relation = { country = ROOT relation = guarantee active = no }
 			}
 		}
 	}
@@ -3622,6 +3619,7 @@ focus_tree = {
 		relative_position_id = IRQ_Challenge_Egyptian_Domination
 
 		available_if_capitulated = yes
+		will_lead_to_war_with = SYR
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -3695,6 +3693,7 @@ focus_tree = {
 		relative_position_id = IRQ_Challenge_Egyptian_Domination
 
 		available_if_capitulated = yes
+		will_lead_to_war_with = HEJ
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -3789,6 +3788,8 @@ focus_tree = {
 		relative_position_id = IRQ_Challenge_Egyptian_Domination
 
 		available_if_capitulated = yes
+		will_lead_to_war_with = JBS
+		will_lead_to_war_with = SAU
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -3875,6 +3876,7 @@ focus_tree = {
 		relative_position_id = IRQ_Challenge_Egyptian_Domination
 
 		available_if_capitulated = yes
+		will_lead_to_war_with = PER
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 

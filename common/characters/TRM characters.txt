@@ -408,17 +408,17 @@ characters = {
 		}
 	}
 
-	RUS_sergey_boyno_rodchevsky = {
-		name = RUS_sergey_boyno_rodchevsky
+	RUS_sergey_boyno_rodzevich = {
+		name = RUS_sergey_boyno_rodzevich
 		portraits = {
 			civilian = {
-				small = "gfx/interface/advisors/RUS/RUS_sergey_boyno_rodchevsky.png"
+				small = "gfx/interface/advisors/RUS/RUS_sergey_boyno_rodzevich.png"
 			}
 		}
 		advisor = {
 			slot = high_command
 			ledger = air
-			idea_token = RUS_sergey_boyno_rodchevsky
+			idea_token = RUS_sergey_boyno_rodzevich
 			traits = { KR_MHC_air_superiority_2 }
 			cost = 100
 		}

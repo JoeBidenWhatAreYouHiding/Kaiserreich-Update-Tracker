@@ -389,8 +389,11 @@ country_event = { #Fate of Anatolia
 
 	immediate = {
 		hidden_effect = {
-			OTT_remove_ottoman_ambitions_claims = yes
-			TUR = { OTT_changes_into_turkey = yes }
+			TUR = {
+				OTT_remove_ottoman_ambitions_claims = yes
+				OTT_changes_into_turkey = yes
+				load_focus_tree = turkish_republic_tree
+			}
 		}
 	}
 
@@ -398,17 +401,17 @@ country_event = { #Fate of Anatolia
 		name = annex.4002.a
 		ai_chance = {
 			base = 100
-			#modifier = {
-			#	factor = 0.2
-			#	OR = {
-			#		tag = GER
-			#		tag = GEX
-			#		tag = AUS
-			#		tag = HUN
-			#		tag = BUL
-			#	}
-			#	has_socialist_government = no
-			#}
+			modifier = {
+				factor = 0.2
+				OR = {
+					tag = GER
+					tag = GEX
+					tag = AUS
+					tag = HUN
+					tag = BUL
+				}
+				has_socialist_government = no
+			}
 		}
 		set_temp_variable = { tag_to_release = TUR }
 		every_owned_state = {
@@ -424,28 +427,47 @@ country_event = { #Fate of Anatolia
 		}
 	}
 
-	#option = { #Ottomans - disabled for now
-	#	name = annex.4002.b
-	#	trigger = {
-	#		OR = {
-	#			tag = GER
-	#			tag = GEX
-	#			tag = AUS
-	#			tag = HUN
-	#			tag = BUL
-	#		}
-	#		has_socialist_government = no
-	#	}
-	#	ai_chance = {
-	#		base = 80
-	#	}
-	#	set_temp_variable = { tag_to_release = TUR }
-	#	every_owned_state = {
-	#		limit = { should_transfer_anatolian_state = yes }
-	#		transfer_state_to = var:tag_to_release
-	#	}
-	#	puppet_released_tag = yes
-	#}
+	option = { #Ottomans
+		name = annex.4002.b
+		trigger = {
+			has_socialist_government = no
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 80
+				OR = {
+					tag = GER
+					tag = GEX
+					tag = AUS
+					tag = HUN
+					tag = BUL
+				}
+			}
+		}
+		hidden_effect = {
+			OTT = {
+				reserve_dynamic_country = no
+				clr_country_flag = TUR_is_ottomans
+			}
+		}
+		set_temp_variable = { tag_to_release = TUR }
+		every_owned_state = {
+			limit = { should_transfer_anatolian_state = yes }
+			transfer_state_to = var:tag_to_release
+		}
+		puppet_released_tag = yes
+		var:tag_to_release = {
+			set_cosmetic_tag = TUR_ottoman_empire
+			set_country_flag = TUR_is_ottomans
+			hidden_effect = {
+				OTT_post_defeat_setup = yes
+				OTT_create_abdulmecid = yes
+				remove_ideas = TUR_a_throne_without_sultan
+				load_focus_tree = ottoman_provisional_government_tree
+			}
+		}
+	}
 
 	option = { #occupation
 		name = annex.occupation
@@ -848,9 +870,15 @@ country_event = { #Fate of Sinai
 		name = annex.4006.a
 		trigger = {
 			NOT = {
-				tag = OTT
-				tag = SYR
-				tag = PAL
+				original_tag = SYR
+				original_tag = PAL
+				AND = {
+					tag = OTT
+					OR = {
+						owns_state = 454 #Jerusalem
+						owns_state = 753 #Suez
+					}
+				}
 			}
 			EGY = { ROOT_can_grant_land = yes }
 		}
@@ -860,8 +888,8 @@ country_event = { #Fate of Sinai
 				factor = 0.5
 				var:454.owner = {
 					OR = {
-						tag = SYR
-						tag = PAL
+						original_tag = SYR
+						original_tag = PAL
 					}
 					is_ally_with = ROOT
 				}
@@ -879,14 +907,14 @@ country_event = { #Fate of Sinai
 		trigger = {
 			NOT = {
 				tag = OTT
-				tag = SYR
-				tag = PAL
+				original_tag = SYR
+				original_tag = PAL
 			}
 			var:454.owner = {
 				OR = {
 					tag = OTT
-					tag = SYR
-					tag = PAL
+					original_tag = SYR
+					original_tag = PAL
 				}
 				ROOT_can_grant_land = yes
 			}
@@ -908,10 +936,37 @@ country_event = { #Fate of Sinai
 	option = { #Integrate
 		name = annex.integration
 		trigger = {
+			original_tag = EGY
+		}
+		ai_chance = {
+			base = 100
+		}
+		add_state_core = 453 #Sinai
+		recheck_annexations = yes
+	}
+
+	option = { #Integrate
+		name = annex.integration
+		trigger = {
 			OR = {
-				tag = OTT
-				tag = SYR
-				tag = PAL
+				original_tag = SYR
+				original_tag = PAL
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		add_state_claim = 453 #Sinai
+		recheck_annexations = yes
+	}
+
+	option = { #Integrate
+		name = annex.integration
+		trigger = {
+			tag = OTT
+			OR = {
+				owns_state = 454 #Jerusalem
+				owns_state = 753 #Suez
 			}
 		}
 		ai_chance = {
@@ -923,6 +978,20 @@ country_event = { #Fate of Sinai
 
 	option = { #occupy
 		name = annex.occupation
+		trigger = {
+			NOT = {
+				original_tag = EGY
+				original_tag = SYR
+				original_tag = PAL
+				AND = {
+					tag = OTT
+					OR = {
+						owns_state = 454 #Jerusalem
+						owns_state = 753 #Suez
+					}
+				}
+			}
+		}
 		ai_chance = { base = 0 }
 		occupy_small_country = yes
 		set_country_flag = SINAI_CONQ
@@ -972,7 +1041,12 @@ country_event = { #Fate of Cyrenaica
 	option = { #liberate CYR
 		name = annex.4007.a
 		trigger = {
-			NOT = { tag = OTT }
+			NOT = {
+				AND = {
+					tag = OTT
+					has_country_flag = OTT_change_to_turkey
+				}
+			}
 			448 = { is_valid_annexation_state = no } #Tripoli
 		}
 		ai_chance = {
@@ -985,7 +1059,12 @@ country_event = { #Fate of Cyrenaica
 	option = { #liberate LBA
 		name = annex.4007.b
 		trigger = {
-			NOT = { tag = OTT }
+			NOT = {
+				AND = {
+					tag = OTT
+					has_country_flag = OTT_change_to_turkey
+				}
+			}
 			448 = { is_valid_annexation_state = yes } #Tripoli
 		}
 		ai_chance = {
@@ -1018,7 +1097,12 @@ country_event = { #Fate of Cyrenaica
 	option = { #liberate LBA and TRP
 		name = annex.4007.c
 		trigger = {
-			NOT = { tag = OTT }
+			NOT = {
+				AND = {
+					tag = OTT
+					has_country_flag = OTT_change_to_turkey
+				}
+			}
 			448 = { is_valid_annexation_state = yes } #Tripoli
 		}
 		ai_chance = {
@@ -1035,6 +1119,7 @@ country_event = { #Fate of Cyrenaica
 		name = annex.4007.d
 		trigger = {
 			tag = OTT
+			NOT = { has_country_flag = OTT_change_to_turkey }
 		}
 		ai_chance = {
 			base = 100
@@ -1046,7 +1131,12 @@ country_event = { #Fate of Cyrenaica
 	option = { #occupy
 		name = annex.occupation
 		trigger = {
-			NOT = { tag = OTT }
+			NOT = {
+				AND = {
+					tag = OTT
+					has_country_flag = OTT_change_to_turkey
+				}
+			}
 		}
 		ai_chance = { base = 0 }
 		occupy_small_country = yes
@@ -1182,6 +1272,7 @@ country_event = { #Fate of Georgia
 		hidden_effect = {
 			add_to_temp_array = { core_removal_array = GEO }
 			remove_all_cores_and_claims_of_tags = yes
+			585 = { retain_state = yes } #Batumi
 			GEO = {
 				add_state_core = 231 #Sakartvelo
 				add_state_core = 585 #Batumi
@@ -1386,7 +1477,7 @@ country_event = { #Fate of Azerbaijan
 	option = { #puppet
 		name = annex.4010.a
 		trigger = {
-			NOT = { tag = PER }
+			NOT = { original_tag = PER }
 		}
 		ai_chance = {
 			base = 50
@@ -1455,8 +1546,11 @@ country_event = { #Fate of Azerbaijan
 		name = annex.integration
 		trigger = {
 			OR = {
-				tag = OTT
-				tag = PER
+				original_tag = PER
+				AND = {
+					original_tag = TUR
+					owns_state = 998 #Highland Karabakh
+				}
 			}
 		}
 		ai_chance = {
@@ -1486,7 +1580,7 @@ country_event = { #Fate of Azerbaijan
 	option = { #Give to Russia
 		name = annex.4010.c
 		trigger = {
-			NOT = { tag = PER }
+			NOT = { original_tag = PER }
 			is_russian_tag = no
 			var:234.owner = {
 				is_russian_tag = yes
@@ -1510,8 +1604,11 @@ country_event = { #Fate of Azerbaijan
 		trigger = {
 			is_russian_tag = no
 			NOT = {
-				tag = OTT
-				tag = PER
+				original_tag = PER
+				AND = {
+					original_tag = TUR
+					owns_state = 998 #Highland Karabakh
+				}
 			}
 		}
 		ai_chance = { base = 0 }
@@ -1644,6 +1741,9 @@ country_event = { #Fate of Armenia
 			transfer_state_to = var:tag_to_release
 		}
 		puppet_released_tag = yes
+		hidden_effect = {
+			ARM = { remove_targeted_decision = { target = GER decision = ARM_join_reichspakt } }
+		}
 	}
 
 	option = { #Integrate
@@ -1756,6 +1856,7 @@ country_event = { #Fate of Armenia
 		trigger = {
 			is_russian_tag = no
 			NOT = { tag = PER }
+			NOT = { tag = OTT }
 		}
 		ai_chance = { base = 0 }
 		occupy_small_country = yes
@@ -1831,7 +1932,10 @@ country_event = { #Fate of Kars
 				tag = TUR
 				AND = {
 					is_russian_tag = yes
-					owns_state = 230 #Yerevan
+					OR = {
+						owns_state = 230 #Yerevan
+						owns_state = 585 #Batum
+					}
 				}
 			}
 		}
@@ -1850,7 +1954,10 @@ country_event = { #Fate of Kars
 				tag = TUR
 				AND = {
 					is_russian_tag = yes
-					owns_state = 230 #Yerevan
+					OR = {
+						owns_state = 230 #Yerevan
+						owns_state = 585 #Batum
+					}
 				}
 			}
 		}
@@ -3145,30 +3252,16 @@ country_event = { #Fate of Kurdistan
 		name = annex.integration
 		trigger = {
 			original_tag = TUR
-			OR = {
-				tag = OTT
-				350 = { is_valid_annexation_state = yes } #Diyarbakir
-				352 = { is_valid_annexation_state = yes } #Van
-				819 = { is_valid_annexation_state = yes } #Sulaymaniyah
-			}
 		}
 		ai_chance = {
 			base = 1000
 		}
-		if = {
-			limit = { tag = OTT }
-			every_owned_state = {
-				limit = {
-					region = 252 #Kurdistan
-					is_claim_or_core_of_ROOT = no
-				}
-				add_claim_of_ROOT = yes
+		every_owned_state = {
+			limit = {
+				region = 252 #Kurdistan
+				is_claim_or_core_of_ROOT = no
 			}
-		}
-		else = {
-			350 = { add_claim_of_ROOT = yes } #Diyarbakir
-			352 = { add_claim_of_ROOT = yes } #Van
-			819 = { add_claim_of_ROOT = yes } #Sulaymaniyah
+			add_claim_of_ROOT = yes
 		}
 	}
 
@@ -3188,6 +3281,7 @@ country_event = { #Fate of Kurdistan
 		name = annex.occupation
 		trigger = {
 			NOT = {
+				original_tag = TUR
 				AND = {
 					original_tag = PER
 					OR = {
@@ -3195,15 +3289,6 @@ country_event = { #Fate of Kurdistan
 						421 = { is_valid_annexation_state = yes } #Kermanshah
 						owns_state = 417 #Urmia
 						owns_state = 421 #Kermanshah
-					}
-				}
-				AND = {
-					original_tag = TUR
-					OR = {
-						tag = OTT
-						350 = { is_valid_annexation_state = yes } #Diyarbakir
-						352 = { is_valid_annexation_state = yes } #Van
-						819 = { is_valid_annexation_state = yes } #Sulaymaniyah
 					}
 				}
 				AND = {
@@ -3264,6 +3349,7 @@ country_event = { #Fate of Persia
 			modifier = {
 				factor = 0
 				tag = OTT
+				owns_state = 291 #Baghdad
 				OR = {
 					413 = { is_valid_annexation_state = yes } #Khuzestan
 					417 = { is_valid_annexation_state = yes } #Urmia
@@ -3308,6 +3394,7 @@ country_event = { #Fate of Persia
 		name = annex.4021.b
 		trigger = {
 			tag = OTT
+			owns_state = 291 #Baghdad
 			OR = {
 				413 = { is_valid_annexation_state = yes } #Khuzestan
 				417 = { is_valid_annexation_state = yes } #Urmia
@@ -3478,7 +3565,10 @@ country_event = { #Fate of Yemen
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { tag = OTT }
+				limit = {
+					tag = OTT
+					owns_state = 679 #Mecca
+				}
 				add_state_claim = 659 #Aden
 				add_state_claim = 752 #Hadhramaut
 			}
@@ -3562,7 +3652,12 @@ country_event = { #Fate of Asir
 		name = annex.4024.a
 		trigger = {
 			is_arabian_tag = no
-			NOT = { tag = OTT }
+			NOT = {
+				AND = {
+					tag = OTT
+					owns_state = 679 #Mecca
+				}
+			}
 			YEM = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
@@ -3593,7 +3688,12 @@ country_event = { #Fate of Asir
 		name = annex.4024.b
 		trigger = {
 			is_arabian_tag = no
-			NOT = { tag = OTT }
+			NOT = {
+				AND = {
+					tag = OTT
+					owns_state = 679 #Mecca
+				}
+			}
 			var:292.owner = {
 				is_arabian_tag = yes
 				ROOT_can_grant_land = yes
@@ -3623,24 +3723,29 @@ country_event = { #Fate of Asir
 	option = { #Integrate
 		name = annex.integration
 		trigger = {
-			OR = {
-				tag = OTT
-				is_arabian_tag = yes
-			}
+			is_arabian_tag = yes
+		}
+		ai_chance = {
+			base = 1000
+		}
+		add_state_claim = 982 #Asir
+		add_state_claim = 981 #Najran
+		recheck_annexations = yes
+	}
+
+	option = { #Integrate
+		name = annex.integration
+		trigger = {
+			tag = OTT
+			owns_state = 679 #Mecca
 		}
 		ai_chance = {
 			base = 1000
 		}
 		add_state_claim = 982
 		if = {
-			limit = { owns_state = 981 }
-			if = {
-				limit = { tag = OTT }
-				var:678.owner = { transfer_state = 981 } #Rub al Khali
-			}
-			else = {
-				add_state_claim = 981
-			}
+			limit = { owns_state = 981 } #Najran
+			var:678.owner = { transfer_state = 981 } #Rub al Khali
 		}
 		recheck_annexations = yes
 	}
@@ -3649,7 +3754,12 @@ country_event = { #Fate of Asir
 		name = annex.occupation
 		trigger = {
 			is_arabian_tag = no
-			NOT = { tag = OTT }
+			NOT = {
+				AND = {
+					tag = OTT
+					owns_state = 679 #Mecca
+				}
+			}
 		}
 		ai_chance = { base = 0 }
 		occupy_small_country = yes

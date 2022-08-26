@@ -62,14 +62,13 @@ FNG_Japanese_Interests_in_Manchuria = {
 		icon = GFX_decision_train
 
 		available = {
-			has_war_with = JAP
+			OR = {
+				FNG_JAP_hostile = yes
+				has_war_with = JAP
+			}
 			any_owned_state = {
 				has_dynamic_modifier = { modifier = FNG_mantetsu_monopoly }
 			}
-		}
-
-		visible = {
-			NOT = { has_global_flag = FNG_mantetsu_monopoly_broken }
 		}
 
 		custom_cost_text = CP_50
@@ -86,7 +85,6 @@ FNG_Japanese_Interests_in_Manchuria = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove FNG_Break_Mantetsu_Monopoly"
-			set_global_flag = FNG_mantetsu_monopoly_broken
 			every_state = {
 				limit = {
 					OR = {

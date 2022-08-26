@@ -855,7 +855,7 @@ ideas = {
 		}
 
 		krupp4_WHR = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea krupp4" }
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea krupp4_WHR" }
 			name = krupp
 			picture = krupp
 			allowed = { original_tag = WHR }

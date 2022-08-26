@@ -8,14 +8,6 @@ on_actions = {
 				every_unit_leader = {
 					set_character_flag = CHI_original_unit_leader
 				}
-				if = {
-					limit = {
-						NOT = { tag = QIE }
-						NOT = { tag = FNG }
-						NOT = { tag = LEC }
-					}
-					china_create_basic_ship_variants = yes
-				}
 			}
 			# Initializing resources decisions for Chinese tags
 			QIE = { china_setup_resources_decisions = yes }
@@ -547,8 +539,30 @@ on_actions = {
 			}
 			### Qing ###
 			if = {
-				limit = { tag = QIE }
-				country_event = qiecoup.32 #Sham elections
+				limit = {
+					tag = QIE
+					date < 1944.1.1
+				}
+				country_event = qiecoup.32 #Sham elections... unless
+			}
+			else_if = {
+				set_temp_variable = { coalition_target = token:authoritarian_democrat }
+				limit = {
+					has_coalition_with_target = no
+					tag = QIE
+					date > 1944.1.1
+					NOT = { has_government = authoritarian_democrat }
+				}
+				country_event = qieelection.3
+			}
+			else_if = {
+				set_temp_variable = { coalition_target = token:authoritarian_democrat }
+				limit = {
+					has_coalition_with_target = yes
+					tag = QIE
+					date > 1944.1.1
+				}
+				country_event = qieelection.4
 			}
 			### Liangguang ###
 			if = {
@@ -1168,6 +1182,15 @@ on_actions = {
 	#fired when two countries end up at war with each other (on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first)
 	on_war_relation_added = {
 		effect = {
+			#Remove prepare for storm when the storm hits
+			if = {
+				limit = {
+					tag = QIE
+					has_idea = QIE_prepare_for_storm_idea
+					has_war_with = JAP
+				}
+				remove_ideas = QIE_prepare_for_storm_idea
+			}
 			if = {
 				limit = {
 					FROM = {
@@ -1255,6 +1278,38 @@ on_actions = {
 				}
 				log = "KR_Event_Logging;FNG-QIE WAR START;[GetDateText];[ROOT.GetName];[FROM.GetName]"
 				FNG = { country_event = { id = fengtian.102 hours = 8 random_hours = 16 } }
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = QIE
+						tag = ANQ
+					}
+					FROM = {
+						OR = {
+							tag = QIE
+							tag = ANQ
+						}
+					}
+				}
+				ANQ = {
+					# Remove decisions
+					remove_targeted_decision = { target = QIE decision = ANQ_reduce_qie_influence }
+					remove_targeted_decision = { target = QIE decision = ANQ_closer_qie_cooperation }
+					remove_targeted_decision = { target = QIE decision = ANQ_coordinated_qie_industrialisation }
+					remove_targeted_decision = { target = QIE decision = ANQ_placate_qing }
+					remove_targeted_decision = { target = QIE decision = ANQ_join_QIE_alliance }
+					remove_targeted_decision = { target = FNG decision = ANQ_join_war_vs_FNG_self }
+					remove_targeted_decision = { target = FNG decision = ANQ_join_war_vs_FNG }
+					# Remove national spirits
+					ANQ_remove_beijing_spirit = yes
+					# reduce QIE influence popularity
+					add_popularity = {
+						ideology = market_liberal
+						popularity = -1
+					}
+				}
+
 			}
 		}
 	}

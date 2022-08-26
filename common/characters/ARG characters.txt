@@ -83,6 +83,7 @@ characters = {
 			traits = { KR_MHC_army_regrouping_2 }
 			desc = ARG_pedro_pablo_ramirez_commander_desc
 			cost = 100
+			ai_will_do = { factor = 5 }
 		}
 	}
 	ARG_roberto_ortiz = {
@@ -179,6 +180,7 @@ characters = {
 			traits = { KR_army_chief_offensive_2 }
 			desc = ARG_agustin_pedro_justo_leader_desc
 			cost = 100
+			ai_will_do = { factor = 10 }
 		}
 	}
 	ARG_juan_pistarini = {
@@ -273,6 +275,7 @@ characters = {
 			traits = { KR_MHC_army_logistics_2 }
 			desc = ARG_enrique_mosconi_commander_desc
 			cost = 100
+			ai_will_do = { factor = 4 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -318,6 +321,7 @@ characters = {
 			traits = { KR_MHC_infantry_2 }
 			desc = ARG_Edelmiro_Julian_Farrell_commander_desc
 			cost = 100
+			ai_will_do = { factor = 10 }
 		}
 	}
 	ARG_manuel_savio = {
@@ -427,10 +431,27 @@ characters = {
 		}
 		advisor = {
 			slot = army_chief
-			idea_token = ARG_manuel_domecq_garcia
-			traits = { KR_army_chief_old_guard }
+			idea_token = ARG_manuel_domecq_garcia_army
+			traits = { KR_army_chief_planning_1 }
+			available = {
+				has_government = national_populist
+				not_already_hired_except_as = army_chief
+			}
 			desc = ARG_manuel_domecq_garcia_commander_desc
 			cost = 50
+		}
+		advisor = {
+			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
+			idea_token = ARG_manuel_domecq_garcia_political
+			traits = { KR_backroom_backstabber }
+			available = {
+				has_government = national_populist
+				not_already_hired_except_as = political_advisor
+			}
+			desc = ARG_manuel_domecq_garcia_commander_desc
+			ai_will_do = { factor = 15 }
 		}
 	}
 
@@ -488,8 +509,8 @@ characters = {
 			available = {
 				not_already_hired_except_as = high_command
 			}
-			traits = { KR_MHC_submarine_1 }
-			cost = 50
+			traits = { KR_MHC_submarine_2 }
+			cost = 100
 		}
 		advisor = {
 			slot = theorist
@@ -714,6 +735,7 @@ characters = {
 			idea_token = ARG_carlos_begnis
 			traits = { KR_medical_expert }
 			desc = ARG_carlos_begnis_desc
+			ai_will_do = { factor = 1.5 }
 		}
 	}
 	ARG_alberto_gilbert = {
@@ -728,8 +750,9 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = ARG_alberto_gilbert
-			traits = { KR_general_staffer }
+			traits = { KR_infantry_proponent }
 			desc = ARG_alberto_gilbert_desc
+			ai_will_do = { factor = 10 }
 		}
 	}
 	ARG_carlos_sanchez_viamonte = {
@@ -785,8 +808,9 @@ characters = {
 		advisor = {
 			slot = navy_chief
 			idea_token = ARG_alberto_teisaire
-			traits = { KR_navy_chief_decisive_battle_1 }
-			cost = 50
+			traits = { KR_navy_chief_decisive_battle_2 }
+			cost = 100
+			ai_will_do = { factor = 0.05 }
 		}
 	}
 	ARG_carlos_daireaux = {
@@ -800,8 +824,8 @@ characters = {
 			slot = high_command
 			idea_token = ARG_carlos_daireaux
 			ledger = navy
-			traits = { KR_MHC_capital_ship_1 }
-			cost = 50
+			traits = { KR_MHC_capital_ship_2 }
+			cost = 100
 		}
 	}
 	ARG_hector_vernengo_lima = {
@@ -815,8 +839,8 @@ characters = {
 			slot = high_command
 			idea_token = ARG_hector_vernengo_lima
 			ledger = navy
-			traits = { KR_MHC_screen_1 }
-			cost = 50
+			traits = { KR_MHC_screen_2 }
+			cost = 100
 		}
 	}
 	##### Military staff - air

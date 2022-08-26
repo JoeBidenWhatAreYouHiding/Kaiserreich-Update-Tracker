@@ -1252,7 +1252,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WHR_The_Agrarian_Ideal"
 			206 = {
-				increase_state_category_by_two_levels = yes
+				increase_state_category_by_one_level = yes
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }

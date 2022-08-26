@@ -1723,6 +1723,23 @@ characters = {
 			logistics_skill = 1
 		}
 	}
+	RUS_hayk_bzhishkyan = {
+		name = RUS_hayk_bzhishkyan
+		portraits = {
+			army = {
+				large = "gfx/leaders/RUS/Portrait_RUS_Hayk_Bzhishkyan.png"
+				small = "gfx/interface/advisors/RUS/RUS_hayk_bzhishkyan.png"
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
 
 	################
 	### Admirals ###

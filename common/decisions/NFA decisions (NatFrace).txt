@@ -118,124 +118,7 @@ NFA_seize_morocco_decisions = {
 	}
 }
 
-NFA_help_spain_decisions = {
-	NFA_help_car = {
-		icon = generic_agreement
-
-		available = {
-			SPR = {
-				OR = {
-					has_war_with = SPA
-					has_war_with = SWF
-				}
-			}
-		}
-
-		visible = {
-			NOT = { has_country_flag = NFA_help_kos }
-		}
-
-		fire_only_once = yes
-		cost = 15
-
-		ai_will_do = {
-			factor = 55
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision NFA_help_car"
-			set_country_flag = NFA_help_car
-			add_manpower = -3000
-			send_equipment = {
-				target = SPR
-				type = infantry_equipment
-				amount = 1500
-			}
-			SPR = {
-				country_event = {
-					id = nfa.63
-					days = 1
-				}
-			}
-			add_opinion_modifier = {
-				target = SPA
-				modifier = NFA_supported_others_scw
-			}
-			add_opinion_modifier = {
-				target = SWF
-				modifier = NFA_supported_others_scw
-			}
-			add_opinion_modifier = {
-				target = SPR
-				modifier = NFA_supported_us_scw
-			}
-			add_opinion_modifier = {
-				target = POR
-				modifier = NFA_supported_us_scw
-			}
-		}
-	}
-
-	NFA_help_kos = {
-		icon = generic_agreement
-
-		available = {
-			SPA = {
-				OR = {
-					has_war_with = SPR
-					has_war_with = SWF
-				}
-			}
-		}
-
-		visible = {
-			NOT = { has_country_flag = NFA_help_car }
-		}
-
-		fire_only_once = yes
-		cost = 15
-
-		ai_will_do = {
-			factor = 45
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision NFA_help_kos"
-			set_country_flag = NFA_help_kos
-			add_manpower = -3000
-			send_equipment = {
-				target = SPA
-				type = infantry_equipment
-				amount = 1500
-			}
-			SPA = {
-				country_event = {
-					id = nfa.62
-					days = 1
-				}
-			}
-			reverse_add_opinion_modifier = {
-				target = SPA
-				modifier = NFA_supported_us_scw
-			}
-			reverse_add_opinion_modifier = {
-				target = SWF
-				modifier = NFA_supported_others_scw
-			}
-			reverse_add_opinion_modifier = {
-				target = SPR
-				modifier = NFA_supported_others_scw
-			}
-			reverse_add_opinion_modifier = {
-				target = POR
-				modifier = NFA_supported_others_scw
-			}
-		}
-	}
-}
-
 NFA_fight_for_influence_cat = {
-
 	Mordacq_takes_to_the_waves = {
 		icon = GFX_decision_hol_radio_oranje
 		fixed_random_seed = no
@@ -1172,6 +1055,28 @@ NFA_reclaim_metropole_cat = {
 
 	NFA_La_Lutte_Finale = {
 		icon = generic_ignite_civil_war
+
+		available = {
+			OR = {
+				FROM = { has_war_with = GER }
+				NOT = { country_exists = GER }
+				threat > 0.75
+			}
+		}
+
+		visible = {
+			can_declare_war_on = FROM
+			NOT = { has_wargoal_against = FROM }
+		}
+
+		targets = { FRA }
+
+		cost = 30
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
 		ai_will_do = {
 			factor = 100
 			modifier = {
@@ -1194,43 +1099,16 @@ NFA_reclaim_metropole_cat = {
 			}
 		}
 
-		available = {
-			OR = {
-				FRA = { has_war_with = GER }
-				NOT = { country_exists = GER }
-				threat > 0.75
-			}
-		}
-
-		visible = {
-			can_declare_war_on = FRA
-			NOT = { has_wargoal_against = FRA }
-		}
-
-		cost = 30
-		days_remove = 30
-		fire_only_once = yes
-		cancel_if_not_visible = yes
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove NFA_La_Lutte_Finale target: [From.GetName]"
-			log = "KR_Event_Logging;ENTENTE ENTERS 2WK;[GetDateText];[ROOT.GetName];[FROM.GetName]"
-			if = {
-				limit = { is_ai = no }
-				create_wargoal = {
-					target = FRA
-					type = annex_everything
-				}
-			}
-			else = {
-				declare_war_on = { target = FRA type = annex_everything }
-			}
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled NFA_La_Lutte_Finale target: [From.GetName]"
+			clear_decision_attack_AI = yes
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision NFA_La_Lutte_Finale target: [From.GetName]"
+			setup_decision_attack_AI = yes
 			hidden_effect = {
-				FRA = { country_event = nfa.110 } #Inform CoF that they will be attacked soon.
+				FROM = { country_event = nfa.110 } #warning event
 				if = {
 					limit = {
 						is_ai = yes
@@ -1239,6 +1117,17 @@ NFA_reclaim_metropole_cat = {
 					}
 					CAN = { country_event = nfa.140 } #A player CAN can decide if NFA attacks or not
 				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove NFA_La_Lutte_Finale target: [From.GetName]"
+			log = "KR_Event_Logging;ENTENTE ENTERS 2WK;[GetDateText];[ROOT.GetName];[FROM.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = { target = FROM type = annex_everything }
+			add_named_threat = {
+				threat = 15
+				name = NFA_la_lutte_finale_war_threat
 			}
 		}
 	}
@@ -2678,6 +2567,7 @@ NFA_rebuild_legitimacy_cat = {
 		available = {
 			controls_state = 16 #NFA controls Paris
 			NOT = { has_country_flag = NFA_Focus_Paris_cf }
+			16 = { NOT = { has_state_flag = currently_being_cored } }
 		}
 
 		visible = {
@@ -2785,6 +2675,7 @@ NFA_rebuild_legitimacy_cat = {
 		available = {
 			controls_state = 21 #NFA controls Provence
 			NOT = { has_country_flag = NFA_Focus_Provence_cf }
+			21 = { NOT = { has_state_flag = currently_being_cored } }
 		}
 
 		visible = {
@@ -2892,6 +2783,7 @@ NFA_rebuild_legitimacy_cat = {
 		available = {
 			controls_state = 20 #NFA controls Lyonnais
 			NOT = { has_country_flag = NFA_Focus_Lyonnais_cf }
+			20 = { NOT = { has_state_flag = currently_being_cored } }
 		}
 
 		visible = {
@@ -2999,6 +2891,7 @@ NFA_rebuild_legitimacy_cat = {
 		available = {
 			controls_state = 19 #NFA controls Bordeaux
 			NOT = { has_country_flag = NFA_Focus_Bordeaux_cf }
+			19 = { NOT = { has_state_flag = currently_being_cored } }
 		}
 
 		visible = {
@@ -3106,6 +2999,7 @@ NFA_rebuild_legitimacy_cat = {
 		available = {
 			controls_state = 980 #NFA controls Lille
 			NOT = { has_country_flag = NFA_Focus_Lille_cf }
+			980 = { NOT = { has_state_flag = currently_being_cored } }
 		}
 
 		visible = {
@@ -3335,11 +3229,13 @@ NFA_rebuild_legitimacy_cat = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision NFA_Integrate_Metropole target: [From.GetName]"
+			FROM = { set_state_flag = currently_being_cored }
 			NFA_dynamic_metropole_coring_cost = yes
 		}
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove NFA_Integrate_Metropole target: [From.GetName]"
+			FROM = { clr_state_flag = currently_being_cored }
 			hidden_effect = { remove_state_claim = FROM }
 			add_state_core = FROM
 			FROM = {

@@ -536,6 +536,10 @@ SER_konspiracija_decisions = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
+				factor = 0
+				has_country_flag = SER_ai_limit_payment_swaps
+			}
+			modifier = {
 				add = 10
 				AND = {
 					has_country_flag = SER_paying_with_np
@@ -551,10 +555,6 @@ SER_konspiracija_decisions = {
 						national_populist < 0.1
 					}
 				}
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = SER_ai_limit_payment_swaps
 			}
 		}
 
@@ -1513,6 +1513,7 @@ political_actions = {
 			OR = {
 				controls_state = 106
 				NOT = { has_war_with = SER }
+				106 = { resistance > 99 }
 			}
 		}
 
@@ -2093,7 +2094,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 30
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -2112,7 +2113,7 @@ foreign_politics = {
 
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Topple_Tyrants target: [From.GetName]"
-			clear_decision_attack_AI = yes	
+			clear_decision_attack_AI = yes
 		}
 
 		complete_effect = {
@@ -2161,7 +2162,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 30
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -2180,7 +2181,7 @@ foreign_politics = {
 
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Topple_Tyrants_2 target: [From.GetName]"
-			clear_decision_attack_AI = yes	
+			clear_decision_attack_AI = yes
 		}
 
 		complete_effect = {
@@ -2227,7 +2228,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 30
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -2246,7 +2247,7 @@ foreign_politics = {
 
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Spread_Socialism target: [From.GetName]"
-			clear_decision_attack_AI = yes	
+			clear_decision_attack_AI = yes
 		}
 
 		complete_effect = {
@@ -2312,7 +2313,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 30
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -2376,7 +2377,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 25
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -2440,7 +2441,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 30
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -2494,6 +2495,7 @@ foreign_politics = {
 			FROM = {
 				OR = {
 					owns_state = 488 #Trieste
+					owns_state = 683 #Gorizia
 					owns_state = 736 #Istria
 				}
 			}
@@ -2505,13 +2507,14 @@ foreign_politics = {
 				FROM = {
 					NOT = {
 						owns_state = 488 #Trieste
+						owns_state = 683 #Gorizia
 						owns_state = 736 #Istria
 					}
 				}
 			}
 		}
 
-		targets = { 488.OWNER 736.OWNER }
+		targets = { 488.OWNER 683.OWNER 736.OWNER }
 		target_root_trigger = {
 			has_completed_focus = SER_YUG_greater_yugoslavia_west
 		}
@@ -2520,7 +2523,7 @@ foreign_politics = {
 		}
 
 		cost = 10
-		days_remove = 14
+		days_remove = 30
 		fire_only_once = yes
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
@@ -2940,24 +2943,20 @@ SER_The_Road_To_Unification_decisions = {
 			FROM = {
 				is_fully_controlled_by = ROOT
 				any_neighbor_state = {
-					is_owned_and_controlled_by = ROOT
 					is_core_of = ROOT
+					is_owned_and_controlled_by = ROOT
 				}
 			}
 		}
 
-		visible = {
-			FROM = {
-				is_owned_and_controlled_by = ROOT
-				NOT = { is_core_of = ROOT }
-			}
+		cancel_trigger = {
+			NOT = { controls_state = FROM }
 		}
 
 		cost = 80
 		days_remove = 100
 		fire_only_once = no
 		on_map_mode = map_only
-		cancel_if_not_visible = yes
 
 		state_target = yes
 		targets = { 106 }
@@ -2990,7 +2989,7 @@ SER_The_Road_To_Unification_decisions = {
 			}
 		}
 	}
-	SER_Integrate_State_Large = {
+	SER_YUG_Integrate_State_Large = {
 		name = integrate_state
 		icon = eng_trade_unions_support
 
@@ -2998,29 +2997,24 @@ SER_The_Road_To_Unification_decisions = {
 			FROM = {
 				is_fully_controlled_by = ROOT
 				any_neighbor_state = {
-					is_owned_and_controlled_by = ROOT
 					is_core_of = ROOT
+					is_owned_and_controlled_by = ROOT
 				}
 			}
-			SER_has_founded_yugoslavia = yes
 		}
 
-		visible = {
-			FROM = {
-				is_owned_and_controlled_by = ROOT
-				NOT = { is_core_of = ROOT }
-			}
+		cancel_trigger = {
+			NOT = { controls_state = FROM }
 		}
 
 		cost = SER_coring_decision_large?80
 		days_remove = 100
 		fire_only_once = no
 		on_map_mode = map_only
-		cancel_if_not_visible = yes
 
 		state_target = yes
 		targets = { 104 109 }
-		target_root_trigger = { has_completed_focus = SER_Together_Against_Austria }
+		target_root_trigger = { SER_has_founded_yugoslavia = yes }
 		target_trigger = {
 			FROM = {
 				is_owned_and_controlled_by = ROOT
@@ -3033,12 +3027,12 @@ SER_The_Road_To_Unification_decisions = {
 		}
 
 		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_Integrate_State_Large target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Integrate_State_Large target: [From.GetName]"
 			add_political_power = SER_coring_decision_large?80
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SER_Integrate_State_Large target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision remove SER_YUG_Integrate_State_Large target: [From.GetName]"
 			FROM = {
 				if = {
 					limit = { is_claimed_by = ROOT }
@@ -3056,37 +3050,24 @@ SER_The_Road_To_Unification_decisions = {
 			FROM = {
 				is_fully_controlled_by = ROOT
 				any_neighbor_state = {
-					is_owned_and_controlled_by = ROOT
 					is_core_of = ROOT
+					is_owned_and_controlled_by = ROOT
 				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						state = 488
-					}
-				}
-				has_left_democratic_government = yes
-			}
-			SER_has_founded_yugoslavia = yes
+
 		}
 
-		visible = {
-			FROM = {
-				is_owned_and_controlled_by = ROOT
-				NOT = { is_core_of = ROOT }
-			}
+		cancel_trigger = {
+			NOT = { controls_state = FROM }
 		}
 
 		cost = SER_coring_decision_medium?60
 		days_remove = 100
 		fire_only_once = no
 		on_map_mode = map_only
-		cancel_if_not_visible = yes
 
 		state_target = yes
-		targets = { 45 102 103 736 875 488 }
-		target_root_trigger = { has_completed_focus = SER_Together_Against_Austria }
+		targets = { 45 875 }
 		target_trigger = {
 			FROM = {
 				is_owned_and_controlled_by = ROOT
@@ -3114,6 +3095,117 @@ SER_The_Road_To_Unification_decisions = {
 			}
 		}
 	}
+	SER_YUG_Integrate_State_Medium = {
+		name = integrate_state
+		icon = eng_trade_unions_support
+
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				any_neighbor_state = {
+					is_core_of = ROOT
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+
+		}
+
+		cancel_trigger = {
+			NOT = { controls_state = FROM }
+		}
+
+		cost = SER_coring_decision_medium?60
+		days_remove = 100
+		fire_only_once = no
+		on_map_mode = map_only
+
+		state_target = yes
+		targets = { 102 103 736 }
+		target_root_trigger = { SER_has_founded_yugoslavia = yes }
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Integrate_State_Medium target: [From.GetName]"
+			add_political_power = SER_coring_decision_medium?60
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SER_YUG_Integrate_State_Medium target: [From.GetName]"
+			FROM = {
+				if = {
+					limit = { is_claimed_by = ROOT }
+					remove_claim_by = ROOT
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+	SER_YUG_Integrate_State_Trieste = {
+		name = integrate_state
+		icon = eng_trade_unions_support
+
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				any_neighbor_state = {
+					is_core_of = ROOT
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = { controls_state = FROM }
+				has_left_democratic_government = no
+			}
+		}
+
+		cost = SER_coring_decision_medium?60
+		days_remove = 100
+		fire_only_once = no
+		on_map_mode = map_only
+
+		state_target = yes
+		targets = { 488 }
+		target_root_trigger = { owns_state = 488 }
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+			has_left_democratic_government = yes
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Integrate_State_Trieste target: [From.GetName]"
+			add_political_power = SER_coring_decision_medium?60
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SER_YUG_Integrate_State_Trieste target: [From.GetName]"
+			FROM = {
+				if = {
+					limit = { is_claimed_by = ROOT }
+					remove_claim_by = ROOT
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
 	SER_Integrate_State_Small = {
 		name = integrate_state
 		icon = eng_trade_unions_support
@@ -3126,26 +3218,19 @@ SER_The_Road_To_Unification_decisions = {
 					is_core_of = ROOT
 				}
 			}
-			SER_has_founded_yugoslavia = yes
 		}
 
-		visible = {
-			owns_state = FROM
-			FROM = {
-				is_owned_and_controlled_by = ROOT
-				NOT = { is_core_of = ROOT }
-			}
+		cancel_trigger = {
+			NOT = { controls_state = FROM }
 		}
 
 		cost = SER_coring_decision_small?40
 		days_remove = 100
 		fire_only_once = no
 		on_map_mode = map_only
-		cancel_if_not_visible = yes
 
 		state_target = yes
-		targets = { 163 794 841 }
-		target_root_trigger = { has_completed_focus = SER_Together_Against_Austria }
+		targets = { 794 841 }
 		target_trigger = {
 			FROM = {
 				is_owned_and_controlled_by = ROOT
@@ -3173,12 +3258,11 @@ SER_The_Road_To_Unification_decisions = {
 			}
 		}
 	}
-	SER_Integrate_Bulgarian_State = {
+	SER_YUG_Integrate_State_Small = {
 		name = integrate_state
-		icon = generic_flags
+		icon = eng_trade_unions_support
 
 		available = {
-			has_stability > 0
 			FROM = {
 				is_fully_controlled_by = ROOT
 				any_neighbor_state = {
@@ -3188,23 +3272,68 @@ SER_The_Road_To_Unification_decisions = {
 			}
 		}
 
-		visible = {
-			OR = {
-				has_completed_focus = SER_YUG_soc_integrate_bulgaria
-				has_completed_focus = SER_YUG_greater_yugoslavia
-			}
-			is_subject = no
+		cancel_trigger = {
+			NOT = { controls_state = FROM }
+		}
+
+		cost = SER_coring_decision_small?40
+		days_remove = 100
+		fire_only_once = no
+		on_map_mode = map_only
+
+		state_target = yes
+		targets = { 163 }
+		target_root_trigger = { SER_has_founded_yugoslavia = yes }
+		target_trigger = {
 			FROM = {
 				is_owned_and_controlled_by = ROOT
 				NOT = { is_core_of = ROOT }
 			}
 		}
 
-		on_map_mode = map_only
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Integrate_State_Small target: [From.GetName]"
+			add_political_power = SER_coring_decision_small?40
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SER_YUG_Integrate_State_Small target: [From.GetName]"
+			FROM = {
+				if = {
+					limit = { is_claimed_by = ROOT }
+					remove_claim_by = ROOT
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+	SER_YUG_Integrate_Bulgarian_State = {
+		name = integrate_state
+		icon = generic_flags
+
+		available = {
+			has_stability > 0
+			FROM = {
+				is_fully_controlled_by = ROOT
+				any_neighbor_state = {
+					is_core_of = ROOT
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+		}
+
+		cancel_trigger = {
+			NOT = { controls_state = FROM }
+		}
+
 		cost = 100
 		days_remove = 150
 		fire_only_once = no
-		cancel_if_not_visible = yes
+		on_map_mode = map_only
 
 		state_target = yes
 		targets = { 48 77 211 212 770 771 990 1089 }
@@ -3222,19 +3351,20 @@ SER_The_Road_To_Unification_decisions = {
 		}
 
 		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_Integrate_Bulgarian_State target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled SER_YUG_Integrate_Bulgarian_State target: [From.GetName]"
 			add_political_power = 100
 			add_stability = 0.06
+			FROM = { add_resistance = -40 }
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SER_Integrate_Bulgarian_State target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision SER_YUG_Integrate_Bulgarian_State target: [From.GetName]"
 			FROM = { add_resistance = 40 }
 			add_stability = -0.06
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SER_Integrate_Bulgarian_State target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision remove SER_YUG_Integrate_Bulgarian_State target: [From.GetName]"
 			add_stability = 0.03
 			FROM = {
 				add_resistance = -40

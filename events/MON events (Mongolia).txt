@@ -1555,8 +1555,8 @@ country_event = { # authdems take power
 		}
 		MON_yondonwangchug_sic = yes
 		if = {
-			limit = { NOT = { has_completed_focus = MON_democratic_mongolia } }
-			unlock_national_focus = MON_democratic_mongolia
+			limit = { NOT = { has_completed_focus = MON_nobles_take_power } }
+			unlock_national_focus = MON_nobles_take_power
 		}
 	}
 }
@@ -1604,8 +1604,8 @@ country_event = { # socdems take power
 		}
 		MON_serengdongrub_sic = yes
 		if = {
-			limit = { NOT = { has_completed_focus = MON_nobles_take_power } }
-			unlock_national_focus = MON_nobles_take_power
+			limit = { NOT = { has_completed_focus = MON_democratic_mongolia } }
+			unlock_national_focus = MON_democratic_mongolia
 		}
 		hidden_effect = {
 			random_character = {
@@ -1665,11 +1665,11 @@ country_event = { # Sternberg loyalist division storms the capital
 			if = {
 				limit = {
 					NOT = {
-							has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCDEM }
-							has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCLIB }
-							has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCCON }
-							has_game_rule = { rule = MON_path option = MON_PATH_NOBLES }
-							has_game_rule = { rule = MON_path option = MON_PATH_BUDDHISTS }
+						has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCDEM }
+						has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCLIB }
+						has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCCON }
+						has_game_rule = { rule = MON_path option = MON_PATH_NOBLES }
+						has_game_rule = { rule = MON_path option = MON_PATH_BUDDHISTS }
 					}
 				}
 				random_list = {
@@ -1714,11 +1714,11 @@ country_event = { # Sternberg loyalist division storms the capital
 			if = {
 				limit = {
 					NOT = {
-							has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCDEM }
-							has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCLIB }
-							has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCCON }
-							has_game_rule = { rule = MON_path option = MON_PATH_NOBLES }
-							has_game_rule = { rule = MON_path option = MON_PATH_BUDDHISTS }
+						has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCDEM }
+						has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCLIB }
+						has_game_rule = { rule = MON_path option = MON_PATH_DEMOCRACY_SOCCON }
+						has_game_rule = { rule = MON_path option = MON_PATH_NOBLES }
+						has_game_rule = { rule = MON_path option = MON_PATH_BUDDHISTS }
 					}
 				}
 				random_list = {

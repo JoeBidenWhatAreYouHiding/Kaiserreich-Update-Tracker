@@ -465,8 +465,7 @@ defined_text = {
 		trigger = {
 			CAN = {
 				tag = ENT
-				NOT = { owns_state = 464 }	# Nova Scotia
-				owns_state = 832 # Montreal
+				owns_state = 832 # Quebec
 			}
 		}
 		localization_key = VICTORY_POINTS_4345_ENDONYM # Montreal
@@ -475,35 +474,13 @@ defined_text = {
 		trigger = {
 			CAN = {
 				tag = ENT
-				NOT = { owns_state = 464 }	# Nova Scotia
-				NOT = { owns_state = 832 }	# Montreal
 				owns_state = 331 			# Newfoundland
 			}
 		}
 		localization_key = VICTORY_POINTS_12505_ENDONYM # St. John's
 	}
 	text = {
-		trigger = {
-			CAN = {
-				tag = ENT
-				NOT = { owns_state = 464 }	# Nova Scotia
-				NOT = { owns_state = 832 }	# Montreal
-				NOT = { owns_state = 331 }	# Newfoundland
-			}
-		}
-		localization_key = VICTORY_POINTS_3778_ENDONYM # Ottawa
-	}
-	text = {
-		trigger = {
-			NFA = { tag = ENT }
-		}
-		localization_key = VICTORY_POINTS_1145_ENDONYM # Algiers
-	}
-	text = {
-		trigger = {
-			GBR = { tag = ENT }
-		}
-		localization_key = VICTORY_POINTS_6103_ENDONYM # London
+		localization_key = "[ENT.Capital.GetCapitalVictoryPointName]"
 	}
 }
 

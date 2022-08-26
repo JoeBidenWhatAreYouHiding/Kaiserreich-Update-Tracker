@@ -24,6 +24,7 @@ autonomy_state = {
 		overlord_trade_cost_factor = -0.50
 		cic_to_overlord_factor = 0.20
 		stability_factor = -0.1
+		license_subject_master_purchase_cost = -1
 	}
 
 	ai_subject_wants_higher = {

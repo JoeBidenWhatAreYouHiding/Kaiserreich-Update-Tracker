@@ -93,7 +93,7 @@ Ottoman_Cairo_Pact_decisions = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision OTT_Kuva_yi_Milliye"
+			log = "[GetDateText]: [Root.GetName]: Decision remove OTT_Kuva_yi_Milliye"
 			division_template = {
 				name = "Kuva-yi Milliye"
 				division_names_group = OTT_INF_01

@@ -138,7 +138,6 @@ setup_rebel_guangxi = {
 
 			### effects ###
 			set_cosmetic_tag = GXC_Guangxi
-			china_create_basic_ship_variants = yes
 			capital_scope = {
 				create_unit = {
 					division = "division_template = \"Guangxi Bubing Zhen\" start_experience_factor = 0.2"
@@ -243,7 +242,6 @@ setup_rebel_guangdong = {
 			}
 
 			### effects ###
-			china_create_basic_ship_variants = yes
 			capital_scope = {
 				create_unit = {
 					division = "division_template = \"Guangdong Bubing Zhen\" start_experience_factor = 0.2"
@@ -457,10 +455,20 @@ GXC_old_guangxi_clique_flees = {
 		event_target:GXC_ma_ji_target = {
 			remove_trait = { trait = GXC_guangxi_clique_officer }
 			demote_leader = yes
+			remove_military_advisor_roles = yes
+			add_advisor_role = {
+				advisor = {
+					slot = army_chief
+					idea_token = GXC_ma_ji
+					traits = { KR_army_chief_manoeuvre_2 }
+					cost = 100
+				}
+			}
 			retire = yes
 		}
 		event_target:GXC_lu_yuguang_target = {
 			remove_trait = { trait = GXC_guangxi_clique_officer }
+			remove_civilian_advisor_roles = yes
 			retire = yes
 		}
 		if = {

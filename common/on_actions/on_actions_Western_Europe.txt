@@ -214,14 +214,9 @@ on_actions = {
 			if = {
 				limit = {
 					FROM.FROM = { state = 41 } #Madrid
-					OR = {
-						tag = SPR
-						tag = SWF
-					}
-					FROM = {
-						tag = SPA
-						has_war_with = ROOT
-					}
+					original_tag = SPA
+					FROM = { original_tag = SPA }
+					has_civil_war = yes
 				}
 				country_event = sprc.211
 			}

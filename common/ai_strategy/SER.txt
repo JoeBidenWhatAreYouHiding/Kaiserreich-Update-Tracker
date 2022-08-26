@@ -1,8 +1,5 @@
-
 SER_dont_attack_imro = {
-	allowed = {
-		tag = SER
-	}
+	allowed = { original_tag = SER }
 
 	enable = {
 		has_global_flag = SER_imro_dont_attack
@@ -17,10 +14,9 @@ SER_dont_attack_imro = {
 		manual_attack = no
 	}
 }
+
 IMRO_dont_attack_ser = {
-	allowed = {
-		tag = MAC
-	}
+	allowed = { original_tag = MAC }
 
 	enable = {
 		has_global_flag = SER_imro_dont_attack

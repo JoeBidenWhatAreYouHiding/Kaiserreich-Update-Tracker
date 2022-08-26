@@ -72,13 +72,24 @@ country_event = { # Black Monday hit Siam
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			add_timed_idea = {
+				idea = SIA_black_monday
+				days = 3600
+			}
+		}
+	}
+
 	option = {
 		name = siam.4.a # Mein Gott
 		add_political_power = -100
-		add_stability = -0.40 # WtT
-		add_timed_idea = {
-			idea = SIA_black_monday
-			days = 3600
+		add_stability = -0.30 # WtT
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = SIA_black_monday
+				days = 3600
+			}
 		}
 		hidden_effect = { # All events within 60 days Deadline
 			set_country_flag = { flag = SIA_reform_progress value = 0 }
@@ -835,6 +846,7 @@ country_event = { # Luang Phibunsongkhram's Dilemma
 			modifier = {
 				factor = 0
 				OR = {
+					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_RADSOC }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_SARIT }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PHAO }
@@ -883,6 +895,7 @@ country_event = { # Luang Phibunsongkhram's Dilemma
 			modifier = {
 				factor = 0
 				OR = {
+					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PATAUT }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_SARIT }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PHAO }
@@ -977,15 +990,21 @@ country_event = { # War it is then (All)
 
 	option = {
 		name = siam.16.ppa # Plaek Parliamentarians
-		news_event = {
-			id = worldnews.109
-			days = 3
-		}
 		trigger = {
 			NOT = { has_global_flag = SIA_phibunsongkhram_is_royalist }
 		}
-		ai_chance = {
-			base = 100
+
+		ai_chance = { # Not needed, but skewed the AI towards playing as gov side
+			base = 35
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PATAUT }
+			}
+		}
+
+		news_event = {
+			id = worldnews.109
+			days = 3
 		}
 		SIA = { # Parliamentarians Gov
 			custom_effect_tooltip = SIA_government_unit_tt
@@ -998,15 +1017,21 @@ country_event = { # War it is then (All)
 	}
 	option = {
 		name = siam.16.ppb # Rebel Royalist
-		news_event = {
-			id = worldnews.109
-			days = 3
-		}
 		trigger = {
 			NOT = { has_global_flag = SIA_phibunsongkhram_is_royalist }
 		}
-		ai_chance = {
-			base = 100
+
+		ai_chance = { # Not needed, but skewed the AI towards playing as gov side
+			base = 15
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PATAUT }
+			}
+		}
+
+		news_event = {
+			id = worldnews.109
+			days = 3
 		}
 		SIA = { # Rebel Royalist
 			custom_effect_tooltip = SIA_royalist_unit_tt
@@ -1022,15 +1047,21 @@ country_event = { # War it is then (All)
 	}
 	option = {
 		name = siam.16.pra # Rebel Parliamentarians
-		news_event = {
-			id = worldnews.110
-			days = 3
-		}
 		trigger = {
 			has_global_flag = SIA_phibunsongkhram_is_royalist
 		}
-		ai_chance = {
-			base = 100
+
+		ai_chance = { # Not needed, but skewed the AI towards playing as gov side
+			base = 15
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_RADSOC }
+			}
+		}
+
+		news_event = {
+			id = worldnews.110
+			days = 3
 		}
 		SIA = { # Rebel Parliamentarians
 			custom_effect_tooltip = SIA_seperatist_unit_tt
@@ -1046,15 +1077,21 @@ country_event = { # War it is then (All)
 	}
 	option = {
 		name = siam.16.prb # Plaek Royalist
-		news_event = {
-			id = worldnews.110
-			days = 3
-		}
 		trigger = {
 			has_global_flag = SIA_phibunsongkhram_is_royalist
 		}
-		ai_chance = {
-			base = 100
+
+		ai_chance = { # Not needed, but skewed the AI towards playing as gov side
+			base = 35
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_RADSOC }
+			}
+		}
+
+		news_event = {
+			id = worldnews.110
+			days = 3
 		}
 		SIA = { # Royalist Gov
 			custom_effect_tooltip = SIA_royalist_unit_tt
@@ -2210,7 +2247,7 @@ country_event = { # Attack Burma or Not? - Plaek not only Protecc but also Attac
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }	
+					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_SARIT }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PHAO }
 				}
@@ -2543,7 +2580,7 @@ country_event = { # General Discontent post-Ratthaniyom Implementation
 			base = 80
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }	
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 			}
 		} # Cowards always remain cowards - eh?
 		hidden_effect = {
@@ -2569,7 +2606,7 @@ country_event = { # General Discontent post-Ratthaniyom Implementation
 			base = 5
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }	
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 			}
 		}
 		hidden_effect = {
@@ -2657,7 +2694,7 @@ country_event = { # Decree 2 - New National Anthem, The merging of other Tai rac
 			base = 80
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }	
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 			}
 		}
 		SIA = {
@@ -2711,7 +2748,7 @@ country_event = { # Decree 3 - Thaification program and ban on Chinese-run and M
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }	
+					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_SARIT }
 					has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PHAO }
 				}
@@ -2763,7 +2800,7 @@ country_event = { # Decree 3 - Thaification program and ban on Chinese-run and M
 			base = 10
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }	
+				has_game_rule = { rule = SIA_civilwar option = SIA_CIVILWAR_PLAEK }
 			}
 		}
 		SIA = {

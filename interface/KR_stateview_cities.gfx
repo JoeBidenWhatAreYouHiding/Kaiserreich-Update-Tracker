@@ -2995,6 +2995,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_terrain_ouagadougou"
+		textureFile = "gfx/interface/terrains/terrain_ouagadougou.png"
+	}
+
+	spriteType = {
 		name = "GFX_terrain_verdun"
 		textureFile = "gfx/interface/terrains/terrain_verdun.png"
 	}
@@ -3059,5 +3064,18 @@ spriteTypes = {
 		textureFile = "gfx/interface/terrains/terrain_tobolsk.png"
 	}
 
+	spriteType = {
+		name = "GFX_terrain_yantai"
+		textureFile = "gfx/interface/terrains/terrain_yantai.png"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_nassau"
+		textureFile = "gfx/interface/terrains/terrain_nassau.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_cayenne"
+		textureFile = "gfx/interface/terrains/terrain_cayenne.png"
+	}
 }
 

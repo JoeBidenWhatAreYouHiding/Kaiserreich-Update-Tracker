@@ -3727,6 +3727,12 @@ guiTypes = {
 				}
 
 				iconType = {
+					name = "terrain_ouagadougou_icon"
+					spriteType = "GFX_terrain_ouagadougou"
+					alwaystransparent = yes
+				}
+
+				iconType = {
 					name = "terrain_verdun_icon"
 					spriteType = "GFX_terrain_verdun"
 					alwaystransparent = yes
@@ -3801,6 +3807,24 @@ guiTypes = {
 				iconType = {
 					name = "terrain_tobolsk_icon"
 					spriteType = "GFX_terrain_tobolsk"
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "terrain_yantai_icon"
+					spriteType = "GFX_terrain_yantai"
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "terrain_nassau_icon"
+					spriteType = "GFX_terrain_nassau"
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "terrain_cayenne_icon"
+					spriteType = "GFX_terrain_cayenne"
 					alwaystransparent = yes
 				}
 

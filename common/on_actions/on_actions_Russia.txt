@@ -36,6 +36,15 @@ on_actions = {
 					remove_core_of = FROM
 				}
 			}
+			else_if = {
+				limit = { FROM = { tag = RUS } }
+				TRM = {
+					if = {
+						limit = { has_cosmetic_tag = TRM_free_russia }
+						set_cosmetic_tag = TRM_RUS
+					}
+				}
+			}
 		}
 	}
 

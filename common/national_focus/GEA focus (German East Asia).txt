@@ -2615,12 +2615,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_internal3"
 			add_war_support = 0.05
-			remove_ideas = GEA_black_monday_idea
-			add_timed_idea = { idea = GEA_black_monday_idea2 days = 400 }
-			add_ideas = GEA_help_small_business_idea
-			every_owned_state = {
-				increase_state_category_by_one_level = yes
+			swap_ideas = {
+				remove_idea = GEA_black_monday_idea
+				add_idea = GEA_black_monday_idea2
+				days = 400
 			}
+			add_ideas = GEA_help_small_business_idea
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 	}
@@ -2647,8 +2647,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_johor2"
-			remove_ideas = GEA_black_monday_idea
-			add_timed_idea = { idea = GEA_black_monday_idea2 days = 120 }
+			swap_ideas = {
+				remove_idea = GEA_black_monday_idea
+				add_idea = GEA_black_monday_idea2
+				days = 120
+			}
 		}
 	}
 
@@ -2816,13 +2819,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_johor3"
-			every_owned_state = {
-				limit = {
-					is_core_of = ROOT
-					is_valid_state_for_development = yes
-				}
-				increase_state_category_by_one_level = yes
-			}
 			add_tech_bonus = {
 				name = GEA_johor3
 				bonus = 1
@@ -2831,26 +2827,10 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
+					is_core_of = ROOT
+					is_valid_state_for_development = yes
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+					prefer_home_area_states_unless_filled = yes
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2861,26 +2841,24 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
+					is_core_of = ROOT
+					is_valid_state_for_development = yes
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+					prefer_home_area_states_unless_filled = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_valid_state_for_development = yes
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+					prefer_home_area_states_unless_filled = yes
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {

@@ -1322,12 +1322,18 @@ JBS_create_muhammad_ibn_talil_al_rashid = {
 		}
 		event_target:JBS_Abdallah_ibn_Mitab_ibn_Abd_al_Aziz = {
 			promote_leader = yes
-			remove_trait = { trait = recently_promoted }
+			if = {
+				limit = { has_trait = recently_promoted }
+				remove_trait = { trait = recently_promoted }
+			}
 		}
 	}
 	event_target:JBS_Muhammad_ibn_Talil = {
 		promote_leader = yes
-		remove_trait = { trait = recently_promoted }
+		if = {
+			limit = { has_trait = recently_promoted }
+			remove_trait = { trait = recently_promoted }
+		}
 	}
 	JBS_update_HEJ_leader = yes
 }

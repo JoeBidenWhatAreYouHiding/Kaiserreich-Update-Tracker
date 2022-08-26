@@ -64,7 +64,6 @@ country_event = { #FROM accepts
 	}
 }
 
-
 country_event = { #FROM refuses
 	id = kr.political.12
 	immediate = { log = "[GetDateText]: [Root.GetName]: event kr.political.12 FROM = [From.GetName]" }
@@ -120,7 +119,6 @@ country_event = { #FROM accepts
 	}
 }
 
-
 country_event = { #FROM refuses
 	id = kr.political.15
 	immediate = { log = "[GetDateText]: [Root.GetName]: event kr.political.15 FROM = [From.GetName]" }
@@ -136,6 +134,27 @@ country_event = { #FROM refuses
 			target = FROM
 			modifier = KR_disapproves_of_govt
 		}
+	}
+}
+
+#######################
+### Faction Joining ###
+#######################
+
+country_event = { #event to remove the alert after ten days (donotlog)
+	id = kr.political.20
+	hidden = yes
+
+	trigger = {
+		is_in_array = { global.faction_joining_alerts = THIS }
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		remove_from_array = { global.faction_joining_alerts = THIS }
+		subtract_from_variable = { global.faction_joining_alert_dirty = 1 }
+		clear_variable = faction_joining_alert
 	}
 }
 
@@ -209,7 +228,10 @@ country_event = { #donotlog
 	is_triggered_only = yes
 
 	trigger = {
-		is_ally_with = GER
+		GER = {
+			exists = yes
+			is_ally_with = ROOT
+		}
 		NOT = { has_variable = GER_faction }
 	}
 
@@ -217,8 +239,14 @@ country_event = { #donotlog
 		every_other_country = {
 			limit = {
 				OR = {
-					is_ally_with = ENT
-					is_ally_with = INT
+					AND = {
+						ENT = { exists = yes }
+						is_ally_with = ENT
+					}
+					AND = {
+						INT = { exists = yes }
+						is_ally_with = INT
+					}
 				}
 			}
 			add_opinion_modifier = {
@@ -241,15 +269,24 @@ country_event = { #donotlog
 
 	trigger = {
 		has_variable = GER_faction
-		NOT = { is_ally_with = GER }
+		GER = {
+			exists = yes
+			NOT = { is_ally_with = ROOT }
+		}
 	}
 
 	immediate = {
 		every_other_country = {
 			limit = {
 				OR = {
-					is_ally_with = ENT
-					is_ally_with = INT
+					AND = {
+						ENT = { exists = yes }
+						is_ally_with = ENT
+					}
+					AND = {
+						INT = { exists = yes }
+						is_ally_with = INT
+					}
 				}
 			}
 			remove_opinion_modifier = {
@@ -274,7 +311,10 @@ country_event = { #donotlog
 	is_triggered_only = yes
 
 	trigger = {
-		is_ally_with = ENT
+		ENT = {
+			exists = yes
+			is_ally_with = ROOT
+		}
 		NOT = { has_variable = ENT_faction }
 	}
 
@@ -282,8 +322,14 @@ country_event = { #donotlog
 		every_other_country = {
 			limit = {
 				OR = {
-					is_ally_with = GER
-					is_ally_with = INT
+					AND = {
+						GER = { exists = yes }
+						is_ally_with = GER
+					}
+					AND = {
+						INT = { exists = yes }
+						is_ally_with = INT
+					}
 				}
 			}
 			add_opinion_modifier = {
@@ -291,7 +337,10 @@ country_event = { #donotlog
 				modifier = KR_factional_rivalry
 			}
 			if = {
-				limit = { is_ally_with = INT }
+				limit = {
+					INT = { exists = yes }
+					is_ally_with = INT
+				}
 				embargo_PREV = yes
 			}
 		}
@@ -306,15 +355,24 @@ country_event = { #donotlog
 
 	trigger = {
 		has_variable = ENT_faction
-		NOT = { is_ally_with = ENT }
+		ENT = {
+			exists = yes
+			NOT = { is_ally_with = ROOT }
+		}
 	}
 
 	immediate = {
 		every_other_country = {
 			limit = {
 				OR = {
-					is_ally_with = GER
-					is_ally_with = INT
+					AND = {
+						GER = { exists = yes }
+						is_ally_with = GER
+					}
+					AND = {
+						INT = { exists = yes }
+						is_ally_with = INT
+					}
 				}
 			}
 			remove_opinion_modifier = {
@@ -339,7 +397,10 @@ country_event = { #donotlog
 	is_triggered_only = yes
 
 	trigger = {
-		is_ally_with = INT
+		INT = {
+			exists = yes
+			is_ally_with = ROOT
+		}
 		NOT = { has_variable = INT_faction }
 	}
 
@@ -347,8 +408,14 @@ country_event = { #donotlog
 		every_other_country = {
 			limit = {
 				OR = {
-					is_ally_with = GER
-					is_ally_with = ENT
+					AND = {
+						GER = { exists = yes }
+						is_ally_with = GER
+					}
+					AND = {
+						ENT = { exists = yes }
+						is_ally_with = ENT
+					}
 				}
 			}
 			add_opinion_modifier = {
@@ -368,15 +435,24 @@ country_event = { #donotlog
 
 	trigger = {
 		has_variable = INT_faction
-		NOT = { is_ally_with = INT }
+		INT = {
+			exists = yes
+			NOT = { is_ally_with = ROOT }
+		}
 	}
 
 	immediate = {
 		every_other_country = {
 			limit = {
 				OR = {
-					is_ally_with = GER
-					is_ally_with = ENT
+					AND = {
+						GER = { exists = yes }
+						is_ally_with = GER
+					}
+					AND = {
+						INT = { exists = yes }
+						is_ally_with = INT
+					}
 				}
 			}
 			remove_opinion_modifier = {

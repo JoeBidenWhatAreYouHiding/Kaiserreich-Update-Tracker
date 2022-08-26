@@ -593,7 +593,9 @@ focus_tree = {
 					engineer = { x = 0 y = 2 }
 				}
 			}
-			753 = {
+			random_owned_controlled_state = {
+				prioritize = { 753 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "name = \"Suez Garrison\" division_template = \"Suez Garrison\" start_experience_factor = 0.8"
 					owner = ROOT

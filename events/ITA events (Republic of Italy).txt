@@ -54,11 +54,15 @@ country_event = { # Black Monday hits the Republic
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = { add_ideas = ITA_black_monday }
+	}
+
 	option = {
 		name = ita.2.a
 		add_stability = -0.15
 		add_war_support = -0.10
-		add_ideas = ITA_black_monday
+		effect_tooltip = { add_ideas = ITA_black_monday }
 		hidden_effect = {
 			country_event = {
 				id = ita.3
@@ -790,7 +794,7 @@ country_event = { # Elections after the first
 			popularity = 0.1
 		}
 		clear_sic_slot = yes
-		activate_advisor = ITA_carlo_rosselli_sic
+		activate_advisor = ITA_meuccio_ruini_sic
 		if = {
 			limit = {
 				NOT = { has_government = social_democrat }
@@ -1169,7 +1173,7 @@ country_event = { # AUS informed of SRI intervention
 	option = {
 		name = ita.34.a #We'll keep a close eye on this
 	}
-} 
+}
 country_event = { # Peace has been refused
 	id = ita.37
 	immediate = { log = "[GetDateText]: [Root.GetName]: event ita.37 FROM = [From.GetName]" }
@@ -3448,10 +3452,11 @@ country_event = { # Austria is losing the war
 			is_valid_peace_target = yes
 		}
 		OR = {
+			owns_state = 103 #Rijeka
 			owns_state = 488 #Trieste
+			owns_state = 683 #Gorizia
 			owns_state = 736 #Istria
 			owns_state = 783 #Trentino
-			owns_state = 103 #Southern Tyrol
 		}
 		OR = {
 			103 = { #Rijeka
@@ -3459,6 +3464,10 @@ country_event = { # Austria is losing the war
 				controller = { is_ally_with = ITA }
 			}
 			488 = { #Trieste
+				is_owned_by_ROOT_or_subject = yes
+				controller = { is_ally_with = ITA }
+			}
+			683 = { #Gorizia
 				is_owned_by_ROOT_or_subject = yes
 				controller = { is_ally_with = ITA }
 			}
@@ -3598,9 +3607,12 @@ country_event = { # Italy receives peace proposal
 				}
 				NOT = {
 					state = 39 #Southern Tyrol
-					state = 736 #Istria
 					state = 103 #Rijeka
 					state = 163 #Dalmatia
+					state = 488 #Trieste
+					state = 683 #Gorizia
+					state = 736 #Istria
+					state = 783 #Trentino
 				}
 				OR = {
 					is_owned_by = AUS
@@ -3690,6 +3702,7 @@ country_event = { # Italy receives peace proposal
 						is_core_of = ITA
 						state = 103 #Rijeka
 						state = 488 #Trieste
+						state = 683 #Gorizia
 						state = 736 #Istria
 						state = 783 #Trentino
 					}
@@ -4008,8 +4021,9 @@ country_event = { # No German Intervention
 					is_core_of = ITA
 					state = 103 #Rijeka
 					state = 488 #Trieste
-					state = 783 #Trentino
+					state = 683 #Gorizia
 					state = 736 #Istria
+					state = 783 #Trentino
 				}
 				OR = {
 					is_owned_by = AUS
@@ -4139,9 +4153,11 @@ country_event = { # Germany intervened in peace talks
 				}
 				NOT = {
 					state = 39 #Southern Tyrol
-					state = 736 #Istria
 					state = 103 #Rijeka
-					state = 163 #Dalmatia
+					state = 488 #Trieste
+					state = 683 #Gorizia
+					state = 736 #Istria
+					state = 783 #Trentino
 				}
 				OR = {
 					is_owned_by = AUS

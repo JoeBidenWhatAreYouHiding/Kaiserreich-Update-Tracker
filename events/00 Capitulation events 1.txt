@@ -22,14 +22,15 @@ country_event = {
 		is_in_faction = yes
 		NOT = {
 			any_allied_country = {
-				is_actual_major = yes
+				is_major = yes
+				is_subject = no
 				is_in_europe = yes
-				num_of_owned_factories > 50
 				surrender_progress < 0.8
 			}
 			TUR = {
 				is_in_faction_with = ROOT
-				is_actual_major = yes
+				is_major = yes
+				is_subject = no
 				surrender_progress < 0.8
 			}
 		}
@@ -1082,117 +1083,6 @@ country_event = {
 		}
 		else = {
 			leave_faction = yes
-		}
-	}
-}
-
-# Hidden event to peace out members of a collapsed faction
-country_event = {
-	id = capt.4200
-	immediate = { log = "[GetDateText]: [Root.GetName]: event capt.4200 FROM = [From.GetName]" }
-
-	is_triggered_only = yes
-	hidden = yes
-
-	immediate = {
-		# First European faction leaders peace out with any non-neighbours outside of Europe
-		if = {
-			limit = {
-				is_faction_leader = yes
-				OR = {
-					tag = ENT
-					is_in_europe = yes
-				}
-			}
-			every_enemy_country = {
-				limit = {
-					has_capitulated = no
-					is_in_europe = no
-					is_valid_peace_target = yes
-					NOT = {
-						is_neighbor_of = ROOT #being invaded
-						AND = {
-							tag = NZL
-							AST = { is_in_faction_with = ROOT }
-						}
-						AND = {
-							is_chinese_tag = yes
-							ROOT = { any_allied_country = { is_han_chinese_tag = yes } }
-						}
-					}
-				}
-				white_peace_with_ROOT = yes
-			}
-		}
-		# Then Asian faction leaders peace out with any non-neighbours outside of Asia
-		else_if = {
-			limit = {
-				is_faction_leader = yes
-				is_in_asia = yes
-			}
-			every_enemy_country = {
-				limit = {
-					has_capitulated = no
-					is_in_asia = no
-					is_valid_peace_target = yes
-					OR = {
-						NOT = { is_neighbor_of = ROOT } #being invaded
-						AND = {
-							ROOT = { is_chinese_tag = yes }
-							OR = {
-								tag = SIA
-								tag = BRM
-								tag = INC
-								tag = VIN
-								tag = LAO
-							}
-						}
-					}
-					NOT = {
-						is_neighbor_of = ROOT
-						AND = {
-							tag = NZL
-							AST = { is_in_faction_with = ROOT }
-						}
-						AND = {
-							tag = INS
-							ROOT = { is_in_faction_with = HOL }
-						}
-						AND = {
-							is_chinese_tag = yes
-							ROOT = { any_allied_country = { is_han_chinese_tag = yes } }
-						}
-					}
-				}
-				white_peace_with_ROOT = yes
-			}
-		}
-		# Then everyone else peaces out with any non-neighbours not on the same continent
-		else = {
-			every_enemy_country = {
-				limit = {
-					has_capitulated = no
-					is_valid_peace_target = yes
-					NOT = {
-						civilwar_target = ROOT #do not peace out civil wars
-						is_neighbor_of = ROOT #being invaded
-						same_continent_as_ROOT = yes
-						AND = {
-							tag = NZL
-							AST = { is_in_faction_with = ROOT }
-						}
-						AND = {
-							tag = INS
-							ROOT = { is_in_faction_with = HOL }
-						}
-						AND = {
-							is_chinese_tag = yes
-							ROOT = { any_allied_country = { is_han_chinese_tag = yes } }
-						}
-					}
-				}
-				white_peace_with_ROOT = yes
-			}
 		}
 	}
 }

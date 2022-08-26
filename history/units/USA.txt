@@ -242,12 +242,6 @@ units = {
 		start_equipment_factor = 0.3
 	}
 	division = {
-		location = 6732 #Boston
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
-	}
-	division = {
 		location = 3878 #New York City
 		division_template = "Infantry Division"
 		start_experience_factor = 0.3
@@ -262,12 +256,6 @@ units = {
 	### East Coast ###
 	division = {
 		location = 6845 #Philadelphia
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
-	}
-	division = {
-		location = 6984 #Washington D.C.
 		division_template = "National Guard Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.3
@@ -294,12 +282,6 @@ units = {
 	}
 	division = {
 		location = 6890 #Cleveland
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
-	}
-	division = {
-		location = 9450 #Chicago
 		division_template = "National Guard Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.3
@@ -339,12 +321,6 @@ units = {
 	}
 	division = {
 		location = 3960 #Dallas
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
-	}
-	division = {
-		location = 12782 #San Antonio
 		division_template = "National Guard Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.3

@@ -1216,6 +1216,9 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_adana_voting"
 			country_event = syrrep.28
 			remove_ideas = syr_mudafaa_hukuk
+			TUR = {
+				country_event = tur.105
+			}
 		}
 	}
 	focus = {# Maintain Sunni Dominance
@@ -2411,6 +2414,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_greater_syrian_nationalism
 
+		will_lead_to_war_with = CYP
+		will_lead_to_war_with = GRE
+		will_lead_to_war_with = OTT
+
 		ai_will_do = {
 			factor = 100
 		}
@@ -2449,6 +2456,8 @@ focus_tree = {
 		y = 2
 		relative_position_id = SYR_greater_syrian_nationalism
 
+		will_lead_to_war_with = TUR
+
 		ai_will_do = {
 			factor = 100
 		}
@@ -2485,6 +2494,8 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = SYR_greater_syrian_nationalism
+
+		will_lead_to_war_with = IRQ
 
 		ai_will_do = {
 			factor = 100
@@ -3823,6 +3834,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_challenge_egypt
 
+		will_lead_to_war_with = HEJ
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_destablise_hejaz"
 			HEJ = {
@@ -3889,6 +3902,8 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SYR_challenge_egypt
+
+		will_lead_to_war_with = YEM
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_destablize_the_imamate"
@@ -4132,6 +4147,9 @@ focus_tree = {
 		y = 0
 		relative_position_id = SYR_challenge_egypt
 
+		will_lead_to_war_with = JBS
+		will_lead_to_war_with = SAU
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_destablise_persian_gulf"
 			if = {
@@ -4208,6 +4226,8 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SYR_destablise_persian_gulf
+
+		will_lead_to_war_with = IRQ
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_destablize_iraq"

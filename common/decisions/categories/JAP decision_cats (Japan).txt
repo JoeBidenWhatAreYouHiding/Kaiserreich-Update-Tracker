@@ -39,6 +39,18 @@ JAP_co_prosperity_member_decisions = {
 	priority = 9
 }
 
+JAP_foreign_policy_decisions = {
+	icon = jap_pacific_guardian
+	priority = 9
+	allowed = { tag = JAP }
+	visible = {
+		is_faction_leader = yes
+	}
+	available = {
+		controls_all_owned_states = yes
+	}
+}
+
 JAP_influence_china = {
 	icon = military_operation
 	priority = 10

@@ -5,7 +5,6 @@ ARM_initial_spawn_effect = {
 		limit = { PREV = { owns_state = 998 } }
 		transfer_state = 998
 	}
-	add_state_claim = 1000
 	random_owned_controlled_state = {
 		create_unit = {
 			division = "division_template = \"Hrats'anneri Bazhanumy\" start_experience_factor = 0.2"
@@ -15,10 +14,11 @@ ARM_initial_spawn_effect = {
 			count = 2
 		}
 		create_unit = {
-			division = "division_template = \"Nardodna Gvardiya\" start_experience_factor = 0.2"
+			division = "division_template = \"Zhoghovrdakan Gvardia\" start_experience_factor = 0.2"
 			allow_spawning_on_enemy_provs = yes
 			prioritize_location = 12320
 			owner = PREV
+			count = 2
 		}
 	}
 	add_equipment_production = {

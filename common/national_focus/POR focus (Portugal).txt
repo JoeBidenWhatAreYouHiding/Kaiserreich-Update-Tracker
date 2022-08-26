@@ -23,7 +23,11 @@ focus_tree = {
 		y = 0
 		cost = 8
 		available = {
-			POR_won_against_mittelafrika = yes
+			OR = {
+				has_global_flag = MAF_NoAttack_Portugal
+				NOT = { country_exists = MAF }
+				NOT = { owns_state = 544 }
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -43,9 +47,7 @@ focus_tree = {
 			focus = POR_the_organic_kingdom
 		}
 		available = {
-			NOT = {
-				owns_state = 544
-			}
+			NOT = { owns_state = 544 }
 		}
 		relative_position_id = POR_matters_of_the_realm
 		x = 1
@@ -523,6 +525,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 544 950 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "name = \"1º Regimento Régulo 'Chokwe'\" division_template = \"Força de Defesa de Mozambique\" start_experience_factor = 0.1"
 					owner = ROOT
@@ -589,6 +592,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 544 950 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "name = \"1º Corpo Expedicionário Ultramarino\" division_template = \"Divisão de Infantaria da Guarda\" start_experience_factor = 0.1"
 					owner = ROOT

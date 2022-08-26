@@ -7,6 +7,11 @@
 		progress = 0.82
 		efficiency = 100
 	}
+	add_equipment_to_stockpile = {
+		type = train_equipment
+		amount = 10
+		producer = CHL
+	}
 }
 
 division_template = {
@@ -16,10 +21,9 @@ division_template = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-		infantry = { x = 0 y = 4 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 	}
 	template_counter = 68
 }
@@ -46,7 +50,7 @@ units = {
 		location = 13224
 		division_template = "Milicia"
 		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
+		start_equipment_factor = 0.9
 		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
 	}
 	division = {
@@ -57,7 +61,7 @@ units = {
 		location = 12349
 		division_template = "Milicia"
 		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
+		start_equipment_factor = 0.9
 		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
 	}
 	division = {
@@ -68,8 +72,8 @@ units = {
 		location = 13225
 		division_template = "Milicia"
 		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
-		force_equipment_variants = { infantry_equipment_0 = { owner = "FRA" } }
+		start_equipment_factor = 0.9
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ENG" } }
 	}
 	division = {
 		division_name = {
@@ -79,7 +83,7 @@ units = {
 		location = 8161
 		division_template = "Milicia"
 		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
+		start_equipment_factor = 0.9
 		force_equipment_variants = { infantry_equipment_1 = { owner = "ENG" } }
 	}
 	division = {
@@ -90,8 +94,8 @@ units = {
 		location = 13223
 		division_template = "Milicia"
 		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
-		force_equipment_variants = { infantry_equipment_0 = { owner = "ENG" } }
+		start_equipment_factor = 0.9
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHL" } }
 	}
 	division = {
 		division_name = {
@@ -101,7 +105,8 @@ units = {
 		location = 13222
 		division_template = "Milicia"
 		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
+		start_equipment_factor = 0.9
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHL" } }
 	}
 }
 

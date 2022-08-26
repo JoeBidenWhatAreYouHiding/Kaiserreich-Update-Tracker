@@ -60,10 +60,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM.FROM = { state = 176 }
-						ROOT = { controls_province = 885 }
-						OR = {
-							ROOT = { tag = SPA }
-							ROOT = { tag = SWF }
+						ROOT = {
+							controls_province = 885
+							original_tag = SPA
+							has_civil_war = yes
 						}
 					}
 					news_event = worldnews.256
@@ -72,27 +72,23 @@ on_actions = {
 				else_if = {
 					limit = {
 						ROOT = {
-							is_spanish_civil_war_tag = no
+							FROM.FROM = { state = 118 }
+							original_tag = SPA
 							controls_province = 4135
 						}
-						FROM = {
-							is_spanish_civil_war_tag = yes
-						}
-						FROM.FROM = { state = 118 }
+						FROM = { original_tag = SPA }
 					}
 					news_event = worldnews.257
 				}
 				# The Rif
 				else_if = {
 					limit = {
+						FROM.FROM = { state = 290 }
 						ROOT = {
-							is_spanish_civil_war_tag = no
+							original_tag = SPA
 							controls_province = 9945
 						}
-						FROM = {
-							is_spanish_civil_war_tag = yes
-						}
-						FROM.FROM = { state = 290 }
+						FROM = { original_tag = SPA }
 					}
 					news_event = worldnews.293
 				}

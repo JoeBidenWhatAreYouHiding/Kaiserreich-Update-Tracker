@@ -1668,6 +1668,10 @@ focus_tree = {
 	id = Mongolia_Initial
 	country = {
 		factor = 0
+		modifier = {
+			add = 10
+			tag = MON
+		}
 	}
 	default = no
 	continuous_focus_position = { x = 1800 y = 800 }
@@ -2458,10 +2462,6 @@ focus_tree = {
 	id = Mongolia_Democratic
 	country = {
 		factor = 0
-		modifier = {
-			add = 10
-			tag = MON
-		}
 	}
 	default = no
 	continuous_focus_position = { x = 1500 y = 800 }

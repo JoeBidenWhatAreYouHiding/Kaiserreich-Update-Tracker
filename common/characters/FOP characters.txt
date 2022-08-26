@@ -64,6 +64,7 @@ characters = {
 			}
 		}
 		field_marshal = {
+			desc = FOP_liborio_justo_general_desc
 			traits = {
 				career_officer
 				politically_connected
@@ -76,6 +77,7 @@ characters = {
 		}
 		advisor = {
 			idea_token = FOP_liborio_justo
+			desc = FOP_liborio_justo_general_desc
 			slot = political_advisor
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
@@ -112,6 +114,7 @@ characters = {
 		}
 		advisor = {
 			idea_token = FOP_Paulina_Mansurova
+			desc = FOP_paulina_mansurova_leader_desc
 			slot = army_chief
 			traits = { KR_army_chief_organisational_2 }
 			cost = 100
@@ -140,6 +143,30 @@ characters = {
 			planning_skill = 4
 			logistics_skill = 1
 		}
+		advisor = {
+			idea_token = FOP_miguel_roscigna_political
+			desc = FOP_miguel_roscigna_leader_desc
+			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
+			available = {
+				NOT = { has_government = totalist }
+				not_already_hired_except_as = political_advisor
+			}
+			traits = { KR_reformist_soldier }
+		}
+		advisor = {
+			idea_token = FOP_miguel_roscigna_high_command
+			desc = FOP_miguel_roscigna_leader_desc
+			slot = high_command
+			ledger = army
+			available = {
+				NOT = { has_government = totalist }
+				not_already_hired_except_as = high_command
+			}
+			traits = { KR_MHC_commando_2 }
+			cost = 100
+		}
 	}
 	FOP_marc_augier = {
 		name = FOP_marc_augier
@@ -167,6 +194,7 @@ characters = {
 		}
 		advisor = {
 			idea_token = FOP_marc_augier
+			desc = FOP_marc_augier_leader_desc
 			slot = high_command
 			ledger = army
 			traits = { KR_MHC_infantry_1 }
@@ -262,6 +290,7 @@ characters = {
 		}
 		advisor = {
 			idea_token = FOP_micaela_feldman
+			desc = FOP_micaela_feldman_leader_desc
 			slot = high_command
 			ledger = army
 			traits = { KR_MHC_army_regrouping_2 }
@@ -283,6 +312,7 @@ characters = {
 			}
 		}
 		navy_leader = {
+			desc = FOP_juan_moran_advisor_desc
 			traits = { spotter }
 			skill = 2
 			attack_skill = 2
@@ -292,6 +322,7 @@ characters = {
 		}
 		advisor = {
 			idea_token = FOP_juan_moran
+			desc = FOP_juan_moran_advisor_desc
 			slot = navy_chief
 			traits = { KR_navy_chief_reform_2 }
 			cost = 100
@@ -318,6 +349,7 @@ characters = {
 		}
 		advisor = {
 			idea_token = FOP_luis_alberto_quesada
+			desc = FOP_luis_alberto_quesada_advisor_desc
 			slot = air_chief
 			traits = { KR_air_chief_all_weather_1 }
 			cost = 50
@@ -353,6 +385,62 @@ characters = {
 	}
 
 	##### Political advisors
+	FOP_emilio_lopez_arango = {
+		name = FOP_emilio_lopez_arango
+		portraits = {
+			army = {
+				small = "gfx/interface/advisors/FOP/FOP_emilio_lopez_arango.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
+			available = {
+				has_government = syndicalist
+				FOP_soto_leads_USA = yes
+			}
+			idea_token = FOP_emilio_lopez_arango
+			desc = FOP_emilio_lopez_arango_advisor_desc
+			traits = { KR_socialist_moderate }
+		}
+	}
+	FOP_jose_fernando_penelon = {
+		name = FOP_jose_fernando_penelon
+		portraits = {
+			army = {
+				small = "gfx/interface/advisors/FOP/FOP_jose_fernando_penelon.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
+			idea_token = FOP_jose_fernando_penelon
+			desc = FOP_jose_fernando_penelon_advisor_desc
+			traits = { KR_conscientious_diplomat }
+			ai_will_do = { factor = 25 }
+		}
+	}
+	FOP_victorio_codovilla = {
+		name = FOP_victorio_codovilla
+		portraits = {
+			army = {
+				small = "gfx/interface/advisors/FOP/FOP_victorio_codovilla.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
+			idea_token = FOP_victorio_codovilla
+			available = {
+				has_government = totalist
+			}
+			desc = FOP_victorio_codovilla_advisor_desc
+			traits = { KR_council_communist }
+		}
+	}
 	FOP_leonidas_barletta = {
 		name = FOP_leonidas_barletta
 		portraits = {
@@ -365,7 +453,9 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_leonidas_barletta
-			traits = { KR_crime_fighter }
+			desc = FOP_leonidas_barletta_advisor_desc
+			traits = { KR_media_magnate }
+			ai_will_do = { factor = 20 }
 		}
 	}
 	FOP_candido_testa = {
@@ -380,6 +470,7 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_candido_testa
+			desc = FOP_candido_testa_advisor_desc
 			traits = { KR_war_propagandist }
 		}
 	}
@@ -395,6 +486,7 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_alvaro_yunque
+			desc = FOP_alvaro_yunque_advisor_desc
 			traits = { KR_socialist_novelist }
 		}
 	}
@@ -410,7 +502,8 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_rodolfo_gonzalez_pacheco
-			traits = { KR_popular_figurehead }
+			desc = FOP_rodolfo_gonzalez_pacheco_advisor_desc
+			traits = { KR_cultural_organiser }
 		}
 	}
 	FOP_geronimo_arnedo_alvarez = {
@@ -425,6 +518,7 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_geronimo_arnedo_alvarez
+			desc = FOP_geronimo_arnedo_alvarez_advisor_desc
 			traits = { KR_social_revolutionary }
 		}
 	}
@@ -440,7 +534,9 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_diego_abad_de_santillan
-			traits = { KR_ideological_crusader }
+			desc = FOP_diego_abad_de_santillan_advisor_desc
+			traits = { KR_mixed_economy_proponent }
+			ai_will_do = { factor = 30 }
 		}
 	}
 	FOP_antonio_de_tomaso = {
@@ -455,7 +551,8 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_antonio_de_tomaso
-			traits = { KR_agricultural_economist }
+			desc = FOP_antonio_de_tomaso_advisor_desc
+			traits = { KR_economic_reformer }
 		}
 	}
 	FOP_gregorio_bermann = {
@@ -470,6 +567,7 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_gregorio_bermann
+			desc = FOP_gregorio_bermann_advisor_desc
 			traits = { KR_education_reformer }
 		}
 	}
@@ -485,6 +583,7 @@ characters = {
 			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = FOP_roberto_noble
+			desc = FOP_roberto_noble_advisor_desc
 			allowed = {
 				has_dlc = "La Resistance"
 			}

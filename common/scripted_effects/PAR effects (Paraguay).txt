@@ -1,25 +1,3 @@
-PAR_unlock_industry_decisions = {
-	# State category
-	activate_targeted_decision = { target = 301 decision = PAR_raise_state_category_decision }
-	activate_targeted_decision = { target = 688 decision = PAR_raise_state_category_decision }
-	activate_targeted_decision = { target = 901 decision = PAR_raise_state_category_decision }
-	# Resources
-	activate_targeted_decision = { target = 688 decision = PAR_chaco_boreal_industrialization }
-	activate_targeted_decision = { target = 1027 decision = PAR_chaco_refineries }
-	# Factories
-	activate_targeted_decision = { target = 301 decision = ARG_expand_cotton_production_dec }
-	activate_targeted_decision = { target = 688 decision = ARG_expand_cotton_production_dec }
-	activate_targeted_decision = { target = 901 decision = ARG_expand_cotton_production_dec }
-	activate_targeted_decision = { target = 901 decision = ARG_expand_forestry_dec }
-}
-
-PAR_fortify_the_south = {
-	activate_targeted_decision = { target = 301 decision = PAR_fortify_paraguay }
-	activate_targeted_decision = { target = 688 decision = PAR_fortify_northern_chaco }
-	activate_targeted_decision = { target = 901 decision = PAR_fortify_southern_chaco }
-	activate_targeted_decision = { target = 1074 decision = PAR_fortify_railway }
-}
-
 PAR_become_syndie = {
 	if = {
 		limit = {

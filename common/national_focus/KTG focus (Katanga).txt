@@ -1414,8 +1414,6 @@ focus_tree = {
 		prerequisite = { focus = KTG_Military_Support_Flanders_Wallonia }
 		prerequisite = { focus = KTG_Increased_Shipping_Capacity }
 
-		ai_will_do = { factor = 0 }
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KTG_Defence_Uranium_Mines"
 			879 = {

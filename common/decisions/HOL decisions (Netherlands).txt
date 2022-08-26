@@ -72,7 +72,7 @@ HOL_geopolitical_actions = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove hol_join_reichspakt_decision"
+			log = "[GetDateText]: [Root.GetName]: Decision hol_join_reichspakt_decision target: [From.GetName]"
 			FROM = { country_event = holfocus.69 }
 		}
 	}
@@ -109,7 +109,7 @@ HOL_geopolitical_actions = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove hol_join_internationale_decision"
+			log = "[GetDateText]: [Root.GetName]: Decision hol_join_internationale_decision target: [From.GetName]"
 			FROM = { country_event = holfocus.72 }
 		}
 	}
@@ -300,17 +300,17 @@ HOL_geopolitical_actions = {
 		available = {
 			OR = {
 				is_in_faction_with = FROM
-				AND = {
-					is_in_faction = no
-					FROM = { is_in_faction = no }
-				}
+				FROM = { is_in_faction = no }
 			}
 		}
 
 		visible = {
 			hol_politics_stabilised_all = yes
 			country_exists = FROM
-			FROM = { NOT = { is_in_tech_sharing_group = belgian_research } }
+			FROM = {
+				is_subject = no
+				both_socialist_or_both_not_socialist = yes
+			}
 		}
 
 		fire_only_once = yes
@@ -322,7 +322,10 @@ HOL_geopolitical_actions = {
 		}
 		target_trigger = {
 			country_exists = FROM
-			FROM = { NOT = { is_in_tech_sharing_group = belgian_research } }
+			FROM = {
+				is_subject = no
+				both_socialist_or_both_not_socialist = yes
+			}
 		}
 
 		ai_will_do = {
@@ -498,16 +501,16 @@ HOL_prepare_the_inundation_lines = {
 					}
 				}
 				damage_building = {
-				    type = infrastructure
-				    damage = 3
+					type = infrastructure
+					damage = 3
 				}
 				damage_building = {
-				    type = industrial_complex
-				    damage = 1.5
+					type = industrial_complex
+					damage = 1.5
 				}
 				damage_building = {
-				    type = arms_factory
-				    damage = 1.5
+					type = arms_factory
+					damage = 1.5
 				}
 			}
 			36 = {
@@ -518,16 +521,16 @@ HOL_prepare_the_inundation_lines = {
 					}
 				}
 				damage_building = {
-				    type = infrastructure
-				    damage = 3
+					type = infrastructure
+					damage = 3
 				}
 				damage_building = {
-				    type = industrial_complex
-				    damage = 1.5
+					type = industrial_complex
+					damage = 1.5
 				}
 				damage_building = {
-				    type = arms_factory
-				    damage = 1.5
+					type = arms_factory
+					damage = 1.5
 				}
 			}
 			set_global_flag = HOL_inundation_lines_flooded

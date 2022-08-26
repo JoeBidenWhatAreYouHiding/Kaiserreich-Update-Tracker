@@ -39,20 +39,28 @@ characters = {
 			ideology = market_liberal_subtype
 		}
 	}
-	SQI_song_zheyuan = {
-		name = SQI_song_zheyuan
+	SQI_qu_yingguang = {
+		name = SQI_qu_yingguang
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SQI/Portrait_Shandong_Song_Zheyuan.png"
-			}
-			army = {
-				small = "gfx/interface/advisors/SQI/SQI_song_zheyuan.png"
-				large = "gfx/leaders/SQI/Portrait_Shandong_Song_Zheyuan.png"
+				large = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
+				small = "gfx/interface/advisors/SQI/SQI_qu_yingguang.png"
 			}
 		}
 		country_leader = {
-			desc = SQI_song_zheyuan_leader_desc
+			desc = SQI_qu_yingguang_leader_desc
 			ideology = authoritarian_democrat_subtype
+			traits = { SQI_qu_bodisattva }
+		}
+		advisor = {
+			slot = political_advisor
+			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
+			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
+			idea_token = SQI_qu_yingguang
+			available = {
+				is_country_leader = no
+			}
+			traits = { KR_silent_workhorse }
 		}
 	}
 	SQI_zhang_zongchang = {
@@ -133,7 +141,7 @@ characters = {
 			logistics_skill = 2
 		}
 	}
-	SQI_zhu_qinglan = { #Zheyuan
+	SQI_zhu_qinglan = { #Yingguang
 		name = SQI_zhu_qinglan
 		portraits = {
 			civilian = {
@@ -271,21 +279,6 @@ characters = {
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = SQI_kong_dechong
 			traits = { KR_popular_figurehead }
-		}
-	}
-	SQI_qu_yingguang = { #AuthDem only
-		name = SQI_qu_yingguang
-		portraits = {
-			civilian = {
-				small = "gfx/interface/advisors/SQI/SQI_qu_yingguang.png"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			on_add = { add_to_variable = { amount_hired_political_advisors = 1 } }
-			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
-			idea_token = SQI_qu_yingguang
-			traits = { KR_silent_workhorse }
 		}
 	}
 
@@ -445,7 +438,7 @@ characters = {
 		}
 	}
 
-	### Zheyuan ###
+	### Yingguang ###
 	SQI_feng_anbang = {
 		name = SQI_feng_anbang
 		portraits = {

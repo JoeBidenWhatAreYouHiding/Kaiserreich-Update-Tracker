@@ -1620,12 +1620,8 @@ focus_tree = {
 		relative_position_id = TIB_expand_trapichi_factory
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TIB_Urban_Development"
-			every_owned_state = {
-				limit = {
-					is_core_of = TIB
-				}
-				increase_state_category_by_one_level = yes
-			}
+			322 = { increase_state_category_by_one_level = yes }
+			748 = { increase_state_category_by_one_level = yes }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}

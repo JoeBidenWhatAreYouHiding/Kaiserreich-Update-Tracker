@@ -31,7 +31,7 @@ SRD_remove_entente_support_idea = {
 
 SRD_restore_amedeo = {
 	hidden_effect = {
-		SRD_amedeo_aosta = { set_nationality = ROOT }
+		SRD_amedeo_aosta = { set_nationality = PREV }
 		SRD_amedeo_aosta = {
 			promote_character = social_democrat_subtype
 			promote_character = social_liberal_subtype

@@ -475,8 +475,8 @@ on_actions = {
 
 			70 = {
 				add_province_modifier = {
-					static_modifiers = { terrain_bratislava }
-					province = { id = 9692 }
+					static_modifiers = { terrain_kassa }
+					province = { id = 6573 }
 				}
 			}
 
@@ -1573,6 +1573,13 @@ on_actions = {
 				add_province_modifier = {
 					static_modifiers = { terrain_bogota }
 					province = { id = 10747 }
+				}
+			}
+
+			310 = {
+				add_province_modifier = {
+					static_modifiers = { terrain_cayenne }
+					province = { id = 12885 }
 				}
 			}
 
@@ -2907,13 +2914,6 @@ on_actions = {
 				}
 			}
 
-			664 = {
-				add_province_modifier = {
-					static_modifiers = { terrain_kassa }
-					province = { id = 6573 }
-				}
-			}
-
 			670 = {
 				add_province_modifier = {
 					static_modifiers = { terrain_vientiane }
@@ -2992,6 +2992,13 @@ on_actions = {
 				add_province_modifier = {
 					static_modifiers = { terrain_kingston }
 					province = { id = 12304 }
+				}
+			}
+
+			690 = {
+				add_province_modifier = {
+					static_modifiers = { terrain_nassau }
+					province = { id = 13607 }
 				}
 			}
 
@@ -3286,6 +3293,13 @@ on_actions = {
 				add_province_modifier = {
 					static_modifiers = { terrain_conarky }
 					province = { id = 1909 }
+				}
+			}
+
+			808 = {
+				add_province_modifier = {
+					static_modifiers = { terrain_ouagadougou }
+					province = { id = 10836 }
 				}
 			}
 
@@ -3728,6 +3742,20 @@ on_actions = {
 				add_province_modifier = {
 					static_modifiers = { terrain_kumul }
 					province = { id = 4704 }
+				}
+			}
+
+			1065 = {
+				add_province_modifier = {
+					static_modifiers = { terrain_yantai }
+					province = { id = 1104 }
+				}
+			}
+
+			1090 = {
+				add_province_modifier = {
+					static_modifiers = { terrain_bratislava }
+					province = { id = 9692 }
 				}
 			}
 		}

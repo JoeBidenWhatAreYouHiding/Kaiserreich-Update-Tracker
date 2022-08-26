@@ -2,8 +2,7 @@
 oob = "ARG"
 set_naval_oob = "ARG_naval"
 set_research_slots = 3
-set_convoys = 40
-starting_train_buffer = 2
+set_convoys = 50
 
 set_technology = {
 	### Infantry ###
@@ -128,8 +127,8 @@ country_event = { id = arg_flavour.1 days = 288 }   # Buenos Aires obelisk
 country_event = { id = arg_flavour.12 days = 1295 } # Bairoletto death
 country_event = { id = argcar.47 days = 3950 }      # Carles death
 
-set_stability = -0.10
-set_war_support = 0.30
+set_stability = 0
+set_war_support = 0.35
 set_variable = { arg_im_factor = 100 }
 
 set_politics = {
@@ -221,15 +220,12 @@ recruit_character = ARG_pedro_castex_lainfor
 recruit_character = ARG_marcos_zar
 
 ### Character Flags ###
-# event fop.230
-ARG_juan_pistarini = { set_character_flag = ARG_can_join_FOP }
-ARG_enrique_mosconi = { set_character_flag = ARG_can_join_FOP }
-ARG_bernardo_alberte = { set_character_flag = ARG_can_join_FOP }
+# event fop.230 - Civilian specialists approach FOP government
 ARG_jose_maria_sobral = { set_character_flag = ARG_can_join_FOP }
-ARG_manuel_savio = { set_character_flag = ARG_can_join_FOP }
 ARG_luis_costa = { set_character_flag = ARG_can_join_FOP }
 ARG_juan_cooke = { set_character_flag = ARG_can_join_FOP }
 ARG_carlos_sanchez_viamonte = { set_character_flag = ARG_can_join_FOP }
+ARG_carlos_begnis = { set_character_flag = ARG_can_join_FOP }
 # Events
 ARG_alicia_moreau = { set_character_flag = ARG_can_join_FOP }
 ARG_nicolas_repetto = { set_character_flag = ARG_can_join_FOP }
@@ -237,10 +233,13 @@ ARG_elpidio_gonzalez = { set_character_flag = ARG_can_join_FOP }
 ARG_robustiano_costas = { set_character_flag = ARG_can_join_FOP }
 ARG_arturo_frondizi = { set_character_flag = ARG_can_join_FOP }
 ARG_ricardo_balbin = { set_character_flag = ARG_can_join_FOP }
-
-# Focus tree
+# Focus tree - ARG characters that can be added to FOP roster via completing focuses
+ARG_juan_pistarini = { set_character_flag = ARG_can_join_FOP }
+ARG_enrique_mosconi = { set_character_flag = ARG_can_join_FOP }
+ARG_manuel_savio = { set_character_flag = ARG_can_join_FOP }
 ARG_humberto_sosa_molina = { set_character_flag = ARG_can_join_FOP }
 ARG_eleazar_videla = { set_character_flag = ARG_can_join_FOP }
+ARG_segundo_storni = { set_character_flag = ARG_can_join_FOP }
 ARG_isaac_francisco_rojas = { set_character_flag = ARG_can_join_FOP }
 ARG_bartolome_de_la_colina = { set_character_flag = ARG_can_join_FOP }
 ARG_pedro_castex_lainfor = { set_character_flag = ARG_can_join_FOP }

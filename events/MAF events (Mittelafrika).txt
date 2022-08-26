@@ -1550,6 +1550,7 @@ country_event = { #Portugal beats MAF - Event for MAF to settle for peace
 
 country_event = { # Germany is notified that Mittelafrika lost
 	id = mittel.411
+	immediate = { log = "[GetDateText]: [Root.GetName]: event mittel.411 FROM = [From.GetName]" }
 	title = mittel.411.t
 	desc = mittel.411.d
 	picture = GFX_report_event_MAF_askari
@@ -1581,6 +1582,7 @@ country_event = { # Germany is notified that Mittelafrika lost
 
 country_event = { #Somewhat generic refusal event - Germany/Portugal refused peace
 	id = mittel.412
+	immediate = { log = "[GetDateText]: [Root.GetName]: event mittel.412 FROM = [From.GetName]" }
 	title = mittel.412.t
 	desc = mittel.412.d
 	picture = GFX_report_event_MAF_forest
@@ -1839,8 +1841,8 @@ country_event = { #Stalemate events: MAF or GER get demand from POR (MAF first, 
 
 	option = {
 		name = mittel.426.a #Stop the war- gives POR their Demands
-		ai_chance = {
-			base = 1
+		trigger = {
+			NOT = { tag = MAF }
 		}
 		every_state = {
 			limit = {
@@ -1867,9 +1869,6 @@ country_event = { #Stalemate events: MAF or GER get demand from POR (MAF first, 
 	}
 	option = {
 		name = mittel.426.b #Ask GER to decide (Forwards event to GER) - should only appear for MAF
-		ai_chance = {
-			base = 1
-		}
 		trigger = {
 			tag = MAF
 		}
@@ -1894,9 +1893,6 @@ country_event = { #Generic we got the demands event
 
 	option = {
 		name = mittel.427.a
-		ai_chance = {
-			base = 1
-		}
 	}
 }
 
@@ -1911,9 +1907,6 @@ country_event = { #Generic stalemate refused event
 
 	option = {
 		name = mittel.428.a
-		ai_chance = {
-			base = 1
-		}
 	}
 }
 
@@ -1974,6 +1967,7 @@ country_event = { #Stalemate events: nobody has the advantage - rotates from MAF
 
 country_event = { #Mittelafrika gets to know that Portugal accepted peace
 	id = mittel.421
+	immediate = { log = "[GetDateText]: [Root.GetName]: event mittel.421 FROM = [From.GetName]" }
 	title = mittel.421.t
 	desc = mittel.421.d
 	picture = GFX_report_event_MAF_askari2
@@ -1982,19 +1976,10 @@ country_event = { #Mittelafrika gets to know that Portugal accepted peace
 
 	option = {
 		name = mittel.421.a #What a humiliation
-		ai_chance = {
-			base = 100
-		}
 		swap_ideas = {
 			remove_idea = MAF_border_shit_show
 			add_idea = MAF_Lost_Bushwar_Debuff
-		}
-		hidden_effect = {
-			remove_ideas = MAF_Lost_Bushwar_Debuff
-			add_timed_idea = {
-				idea = MAF_Lost_Bushwar_Debuff
-				days = 300
-			}
+			days = 300
 		}
 	}
 }
@@ -3444,6 +3429,7 @@ country_event = { #Göring disappears
 
 country_event = { #NGA secedes
 	id = mittel.20001
+	immediate = { log = "[GetDateText]: [Root.GetName]: event mittel.20001 FROM = [From.GetName]" }
 	title = mittel.20001.t
 	desc = mittel.20001.d
 	is_triggered_only = yes
@@ -3480,6 +3466,7 @@ country_event = { #NGA secedes
 
 country_event = { #GHA joins NGA
 	id = mittel.20002
+	immediate = { log = "[GetDateText]: [Root.GetName]: event mittel.20002 FROM = [From.GetName]" }
 	title = mittel.20002.t
 	desc = mittel.20002.d
 	is_triggered_only = yes
@@ -3502,6 +3489,7 @@ country_event = { #GHA joins NGA
 
 country_event = { #KEN secedes
 	id = mittel.20003
+	immediate = { log = "[GetDateText]: [Root.GetName]: event mittel.20003 FROM = [From.GetName]" }
 	is_triggered_only = yes
 	hidden = yes
 
@@ -3885,11 +3873,20 @@ country_event = { ###Black Monday--Initial event. Please see mittel.176 and on f
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			add_ideas = MAF_Black_Monday_idea
+			complete_national_focus = MAF_Black_Monday
+		}
+	}
+
 	option = {
 		name = mittel.108.a
-		complete_national_focus = MAF_Black_Monday
 		add_stability = -0.10
-		add_ideas = MAF_Black_Monday_idea
+		effect_tooltip = {
+			add_ideas = MAF_Black_Monday_idea
+			complete_national_focus = MAF_Black_Monday
+		}
 		custom_effect_tooltip = tooltip_white_line
 		custom_effect_tooltip = MAF_modify_colonial_budget
 		if = {
@@ -3919,10 +3916,6 @@ country_event = { ###Black Monday--Initial event. Please see mittel.176 and on f
 
 		hidden_effect = {
 			ETH = {
-				country_event = {
-					id = ethiopia.32 #Black Monday!
-					days = 1
-				}
 				country_event = {
 					id = ethiopia.2 #The DKAEB nears bankruptcy
 					days = 10
@@ -4891,6 +4884,7 @@ country_event = { ###Rwanda Revolt
 	}
 
 	option = {
+		869 = { add_core_of = RWA }
 		release = RWA
 		declare_war_on = {
 			target = RWA
@@ -4923,6 +4917,7 @@ country_event = { ###Urundi Revolt
 	}
 
 	option = {
+		870 = { add_core_of = BRD }
 		release = BRD
 		declare_war_on = {
 			target = BRD
@@ -5029,7 +5024,6 @@ country_event = { ###Zanzibar Revolt
 		}
 		ZZB = {
 			load_oob = ZZB
-			load_oob = ZZB_naval
 			add_ideas = MAF_Nat_Buff
 			every_owned_state = {
 				limit = {
@@ -5411,17 +5405,20 @@ country_event = { #Tanganyka peace Zanzibar!
 
 	option = {
 		name = mittel.171.a
-		ai_chance = {
-			base = 100
-		}
-		trigger = {
-			is_subject = no #again just to make sure puppet won't peace out on their own
-		}
+		ai_chance = { base = 100 }
+		trigger = { is_subject = no } #again just to make sure puppet won't peace out on their own
+
 		ZZB = {
 			white_peace_with_ROOT = yes
+			if = {
+				limit = { has_war_with = KEN }
+				white_peace = KEN
+				KEN = { transfer_state = 970 }
+			}
+			else = { ROOT = { transfer_state = 970 } }
 		}
-		transfer_state = 970
 		add_stability = 0.10
+
 		if = {
 			limit = { country_exists = RWA }
 			declare_war_on = {
@@ -5436,6 +5433,7 @@ country_event = { #Tanganyka peace Zanzibar!
 				type = annex_everything
 			}
 		}
+
 		KEN = {
 			if = {
 				limit = {

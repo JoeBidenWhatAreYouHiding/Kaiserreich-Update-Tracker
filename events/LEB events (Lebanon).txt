@@ -24,6 +24,16 @@ country_event = { #Victory against Syria
 			division_template = "Militia Division"
 			disband = yes
 		}
+		hidden_effect = {
+			if = {
+				limit = {
+					is_subject = no
+					country_exists = ARM
+					ARM = { NOT = { has_government = national_populist } }
+				}
+				ARM = { country_event = { id = arm.4 days = 55 } }
+			}
+		}
 	}
 }
 

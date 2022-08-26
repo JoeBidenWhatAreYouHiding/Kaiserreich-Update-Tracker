@@ -66,37 +66,37 @@ clear_all_relations = {
 	}
 	separate_peace_all_wars = yes
 	every_other_country = {
-		limit = { has_guaranteed = ROOT }
+		limit = { has_guaranteed = PREV }
 		diplomatic_relation = {
-			country = ROOT
+			country = PREV
 			relation = guarantee
 			active = no
 		}
 	}
 	every_other_country = {
-		limit = { has_non_aggression_pact_with = ROOT }
+		limit = { has_non_aggression_pact_with = PREV }
 		diplomatic_relation = {
-			country = ROOT
+			country = PREV
 			relation = military_access
 			active = no
 		}
 	}
 	every_other_country = {
-		limit = { has_military_access_to = ROOT }
-		ROOT = {
+		limit = { has_military_access_to = PREV }
+		diplomatic_relation = {
+			country = PREV
+			relation = military_access
+			active = no
+		}
+	}
+	every_other_country = {
+		limit = { gives_military_access_to = PREV }
+		PREV = {
 			diplomatic_relation = {
 				country = PREV
 				relation = military_access
 				active = no
 			}
-		}
-	}
-	every_other_country = {
-		limit = { gives_military_access_to = ROOT }
-		diplomatic_relation = {
-			country = ROOT
-			relation = military_access
-			active = no
 		}
 	}
 	if = {

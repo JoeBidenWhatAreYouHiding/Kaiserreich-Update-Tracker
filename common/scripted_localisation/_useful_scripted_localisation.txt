@@ -76,24 +76,10 @@ defined_text = {
 defined_text = {
 	name = GetSecondInCommand
 	text = {
-		trigger = {
-			has_variable = current_second_in_command_character
-			has_idea = var:current_second_in_command_character
-		}
+		trigger = { has_variable = current_second_in_command_character }
 		localization_key = "[?current_second_in_command_character.GetTokenLocalizedKey]"
 	}
 	text = {
-		trigger = {
-			has_variable = current_second_in_command_character
-			NOT = { has_idea = var:current_second_in_command_character }
-			log = "KR_CHARACTER_ERROR - [THIS.GetTag] does not have [?current_second_in_command_character.GetTokenKey] as an idea"
-		}
-		localization_key = "BUG, PLEASE REPORT - SECOND IN COMMAND VARIABLE MISMATCHED"
-	}
-	text = {
-		trigger = {
-			log = "KR_CHARACTER_ERROR - [THIS.GetTag] has no 2IC"
-		}
 		localization_key = "BUG, PLEASE REPORT - NO SECOND IN COMMAND"
 	}
 }

@@ -150,98 +150,97 @@ units = {
 	division = {
 		location = 6606
 		division_template = "Guardia Rossa Autotrasportabile"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
 	}
 	division = {
 		location = 6606
 		division_template = "Guardia Rossa Autotrasportabile"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
 	}
 	division = {
 		location = 6606
 		division_template = "Guardia Rossa Autotrasportabile"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
 	}
 	division = {
 		location = 9907
 		division_template = "Guardia Rossa Autotrasportabile"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
 	}
 	division = {
 		location = 9907
 		division_template = "Divisione Corazzata"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.3
 	}
 	division = {
 		location = 6780
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 6780
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 6780
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 6780
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 6780
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 925
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 925
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 925
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 925
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 6606
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 	division = {
 		location = 6780
 		division_template = "Guardia Rossa"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
 	}
 }
 
@@ -253,6 +252,12 @@ air_wings = {
 		}
 		tac_bomber_equipment_0 = {
 			amount = 128
+			owner = "SRI"
+		}
+	}
+	161 = {
+		nav_bomber_equipment_1 = {
+			amount = 48
 			owner = "SRI"
 		}
 	}

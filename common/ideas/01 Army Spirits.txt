@@ -221,10 +221,11 @@ ideas = {
 
 		ideological_loyalty_spirit = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ideological_loyalty_spirit" }
+			picture = upbeat_command_spirit
 			ledger = army
 			visible = {
 				OR = {
-					has_government = totalist
+					has_socialist_government = yes
 					has_government = national_populist
 				}
 			}
@@ -241,10 +242,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea state_serves_the_military_spirit" }
 			ledger = army
 			visible = {
-				OR = {
-					has_government = authoritarian_democrat
-					has_government = paternal_autocrat
-				}
+				has_any_authoritarian_government = yes
 			}
 			modifier = {
 				political_power_factor = 0.1

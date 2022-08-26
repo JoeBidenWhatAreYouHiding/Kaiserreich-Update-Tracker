@@ -799,13 +799,9 @@ focus_tree = {
 		ai_will_do = { factor = 33 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ITA_invest_in_countryside"
-			every_owned_state = {
-				limit = {
-					is_core_of = ROOT
-					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
-				}
-				increase_state_category_by_one_level = yes
-			}
+			159 = { increase_state_category_by_one_level = yes }
+			160 = { increase_state_category_by_one_level = yes }
+			759 = { increase_state_category_by_one_level = yes }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}

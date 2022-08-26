@@ -82,6 +82,5 @@ units = {
 		location = 11773
 		division_template = "Divisione Alpina"
 		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
 	}
 }

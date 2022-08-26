@@ -13,7 +13,6 @@ country_event = {
 	picture = GFX_report_event_GRE_athens
 
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	option = {
 		name = gre.1.a
@@ -49,10 +48,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-		is_subject = no
-	}
-
 	option = {
 		name = gre.3.a
 		add_political_power = 20
@@ -71,10 +66,6 @@ country_event = {
 	picture = GFX_report_event_GRE_crowd2
 
 	is_triggered_only = yes
-
-	trigger = {
-		is_subject = no
-	}
 
 	option = {
 		name = gre.4.a
@@ -95,10 +86,14 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = { add_ideas = GRE_black_monday_1 }
+	}
+
 	option = {
 		name = gre.5.a
 		add_stability = -0.1
-		add_ideas = GRE_black_monday_1
+		effect_tooltip = { add_ideas = GRE_black_monday_1 }
 		custom_effect_tooltip = GRE_increase_monarchist
 		modify_country_flag = { flag = gre_monarchist_sympathies value = 2 }
 		hidden_effect = {
@@ -3644,6 +3639,7 @@ country_event = {
 		multiply_temp_variable = { GRE_civil_war_divisions_cavalry = 0.21 }
 		hidden_effect = {
 			event_target:GRE_civil_war_target = {
+				GRE_naval_variants = yes
 				transfer_units_fraction = {
 					target = ROOT
 					size = 1
@@ -4261,6 +4257,7 @@ country_event = {
 		multiply_temp_variable = { GRE_civil_war_divisions_cavalry = 0.21 }
 		hidden_effect = {
 			event_target:GRE_civil_war_target = {
+				GRE_naval_variants = yes
 				transfer_units_fraction = {
 					target = ROOT
 					size = 1

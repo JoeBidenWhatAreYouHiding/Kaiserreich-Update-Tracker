@@ -1639,7 +1639,7 @@ focus_tree = {
 			add_state_claim = 555 #Kurils
 			if = {
 				limit = { can_declare_war_on = GER }
-				create_wargoal = {
+				declare_war_on = {
 					target = GER
 					type = annex_everything
 				}
@@ -1653,7 +1653,7 @@ focus_tree = {
 							}
 						}
 					}
-					create_wargoal = {
+					declare_war_on = {
 						target = GEO
 						type = annex_everything
 					}
@@ -1668,7 +1668,7 @@ focus_tree = {
 							}
 						}
 					}
-					create_wargoal = {
+					declare_war_on = {
 						target = AZR
 						type = annex_everything
 					}
@@ -1682,7 +1682,7 @@ focus_tree = {
 						NOT = { is_in_faction_with = GER }
 					}
 				}
-				create_wargoal = {
+				declare_war_on = {
 					target = UKR
 					type = annex_everything
 				}
@@ -1715,6 +1715,12 @@ focus_tree = {
 				amount = 5000
 				producer = SOV
 			}
+			hidden_effect = {
+				if = {
+					limit = { has_template = "Gorodskaya Militsiya" }
+					delete_unit_template_and_units = { division_template = "Gorodskaya Militsiya" disband = yes } #no cheating
+				}
+			}
 			division_template = {
 				name = "Gorodskaya Militsiya"
 				division_names_group = SOV_GAR_01
@@ -1730,6 +1736,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 195 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1738,6 +1745,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 219 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1746,6 +1754,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 242 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1759,6 +1768,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 246 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1767,6 +1777,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 247 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1775,6 +1786,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 223 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1783,6 +1795,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 222 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1791,6 +1804,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 224 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1799,6 +1813,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 220 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1807,6 +1822,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 248 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1815,6 +1831,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 252 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1823,6 +1840,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 260 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1855,6 +1873,12 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
+			hidden_effect = {
+				if = {
+					limit = { has_template = "Krasnaya Gvardiya" }
+					delete_unit_template_and_units = { division_template = "Krasnaya Gvardiya" disband = yes } #no cheating
+				}
+			}
 			division_template = {
 				name = "Krasnaya Gvardiya"
 				division_names_group = SOV_GAR_01
@@ -1872,6 +1896,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 195 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -1880,6 +1905,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 219 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
 					owner = SOV
@@ -2932,6 +2958,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SOV_Create_The_VDV"
+			hidden_effect = {
+				if = {
+					limit = { has_template = "Vozdushno-Desantnye Voyska" }
+					delete_unit_template_and_units = { division_template = "Vozdushno-Desantnye Voyska" disband = yes } #no cheating
+				}
+			}
 			division_template = {
 				name = "Vozdushno-Desantnye Voyska"
 				division_names_group = SOV_PAR_01
@@ -2946,12 +2978,12 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 219 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				custom_effect_tooltip = RUS_paratrooper_tooltip
 				hidden_effect = {
 					create_unit = {
 						division = "division_template = \"Vozdushno-Desantnye Voyska\" start_experience_factor = 0.1"
-						owner = SOV
-						prioritize_location = 6380
+						owner = ROOT
 					}
 				}
 			}

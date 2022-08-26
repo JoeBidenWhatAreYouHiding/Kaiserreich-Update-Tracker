@@ -1,4 +1,4 @@
-###########################
+﻿###########################
 # South Africa Events
 # By Thomahawk2k
 ###########################
@@ -50,10 +50,14 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = { add_ideas = SAF_black_monday_0 }
+	}
+
 	option = {
 		name = saf.3.a
-		add_ideas = SAF_black_monday_0
 		add_stability = -0.10
+		effect_tooltip = { add_ideas = SAF_black_monday_0 }
 		hidden_effect = { country_event = { id = saf.148 days = 50 } }
 	}
 }
@@ -913,7 +917,6 @@ country_event = {
 		custom_effect_tooltip = tooltip_white_line
 		add_ideas = SAF_idea_low_participation
 		hidden_effect = {
-			set_cosmetic_tag = SAF_salc
 			load_focus_tree = SAF_socialist_focus
 			country_event = { id = saf.119 days = 35 } #White Flight
 			add_named_threat = {
@@ -4088,16 +4091,20 @@ country_event = {#Africanize Placenames
 				name = VICTORY_POINTS_13800_SOUTH_AFRICAN
 			}
 		}
-		945 = {
-			set_province_name = {
-				id = 10668
-				name = VICTORY_POINTS_10668_SOUTH_AFRICAN
+		custom_effect_tooltip = SAF_945_toponym_rename
+		custom_effect_tooltip = SAF_946_toponym_rename
+		hidden_effect = {
+			945 = {
+				set_province_name = {
+					id = 10668
+					name = VICTORY_POINTS_10668_SOUTH_AFRICAN
+				}
 			}
-		}
-		946 = {
-			set_province_name = {
-				id = 13764
-				name = VICTORY_POINTS_13764_SOUTH_AFRICAN
+			946 = {
+				set_province_name = {
+					id = 13764
+					name = VICTORY_POINTS_13764_SOUTH_AFRICAN
+				}
 			}
 		}
 		947 = {
@@ -4270,6 +4277,7 @@ country_event = {
 			has_focus_tree = natal_focus
 			has_focus_tree = SAF_federation_focus
 			has_completed_focus = SAF_coloured_enfranchisement_act
+			has_government = national_populist
 		}
 	}
 

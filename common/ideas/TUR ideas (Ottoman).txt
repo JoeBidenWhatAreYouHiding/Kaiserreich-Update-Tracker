@@ -184,7 +184,7 @@ ideas = {
 				conscription = 0.01
 				stability_factor = 0.10
 				war_support_factor = -0.10
-				army_core_defence_factor = 0.10
+				army_core_defence_factor = 0.05
 			}
 			rule = {
 				can_not_declare_war = yes
@@ -549,6 +549,21 @@ ideas = {
 				research_speed_factor = 0.02
 				production_factory_efficiency_gain_factor = 0.05
 				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+
+		ott_private_initiative_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ott_private_initiative_2" }
+			name = ott_private_initiative
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				global_building_slots_factor = 0.10
+				research_speed_factor = 0.02
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				production_speed_rail_way_factor = 0.25
 			}
 		}
 
@@ -960,6 +975,7 @@ ideas = {
 				activate_targeted_decision = { decision = OTT_leave_edirne_accords target = TUR }
 			}
 			on_remove = {
+				log = "[GetDateText]: [Root.GetName]: remove idea ott_balkan_military_accords"
 				remove_targeted_decision = { decision = OTT_leave_edirne_accords target = TUR }
 			}
 			picture = SPR_disbanded_army
@@ -1028,7 +1044,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.10
 				war_support_factor = -0.10
-				army_core_defence_factor = 0.10
+				army_core_defence_factor = 0.05
 				production_speed_bunker_factor = 0.1
 				production_speed_coastal_bunker_factor = 0.1
 			}

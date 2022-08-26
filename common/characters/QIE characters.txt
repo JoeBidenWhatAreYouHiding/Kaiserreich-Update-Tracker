@@ -448,6 +448,15 @@ characters = {
 		}
 		#role created in qieflavor.20
 	}
+	QIE_guo_zeyun = {
+		name = QIE_guo_zeyun
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/QIE/QIE_guo_zeyun.png"
+			}
+		}
+		#role created in QIE_ceremonial_rites
+	}
 
 	################
 	### Generals ###

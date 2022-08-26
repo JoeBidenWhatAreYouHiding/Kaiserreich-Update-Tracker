@@ -674,13 +674,13 @@ characters = {
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = SER_serbian_cultural_club
 			on_add = {
-				SER_serbian_cultural_club = { set_character_flag = SER_event_only }
+				SER_serbian_cultural_club = { set_character_flag = character_event_only }
 			}
 			on_remove = {
-				SER_serbian_cultural_club = { clr_character_flag = SER_event_only }
+				SER_serbian_cultural_club = { clr_character_flag = character_event_only }
 			}
 			available = {
-				has_character_flag = SER_event_only
+				has_character_flag = character_event_only
 				OR = {
 					has_idea = SER_konspiracija_idea
 					has_idea = SER_YUG_interferent_military
@@ -809,13 +809,13 @@ characters = {
 			on_remove = { add_to_variable = { amount_hired_political_advisors = -1 } }
 			idea_token = SER_milan_acimovic
 			on_add = {
-				SER_milan_acimovic = { set_character_flag = SER_event_only }
+				SER_milan_acimovic = { set_character_flag = character_event_only }
 			}
 			on_remove = {
-				SER_milan_acimovic = { clr_character_flag = SER_event_only }
+				SER_milan_acimovic = { clr_character_flag = character_event_only }
 			}
 			available = {
-				has_character_flag = SER_event_only
+				has_character_flag = character_event_only
 				has_idea = SER_konspiracija_idea
 			}
 			traits = { KR_conspiracy_puppet }

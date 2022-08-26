@@ -295,7 +295,7 @@ LOAS_Arab_League = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove LOAS_Integrate_Central_Arabia"
+			log = "[GetDateText]: [Root.GetName]: Decision remove LOAS_Integrate_Central_Arabia target: [From.GetName]"
 			every_state = {
 				limit = {
 					OR = {

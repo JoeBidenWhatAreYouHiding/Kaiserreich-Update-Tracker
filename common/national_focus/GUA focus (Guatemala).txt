@@ -108,7 +108,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GUA_more_favours"
 			custom_effect_tooltip = GUA_UFC_3up
 			313 = {
-				increase_state_category_by_two_levels = yes
+				increase_state_category_by_one_level = yes
 			}
 			311 = {
 				increase_state_category_by_one_level = yes

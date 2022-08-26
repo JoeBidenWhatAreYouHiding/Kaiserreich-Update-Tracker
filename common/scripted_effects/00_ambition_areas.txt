@@ -116,6 +116,7 @@ create_ambition_areas = {
 			OR = {
 				is_core_of = ARG
 				is_claimed_by = ARG
+				region = 204 #Gran Chaco
 				region = 208 #Central Argentina
 				region = 64 #Scotia Sea
 				state = 300 #Uruguay
@@ -193,7 +194,7 @@ create_ambition_areas = {
 				is_claimed_by = AUS
 				region = 21 #Austria
 				region = 22 #Bohemia
-				region = 24 #Northern Balkans
+				region = 24 #Southern Balkans
 				region = 27 #Hungary
 				region = 144 #Transylvania
 				region = 155 #Galicia
@@ -203,7 +204,6 @@ create_ambition_areas = {
 				state = 66 #Lower Silesia
 				state = 67 #Upper Silesia
 				state = 780 #Baden
-				state = 841 #Kotor
 			}
 		}
 		set_variable = { ambition_area_@AUS = 1 }
@@ -546,6 +546,7 @@ create_ambition_areas = {
 				region = 24 #Southern Balkans
 				region = 143 #Northern Balkans
 				state = 102 #Slovenia
+				state = 683 #Gorizia
 				state = 736 #Istria
 				state = 835 #Carinthia
 			}
@@ -616,10 +617,10 @@ create_ambition_areas = {
 				is_core_of = CZE
 				is_claimed_by = CZE
 				region = 22 #Bohemia
-				state = 70 #Western Slovakia
-				state = 71 #Eastern Slovakia
+				state = 70 #Slovakia
+				state = 71 #Danubian Plain
 				state = 73 #Transcarpathia
-				state = 664 #Southern Slovakia
+				state = 1090 #Pressburg
 			}
 		}
 		set_variable = { ambition_area_@CZE = 1 }
@@ -779,7 +780,6 @@ create_ambition_areas = {
 			}
 		}
 		set_variable = { ambition_area_@ENG = 1 }
-		set_variable = { ambition_area_@GBP = 1 }
 	}
 	# ERI = Eritrea
 	if = {
@@ -2122,6 +2122,7 @@ create_ambition_areas = {
 				state = 106 #Macedonia
 				state = 211 #Burgas
 				state = 212 #Plovdiv
+				state = 683 #Gorizia
 				state = 736 #Istria
 				state = 770 #Pleven
 				state = 771 #Varna
@@ -2208,10 +2209,10 @@ create_ambition_areas = {
 			OR = {
 				is_core_of = SLO
 				is_claimed_by = SLO
-				state = 70 #Western Slovakia
-				state = 71 #Eastern Slovakia
+				state = 70 #Slovakia
+				state = 71 #Danubian Plain
 				state = 73 #Transcarpathia
-				state = 664 #Southern Slovakia
+				state = 1090 #Pressburg
 			}
 		}
 		set_variable = { ambition_area_@SLO = 1 }
@@ -2223,7 +2224,7 @@ create_ambition_areas = {
 				is_core_of = SLV
 				is_claimed_by = SLV
 				state = 488 #Trieste
-				state = 736 #Istria
+				state = 683 #Gorizia
 				state = 835 #Carinthia
 			}
 		}
@@ -2254,6 +2255,7 @@ create_ambition_areas = {
 		}
 		set_variable = { ambition_area_@SPA = 1 }
 		set_variable = { ambition_area_@SPR = 1 }
+		set_variable = { ambition_area_@SWF = 1 }
 	}
 	# SQI = Shandong Clique
 	if = {
@@ -2286,17 +2288,6 @@ create_ambition_areas = {
 			}
 		}
 		set_variable = { ambition_area_@SWE = 1 }
-	}
-	# SWF = CNT-FAI
-	if = {
-		limit = {
-			OR = {
-				region = 41 #Western Iberia
-				region = 236 #Southern Iberia
-				region = 237 #Western Iberia
-			}
-		}
-		set_variable = { ambition_area_@SWF = 1 }
 	}
 	# SWI = Switzerland
 	if = {
@@ -2546,6 +2537,7 @@ create_ambition_areas = {
 				state = 160 #Venetia
 				state = 163 #Dalmatia
 				state = 488 #Trieste
+				state = 683 #Gorizia
 				state = 736 #Istria
 				state = 759 #Friuli
 				state = 783 #Trentino

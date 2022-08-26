@@ -123,63 +123,6 @@ AST_enact_entente_trade = {
 	}
 }
 
-NZL_puppet_setup = {
-	hidden_effect = {
-		NZL = {
-			if = {
-				limit = { is_in_faction_with = ENT }
-				set_cosmetic_tag = NZL_entente
-			}
-			else = {
-				drop_cosmetic_tag = yes
-			}
-			if = {
-				limit = { NOT = { has_character = NZL_bernard_cyril_freyberg } }
-				AST = {
-					every_character = {
-						limit = { has_character_flag = NZL_character }
-						if = {
-							limit = { has_trait = AST_new_zealander }
-							remove_unit_leader_trait = AST_new_zealander
-						}
-						set_nationality = NZL
-					}
-				}
-			}
-			if = {
-				limit = { NZL_george_vere_arundel_monckton_arundell = { can_be_country_leader = yes } }
-				NZL_george_vere_arundel_monckton_arundell = { remove_all_country_leader_roles = yes }
-			}
-			NZL_bernard_cyril_freyberg = {
-				remove_country_leader_role_social_democrat = yes
-				remove_country_leader_role_social_liberal = yes
-				remove_country_leader_role_market_liberal = yes
-				remove_country_leader_role_social_conservative = yes
-				if = {
-					limit = { has_ideology = authoritarian_democrat_subtype }
-					promote_character = authoritarian_democrat_subtype
-				}
-				else = {
-					add_country_leader_role = {
-						country_leader = { ideology = authoritarian_democrat_subtype }
-						promote_leader = yes
-					}
-				}
-				if = {
-					limit = { has_ideology = paternal_autocrat_subtype }
-					promote_character = paternal_autocrat_subtype
-				}
-				else = {
-					add_country_leader_role = {
-						country_leader = { ideology = paternal_autocrat_subtype }
-						promote_leader = yes
-					}
-				}
-			}
-		}
-	}
-}
-
 AST_puppet_setup = {
 	hidden_effect = {
 		AST = {
@@ -598,6 +541,41 @@ AST_authdem_sic = {
 				NOT = { has_idea = AST_william_morris_hughes_sic }
 			}
 			activate_advisor = AST_william_morris_hughes_sic
+		}
+	}
+}
+
+AST_paramilitary_spawn = {
+	hidden_effect = {
+		if = {
+			limit = { has_template = "Paramilitary" }
+			delete_unit_template_and_units = { division_template = "Paramilitary" disband = yes } #no cheating
+		}
+	}
+	division_template = {
+		name = "Paramilitary"
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 0 y = 4 }
+		}
+		template_counter = 68
+	}
+	random_owned_controlled_state = {
+		limit = { valid_state_for_spawning_friendly_unit = yes }
+		create_unit = {
+			division = "name = \"1st New Guard Paramilitary\" division_template = \"Paramilitary\" start_experience_factor = 0.1"
+			owner = PREV
+		}
+		create_unit = {
+			division = "name = \"2nd New Guard Paramilitary\" division_template = \"Paramilitary\" start_experience_factor = 0.1"
+			owner = PREV
+		}
+		create_unit = {
+			division = "name = \"3rd New Guard Paramilitary\" division_template = \"Paramilitary\" start_experience_factor = 0.1"
+			owner = PREV
 		}
 	}
 }

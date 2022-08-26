@@ -31,6 +31,7 @@ political_actions = {
 			modifier = {
 				add = 1
 				has_stability < 0.4
+				has_political_power > 155 #Spend on other things first
 			}
 		}
 	}
@@ -137,6 +138,7 @@ political_actions = {
 		days_remove = 360
 
 		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision generic_raise_support"
 			hidden_effect = {
 				meta_effect = {
 					text = {

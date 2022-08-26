@@ -347,6 +347,7 @@ focus_tree = {
 		y = 7
 
 		select_effect = {
+			log = "[GetDateText]: [Root.GetName]: Select Focus INS_negara_buruh_tani_dan_pekerja"
 			country_event = { id = ins.16 days = 20 }
 			country_event = { id = ins.17 days = 20 }
 			country_event = { id = ins.18 days = 40 }

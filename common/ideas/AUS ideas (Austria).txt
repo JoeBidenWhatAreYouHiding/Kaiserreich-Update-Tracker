@@ -239,26 +239,6 @@ ideas = {
 			}
 		}
 
-		AUS_k_u_k_armee_bonus = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AUS_k_u_k_armee_bonus" }
-			picture = AUS_part_of_the_Empire
-			allowed = { always = no }
-			modifier = {
-				conscription = 0.025
-				surrender_limit = 0.1
-			}
-		}
-
-		AUS_k_u_k_armee_bonus_2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AUS_k_u_k_armee_bonus_2" }
-			picture = AUS_part_of_the_Empire
-			allowed = { always = no }
-			modifier = {
-				conscription = 0.01
-				surrender_limit = 0.1
-			}
-		}
-
 		AUS_crownland_revolt = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AUS_crownland_revolt" }
 			picture = chi_war_of_resistance3
@@ -418,6 +398,17 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				air_defence_factor = 0.05
+			}
+		}
+
+		AUS_military_integration = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AUS_military_integration" }
+			picture = MEX_politicised_army_2
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = -0.15
+				training_time_factor = -0.5
+				hidden_modifier = { ai_desired_divisions_factor = 2 }
 			}
 		}
 	}

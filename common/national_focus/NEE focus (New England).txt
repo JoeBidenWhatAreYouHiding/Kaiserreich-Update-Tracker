@@ -385,6 +385,8 @@ focus_tree = {
 			custom_effect_tooltip = This_will_lock_conscription_tt
 			custom_effect_tooltip = tooltip_white_line
 			army_experience = 30
+			set_technology = { tech_special_forces = 1 }
+			custom_effect_tooltip = tooltip_white_line
 			add_doctrine_cost_reduction = {
 				name = NEE_Reorganise_National_Guard
 				cost_reduction = 0.5
@@ -413,6 +415,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_Maine_Maritime_School"
 			army_experience = 20
 			navy_experience = 10
+			set_technology = { improved_special_forces = 1 }
 			custom_effect_tooltip = tooltip_white_line
 			add_doctrine_cost_reduction = {
 				name = NEE_Maine_Maritime_School
@@ -511,6 +514,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_Continental_Rangers"
 			army_experience = 15
+			set_technology = { advanced_special_forces = 1 }
+			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = NEE_Special_Forces_2
 				add_idea = NEE_Green_Mountain_Rangers
@@ -2815,6 +2820,8 @@ focus_tree = {
 				custom_effect_tooltip = tooltip_white_line
 			}
 			add_war_support = 0.05
+			unlock_decision_tooltip = NEE_claim_usa_territory_harsh
+			unlock_decision_tooltip = NEE_liberate_states
 		}
 	}
 

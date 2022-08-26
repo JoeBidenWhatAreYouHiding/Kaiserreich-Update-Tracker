@@ -38,6 +38,8 @@ country_event = {# Long Yun Takes Over!
 		add_stability = -0.10
 		add_ideas = YUN_chaos_army
 		retire_character = YUN_tang_jiyu
+		clear_sic_slot = yes
+		activate_advisor = YUN_zhang_chong_sic
 		hidden_effect = {
 			clr_country_flag = YUN_TT_time_has_run_out
 			if = {
@@ -1713,6 +1715,7 @@ country_event = {# Zhu Peide Secures Yunnan!
 			limit = { has_trait = hidden_sympathies }
 			remove_unit_leader_trait = hidden_sympathies
 		}
+		YUN_zhu_peide = { promote_to_field_marshal = yes }
 		retire_character = YUN_hu_ruoyu
 		retire_character = YUN_lu_han
 		effect_tooltip = { retire_character = YUN_long_yun }
@@ -4661,20 +4664,21 @@ country_event = {#GEA/INC/VIN Peace Deal
 	fire_only_once = yes
 
 	trigger = {
-
-		owns_state = 671
-		owns_state = 857
-		has_war_with = YUN
 		OR = {
-			tag = GEA
+			tag = GER
 			tag = VIN
 			tag = INC
 		}
+		has_war_with = YUN
 		YUN = {
 			controls_state = 671
 			controls_state = 857
 			is_valid_peace_target = yes
+			NOT = { has_country_flag = can_assume_national_leadership }
 		}
+		is_valid_peace_target = yes
+		671 = { is_owned_by_ROOT_or_subject = yes }
+		857 = { is_owned_by_ROOT_or_subject = yes }
 	}
 
 	option = {#We had enough. Sign a peace-deal

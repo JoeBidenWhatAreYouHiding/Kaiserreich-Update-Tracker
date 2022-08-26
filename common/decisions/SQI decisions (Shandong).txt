@@ -257,15 +257,20 @@ SQI_war_intervention_decisions = {
 
 		allowed = { always = no }
 
+		available = {
+			is_neighbor_of = FROM
+			NOT = { has_non_aggression_pact_with = FROM }
+		}
+
 		visible = {
 			NOT = { has_global_flag = LEP_collapse_SQI_out }
 			can_declare_war_on = FROM
-			is_neighbor_of = FROM
 		}
 
 		cancel_trigger = {
 			OR = {
 				NOT = { can_declare_war_on = FROM }
+				has_non_aggression_pact_with = FROM
 				has_global_flag = LEP_collapse_SQI_out
 				is_subject = yes
 				is_in_faction = yes
@@ -421,7 +426,7 @@ SQI_war_intervention_decisions = {
 			is_subject = no
 			can_declare_war_on = FROM
 			NOT = {
-				has_country_flag = SQI_Zheyuan_beat_Zongchang
+				has_country_flag = SQI_Yingguang_beat_Zongchang
 				country_exists = LEP
 				country_exists = ANQ
 				country_exists = CHI
@@ -432,7 +437,7 @@ SQI_war_intervention_decisions = {
 		target_root_trigger = {
 			is_subject = no
 			NOT = {
-				has_country_flag = SQI_Zheyuan_beat_Zongchang
+				has_country_flag = SQI_Yingguang_beat_Zongchang
 				country_exists = LEP
 				country_exists = ANQ
 				country_exists = CHI
@@ -469,6 +474,14 @@ SQI_war_intervention_decisions = {
 			modifier = {
 				factor = 0
 				FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				has_government = national_populist
+				QIE = {
+					NOT = { has_completed_focus = QIE_unrest }
+					focus_progress = { focus = QIE_unrest progress > 0 }
+				}
 			}
 		}
 
@@ -585,7 +598,7 @@ SQI_war_intervention_decisions = {
 
 		visible = {
 			has_country_flag = SQI_national_government
-			NOT = { has_country_flag = SQI_Zheyuan_beat_Zongchang }
+			NOT = { has_country_flag = SQI_Yingguang_beat_Zongchang }
 			is_subject = no
 			can_declare_war_on = FROM
 		}
@@ -593,7 +606,7 @@ SQI_war_intervention_decisions = {
 		targets = { HNN YUN GXC SZC XSM SHX }
 		target_root_trigger = {
 			has_country_flag = SQI_national_government
-			NOT = { has_country_flag = SQI_Zheyuan_beat_Zongchang }
+			NOT = { has_country_flag = SQI_Yingguang_beat_Zongchang }
 			is_subject = no
 		}
 		target_trigger = {
@@ -714,16 +727,12 @@ SQI_riot_policy_decisions = {# dealing with Yiguandao
 	SQI_end_Yiguandao_riot = {# fight Yiguandao
 		icon = generic_nationalism
 		allowed = { always = no }
-		visible = {
-			has_idea = SQI_Yiguandao_revolt
-		}
 
-		fire_only_once = yes
-		custom_cost_trigger = {
-			command_power > 25
-		}
-		custom_cost_text = CP_25
 		days_remove = 50
+		custom_cost_text = CP_25
+		custom_cost_trigger = {
+			command_power > 24.99
+		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SQI_end_Yiguandao_riot"
@@ -750,16 +759,12 @@ SQI_riot_policy_decisions = {# dealing with Yiguandao
 	SQI_end_peasant_riot = {# fight peasants
 		icon = generic_nationalism
 		allowed = { always = no }
-		visible = {
-			has_idea = SQI_Peasant_revolt
-		}
 
-		fire_only_once = yes
-		custom_cost_trigger = {
-			command_power > 25
-		}
-		custom_cost_text = CP_25
 		days_remove = 50
+		custom_cost_text = CP_25
+		custom_cost_trigger = {
+			command_power > 24.99
+		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SQI_end_peasant_riot"
@@ -786,16 +791,12 @@ SQI_riot_policy_decisions = {# dealing with Yiguandao
 	SQI_end_Zongchang_riot = {# fight Zongchang
 		icon = generic_nationalism
 		allowed = { always = no }
-		visible = {
-			has_idea = SQI_Zongchang_revolt
-		}
 
-		fire_only_once = yes
-		custom_cost_trigger = {
-			command_power > 25
-		}
-		custom_cost_text = CP_25
 		days_remove = 50
+		custom_cost_text = CP_25
+		custom_cost_trigger = {
+			command_power > 24.99
+		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SQI_end_Zongchang_riot"
@@ -860,6 +861,81 @@ SQI_internal_decisions = {
 			add_offsite_building = { type = dockyard level = 1 }
 			add_offsite_building = { type = industrial_complex level = 1 }
 			add_to_variable = { var = obtain_dockyard_counter value = 1 }
+		}
+	}
+	SQI_committees_against_vice = {
+		icon = generic_agreement
+		allowed = { always = yes }
+		visible = {
+			has_capitulated = no
+			has_country_flag = SQI_needed
+			NOT = { has_government = paternal_autocrat }
+		}
+		selectable_mission = yes
+		days_mission_timeout = 180
+		is_good = yes
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SQI_committees_against_vice"
+			add_stability = 0.05
+			597 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	SQI_break_the_black_markets = {
+		icon = generic_political_discourse
+		allowed = { always = yes }
+		visible = {
+			has_capitulated = no
+			has_country_flag = SQI_needed
+			NOT = { has_government = paternal_autocrat }
+		}
+		selectable_mission = yes
+		days_mission_timeout = 250
+		is_good = yes
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SQI_break_the_black_markets"
+			add_ideas = YUN_the_banks_are_here
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	SQI_reestablish_provincial_assemblies = {
+		icon = generic_political_discourse
+		allowed = { always = yes }
+		visible = {
+			has_capitulated = no
+			has_country_flag = SQI_needed
+			has_government = authoritarian_democrat
+		}
+		selectable_mission = yes
+		days_mission_timeout = 370
+		is_good = yes
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SQI_reestablish_provincial_assemblies"
+			add_ideas = HNN_dem_edu
+		}
+
+		ai_will_do = {
+			factor = 200
 		}
 	}
 	SQI_assemble_air_squadron = {

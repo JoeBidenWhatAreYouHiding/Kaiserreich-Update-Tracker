@@ -51,14 +51,13 @@ is_italy_or_potential_claim = {
 		state = 1 #Corsica
 		state = 103 #Rijeka
 		state = 116 #Malta
-		state = 163 #Dalmatia
 		state = 488 #Trieste
 		state = 735 #Savoy
+		state = 683 #Gorizia
 		state = 736 #Istria
 		state = 761 #Ticino
 		state = 762 #Nice
 		state = 783 #Trentino
-		state = 841 #Kotor
 		state = 943 #Upper Savoy
 	}
 }

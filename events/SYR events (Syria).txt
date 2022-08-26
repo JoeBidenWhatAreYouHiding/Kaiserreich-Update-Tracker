@@ -1,4 +1,4 @@
-#############################
+﻿#############################
 # KR Syria Events by Jeankedezeehond
 #############################
 
@@ -37,6 +37,7 @@ country_event = {	#Syrian Revolt
 			set_province_controller = 4111
 			set_province_controller = 1074
 			SYR = {
+				transfer_technology = yes
 				division_template = {
 					name = "Militia Damascus"
 					is_locked = yes
@@ -294,6 +295,8 @@ country_event = {	#Arab Revolt Crushed
 	is_triggered_only = yes
 
 	trigger = {
+		tag = OTT
+		owns_state = 554 #Damascus
 		has_global_flag = OTT_Syria_Revolt
 	}
 

@@ -168,7 +168,13 @@ ideas = {
 			picture = SPR_masters_of_our_own_fate
 			allowed = { always = no }
 			available = {
-				has_war_with = ENT
+				has_war_with = CAN
+				count_triggers = {
+					amount = 2
+					has_war_with = USA
+					has_war_with = TEX
+					has_war_with = PSA
+				}
 			}
 			modifier = {
 				conscription = 0.01

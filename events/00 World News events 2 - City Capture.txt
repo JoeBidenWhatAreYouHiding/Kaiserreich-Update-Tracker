@@ -290,17 +290,13 @@ news_event = {
 	desc = {
 		text = worldnews.254.d.carlist
 		trigger = {
-			event_target:new_controller = {
-				tag = SPR
-			}
+			event_target:new_controller = { tag = SPR }
 		}
 	}
 	desc = {
 		text = worldnews.254.d.other
 		trigger = {
-			event_target:new_controller = {
-				NOT = { tag = SPR }
-			}
+			NOT = { event_target:new_controller = { tag = SPR } }
 		}
 	}
 	picture = GFX_news_event_capture_madrid
@@ -407,17 +403,13 @@ news_event = {
 	desc = {
 		text = worldnews.256.d.SPA
 		trigger = {
-			event_target:new_controller = {
-				tag = SPA
-			}
+			event_target:new_controller = { tag = SPK }
 		}
 	}
 	desc = {
 		text = worldnews.256.d.SWF
 		trigger = {
-			event_target:new_controller = {
-				tag = SWF
-			}
+			event_target:new_controller = { tag = SWF }
 		}
 	}
 
@@ -2277,6 +2269,18 @@ news_event = {
 	title = worldnews.279.t
 	picture = GFX_news_event_capture_shanghai
 
+	desc = {
+		text = worldnews.279.d.interchina
+		trigger = {
+			event_target:new_controller = { is_chinese_tag = yes }
+			event_target:old_controller = { #Non LEC China Tag
+				OR = {
+					is_han_chinese_tag = yes
+					is_non_han_chinese_tag = yes
+				}
+			}
+		}
+	}
 	desc = {
 		text = worldnews.279.d.china
 		trigger = {

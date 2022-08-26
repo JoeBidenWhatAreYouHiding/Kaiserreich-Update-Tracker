@@ -2002,6 +2002,42 @@ NEE_move_generals = {
 	event_target:NEE_mark_clark_target = { set_nationality = ROOT }
 }
 
+NEE_rebel_from_canada = {
+	if = {
+		limit = { is_subject = yes }
+		overlord = {
+			add_opinion_modifier = { target = PREV modifier = KR_outraged }
+			set_autonomy = { target = PREV autonomy_state = autonomy_free }
+			country_event = { id = newengland.15 hours = 8 }
+		}
+		leave_faction = yes
+	}
+	else_if = {
+		limit = { is_in_faction = yes }
+		faction_leader = {
+			add_opinion_modifier = { target = PREV modifier = KR_outraged }
+			country_event = { id = newengland.15 hours = 8 }
+		}
+		leave_faction = yes
+	}
+	if = {
+		limit = { is_in_tech_sharing_group = entente_research }
+		remove_from_tech_sharing_group = entente_research
+	}
+	if = {
+		limit = { has_idea_with_trait = NEE_ambassador_to_canada }
+		remove_ideas_with_trait = NEE_ambassador_to_canada
+	}
+	CAN_remove_from_iedc = yes
+	separate_peace_all_wars = yes
+	hidden_effect = {
+		every_country = {
+			limit = { is_american_tag = no }
+			clear_embargo_PREV = yes
+		}
+	}
+}
+
 NEE_winner_logging = { # Excludes NEE as a winner. To be used with Quid Pro Quo
 	hidden_effect = {
 		if = {

@@ -35,7 +35,6 @@ country_event = {
 	desc = romania.1.d
 	picture = GFX_report_event_romania_parliament
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -51,13 +50,25 @@ country_event = {
 	title = romania.2.t
 	desc = romania.2.d
 	picture = GFX_report_event_generic_run_on_the_banks
+
 	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			swap_ideas = {
+				remove_idea = ROM_german_control
+				add_idea = ROM_black_monday
+			}
+		}
+	}
 
 	option = {
 		name = romania.2.a
-		swap_ideas = {
-			remove_idea = ROM_german_control
-			add_idea = ROM_black_monday
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = ROM_german_control
+				add_idea = ROM_black_monday
+			}
 		}
 	}
 }
@@ -1855,6 +1866,10 @@ country_event = {
 		army_experience = 10
 		custom_effect_tooltip = ROM_volunteers
 		hidden_effect = {
+			if = {
+				limit = { has_template = "Legionary Veterans" }
+				delete_unit_template_and_units = { division_template = "Legionary Veterans" disband = yes } #no cheating
+			}
 			division_template = {
 				name = "Legionary Veterans"
 				division_names_group = ROM_INF_01
@@ -1914,7 +1929,6 @@ country_event = {
 		hidden_effect = {
 			division_template = {
 				name = "Romanian Volunteers"
-				division_names_group = ROM_INF_01
 				is_locked = yes
 				regiments = {
 					infantry = { x = 0 y = 0 }
@@ -4364,6 +4378,10 @@ country_event = {
 			news_event = romania.152
 			news_event = romania.153
 			if = {
+				limit = { has_template = "Legionary Veterans" }
+				delete_unit_template_and_units = { division_template = "Legionary Veterans" disband = yes }
+			}
+			if = {
 				limit = {
 					OR = {
 						has_country_flag = ROM_Michael_I
@@ -4538,6 +4556,7 @@ country_event = {#first election
 
 	immediate = {
 		set_country_flag = ROM_had_first_election
+		hold_election = ROM
 	}
 
 	option = {#PNL
@@ -4663,7 +4682,6 @@ country_event = {#later election
 
 	trigger = {
 		has_country_flag = ROM_had_first_election
-		has_elected_government = yes
 	}
 
 	option = {#PNL
@@ -5659,16 +5677,24 @@ country_event = {#Give up on Bessarabia for alliance with ROM?
 		ai_chance = {
 			base = 5
 			modifier = {
-				factor = 0
+				add = -5
 				has_authoritarian_government = yes
 			}
 			modifier = {
-				factor = 0
+				add = -5
 				ROM = { has_dictatorship_government = yes }
 			}
+			modifier = {
+				add = 25
+				owns_state = 78 #No reason to say no if they own Bessarabia already
+			}
+			
 		}
 		add_to_faction = ROM
-		remove_state_claim = 78
+		if = {
+			limit = { NOT = { owns_state = 78 } }
+			remove_state_claim = 78 #Bessarabia
+		}
 		ROM = {
 			country_event = romania.145
 		}
@@ -5716,7 +5742,7 @@ country_event = {#RUS refused
 	option = {#Welp
 		name = romania.146.a
 		add_political_power = -15
-		set_country_flag = ROM_threatened_by_RUS
+		activate_targeted_decision = { target = GER decision = ROM_negotiate_with_Germany }
 	}
 }
 #Russia not giving up Bessarabia claims; Alliance with GER?
@@ -8039,23 +8065,6 @@ country_event = {
 			add_resistance = 5
 			add_resistance_target = {
 				amount = 5
-				tooltip = ROM_alfold_unrest
-				days = 120
-			}
-		}
-	}
-	option = {
-		name = romania.234.b
-		add_political_power = -75
-		add_manpower = -17
-		add_equipment_to_stockpile = {
-			type = infantry_equipment
-			amount = -1000
-		}
-		154 = {
-			add_resistance = 15
-			add_resistance_target = {
-				amount = 15
 				tooltip = ROM_alfold_unrest
 				days = 120
 			}

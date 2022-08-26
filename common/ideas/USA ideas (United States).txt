@@ -858,7 +858,7 @@ ideas = {
 		}
 		USA_Rules_the_waves_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea USA_Rules_the_waves_idea" }
-			picture = AST_oversized_fleet
+			picture = hol_naval_heritage
 			allowed = { always = no }
 			modifier = {
 				navy_max_range_factor = 0.20

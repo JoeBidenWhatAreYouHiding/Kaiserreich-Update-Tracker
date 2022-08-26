@@ -1173,6 +1173,69 @@ white_peace_with_ROOT = {
 	}
 }
 
+# This can be used normally: TAG = { white_peace_with_PREV = yes }
+# Remember: PREV is the previous scope
+# TAG is the country you want PREV to completely be at peace with
+# meaning it will ensure peace with all faction members and puppets on either side
+
+white_peace_with_PREV = {
+	hidden_effect = {
+		if = {
+			limit = {
+				is_in_faction = yes
+				is_faction_leader = no
+				faction_leader = { has_war_with = PREV.PREV }
+			}
+			faction_leader = { save_event_target_as = peace_target1 }
+		}
+		else_if = {
+			limit = {
+				is_subject = yes
+				overlord = { has_war_with = PREV.PREV }
+			}
+			overlord = { save_event_target_as = peace_target1 }
+		}
+		else = {
+			save_event_target_as = peace_target1
+		}
+		PREV = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+					faction_leader = { has_war_with = PREV.PREV }
+				}
+				faction_leader = { save_event_target_as = peace_target2 }
+			}
+			else_if = {
+				limit = {
+					is_subject = yes
+					overlord = { has_war_with = PREV.PREV }
+				}
+				overlord = { save_event_target_as = peace_target2 }
+			}
+			else = {
+				save_event_target_as = peace_target2
+			}
+		}
+	}
+	event_target:peace_target1 = { white_peace = event_target:peace_target2 }
+	hidden_effect = {
+		event_target:peace_target1 = {
+			every_enemy_country = {
+				limit = { is_ally_with = event_target:peace_target2 }
+				white_peace = event_target:peace_target1
+			}
+		}
+		event_target:peace_target2 = {
+			every_enemy_country = {
+				limit = { is_ally_with = event_target:peace_target1 }
+				white_peace = event_target:peace_target2
+			}
+		}
+	}
+}
+
 # NOTE: "save_event_target_as = white_peace_receiver" needs to be performed first
 # Then you use "TAG = { white_peace_with_TARGET = yes }"
 # TAG is the country you want the event target to completely be at peace with
@@ -1234,5 +1297,99 @@ white_peace_with_TARGET = {
 				white_peace = event_target:peace_target2
 			}
 		}
+	}
+}
+
+faction_collapse_member_peace_effect = {
+	leave_faction = yes
+	#Step one: peace out with any faction leaders who aren't neighbours of/invading PREV or claiming PREV territory
+	save_event_target_as = peace_country
+	every_enemy_country = {
+		limit = {
+			is_faction_leader = yes
+			OR = {
+				capital_scope = { is_island_region = yes }
+				same_continent_as_PREV = no
+			}
+			NOT = {
+				civilwar_target = PREV #do not peace out civil wars
+				PREV = {
+					OR = {
+						any_home_area_neighbor_country = { tag = PREV.PREV } #== invading
+						any_owned_state = {
+							OR = {
+								is_core_of = PREV.PREV
+								is_claimed_by = PREV.PREV
+							}
+						}
+					}
+				}
+				any_allied_country = {
+					event_target:peace_country = {
+						OR = {
+							any_home_area_neighbor_country = { tag = PREV.PREV } #== invading
+							any_owned_state = {
+								OR = {
+									is_core_of = PREV.PREV
+									is_claimed_by = PREV.PREV
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		white_peace = PREV
+	}
+
+	#Step two: peace out with any factionless non-neighbours not on the same continent who aren't invading PREV or claiming PREV territory
+	every_enemy_country = {
+		limit = {
+			is_in_faction = no
+			is_subject = no
+			has_capitulated = no
+			OR = {
+				capital_scope = { is_island_region = yes }
+				same_continent_as_PREV = no
+			}
+			NOT = {
+				civilwar_target = PREV #do not peace out civil wars
+				PREV = {
+					OR = {
+						any_home_area_neighbor_country = { #== invading
+							OR = {
+								tag = PREV.PREV
+								is_subject_of = PREV.PREV
+							}
+						}
+						any_owned_state = {
+							OR = {
+								is_core_of = PREV.PREV
+								is_claimed_by = PREV.PREV
+							}
+						}
+					}
+				}
+				any_subject_country = {
+					event_target:peace_country = {
+						OR = {
+							any_home_area_neighbor_country = { #== invading
+								OR = {
+									tag = PREV.PREV
+									is_subject_of = PREV.PREV
+								}
+							}
+							any_owned_state = {
+								OR = {
+									is_core_of = PREV.PREV
+									is_claimed_by = PREV.PREV
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		white_peace = PREV
 	}
 }

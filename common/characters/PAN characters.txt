@@ -2,6 +2,26 @@ characters = {
 	#######################
 	### Country Leaders ###
 	#######################
+	PAN_demetrio_augusto_porras_juarez = {
+		name = PAN_demetrio_augusto_porras_juarez
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PAN/Portrait_PAN_Demetrio_Augusto_Porras_Juarez.png"
+			}
+		}
+		country_leader = {
+			ideology = totalist_subtype
+		}
+		country_leader = {
+			ideology = syndicalist_subtype
+		}
+		country_leader = {
+			ideology = radical_socialist_subtype
+		}
+		country_leader = {
+			ideology = social_democrat_subtype
+		}
+	}
 	PAN_ricardo_alfaro_jovane = {
 		name = PAN_ricardo_alfaro_jovane
 		portraits = {

@@ -13,11 +13,11 @@ characters = {
 			ideology = totalist_subtype
 		}
 	}
-	FIN_kullervo_manner = {
-		name = FIN_kullervo_manner
+	FIN_niilo_wallari = {
+		name = FIN_niilo_wallari
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/FIN/Portrait_FIN_Kullervo_Manner.png"
+				large = "gfx/leaders/FIN/Portrait_FIN_Niilo_Wallari.png"
 			}
 		}
 		country_leader = {

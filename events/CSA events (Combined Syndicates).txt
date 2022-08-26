@@ -1,4 +1,4 @@
-#############################################
+﻿#############################################
 # Combined Syndicates of America Events
 # By Herkles
 #############################################
@@ -452,6 +452,15 @@ country_event = { # Socialist Constitution - The Capital
 
 	option = {
 		name = csa.9.a
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			country_event = { id = csa.10 days = 6 }
+		}
+	}
+	option = {
+		name = csa.9.b
 		trigger = {
 			owns_state = 361
 		}
@@ -464,25 +473,12 @@ country_event = { # Socialist Constitution - The Capital
 		}
 	}
 	option = {
-		name = csa.9.b
-		trigger = {
-			owns_state = 395
-		}
-		ai_chance = {
-			base = 30
-		}
-		set_capital = { state = 395 remember_old_capital = no }
-		hidden_effect = {
-			country_event = { id = csa.10 days = 6 }
-		}
-	}
-	option = {
 		name = csa.9.c
 		trigger = {
 			owns_state = 360
 		}
 		ai_chance = {
-			base = 25
+			base = 0
 		}
 		set_capital = { state = 360 remember_old_capital = no }
 		hidden_effect = {
@@ -495,7 +491,7 @@ country_event = { # Socialist Constitution - The Capital
 			owns_state = 358
 		}
 		ai_chance = {
-			base = 45
+			base = 100
 		}
 		set_capital = { state = 358 remember_old_capital = no }
 		hidden_effect = {

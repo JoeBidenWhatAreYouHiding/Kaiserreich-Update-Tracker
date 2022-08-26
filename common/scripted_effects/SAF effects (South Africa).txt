@@ -1115,7 +1115,7 @@ SAF_natal_secedes = {
 		division_template = {
 			name = "Loyalist Militia"
 			is_locked = yes
-			division_names_group = SAF_MIL_01
+			division_names_group = SAF_GAR_01
 			regiments = {
 				infantry = { x = 0 y = 0 }
 				infantry = { x = 0 y = 1 }
@@ -1330,7 +1330,7 @@ SAF_natal_secedes_play_as_natal = {
 	division_template = {
 		name = "Loyalist Militia"
 		is_locked = yes
-		division_names_group = SAF_MIL_01
+		division_names_group = SAF_GAR_01
 		regiments = {
 			infantry = { x = 0 y = 0 }
 			infantry = { x = 0 y = 1 }

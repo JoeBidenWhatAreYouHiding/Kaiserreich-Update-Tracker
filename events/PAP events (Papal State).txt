@@ -1,4 +1,4 @@
-###########################
+﻿###########################
 # Papal State Events
 ###########################
 
@@ -14,11 +14,15 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = { add_ideas = PAP_black_monday_1 }
+	}
+
 	option = {
 		name = papalstate.1.a
 		add_stability = -0.10
 		set_country_flag = PAP_black_monday
-		add_ideas = PAP_black_monday_1
+		effect_tooltip = { add_ideas = PAP_black_monday_1 }
 	}
 }
 

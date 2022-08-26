@@ -585,3 +585,8 @@ terrain_viipuri = { }
 terrain_amiens = { }
 terrain_petrozavodsk = { }
 terrain_tobolsk = { }
+terrain_yantai = { }
+terrain_nassau = { }
+terrain_cayenne = { }
+terrain_ouagadougou = { }
+

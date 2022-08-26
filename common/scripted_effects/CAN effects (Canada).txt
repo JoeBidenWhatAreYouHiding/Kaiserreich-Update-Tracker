@@ -797,6 +797,13 @@ CAN_create_monarchy = {
 					is_country_leader = no
 					character_is_dead = no
 				}
+				if = {
+					limit = {
+						PREV.PREV = { tag = GBR }
+						has_trait = GBR_british_exile_trait
+					}
+					remove_unit_leader_trait = GBR_british_exile_trait
+				}
 				set_nationality = PREV.PREV
 			}
 		}
@@ -805,6 +812,13 @@ CAN_create_monarchy = {
 				limit = {
 					is_country_leader = no
 					character_is_dead = no
+				}
+				if = {
+					limit = {
+						PREV.PREV = { tag = GBR }
+						has_trait = GBR_british_exile_trait
+					}
+					remove_unit_leader_trait = GBR_british_exile_trait
 				}
 				set_nationality = PREV.PREV
 			}
@@ -815,6 +829,13 @@ CAN_create_monarchy = {
 					is_country_leader = no
 					character_is_dead = no
 				}
+				if = {
+					limit = {
+						PREV.PREV = { tag = GBR }
+						has_trait = GBR_british_exile_trait
+					}
+					remove_unit_leader_trait = GBR_british_exile_trait
+				}
 				set_nationality = PREV.PREV
 			}
 		}
@@ -824,6 +845,13 @@ CAN_create_monarchy = {
 					is_country_leader = no
 					character_is_dead = no
 				}
+				if = {
+					limit = {
+						PREV.PREV = { tag = GBR }
+						has_trait = GBR_british_exile_trait
+					}
+					remove_unit_leader_trait = GBR_british_exile_trait
+				}
 				set_nationality = PREV.PREV
 			}
 		}
@@ -832,6 +860,13 @@ CAN_create_monarchy = {
 				limit = {
 					is_country_leader = no
 					character_is_dead = no
+				}
+				if = {
+					limit = {
+						PREV.PREV = { tag = GBR }
+						has_trait = GBR_british_exile_trait
+					}
+					remove_unit_leader_trait = GBR_british_exile_trait
 				}
 				set_nationality = PREV.PREV
 			}
@@ -902,64 +937,64 @@ CAN_create_republic = {
 	}
 	else_if = {
 		limit = {
-			has_character = CAN_louis_mountbatten
-			CAN_louis_mountbatten = { can_be_country_leader = yes }
+			has_character = GBR_louis_mountbatten
+			GBR_louis_mountbatten = { can_be_country_leader = yes }
 		}
 		custom_effect_tooltip = tooltip_white_line
-		CAN_louis_mountbatten = { set_nationality = GBR }
+		GBR_louis_mountbatten = { set_nationality = GBR }
 	}
 	else_if = {
 		limit = {
-			has_character = CAN_john_vereker
-			CAN_john_vereker = { can_be_country_leader = yes }
+			has_character = GBR_john_vereker
+			GBR_john_vereker = { can_be_country_leader = yes }
 		}
 		custom_effect_tooltip = tooltip_white_line
-		CAN_john_vereker = { set_nationality = GBR }
+		GBR_john_vereker = { set_nationality = GBR }
 	}
 }
 
 CAN_king_becomes_unpopular = {
 	if = {
-		limit = { event_target:GBR_british_king = { has_trait = CAN_popular_figurehead } }
-		effect_tooltip = { remove_trait = { character = event_target:GBR_british_king trait = CAN_popular_figurehead } }
+		limit = { event_target:GBR_british_king = { has_trait = GBR_popular_figurehead } }
+		effect_tooltip = { remove_trait = { character = event_target:GBR_british_king trait = GBR_popular_figurehead } }
 		hidden_effect = {
 			event_target:GBR_british_king = {
 				set_character_flag = GBR_remove_popular_figurehead
-				remove_trait = { trait = CAN_popular_figurehead ideology = social_democrat_subtype }
-				remove_trait = { trait = CAN_popular_figurehead ideology = social_liberal_subtype }
-				remove_trait = { trait = CAN_popular_figurehead ideology = market_liberal_subtype }
-				remove_trait = { trait = CAN_popular_figurehead ideology = social_conservative_subtype }
-				remove_trait = { trait = CAN_popular_figurehead ideology = authoritarian_democrat_subtype }
-				remove_trait = { trait = CAN_popular_figurehead ideology = paternal_autocrat_subtype }
+				remove_trait = { trait = GBR_popular_figurehead ideology = social_democrat_subtype }
+				remove_trait = { trait = GBR_popular_figurehead ideology = social_liberal_subtype }
+				remove_trait = { trait = GBR_popular_figurehead ideology = market_liberal_subtype }
+				remove_trait = { trait = GBR_popular_figurehead ideology = social_conservative_subtype }
+				remove_trait = { trait = GBR_popular_figurehead ideology = authoritarian_democrat_subtype }
+				remove_trait = { trait = GBR_popular_figurehead ideology = paternal_autocrat_subtype }
 			}
 		}
 	}
 	else_if = {
-		limit = { event_target:GBR_british_king = { has_trait = CAN_returning_king } }
-		effect_tooltip = { remove_trait = { character = event_target:GBR_british_king trait = CAN_returning_king } }
+		limit = { event_target:GBR_british_king = { has_trait = GBR_returning_king } }
+		effect_tooltip = { remove_trait = { character = event_target:GBR_british_king trait = GBR_returning_king } }
 		hidden_effect = {
 			event_target:GBR_british_king = {
 				clr_character_flag = GBR_has_returning_king
-				remove_trait = { trait = CAN_returning_king ideology = social_democrat_subtype }
-				remove_trait = { trait = CAN_returning_king ideology = social_liberal_subtype }
-				remove_trait = { trait = CAN_returning_king ideology = market_liberal_subtype }
-				remove_trait = { trait = CAN_returning_king ideology = social_conservative_subtype }
-				remove_trait = { trait = CAN_returning_king ideology = authoritarian_democrat_subtype }
-				remove_trait = { trait = CAN_returning_king ideology = paternal_autocrat_subtype }
+				remove_trait = { trait = GBR_returning_king ideology = social_democrat_subtype }
+				remove_trait = { trait = GBR_returning_king ideology = social_liberal_subtype }
+				remove_trait = { trait = GBR_returning_king ideology = market_liberal_subtype }
+				remove_trait = { trait = GBR_returning_king ideology = social_conservative_subtype }
+				remove_trait = { trait = GBR_returning_king ideology = authoritarian_democrat_subtype }
+				remove_trait = { trait = GBR_returning_king ideology = paternal_autocrat_subtype }
 			}
 		}
 	}
 	else = {
-		effect_tooltip = { add_trait = { character = event_target:GBR_british_king trait = CAN_unpopular_monarch } }
+		effect_tooltip = { add_trait = { character = event_target:GBR_british_king trait = GBR_unpopular_monarch } }
 		hidden_effect = {
 			event_target:GBR_british_king = {
 				set_character_flag = GBR_has_unpopular_monarch
-				add_trait = { trait = CAN_unpopular_monarch ideology = social_democrat_subtype }
-				add_trait = { trait = CAN_unpopular_monarch ideology = social_liberal_subtype }
-				add_trait = { trait = CAN_unpopular_monarch ideology = market_liberal_subtype }
-				add_trait = { trait = CAN_unpopular_monarch ideology = social_conservative_subtype }
-				add_trait = { trait = CAN_unpopular_monarch ideology = authoritarian_democrat_subtype }
-				add_trait = { trait = CAN_unpopular_monarch ideology = paternal_autocrat_subtype }
+				add_trait = { trait = GBR_unpopular_monarch ideology = social_democrat_subtype }
+				add_trait = { trait = GBR_unpopular_monarch ideology = social_liberal_subtype }
+				add_trait = { trait = GBR_unpopular_monarch ideology = market_liberal_subtype }
+				add_trait = { trait = GBR_unpopular_monarch ideology = social_conservative_subtype }
+				add_trait = { trait = GBR_unpopular_monarch ideology = authoritarian_democrat_subtype }
+				add_trait = { trait = GBR_unpopular_monarch ideology = paternal_autocrat_subtype }
 			}
 		}
 	}
@@ -968,32 +1003,32 @@ CAN_king_becomes_unpopular = {
 CAN_add_returning_king = {
 	event_target:GBR_british_king = {
 		if = {
-			limit = { has_trait = CAN_popular_figurehead }
+			limit = { has_trait = GBR_popular_figurehead }
 			set_character_flag = GBR_remove_popular_figurehead
-			remove_trait = { trait = CAN_popular_figurehead ideology = social_democrat_subtype }
-			remove_trait = { trait = CAN_popular_figurehead ideology = social_liberal_subtype }
-			remove_trait = { trait = CAN_popular_figurehead ideology = market_liberal_subtype }
-			remove_trait = { trait = CAN_popular_figurehead ideology = social_conservative_subtype }
-			remove_trait = { trait = CAN_popular_figurehead ideology = authoritarian_democrat_subtype }
-			remove_trait = { trait = CAN_popular_figurehead ideology = paternal_autocrat_subtype }
+			remove_trait = { trait = GBR_popular_figurehead ideology = social_democrat_subtype }
+			remove_trait = { trait = GBR_popular_figurehead ideology = social_liberal_subtype }
+			remove_trait = { trait = GBR_popular_figurehead ideology = market_liberal_subtype }
+			remove_trait = { trait = GBR_popular_figurehead ideology = social_conservative_subtype }
+			remove_trait = { trait = GBR_popular_figurehead ideology = authoritarian_democrat_subtype }
+			remove_trait = { trait = GBR_popular_figurehead ideology = paternal_autocrat_subtype }
 		}
 		else_if = {
-			limit = { has_trait = CAN_unpopular_monarch }
+			limit = { has_trait = GBR_unpopular_monarch }
 			clr_character_flag = GBR_has_unpopular_monarch
-			remove_trait = { trait = CAN_unpopular_monarch ideology = social_democrat_subtype }
-			remove_trait = { trait = CAN_unpopular_monarch ideology = social_liberal_subtype }
-			remove_trait = { trait = CAN_unpopular_monarch ideology = market_liberal_subtype }
-			remove_trait = { trait = CAN_unpopular_monarch ideology = social_conservative_subtype }
-			remove_trait = { trait = CAN_unpopular_monarch ideology = authoritarian_democrat_subtype }
-			remove_trait = { trait = CAN_unpopular_monarch ideology = paternal_autocrat_subtype }
+			remove_trait = { trait = GBR_unpopular_monarch ideology = social_democrat_subtype }
+			remove_trait = { trait = GBR_unpopular_monarch ideology = social_liberal_subtype }
+			remove_trait = { trait = GBR_unpopular_monarch ideology = market_liberal_subtype }
+			remove_trait = { trait = GBR_unpopular_monarch ideology = social_conservative_subtype }
+			remove_trait = { trait = GBR_unpopular_monarch ideology = authoritarian_democrat_subtype }
+			remove_trait = { trait = GBR_unpopular_monarch ideology = paternal_autocrat_subtype }
 		}
 		set_character_flag = GBR_has_returning_king
-		add_trait = { trait = CAN_returning_king ideology = social_democrat_subtype }
-		add_trait = { trait = CAN_returning_king ideology = social_liberal_subtype }
-		add_trait = { trait = CAN_returning_king ideology = market_liberal_subtype }
-		add_trait = { trait = CAN_returning_king ideology = social_conservative_subtype }
-		add_trait = { trait = CAN_returning_king ideology = authoritarian_democrat_subtype }
-		add_trait = { trait = CAN_returning_king ideology = paternal_autocrat_subtype }
+		add_trait = { trait = GBR_returning_king ideology = social_democrat_subtype }
+		add_trait = { trait = GBR_returning_king ideology = social_liberal_subtype }
+		add_trait = { trait = GBR_returning_king ideology = market_liberal_subtype }
+		add_trait = { trait = GBR_returning_king ideology = social_conservative_subtype }
+		add_trait = { trait = GBR_returning_king ideology = authoritarian_democrat_subtype }
+		add_trait = { trait = GBR_returning_king ideology = paternal_autocrat_subtype }
 	}
 }
 
@@ -1706,8 +1741,8 @@ CAN_activate_resources_decisions = {		# Used for american tags in annex canada e
 		activate_targeted_decision = { target = 471 decision = CAN_develop_yukon_oil_wells }
 	}
 	if = {
-		limit = { 683 = { NOT = { has_state_flag = CAN_tungsten_mines_developed } } }
-		activate_targeted_decision = { target = 683 decision = CAN_develop_quebec_tungsten_mines }
+		limit = { 332 = { NOT = { has_state_flag = CAN_tungsten_mines_developed } } }
+		activate_targeted_decision = { target = 332 decision = CAN_develop_quebec_tungsten_mines }
 	}
 	if = {
 		limit = { 465 = { NOT = { has_state_flag = CAN_tungsten_mines_developed } } }
@@ -1726,8 +1761,8 @@ CAN_activate_resources_decisions = {		# Used for american tags in annex canada e
 		activate_targeted_decision = { target = 682 decision = CAN_develop_ontario_chromium_mines }
 	}
 	if = {
-		limit = { 683 = { NOT = { has_state_flag = CAN_chromium_mines_developed } } }
-		activate_targeted_decision = { target = 683 decision = CAN_develop_quebec_chromium_mines }
+		limit = { 332 = { NOT = { has_state_flag = CAN_chromium_mines_developed } } }
+		activate_targeted_decision = { target = 332 decision = CAN_develop_quebec_chromium_mines }
 	}
 }
 

@@ -907,7 +907,15 @@ ideas = {
 			on_remove = {
 				log = "[GetDateText]: [Root.GetName]: remove idea SIA_engineer_shortage"
 				SIA_Min_Transport_Decisions_Unlocked = yes
-				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = THIS }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = FRA }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = JAP }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = AUS }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = GER }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = RUS }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = USA }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = PSA }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = TEX }
+				remove_targeted_decision = { decision = SIA_hire_foreign_engineers target = NEE }
 			}
 			modifier = {
 				production_speed_infrastructure_factor = -0.2

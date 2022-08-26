@@ -74,6 +74,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_he_atacc"
+			army_experience = 25
 			add_tech_bonus = {
 				name = SIC_he_atacc
 				bonus = 1
@@ -296,6 +297,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_he_protecc"
+			army_experience = 25
 			add_doctrine_cost_reduction = {
 				name = SIC_he_protecc
 				cost_reduction = 0.5
@@ -361,6 +363,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_army_reform"
+			army_experience = 25
 			add_doctrine_cost_reduction = {
 				name = SIC_army_reform
 				cost_reduction = 0.5
@@ -649,7 +652,7 @@ focus_tree = {
 			focus = SIC_mobilize_the_realm
 		}
 		available = {
-			has_war_with = SRI
+			has_war = yes
 		}
 		relative_position_id = SIC_armed_forces
 		x = 6
@@ -856,6 +859,10 @@ focus_tree = {
 		id = SIC_buy_back_land
 		icon = GFX_goal_generic_loans
 		cost = 6
+		available = {
+			controls_state = 117
+			controls_state = 837
+		}
 		prerequisite = {
 			focus = SIC_invest_modern_farming
 		}
@@ -872,14 +879,8 @@ focus_tree = {
 				add_idea = SIC_land_reform_done
 				remove_idea = SIC_less_feudal_stuff
 			}
-			if = {
-				limit = { owns_state = 117 }
-				117 = { increase_state_category_by_one_level = yes }
-			}
-			if = {
-				limit = { owns_state = 837 }
-				837 = { increase_state_category_by_one_level = yes }
-			}
+			117 = { increase_state_category_by_one_level = yes }
+			837 = { increase_state_category_by_one_level = yes }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -1243,7 +1244,7 @@ focus_tree = {
 			remove_ideas = SIC_BM_1
 		}
 	}
-	focus = {# Aluminum
+	focus = {# Aluminium
 		id = SIC_aluminium
 		icon = GFX_focus_generic_aluminum
 		cost = 6
@@ -2395,9 +2396,14 @@ focus_tree = {
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_urbanization"
-			SIC = {	every_owned_state = { increase_state_category_by_one_level = yes } }
+			115 = { increase_state_category_by_one_level = yes }
+			117 = { increase_state_category_by_one_level = yes }
+			156 = { increase_state_category_by_one_level = yes }
+			742 = { increase_state_category_by_one_level = yes }
+			837 = { increase_state_category_by_one_level = yes }
 			set_temp_variable = { ideology_change_var = 0.05 }
 			change_ruling_party_popularity = yes
+
 		}
 	}
 	focus = {# Breadbasket

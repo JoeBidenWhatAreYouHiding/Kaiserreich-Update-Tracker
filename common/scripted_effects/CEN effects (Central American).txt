@@ -3,6 +3,7 @@
 #	By Beelzebub and Ropa
 
 CA_SET_UFC_VAR = {
+	clamp_variable = { var = UFC_power min = 0 max = 100 }
 	set_variable = { UFC_effect11 = UFC_power }
 	multiply_variable = { var = UFC_effect11 value = -0.004 }
 	set_variable = { UFC_effect12 = UFC_power }
@@ -44,141 +45,141 @@ CEN_move_characters = {
 		}
 		if = {
 			limit = { has_socialist_government = yes }
-			GUA = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = GUA } }
+				GUA = {
 					GUA_add_socialist_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_socialist = yes }
-					set_character_flag = GUA_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_socialist = yes }
+						set_character_flag = GUA_character
+						set_nationality = CEN
+					}
 				}
 			}
-			ELS = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = ELS } }
+				ELS = {
 					ELS_add_democratic_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_socialist = yes }
-					set_character_flag = ELS_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_socialist = yes }
+						set_character_flag = ELS_character
+						set_nationality = CEN
+					}
 				}
 			}
-			HON = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = HON } }
+				HON = {
 					HON_remove_non_socialist_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_socialist = yes }
-					set_character_flag = HON_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_socialist = yes }
+						set_character_flag = HON_character
+						set_nationality = CEN
+					}
 				}
 			}
-			NIC = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = NIC } }
+				NIC = {
 					NIC_add_socialist_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_socialist = yes }
-					set_character_flag = NIC_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_socialist = yes }
+						set_character_flag = NIC_character
+						set_nationality = CEN
+					}
 				}
 			}
 		}
 		else_if = {
 			limit = { has_authoritarian_government = yes }
-			GUA = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = GUA } }
+				GUA = {
 					GUA_add_reactionary_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_reactionary = yes }
-					set_character_flag = GUA_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_reactionary = yes }
+						set_character_flag = GUA_character
+						set_nationality = CEN
+					}
 				}
 			}
-			ELS = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = ELS } }
+				ELS = {
 					ELS_add_reactionary_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_reactionary = yes }
-					set_character_flag = ELS_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_reactionary = yes }
+						set_character_flag = ELS_character
+						set_nationality = CEN
+					}
 				}
 			}
-			HON = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = HON } }
+				HON = {
 					HON_add_non_socialist_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_reactionary = yes }
-					set_character_flag = HON_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_reactionary = yes }
+						set_character_flag = HON_character
+						set_nationality = CEN
+					}
 				}
 			}
-			NIC = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = NIC } }
+				NIC = {
 					NIC_add_reactionary_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_reactionary = yes }
-					set_character_flag = NIC_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_reactionary = yes }
+						set_character_flag = NIC_character
+						set_nationality = CEN
+					}
 				}
 			}
 		}
 		else = {
-			GUA = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = GUA } }
+				GUA = {
 					GUA_add_liberal_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_liberal = yes }
-					set_character_flag = GUA_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_liberal = yes }
+						set_character_flag = GUA_character
+						set_nationality = CEN
+					}
 				}
 			}
-			ELS = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = ELS } }
+				ELS = {
 					ELS_add_liberal_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_liberal = yes }
-					set_character_flag = ELS_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_liberal = yes }
+						set_character_flag = ELS_character
+						set_nationality = CEN
+					}
 				}
 			}
-			HON = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = HON } }
+				HON = {
 					HON_add_non_socialist_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_liberal = yes }
-					set_character_flag = HON_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_liberal = yes }
+						set_character_flag = HON_character
+						set_nationality = CEN
+					}
 				}
 			}
-			NIC = {
-				if = {
-					limit = { exists = no }
+			if = {
+				limit = { NOT = { tag = NIC } }
+				NIC = {
 					NIC_add_liberal_generals = yes
-				}
-				every_character = {
-					limit = { CEN_character_should_transfer_liberal = yes }
-					set_character_flag = NIC_character
-					set_nationality = CEN
+					every_character = {
+						limit = { CEN_character_should_transfer_liberal = yes }
+						set_character_flag = NIC_character
+						set_nationality = CEN
+					}
 				}
 			}
 		}

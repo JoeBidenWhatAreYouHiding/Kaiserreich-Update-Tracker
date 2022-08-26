@@ -49,11 +49,11 @@ FRA_destroy_entente_beachheads = {
 
 	ai_strategy = {
 		type = front_control
-		tag = ENG
+		tag = NFA
 		ratio = 0.25
 		priority = 100
 		ordertype = front
-		execution_type = rush
+		execution_type = rush_weak
 		execute_order = yes
 	}
 }

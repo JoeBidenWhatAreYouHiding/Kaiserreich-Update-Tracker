@@ -44,7 +44,7 @@
 #				Burgenland
 #			Croatia
 #				Dalmatia
-#				Littoral
+#				Istria
 #			Triest
 #			Slovenia
 #			Trentino
@@ -3535,6 +3535,7 @@ country_event = { #Fate of Austria
 			AUS = {
 				every_character = {
 					limit = { AUS_is_habsburg_family_member = yes }
+					remove_all_country_leader_roles = yes
 					set_nationality = XXA
 				}
 				set_party_name = {
@@ -3550,8 +3551,6 @@ country_event = { #Fate of Austria
 					AUS_DNF_political_instability-1
 					AUS_DNF_political_instability-2
 					AUS_kaiser_faith
-					AUS_k_u_k_armee_bonus
-					AUS_k_u_k_armee_bonus_2
 				}
 			}
 			every_state = {
@@ -3563,9 +3562,11 @@ country_event = { #Fate of Austria
 					}
 					NOT = {
 						state = 4 #Lower Austria
+						state = 39 #Southern Tyrol
 						state = 152 #Upper Austria
 						state = 153 #Tyrol
 						state = 775 #Styria
+						state = 784 #Burgenland
 						state = 835 #Carinthia
 						state = 836 #Salzburg
 						state = 942 #Vorarlberg
@@ -3575,6 +3576,8 @@ country_event = { #Fate of Austria
 				remove_claim_by = AUS
 				clear_variable = ambition_area_AUS
 			}
+			39 = { retain_state = yes } #Southern Tyrol
+			784 = { retain_state = yes } #Burgenland
 		}
 	}
 
@@ -3676,30 +3679,18 @@ country_event = { #Fate of Austria
 		ai_chance = {
 			base = 1000
 		}
-		every_state = {
-			limit = {
-				OR = {
-					region = 21 #Austria
-					region = 27 #Hungary
-					state = 664 #Southern Slovakia
-				}
-				NOT = {
-					state = 39 #Southern Tyrol
-					state = 45 #Vojvodina
-					state = 488 #Trieste
-					state = 736 #Istria
-					state = 783 #Trentino
-					state = 102 #Carniola
-				}
-			}
-			add_core_of = AUS
-		}
 		set_temp_variable = { tag_to_release = AUS }
-		release_targeted_tag = yes
 		var:tag_to_release = {
 			set_cosmetic_tag = AUS_danubia
+			add_state_core = 43 #Central Hungary
+			add_state_core = 154 #Alfold
+			add_state_core = 155 #Transdanubia
+			add_state_core = 664 #Miskolc
+			add_state_core = 784 #Burgenland
 		}
+		release_targeted_tag_nocosmetic = yes
 	}
+
 	option = { #old idea
 		name = annex.1020.d
 		trigger = {
@@ -3749,6 +3740,7 @@ country_event = { #Fate of Bohemia
 				}
 				remove_core_of = CZE
 				remove_claim_by = CZE
+				clear_variable = ambition_area_CZE
 			}
 			924 = { retain_state = yes } #Teschen
 			XXA = {
@@ -3763,10 +3755,6 @@ country_event = { #Fate of Bohemia
 					ideology = paternal_autocrat_subtype
 				}
 				CZE_change_portraits = yes
-			}
-			if = {
-				limit = { tag = POL }
-				add_state_claim = 924 #Teschen
 			}
 		}
 	}
@@ -3810,8 +3798,9 @@ country_event = { #Fate of Bohemia
 		set_temp_variable = { tag_to_release = CZE }
 		add_to_temp_array = { target_cores_to_release = CZE }
 		add_to_temp_array = { target_cores_to_release = SLO }
-		664 = { retain_state = yes } #Southern Slovakia
+		71 = { retain_state = yes } #Danubian Plain
 		73 = { retain_state = yes } #Transcarpathia
+		1090 = { retain_state = yes } #Pressburg
 
 		release_targeted_tag_from_core_regions_and_add_cores = yes
 		var:tag_to_release = { set_cosmetic_tag = CZE_czechoslavakia }
@@ -4291,18 +4280,8 @@ country_event = { #Fate of Bucovina
 			base = 40
 		}
 		set_temp_variable = { tag_to_release = AUS }
-		80 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_of_target_and_transfer_if_owned = yes
-			}
-		}
-		713 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_of_target_and_transfer_if_owned = yes
-			}
-		}
+		80 = { add_core_of_target_and_transfer_if_owned = yes }
+		713 = { add_core_of_target_and_transfer_if_owned = yes }
 	}
 
 	option = {
@@ -4342,18 +4321,8 @@ country_event = { #Fate of Bucovina
 			}
 		}
 		set_temp_variable = { tag_to_release = GAL }
-		80 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_of_target_and_transfer_if_owned = yes
-			}
-		}
-		713 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_of_target_and_transfer_if_owned = yes
-			}
-		}
+		80 = { add_core_of_target_and_transfer_if_owned = yes }
+		713 = { add_core_of_target_and_transfer_if_owned = yes }
 	}
 
 	option = {
@@ -4381,18 +4350,8 @@ country_event = { #Fate of Bucovina
 			}
 		}
 		set_temp_variable = { tag_to_release = ROM }
-		80 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_or_claim_of_target_and_transfer_if_owned = yes
-			}
-		}
-		713 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_or_claim_of_target_and_transfer_if_owned = yes
-			}
-		}
+		80 = { add_core_or_claim_of_target_and_transfer_if_owned = yes }
+		713 = { add_core_or_claim_of_target_and_transfer_if_owned = yes }
 	}
 
 	option = {
@@ -4423,18 +4382,8 @@ country_event = { #Fate of Bucovina
 			}
 		}
 		set_temp_variable = { tag_to_release = TRS }
-		80 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_or_claim_of_target_and_transfer_if_owned = yes
-			}
-		}
-		713 = {
-			if = {
-				limit = { is_claim_or_core_of_ROOT = no }
-				add_core_or_claim_of_target_and_transfer_if_owned = yes
-			}
-		}
+		80 = { add_core_of_target_and_transfer_if_owned = yes }
+		713 = { add_core_of_target_and_transfer_if_owned = yes }
 	}
 
 	option = {
@@ -4909,13 +4858,13 @@ country_event = { #Fate of Hungary
 						state = 43 #Central Hungary
 						state = 154 #Alfold
 						state = 155 #Transdanubia
-						state = 664 #Southern Slovakia
+						state = 664 #Miskolc
 					}
 				}
 				remove_core_of = HUN
 				remove_claim_by = HUN
+				clear_variable = ambition_area_HUN
 			}
-			664 = { retain_state = yes }
 		}
 	}
 
@@ -4956,8 +4905,8 @@ country_event = { #Fate of Hungary
 				OR = {
 					state = 43 #Central Hungary
 					state = 45 #Vojvodina
-					state = 70 #Western Slovakia
-					state = 71 #Eastern Slovakia
+					state = 70 #Slovakia
+					state = 71 #Danubian Plain
 					state = 73 #Transcarpathia
 					state = 76 #North Transylvania
 					state = 82 #Banat
@@ -4965,9 +4914,9 @@ country_event = { #Fate of Hungary
 					state = 84 #Transylvania
 					state = 154 #Alfold
 					state = 155 #Transdanubia
-					state = 664 #Southern Slovakia
 					state = 789 #Szeklerland
 					state = 875 #West Banat
+					state = 1090 #Pressburg
 				}
 			}
 			add_claim_of_target_and_transfer_if_owned = yes
@@ -5035,18 +4984,17 @@ country_event = { #Fate of Slovakia
 
 	is_triggered_only = yes
 
-	immediate = {
-		hidden_effect = {
-			664 = { retain_state = yes } #Southern Slovakia
-		}
-	}
-
 	option = {
 		name = annex.1025.a #Liberate Slovakia
 		trigger = {
 			NOT = {
-				tag = HUN
-				country_exists = SLO
+				original_tag = HUN
+				original_tag = CZE
+				AND = {
+					original_tag = AUS
+					AUS_is_unified = yes
+					owns_state = 1090 #Pressburg
+				}
 			}
 		}
 		ai_chance = {
@@ -5056,137 +5004,114 @@ country_event = { #Fate of Slovakia
 				AUS = {
 					AUS_is_unified = yes
 					is_ally_of_ROOT = yes
-					owns_state = 43
-					owns_state = 75
+					OR = {
+						owns_state = 1090
+						1090 = { is_valid_annexation_state = yes } #Pressburg
+					}
 				}
 			}
 		}
 		set_temp_variable = { tag_to_release = SLO }
-		release_targeted_tag = yes
+		70 = { transfer_state_and_add_core = yes } #Slovakia
+		puppet_released_tag = yes
 	}
-	option = {
-		name = annex.1025.c #Give Southern Slovakia to Hungary
-		trigger = {
-			owns_state = 664
-			HUN = { is_ally_of_ROOT = yes }
-			NOT = {
-				tag = HUN
-				country_exists = SLO
-			}
-		}
-		ai_chance = {
-			base = 50
-		}
-		set_temp_variable = { tag_to_release = HUN }
-		664 = { transfer_state_and_add_claim = yes }
 
-		set_temp_variable = { tag_to_release = SLO }
-		release_targeted_tag = yes
-	}
 	option = { #Give to Austria
 		name = annex.1025.b
 		trigger = {
 			AUS = {
 				AUS_is_unified = yes
 				is_ally_of_ROOT = yes
-				owns_state = 43
+				OR = {
+					owns_state = 1090
+					1090 = { is_valid_annexation_state = yes } #Pressburg
+				}
 			}
-			NOT = { tag = HUN }
+			NOT = { original_tag = HUN }
+			NOT = { original_tag = CZE }
 		}
 		ai_chance = {
 			base = 1000
 		}
 		set_temp_variable = { tag_to_release = AUS }
-		70 = { add_core_of_target_and_transfer_if_owned = yes } #Western Slovakia
-		71 = { add_core_of_target_and_transfer_if_owned = yes } #Eastern Slovakia
-		664 = { add_core_of_target_and_transfer_if_owned = yes } #Southern Slovakia
+		70 = { transfer_state_and_add_core = yes } #Slovakia
+		1090 = { add_core_of_target_and_transfer_if_owned = yes } #Pressburg
 	}
+
 	option = { #Give to Hungary
-		name = annex.1025.e
+		name = annex.1025.c
 		trigger = {
 			HUN = { is_ally_of_ROOT = yes }
-			NOT = { tag = HUN }
+			NOT = { original_tag = HUN }
+			NOT = { original_tag = CZE }
 		}
 		ai_chance = {
 			base = 30
 		}
 		set_temp_variable = { tag_to_release = HUN }
-		70 = { add_claim_of_target_and_transfer_if_owned = yes } #Western Slovakia
-		71 = { add_claim_of_target_and_transfer_if_owned = yes } #Eastern Slovakia
-		664 = { add_claim_of_target_and_transfer_if_owned = yes } #Southern Slovakia
+		70 = { transfer_state_and_add_claim = yes } #Slovakia
 	}
+
 	option = { #Give to Bohemia
-		name = annex.1025.f
+		name = annex.1025.d
 		trigger = {
 			CZE = { is_ally_of_ROOT = yes }
-			NOT = {
-				tag = HUN
-				tag = CZE
-			}
+			NOT = { original_tag = HUN }
+			NOT = { original_tag = CZE }
 		}
 		ai_chance = {
 			base = 50
 		}
 		set_temp_variable = { tag_to_release = CZE }
-		70 = { add_claim_of_target_and_transfer_if_owned = yes } #Western Slovakia
-		71 = { add_claim_of_target_and_transfer_if_owned = yes } #Eastern Slovakia
-		664 = { add_claim_of_target_and_transfer_if_owned = yes } #Southern Slovakia
-		CZE = {
-			set_cosmetic_tag = CZE_czechoslavakia
-			if = {
-				limit = {
-					has_elected_government = yes
-					is_subject_of = ROOT
-				}
-				meta_effect = {
-					text = {
-						create_country_leader = {
-							name = "Vavro Srobar"
-							picture = "gfx/leaders/SLO/Portrait_SLO_Vavro_Srobar.png"
-							ideology = [CZE_IDEOLOGY]
-						}
-					}
-					CZE_IDEOLOGY = "[CZE.GetRulingIdeologySubtype]"
-				}
-			}
-		}
+		70 = { transfer_state_and_add_claim = yes } #Slovakia
+		CZE = { set_cosmetic_tag = CZE_czechoslavakia }
 	}
+
+	option = { #annex
+		name = annex.1025.e
+		trigger = {
+			original_tag = CZE
+		}
+		ai_chance = {
+			base = 1000
+		}
+		70 = { remove_claim_and_add_core_of_ROOT = yes } #Slovakia
+		set_cosmetic_tag = CZE_czechoslavakia
+	}
+
 	option = { #annex
 		name = annex.integration
 		trigger = {
-			tag = HUN
+			OR = {
+				original_tag = HUN
+				AND = {
+					original_tag = AUS
+					AUS_is_unified = yes
+					owns_state = 1090 #Pressburg
+				}
+			}
 		}
 		ai_chance = {
 			base = 1000
 		}
-		70 = { add_claim_of_ROOT = yes } #Western Slovakia
-		71 = { add_claim_of_ROOT = yes } #Eastern Slovakia
-		664 = { add_claim_of_ROOT = yes } #Southern Slovakia
+		70 = { add_claim_of_ROOT = yes } #Slovakia
+		1090 = { add_claim_of_ROOT = yes } #Pressburg
 	}
-	option = { #annex
-		name = annex.1025.g
-		trigger = {
-			tag = CZE
-		}
-		ai_chance = {
-			base = 1000
-		}
-		70 = { remove_claim_and_add_core_of_ROOT = yes } #Western Slovakia
-		71 = { remove_claim_and_add_core_of_ROOT = yes } #Eastern Slovakia
-		664 = { remove_claim_and_add_core_of_ROOT = yes } #Southern Slovakia
-		set_cosmetic_tag = CZE_czechoslavakia
-	}
+
 	option = { #Occupy Slovakia
 		name = annex.occupation
 		trigger = {
 			NOT = {
-				tag = HUN
-				tag = CZE
+				original_tag = HUN
+				original_tag = CZE
+				AND = {
+					original_tag = AUS
+					AUS_is_unified = yes
+					owns_state = 1090 #Pressburg
+				}
 			}
 		}
-		ai_chance = {
-			base = 0
-		}
+		ai_chance = { base = 0 }
 		set_country_flag = SLO_CONQ
 		occupy_small_country = yes
 	}
@@ -5201,244 +5126,176 @@ country_event = { #Fate of Transcarpathia
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = HUN
+						original_tag = SLO
+						original_tag = GAL
+						AND = {
+							original_tag = UKR
+							owns_state = 91 #Lwow
+						}
+						AND = {
+							original_tag = CZE
+							owns_state = 71 #Eastern Slovakia
+						}
+						AND = {
+							original_tag = AUS
+							AUS_is_unified = yes
+						}
+						AND = {
+							RUS_is_expansionist = yes
+							owns_state = 91 #Lwow
+						}
+					}
+				}
+				save_event_target_as = can_integrate
+			}
+			if = {
+				limit = {
+					var:91.owner = {
+						OR = {
+							original_tag = GAL
+							original_tag = UKR
+							RUS_is_expansionist = yes
+						}
+						ROOT_can_grant_land = yes
+					}
+				}
+				var:91.owner = { save_event_target_as = galicia }
+			}
+			if = {
+				limit = { SLO = { ROOT_can_grant_land = yes } }
+				SLO = { save_event_target_as = slovakia }
+			}
+			else_if = {
+				limit = {
+					CZE = {
+						owns_state = 70 #Slovakia
+						ROOT_can_grant_land = yes
+					}
+				}
+				CZE = { save_event_target_as = slovakia }
+			}
+			if = {
+				limit = {
+					HUN = {
+						ROOT_can_grant_land = yes
+						OR = {
+							owns_state = 70 #Slovakia
+							owns_state = 154 #Alfold
+						}
+					}
+				}
+				HUN = { save_event_target_as = hungary }
+			}
+			if = {
+				limit = {
+					AUS = {
+						AUS_is_unified = yes
+						ROOT_can_grant_land = yes
+						OR = {
+							owns_state = 70 #Slovakia
+							owns_state = 154 #Alfold
+						}
+					}
+				}
+				AUS = { save_event_target_as = austria }
+			}
+		}
+	}
+
 	option = {
-		name = annex.1026.a #Give it to HUN
+		name = annex.1026.a #Give it to GAL/UKR/RUS
 		trigger = {
-			HUN = {
-				is_ally_of_ROOT = yes
-				OR = {
-					owns_state = 71 #Eastern Slovakia
-					owns_state = 154 #Alfold
-				}
-			}
-			NOT = {
-				tag = HUN
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					tag = AUS
-					AUS_is_unified = yes
-				}
-				AND = {
-					tag = CZE
-					owns_state = 71 #Eastern Slovakia
-				}
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
-				}
-			}
+			NOT = { has_event_target = can_integrate }
+			has_event_target = galicia
 		}
 		ai_chance = {
-			base = 90
+			base = 70
 			modifier = {
 				factor = 0
-				SLO = { is_ally_of_ROOT = yes }
-			}
-			modifier = {
-				factor = 0
-				CZE = {
-					is_ally_of_ROOT = yes
-					owns_state = 71
+				NOT = { is_ally_with = event_target:galicia }
+				OR = {
+					is_ally_with = event_target:austria
+					is_ally_with = event_target:hungary
+					is_ally_with = event_target:slovakia
 				}
 			}
 		}
-		set_temp_variable = { tag_to_release = HUN }
+		set_temp_variable = { tag_to_release = event_target:galicia }
+		73 = { transfer_state_and_add_core = yes }
+	}
+	option = {
+		name = annex.1026.b #Give it to CZE/SLO
+		trigger = {
+			NOT = { has_event_target = can_integrate }
+			has_event_target = slovakia
+		}
+		ai_chance = {
+			base = 70
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:slovakia }
+				OR = {
+					is_ally_with = event_target:austria
+					is_ally_with = event_target:hungary
+					is_ally_with = event_target:galicia
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:slovakia }
+		73 = { transfer_state_and_add_core = yes }
+	}
+	option = {
+		name = annex.1026.c #Give it to HUN
+		trigger = {
+			NOT = { has_event_target = can_integrate }
+			has_event_target = hungary
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:hungary }
+				OR = {
+					is_ally_with = event_target:austria
+					is_ally_with = event_target:galicia
+					is_ally_with = event_target:slovakia
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:hungary }
 		73 = { transfer_state_and_add_claim = yes }
 	}
 	option = {
-		name = annex.1026.b #Give it to AUS
+		name = annex.1026.d #Give it to AUS
 		trigger = {
-			AUS = {
-				AUS_is_unified = yes
-				is_ally_of_ROOT = yes
+			NOT = { has_event_target = can_integrate }
+			has_event_target = austria
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:austria }
 				OR = {
-					owns_state = 71 #Alfold
-					owns_state = 154 #Alfold
-				}
-			}
-			NOT = {
-				tag = AUS
-				tag = HUN
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					tag = CZE
-					owns_state = 71 #Eastern Slovakia
-				}
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
+					is_ally_with = event_target:hungary
+					is_ally_with = event_target:galicia
+					is_ally_with = event_target:slovakia
 				}
 			}
 		}
-		ai_chance = {
-			base = 40
-			modifier = {
-				factor = 0
-				SLO = { is_ally_of_ROOT = yes }
-			}
-			modifier = {
-				factor = 0
-				CZE = {
-					is_ally_of_ROOT = yes
-					owns_state = 71
-				}
-			}
-		}
-		set_temp_variable = { tag_to_release = AUS }
-		73 = { transfer_state_and_add_core = yes }
-	}
-	option = {
-		name = annex.1026.c #Give it to GAL
-		trigger = {
-			GAL = { is_ally_of_ROOT = yes }
-			NOT = {
-				tag = HUN
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					tag = AUS
-					AUS_is_unified = yes
-				}
-				AND = {
-					tag = CZE
-					owns_state = 71 #Eastern Slovakia
-				}
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
-				}
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0.5
-				SLO = { is_ally_of_ROOT = yes }
-			}
-		}
-		set_temp_variable = { tag_to_release = GAL }
-		73 = { transfer_state_and_add_core = yes }
-	}
-	option = {
-		name = annex.1026.e #Give it to CZE
-		trigger = {
-			CZE = {
-				is_ally_of_ROOT = yes
-				owns_state = 71 #Eastern Slovakia
-			}
-			NOT = {
-				tag = HUN
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					tag = AUS
-					AUS_is_unified = yes
-				}
-				AND = {
-					tag = CZE
-					owns_state = 71 #Eastern Slovakia
-				}
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
-				}
-			}
-		}
-		ai_chance = {
-			base = 200
-		}
-		set_temp_variable = { tag_to_release = CZE }
-		73 = { transfer_state_and_add_core = yes }
-	}
-	option = {
-		name = annex.1026.f #Give it to SLO
-		trigger = {
-			SLO = { is_ally_of_ROOT = yes }
-			NOT = {
-				tag = HUN
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					tag = AUS
-					AUS_is_unified = yes
-				}
-				AND = {
-					tag = CZE
-					owns_state = 71 #Eastern Slovakia
-				}
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
-				}
-			}
-		}
-		ai_chance = {
-			base = 90
-		}
-		set_temp_variable = { tag_to_release = SLO }
-		73 = { transfer_state_and_add_core = yes }
-	}
-	option = {
-		name = annex.1026.g #Give it to UKR
-		trigger = {
-			UKR = {
-				is_ally_of_ROOT = yes
-				owns_state = 91
-			}
-			NOT = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					tag = AUS
-					AUS_is_unified = yes
-				}
-				AND = {
-					tag = CZE
-					owns_state = 71 #Eastern Slovakia
-				}
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
-				}
-			}
-		}
-		ai_chance = {
-			base = 40
-		}
-		set_temp_variable = { tag_to_release = UKR }
+		set_temp_variable = { tag_to_release = event_target:austria }
 		73 = { transfer_state_and_add_core = yes }
 	}
 	option = { #annex
 		name = annex.integration
 		trigger = {
-			OR = {
-				tag = HUN
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					tag = AUS
-					AUS_is_unified = yes
-				}
-				AND = {
-					tag = CZE
-					owns_state = 71 #Eastern Slovakia
-				}
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
-				}
-			}
+			has_event_target = can_integrate
 		}
 		ai_chance = {
 			base = 1000
@@ -5446,8 +5303,8 @@ country_event = { #Fate of Transcarpathia
 		if = {
 			limit = {
 				OR = {
-					tag = HUN
-					tag = UKR
+					original_tag = HUN
+					original_tag = UKR
 					RUS_is_expansionist = yes
 				}
 			}
@@ -5460,25 +5317,9 @@ country_event = { #Fate of Transcarpathia
 	option = { #occupy
 		name = annex.occupation
 		trigger = {
-			NOT = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
-				tag = GAL
-				tag = UKR
-				AND = {
-					RUS_is_expansionist = yes
-					owns_state = 91 #Lwow
-				}
-				AND = {
-					tag = AUS
-					AUS_is_unified = yes
-				}
-			}
+			NOT = { has_event_target = can_integrate }
 		}
-		ai_chance = {
-			base = 0
-		}
+		ai_chance = { base = 0 }
 		if = {
 			limit = { RUS_is_expansionist = yes }
 			add_state_claim = 73
@@ -5806,7 +5647,7 @@ country_event = { #Fate of West Banat
 			}
 		}
 		set_temp_variable = { tag_to_release = CRO }
-		875 = { transfer_state_and_add_claim = yes }
+		875 = { transfer_state_and_add_core = yes }
 	}
 
 	option = { #give to Romania
@@ -5931,7 +5772,7 @@ country_event = { #Fate of Vojvodina
 	is_triggered_only = yes
 
 	option = {
-		name = annex.1026.a #Give it to HUN
+		name = annex.1029.a #Give it to HUN
 		trigger = {
 			can_annex_vojvodina = no
 			HUN = { ROOT_can_grant_land = yes }
@@ -5959,7 +5800,7 @@ country_event = { #Fate of Vojvodina
 		45 = { transfer_state_and_add_claim = yes }
 	}
 	option = {
-		name = annex.1026.b #Give it to AUS
+		name = annex.1029.b #Give it to AUS
 		trigger = {
 			can_annex_vojvodina = no
 			AUS = {
@@ -5975,7 +5816,7 @@ country_event = { #Fate of Vojvodina
 		45 = { transfer_state_and_add_core = yes }
 	}
 	option = {
-		name = annex.1029.a #Give it to SER/CRO
+		name = annex.1029.c #Give it to SER/CRO
 		trigger = {
 			can_annex_vojvodina = no
 			var:794.owner = { #Syrmia
@@ -6127,18 +5968,27 @@ country_event = { #Fate of Croatia
 
 	immediate = {
 		hidden_effect = {
-			add_to_temp_array = { core_removal_array = CRO }
-			remove_all_cores_and_claims_of_tags = yes
 			every_state = {
 				limit = {
 					OR = {
+						is_core_of = CRO
+						is_claimed_by = CRO
+					}
+					NOT = {
+						state = 45 #Vojvodina
 						state = 103 #Rijeka
 						state = 109 #Central Croatia
+						state = 763 #Istria
 						state = 794 #Syrmia
 					}
 				}
-				add_core_of = CRO
+				remove_core_of = CRO
+				remove_claim_by = CRO
+				clear_variable = ambition_area_CRO
 			}
+			45 = { retain_state = yes } #Vojvodina
+			103 = { retain_state = yes } #Rijeka
+			763 = { retain_state = yes } #Istria
 		}
 	}
 
@@ -6572,8 +6422,8 @@ country_event = { #Fate of Slovenia
 		name = annex.1033.a
 		trigger = {
 			NOT = {
-				tag = SER
-				tag = AUS
+				original_tag = SER
+				original_tag = AUS
 			}
 		}
 		ai_chance = {
@@ -6587,7 +6437,8 @@ country_event = { #Fate of Slovenia
 			}
 		}
 		set_temp_variable = { tag_to_release = SLV }
-		release_targeted_tag = yes
+		102 = { transfer_state_and_add_core = yes }
+		puppet_released_tag = yes
 	}
 
 	option = { #give to Austria
@@ -6595,21 +6446,15 @@ country_event = { #Fate of Slovenia
 		trigger = {
 			AUS = { is_ally_with = ROOT }
 			NOT = {
-				tag = SER
-				tag = AUS
+				original_tag = SER
+				original_tag = AUS
 			}
 		}
 		ai_chance = {
 			base = 80
 		}
 		set_temp_variable = { tag_to_release = AUS }
-		add_to_temp_array = { target_cores_to_release = SLV }
-		if = {
-			limit = { has_subject = AUS }
-			transfer_territory_from_core_regions_and_add_cores = yes
-		}
-		else = { transfer_territory_from_core_regions = yes }
-		recheck_annexations = yes
+		102 = { transfer_state_and_add_core = yes }
 	}
 
 	option = { #give to Germany
@@ -6621,21 +6466,15 @@ country_event = { #Fate of Slovenia
 			}
 			is_germany_or_splinter_tag = no
 			NOT = {
-				tag = SER
-				tag = AUS
+				original_tag = SER
+				original_tag = AUS
 			}
 		}
 		ai_chance = {
 			base = 80
 		}
 		set_temp_variable = { tag_to_release = 835.owner }
-		add_to_temp_array = { target_cores_to_release = SLV }
-		if = {
-			limit = { has_subject = AUS }
-			transfer_territory_from_core_regions_and_add_cores = yes
-		}
-		else = { transfer_territory_from_core_regions = yes }
-		recheck_annexations = yes
+		102 = { transfer_state_and_add_claim = yes }
 	}
 
 	option = { #give to Serbia
@@ -6661,8 +6500,8 @@ country_event = { #Fate of Slovenia
 				owns_state = 109 #Central Croatia
 			}
 			NOT = {
-				tag = SER
-				tag = AUS
+				original_tag = SER
+				original_tag = AUS
 				AND = {
 					is_germany_or_splinter_tag = yes
 					owns_state = 4 #Vienna
@@ -6677,8 +6516,8 @@ country_event = { #Fate of Slovenia
 		name = annex.integration
 		trigger = {
 			OR = {
-				tag = SER
-				tag = AUS
+				original_tag = SER
+				original_tag = AUS
 				AND = {
 					is_germany_or_splinter_tag = yes
 					owns_state = 4 #Vienna
@@ -6695,15 +6534,11 @@ country_event = { #Fate of Slovenia
 		if = {
 			limit = {
 				OR = {
-					tag = SER
-					AND = {
-						is_germany_or_splinter_tag = yes
-						owns_state = 4 #Vienna
-					}
+					original_tag = SER
+					is_germany_or_splinter_tag = yes
 				}
 			}
-			102 = { add_claim_by = ROOT }
-			recheck_annexations = yes
+			102 = { add_claim_of_ROOT = yes }
 		}
 		else = {
 			102 = { remove_claim_and_add_core_of_ROOT = yes }
@@ -6715,8 +6550,8 @@ country_event = { #Fate of Slovenia
 		name = annex.occupation
 		trigger = {
 			NOT = {
-				tag = SER
-				tag = AUS
+				original_tag = SER
+				original_tag = AUS
 				AND = {
 					is_germany_or_splinter_tag = yes
 					owns_state = 4 #Vienna
@@ -6729,184 +6564,165 @@ country_event = { #Fate of Slovenia
 	}
 }
 
-country_event = { #Fate of the Austrian Littoral
+country_event = { #Fate of Istria
 	id = annex.1034
 	immediate = { log = "[GetDateText]: [Root.GetName]: event annex.1034 FROM = [From.GetName]" }
-	title = annexation_AUS_LIT_CONQ
-	desc = annexation_AUS_LIT_CONQ_desc
+	title = annexation_ISTRIA_CONQ
+	desc = annexation_ISTRIA_CONQ_desc
 	picture = GFX_report_event_generic_conference2
 
 	is_triggered_only = yes
 
-	option = { #Give Italy
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_italian_tag = yes
+					original_tag = AUS
+					original_tag = SER
+					original_tag = CRO
+				}
+			}
+			save_event_target_as = can_integrate
+		}
+		if = {
+			limit = {
+				var:160.owner = { #Venetia
+					is_italian_tag = yes
+					ROOT_can_grant_land = yes
+				}
+			}
+			var:160.owner = { save_event_target_as = italy }
+		}
+		if = {
+			limit = {
+				AUS = {
+					ROOT_can_grant_land = yes
+					owns_state = 102 #Carniola
+					OR = {
+						owns_state = 103 #Rijeka
+						owns_state = 683 #Gorizia
+						103 = { is_valid_annexation_state = yes }
+						683 = { is_valid_annexation_state = yes }
+					}
+				}
+			}
+			AUS = { save_event_target_as = austria }
+		}
+		if = {
+			limit = {
+				var:109.owner = {
+					OR = {
+						original_tag = SER
+						original_tag = CRO
+					}
+					ROOT_can_grant_land = yes
+					OR = {
+						owns_state = 103 #Rijeka
+						103 = { is_valid_annexation_state = yes }
+					}
+				}
+			}
+			var:109.owner = { save_event_target_as = croatia }
+		}
+	}
+
+	option = { #Give to Italy
 		name = annex.1034.a
 		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
-			}
-			var:759.owner = { #Friuli
-				is_italian_tag = yes
-				is_ally_with = ROOT
-			}
-		}
-		ai_chance = {
-			base = 90
-		}
-		set_temp_variable = { tag_to_release = 759.owner }
-		736 = { transfer_state_and_add_core = yes }
-		var:tag_to_release = { country_event = annex.18 }
-	}
-
-	option = { #Give Austria
-		name = annex.1034.b
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
-			}
-			AUS = { is_ally_with = ROOT }
-		}
-		ai_chance = {
-			base = 30
-		}
-		set_temp_variable = { tag_to_release = AUS }
-		736 = { transfer_state_and_add_core = yes }
-	}
-
-	option = { #Give Slovenia
-		name = annex.1034.c
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
-			}
-			SLV = { is_ally_with = ROOT }
-		}
-		ai_chance = {
-			base = 30
-		}
-		set_temp_variable = { tag_to_release = SLV }
-		736 = { transfer_state_and_add_core = yes }
-	}
-
-	option = { #Give Serbia
-		name = annex.1034.e
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
-			}
-			SER = {
-				is_ally_with = ROOT
-				OR = {
-					owns_state = 102 #Carniola
-					owns_state = 103 #Rijeka
-				}
-			}
-		}
-		ai_chance = {
-			base = 30
-		}
-		set_temp_variable = { tag_to_release = SER }
-		736 = { transfer_state_and_add_claim = yes }
-	}
-	option = { #Give Croatia
-		name = annex.1034.f
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
-			}
-			CRO = {
-				is_ally_with = ROOT
-				OR = {
-					owns_state = 102 #Carniola
-					owns_state = 103 #Rijeka
-				}
-			}
-		}
-		ai_chance = {
-			base = 1
-		}
-		set_temp_variable = { tag_to_release = CRO }
-		736 = { transfer_state_and_add_core = yes }
-	}
-	option = { #Give to Italians
-		name = annex.1034.g
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
-				SER = {
-					is_ally_with = ROOT
-					OR = {
-						owns_state = 102 #Carniola
-						owns_state = 103 #Rijeka
-					}
-				}
-				CRO = {
-					is_ally_with = ROOT
-					OR = {
-						owns_state = 102 #Carniola
-						owns_state = 103 #Rijeka
-					}
-				}
-			}
-			var:759.owner = { #Friuli
-				is_italian_tag = yes
-				ROOT_can_grant_land = yes
-				NOT = { is_ally_with = ROOT }
-			}
+			has_event_target = italy
+			NOT = { has_event_target = can_integrate }
 		}
 		ai_chance = {
 			base = 90
 			modifier = {
 				factor = 0
-				AUS = { is_ally_of_ROOT = yes }
+				NOT = { is_ally_with = event_target:italy }
+				OR = {
+					is_ally_with = event_target:austria
+					is_ally_with = event_target:croatia
+				}
 			}
 		}
-		set_temp_variable = { tag_to_release = 759.owner }
-		736 = { transfer_state_and_add_core = yes }
+		set_temp_variable = { tag_to_release = event_target:italy }
+		736 = { transfer_state_and_add_claim = yes }
 		var:tag_to_release = { country_event = annex.18 }
 	}
+
+	option = { #Give to Austria
+		name = annex.1034.b
+		trigger = {
+			has_event_target = austria
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:austria }
+				OR = {
+					is_ally_with = event_target:italy
+					is_ally_with = event_target:croatia
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:austria }
+		736 = { transfer_state_and_add_core = yes }
+		if = {
+			limit = { 683 = { is_valid_annexation_state = yes } }
+			683 = { transfer_state_and_add_core = yes }
+		}
+		else_if = {
+			limit = { 103 = { is_valid_annexation_state = yes } }
+			103 = { transfer_state_and_add_core = yes }
+		}
+	}
+
+	option = { #Give to Croatia
+		name = annex.1034.c
+		trigger = {
+			has_event_target = croatia
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:croatia }
+				OR = {
+					is_ally_with = event_target:italy
+					is_ally_with = event_target:austria
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:croatia }
+		if = {
+			limit = { event_target:croatia = { original_tag = CRO } }
+			736 = { transfer_state_and_add_core = yes }
+			103 = { add_core_of_target_and_transfer_if_owned = yes }
+		}
+		else = {
+			736 = { transfer_state_and_add_claim = yes }
+			103 = { add_claim_of_target_and_transfer_if_owned = yes }
+		}
+	}
+
 	option = { #annex
 		name = annex.integration
 		trigger = {
 			OR = {
-				is_italian_tag = yes
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
+				has_event_target = can_integrate
 				AND = {
 					is_germany_or_splinter_tag = yes
 					owns_state = 4 #Vienna
+					owns_state = 102 #Carniola
 				}
 			}
 		}
 		ai_chance = {
 			base = 1000
 			modifier = {
-				factor = 0.09
+				factor = 0
 				is_germany_or_splinter_tag = yes
 				owns_state = 4 #Vienna
 			}
@@ -6914,44 +6730,39 @@ country_event = { #Fate of the Austrian Littoral
 		if = {
 			limit = {
 				OR = {
-					is_italian_tag = yes
-					tag = SER
-					AND = {
-						is_germany_or_splinter_tag = yes
-						owns_state = 4 #Vienna
-					}
+					original_tag = SER
+					is_germany_or_splinter_tag = yes
 				}
 			}
-			if = {
-				limit = { 736 = { is_claim_or_core_of_ROOT = no } }
-				add_state_claim = 736
-			}
-			recheck_annexations = yes
+			736 = { add_claim_of_ROOT = yes }
+			103 = { add_claim_of_ROOT = yes }
+		}
+		else_if = {
+			limit = { is_italian_tag = yes }
+			736 = { add_claim_of_ROOT = yes }
 		}
 		else = {
-			set_temp_variable = { tag_to_release = ROOT }
-			736 = { remove_claim_and_add_core_of_target = yes }
+			736 = { remove_claim_and_add_core_of_ROOT = yes }
 		}
 	}
+
 	option = { #occupy
 		name = annex.occupation
 		trigger = {
-			is_italian_tag = no
 			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-				tag = CRO
+				has_event_target = can_integrate
 				AND = {
 					is_germany_or_splinter_tag = yes
 					owns_state = 4 #Vienna
+					OR = {
+						owns_state = 683 #Gorizia
+						683 = { is_valid_annexation_state = yes }
+					}
 				}
 			}
 		}
-		ai_chance = {
-			base = 0
-		}
-		set_country_flag = AUS_LIT_CONQ
+		ai_chance = { base = 0 }
+		set_country_flag = ISTRIA_CONQ
 		occupy_small_country = yes
 	}
 }
@@ -6965,187 +6776,138 @@ country_event = { #Fate of Trieste
 
 	is_triggered_only = yes
 
-	option = { #Give Italy
-		name = annex.1034.a
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-			}
-			var:759.owner = { #Friuli
-				is_italian_tag = yes
-				is_ally_with = ROOT
-			}
-		}
-		ai_chance = {
-			base = 90
-		}
-		set_temp_variable = { tag_to_release = 759.owner }
-		488 = { transfer_state_and_add_core = yes }
-		var:tag_to_release = { country_event = annex.18 }
-	}
-	option = { #Give Austria
-		name = annex.1034.b
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-			}
-			AUS = {
-				owns_state = 736 #Istria
-				is_ally_with = ROOT
-			}
-		}
-		ai_chance = {
-			base = 10
-		}
-		set_temp_variable = { tag_to_release = AUS }
-		488 = { transfer_state_and_add_core = yes }
-	}
-	option = { #Give Slovenia
-		name = annex.1034.c
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-			}
-			SLV = {
-				owns_state = 736 #Istria
-				is_ally_with = ROOT
-			}
-		}
-		ai_chance = {
-			base = 10
-		}
-		set_temp_variable = { tag_to_release = SLV }
-		488 = { transfer_state_and_add_core = yes }
-	}
-	option = { #Give Serbia
-		name = annex.1034.e
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-				tag = SER
-			}
-			SER = {
-				owns_state = 736 #Istria
-				SER_has_founded_yugoslavia = yes
-				is_ally_with = ROOT
-			}
-		}
-		ai_chance = {
-			base = 10
-		}
-		set_temp_variable = { tag_to_release = SER }
-		488 = { transfer_state_and_add_claim = yes }
-	}
-	option = { #Give to Italians
-		name = annex.1034.g
-		trigger = {
-			is_italian_tag = no
-			NOT = {
-				tag = AUS
-				tag = SLV
-			}
-			var:759.owner = {
-				is_italian_tag = yes
-				ROOT_can_grant_land = yes
-				NOT = { is_ally_with = ROOT }
-			}
-		}
-		ai_chance = {
-			base = 90
-			modifier = {
-				factor = 0
-				AUS = {
-					is_ally_of_ROOT = yes
-					owns_state = 736 #Istria
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_italian_tag = yes
+					original_tag = AUS
+					original_tag = SLV
 				}
 			}
+			save_event_target_as = can_integrate
 		}
-		set_temp_variable = { tag_to_release = 759.owner }
+		if = {
+			limit = {
+				var:759.owner = { #Friuli
+					is_italian_tag = yes
+					ROOT_can_grant_land = yes
+				}
+			}
+			var:759.owner = { save_event_target_as = italy }
+		}
+		if = {
+			limit = {
+				var:102.owner = { #Carniola
+					OR = {
+						original_tag = AUS
+						original_tag = SLV
+						AND = {
+							original_tag = SLV
+							SER_has_founded_yugoslavia = yes
+						}
+					}
+					ROOT_can_grant_land = yes
+					OR = {
+						owns_state = 683 #Gorizia
+						683 = { is_valid_annexation_state = yes }
+					}
+				}
+			}
+			var:102.owner = { save_event_target_as = slovenia }
+		}
+	}
+
+	option = { #Give to Italy
+		name = annex.1035.a
+		trigger = {
+			has_event_target = italy
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 90
+		}
+		set_temp_variable = { tag_to_release = event_target:italy }
 		488 = { transfer_state_and_add_core = yes }
 		var:tag_to_release = { country_event = annex.18 }
 	}
+
+	option = { #Give to AUS/SLV/SER
+		name = annex.1035.b
+		trigger = {
+			has_event_target = slovenia
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:slovenia }
+				is_ally_with = event_target:italy
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:slovenia }
+		488 = { transfer_state_and_add_core = yes }
+		683 = { add_core_of_target_and_transfer_if_owned = yes }
+	}
+
 	option = { #annex
 		name = annex.integration
 		trigger = {
 			OR = {
-				is_italian_tag = yes
-				tag = AUS
-				tag = SLV
+				has_event_target = can_integrate
 				AND = {
 					tag = SER
 					SER_has_founded_yugoslavia = yes
-					owns_state = 736 #Istria
 				}
 				AND = {
 					is_germany_or_splinter_tag = yes
-					owns_state = 736 #Istria
+					owns_state = 4 #Vienna
 				}
 			}
 		}
 		ai_chance = {
 			base = 1000
 			modifier = {
-				factor = 0.09
-				is_germany_or_splinter_tag = yes
-			}
-			modifier = {
 				factor = 0
-				var:759.owner = { #Friuli
-					is_italian_tag = yes
-					is_ally_with = ROOT
-				}
+				is_germany_or_splinter_tag = yes
 			}
 		}
 		if = {
 			limit = {
 				OR = {
-					is_italian_tag = yes
-					tag = SER
-					AND = {
-						is_germany_or_splinter_tag = yes
-						owns_state = 736 #Istria
-					}
+					original_tag = SER
+					is_germany_or_splinter_tag = yes
 				}
 			}
-			if = {
-				limit = { 488 = { is_claim_or_core_of_ROOT = no } }
-				add_state_claim = 488
-			}
-			recheck_annexations = yes
+			488 = { add_claim_of_ROOT = yes }
+			683 = { add_claim_of_ROOT = yes }
+		}
+		else_if = {
+			limit = { is_italian_tag = yes }
+			488 = { add_claim_of_ROOT = yes }
 		}
 		else = {
 			488 = { remove_claim_and_add_core_of_ROOT = yes }
 		}
 	}
+
 	option = { #occupy
 		name = annex.occupation
 		trigger = {
 			NOT = {
-				is_italian_tag = yes
-				tag = AUS
-				tag = SLV
+				has_event_target = can_integrate
 				AND = {
 					tag = SER
 					SER_has_founded_yugoslavia = yes
-					owns_state = 736 #Istria
 				}
 				AND = {
 					is_germany_or_splinter_tag = yes
-					owns_state = 736 #Istria
+					owns_state = 4 #Vienna
 				}
 			}
 		}
-		ai_chance = {
-			base = 0
-		}
+		ai_chance = { base = 0 }
 		set_country_flag = TRIESTE_CONQ
 		occupy_small_country = yes
 	}
@@ -7700,7 +7462,7 @@ country_event = { #Fate of Romandie
 	}
 
 	option = { #Return to our French allies
-		name = annex.1039.b
+		name = annex.1041.e
 		trigger = {
 			is_french_tag = no
 			var:27.owner = { #Bourgogne
@@ -7726,8 +7488,8 @@ country_event = { #Fate of Romandie
 		ai_chance = {
 			base = 100
 		}
-		add_political_power = -75
 		add_state_claim = 760
+		occupy_small_country = yes
 		recheck_annexations = yes
 	}
 
@@ -9226,9 +8988,8 @@ country_event = { #Fate of Ireland
 					tag = POR
 					tag = SIC
 					tag = SPA
-					tag = SPR
 				}
-				has_government = national_populist
+				has_authoritarian_government = yes
 			}
 			country_event = annex.184
 		}
@@ -12676,6 +12437,12 @@ country_event = { #Fate of Russia
 			add_core_of_target_and_transfer_if_owned = yes
 		}
 		puppet_released_tag = yes
+		hidden_effect = {
+			every_owned_state = {
+				limit = { is_russian_far_east = yes } #retain the far east to decide later
+				retain_state = yes
+			}
+		}
 		custom_effect_tooltip = tooltip_white_line
 		if = {
 			limit = { has_socialist_government = yes }
@@ -13956,7 +13723,8 @@ country_event = { #Fate of Serbia
 					state = 106 #Macedonia
 					state = 109 #Central Croatia
 					state = 163 #Dalmatia
-					state = 736 #Austrian Littoral
+					state = 683 #Gorizia
+					state = 736 #Istria
 					state = 765 #Kosovo
 					state = 767 #Nis
 					state = 794 #Syrmia
@@ -14718,23 +14486,20 @@ country_event = { #Fate of Bulgaria
 			1089 = { retain_state = yes } #Kardzhali
 			BUL = {
 				remove_ideas = GER_mil_support_idea
+				BUL_remove_monarchy = yes
 				if = {
-					limit = { has_character = BUL_ferdinand_sakskoburggotski }
-					retire_character = BUL_ferdinand_sakskoburggotski
-				}
-				if = {
-					limit = { has_character = BUL_boris_sakskoburggotski }
-					retire_character = BUL_boris_sakskoburggotski
-				}
-				if = {
-					limit = { has_character = BUL_kyril_sakskoburggotski }
-					retire_character = BUL_kyril_sakskoburggotski
+					limit = {
+						NOT = { has_character = BUL_pencho_zlatev }
+						NOT = { BUL_alexander_stamboliyski = { can_be_country_leader = yes } }
+					}
+					BUL_pencho_zlatev = { set_nationality = PREV }
+					promote_character = BUL_pencho_zlatev
 				}
 			}
 		}
 	}
 
-	option = { #liberate
+	option = { #republic
 		name = annex.1077.a
 		ai_chance = {
 			base = 100
@@ -14788,25 +14553,6 @@ country_event = { #Fate of Bulgaria
 			# Bulgaria transfers some factories
 			belgrade_pact_loot_factory_from_bulgaria = yes
 		}
-		else_if = {
-			limit = {
-				OR = {
-					tag = AUS
-					tag = HUN
-				}
-				has_government = social_conservative
-			}
-			var:tag_to_release = {
-				set_politics = {
-					ruling_party = authoritarian_democrat
-					elections_allowed = no
-				}
-				set_political_party = {
-					ideology = authoritarian_democrat
-					popularity = 60
-				}
-			}
-		}
 		hidden_effect = {
 			var:tag_to_release = {
 				if = {
@@ -14848,6 +14594,61 @@ country_event = { #Fate of Bulgaria
 			}
 		}
 	}
+
+	option = { #monarchy
+		name = annex.1077.b
+		trigger = {
+			has_socialist_government = no
+			NOT = { has_government = national_populist }
+			NOT = { original_tag = SER }
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					tag = GER
+					tag = AUS
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = BUL }
+		release_targeted_tag = yes
+		var:tag_to_release = { BUL_create_boris = yes }
+		hidden_effect = {
+			var:tag_to_release = {
+				remove_ideas = {
+					BUL_royalist_resistance
+					BUL_legionary_revolution
+					BUL_legionary_revolution_2
+					BUL_legionary_revolution_3
+					BUL_legionary_economics
+					BUL_legionary_economics_2
+					BUL_legionary_economics_3
+					BUL_royalist_resistance_worse
+					BUL_royalist_resistance_worse_2
+					BUL_socialist_offensive_1
+					BUL_socialist_offensive_2
+					BUL_socialist_offensive_3
+					BUL_ds_established
+					BUL_communard_revolution_1
+					BUL_communard_revolution_2
+					BUL_communard_revolution_3
+					BUL_spirit_of_solidarity_1
+					BUL_spirit_of_solidarity_2
+					BUL_bearing_the_torch
+					BUL_consolidation_of_power_1
+					BUL_consolidation_of_power_2
+					BUL_peasant_state_1
+					BUL_peasant_state_2
+					BUL_peasant_state_3
+					BUL_fighting_for_motherland_1
+					BUL_fighting_for_motherland_2
+				}
+			}
+		}
+	}
+
 	option = { #occupy
 		name = annex.occupation
 		ai_chance = { base = 0 }
@@ -15625,23 +15426,23 @@ country_event = { #Fate of Spain
 			every_state = {
 				limit = {
 					OR = {
-						is_core_of = SPA
+						is_core_of = SPK
 						is_core_of = SPR
 						is_core_of = SWF
-						is_claimed_by = SPA
+						is_claimed_by = SPK
 						is_claimed_by = SPR
 						is_claimed_by = SWF
 					}
 					is_spain = no
 				}
-				remove_core_of = SPA
+				remove_core_of = SPK
 				remove_core_of = SPR
 				remove_core_of = SWF
-				remove_claim_by = SPA
+				remove_claim_by = SPK
 				remove_claim_by = SPR
 				remove_claim_by = SWF
 			}
-			SPA = {
+			SPK = {
 				SPA_remove_monarchy = yes
 				remove_ideas = SPA_memories_of_the_republic
 			}
@@ -15677,6 +15478,8 @@ country_event = { #Fate of Spain
 				}
 				unlock_national_focus = SWF_election_success
 			}
+			set_country_flag = SPA_is_socialist_spain
+			set_cosmetic_tag = SPA_socialist
 		}
 	}
 
@@ -15701,6 +15504,8 @@ country_event = { #Fate of Spain
 				}
 				unlock_national_focus = SWF_election_success
 			}
+			set_country_flag = SPA_is_socialist_spain
+			set_cosmetic_tag = SPA_socialist
 		}
 		recheck_annexations_immediate = yes
 	}
@@ -15739,6 +15544,8 @@ country_event = { #Fate of Spain
 			if = {
 				limit = { tag = SPR }
 				complete_national_focus = SPR_restauracion
+				set_country_flag = SPA_is_carlist_spain
+				set_cosmetic_tag = SPA_carlists
 			}
 			else = {
 				if = {
@@ -15751,6 +15558,8 @@ country_event = { #Fate of Spain
 					unlock_national_focus = SPA_no_civil_war
 				}
 				SPA_create_alfonso = yes
+				set_country_flag = SPA_is_alfonsist_spain
+				set_cosmetic_tag = SPA_kingdom
 			}
 		}
 	}
@@ -15790,6 +15599,8 @@ country_event = { #Fate of Spain
 			if = {
 				limit = { tag = SPR }
 				complete_national_focus = SPR_restauracion
+				set_country_flag = SPA_is_carlist_spain
+				set_cosmetic_tag = SPA_carlists
 			}
 			else = {
 				if = {
@@ -15802,6 +15613,8 @@ country_event = { #Fate of Spain
 					unlock_national_focus = SPA_no_civil_war
 				}
 				SPA_create_alfonso = yes
+				set_country_flag = SPA_is_alfonsist_spain
+				set_cosmetic_tag = SPA_kingdom
 			}
 		}
 		recheck_annexations_immediate = yes
@@ -15835,7 +15648,6 @@ country_event = { #Fate of Spain
 		set_temp_variable = { tag_to_release = SPA }
 		release_spain = yes
 		var:tag_to_release = {
-			set_cosmetic_tag = SPA_republic
 			if = {
 				limit = {
 					NOT = {
@@ -15845,6 +15657,7 @@ country_event = { #Fate of Spain
 				}
 				unlock_national_focus = SPA_no_civil_war
 			}
+			set_cosmetic_tag = SPA_republic
 			SPA_gil_robles = {
 				if = {
 					limit = { has_ideology = authoritarian_democrat_subtype }
@@ -15909,7 +15722,6 @@ country_event = { #Fate of Spain
 		set_temp_variable = { tag_to_release = SPA }
 		release_spain = yes
 		var:tag_to_release = {
-			set_cosmetic_tag = SPA_republic
 			if = {
 				limit = {
 					NOT = {
@@ -15923,6 +15735,7 @@ country_event = { #Fate of Spain
 				limit = { has_idea = SPA_memories_of_the_republic }
 				remove_ideas = SPA_memories_of_the_republic
 			}
+			set_cosmetic_tag = SPA_republic
 			SPA_gil_robles = {
 				if = {
 					limit = { has_ideology = authoritarian_democrat_subtype }
@@ -15998,10 +15811,7 @@ country_event = { #Fate of Galicia
 	option = { #give to Spain
 		name = annex.1085.b
 		trigger = {
-			var:174.owner = { #Leon
-				is_spanish_tag = yes
-				ROOT_can_grant_land = yes
-			}
+			SPA = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
 			base = 100
@@ -16034,10 +15844,7 @@ country_event = { #Fate of Euskadi
 			base = 100
 			modifier = {
 				factor = 0
-				var:176.owner = { #Burgos
-					is_spanish_tag = yes
-					ROOT_can_grant_land = yes
-				}
+				SPA = { ROOT_can_grant_land = yes }
 			}
 		}
 		set_temp_variable = { tag_to_release = BAS }
@@ -16048,20 +15855,10 @@ country_event = { #Fate of Euskadi
 		name = annex.1087.b
 		trigger = {
 			172 = { is_valid_annexation_state = yes } #Navarre
-			var:176.owner = { #Burgos
-				is_spanish_tag = yes
-				ROOT_can_grant_land = yes
-			}
+			SPA = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
-			base = 100
-			modifier = {
-				factor = 0
-				var:176.owner = { #Burgos
-					is_spanish_tag = yes
-					ROOT_can_grant_land = yes
-				}
-			}
+			base = 0
 		}
 		set_temp_variable = { tag_to_release = 176.owner }
 		172 = { transfer_state_and_add_core = yes }
@@ -16074,10 +15871,7 @@ country_event = { #Fate of Euskadi
 	option = { #give to Spain
 		name = annex.1087.c
 		trigger = {
-			var:176.owner = { #Burgos
-				is_spanish_tag = yes
-				ROOT_can_grant_land = yes
-			}
+			SPA = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
 			base = 100
@@ -16110,10 +15904,7 @@ country_event = { #Fate of Catalonia
 			base = 100
 			modifier = {
 				factor = 0
-				var:166.owner = { #Lower Aragon
-					is_spanish_tag = yes
-					ROOT_can_grant_land = yes
-				}
+				SPA = { ROOT_can_grant_land = yes }
 			}
 		}
 		set_temp_variable = { tag_to_release = CAT }
@@ -16127,20 +15918,10 @@ country_event = { #Fate of Catalonia
 				167 = { is_valid_annexation_state = yes } #Valencia
 				177 = { is_valid_annexation_state = yes } #Balearic Islands
 			}
-			var:166.owner = { #Lower Aragon
-				is_spanish_tag = yes
-				ROOT_can_grant_land = yes
-			}
+			SPA = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
-			base = 100
-			modifier = {
-				factor = 0
-				var:166.owner = { #Lower Aragon
-					is_spanish_tag = yes
-					ROOT_can_grant_land = yes
-				}
-			}
+			base = 0
 		}
 		set_temp_variable = { tag_to_release = 166.owner }
 		167 = { add_core_of_target_and_transfer_if_owned = yes } #Valencia
@@ -16154,10 +15935,7 @@ country_event = { #Fate of Catalonia
 	option = { #give to Spain
 		name = annex.1088.c
 		trigger = {
-			var:166.owner = { #Lower Aragon
-				is_spanish_tag = yes
-				ROOT_can_grant_land = yes
-			}
+			SPA = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
 			base = 100
@@ -16200,7 +15978,7 @@ country_event = { #Fate of Portugal
 					tag = CAN
 					tag = GBR
 					tag = NFA
-					tag = SPA
+					tag = SPK
 					tag = SPR
 				}
 			}
@@ -16291,7 +16069,7 @@ country_event = { #Fate of Portugal
 					tag = CAN
 					tag = GBR
 					tag = NFA
-					tag = SPA
+					tag = SPK
 					tag = SPR
 				}
 			}
@@ -16575,26 +16353,14 @@ country_event = { #Fate of Italy
 				every_state = {
 					limit = {
 						OR = {
-							state = 39 #Southern Tyrol
 							state = 488 #Trieste
 							state = 783 #Trentino
-							state = 736 #Austrian Littoral
+							state = 683 #Gorizia
+							state = 736 #Istria
 						}
+						is_claim_or_core_of_ROOT = no
 					}
-					if = {
-						limit = { is_core_of = ITA }
-						remove_core_of = ITA
-						add_claim_by = ITA
-					}
-					if = {
-						limit = { is_core_of = SRI }
-						remove_core_of = SRI
-						add_claim_by = SRI
-					}
-					if = {
-						limit = { is_not_claim_or_core_of_ROOT = yes }
-						add_claim_by = ROOT
-					}
+					add_claim_by = ROOT
 				}
 			}
 		}
@@ -18041,7 +17807,7 @@ country_event = { #Fate of Lombardy
 		trigger = {
 			NOT = { tag = SRI }
 			NOT = { has_country_flag = SIC_confed }
-			SRI = { is_ally_of_ROOT = yes }
+			SRI = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
 			base = 100
@@ -18276,7 +18042,7 @@ country_event = { #Fate of Venice
 		trigger = {
 			NOT = { tag = SRI }
 			NOT = { has_country_flag = SIC_confed }
-			SRI = { is_ally_of_ROOT = yes }
+			SRI = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
 			base = 100
@@ -18417,7 +18183,7 @@ country_event = { #Fate of Emilia
 		trigger = {
 			has_socialist_government = no
 			NOT = {
-				tag = SPA
+				tag = SPK
 				tag = SIC
 				AND = {
 					tag = NFA
@@ -18481,7 +18247,7 @@ country_event = { #Fate of Emilia
 		trigger = {
 			has_socialist_government = no
 			OR = {
-				tag = SPA
+				tag = SPK
 				tag = SIC
 				AND = {
 					tag = NFA
@@ -18847,6 +18613,7 @@ country_event = { #Fate of Tuscany
 				has_government = authoritarian_democrat
 				has_government = paternal_autocrat
 			}
+			NOT = { ITA = { has_country_leader = { character = ITA_pietro_ferdinando } } }
 		}
 		ai_chance = {
 			base = 25
@@ -18884,88 +18651,19 @@ country_event = { #Fate of Tuscany
 				}
 			}
 		}
-
-		if = {
-			limit = { ITA = { has_character = ITA_pietro_ferdinando } }
-			event_target:ITA_pietro_ferdinando_target = { set_nationality = TUS }
-			TUS = {
-				if = {
-					limit = { has_character = ITA_pietro_ferdinando }
-					set_country_leader_description = { desc = TUS_pietro_ferdinando_leader_desc }
-					ITA_pietro_ferdinando = {
-						set_character_name = TUS_pietro_ferdinando_regnal
-						if = {
-							limit = { has_ideology = authoritarian_democrat_subtype }
-							promote_character = authoritarian_democrat_subtype
-						}
-						else = {
-							add_country_leader_role = {
-								country_leader = {
-									ideology = authoritarian_democrat_subtype
-									desc = TUS_pietro_ferdinando_leader_desc
-								}
-								promote_leader = yes
-							}
-						}
-						if = {
-							limit = { has_ideology = paternal_autocrat_subtype }
-							promote_character = paternal_autocrat_subtype
-
-						}
-						else = {
-							add_country_leader_role = {
-								country_leader = {
-									ideology = paternal_autocrat_subtype
-									desc = TUS_pietro_ferdinando_leader_desc
-								}
-								promote_leader = yes
-							}
-						}
-					}
-				}
-			}
-			hidden_effect = {
-				ITA = {
-					if = {
-						limit = { NOT = { country_exists = LOM } }
-						event_target:ITA_adriano_visconti_target = {
-							set_character_name = ITA_adriano_visconti
-							set_nationality = PREV
-						}
-						promote_character = ITA_adriano_visconti
-					}
-					else_if = {
-						limit = { NOT = { country_exists = VNC } }
-						event_target:VNC_giuseppe_volpi_target = { set_nationality = PREV }
-						if = {
-							limit = { has_character = VNC_giuseppe_volpi }
-							VNC_giuseppe_volpi = {
-								if = {
-									limit = { has_ideology = authoritarian_democrat_subtype }
-									promote_character = authoritarian_democrat_subtype
-								}
-								else = {
-									add_country_leader_role = {
-										country_leader = { ideology = authoritarian_democrat_subtype }
-										promote_leader = yes
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 	option = {
 		name = annex.1098.b #Release as TUS republic
 		trigger = {
 			has_socialist_government = no
-			NOT = {
-				tag = AUS
-				tag = GER
-				tag = SRD
-				tag = SIC
+			OR = {
+				NOT = {
+					tag = AUS
+					tag = GER
+					tag = SRD
+					tag = SIC
+				}
+				ITA = { has_country_leader = { character = ITA_pietro_ferdinando } }
 			}
 		}
 		ai_chance = {
@@ -20332,16 +20030,49 @@ country_event = { #Fate of Teschen
 
 	is_triggered_only = yes
 
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					original_tag = CZE
+					original_tag = GAL
+					AND = {
+						original_tag = POL
+						OR = {
+							owns_state = 67 #Upper Silesia
+							owns_state = 88 #Krakow
+						}
+					}
+					AND = {
+						original_tag = AUS
+						AUS_is_unified = yes
+					}
+				}
+			}
+			save_event_target_as = can_integrate
+		}
+	}
+
 	option = { #Give it to Czechia
 		name = annex.1105.a
 		trigger = {
+			NOT = { has_event_target = can_integrate }
 			CZE = { ROOT_can_grant_land = yes }
 		}
 		ai_chance = {
 			base = 80
 			modifier = {
 				factor = 0
-				POL = { is_ally_with = ROOT }
+				OR = {
+					POL = {
+						OR = {
+							owns_state = 67 #Upper Silesia
+							owns_state = 88 #Krakow
+						}
+						is_ally_with = ROOT
+					}
+					GAL = { is_ally_with = ROOT }
+				}
 				NOT = { CZE = { is_ally_with = ROOT } }
 			}
 		}
@@ -20349,9 +20080,28 @@ country_event = { #Fate of Teschen
 		924 = { transfer_state_and_add_core = yes }
 	}
 
-	option = { #Give it to Poland
+	option = { #Give it to Galicia
 		name = annex.1105.b
 		trigger = {
+			NOT = { has_event_target = can_integrate }
+			GAL = { ROOT_can_grant_land = yes }
+		}
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 0
+				CZE = { is_ally_with = ROOT }
+				NOT = { GAL = { is_ally_with = ROOT } }
+			}
+		}
+		set_temp_variable = { tag_to_release = GAL }
+		924 = { transfer_state_and_add_core = yes }
+	}
+
+	option = { #Give it to Poland
+		name = annex.1105.c
+		trigger = {
+			NOT = { has_event_target = can_integrate }
 			POL = {
 				OR = {
 					owns_state = 67 #Upper Silesia
@@ -20373,11 +20123,12 @@ country_event = { #Fate of Teschen
 	}
 
 	option = {
-		name = annex.1105.c #give it to Austria/Germany
+		name = annex.1105.d #give it to Austria/Germany
 		trigger = {
+			NOT = { has_event_target = can_integrate }
 			var:75.owner = { #Moravia
 				OR = {
-					tag = AUS
+					original_tag = AUS
 					is_germany_or_splinter_tag = yes
 				}
 				is_ally_with = ROOT
@@ -20394,16 +20145,17 @@ country_event = { #Fate of Teschen
 		name = annex.integration
 		trigger = {
 			OR = {
-				tag = CZE
+				original_tag = CZE
+				original_tag = GAL
 				AND = {
-					tag = POL
+					original_tag = POL
 					OR = {
 						owns_state = 67 #Upper Silesia
 						owns_state = 88 #Krakow
 					}
 				}
 				AND = {
-					tag = AUS
+					original_tag = AUS
 					AUS_is_unified = yes
 				}
 			}
@@ -20413,7 +20165,7 @@ country_event = { #Fate of Teschen
 		}
 		set_temp_variable = { tag_to_release = ROOT }
 		if = {
-			limit = { tag = POL }
+			limit = { original_tag = POL }
 			924 = { transfer_state_and_add_claim = yes }
 		}
 		else = {
@@ -20425,13 +20177,17 @@ country_event = { #Fate of Teschen
 		name = annex.occupation
 		trigger = {
 			NOT = {
-				tag = CZE
+				original_tag = CZE
+				original_tag = GAL
 				AND = {
-					tag = POL
-					owns_state = 88 #Krakow
+					original_tag = POL
+					OR = {
+						owns_state = 67 #Upper Silesia
+						owns_state = 88 #Krakow
+					}
 				}
 				AND = {
-					tag = AUS
+					original_tag = AUS
 					AUS_is_unified = yes
 				}
 			}
@@ -20442,11 +20198,11 @@ country_event = { #Fate of Teschen
 	}
 }
 
-country_event = { #Fate of Southern Slovakia
+country_event = { #Fate of the Danubian Plain
 	id = annex.1106
 	immediate = { log = "[GetDateText]: [Root.GetName]: event annex.1106 FROM = [From.GetName]" }
-	title = annexation_SOUTHERN_SLOVAKIA_CONQ
-	desc = annexation_SOUTHERN_SLOVAKIA_CONQ_desc
+	title = annexation_DANUBIAN_PLAIN_CONQ
+	desc = annexation_DANUBIAN_PLAIN_CONQ_desc
 	picture = GFX_report_event_generic_conference2
 
 	is_triggered_only = yes
@@ -20455,11 +20211,11 @@ country_event = { #Fate of Southern Slovakia
 		name = annex.1106.a
 		trigger = {
 			NOT = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
+				original_tag = HUN
+				original_tag = CZE
+				original_tag = SLO
 				AND = {
-					tag = AUS
+					original_tag = AUS
 					AUS_is_unified = yes
 				}
 			}
@@ -20472,7 +20228,7 @@ country_event = { #Fate of Southern Slovakia
 				OR = {
 					SLO = { is_ally_with = ROOT }
 					CZE = {
-						owns_state = 70 #Western Slovakia
+						owns_state = 70 #Slovakia
 						has_cosmetic_tag = CZE_czechoslavakia
 					}
 				}
@@ -20480,16 +20236,16 @@ country_event = { #Fate of Southern Slovakia
 			}
 		}
 		set_temp_variable = { tag_to_release = HUN }
-		664 = { transfer_state_and_add_claim = yes }
+		71 = { transfer_state_and_add_claim = yes }
 	}
 
 	option = { #Give it to Slovakia
 		name = annex.1106.b
 		trigger = {
 			NOT = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
+				original_tag = HUN
+				original_tag = CZE
+				original_tag = SLO
 				AND = {
 					tag = AUS
 					AUS_is_unified = yes
@@ -20506,23 +20262,23 @@ country_event = { #Fate of Southern Slovakia
 			}
 		}
 		set_temp_variable = { tag_to_release = SLO }
-		664 = { transfer_state_and_add_core = yes }
+		71 = { transfer_state_and_add_core = yes }
 	}
 
 	option = { #Give it to Czechoslovakia
 		name = annex.1106.c
 		trigger = {
 			NOT = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
+				original_tag = HUN
+				original_tag = CZE
+				original_tag = SLO
 				AND = {
-					tag = AUS
+					original_tag = AUS
 					AUS_is_unified = yes
 				}
 			}
 			CZE = {
-				owns_state = 70 #Western Slovakia
+				owns_state = 70 #Slovakia
 				is_ally_with = ROOT
 			}
 		}
@@ -20530,24 +20286,24 @@ country_event = { #Fate of Southern Slovakia
 			base = 30
 		}
 		set_temp_variable = { tag_to_release = CZE }
-		664 = { transfer_state_and_add_core = yes }
+		71 = { transfer_state_and_add_core = yes }
 	}
 
 	option = { #Give it to Austria
 		name = annex.1106.d
 		trigger = {
 			NOT = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
+				original_tag = HUN
+				original_tag = CZE
+				original_tag = SLO
 				AND = {
-					tag = AUS
+					original_tag = AUS
 					AUS_is_unified = yes
 				}
 			}
 			AUS = {
 				AUS_is_unified = yes
-				owns_state = 70 # #Western Slovakia
+				owns_state = 70 #Slovakia
 				is_ally_with = ROOT
 			}
 		}
@@ -20555,18 +20311,18 @@ country_event = { #Fate of Southern Slovakia
 			base = 1000
 		}
 		set_temp_variable = { tag_to_release = AUS }
-		664 = { transfer_state_and_add_core = yes }
+		71 = { transfer_state_and_add_core = yes }
 	}
 
 	option = { #Integrate
 		name = annex.integration
 		trigger = {
 			OR = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
+				original_tag = HUN
+				original_tag = CZE
+				original_tag = SLO
 				AND = {
-					tag = AUS
+					original_tag = AUS
 					AUS_is_unified = yes
 				}
 			}
@@ -20575,11 +20331,11 @@ country_event = { #Fate of Southern Slovakia
 			base = 1000
 		}
 		if = {
-			limit = { tag = HUN }
-			64 = { add_claim_of_target = yes }
+			limit = { original_tag = HUN }
+			71 = { add_claim_of_ROOT = yes }
 		}
 		else = {
-			664 = { remove_claim_and_add_core_of_ROOT = yes }
+			71 = { remove_claim_and_add_core_of_ROOT = yes }
 		}
 	}
 
@@ -20587,18 +20343,18 @@ country_event = { #Fate of Southern Slovakia
 		name = annex.occupation
 		trigger = {
 			NOT = {
-				tag = HUN
-				tag = CZE
-				tag = SLO
+				original_tag = HUN
+				original_tag = CZE
+				original_tag = SLO
 				AND = {
-					tag = AUS
+					original_tag = AUS
 					AUS_is_unified = yes
 				}
 			}
 		}
 		ai_chance = { base = 0 }
 		occupy_small_country = yes
-		set_country_flag = SOUTHERN_SLOVAKIA_CONQ
+		set_country_flag = DANUBIAN_PLAIN_CONQ
 	}
 }
 
@@ -20849,5 +20605,488 @@ country_event = { #Fate of Gomel
 		ai_chance = { base = 0 }
 		set_country_flag = GOMEL_CONQ
 		occupy_small_country = yes
+	}
+}
+
+country_event = { #Fate of Gorizia
+	id = annex.1109
+	immediate = { log = "[GetDateText]: [Root.GetName]: event annex.1109 FROM = [From.GetName]" }
+	title = annexation_GORIZIA_CONQ
+	desc = annexation_GORIZIA_CONQ_desc
+	picture = GFX_report_event_generic_conference2
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_italian_tag = yes
+					original_tag = AUS
+					original_tag = SLV
+					original_tag = SER
+				}
+			}
+			save_event_target_as = can_integrate
+		}
+		if = {
+			limit = {
+				var:488.owner = { #Trieste
+					is_italian_tag = yes
+					ROOT_can_grant_land = yes
+				}
+			}
+			var:488.owner = { save_event_target_as = italy }
+		}
+		if = {
+			limit = {
+				var:102.owner = { #Carniola
+					OR = {
+						original_tag = AUS
+						original_tag = SLV
+						original_tag = SER
+					}
+					ROOT_can_grant_land = yes
+				}
+			}
+			var:102.owner = { save_event_target_as = slovenia }
+		}
+	}
+
+	option = { #Give Italy
+		name = annex.1109.a
+		trigger = {
+			has_event_target = italy
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:italy }
+				is_ally_with = event_target:slovenia
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:italy }
+		683 = { transfer_state_and_add_claim = yes }
+		var:tag_to_release = { country_event = annex.18 }
+	}
+
+	option = { #Give AUS/SLV/SER
+		name = annex.1109.b
+		trigger = {
+			has_event_target = slovenia
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:slovenia }
+				is_ally_with = event_target:italy
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:slovenia }
+		683 = { transfer_state_and_add_core = yes }
+	}
+
+	option = { #annex
+		name = annex.integration
+		trigger = {
+			OR = {
+				has_event_target = can_integrate
+				AND = {
+					is_germany_or_splinter_tag = yes
+					owns_state = 4 #Vienna
+					owns_state = 102 #Carniola
+				}
+			}
+		}
+		ai_chance = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_germany_or_splinter_tag = yes
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_italian_tag = yes
+					original_tag = SER
+					is_germany_or_splinter_tag = yes
+				}
+			}
+			683 = { add_claim_of_ROOT = yes }
+		}
+		else = {
+			736 = { remove_claim_and_add_core_of_ROOT = yes }
+		}
+	}
+
+	option = { #occupy
+		name = annex.occupation
+		trigger = {
+			NOT = {
+				has_event_target = can_integrate
+				AND = {
+					is_germany_or_splinter_tag = yes
+					owns_state = 4 #Vienna
+					owns_state = 102 #Carniola
+				}
+			}
+		}
+		ai_chance = { base = 0 }
+		set_country_flag = GORIZIA_CONQ
+		occupy_small_country = yes
+	}
+}
+
+country_event = { #Fate of Fiume
+	id = annex.1110
+	immediate = { log = "[GetDateText]: [Root.GetName]: event annex.1110 FROM = [From.GetName]" }
+	title = annexation_FIUME_CONQ
+	desc = annexation_FIUME_CONQ_desc
+	picture = GFX_report_event_generic_conference2
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_italian_tag = yes
+					original_tag = AUS
+					original_tag = CRO
+					original_tag = SER
+				}
+			}
+			save_event_target_as = can_integrate
+		}
+		if = {
+			limit = {
+				var:736.owner = { #Istria
+					is_italian_tag = yes
+					ROOT_can_grant_land = yes
+				}
+			}
+			var:736.owner = { save_event_target_as = italy }
+		}
+		if = {
+			limit = {
+				AUS = {
+					ROOT_can_grant_land = yes
+					OR = {
+						owns_state = 102 #Carniola
+						owns_state = 736 #Istria
+					}
+				}
+			}
+			AUS = { save_event_target_as = austria }
+		}
+		if = {
+			limit = {
+				var:109.owner = { #Central Croatia
+					OR = {
+						original_tag = SER
+						original_tag = CRO
+					}
+					ROOT_can_grant_land = yes
+				}
+			}
+			var:109.owner = { save_event_target_as = croatia }
+		}
+	}
+
+	option = { #Give Italy
+		name = annex.1110.a
+		trigger = {
+			has_event_target = italy
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:italy }
+				OR = {
+					is_ally_with = event_target:austria
+					is_ally_with = event_target:croatia
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:italy }
+		103 = { transfer_state_and_add_claim = yes }
+		var:tag_to_release = { country_event = annex.18 }
+	}
+
+	option = { #Give to Austria
+		name = annex.1110.b
+		trigger = {
+			has_event_target = austria
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:austria }
+				OR = {
+					is_ally_with = event_target:italy
+					is_ally_with = event_target:croatia
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:austria }
+		103 = { transfer_state_and_add_core = yes }
+	}
+
+	option = { #Give to SER/CRO
+		name = annex.1110.c
+		trigger = {
+			has_event_target = croatia
+			NOT = { has_event_target = can_integrate }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				NOT = { is_ally_with = event_target:croatia }
+				OR = {
+					is_ally_with = event_target:italy
+					is_ally_with = event_target:austria
+				}
+			}
+		}
+		set_temp_variable = { tag_to_release = event_target:croatia }
+		if = {
+			limit = { event_target:croatia = { original_tag = CRO } }
+			103 = { transfer_state_and_add_core = yes }
+		}
+		else = {
+			103 = { transfer_state_and_add_claim = yes }
+		}
+	}
+
+	option = { #annex
+		name = annex.integration
+		trigger = {
+			OR = {
+				has_event_target = can_integrate
+				AND = {
+					is_germany_or_splinter_tag = yes
+					owns_state = 4 #Vienna
+					OR = {
+						owns_state = 102 #Carniola
+						owns_state = 736 #Istria
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_germany_or_splinter_tag = yes
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_italian_tag = yes
+					original_tag = SER
+					is_germany_or_splinter_tag = yes
+				}
+			}
+			103 = { add_claim_of_ROOT = yes }
+		}
+		else = {
+			103 = { remove_claim_and_add_core_of_ROOT = yes }
+		}
+	}
+
+	option = { #occupy
+		name = annex.occupation
+		trigger = {
+			NOT = {
+				has_event_target = can_integrate
+				AND = {
+					is_germany_or_splinter_tag = yes
+					owns_state = 4 #Vienna
+					OR = {
+						owns_state = 102 #Carniola
+						owns_state = 736 #Istria
+					}
+				}
+			}
+		}
+		ai_chance = { base = 0 }
+		set_country_flag = FIUME_CONQ
+		occupy_small_country = yes
+	}
+}
+
+country_event = { #Fate of Pressburg
+	id = annex.1111
+	immediate = { log = "[GetDateText]: [Root.GetName]: event annex.1111 FROM = [From.GetName]" }
+	title = annexation_PRESSBURG_CONQ
+	desc = annexation_PRESSBURG_CONQ_desc
+	picture = GFX_report_event_generic_conference2
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					original_tag = CZE
+					original_tag = SLO
+					original_tag = AUS
+					original_tag = HUN
+				}
+			}
+			save_event_target_as = can_integrate
+		}
+	}
+
+	option = { #Give it to Slovakia
+		name = annex.1111.a
+		trigger = {
+			NOT = { has_event_target = can_integrate }
+			SLO = { ROOT_can_grant_land = yes }
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				AUS = { is_ally_with = ROOT }
+				NOT = { SLO = { is_ally_with = ROOT } }
+			}
+		}
+		set_temp_variable = { tag_to_release = SLO }
+		1090 = { transfer_state_and_add_core = yes }
+	}
+
+	option = { #Give it to Austria
+		name = annex.1111.b
+		trigger = {
+			NOT = { has_event_target = can_integrate }
+			var:4.owner = {
+				OR = {
+					original_tag = AUS
+					is_germany_or_splinter_tag = yes
+				}
+				ROOT_can_grant_land = yes
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				OR = {
+					HUN = { is_ally_with = ROOT }
+					SLO = { is_ally_with = ROOT }
+					CZE = {
+						owns_state = 70 #Slovakia
+						is_ally_with = ROOT
+					}
+				}
+				NOT = { AUS = { is_ally_with = ROOT } }
+			}
+		}
+		set_temp_variable = { tag_to_release = 4.owner }
+		1090 = { transfer_state_and_add_core = yes }
+	}
+
+	option = { #Give it to Czechoslovakia
+		name = annex.1111.c
+		trigger = {
+			NOT = { has_event_target = can_integrate }
+			CZE = {
+				owns_state = 70 #Slovakia
+				ROOT_can_grant_land = yes
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				AUS = { is_ally_with = ROOT }
+				NOT = { CZE = { is_ally_with = ROOT } }
+			}
+		}
+		set_temp_variable = { tag_to_release = CZE }
+		1090 = { transfer_state_and_add_core = yes }
+	}
+
+	option = { #Give it to Hungary
+		name = annex.1111.d
+		trigger = {
+			NOT = { has_event_target = can_integrate }
+			HUN = {
+				ROOT_can_grant_land = yes
+				OR = {
+					owns_state = 71 #Danubian Plain
+					71 = { is_valid_annexation_state = yes }
+				}
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					AUS = { is_ally_with = ROOT }
+					SLO = { is_ally_with = ROOT }
+					CZE = {
+						owns_state = 70 #Slovakia
+						is_ally_with = ROOT
+					}
+				}
+				NOT = { HUN = { is_ally_with = ROOT } }
+			}
+		}
+		set_temp_variable = { tag_to_release = HUN }
+		1090 = { transfer_state_and_add_claim = yes }
+		71 = { add_claim_of_target_and_transfer_if_owned = yes }
+	}
+
+	option = { #Integrate
+		name = annex.integration
+		trigger = {
+			OR = {
+				has_event_target = can_integrate
+				AND = {
+					is_germany_or_splinter_tag = yes
+					owns_state = 4 #Vienna
+				}
+			}
+		}
+		ai_chance = {
+			base = 1000
+		}
+		if = {
+			limit = { original_tag = HUN }
+			1090 = { add_claim_of_ROOT = yes }
+		}
+		else = {
+			1090 = { remove_claim_and_add_core_of_ROOT = yes }
+		}
+	}
+
+	option = { #occupy
+		name = annex.occupation
+		trigger = {
+			NOT = {
+				has_event_target = can_integrate
+				AND = {
+					is_germany_or_splinter_tag = yes
+					owns_state = 4 #Vienna
+				}
+			}
+		}
+		ai_chance = { base = 0 }
+		occupy_small_country = yes
+		set_country_flag = PRESSBURG_CONQ
 	}
 }

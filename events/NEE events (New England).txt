@@ -1,4 +1,4 @@
-###################################
+﻿###################################
 # New England Flavor
 ###################################
 # By The Alpha Dog, Suzuhaa and Jeankedezeehond
@@ -543,7 +543,7 @@ country_event = { # Declaration of Independence
 		}
 		add_war_support = 0.10
 		add_stability = -0.05
-		declare_war_on = {
+		create_wargoal = {
 			type = annex_everything
 			target = FROM
 		}
@@ -2049,6 +2049,44 @@ country_event = { # Tale of Bob Rogers
 	}
 }
 
+country_event = { # War Justification backup
+	id = newengland.72
+	immediate = { log = "[GetDateText]: [Root.GetName]: event newengland.72 FROM = [From.GetName]" }
+	title = newengland.72.t
+	desc = newengland.72.d
+	picture = GFX_report_event_USA_americans_will_fight_for_liberty
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			count_triggers = {
+				amount = 2
+				has_war_with = CSA
+				has_war_with = USA
+				has_war_with = PSA
+				has_war_with = TEX
+			}
+		}
+		count_triggers = {
+			amount = 2
+			country_exists = CSA
+			country_exists = USA
+			country_exists = PSA
+			country_exists = TEX
+		}
+	}
+
+	option = { # We have no choice
+		name = newengland.72.a
+		if = {
+			limit = { NOT = { has_country_flag = NEE_claimed_america } }
+			activate_decision = NEE_claim_usa_territory_harsh
+		}
+		activate_decision = NEE_liberate_states
+	}
+}
+
 country_event = { # Sabotage on the airbases
 	id = newengland.73
 	immediate = { log = "[GetDateText]: [Root.GetName]: event newengland.73 FROM = [From.GetName]" }
@@ -3316,6 +3354,10 @@ country_event = { # They agreed to join the Entente
 			faction_leader = {
 				add_to_faction = FROM
 			}
+		}
+		if = {
+			limit = { var:358.owner = { is_ally_with = CAN } }
+			CAN = { country_event = entente.278 }
 		}
 	}
 }

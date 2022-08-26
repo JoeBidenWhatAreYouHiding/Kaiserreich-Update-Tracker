@@ -276,6 +276,9 @@ scripted_gui = {
 					NOT = { has_government = national_populist }
 				}
 			}
+			OTT_Action_Recruit_Local_Troops_button_visible = {
+				impassable = no
+			}
 			OTT_Action_Recruit_Local_Troops_button_click_enabled = {
 				ROOT = {
 					has_war = yes

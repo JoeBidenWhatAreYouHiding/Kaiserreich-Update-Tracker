@@ -4,7 +4,11 @@ SQI_riot_policy_decisions = {
 }
 SQI_internal_decisions = {
 	icon = GFX_decision_category_generic_economy
-	allowed = { always = no }
+	allowed = { original_tag = SQI }
+	visible = {
+		has_completed_focus = SQI_Two_Zhangs_Enter
+		is_subject = no
+	}
 }
 SQI_war_intervention_decisions = {
 	icon = GFX_decision_category_military_operation

@@ -20,8 +20,8 @@ fire_black_monday_events = {
 	FRA = { country_event = { id = comfrance.999	days = 4 } }
 	EGY = { country_event = { id = egy.3			days = 5 } }
 	HAI = { country_event = { id = hai.2			days = 5 } }
-	LBA = { country_event = { id = libya.10			days = 5 } }
 	SWI = { country_event = { id = swiss.45			days = 5 } }
+	ETH = { country_event = { id = ethiopia.32		days = 6 } }
 	BUL = { country_event = { id = bulgaria.9		days = 7 } }
 	CUB = { country_event = { id = cuba.3			days = 7 } }
 	DOM = { country_event = { id = domrep.8			days = 7 } }
@@ -38,6 +38,7 @@ fire_black_monday_events = {
 	ALB = { country_event = { id = albania.2		days = 12 } }
 	BAT = { country_event = { id = KRBAT.5			days = 12 } }
 	DKB = { country_event = { id = dkb.3			days = 12 } }
+	AZR = { country_event = { id = dkb.3			days = 12 } }
 	GEO = { country_event = { id = geo.6			days = 12 } }
 	GRE = { country_event = { id = gre.5			days = 12 } }
 	ITA = { country_event = { id = ita.2			days = 12 } }

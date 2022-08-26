@@ -545,10 +545,7 @@ focus_tree = {
 				limit = { has_active_mission = LEP_temp_suppress_kmt }
 				remove_mission = LEP_temp_suppress_kmt
 			}
-			activate_targeted_decision = {
-				target = THIS
-				decision = LEP_decision_lower_kmt_unrest
-			}
+			activate_targeted_decision = { target = THIS decision = LEP_decision_lower_kmt_unrest }
 		}
 	}
 	focus = {
@@ -569,10 +566,7 @@ focus_tree = {
 				limit = { has_active_mission = LEP_temp_suppress_yiguandao }
 				remove_mission = LEP_temp_suppress_yiguandao
 			}
-			activate_targeted_decision = {
-				target = THIS
-				decision = LEP_decision_lower_yiguandao_unrest
-			}
+			activate_targeted_decision = { target = THIS decision = LEP_decision_lower_yiguandao_unrest }
 		}
 	}
 
@@ -1663,10 +1657,7 @@ focus_tree = {
 		bypass = { hidden_trigger = { 1012 = { has_state_flag = LEP_tungsten_mines_developed } } }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_improved_tungsten_extraction"
-			activate_targeted_decision = {
-				target = 1012
-				decision = LEP_improved_tungsten_extraction
-			}
+			activate_targeted_decision = { target = 1012 decision = LEP_improved_tungsten_extraction }
 			if = {
 				limit = {
 					country_exists = GEA

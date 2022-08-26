@@ -265,10 +265,7 @@ ETS_foreign_diplomacy = {
 					limit = {
 						NOT = { has_global_flag = ETS_rebellion_victory }
 					}
-					activate_targeted_decision = {
-						target = FROM
-						decision = ETS_foreign_support_more_equipment_full_support
-					}
+					activate_targeted_decision = { target = FROM decision = ETS_foreign_support_more_equipment_full_support }
 				}
 			}
 		}

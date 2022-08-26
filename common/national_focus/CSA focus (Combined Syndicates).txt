@@ -3679,11 +3679,7 @@ focus_tree = {
 		x = 32
 		y = 0
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 3
-				date > 1940.1.1
-			}
+			factor = 1000
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CSA_back_in_business"
@@ -3721,7 +3717,18 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 10
+			factor = 400
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CSA_forpol
+					option = CSA_FORPOL_FREE_THE_NEW_WORLD
+				}
+			}
+			modifier = {
+				factor = 5
+				date > 1940.1.1
+			}
 			modifier = {
 				factor = 0.5
 				has_government = totalist
@@ -3730,17 +3737,6 @@ focus_tree = {
 						rule = CSA_forpol
 						option = CSA_FORPOL_INTERNATIONALE
 					}
-				}
-			}
-			modifier = {
-				factor = 5
-				date > 1940.1.1
-			}
-			modifier = {
-				factor = 0
-				has_game_rule = {
-					rule = CSA_forpol
-					option = CSA_FORPOL_FREE_THE_NEW_WORLD
 				}
 			}
 		}
@@ -3767,7 +3763,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 40
+			factor = 400
 		}
 
 		completion_reward = {
@@ -3797,11 +3793,7 @@ focus_tree = {
 		y = 2
 
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 3
-				has_war = yes
-			}
+			factor = 400
 		}
 
 		completion_reward = {
@@ -3830,11 +3822,7 @@ focus_tree = {
 		y = 2
 
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 3
-				has_war = yes
-			}
+			factor = 400
 		}
 
 		completion_reward = {
@@ -3862,11 +3850,7 @@ focus_tree = {
 		y = 3
 
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 3
-				has_war = yes
-			}
+			factor = 400
 		}
 
 		completion_reward = {
@@ -3893,7 +3877,7 @@ focus_tree = {
 		y = 3
 
 		ai_will_do = {
-			factor = 50
+			factor = 500
 		}
 
 		completion_reward = {
@@ -3924,17 +3908,17 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 5
-				date > 1940.1.1
-			}
+			factor = 400
 			modifier = {
 				factor = 0
 				has_game_rule = {
 					rule = CSA_forpol
 					option = CSA_FORPOL_INTERNATIONALE
 				}
+			}
+			modifier = {
+				factor = 5
+				date > 1940.1.1
 			}
 		}
 
@@ -3972,12 +3956,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 5
+			factor = 400
 			modifier = {
 				factor = 10
-				MEX = {
-					any_owned_state = { is_mainland_america = yes }
-				}
+				MEX = { any_owned_state = { is_mainland_america = yes } }
 			}
 		}
 		completion_reward = {
@@ -4016,8 +3998,10 @@ focus_tree = {
 		x = 1
 		y = 1
 
+		will_lead_to_war_with = MEX
+
 		ai_will_do = {
-			factor = 20
+			factor = 400
 			modifier = {
 				factor = 0
 				ROOT_is_threatened = yes
@@ -4065,8 +4049,11 @@ focus_tree = {
 		relative_position_id = CSA_free_the_west
 		x = 0
 		y = 2
+
+		will_lead_to_war_with = CAN
+
 		ai_will_do = {
-			factor = 20
+			factor = 400
 			modifier = {
 				factor = 0
 				ROOT_is_threatened = yes
@@ -4075,7 +4062,13 @@ focus_tree = {
 				factor = 0
 				CAN = { default_attack_AI_trigger_FROM = yes }
 			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = CAN ratio < 2 }
+				CAN = { surrender_progress < 0.1 }
+			}
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CSA_free_canada"
 			add_war_support = 0.10
@@ -4117,7 +4110,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		ai_will_do = {
-			factor = 20
+			factor = 400
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CSA_look_to_the_south"
@@ -4139,7 +4132,7 @@ focus_tree = {
 		x = 0
 		y = 4
 		ai_will_do = {
-			factor = 50
+			factor = 500
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CSA_master_of_the_west"

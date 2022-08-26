@@ -202,7 +202,7 @@ SIA_setup_Boworadet_government = {
 	add_to_coalition = yes
 	set_temp_variable = { coalition_partner_var = token:paternal_autocrat }
 	add_to_coalition = yes
-	SIA = { drop_cosmetic_tag = yes }
+	SIA = { set_cosmetic_tag = SIA_default }
 }
 
 SIA_setup_Royalists_government = { # As in the "Government" side
@@ -225,7 +225,6 @@ SIA_setup_Royalists_government = { # As in the "Government" side
 	clear_sic_slot = yes
 	activate_advisor = SIA_kon_hutasingha_sic
 	set_country_flag = SIA_syndie_purge_pol
-	SIA = { drop_cosmetic_tag = yes }
 	set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
 	add_to_coalition = yes
 	set_temp_variable = { coalition_partner_var = token:social_democrat }
@@ -254,7 +253,6 @@ SIA_setup_Parliamentarians_government = { # As in the "Government" side
 	clear_sic_slot = yes
 	activate_advisor = SIA_phot_phahonyothin_sic
 	set_country_flag = SIA_royalist_purge_pol
-	SIA = { drop_cosmetic_tag = yes }
 	set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
 	add_to_coalition = yes
 	set_temp_variable = { coalition_partner_var = token:social_conservative }
@@ -673,12 +671,9 @@ SIA_demobilize_forces = {
 SiaCW_navy_redistribution = {
 	hidden_effect = {
 		### RSN 1st Naval Command
-		# CDS
-		transfer_ship = { prefer_name = "HSMS Rattanakosin" type = heavy_cruiser target = XXA }
-		transfer_ship = { prefer_name = "HSMS Sukhothai" type = heavy_cruiser target = XXA }
 		# CL
-		transfer_ship = { prefer_name = "HSMS Naresuan" type = light_cruiser target = XXA }
-		transfer_ship = { prefer_name = "HSMS Taksin" type = light_cruiser target = XXA }
+		transfer_ship = { prefer_name = "HSMS Rattanakosin" type = light_cruiser target = XXA }
+		transfer_ship = { prefer_name = "HSMS Sukhothai" type = light_cruiser target = XXA }
 		# DD
 		transfer_ship = { prefer_name = "HSMS Mahachakri" type = destroyer target = XXA }
 		transfer_ship = { prefer_name = "HSMS Chao Phraya" type = destroyer target = XXA }
@@ -722,7 +717,7 @@ SIA_switch_to_kingdom_flag = {
 	SIA = {
 		if = {
 			limit = { has_cosmetic_tag = SIA_REP }
-			drop_cosmetic_tag = yes
+			set_cosmetic_tag = SIA_default
 		}
 		else_if = {
 			limit = { has_cosmetic_tag = THI_REP }
@@ -1771,8 +1766,11 @@ SIA_remove_royal_titles = {
 		event_target:SIA_pridi_phanomyong_target = {
 			set_character_name = SIA_pridi_phanomyong
 		}
-		event_target:SIA_plaek_phibunsongkhram_target = {
-			set_character_name = SIA_plaek_phibunsongkhram
+		if = {
+			limit = { has_event_target = SIA_plaek_phibunsongkhram_target }
+			event_target:SIA_plaek_phibunsongkhram_target = {
+				set_character_name = SIA_plaek_phibunsongkhram
+			}
 		}
 
 		### Field Marshal

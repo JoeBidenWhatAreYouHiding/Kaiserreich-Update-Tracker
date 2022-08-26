@@ -33,6 +33,9 @@ focus_tree = {
 		available = {
 			has_country_flag = saf_flag_elections_held
 		}
+		bypass = {
+			is_subject = yes
+		}
 
 		ai_will_do = {
 			factor = 200

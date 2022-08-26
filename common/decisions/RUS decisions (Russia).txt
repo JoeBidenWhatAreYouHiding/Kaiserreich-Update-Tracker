@@ -1384,7 +1384,7 @@ RUS_Foreign_Policy_decisions = {
 				}
 				var:FROM.overlord = {
 					country_event = {
-						id = rusfor.1229
+						id = rusfor.1229	#warning event
 						days = 2
 						random = 48
 					}
@@ -1393,7 +1393,7 @@ RUS_Foreign_Policy_decisions = {
 			else = {
 				FROM = {
 					country_event = {
-						id = rusfor.1229
+						id = rusfor.1229	#warning event
 						days = 2
 						random = 48
 					}
@@ -1660,19 +1660,19 @@ RUS_Foreign_Policy_decisions = {
 		}
 
 		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancelled RUS_Attack_Caucasus target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled RUS_Attack_Azerbaijan target: [From.GetName]"
 			clear_decision_attack_AI = yes
 			add_political_power = 10
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_Attack_Caucasus target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_Attack_Azerbaijan target: [From.GetName]"
 			FROM = { country_event = kr.political.30 } #warning event
 			setup_decision_attack_AI = yes
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove RUS_Attack_Caucasus target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision remove RUS_Attack_Azerbaijan target: [From.GetName]"
 			clear_decision_attack_AI = yes
 			declare_war_on = {
 				target = FROM
@@ -1742,7 +1742,7 @@ RUS_Foreign_Policy_decisions = {
 				}
 				var:FROM.overlord = {
 					country_event = {
-						id = rusfor.1180
+						id = rusfor.1180   #warning event
 						days = 2
 						random = 48
 					}
@@ -1751,7 +1751,7 @@ RUS_Foreign_Policy_decisions = {
 			else = {
 				FROM = {
 					country_event = {
-						id = rusfor.1180
+						id = rusfor.1180   #warning event
 						days = 2
 						random = 48
 					}
@@ -1860,7 +1860,7 @@ RUS_Foreign_Policy_decisions = {
 				}
 				var:FROM.overlord = {
 					country_event = {
-						id = rusfor.1210
+						id = rusfor.1210   #warning event
 						days = 2
 						random = 48
 					}
@@ -1869,7 +1869,7 @@ RUS_Foreign_Policy_decisions = {
 			else = {
 				FROM = {
 					country_event = {
-						id = rusfor.1210
+						id = rusfor.1210   #warning event
 						days = 2
 						random = 48
 					}
@@ -2028,6 +2028,11 @@ RUS_Foreign_Policy_decisions = {
 				is_in_faction_with = GEO
 				has_full_control_of_state = 231 #Georgia
 			}
+			OR = {
+				is_in_faction_with = ARM
+				has_full_control_of_state = 230 #Armenia
+				FROM = { owns_state = 230 }
+			}
 			is_neighbor_of = FROM
 			NOT = {
 				has_non_aggression_pact_with = FROM
@@ -2097,7 +2102,7 @@ RUS_Foreign_Policy_decisions = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_Demand_Armenia target: [From.GetName]"
-			FROM = { country_event = { id = rusfor.1190 days = 18 } }
+			FROM = { country_event = { id = rusfor.1190 days = 8 } }
 			setup_decision_attack_AI = yes
 			set_country_flag = RUS_demanding_armenia
 		}
@@ -2108,16 +2113,29 @@ RUS_Foreign_Policy_decisions = {
 			clear_decision_attack_AI = yes
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
-				every_state = {
-					limit = {
-						OR = {
-							state = 230 #Erivan
-							state = 585 #Batumi
-							state = 1000 #Kars
-						}
-						owner = { is_ally_with = FROM }
+				if = {
+					limit = { 230 = { is_owned_by = FROM } }
+					230 = { transfer_state_to = ROOT }
+				}
+				if = {
+					limit = { 585 = { is_owned_by = FROM } }
+					if = {
+						limit = { is_in_faction_with = GEO }
+						585 = { transfer_state_to = GEO }
 					}
-					transfer_state_to = ROOT
+					else = {
+						585 = { transfer_state_to = ROOT }
+					}
+				}
+				if = {
+					limit = { 1000 = { is_owned_by = FROM } }
+					if = {
+						limit = { is_in_faction_with = ARM }
+						1000 = { transfer_state_to = ARM }
+					}
+					else = {
+						1000 = { transfer_state_to = ROOT }
+					}
 				}
 			}
 			custom_effect_tooltip = if_they_refuse_tt
@@ -2273,7 +2291,7 @@ RUS_Foreign_Policy_decisions = {
 				}
 				var:FROM.overlord = {
 					country_event = {
-						id = rusfor.1066
+						id = rusfor.1066   #warning event
 						days = 2
 						random = 48
 					}
@@ -2282,7 +2300,7 @@ RUS_Foreign_Policy_decisions = {
 			else = {
 				FROM = {
 					country_event = {
-						id = rusfor.1066
+						id = rusfor.1066   #warning event
 						days = 2
 						random = 48
 					}
@@ -2671,7 +2689,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_poland target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_poland"
 			every_state = {
 				limit = {
 					OR = {
@@ -2692,8 +2710,7 @@ political_actions = {
 		available = {
 			OR = {
 				43 = { controller = { is_ally_with = ROOT } } #Central Hungary
-				70 = { controller = { is_ally_with = ROOT } } #Western Slovakia
-				71 = { controller = { is_ally_with = ROOT } } #Eastern Slovakia
+				70 = { controller = { is_ally_with = ROOT } } #Slovakia
 			}
 		}
 		visible = {
@@ -2709,7 +2726,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_hungary target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_hungary"
 			every_state = {
 				limit = { region = 27 } #Hungary
 				set_variable = { ambition_area_@ROOT = 1 }
@@ -2745,7 +2762,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_eastgermany target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_eastgermany"
 			set_country_flag = RUS_expanded_ambition_eastgermany
 			every_state = {
 				limit = {
@@ -2800,7 +2817,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_czech target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_czech"
 			set_country_flag = RUS_expanded_ambition_czech
 			every_state = {
 				limit = {
@@ -2845,7 +2862,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_czech target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_austria"
 			every_state = {
 				limit = { region = 21 } #Austria
 				set_variable = { ambition_area_@ROOT = 1 }
@@ -2880,7 +2897,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_eastbalk target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_eastbalk"
 			every_state = {
 				limit = {
 					OR = {
@@ -2922,7 +2939,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_westbalk target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_westbalk"
 			every_state = {
 				limit = {
 					OR = {
@@ -2963,7 +2980,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_greece target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_greece"
 			every_state = {
 				limit = {
 					OR = {
@@ -3000,7 +3017,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_anatolia target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_anatolia"
 			every_state = {
 				limit = { region = 129 } #Anatolia
 				set_variable = { ambition_area_@ROOT = 1 }
@@ -3033,7 +3050,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_persia target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_persia"
 			every_state = {
 				limit = {
 					OR = {
@@ -3072,7 +3089,7 @@ political_actions = {
 		cost = 0
 		ai_will_do = { factor = 100 }
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_scandinavia target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_expand_ambition_scandinavia"
 			every_state = {
 				limit = {
 					OR = {

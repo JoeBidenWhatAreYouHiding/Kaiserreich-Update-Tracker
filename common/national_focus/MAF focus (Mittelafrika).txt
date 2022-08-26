@@ -629,8 +629,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MAF_Vizekonig
-		icon = GFX_goal_MAF_Vizekonig
+		id = MAF_Statthalter
+		icon = GFX_goal_MAF_Statthalter
 		cost = 2
 
 		relative_position_id = MAF_Sovereign_State
@@ -655,7 +655,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Vizekonig"
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Statthalter"
 			custom_effect_tooltip = MAF_autonomy_warning
 			add_political_power = 100
 			add_stability = -0.2
@@ -770,14 +770,11 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Autonomous_Kingdoms"
 			add_stability = 0.15
 			custom_effect_tooltip = tooltip_white_line
-
 			every_owned_state = {
 				limit = {
-					NOT = { is_core_of = ROOT }
-					OR = {
-						compliance < 100
-						resistance > 0
-					}
+					is_on_continent = africa
+					is_controlled_by = ROOT
+					has_resistance = yes
 				}
 				add_compliance = 20
 				add_resistance = -20
@@ -1714,7 +1711,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = tooltip_effect_upon_focus_completion
-			create_faction = Mittelmacht
+			create_faction = reichspakt
 			create_wargoal = {
 				type = annex_everything
 				target = ENT
@@ -1856,11 +1853,11 @@ focus_tree = {
 			#make clear that this locks you out of stuff!
 			remove_ideas = MAF_belgian_investment_3
 			custom_effect_tooltip = tooltip_white_line
-
 			every_owned_state = {
 				limit = {
 					region = 145
-					NOT = { is_core_of = MAF }
+					is_controlled_by = ROOT
+					has_resistance = yes
 				}
 				add_compliance = -20
 			}
@@ -1914,7 +1911,8 @@ focus_tree = {
 			every_owned_state = {
 				limit = {
 					region = 145
-					NOT = { is_core_of = MAF }
+					is_controlled_by = ROOT
+					has_resistance = yes
 				}
 				add_resistance = 20
 				increase_state_category_by_one_level = yes
@@ -2061,6 +2059,8 @@ focus_tree = {
 						has_dynamic_modifier = { modifier = MAF_british_nyasaland }
 						has_dynamic_modifier = { modifier = MAF_british_gold_coast }
 					}
+					is_controlled_by = ROOT
+					has_resistance = yes
 				}
 				add_compliance = 25
 			}
@@ -4583,24 +4583,22 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NMB_BRT_railway_expansion"
+			effect_tooltip = {
+				build_railway = {
+					start_state = 541
+					target_state = 958
+				}
+			}
+			hidden_effect = {
+				build_railway = {
+					path = { 4879 7770 9977 12519 13549 697 12677 13648 }
+				}
+			}
 			958 = {
 				add_building_construction = {
-					type = infrastructure
+					type = supply_node
 					level = 1
-					instant_build = yes
-				}
-			}
-			964 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			541 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
+					province = 13648
 					instant_build = yes
 				}
 			}
@@ -4659,6 +4657,7 @@ focus_tree = {
 			add_political_power = 100
 			effect_tooltip = { set_cosmetic_tag = MAF }
 			drop_cosmetic_tag = yes
+			set_capital = { state = 965 remember_old_capital = no } #Move the Capital back to Dar-es-Salaam
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -4683,13 +4682,13 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		available = {
-			NOT = { country_exists = NMB }
 			owns_state = 964
 			country_exists = GER
 			OR = {
 				is_subject = no
 				is_subject_of = GER
 			}
+			at_peace_or_same_enemies_as_GER = yes
 		}
 
 		bypass = { NOT = { country_exists = GER } }
@@ -4722,7 +4721,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = NMB_statthalter
+		id = NMB_governor
 		icon = GFX_goal_Desert_Officers_2
 		cost = 5
 
@@ -4735,7 +4734,7 @@ focus_tree = {
 		available = { is_subject_of = GER }
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus NMB_statthalter"
+			log = "[GetDateText]: [Root.GetName]: Focus NMB_governor"
 			country_event = { id = nmb.16 days = 1 }
 		}
 	}
@@ -4749,7 +4748,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		prerequisite = { focus = NMB_statthalter }
+		prerequisite = { focus = NMB_governor }
 
 		available = { is_subject_of = GER }
 

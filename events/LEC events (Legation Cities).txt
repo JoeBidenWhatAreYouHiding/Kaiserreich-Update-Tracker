@@ -89,7 +89,6 @@ country_event = { # We can vote
 			tag = USA
 		}
 		add_political_power = 25
-		LEC_add_open_door_idea = yes
 	}
 
 	option = {
@@ -98,7 +97,6 @@ country_event = { # We can vote
 			NOT = { tag = USA }
 		}
 		add_political_power = 25
-		LEC_add_open_door_idea = yes
 	}
 }
 
@@ -270,8 +268,13 @@ country_event = { #Legation navy? - Result
 		trigger = {
 			OR = {
 				LEC_vote_passes = yes
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				AND = {
+					is_ai = yes
+					OR = {
+						has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+						has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+					}
+				}
 			}
 		}
 		set_temp_variable = { LEC_currency_change = -1 }
@@ -284,9 +287,12 @@ country_event = { #Legation navy? - Result
 		name = lec.6.b
 		trigger = {
 			LEC_vote_passes = no
-			NOT = {
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+			if = {
+				limit = { is_ai = yes }
+				NOT = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				}
 			}
 		}
 		add_political_power = -75
@@ -987,8 +993,8 @@ country_event = { #War leads to instability
 
 	option = {	#rats!
 		name = lec.17.a
-		add_political_power = -125
-		add_stability = -0.15
+		add_political_power = -75
+		add_stability = -0.05
 		set_temp_variable = { LEC_currency_change = -2 }
 		LEC_change_currency_reserves = yes
 	}
@@ -1143,8 +1149,13 @@ country_event = { #Sichuan Famine - Result
 		trigger = {
 			OR = {
 				LEC_vote_passes = yes
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				AND = {
+					is_ai = yes
+					OR = {
+						has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+						has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+					}
+				}
 			}
 		}
 		set_temp_variable = { LEC_currency_change = -1 }
@@ -1155,8 +1166,9 @@ country_event = { #Sichuan Famine - Result
 		name = lec.23.b
 		trigger = {
 			LEC_vote_passes = no
-			NOT = {
-				OR = {
+			if = {
+				limit = { is_ai = yes }
+				NOT = {
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
 					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
 				}
@@ -1282,25 +1294,14 @@ country_event = { #Budget Time
 	desc = lec.30.d
 	picture = GFX_report_event_LEC_shanghai_river
 	is_triggered_only = yes
-	option = {	#Just money is fine, thank you!
-		name = lec.30.a
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
-				}
-			}
-		}
-		LEC_change_currency_reserves = yes
-		activate_mission = LEC_budget_motion
-	}
+
 	option = { #Volunteer force funding
 		name = lec.30.b
 		ai_chance = {
 			base = 25
+			modifier = {
+				factor = LEC_currency_reserves
+			}
 		}
 		add_doctrine_cost_reduction = {
 			name = lec.30.t
@@ -1314,6 +1315,9 @@ country_event = { #Budget Time
 		name = lec.30.c
 		ai_chance = {
 			base = 25
+			modifier = {
+				factor = LEC_currency_reserves
+			}
 		}
 		add_tech_bonus = {
 			name = lec.30.t
@@ -1327,8 +1331,31 @@ country_event = { #Budget Time
 		name = lec.30.e
 		ai_chance = {
 			base = 25
+			modifier = {
+				factor = LEC_currency_reserves
+			}
 		}
 		add_manpower = 10000
+		activate_mission = LEC_budget_motion
+	}
+	option = {	#Just money is fine, thank you!
+		name = lec.30.a
+		ai_chance = {
+			base = 25
+			modifier = {
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				}
+			}
+		}
+		LEC_change_currency_reserves = yes
 		activate_mission = LEC_budget_motion
 	}
 }
@@ -2208,11 +2235,13 @@ country_event = { #bankruptcy alert
 		if = {
 			limit = {
 				is_ai = yes
-				has_game_rule = { rule = LEC_path option = DEFAULT }
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				NOT = {
+					has_game_rule = { rule = LEC_path option = DEFAULT }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				}
 			}
-			set_temp_variable = { LEC_currency_change = 3 }
+			set_temp_variable = { LEC_currency_change = 4 }
 			LEC_change_currency_reserves = yes
 		}
 		else = {
@@ -2247,6 +2276,10 @@ country_event = { #Banruptcy Consequences
 				}
 			}
 			LEC_remove_from_legation_council = yes
+		}
+		if = {
+			limit = { has_idea = LEC_legation_cities_open_door }
+			remove_ideas = LEC_legation_cities_open_door
 		}
 		hidden_effect = {
 			news_event = worldnews.236
@@ -3397,6 +3430,7 @@ country_event = { #Peace with the Legation Cities' Imperialist Backers?
 					has_country_flag = LEC_war_backer #failsafe if LEC is annexed
 				}
 				is_valid_peace_target = yes
+				NOT = { original_tag = JAP }
 			}
 			country_event = { id = lec.94 days = 2 }
 			clr_country_flag = LEC_war_backer
@@ -5721,7 +5755,7 @@ country_event = { #The Hong Kong Police find some doccuments
 	picture = GFX_report_event_LEC_shanghai_police_patrol
 	is_triggered_only = yes
 
-	option = {	#Grab the Xintefa dossier
+	option = {	#Grab the ZhongTeJu dossier
 		name = lecgreengangclash.10.a
 		custom_effect_tooltip = LEC_more_evidence_adler
 		modify_country_flag = {
@@ -5779,8 +5813,14 @@ country_event = { #Huang Jinrong Investigates - Investigation Collapses
 
 	option = {	#Insult the Japanese with a very considerable bribe
 		name = lecgreengangclash.11.b
+		trigger = {
+			check_variable = { LEC_currency_reserves > 1 }
+		}
 		ai_chance = {
 			base = 20
+			modifier = {
+				factor = LEC_currency_reserves
+			}
 		}
 		set_temp_variable = { LEC_currency_change = -1 }
 		LEC_change_currency_reserves = yes
@@ -6032,8 +6072,13 @@ country_event = { #Bailout the DAB? - Result
 		trigger = {
 			OR = {
 				LEC_vote_passes = yes
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				AND = {
+					is_ai = yes
+					OR = {
+						has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+						has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+					}
+				}
 			}
 		}
 		set_temp_variable = { LEC_currency_change = -1 }
@@ -6044,9 +6089,12 @@ country_event = { #Bailout the DAB? - Result
 		name = lecshorting.4.b
 		trigger = {
 			LEC_vote_passes = no
-			NOT = {
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
-				has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+			if = {
+				limit = { is_ai = yes }
+				NOT = {
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_GER_PUPPET }
+					has_game_rule = { rule = LEC_path option = LEC_COLLAPSE_JAP_PUPPET }
+				}
 			}
 		}
 		random_list = {
@@ -6405,8 +6453,14 @@ country_event = { #British businessmen think Shanghai is receiving too much inve
 	}
 	option = {	#What if we put money into Hong Kong?
 		name = lecbrits.1.a
+		trigger = {
+			check_variable = { LEC_currency_reserves > 1 }
+		}
 		ai_chance = {
 			base = 25
+			modifier = {
+				factor = LEC_currency_reserves
+			}
 			modifier = {
 				factor = 0
 				has_game_rule = {
@@ -6424,8 +6478,16 @@ country_event = { #British businessmen think Shanghai is receiving too much inve
 	}
 	option = {	#Cancel the plans
 		name = lecbrits.1.c
+		trigger = {
+			check_variable = { LEC_currency_reserves < 9 }
+		}
 		ai_chance = {
 			base = 20
+			modifier = {
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
+			}
 			modifier = {
 				factor = 0
 				OR = {
@@ -6511,8 +6573,16 @@ country_event = { #Germans accuse the council of favouritism
 	}
 	option = { #Pull the funding
 		name = lecbrits.3.b
+		trigger = {
+			check_variable = { LEC_currency_reserves < 9 }
+		}
 		ai_chance = {
 			base = 20
+			modifier = {
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
+			}
 			modifier = {
 				factor = 0
 				OR = {
@@ -6583,8 +6653,14 @@ country_event = { #Prominent Americans attempt to intercede
 	}
 	option = {	#Alright fine
 		name = lecbrits.5.b
+		trigger = {
+			check_variable = { LEC_currency_reserves > 1 }
+		}
 		ai_chance = {
 			base = 40
+			modifier = {
+				factor = LEC_currency_reserves
+			}
 		}
 		lec_american_rise = yes
 		set_temp_variable = { LEC_currency_change = -1 }
@@ -8076,7 +8152,9 @@ country_event = { # What to do about the US collapse?
 			popularity = 0.05
 		}
 		set_country_flag = LEC_new_high_commissioner
+		hidden_effect = { country_event = { id = lecyankded.20 days = 2 } }
 	}
+
 	option = {	# We need to clarify our position
 		name = lecyankded.12.b
 		ai_chance = {
@@ -8091,7 +8169,7 @@ country_event = { # What to do about the US collapse?
 		}
 		add_political_power = 25
 		activate_mission = LEC_leader_motion
-		activate_mission = LEC_recognize_america_motion
+		hidden_effect = { country_event = { id = lecyankded.20 days = 2 } }
 	}
 }
 
@@ -11387,6 +11465,12 @@ country_event = { # Robert Hotung's wheeling and dealing part 2
 
 	option = {
 		name = lechotung.29.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = LEC_currency_reserves
+			}
+		}
 		add_political_power = -5
 		add_ideas = LEC_money_launderette
 		retire_character = LEC_robert_hotung
@@ -11397,6 +11481,17 @@ country_event = { # Robert Hotung's wheeling and dealing part 2
 	}
 	option = {
 		name = lechotung.29.b
+		trigger = {
+			check_variable = { LEC_currency_reserves < 9 }
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				set_temp_variable = { LEC_currency_temp = 10 }
+				subtract_from_temp_variable = { LEC_currency_temp = LEC_currency_reserves }
+				factor = LEC_currency_temp
+			}
+		}
 		add_political_power = 20
 		LEC_change_currency_reserves = yes
 		add_timed_idea = {

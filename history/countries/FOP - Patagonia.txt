@@ -57,8 +57,8 @@ set_cosmetic_tag = FOP_WIN_ARG
 add_offsite_building = { type = dockyard level = 1 }
 set_variable = { fop_im_factor = 100 }
 
-set_war_support = 0.30
-set_stability = 0.15
+set_war_support = 0.35
+set_stability = 0.25
 
 set_politics = {
 	ruling_party = syndicalist
@@ -71,12 +71,12 @@ set_popularities = {
 	totalist = 20
 	radical_socialist = 24
 	syndicalist = 29
-	social_democrat = 10
-	social_liberal = 1
-	market_liberal = 2
-	social_conservative = 1
-	authoritarian_democrat = 8
-	paternal_autocrat = 5
+	social_democrat = 12
+	social_liberal = 6
+	market_liberal = 6
+	social_conservative = 3
+	authoritarian_democrat = 0
+	paternal_autocrat = 0
 	national_populist = 0
 }
 
@@ -133,6 +133,9 @@ recruit_character = FOP_guillermo_mac_hannaford
 
 ##### Political advisors
 # Politics
+recruit_character = FOP_emilio_lopez_arango
+recruit_character = FOP_jose_fernando_penelon
+recruit_character = FOP_victorio_codovilla
 recruit_character = FOP_leonidas_barletta
 recruit_character = FOP_candido_testa
 recruit_character = FOP_alvaro_yunque

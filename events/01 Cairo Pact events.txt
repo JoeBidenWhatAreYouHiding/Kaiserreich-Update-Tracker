@@ -171,17 +171,12 @@ country_event = { #War in the Desert setup event
 			GER = { send_volunteers_to_TARGET = yes }
 			AUS = { send_volunteers_to_TARGET = yes }
 		}
-		if = {
-			limit = {
-				EGY = { is_ai = yes }
-			}
-			EGY = {
-				save_global_event_target_as = volunteer_target
-				ENG = { send_volunteers_to_TARGET = yes }
-				FRA = { send_volunteers_to_TARGET = yes }
-				SRI = { send_volunteers_to_TARGET = yes }
-				SWF = { send_volunteers_to_TARGET = yes }
-			}
+		EGY = {
+			save_global_event_target_as = volunteer_target
+			ENG = { send_volunteers_to_TARGET = yes }
+			FRA = { send_volunteers_to_TARGET = yes }
+			SRI = { send_volunteers_to_TARGET = yes }
+			SWF = { send_volunteers_to_TARGET = yes }
 		}
 
 		#Romanian flavor event
@@ -231,7 +226,6 @@ country_event = {	#End of an Era
 	immediate = { log = "[GetDateText]: [Root.GetName]: event cp.1 FROM = [From.GetName]" }
 	title = cp.1.t
 	desc = cp.1.d
-
 	picture = GFX_OTT_Hagia_Sophia
 
 	trigger = {
@@ -264,11 +258,14 @@ country_event = {	#End of an Era
 		name = cp.1.a
 		set_country_flag = OTT_change_to_turkey
 		remove_ideas = OTT_Ottoman_Stand
-		OTT_post_defeat_setup = yes
+		if = {
+			limit = { NOT = { has_cosmetic_tag = TUR_ottoman_empire } }
+			set_cosmetic_tag = TUR_ottoman_empire
+		}
 		OTT_remove_ottoman_ambitions_claims = yes
 		EGY = { country_event = cp.2 }
 		hidden_effect = {
-			country_event = { id = cp.10 days = 10 random_days = 8 }
+			country_event = { id = tur.0 days = 20 }
 			BUL = { remove_ideas = BUL_OTT_Alliance_Cairo_War } #remove idea for BUL to support OTT in the war
 			IRQ = {
 				IRQ_yasin_al_hashimi = {
@@ -305,19 +302,13 @@ country_event = { #Victory in the Mashriq
 	immediate = {
 		hidden_effect = {
 			log = "KR_Event_Logging;EGY WINS IN THE LEVANT;[GetDateText];[ROOT.GetName];[FROM.GetName]"
+
 			### EGY focus
 			complete_national_focus = EGY_Victory_Levant
 
 			### Release Persia if it was annexed
 			OTT = {
 				if = {
-					limit = {
-						owns_state = 266 #Teheran
-						NOT = { country_exists = PER }
-					}
-					release = PER
-				}
-				else_if = {
 					limit = { has_subject = PER }
 					set_autonomy = {
 						target = PER
@@ -520,6 +511,7 @@ country_event = { #Victory in the Mashriq
 			}
 
 			### Hand over Syrian Land
+			clr_global_flag = OTT_Syria_Revolt
 			OTT = {
 				every_owned_state = {
 					limit = {
@@ -548,26 +540,18 @@ country_event = { #Victory in the Mashriq
 			}
 
 			### Hand over Iraqi Land
-			if = {
-				limit = { NOT = { country_exists = IRQ } }
-				OTT = {
-					release = IRQ
-					IRQ = { transfer_technology_without_doctrines = yes }
-				}
-			}
-			else = {
-				OTT = {
-					every_owned_state = {
-						limit = {
-							OR = {
-								state = 676 #Mosul
-								state = 349 #Kirkuk
-								state = 291 #Baghdad
-								state = 812 #Basra
-							}
+			OTT = {
+				IRQ = { transfer_technology_without_doctrines = yes }
+				every_owned_state = {
+					limit = {
+						OR = {
+							state = 676 #Mosul
+							state = 349 #Kirkuk
+							state = 291 #Baghdad
+							state = 812 #Basra
 						}
-						transfer_state_to = IRQ
 					}
+					transfer_state_to = IRQ
 				}
 			}
 
@@ -624,7 +608,12 @@ country_event = { #Victory in the Mashriq
 					NOT = { country_exists = AZR }
 					229 = { is_owned_by = OTT }
 				}
-				OTT = { release = AZR }
+				OTT = {
+					every_owned_state = {
+						limit = { is_core_of = AZR }
+						transfer_state_to = AZR
+					}
+				}
 			}
 
 			### Hand over Armenian Land
@@ -654,6 +643,7 @@ country_event = { #Victory in the Mashriq
 				}
 				ARM = {
 					country_event = cp.3
+					country_event = { id = arm.26 days = 10 }
 				}
 			}
 			else_if = {
@@ -661,7 +651,10 @@ country_event = { #Victory in the Mashriq
 					NOT = { country_exists = ARM }
 					230 = { is_owned_by = OTT }
 				}
-				ARM = { ARM_initial_spawn_effect = yes }
+				ARM = {
+					ARM_initial_spawn_effect = yes
+					country_event = { id = arm.26 days = 10 }
+				}
 			}
 
 			### Hand over Georgian Land
@@ -886,6 +879,7 @@ country_event = { #Victory in the Mashriq
 						}
 					}
 					white_peace_with_TARGET = yes
+					set_truce = { target = PREV days = 730 }
 				}
 				if = {
 					limit = { is_faction_leader = yes }
@@ -1302,12 +1296,19 @@ country_event = { #We are left Emptyhanded (Arab response to Egypts deal)
 
 	option = {
 		name = cp.5.a
+		trigger = { is_subject = no }
 		leave_faction = yes
 	}
 
 	option = {
 		name = cp.5.b
-		ai_chance = { base = 0 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				is_subject = yes
+			}
+		}
 		add_war_support = -0.10
 	}
 }
@@ -1322,12 +1323,19 @@ country_event = { #Leaving the Cairo Pact? (YEM)
 
 	option = {
 		name = cp.6.a
+		trigger = { is_subject = no }
 		leave_faction = yes
 	}
 
 	option = {
 		name = cp.6.b
-		ai_chance = { base = 0 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				is_subject = yes
+			}
+		}
 		add_war_support = -0.10
 	}
 }
@@ -1337,7 +1345,7 @@ country_event = { #Iraqi Declaration of Independence
 	immediate = { log = "[GetDateText]: [Root.GetName]: event cp.7 FROM = [From.GetName]" }
 	title = cp.7.t
 	desc = cp.7.d
-	
+
 	trigger = {
 		country_exists = IRQ
 		IRQ = {
@@ -1532,25 +1540,6 @@ country_event = {
 	}
 }
 
-country_event = { #Change to Turkey
-	id = cp.10
-	immediate = { log = "[GetDateText]: [Root.GetName]: event cp.10 FROM = [From.GetName]" }
-	title = cp.10.t
-	desc = cp.10.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {
-		name = cp.10.a
-		OTT_remove_ottoman_ambitions_claims = yes
-		OTT_changes_into_turkey = yes
-		hidden_effect = {
-			country_event = { id = ottkem.51 days = 20 random_days = 120 }
-		}
-	}
-}
-
 country_event = { #Death of Abbas II Hilmi
 	id = cp.11
 	immediate = { log = "[GetDateText]: [Root.GetName]: event cp.11 FROM = [From.GetName]" }
@@ -1702,19 +1691,34 @@ country_event = { #Formation of the Israel Defence Force
 				cavalry = { x = 1 y = 2 }
 			}
 		}
-		random_owned_controlled_state = {
-			prioritize = { 454 }
-			limit = {
-				is_core_of = ROOT
-				is_in_home_area = yes
+		if = {
+			limit = { controls_state = 454 }
+			454 = {
+				create_unit = {
+					division = "name = \"Haganah Piyade Fırkası\" division_template = \"Yahudi Piyade Fırkası\""
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"'Parashei Zion' Süvari Fırkası\" division_template = \"Yahudi Süvari Fırkası\""
+					owner = ROOT
+				}
 			}
-			create_unit = {
-				division = "name = \"Haganah Piyade Fırkası\" division_template = \"Yahudi Piyade Fırkası\""
-				owner = ROOT
-			}
-			create_unit = {
-				division = "name = \"'Parashei Zion' Süvari Fırkası\" division_template = \"Yahudi Süvari Fırkası\""
-				owner = ROOT
+		}
+		else = {
+			random_owned_controlled_state = {
+				prioritize = { 455 553 992 }
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				create_unit = {
+					division = "name = \"Haganah Piyade Fırkası\" division_template = \"Yahudi Piyade Fırkası\""
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"'Parashei Zion' Süvari Fırkası\" division_template = \"Yahudi Süvari Fırkası\""
+					owner = ROOT
+				}
 			}
 		}
 		every_owned_state = {

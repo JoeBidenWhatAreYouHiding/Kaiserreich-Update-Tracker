@@ -329,9 +329,20 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Wang_Yongjiangs_Legacy"
 			custom_effect_tooltip = FNG_clear_investment_dearth_decisions_unlock
-			country_event = fengtian.57
 			add_political_power = 50
 			add_stability = 0.10
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FNG_pan_fu_political_advisor
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FNG_li_shaogeng
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FNG_sun_qichang
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FNG_ruan_zhenduo_political_advisor
 			custom_effect_tooltip = FNG_unlock_investment_decisions_focus
 			hidden_effect = {
 				activate_targeted_decision = { target = THIS decision = FNG_Centralise_the_Banks }
@@ -1182,11 +1193,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_From_Beijing_to_the_Begonia_Leaf"
-			custom_effect_tooltip = FNG_move_capital_to_beijing
 			608 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
-			hidden_effect = {
-				set_capital = { state = 608 remember_old_capital = no }
-			}
+			set_capital = { state = 608 remember_old_capital = no }
 			set_temp_variable = { CAPOP = -6 }
 			FNG_CAPOP = yes
 			set_temp_variable = { RLPOP = 3 }
@@ -1861,9 +1869,9 @@ focus_tree = {
 							controls_state = 592
 							is_subject_of = FNG
 						}
-						controls_state = 592
+						controls_state = 1072
 						GXC = {
-							controls_state = 592
+							controls_state = 1072
 							is_subject_of = FNG
 						}
 					}
@@ -1913,9 +1921,9 @@ focus_tree = {
 			if = { #Taiyuan Locked
 				limit = {
 					NOT = {
-						controls_state = 592
+						controls_state = 1072
 						SHX = {
-							controls_state = 592
+							controls_state = 1072
 							is_subject_of = FNG
 						}
 					}

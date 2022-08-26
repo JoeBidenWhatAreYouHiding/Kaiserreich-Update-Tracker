@@ -506,7 +506,7 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_go_after_Hunan"
 		HNN = { country_event = yun.116 }
-		custom_effect_tooltip = if_they_accept_tt
+		custom_effect_tooltip = if_they_fully_accept_tt
 		effect_tooltip = {
 			transfer_state = 1052
 			set_autonomy = {
@@ -514,6 +514,11 @@ shared_focus = {
 				autonomy_state = kr_default_puppet
 				end_wars = no
 			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		custom_effect_tooltip = if_they_partially_accept_tt
+		effect_tooltip = {
+			transfer_state = 1052
 		}
 	}
 }
@@ -590,7 +595,26 @@ shared_focus = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_toe_the_line"
 		custom_effect_tooltip = YUN_faction_joining
 		hidden_effect = {
-			activate_targeted_decision = { decision = YUN_align_with_zhili target = ROOT }
+			if = {
+				limit = {
+					country_exists = QIE
+					QIE = {
+						has_character = QIE_wu_peifu
+						is_subject = no
+					}
+				}
+				activate_targeted_decision = { decision = YUN_align_with_zhili target = QIE }
+			}
+			else_if = {
+				limit = {
+					country_exists = SZC
+					SZC = {
+						is_subject = no
+						has_completed_focus = SZC_Gather_Allies
+					}
+				}
+				activate_targeted_decision = { decision = YUN_align_with_zhili target = SZC }
+			}
 			activate_targeted_decision = { decision = YUN_align_with_NPA target = ROOT }
 			activate_targeted_decision = { decision = YUN_align_with_fengtian target = FNG }
 		}
@@ -681,6 +705,9 @@ shared_focus = {
 	x = 0
 	y = 2
 	relative_position_id = YUN_Federalism
+
+	will_lead_to_war_with = QIE
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_end_the_Qing_menace"
 		create_wargoal = {
@@ -754,6 +781,9 @@ shared_focus = {
 	x = 0
 	y = 1
 	relative_position_id = YUN_Burma
+
+	will_lead_to_war_with = SIA
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_SIAM"
 		add_state_claim = 756
@@ -3893,7 +3923,7 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Enter_Yangtze_River2"
 		HNN = { country_event = yun.116 }
-		custom_effect_tooltip = if_they_accept_tt
+		custom_effect_tooltip = if_they_fully_accept_tt
 		effect_tooltip = {
 			transfer_state = 1052
 			set_autonomy = {
@@ -3901,6 +3931,11 @@ shared_focus = {
 				autonomy_state = kr_default_puppet
 				end_wars = no
 			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		custom_effect_tooltip = if_they_partially_accept_tt
+		effect_tooltip = {
+			transfer_state = 1052
 		}
 	}
 }

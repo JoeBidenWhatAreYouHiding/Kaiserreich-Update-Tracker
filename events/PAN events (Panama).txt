@@ -1502,9 +1502,8 @@ country_event = { ####Panama says NO - CAN event
 				id = worldnews.419
 				days = 2
 			}
-			PAN = {
-				set_country_flag = PAN_war_with_can
-			}
+			PAN = { set_country_flag = PAN_war_with_can }
+			COS = { country_event = { id = cos.128 days = 15 } }
 		}
 	}
 	option = {

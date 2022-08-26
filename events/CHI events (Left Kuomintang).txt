@@ -1,4 +1,4 @@
-################################
+﻿################################
 #       Left KMT Events        #
 ################################
 # By DSFDarker and Spiderfist  #
@@ -1922,6 +1922,8 @@ country_event = {
 	option = {
 		name = chi_for.16.a
 		add_political_power = 5
+		CHI = { save_event_target_as = volunteer_target }
+		send_volunteers_to_TARGET = yes
 	}
 }
 

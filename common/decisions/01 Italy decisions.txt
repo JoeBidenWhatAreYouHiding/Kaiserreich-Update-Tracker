@@ -638,16 +638,16 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 100
-				NOT = { country_exists = FRA }
-			}
-			modifier = {
 				factor = 0
 				has_country_flag = { flag = ITA_recent_peace days < 30 }
 			}
 			modifier = {
 				factor = 0
 				has_global_flag = { flag = second_weltkrieg_has_started days < 30 }
+			}
+			modifier = {
+				add = 100
+				NOT = { country_exists = FRA }
 			}
 		}
 
@@ -833,6 +833,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			OR = {
 				has_government = national_populist
 				488 = { is_claimed_by = ROOT } #Trieste
+				683 = { is_claimed_by = ROOT } #Gorizia
 				736 = { is_claimed_by = ROOT } #Istria
 				783 = { is_claimed_by = ROOT } #Trentino
 			}
@@ -841,6 +842,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				NOT = { has_war_with = ROOT }
 				OR = {
 					owns_state = 488 #Trieste
+					owns_state = 683 #Gorizia
 					owns_state = 736 #Istria
 					owns_state = 783 #Trentino
 				}
@@ -852,6 +854,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			OR = {
 				has_government = national_populist
 				488 = { is_claimed_by = ROOT } #Trieste
+				683 = { is_claimed_by = ROOT } #Gorizia
 				736 = { is_claimed_by = ROOT } #Istria
 				783 = { is_claimed_by = ROOT } #Trentino
 			}
@@ -861,6 +864,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				OR = {
 					owns_state = 488 #Trieste
 					owns_state = 736 #Istria
+					owns_state = 683 #Gorizia
 					owns_state = 783 #Trentino
 				}
 			}
@@ -868,8 +872,9 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 
 		fire_only_once = yes
 		cost = 0
-		days_remove = 20
+		days_remove = 25
 		war_with_target_on_remove = yes
+		cancel_if_not_visible = yes
 
 		ai_will_do = {
 			factor = 10
@@ -894,6 +899,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				AUS = {
 					NOT = {
 						controls_state = 488 #Trieste
+						controls_state = 683 #Gorizia
 						controls_state = 736 #Istria
 						controls_state = 783 #Trentino
 					}
@@ -946,6 +952,11 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			}
 		}
 
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled ITA_attack_austria target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision ITA_attack_austria target: [From.GetName]"
 			add_war_support = 0.10
@@ -960,6 +971,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				}
 			}
 			setup_decision_attack_AI = yes
+			FROM = { country_event = kr.political.30 } #warning event
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ITA_attack_austria target: [From.GetName]"
@@ -1275,6 +1287,34 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_AUS } }
 			}
 			modifier = {
+				factor = 0
+				country_exists = SRI
+				FROM = {
+					has_war = yes
+					NOT = { has_war_with = SRI }
+				}
+			}
+			modifier = {
+				factor = 0
+				country_exists = SRI
+				FROM = {
+					NOT = { has_war_with = SRI }
+					ITA = {
+						exists = yes
+						is_subject = no
+						NOT = { has_government = national_populist }
+					}
+				}
+				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_AUS } }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_GER }
+					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT }
+				}
+			}
+			modifier = {
 				factor = 0.1
 				FROM = {
 					is_in_faction_with = ITA
@@ -1308,37 +1348,9 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_AUS } }
 			}
 			modifier = {
-				factor = 0
-				country_exists = SRI
-				FROM = {
-					has_war = yes
-					NOT = { has_war_with = SRI }
-				}
-			}
-			modifier = {
-				factor = 0
-				country_exists = SRI
-				FROM = {
-					NOT = { has_war_with = SRI }
-					ITA = {
-						exists = yes
-						is_subject = no
-						NOT = { has_government = national_populist }
-					}
-				}
-				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_AUS } }
-			}
-			modifier = {
 				factor = 0.1
 				has_government = national_populist
 				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_AUS } }
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_GER }
-					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT }
-				}
 			}
 		}
 	}
@@ -1425,20 +1437,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				}
 			}
 			modifier = {
-				factor = 2
-				FROM = { has_war_with = SRI }
-			}
-			modifier = {
-				factor = 0.75
-				FROM = { has_war_with = SRI }
-				GER = {
-					is_faction_leader = yes
-					surrender_progress < 0.10
-					has_war_with = SRI
-				}
-				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT } }
-			}
-			modifier = {
 				factor = 0
 				country_exists = SRI
 				FROM = {
@@ -1460,16 +1458,30 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT } }
 			}
 			modifier = {
-				factor = 0.5
-				NOT = { has_government = national_populist }
-				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT } }
-			}
-			modifier = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_AUS }
 					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_GER }
 				}
+			}
+			modifier = {
+				factor = 2
+				FROM = { has_war_with = SRI }
+			}
+			modifier = {
+				factor = 0.75
+				FROM = { has_war_with = SRI }
+				GER = {
+					is_faction_leader = yes
+					surrender_progress < 0.10
+					has_war_with = SRI
+				}
+				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT } }
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { has_government = national_populist }
+				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT } }
 			}
 		}
 	}
@@ -1556,10 +1568,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				}
 			}
 			modifier = {
-				factor = 2
-				FROM = { has_war_with = SRI }
-			}
-			modifier = {
 				factor = 0
 				country_exists = SRI
 				FROM = {
@@ -1581,16 +1589,20 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_GER } }
 			}
 			modifier = {
-				factor = 0.1
-				has_government = national_populist
-				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_GER } }
-			}
-			modifier = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_AUS }
 					has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_ENT }
 				}
+			}
+			modifier = {
+				factor = 2
+				FROM = { has_war_with = SRI }
+			}
+			modifier = {
+				factor = 0.1
+				has_government = national_populist
+				NOT = { has_game_rule = { rule = SIC_forpol option = SIC_FORPOL_GER } }
 			}
 		}
 	}
@@ -1855,8 +1867,9 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 
 		fire_only_once = yes
 		cost = 0
-		days_remove = 20
+		days_remove = 25
 		war_with_target_on_remove = yes
+		cancel_if_not_visible = yes
 
 		target_root_trigger = {
 			has_country_flag = ITA_claimed_libya
@@ -1943,10 +1956,16 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			}
 		}
 
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled ITA_war_for_libya target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision ITA_war_for_libya target: [From.GetName]"
 			add_war_support = 0.10
 			setup_decision_attack_AI = yes
+			FROM = { country_event = kr.political.30 } #warning event
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ITA_war_for_libya target: [From.GetName]"
@@ -2153,6 +2172,10 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 
 		target_root_trigger = {
 			is_in_faction = no
+			OR = {
+				has_completed_focus = LOM_place_in_the_world
+				has_completed_focus = LOM_lombard_constitution
+			}
 		}
 
 		targets = { AUS GER BPL }
@@ -2193,11 +2216,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				NOT = { has_country_flag = LOM_constitutional_monarchy }
 			}
 			modifier = {
-				factor = 2
-				FROM = { tag = AUS }
-				has_country_flag = LOM_constitutional_monarchy
-			}
-			modifier = {
 				factor = 0
 				FROM = { tag = GER }
 				has_idea = ITA_austrian_influence
@@ -2213,15 +2231,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 					date > 1938.1.1
 					has_war = yes
 				}
-			}
-			modifier = {
-				factor = 2
-				FROM = { has_war_with = SRI }
-			}
-			modifier = {
-				factor = 5
-				FROM = { has_war_with = AUS }
-				has_completed_focus = LOM_republican_cause
 			}
 			modifier = {
 				factor = 0
@@ -2265,6 +2274,20 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 						has_game_rule = { rule = LOM_forpol option = LOM_FORPOL_GER }
 					}
 				}
+			}
+			modifier = {
+				factor = 2
+				FROM = { tag = AUS }
+				has_country_flag = LOM_constitutional_monarchy
+			}
+			modifier = {
+				factor = 2
+				FROM = { has_war_with = SRI }
+			}
+			modifier = {
+				factor = 5
+				FROM = { has_war_with = AUS }
+				has_completed_focus = LOM_republican_cause
 			}
 		}
 	}
@@ -2329,6 +2352,10 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 
 		target_root_trigger = {
 			is_in_faction = no
+			OR = {
+				has_completed_focus = VNC_foreign
+				has_completed_focus = VNC_stato_da_mar
+			}
 		}
 
 		targets = { AUS GER CAN }
@@ -2369,11 +2396,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				has_authoritarian_government = yes
 			}
 			modifier = {
-				factor = 2
-				FROM = { tag = AUS }
-				has_elected_government = yes
-			}
-			modifier = {
 				factor = 0
 				FROM = {
 					OR = {
@@ -2399,21 +2421,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 					date > 1938.1.1
 					has_war = yes
 				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { tag = CAN }
-				NOT = { SIC = { is_in_faction_with = CAN } }
-				NOT = { has_game_rule = { rule = VNC_forpol option = VNC_FORPOL_ENT } }
-			}
-			modifier = {
-				factor = 2
-				FROM = { has_war_with = SRI }
-			}
-			modifier = {
-				factor = 5
-				FROM = { has_war_with = AUS }
-				has_completed_focus = VNC_stato_da_mar
 			}
 			modifier = {
 				factor = 0
@@ -2458,18 +2465,36 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 					}
 				}
 			}
+			modifier = {
+				factor = 2
+				FROM = { tag = AUS }
+				has_elected_government = yes
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { tag = CAN }
+				NOT = { SIC = { is_in_faction_with = CAN } }
+				NOT = { has_game_rule = { rule = VNC_forpol option = VNC_FORPOL_ENT } }
+			}
+			modifier = {
+				factor = 2
+				FROM = { has_war_with = SRI }
+			}
+			modifier = {
+				factor = 5
+				FROM = { has_war_with = AUS }
+				has_completed_focus = VNC_stato_da_mar
+			}
 		}
 	}
 
 	VNC_attack_austria = {
 		icon = generic_prepare_civil_war
-		allowed = { tag = VNC }
+		allowed = { always = no }
 
 		available = {
-			is_subject = no
 			NOT = { has_idea = ITA_austrian_influence }
 			controls_all_owned_states = yes
-			has_completed_focus = VNC_stato_da_mar
 			OR = {
 				is_in_faction = no
 				is_faction_leader = yes
@@ -2477,6 +2502,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 		}
 
 		visible = {
+			is_subject = no
 			owns_state = 759
 			736 = {
 				is_claimed_by = ROOT
@@ -2485,18 +2511,9 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			can_declare_war_on = FROM
 		}
 
-		targets = { AUS }
-		target_root_trigger = {
-			736 = { is_claimed_by = ROOT }
-		}
-		target_trigger = {
-			736 = { is_owned_by = FROM }
-			can_declare_war_on = FROM
-		}
-
 		fire_only_once = yes
 		cost = 0
-		days_remove = 20
+		days_remove = 25
 		war_with_target_on_remove = yes
 		cancel_if_not_visible = yes
 
@@ -2552,6 +2569,7 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				}
 			}
 			setup_decision_attack_AI = yes
+			FROM = { country_event = kr.political.30 } #warning event
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove VNC_attack_austria target: [From.GetName]"
@@ -2638,10 +2656,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 				}
 			}
 			modifier = {
-				factor = 2
-				FROM = { has_war_with = SRI }
-			}
-			modifier = {
 				factor = 0
 				country_exists = SRI
 				FROM = {
@@ -2652,6 +2666,10 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 			modifier = {
 				factor = 0
 				has_game_rule = { rule = ITA_forpol option = ITA_FORPOL_AUS }
+			}
+			modifier = {
+				factor = 2
+				FROM = { has_war_with = SRI }
 			}
 		}
 	}
@@ -2734,8 +2752,6 @@ ITA_foreign_policy = {# Foreign Policy Stuff
 		}
 	}
 }
-
-
 
 ITA_resorgimento_decisions = {
 	ITA_rally_supporters = {
@@ -3152,7 +3168,7 @@ ITA_resorgimento_decisions = {
 		}
 
 		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancelled PAP_rally_faithful"
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled PAP_rally_neosanfedisti"
 			add_political_power = 50
 		}
 
@@ -3492,27 +3508,6 @@ ITA_resorgimento_decisions = {
 				date < 1938.6.1
 			}
 			modifier = {
-				factor = 5
-				FROM = { tag = LOM }
-			}
-			modifier = {
-				factor = 3
-				FROM = { tag = VNC }
-			}
-			modifier = {
-				factor = 2
-				FROM = { tag = SIC }
-			}
-			modifier = {
-				factor = 0.5
-				FROM = {
-					OR = {
-						tag = PAP
-						tag = SRD
-					}
-				}
-			}
-			modifier = {
 				factor = 0
 				FROM = { tag = SRD }
 				OR = {
@@ -3527,15 +3522,6 @@ ITA_resorgimento_decisions = {
 					OR = {
 						is_ally_with = SIC
 						is_guaranteed_by = SIC
-					}
-				}
-			}
-			modifier = {
-				factor = 0.1
-				FROM = {
-					OR = {
-						is_in_faction_with = CAN
-						is_in_faction_with = GER
 					}
 				}
 			}
@@ -3583,6 +3569,36 @@ ITA_resorgimento_decisions = {
 								surrender_progress > 0.20
 							}
 						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				FROM = {
+					OR = {
+						is_in_faction_with = CAN
+						is_in_faction_with = GER
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				FROM = { tag = LOM }
+			}
+			modifier = {
+				factor = 3
+				FROM = { tag = VNC }
+			}
+			modifier = {
+				factor = 2
+				FROM = { tag = SIC }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					OR = {
+						tag = PAP
+						tag = SRD
 					}
 				}
 			}
@@ -3708,12 +3724,6 @@ ITA_resorgimento_decisions = {
 				}
 			}
 			modifier = {
-				factor = 0.1
-				FROM = {
-					NOT = { tag = SRI }
-				}
-			}
-			modifier = {
 				factor = 0
 				FROM = {
 					OR = {
@@ -3770,6 +3780,12 @@ ITA_resorgimento_decisions = {
 							}
 						}
 					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				FROM = {
+					NOT = { tag = SRI }
 				}
 			}
 		}
@@ -4056,6 +4072,18 @@ ITA_resorgimento_decisions = {
 			can_declare_war_on = FROM
 			NOT = { FROM = { has_country_flag = ITA_considering_invite_@ROOT } }
 			is_subject = no
+			SRI = {
+				exists = no
+			}
+			OR = {
+				FROM = {
+					is_in_faction = no
+				}
+				has_cosmetic_tag = SRD_ITA
+				has_country_flag = SIC_confed
+				has_country_flag = SIC_empire
+				is_ai = no
+			}
 		}
 
 		fire_only_once = no
@@ -5210,7 +5238,7 @@ ITA_resorgimento_decisions = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision italy_generic_gain_core target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision italy_generic_gain_core_island target: [From.GetName]"
 			FROM = {
 				hidden_effect = { remove_claim_by = ROOT }
 				add_core_of = ROOT
@@ -6485,6 +6513,130 @@ ITA_resorgimento_decisions = {
 		}
 	}
 
+	ITA_claim_gorizia = {
+		icon = GFX_decision_category_patriotic
+
+		allowed = {
+			OR = {
+				tag = ITA
+				tag = SRI
+				tag = SIC
+				tag = SRD
+				tag = VNC
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 683 }
+		}
+
+		available = {
+			488 = { is_claim_or_core_of_ROOT = yes }
+			if = {
+				limit = {
+					NOT = { owns_state = 683 }
+					is_in_faction = yes
+					any_allied_country = {
+						683 = { is_claim_or_core_of_PREV = yes }
+					}
+				}
+				is_subject = no
+				has_war = no
+			}
+			else = {
+				has_capitulated = no
+			}
+		}
+		visible = {
+			683 = {
+				is_claim_or_core_of_ROOT = no
+				OR = {
+					owner = { has_war_with = ROOT }
+					is_owned_by = ROOT
+					ROOT = { ITA_has_irridentist_focus = yes }
+				}
+			}
+			if = {
+				limit = { is_subject = yes }
+				overlord = {
+					683 = {
+						is_claim_or_core_or_ambition_of_PREV = no
+					}
+				}
+			}
+			if = {
+				limit = { tag = SIC }
+				has_country_flag = SIC_empire
+			}
+			else_if = {
+				limit = { tag = SRD }
+				has_cosmetic_tag = SRD_ITA
+			}
+			else_if = {
+				limit = { tag = VNC }
+				has_completed_focus = VNC_stato_da_mar
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { owns_state = 683 }
+				is_in_faction = yes
+				any_allied_country = {
+					NOT = { tag = AUS }
+					683 = { is_claim_or_core_of_PREV = yes }
+				}
+			}
+			modifier = {
+				factor = 0
+				683 = {
+					owner = {
+						NOT = { tag = ROOT }
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_claim_gorizia"
+			683 = {
+				save_event_target_as = claimed_state
+				add_claim_by = ROOT
+			}
+			if = {
+				limit = { NOT = { owns_state = 683 } }
+				var:683.owner = { country_event = ita.170 }
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 683 }
+					is_in_faction = yes
+					any_allied_country = {
+						683 = { is_claim_or_core_of_PREV = yes }
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						is_in_faction_with = ROOT
+						NOT = { owns_state = 683 }
+						OR = {
+							683 = { is_claim_or_core_of_PREV = yes }
+							is_faction_leader = yes
+						}
+					}
+					country_event = ita.171
+				}
+				leave_faction = yes
+			}
+		}
+	}
+
 	ITA_claim_dalmatia = {
 		icon = GFX_decision_category_patriotic
 
@@ -6703,7 +6855,7 @@ ITA_resorgimento_decisions = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision ITA_claim_dalmatia"
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_claim_cattaro"
 			841 = {
 				save_event_target_as = claimed_state
 				add_claim_by = ROOT
@@ -7219,7 +7371,7 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SIC_develop_campania_steel_mines"
+			log = "[GetDateText]: [Root.GetName]: Decision remove SIC_develop_campania_steel_mines target: [From.GetName]"
 			FROM = { set_state_flag = campania_steel_developed }
 			add_resource = {
 				type = steel
@@ -7270,7 +7422,7 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SIC_develop_campania_aluminium_mines"
+			log = "[GetDateText]: [Root.GetName]: Decision remove SIC_develop_campania_aluminium_mines target: [From.GetName]"
 			FROM = { set_state_flag = campania_aluminium_developed }
 			add_resource = {
 				type = aluminium
@@ -7321,8 +7473,8 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SRD_develop_cagliari_coal_mines"
-			FROM = { set_state_flag = sardinia_coal_mines_developed }
+			log = "[GetDateText]: [Root.GetName]: Decision remove SRD_develop_cagliari_coal_mines target: [From.GetName]"
+			set_global_flag = sardinia_coal_mines_developed
 			add_resource = {
 				type = steel
 				amount = 12
@@ -7372,7 +7524,7 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove LOM_develop_lombardy_coal_mines"
+			log = "[GetDateText]: [Root.GetName]: Decision remove LOM_develop_lombardy_coal_mines target: [From.GetName]"
 			FROM = { set_state_flag = lombardy_coal_mines_developed }
 			add_resource = {
 				type = steel
@@ -7423,7 +7575,7 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove TUS_develop_tuscany_coal_mines"
+			log = "[GetDateText]: [Root.GetName]: Decision remove TUS_develop_tuscany_coal_mines target: [From.GetName]"
 			FROM = { set_state_flag = tuscany_coal_mines_developed }
 			add_resource = {
 				type = steel

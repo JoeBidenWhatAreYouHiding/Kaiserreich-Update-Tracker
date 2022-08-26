@@ -214,8 +214,6 @@ Release_Flanders = {
 			limit = { is_core_of = WAL }
 			transfer_state_to = WAL
 		}
-		set_global_flag = TEMPORARY_DISABLED_FACTION_POPUP
-		GER = { add_to_faction = WAL }
 
 		FLA_move_country_leaders = yes
 		FLA = {
@@ -233,7 +231,10 @@ Release_Flanders = {
 			country_event = { id = flnrev.1 days = 2 }
 		}
 		transfer_navy = { target = FLA }
-		GER = { add_to_faction = FLA }
+		if = {
+			limit = { NOT = { has_event_target = BEL_terneuzen } }
+			GER = { add_to_faction = FLA }
+		}
 
 		WAL_move_country_leaders = yes
 		BEL_adelbert_von_hohenzollern = { set_nationality = WAL }

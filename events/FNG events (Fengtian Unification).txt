@@ -5767,35 +5767,6 @@ country_event = { #Fengtian Sides Against Us
 	}
 }
 
-country_event = { #Ma Clique Claims Xinjiang
-	id = fngconf.72
-	immediate = { log = "[GetDateText]: [Root.GetName]: event fngconf.72 FROM = [From.GetName]" }
-	title = fngconf.72.t
-	desc = fngconf.72.d
-
-	picture = GFX_report_event_SIK_kashgar
-
-	trigger = {
-		FNG = { controls_state = 608 }
-		NOT = { has_global_flag = FNG_conference_failed }
-	}
-
-	is_triggered_only = yes
-
-	option = {
-		name = fngconf.72.a #Lodge a protest
-		hidden_effect = {
-			FROM = {
-				country_event = {
-					id = fngconf.69
-					hours = 8
-					random = 16
-				}
-			}
-		}
-	}
-}
-
 country_event = { #End of the Conference
 	id = fngconf.73
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fngconf.73 FROM = [From.GetName]" }

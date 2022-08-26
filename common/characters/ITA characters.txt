@@ -172,6 +172,32 @@ characters = {
 			ideology = social_liberal_subtype
 		}
 	}
+	ITA_Meuccio_Ruini = {
+		name = ITA_Meuccio_Ruini
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/ITA/ITA_meuccio_ruini.png"
+			}
+		}
+		advisor = {
+			slot = second_in_command
+			idea_token = ITA_meuccio_ruini_sic
+			traits = { KR_political_protege_sic second_in_command_trait }
+			cost = 0
+			removal_cost = -1
+			on_add = {
+				random_character = {
+					limit = { is_character = ITA_meuccio_ruini }
+					set_character_flag = is_second_in_command
+					set_variable = { PREV.current_second_in_command_character = THIS }
+				}
+			}
+			on_remove = {
+				ITA_meuccio_ruini = { clr_character_flag = is_second_in_command }
+				clear_variable = current_second_in_command_character
+			}
+		}
+	}
 	ITA_carlo_rosselli = {
 		name = ITA_carlo_rosselli
 		portraits = {

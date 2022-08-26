@@ -12,10 +12,7 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event libya.1 FROM = [From.GetName]" }
 	title = libya.1.t
 	desc = libya.1.d
-
 	picture = GFX_OTT_Idris_Back
-
-	fire_only_once = yes
 
 	is_triggered_only = yes
 

@@ -921,12 +921,14 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -952,6 +954,7 @@ focus_tree = {
 				prioritize = { 97 }
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -2450,12 +2453,14 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -4988,8 +4993,9 @@ focus_tree = {
 				prioritize = { 94 }
 				limit = {
 					is_core_of = ROOT
+					is_in_home_area = yes
 				}
-				increase_state_category_by_two_levels = yes
+				increase_state_category_by_one_level = yes
 			}
 			hidden_effect = {
 				country_event = { id = LITFLA.7 days = 4 }

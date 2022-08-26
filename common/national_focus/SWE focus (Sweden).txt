@@ -2448,6 +2448,7 @@ focus_tree = {
 				limit = {
 					is_core_of = ROOT
 					is_valid_state_for_development = yes
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -2455,6 +2456,7 @@ focus_tree = {
 				limit = {
 					is_core_of = ROOT
 					is_valid_state_for_development = yes
+					is_in_home_area = yes
 				}
 				increase_state_category_by_one_level = yes
 			}
@@ -2513,7 +2515,7 @@ focus_tree = {
 		id = SWE_skanelinjen
 		icon = GFX_goal_generic_construct_military
 		prerequisite = { focus = SWE_landstormen }
-		x = -1
+		x = 0
 		y = 6
 		cost = 8
 
@@ -2664,9 +2666,12 @@ focus_tree = {
 
 	focus = {
 		id = SWE_trelleborg
-		icon = GFX_goal_basic_oil
+		icon = GFX_goal_SWE_trelleborgs
+		available = {
+			has_tech = synth_oil_experiments
+		}
 		prerequisite = { focus = SWE_military_production_act }
-		x = 5
+		x = 4
 		y = 6
 		cost = 8
 
@@ -2678,12 +2683,37 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SWE_trelleborg"
-			138 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = synthetic_refinery
-					level = 2
-					instant_build = yes
+			if = {
+				limit = { NOT = { has_tech = synth_oil_experiments } } #for the tooltip
+				effect_tooltip = {
+					random_owned_controlled_state = {
+						prioritize = { 138 }
+						limit = {
+							is_core_of = ROOT
+							free_building_slots = { building = industrial_complex size > 1 include_locked = yes }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = synthetic_refinery
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					prioritize = { 138 }
+					limit = {
+						is_core_of = ROOT
+						free_building_slots = { building = synthetic_refinery size > 1 include_locked = yes }
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -2859,49 +2889,52 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SWE_modern_jagers"
-			custom_effect_tooltip = SWE_jager_div_unit_tooltip
 			hidden_effect = {
-				division_template = {
-					name = "Jägarregemente"
-					regiments = {
-						mountaineers = { x = 0 y = 0 }
-						mountaineers = { x = 0 y = 1 }
-						mountaineers = { x = 0 y = 2 }
-						mountaineers = { x = 1 y = 0 }
-						mountaineers = { x = 1 y = 1 }
-						mountaineers = { x = 1 y = 2 }
-						mountaineers = { x = 2 y = 0 }
-						artillery_brigade = { x = 2 y = 1 }
-						artillery_brigade = { x = 2 y = 2 }
-					}
-					support = {
-						artillery = { x = 0 y = 0 }
-						engineer = { x = 0 y = 1 }
-					}
+				if = {
+					limit = { has_template = "Jägarregemente" }
+					delete_unit_template_and_units = { division_template = "Jägarregemente" disband = yes } #no cheating
 				}
-
-				random_owned_controlled_state = {
-					prioritize = { 666 }
-					create_unit = {
-						division = "name = \"Lapplands Jägarregemente\" division_template = \"Jägarregemente\" start_experience_factor = 0.6"
-						owner = SWE
-					}
+			}
+			division_template = {
+				name = "Jägarregemente"
+				regiments = {
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 0 y = 2 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+					mountaineers = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
 				}
-
-				random_owned_controlled_state = {
-					prioritize = { 666 }
-					create_unit = {
-						division = "name = \"Norrlands Jägarregemente\" division_template = \"Jägarregemente\" start_experience_factor = 0.6"
-						owner = SWE
-					}
+				support = {
+					artillery = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
 				}
-
-				random_owned_controlled_state = {
-					prioritize = { 666 }
-					create_unit = {
-						division = "name = \"Jämtlands Jägarregemente\" division_template = \"Jägarregemente\" start_experience_factor = 0.6"
-						owner = SWE
-					}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 666 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
+				create_unit = {
+					division = "name = \"Lapplands Jägarregemente\" division_template = \"Jägarregemente\" start_experience_factor = 0.6"
+					owner = ROOT
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 38 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
+				create_unit = {
+					division = "name = \"Norrlands Jägarregemente\" division_template = \"Jägarregemente\" start_experience_factor = 0.6"
+					owner = ROOT
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 778 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
+				create_unit = {
+					division = "name = \"Jämtlands Jägarregemente\" division_template = \"Jägarregemente\" start_experience_factor = 0.6"
+					owner = ROOT
 				}
 			}
 		}
@@ -3996,7 +4029,7 @@ focus_tree = {
 
 	focus = {
 		id = SWE_DEM_defense_union
-		icon = GFX_goal_NOR_defense_union
+		icon = GFX_goal_SCA_defense_union
 		prerequisite = { focus = SWE_DEM_nordic_council }
 		x = -1
 		y = 2
@@ -4507,7 +4540,7 @@ focus_tree = {
 
 	focus = {
 		id = SWE_DEM_found_sas
-		icon = GFX_goal_NOR_SAS
+		icon = GFX_goal_SCA_Scandinavian_Air_Lines
 		prerequisite = { focus = SWE_DEM_monetary_union }
 		x = 3
 		y = 4

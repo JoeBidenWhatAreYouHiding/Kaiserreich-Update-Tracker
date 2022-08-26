@@ -210,7 +210,7 @@ ideas = {
 		}
 		GBR_fleet_rebuilding_program = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GBR_fleet_rebuilding_program" }
-			picture = AST_oversized_fleet
+			picture = hol_naval_heritage
 			allowed = { always = no }
 			available = {
 				check_variable = { ROOT.num_ships < 50 }
