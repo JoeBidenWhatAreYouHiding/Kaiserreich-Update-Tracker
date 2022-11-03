@@ -1062,7 +1062,7 @@ country_event = {
 			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
 		}
 		hidden_effect = {
-			country_event = { id = natal.53 days = 365 random = 100 }
+			country_event = { id = natal.53 days = 365 random_days = 100 }
 			country_event = { id = natal.28 days = 30 }
 		}
 	}
@@ -1279,7 +1279,7 @@ country_event = { #Coloured Enfranchisement Act for the Federation
 		name = natal.53.a
 		add_stability = 0.1
 		hidden_effect = {
-			country_event = { id = saf.172 days = 365 random = 100 }
+			country_event = { id = saf.172 days = 365 random_days = 100 }
 		}
 	}
 }

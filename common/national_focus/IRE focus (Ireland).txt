@@ -343,7 +343,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRE_ESIC"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			#hidden_effect = {
 			#	 IRE = {
 			#		 country_event = {
@@ -483,7 +483,7 @@ focus_tree = {
 	#		num_of_factories > 30
 	#	}
 	#	completion_reward = {
-	#		add_research_slot = 1
+	#		add_research_slot_until_five = yes
 	#	}
 	#	search_filters = { FOCUS_FILTER_RESEARCH }
 	#}
@@ -1370,7 +1370,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRE_attract_fleeing_intellectuals"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

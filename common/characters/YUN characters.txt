@@ -127,8 +127,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_miao_yuntai
 			traits = { KR_industrialiser }
 		}
@@ -284,8 +282,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_hu_ruoyu
 			available = {
 				has_country_leader = { character = YUN_tang_jiyao }
@@ -361,8 +357,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_long_yun_pol
 			available = {
 				has_country_leader = { character = YUN_tang_jiyao }
@@ -396,8 +390,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_lu_han
 			available = {
 				has_country_leader = { character = YUN_tang_jiyao }
@@ -642,8 +634,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_gu_zhenglun
 			available = {
 				NOT = { has_country_leader = { character = YUN_tang_jiyao } }
@@ -660,8 +650,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_li_peitian
 			traits = { KR_political_protege }
 		}
@@ -675,8 +663,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_zhang_weihan
 			traits = { KR_popular_figurehead }
 		}
@@ -690,8 +676,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			available = {
 				has_country_leader = { character = YUN_long_yun }
 			}
@@ -708,8 +692,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = YUN_chen_jun
 			traits = { KR_railway_magnate }
 		}
@@ -723,8 +705,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			available = { has_completed_focus = YUN_join_the_right_KMT_committee }
 			idea_token = YUN_dai_jitao
 			traits = { KR_ideological_crusader }
@@ -739,8 +719,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			available = { has_completed_focus = YUN_join_the_right_KMT_committee }
 			idea_token = YUN_yang_yongtai
 			traits = { KR_armaments_organiser }
@@ -755,8 +733,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			available = { has_completed_focus = YUN_join_the_right_KMT_committee }
 			idea_token = YUN_zhang_qun
 			traits = { KR_political_specialist }
@@ -771,8 +747,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			available = {
 				has_country_leader = { character = YUN_long_yun }
 			}

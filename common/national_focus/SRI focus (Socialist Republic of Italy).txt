@@ -285,7 +285,7 @@ focus_tree = {
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_industrial_enlightenment"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -527,7 +527,7 @@ focus_tree = {
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_futurist_culture"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -867,7 +867,7 @@ focus_tree = {
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_expand_universtites"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

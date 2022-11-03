@@ -3177,7 +3177,7 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus CUB_encour_consumpt"
-		add_research_slot = 1
+		add_research_slot_until_five = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }
@@ -5925,10 +5925,7 @@ shared_focus = {
 		else = {
 			add_war_support = 0.05
 		}
-		hidden_effect = {
-			load_oob = CUB_diazpolice
-		}
-		custom_effect_tooltip = CUB_diazmps
+		add_manpower = 10000
 	}
 	search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
 }
@@ -6120,10 +6117,8 @@ shared_focus = {
 				popularity = 0.05
 			}
 		}
-		hidden_effect = {
-			load_oob = CUB_diazpolice2
-		}
-		custom_effect_tooltip = CUB_diazmps2
+		add_manpower = 20000
+		add_stability = 0.05
 	}
 	search_filters = { FOCUS_FILTER_MANPOWER }
 }

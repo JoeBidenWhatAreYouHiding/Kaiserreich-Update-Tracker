@@ -387,7 +387,7 @@ country_event = { # Opium trade in Shanxi
 			country_event = {
 				id = shx.16
 				days = 30
-				random = 240
+				random_days = 10
 			}
 		}
 	}

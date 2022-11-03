@@ -51,7 +51,7 @@ country_event = { #black monday
 			add_ideas = PAR_black_monday
 			country_event = { id = par.4 days = 90 }
 			country_event = { id = par.5 days = 27 }
-			country_event = { id = par.7 days = 45 random = 120 }
+			country_event = { id = par.7 days = 45 random_days = 5 }
 		}
 	}
 

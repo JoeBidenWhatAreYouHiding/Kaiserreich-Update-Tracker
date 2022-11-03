@@ -229,7 +229,7 @@ country_event = {# First Yun Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.4 days = 7 }
-			country_event = { id = yun.350 days = 3 random = 2 }
+			country_event = { id = yun.350 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -256,7 +256,7 @@ country_event = {# First Yun Chain Pt.1
 		hidden_effect = {
 			set_country_flag = Long_yun_right_choice
 			country_event = { id = yun.4 days = 7 }
-			country_event = { id = yun.351 days = 3 random = 2 }
+			country_event = { id = yun.351 days = 3 random_days = 2 }
 			816 = {
 				set_demilitarized_zone = no
 			}
@@ -309,7 +309,7 @@ country_event = {# First Yun Chain Pt.2
 			1051 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.352 days = 3 random = 2 }
+			country_event = { id = yun.352 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Wrong Choice
@@ -370,7 +370,7 @@ country_event = {# First Yun Chain Pt.2
 				}
 				clr_country_flag = Long_yun_right_choice
 			}
-			country_event = { id = yun.353 days = 3 random = 2 }
+			country_event = { id = yun.353 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -408,7 +408,7 @@ country_event = {# Second Yun Chain Pt.1
 		hidden_effect = {
 			set_country_flag = Long_yun_right_choice
 			country_event = { id = yun.6 days = 7 }
-			country_event = { id = yun.354 days = 3 random = 2 }
+			country_event = { id = yun.354 days = 3 random_days = 2 }
 			1051 = {
 				set_demilitarized_zone = no
 			}
@@ -445,7 +445,7 @@ country_event = {# Second Yun Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.6 days = 7 }
-			country_event = { id = yun.355 days = 3 random = 2 }
+			country_event = { id = yun.355 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -495,7 +495,7 @@ country_event = {# Second Yun Chain Pt.2
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.356 days = 3 random = 2 }
+			country_event = { id = yun.356 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Wrong Choice
@@ -536,7 +536,7 @@ country_event = {# Second Yun Chain Pt.2
 				}
 				clr_country_flag = Long_yun_right_choice
 			}
-			country_event = { id = yun.357 days = 3 random = 2 }
+			country_event = { id = yun.357 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -581,7 +581,7 @@ country_event = {# Third Yun Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.8 days = 7 }
-			country_event = { id = yun.358 days = 3 random = 2 }
+			country_event = { id = yun.358 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -611,7 +611,7 @@ country_event = {# Third Yun Chain Pt.1
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.359 days = 3 random = 2 }
+			country_event = { id = yun.359 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -663,7 +663,7 @@ country_event = {# Third Yun Chain Pt.2
 				}
 				clr_country_flag = Long_yun_right_choice
 			}
-			country_event = { id = yun.360 days = 3 random = 2 }
+			country_event = { id = yun.360 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -702,7 +702,7 @@ country_event = {# Third Yun Chain Pt.2
 					set_demilitarized_zone = no
 				}
 			}
-			country_event = { id = yun.361 days = 3 random = 2 }
+			country_event = { id = yun.361 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -724,7 +724,7 @@ country_event = {# First Hu Ruoyu Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.10 days = 7 }
-			country_event = { id = yun.362 days = 3 random = 2 }
+			country_event = { id = yun.362 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -738,7 +738,7 @@ country_event = {# First Hu Ruoyu Chain Pt.1
 			1051 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.363 days = 3 random = 2 }
+			country_event = { id = yun.363 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -763,7 +763,7 @@ country_event = {#  First Hu Ruoyu Chain Pt.2
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.364 days = 3 random = 2 }
+			country_event = { id = yun.364 days = 3 random_days = 2 }
 			set_country_flag = failed_ruoyu_han_first
 		}
 	}
@@ -775,7 +775,7 @@ country_event = {#  First Hu Ruoyu Chain Pt.2
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.625 days = 2 }
-			country_event = { id = yun.365 days = 3 random = 2 }
+			country_event = { id = yun.365 days = 3 random_days = 2 }
 			set_country_flag = failed_ruoyu_han_first
 		}
 	}
@@ -801,7 +801,7 @@ country_event = {#  Second Hu Ruoyu Chain Pt.1
 			816 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.366 days = 3 random = 2 }
+			country_event = { id = yun.366 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Wrong Choice
@@ -812,7 +812,7 @@ country_event = {#  Second Hu Ruoyu Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.12 days = 7 }
-			country_event = { id = yun.367 days = 3 random = 2 }
+			country_event = { id = yun.367 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -837,7 +837,7 @@ country_event = {# Second Hu Ruoyu Chain Pt.2
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.368 days = 3 random = 2 }
+			country_event = { id = yun.368 days = 3 random_days = 2 }
 			set_country_flag = failed_ruoyu_han_second
 		}
 	}
@@ -849,7 +849,7 @@ country_event = {# Second Hu Ruoyu Chain Pt.2
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.625 days = 2 }
-			country_event = { id = yun.369 days = 3 random = 2 }
+			country_event = { id = yun.369 days = 3 random_days = 2 }
 			set_country_flag = failed_ruoyu_han_second
 		}
 	}
@@ -872,7 +872,7 @@ country_event = {# Third Hu Ruoyu Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.14 days = 7 }
-			country_event = { id = yun.370 days = 3 random = 2 }
+			country_event = { id = yun.370 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -886,7 +886,7 @@ country_event = {# Third Hu Ruoyu Chain Pt.1
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.371 days = 3 random = 2 }
+			country_event = { id = yun.371 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -908,7 +908,7 @@ country_event = {# Third Hu Ruoyu Chain Pt.2
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.625 days = 2 }
-			country_event = { id = yun.372 days = 3 random = 2 }
+			country_event = { id = yun.372 days = 3 random_days = 2 }
 			set_country_flag = failed_ruoyu_han_third
 		}
 	}
@@ -923,7 +923,7 @@ country_event = {# Third Hu Ruoyu Chain Pt.2
 			816 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.373 days = 3 random = 2 }
+			country_event = { id = yun.373 days = 3 random_days = 2 }
 			set_country_flag = failed_ruoyu_han_third
 		}
 	}
@@ -949,7 +949,7 @@ country_event = {# First Lu Han Chain Pt.1
 			1051 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.374 days = 3 random = 2 }
+			country_event = { id = yun.374 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Wrong Choice
@@ -960,7 +960,7 @@ country_event = {# First Lu Han Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.16 days = 7 }
-			country_event = { id = yun.375 days = 3 random = 2 }
+			country_event = { id = yun.375 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -985,7 +985,7 @@ country_event = {# First Lu Han Chain Pt.2
 			816 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.376 days = 3 random = 2 }
+			country_event = { id = yun.376 days = 3 random_days = 2 }
 			set_country_flag = failed_lu_han_first
 		}
 	}
@@ -997,7 +997,7 @@ country_event = {# First Lu Han Chain Pt.2
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.626 days = 2 }
-			country_event = { id = yun.377 days = 3 random = 2 }
+			country_event = { id = yun.377 days = 3 random_days = 2 }
 			set_country_flag = failed_lu_han_first
 		}
 	}
@@ -1020,7 +1020,7 @@ country_event = {# Second Lu Han Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.18 days = 7 }
-			country_event = { id = yun.378 days = 3 random = 2 }
+			country_event = { id = yun.378 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -1034,7 +1034,7 @@ country_event = {# Second Lu Han Chain Pt.1
 			816 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.379 days = 3 random = 2 }
+			country_event = { id = yun.379 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1056,7 +1056,7 @@ country_event = {# Second Lu Han Chain Pt.2
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.626 days = 2 }
-			country_event = { id = yun.380 days = 3 random = 2 }
+			country_event = { id = yun.380 days = 3 random_days = 2 }
 			set_country_flag = failed_lu_han_second
 		}
 	}
@@ -1071,7 +1071,7 @@ country_event = {# Second Lu Han Chain Pt.2
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.381 days = 3 random = 2 }
+			country_event = { id = yun.381 days = 3 random_days = 2 }
 			set_country_flag = failed_lu_han_second
 		}
 	}
@@ -1094,7 +1094,7 @@ country_event = {# Third Lu Han Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.20 days = 7 }
-			country_event = { id = yun.382 days = 3 random = 2 }
+			country_event = { id = yun.382 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -1108,7 +1108,7 @@ country_event = {# Third Lu Han Chain Pt.1
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.383 days = 3 random = 2 }
+			country_event = { id = yun.383 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1133,7 +1133,7 @@ country_event = {# Third Lu Han Chain Pt.2
 			816 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.384 days = 3 random = 2 }
+			country_event = { id = yun.384 days = 3 random_days = 2 }
 			set_country_flag = failed_lu_han_third
 		}
 	}
@@ -1145,7 +1145,7 @@ country_event = {# Third Lu Han Chain Pt.2
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.626 days = 2 }
-			country_event = { id = yun.385 days = 3 random = 2 }
+			country_event = { id = yun.385 days = 3 random_days = 2 }
 			set_country_flag = failed_lu_han_third
 		}
 	}
@@ -1199,7 +1199,7 @@ country_event = {# First Zhu Peide Chain Pt.1
 			1051 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.386 days = 3 random = 2 }
+			country_event = { id = yun.386 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Wrong Choice
@@ -1219,7 +1219,7 @@ country_event = {# First Zhu Peide Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.22 days = 7 }
-			country_event = { id = yun.387 days = 3 random = 2 }
+			country_event = { id = yun.387 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1257,7 +1257,7 @@ country_event = {# First Zhu Peide Chain Pt.2
 				}
 				clr_country_flag = Zhu_Peide_right_choice
 			}
-			country_event = { id = yun.388 days = 3 random = 2 }
+			country_event = { id = yun.388 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -1308,7 +1308,7 @@ country_event = {# First Zhu Peide Chain Pt.2
 					set_demilitarized_zone = no
 				}
 			}
-			country_event = { id = yun.389 days = 3 random = 2 }
+			country_event = { id = yun.389 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1339,7 +1339,7 @@ country_event = {# Second Zhu Peide Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.24 days = 7 }
-			country_event = { id = yun.390 days = 3 random = 2 }
+			country_event = { id = yun.390 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -1381,7 +1381,7 @@ country_event = {# Second Zhu Peide Chain Pt.1
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.391 days = 3 random = 2 }
+			country_event = { id = yun.391 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1419,7 +1419,7 @@ country_event = {# Second Zhu Peide Chain Pt.2
 				}
 				clr_country_flag = Zhu_Peide_right_choice
 			}
-			country_event = { id = yun.392 days = 3 random = 2 }
+			country_event = { id = yun.392 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Right Choice
@@ -1470,7 +1470,7 @@ country_event = {# Second Zhu Peide Chain Pt.2
 			816 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.393 days = 3 random = 2 }
+			country_event = { id = yun.393 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1520,7 +1520,7 @@ country_event = {# Third Zhu Peide Chain Pt.1
 		hidden_effect = {
 			country_event = { id = yun.26 days = 7 }
 			set_country_flag = Zhu_Peide_right_choice
-			country_event = { id = yun.394 days = 3 random = 2 }
+			country_event = { id = yun.394 days = 3 random_days = 2 }
 			1051 = {
 				set_demilitarized_zone = no
 			}
@@ -1543,7 +1543,7 @@ country_event = {# Third Zhu Peide Chain Pt.1
 		army_experience = 5
 		hidden_effect = {
 			country_event = { id = yun.26 days = 7 }
-			country_event = { id = yun.395 days = 3 random = 2 }
+			country_event = { id = yun.395 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1605,7 +1605,7 @@ country_event = {# Third Zhu Peide Chain Pt.2
 			603 = {
 				set_demilitarized_zone = no
 			}
-			country_event = { id = yun.396 days = 3 random = 2 }
+			country_event = { id = yun.396 days = 3 random_days = 2 }
 		}
 	}
 	option = {# Wrong Choice
@@ -1632,7 +1632,7 @@ country_event = {# Third Zhu Peide Chain Pt.2
 				}
 				clr_country_flag = Zhu_Peide_right_choice
 			}
-			country_event = { id = yun.397 days = 3 random = 2 }
+			country_event = { id = yun.397 days = 3 random_days = 2 }
 		}
 	}
 }
@@ -1653,7 +1653,6 @@ country_event = {# Long Yun Secures Yunnan!
 		clear_sic_slot = yes
 		activate_advisor = YUN_zhang_chong_sic
 		hidden_effect = {
-			load_oob = YUN_LONG_YUN
 			end_of_yunnan_civil_war = yes
 			every_army_leader = {
 				limit = { has_trait = hidden_sympathies }
@@ -1685,7 +1684,6 @@ country_event = {# Zhu Peide Secures Yunnan!
 		clear_sic_slot = yes
 		activate_advisor = YUN_he_yingqin_sic
 		hidden_effect = {
-			load_oob = YUN_ZHU_PEIDE
 			end_of_yunnan_civil_war = yes
 		}
 		every_unit_leader = {
@@ -1797,7 +1795,6 @@ country_event = {#Zhu De Restores Stability once and for all!
 		add_stability = 0.20
 		hidden_effect = {
 			end_of_yunnan_civil_war = yes
-			load_oob = YUN_ZHU_DE
 			country_event = { id = yun.90 days = 7 }
 		}
 		news_event = { id = yun.603 days = 1 }
@@ -3676,8 +3673,6 @@ country_event = {#Long Yun takes out the L-KMT
 				YUN_Kuomintang2
 				YUN_Kuomintang3
 			}
-			delete_unit_template_and_units = { division_template = "Loyalists of Zhu De" }
-			load_oob = YUN_LONG_YUN
 			remove_unit_leader_role = { character = YUN_zhu_de }
 			set_politics = {
 				ruling_party = paternal_autocrat
@@ -3796,7 +3791,7 @@ country_event = {
 			remove_unit_leader_trait = substance_abuser
 		}
 		hidden_effect = {
-			country_event = { id = yun.82 days = 150 random = 115 }
+			country_event = { id = yun.82 days = 150 random_days = 115 }
 		}
 	}
 }
@@ -3823,14 +3818,14 @@ country_event = {
 			add_unit_leader_trait = substance_addict
 		}
 		hidden_effect = {
-			country_event = { id = yun.83 days = 150 random = 115 }
+			country_event = { id = yun.83 days = 150 random_days = 115 }
 		}
 	}
 	option = {#Pay their rehab
 		name = yun.83.a
 		add_political_power = -50
 		hidden_effect = {
-			country_event = { id = yun.83 days = 150 random = 115 }
+			country_event = { id = yun.83 days = 150 random_days = 115 }
 		}
 	}
 }
@@ -5854,7 +5849,7 @@ country_event = {#Long Yun funds theatre plays
 	option = {#For you my dear, anything
 		name = yun.323.a
 		hidden_effect = {
-			country_event = { id = yun.324 months = 30 random = 10 }
+			country_event = { id = yun.324 months = 30 random_days = 10 }
 		}
 	}
 }
@@ -5887,7 +5882,7 @@ country_event = {#Long Yun's son departs to the US
 	option = {#Have fun in America son!
 		name = yun.325.a
 		hidden_effect = {
-			country_event = { id = yun.324 months = 90 random = 10 }
+			country_event = { id = yun.324 months = 90 random_days = 10 }
 		}
 		add_political_power = -50
 	}

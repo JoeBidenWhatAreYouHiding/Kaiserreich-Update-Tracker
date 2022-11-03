@@ -216,6 +216,14 @@ is_ally_of_ROOT = {
 	}
 }
 
+# Checks if the country has a flag set which stops it from joining a faction while being invited to another
+is_being_invited_into_faction = {
+	custom_trigger_tooltip = {
+		tooltip = KR_getting_faction_invite #uses custom trigger to allow for a _NOT tooltip - see Political_l_english
+		has_country_flag = KR_getting_faction_invite
+	}
+}
+
 is_ally_of_PREV = {
 	hidden_trigger = { country_exists = PREV } #needed to avoid error log spam
 	custom_trigger_tooltip = {

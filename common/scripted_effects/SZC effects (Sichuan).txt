@@ -525,7 +525,7 @@ SZC_end_famine = {
 			country_event = {
 				id = sichuan.200
 				days = 15
-				random = 240
+				random_days = 10
 			}
 		}
 
@@ -615,7 +615,7 @@ SZC_increase_opium_control = {
 			country_event = {
 				id = sichuan.222
 				days = 10
-				random = 240
+				random_days = 10
 			}
 		}
 	}
@@ -632,7 +632,7 @@ SZC_increase_opium_control = {
 			country_event = {
 				id = sichuan.219
 				days = 10
-				random = 240
+				random_days = 10
 			}
 		}
 	}
@@ -649,7 +649,7 @@ SZC_increase_opium_control = {
 			country_event = {
 				id = sichuan.217
 				days = 10
-				random = 240
+				random_days = 10
 			}
 		}
 	}
@@ -695,7 +695,7 @@ SZC_reduce_opium_spread = {
 			country_event = {
 				id = sichuan.213
 				days = 10
-				random = 240
+				random_days = 10
 			}
 		}
 	}
@@ -898,13 +898,13 @@ SZC_diarchy_increase_wenhui = {
 			country_event = {
 				id = sichuan.356
 				days = 3
-				random = 72
+				random_days = 3
 			}
 		}
 		country_event = {
 			id = sichuan.353
 			days = 3
-			random = 72
+			random_days = 3
 		}
 	}
 }
@@ -958,34 +958,13 @@ SZC_diarchy_increase_xihou = {
 			country_event = {
 				id = sichuan.355
 				days = 3
-				random = 72
+				random_days = 3
 			}
 		}
 		country_event = {
 			id = sichuan.354
 			days = 3
-			random = 72
+			random_days = 3
 		}
 	}
 }
-
-SZC_add_research_slot = {
-	if = {
-		limit = { has_idea = SZC_increased_research_efforts }
-		modify_timed_idea = {
-			idea = SZC_increased_research_efforts
-			days = 365
-		}
-	}
-	else_if = {
-		limit = { amount_research_slots > 3 }
-		add_timed_idea = {
-			idea = SZC_increased_research_efforts
-			days = 365
-		}
-	}
-	else = {
-		add_research_slot = 1
-	}
-}
-

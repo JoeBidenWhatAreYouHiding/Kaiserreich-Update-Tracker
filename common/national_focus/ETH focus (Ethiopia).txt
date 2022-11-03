@@ -1099,7 +1099,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETH_Educate_Slaves"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

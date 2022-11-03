@@ -895,7 +895,7 @@ country_event = {
 				country_event = {
 					id = KRBAT.92
 					days = 50
-					random = 240
+					random_days = 10
 				}
 			}
 		}

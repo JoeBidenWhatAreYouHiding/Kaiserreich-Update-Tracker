@@ -1713,30 +1713,6 @@ ideas = {
 				stability_factor = 0.2
 			}
 		}
-		BUL_OTT_Alliance_Balkan_War = { #given to OTT at 4th Balkan war, allows them to send BUL extra volunteers
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea BUL_OTT_Alliance_Balkan_War" }
-			name = BUL_OTT_Aliiance
-			picture = advisors_bulgaria
-			allowed = { always = no }
-			cancel = {
-				NOT = { BUL = { has_war_with = SER } }
-			}
-			modifier = {
-				send_volunteer_size = 3
-			}
-		}
-		BUL_OTT_Alliance_Cairo_War = { #given to BUL at start of OTT's war against the Cairo pact, allows them to send OTT extra volunteers
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea BUL_OTT_Alliance_Cairo_War" }
-			name = BUL_OTT_Aliiance
-			picture = advisors_ottoman
-			allowed = { always = no }
-			cancel = {
-				OTT_cairo_pact_defeated = yes #will also get removed if OTT loses via CP.1
-			}
-			modifier = {
-				send_volunteer_size = 3
-			}
-		}
 
 		#Old ideas
 		BUL_old_guard_training = {

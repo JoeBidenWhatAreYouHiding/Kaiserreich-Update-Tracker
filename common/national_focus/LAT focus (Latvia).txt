@@ -1051,7 +1051,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_PRODUCTION }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LAT_connect_to_global_trade"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			swap_ideas = {
 				remove_idea = LAT_growing_economy_3
 				add_idea = LAT_growing_economy_4
@@ -1701,7 +1701,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LAT_technologies_for_the_army"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_tech_bonus = {
 				name = LAT_technologies_for_the_army
 				bonus = 1
@@ -2058,7 +2058,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LAT_ask_for_internationale_aid"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {

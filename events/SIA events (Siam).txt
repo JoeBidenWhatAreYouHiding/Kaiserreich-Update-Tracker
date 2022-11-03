@@ -96,22 +96,22 @@ country_event = { # Black Monday hit Siam
 			country_event = {
 				id = siam.5  # Jasmine Rice
 				days = 7
-				random = 480
+				random_days = 20
 			}
 			country_event = {
 				id = siam.6 # Bloated Bureaucracy
 				days = 3
-				random = 480
+				random_days = 20
 			}
 			country_event = {
 				id = siam.7 # Military Expenditure Cut
 				days = 9
-				random = 480
+				random_days = 20
 			}
 			country_event = {
 				id = siam.8 # Emergency Tax
 				days = 5
-				random = 480
+				random_days = 20
 			}
 		}
 	}
@@ -1322,7 +1322,7 @@ country_event = { # Civil War Ends
 			news_event = worldnews.115
 			if = {
 				limit = { country_exists = INC } # If INC exists
-				INC = { country_event = { id = siam.51 days = 3 random = 48 } }
+				INC = { country_event = { id = siam.51 days = 3 random_days = 2 } }
 			}
 		}
 	}
@@ -1714,7 +1714,7 @@ country_event = { # What whould we do with the Germans factories?
 			country_event = {
 				id = siam.31
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -1956,7 +1956,7 @@ country_event = { # What whould we do with the American factories?
 			country_event = {
 				id = siam.31
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -2069,7 +2069,7 @@ country_event = { # What whould we do with the Canadian factories?
 			country_event = {
 				id = siam.31
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -2156,7 +2156,7 @@ country_event = { # What whould we do with the Japanese-owned iron mines?
 			country_event = {
 				id = siam.31
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -4092,7 +4092,7 @@ country_event = { #Siam Offers Unconditional Surrender
 			}
 		}
 		SIA = {
-			country_event = { id = siam.68 hours = 4 random = 12 }
+			country_event = { id = siam.68 hours = 4 random_hours = 12 }
 		}
 		if = {
 			limit = {
@@ -4102,7 +4102,7 @@ country_event = { #Siam Offers Unconditional Surrender
 			}
 			hidden_effect = {
 				FROM = { # Inform the faction leader too
-					country_event = { id = siam.68 hours = 4 random = 12 }
+					country_event = { id = siam.68 hours = 4 random_hours = 12 }
 				}
 			}
 		}
@@ -4912,6 +4912,7 @@ country_event = { #Unconditional Surrender Goes into Effect
 				faction_leader = { country_event = siam.71 }
 				leave_faction = yes
 			}
+			set_global_flag = scripted_peace
 			every_enemy_country = {
 				limit = { has_country_flag = SIA_accepts_peace }
 				country_event = siam.72
@@ -4923,6 +4924,7 @@ country_event = { #Unconditional Surrender Goes into Effect
 				}
 				set_truce = { target = ROOT days = 730 }
 			}
+			clr_global_flag = scripted_peace
 
 			### remove all remaining puppets
 			every_subject_country = {

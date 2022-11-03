@@ -700,7 +700,7 @@ country_event = { #Nasir arrested, Kumul annexed
 		hidden_effect = {
 			SIK_long_xielin = { set_nationality = KUM }
 			KUM = {
-				country_event = { id = kumul.5 days = 2 random = 12 }
+				country_event = { id = kumul.5 days = 2 random_days = 12 }
 				set_country_flag = KUM_annexation_flag
 				set_cosmetic_tag = KUM_HAM
 				set_party_name = {
@@ -1037,26 +1037,17 @@ country_event = { #Uprisings expand to Kashgar
 				set_province_controller = 13731
 				set_province_controller = 7949
 				set_province_controller = 4828
-				# load_oob = SIK_yarkand_garrison
 				random_owned_controlled_state = {
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					prioritize = { 617 }
-					limit = {
-						is_core_of = ROOT
-						impassable = no
-						is_fully_controlled_by = ROOT
-					}
 					create_unit = {
 						division = "name = \"Kashgar Garrison\" division_template = \"Tungan Division\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
 						owner = ROOT
 					}
 				}
 				random_owned_controlled_state = {
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					prioritize = { 617 }
-					limit = {
-						is_core_of = ROOT
-						impassable = no
-						is_fully_controlled_by = ROOT
-					}
 					create_unit = {
 						division = "name = \"Khotan Tungan Defense Divison\" division_template = \"Tungan Division\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
 						owner = ROOT
@@ -1150,7 +1141,7 @@ country_event = { #Turfan defection
 	immediate = {
 		hidden_effect = {
 			KUM = {
-				load_oob = SIK_turfan_garrison
+				SIK_create_turfan_garrison = yes
 			}
 		}
 	}
@@ -1251,7 +1242,7 @@ country_event = { #Fuming removed, garrison deployed
 	fire_only_once = yes
 	immediate = {
 		hidden_effect = {
-			load_oob = SIK_turfan_garrison
+			SIK_create_turfan_garrison = yes
 		}
 	}
 	trigger = {
@@ -1281,7 +1272,7 @@ country_event = { #Turfan defection, negotiations failed
 	immediate = {
 		hidden_effect = {
 			KUM = {
-				load_oob = SIK_turfan_garrison
+				SIK_create_turfan_garrison = yes
 			}
 		}
 	}
@@ -1619,7 +1610,6 @@ country_event = { #The purge: Sheng's success
 			ideology = authoritarian_democrat popularity = -0.2
 		}
 		retire_character = SIK_ma_shaowu
-		retire_character = KUM_mahmut_muhiti
 		retire_character = SIK_burhan_shahidi
 	}
 }

@@ -85,7 +85,7 @@ CHI_spawn_fujian_revolt = {
 			activate_mission = CHI_mission_secure_fujian
 			activate_mission = CHI_mission_secure_gannan
 
-			country_event = { id = chi_dom.1 days = 20 random = 10 }
+			country_event = { id = chi_dom.1 days = 20 random_days = 10 }
 
 			#activate starting Decisions
 			activate_targeted_decision = { decision = CHI_dec_recall_Xue_and_Zhang target = HND }

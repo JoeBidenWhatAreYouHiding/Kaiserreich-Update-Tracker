@@ -879,7 +879,7 @@ country_event = { #Relocating the Capital
 					country_event = {
 						id = qiefor.58
 						days = 70
-						random = 480 #20
+						random_days = 20
 					}
 				}
 			}
@@ -2977,7 +2977,7 @@ country_event = { # China Council, introduction
 			country_event = {
 				id = anq.74
 				days = 150
-				random = 1200 #50
+				random_days = 50
 			}
 		}
 	}
@@ -3023,8 +3023,7 @@ country_event = { # Qing troops guard our roads
 			country_event = {
 				id = anq.76
 				days = 300
-				random = 2400 #100
-
+				random_days = 100
 			}
 		}
 	}
@@ -3685,7 +3684,7 @@ country_event = { # deep army cooperation
 		country_event = {
 			id = anq.94
 			days = 20
-			random = 240 #10
+			random_days = 10
 		}
 	}
 }
@@ -3708,7 +3707,7 @@ country_event = { # integrated command
 		country_event = {
 			id = anq.95
 			days = 70
-			random = 480 #20
+			random_days = 20
 		}
 		swap_ideas = {
 			remove_idea = ANQ_qing_army_cooperation
@@ -3760,7 +3759,7 @@ country_event = { # shared officer training
 		country_event = {
 			id = anq.96
 			days = 70
-			random = 480 #20
+			random_days = 20
 		}
 		swap_ideas = {
 			remove_idea = ANQ_qing_army_cooperation1

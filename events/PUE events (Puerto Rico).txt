@@ -42,7 +42,7 @@ country_event = { #Puerto Rican Delegation Proposal
 			}
 		}
 		hidden_effect = {
-			country_event = { id = pue.5 days = 30 random = 40 }
+			country_event = { id = pue.5 days = 30 random_days = 40 }
 		}
 	}
 	option = {#Gib Freedom

@@ -11,6 +11,12 @@ ALB_foreign_policy_decisions = {
 
 		available = {
 			is_in_faction = no
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
 		}
 
 		visible = {
@@ -63,6 +69,15 @@ ALB_foreign_policy_decisions = {
 		icon = generic_political_discourse
 		allowed = { always = no }
 
+		available = {
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
+		}
+
 		visible = {
 			is_subject = no
 			is_in_faction = no
@@ -113,6 +128,15 @@ ALB_foreign_policy_decisions = {
 	ALB_reignite_romanian_friendship = {
 		icon = generic_political_discourse
 		allowed = { always = no }
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
+		}
 
 		visible = {
 			is_subject = no

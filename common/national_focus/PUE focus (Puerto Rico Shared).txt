@@ -2243,7 +2243,7 @@ shared_focus = {
 		log = "[GetDateText]: [Root.GetName]: Focus PUE_shining_jewel_of_the_Caribbean"
 		add_stability = 0.10
 		add_political_power = 50
-		add_research_slot = 1
+		add_research_slot_until_five = yes
 	}
 }
 shared_focus = {

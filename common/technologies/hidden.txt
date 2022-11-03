@@ -436,5 +436,52 @@ technologies = {
 			default_morale = 0.2
 		}
 	}
-}
 
+	tech_irregulars = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_irregulars_effect
+		enable_subunits = {
+			irregular_infantry
+		}
+	}
+
+	tech_militias = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_militias_effect
+		enable_subunits = {
+			militia
+		}
+	}
+
+	tech_rangers = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_rangers_effect
+		enable_subunits = {
+			rangers
+		}
+	}
+}

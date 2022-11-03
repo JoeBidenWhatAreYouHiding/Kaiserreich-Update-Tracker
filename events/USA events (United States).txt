@@ -4155,7 +4155,7 @@ country_event = { # Victory for MacArthur
 			country_event = {
 				id = ustates.134
 				days = 20
-				random = 960
+				random_days = 40
 			}
 			news_event = worldnews.476
 		}

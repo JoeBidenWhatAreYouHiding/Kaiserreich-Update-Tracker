@@ -1015,7 +1015,6 @@ country_event = { # Tibet Improvment military returns to Tibet, with modernized 
 			ideology = social_democrat
 			popularity = 0.10
 		}
-		hidden_effect = { load_oob = "TIB_KMT" }
 		random_character = {
 			limit = { is_character = TIB_changra }
 			set_nationality = BHU
@@ -1037,6 +1036,32 @@ country_event = { # Tibet Improvment military returns to Tibet, with modernized 
 		TIB_add_thubten_kunphela_sic = yes
 		set_country_flag = TIB_Democratic_path
 		news_event = { id = tib.123 days = 1 } # Revolution in Tibet
+
+		hidden_effect = {
+			### Delete templates if existed before - no cheating
+			if = {
+				limit = { has_template = "Dúli Bubing Lü" }
+				delete_unit_template_and_units = { division_template = "Dúli Bubing Lü" disband = yes }
+			}
+			### Create templates
+			division_template = {
+				name = "Dúli Bubing Lü"
+				division_names_group = CHI_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+				}
+			}
+			### Create divisions
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Dúli Bubing Lü\" start_experience_factor = 0.3"
+					owner = PREV
+				}
+			}
+		}
 	}
 }
 
@@ -1199,7 +1224,37 @@ country_event = { # Dob Dobs arrive in Lhasa with Tsarong Dzasa, who carries the
 		}
 		custom_effect_tooltip = TIB_British_regulars_oob_tt
 		hidden_effect = {
-			load_oob = "TIB_British_regulars"
+			### Delete templates if existed before - no cheating
+			if = {
+				limit = { has_template = "Frontier Corps" }
+				delete_unit_template_and_units = { division_template = "Frontier Corps" disband = yes }
+			}
+			### Create templates
+			division_template = {
+				name = "Frontier Corps"
+				division_names_group = TIB_MTN_01
+				regiments = {
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+				}
+				priority = 2
+			}
+			### Create divisions
+			random_owned_controlled_state = {
+				limit = { valid_state_for_spawning_friendly_unit = yes }
+				prioritize = { 332 }
+				create_unit = {
+					division = "name = \"The South Waziristan Scouts\" division_template = \"Frontier Corps\" start_experience_factor = 0.1"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Khyber Rifles\" division_template = \"Frontier Corps\" start_experience_factor = 0.1"
+					owner = PREV
+				}
+			}
+
 			country_event = {
 				id = tib.47
 				days = 7
@@ -1231,52 +1286,52 @@ country_event = { # Prime Minister Trimön has mental breakdown, walks out to cr
 			country_event = {
 				id = tib.103
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = tib.104
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = tib.105
 				days = 280
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = tib.106
 				days = 360
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = tib.107
 				days = 440
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = tib.108
 				days = 520
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = tib.109
 				days = 600
-				random = 40
+				random_days = 40
 			}
 			country_event = {
 				id = tib.110
 				days = 680
-				random = 40
+				random_days = 40
 			}
 			country_event = {
 				id = tib.111
 				days = 760
-				random = 50
+				random_days = 50
 			}
 			country_event = {
 				id = tib.112
 				days = 840
-				random = 50
+				random_days = 50
 			}
 			BHU = {
 				country_event = {
@@ -1783,12 +1838,8 @@ country_event = { # Pressure the Tse Laptra to Expand Education
 		ai_chance = {
 			factor = 80
 		}
-		add_political_power = -250
+		add_political_power = -75
 		add_ideas = TIB_modernized_education
-		if = {
-			limit = { amount_research_slots < 3 }
-			add_research_slot = 1
-		}
 	}
 
 	option = { # To do so is Un-Tibetan

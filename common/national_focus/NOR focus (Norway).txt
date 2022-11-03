@@ -420,7 +420,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NOR_extra_tech_slot"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1885,7 +1885,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NOR_SYN_worker_academies"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2594,7 +2594,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NOR_DEM_free_education"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			NOR_reduce_weak_economy = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -4447,7 +4447,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NOR_NAT_education"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

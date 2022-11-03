@@ -146,8 +146,6 @@ country_event = { #elections happen
 				character = QIE_yan_huiqing
 				advisor = {
 					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
 					idea_token = QIE_yan_huiqing
 					traits = { KR_leading_diplomat }
 				}
@@ -239,7 +237,7 @@ country_event = { #assembly returns to normal
 			country_event = {
 				id = qiedom.19 #cao kun is removed for drunkenness
 				days = 15
-				random = 5
+				random_days = 5
 			}
 		}
 	}
@@ -285,8 +283,6 @@ country_event = { #Cao Kun gets booted
 				character = QIE_yan_huiqing
 				advisor = {
 					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
 					idea_token = QIE_yan_huiqing
 					traits = { KR_leading_diplomat }
 				}
@@ -949,7 +945,7 @@ country_event = { #germany gives support to Wu for intervening pro-LEP
 			country_event = {
 				id = qieflavor.1
 				days = 120
-				random = 5760
+				random_days = 240
 			}
 		}
 	}
@@ -975,7 +971,7 @@ country_event = { #widespread rioting and looting following non-intervention
 			country_event = {
 				id = qiecoup.1
 				days = 30
-				random = 10
+				random_days = 10
 			}
 		}
 	}
@@ -2220,7 +2216,7 @@ country_event = {
 				country_event = {
 					id = qiefor.25
 					days = 3
-					random = 24
+					random_hours = 24
 				}
 			}
 		}
@@ -2253,7 +2249,7 @@ country_event = {
 			country_event = {
 				id = qiefor.26
 				days = 3
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -2303,7 +2299,7 @@ country_event = {
 				country_event = {
 					id = qiefor.27
 					days = 3
-					random = 24
+					random_hours = 24
 				}
 			}
 		}
@@ -2326,7 +2322,7 @@ country_event = {
 				country_event = {
 					id = qiefor.28
 					days = 3
-					random = 24
+					random_hours = 24
 				}
 			}
 		}
@@ -3318,7 +3314,7 @@ country_event = { #fund large offices Beijing Liaison Council Nanjing
 			country_event = {
 				id = anq.74
 				days = 100
-				random = 50
+				random_days = 50
 			}
 		}
 	}
@@ -4401,7 +4397,7 @@ country_event = { #zhongchang retains power, draws closer to FNG
 			country_event = {
 				id = qiefor.106 #japanese stuff shows up
 				days = 120
-				random = 48
+				random_days = 48
 			}
 		}
 	}
@@ -6058,14 +6054,6 @@ country_event = {
 
 	option = {
 		name = qiecoup.3.a #They need to promise me something
-		ai_chance = {
-			base = 75
-
-			modifier = {
-				add = 25
-				QIE = { is_ai = no }
-			}
-		}
 		QIE = {
 			country_event = { id = qiecoup.6 days = 2 }
 		}
@@ -6073,21 +6061,7 @@ country_event = {
 
 	option = {
 		name = qiecoup.3.b #no this is too risky (will never fire if QIE is human)
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 0
-				QIE = { is_ai = no }
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCCON }
-					has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCLIB }
-					has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM }
-				}
-			}
-		}
+		ai_chance = { base = 0 }
 		QIE = {
 			set_country_flag = QIE_yan_says_no
 			country_event = { id = qiecoup.9 days = 2 }
@@ -6106,18 +6080,13 @@ country_event = {
 
 	option = {
 		name = qiecoup.4.a #Of Course! For the glory of the Qing!
-		ai_chance = {
-			base = 100
-		}
 		QIE = {
 			country_event = { id = qiecoup.11 days = 2 }
 		}
 	}
 	option = {
 		name = qiecoup.4.b #no, this is too risky
-		ai_chance = {
-			base = 0
-		}
+		ai_chance = { base = 0 }
 		QIE = {
 			set_country_flag = QIE_qu_says_no
 			country_event = { id = qiecoup.9 days = 2 }
@@ -6136,18 +6105,13 @@ country_event = {
 
 	option = {
 		name = qiecoup.5.a #Of Course! For the glory of the Qing!
-		ai_chance = {
-			base = 100
-		}
 		QIE = {
 			country_event = { id = qiecoup.12 days = 2 }
 		}
 	}
 	option = {
 		name = qiecoup.5.b #no, this is too risky
-		ai_chance = {
-			base = 0
-		}
+		ai_chance = { base = 0 }
 		QIE = {
 			set_country_flag = QIE_zhang_says_no
 			country_event = { id = qiecoup.9 days = 2 }
@@ -8310,30 +8274,19 @@ country_event = {
 
 	fire_only_once = yes
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			QIE_ling_bin = { set_nationality = ROOT }
+			QIE_fang_zhijian = { set_nationality = ROOT }
+		}
+	}
 
 	option = {
 		name = qiefocus.14.a #flavor
 		add_political_power = 10
-		add_corps_commander_role = {
-			character = QIE_ling_bin
-			desc = QIE_ling_bin_commander_desc
-			traits = { politically_connected }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-		}
-		add_corps_commander_role = {
-			character = QIE_fang_zhijian
-			desc = QIE_fang_zhijian_commander_desc
-			traits = { politically_connected }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-		}
+		show_unit_leaders_tooltip = QIE_ling_bin
+		show_unit_leaders_tooltip = QIE_fang_zhijian
 		country_event = { id = qieflavor.7 days = 2 }
 	}
 }
@@ -9407,8 +9360,6 @@ country_event = {
 			character = QIE_kang_tongbi
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = QIE_kang_tongbi
 				traits = { KR_prominent_feminist }
 			}

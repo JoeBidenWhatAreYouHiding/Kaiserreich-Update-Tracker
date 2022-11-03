@@ -1586,7 +1586,7 @@ country_event = { # Help the military
 			type = infantry_equipment
 			amount = 500
 		}
-		"PHI" = { set_country_flag = GEA_support_philp_military }
+		PHI = { set_country_flag = GEA_support_philp_military }
 	}
 
 	option = { # Not our business

@@ -1057,7 +1057,7 @@ country_event = { #More lost fishing trawlers (ICE)
 			producer = ICE
 		}
 		hidden_effect = {
-			CAN = { country_event = { id = ice.28 random = 1 } }
+			CAN = { country_event = { id = ice.28 hours = 3 } }
 			ENG = { country_event = { id = ice.29 days = 18 } }
 		}
 	}
@@ -1363,7 +1363,7 @@ country_event = { #Raiding the Cumberland (ENG)
 		add_war_support = 0.02
 		add_political_power = 25
 		hidden_effect = {
-			ICE = { country_event = { id = ice.39 random = 1 } }
+			ICE = { country_event = { id = ice.39 hours = 3 } }
 		}
 	}
 }

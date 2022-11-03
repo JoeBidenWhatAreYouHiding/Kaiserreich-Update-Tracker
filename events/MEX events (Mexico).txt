@@ -144,7 +144,6 @@ country_event = { # Zapata is dead!
 				}
 			}
 		}
-		retire_character = MEX_emiliano_zapata_salazar
 		set_politics = {
 			ruling_party = totalist
 			elections_allowed = yes
@@ -219,7 +218,6 @@ country_event = { # Zapata is dead!
 				}
 			}
 		}
-		retire_character = MEX_emiliano_zapata_salazar
 		promote_character = MEX_francisco_pancho_villa
 		hidden_effect = {
 			news_event = worldnews.455
@@ -579,10 +577,7 @@ country_event = { # Pope informed about Catholic suppression
 				value = 3
 			}
 		}
-		add_opinion_modifier = {
-			target = MEX
-			modifier = embargo
-		}
+		embargo_FROM = yes
 		custom_effect_tooltip = MEX_cristero_add_3
 	}
 	option = { # do not send supplies
@@ -1369,10 +1364,7 @@ country_event = { # Mexico Nationalizes Oil Industry(USA)
 
 	option = { #  Embargo Mexico
 		name = mexico.37.a
-		add_opinion_modifier = {
-			target = MEX
-			modifier = embargo
-		}
+		embargo_FROM = yes
 	}
 }
 country_event = { # America tries to embargo us
@@ -1385,9 +1377,10 @@ country_event = { # America tries to embargo us
 
 	option = { #
 		name = mexico.38.a
+		embargo_FROM = yes
 		add_opinion_modifier = {
 			target = USA
-			modifier = KR_disapproves_of_govt
+			modifier = KR_outraged
 		}
 	}
 }
@@ -1466,7 +1459,7 @@ country_event = { # Campesinos War begins
 			country_event = {
 				id = mexico.43
 				days = 70
-				random = 10
+				random_days = 10
 			}
 		}
 	}
@@ -1561,7 +1554,7 @@ country_event = { # Sinarquista support
 			country_event = {
 				id = mexico.45
 				days = 40
-				random = 10
+				random_days = 10
 			}
 		}
 	}
@@ -2127,7 +2120,14 @@ country_event = { # Yucatan manages to survive
 	desc = mexico.66.d
 	picture = GFX_report_event_generic_diplomacy2
 
+	trigger = {
+		exists = yes
+		is_subject = no
+		NOT = { has_country_flag = YUC_indepedence_war_over }
+	}
+
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
 		name = mexico.66.a

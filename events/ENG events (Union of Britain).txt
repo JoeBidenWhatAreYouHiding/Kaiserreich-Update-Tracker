@@ -3384,7 +3384,7 @@ country_event = {
 			country_event = {
 				id = uob.86
 				days = 90
-				random = 168
+				random_days = 30
 			}
 		}
 	}
@@ -3426,7 +3426,7 @@ country_event = {
 			country_event = {
 				id = uob.87
 				days = 180
-				random = 168
+				random_days = 60
 			}
 		}
 	}
@@ -3473,7 +3473,7 @@ country_event = {
 			country_event = {
 				id = uob.88
 				days = 150
-				random = 168
+				random_days = 50
 			}
 		}
 	}
@@ -3520,7 +3520,7 @@ country_event = {
 			country_event = {
 				id = uob.89
 				days = 270
-				random = 168
+				random_days = 90
 			}
 		}
 	}

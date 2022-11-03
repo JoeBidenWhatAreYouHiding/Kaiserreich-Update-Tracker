@@ -82,12 +82,12 @@ country_event = { #attack Delhi
 			country_event = {
 				id = afg.5
 				days = 5
-				random = 36
+				random_days = 36
 			}
 			country_event = {
 				id = afg.18
 				days = 10
-				random = 36
+				random_days = 36
 			}
 			news_event = {
 				id = worldnews.19
@@ -124,7 +124,7 @@ country_event = {
 			country_event = {
 				id = afg.19
 				days = 50
-				random = 100
+				random_hours = 100
 			}
 		}
 	}
@@ -179,7 +179,7 @@ country_event = {
 			country_event = {
 				id = afg.19
 				days = 20
-				random = 100
+				random_days = 100
 			}
 		}
 	}

@@ -346,14 +346,14 @@ country_event = { #Insulindian National Revolution - id being 13 wasn't intended
 				country_event = {
 					id = dei.29
 					days = 20
-					random = 960
+					random_days = 40
 				}
 			}
 			JAP = {
 				country_event = {
 					id = dei.29
 					days = 20
-					random = 60
+					random_days = 60
 				}
 			}
 			AST = {
@@ -368,14 +368,14 @@ country_event = { #Insulindian National Revolution - id being 13 wasn't intended
 					country_event = {
 						id = dei.29
 						days = 20
-						random = 60
+						random_days = 60
 					}
 				}
 				else = {
 					country_event = {
 						id = dei.290
 						days = 20
-						random = 60
+						random_days = 60
 					}
 				}
 			}

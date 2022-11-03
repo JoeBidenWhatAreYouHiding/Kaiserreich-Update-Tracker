@@ -2080,6 +2080,7 @@ foreign_politics = {
 		}
 
 		visible = {
+			is_subject = no
 			can_declare_war_on = FROM
 		}
 
@@ -2148,6 +2149,7 @@ foreign_politics = {
 		}
 
 		visible = {
+			is_subject = no
 			can_declare_war_on = FROM
 		}
 
@@ -2206,14 +2208,11 @@ foreign_politics = {
 				any_allied_country = { is_owner_neighbor_of = FROM }
 			}
 			has_socialist_government = yes
-			FROM = {
-				NOT = {
-					has_socialist_government = yes
-				}
-			}
+			FROM = { has_socialist_government = no }
 		}
 
 		visible = {
+			is_subject = no
 			can_declare_war_on = FROM
 		}
 
@@ -2359,6 +2358,7 @@ foreign_politics = {
 		}
 
 		visible = {
+			is_subject = no
 			can_declare_war_on = FROM
 		}
 
@@ -2423,6 +2423,7 @@ foreign_politics = {
 		}
 
 		visible = {
+			is_subject = no
 			can_declare_war_on = FROM
 		}
 

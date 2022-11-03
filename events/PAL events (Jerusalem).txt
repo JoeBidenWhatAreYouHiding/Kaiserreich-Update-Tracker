@@ -1536,6 +1536,7 @@ country_event = {	#Iran issues an ultimatum
 		PER = {
 			can_declare_war_on = OTT
 		}
+		owns_state = 677	
 	}
 
 	is_triggered_only = yes
@@ -2143,7 +2144,7 @@ country_event = {	#Idris pleads for help
 
 	immediate = {
 		hidden_effect = {
-			"LBA" = {
+			LBA = {
 				country_event = libya.3
 			}
 		}
@@ -2154,7 +2155,7 @@ country_event = {	#Idris pleads for help
 		ai_chance = {
 			base = 70
 		}
-		"LBA" = {
+		LBA = {
 			add_to_variable = {
 				var = idris_support
 				value = 30

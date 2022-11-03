@@ -1141,8 +1141,8 @@ leader_traits = {
 	KR_mitteleuropa_advocate = {
 		sprite = 13
 		random = no
-		political_power_factor = 0.05
-		production_factory_max_efficiency_factor = 0.05
+		production_speed_industrial_complex_factor = 0.1
+		custom_modifier_tooltip = KR_mitteleuropa_advocate_tt
 
 		ai_will_do = {
 			factor = 1
@@ -1203,6 +1203,7 @@ leader_traits = {
 		random = no
 		justify_war_goal_time = -0.15
 		civilian_intel_factor = 0.2
+		political_power_factor = 0.1
 
 		ai_will_do = {
 			factor = 1

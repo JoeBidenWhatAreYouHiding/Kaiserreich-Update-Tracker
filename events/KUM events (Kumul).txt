@@ -19,8 +19,8 @@ country_event = { #kumul introduction
 	option = {
 		name = kumul.0.a
 		hidden_effect = {
-			country_event = { id = kumul.1 days = 30 random = 72 }
-			country_event = { id = kumul.4 days = 90 random = 72 }
+			country_event = { id = kumul.1 days = 30 random_days = 72 }
+			country_event = { id = kumul.4 days = 90 random_days = 72 }
 		}
 	}
 }
@@ -102,9 +102,9 @@ country_event = { #incompetency of the new administration
 
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.6 days = 14 random = 36 }
-			country_event = { id = kumul.7 days = 30 random = 36 }
-			country_event = { id = kumul.8 days = 50 random = 124 }
+			country_event = { id = kumul.6 days = 14 random_days = 36 }
+			country_event = { id = kumul.7 days = 30 random_days = 36 }
+			country_event = { id = kumul.8 days = 50 random_days = 124 }
 		}
 	}
 	option = {
@@ -158,7 +158,7 @@ country_event = { #tax collector wants some muslim bussy
 	option = {
 		name = kumul.8.a
 		hidden_effect = {
-			country_event = { id = kumul.9 months = 1 random = 72 }
+			country_event = { id = kumul.9 months = 1 random_days = 72 }
 		}
 	}
 }
@@ -624,7 +624,7 @@ country_event = { #final victory in xinjiang
 			set_country_flag = KUM_power_struggle_flag
 			activate_mission = KUM_a_gathering_in_kumul_mission
 			load_focus_tree = { tree = Kumul_xinjiang keep_completed = no }
-			country_event = { id = kumul.50 days = 7 random = 2 }
+			country_event = { id = kumul.50 days = 7 random_days = 2 }
 		}
 	}
 }
@@ -802,7 +802,7 @@ country_event = { # our administration is spread really thin, but Fan has just c
 	picture = GFX_report_event_SIK_fan_yaonan
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.51 days = 14 random = 3 }
+			country_event = { id = kumul.51 days = 14 random_days = 3 }
 		}
 	}
 
@@ -874,7 +874,7 @@ country_event = { # hoja-niyaz begins rallying uygher leaders
 	picture = GFX_report_event_CHI_honghuzi
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.52 days = 14 random = 3 }
+			country_event = { id = kumul.52 days = 14 random_days = 3 }
 		}
 	}
 
@@ -920,7 +920,7 @@ country_event = { # Fan speaks to influential bussiness leaders
 	picture = GFX_report_event_SIK_fan_yaonan
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.53 days = 7 random = 3 }
+			country_event = { id = kumul.53 days = 7 random_days = 3 }
 		}
 	}
 
@@ -946,7 +946,7 @@ country_event = { # Ma Zhongying rides out
 	picture = GFX_report_event_LEP_march
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.54 days = 14 random = 3 }
+			country_event = { id = kumul.54 days = 14 random_days = 3 }
 		}
 	}
 
@@ -1007,7 +1007,7 @@ country_event = { # Fan speaks to Beijing
 	picture = GFX_report_event_SIK_fan_yaonan
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.55 days = 7 random = 3 }
+			country_event = { id = kumul.55 days = 7 random_days = 3 }
 		}
 	}
 
@@ -1033,7 +1033,7 @@ country_event = { # instability means we gotta give more power to the military
 	picture = GFX_report_event_HOL_border_incident
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.56 days = 14 random = 3 }
+			country_event = { id = kumul.56 days = 14 random_days = 3 }
 		}
 	}
 
@@ -1085,7 +1085,7 @@ country_event = { # uyghers not very happy in the south
 	picture = GFX_report_event_SIK_uyghurs
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.57 days = 14 random = 3 }
+			country_event = { id = kumul.57 days = 14 random_days = 3 }
 		}
 	}
 
@@ -1132,7 +1132,7 @@ country_event = { # increasing immigration
 	picture = GFX_report_event_CHI_protest
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.58 days = 7 random = 3 }
+			country_event = { id = kumul.58 days = 7 random_days = 3 }
 		}
 	}
 
@@ -1182,7 +1182,7 @@ country_event = { # Hoja-Niyaz fights bandits of Ma Zhongying cus they wuz raidi
 	picture = GFX_report_event_CHI_warlord_battle
 	immediate = {
 		hidden_effect = {
-			country_event = { id = kumul.59 days = 14 random = 3 }
+			country_event = { id = kumul.59 days = 14 random_days = 3 }
 		}
 	}
 
@@ -1477,17 +1477,17 @@ country_event = { #khanate
 			country_event = {
 				id = kumul.70
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.71
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.72
 				days = 280
-				random = 20
+				random_days = 20
 			}
 		}
 	}
@@ -1547,17 +1547,17 @@ country_event = { #hoja-niyaz
 			country_event = {
 				id = kumul.80
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.81
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.82
 				days = 280
-				random = 20
+				random_days = 20
 			}
 		}
 	}
@@ -1634,17 +1634,17 @@ country_event = { #fan yaonan
 			country_event = {
 				id = kumul.90
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.91
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.92
 				days = 280
-				random = 20
+				random_days = 20
 			}
 		}
 	}
@@ -1712,17 +1712,17 @@ country_event = { #zhongying
 			country_event = {
 				id = kumul.110
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.111
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = kumul.112
 				days = 280
-				random = 20
+				random_days = 20
 			}
 		}
 	}

@@ -112,7 +112,7 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus CHI_literacy_programs"
-		SZC_add_research_slot = yes
+		add_research_slot_until_four = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }
@@ -2375,7 +2375,7 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus CHI_academica_sinica"
-		SZC_add_research_slot = yes
+		add_research_slot_until_four = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }

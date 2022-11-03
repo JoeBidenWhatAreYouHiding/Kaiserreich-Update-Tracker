@@ -724,7 +724,7 @@ ideas = {
 			modifier = {
 				global_building_slots_factor = 0.15
 				conscription_factor = -0.10
-				production_speed_buildings_factor = 0.15
+				production_speed_buildings_factor = 0.10
 			}
 		}
 		RUS_supreme_economic_council_5 = { #tankograd + MTS

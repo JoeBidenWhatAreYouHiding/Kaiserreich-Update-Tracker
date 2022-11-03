@@ -4668,7 +4668,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SER_Education_Reform"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {
@@ -7420,7 +7420,6 @@ focus_tree = {
 		}
 		allow_branch = {
 			SER_has_founded_yugoslavia = yes
-			is_subject = no
 		}
 		available = {
 			has_idea = SER_konspiracija_idea
@@ -7465,7 +7464,6 @@ focus_tree = {
 		}
 		allow_branch = {
 			SER_has_founded_yugoslavia = yes
-			is_subject = no
 		}
 		x = 24
 		y = 12

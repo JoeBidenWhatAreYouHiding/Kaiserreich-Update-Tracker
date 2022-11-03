@@ -245,12 +245,6 @@ country_event = {
 			country_event = pact.7
 		}
 		set_country_flag = SER_supported_bulgaria
-		every_country = {
-			limit = {
-				is_subject_of = ROOT
-			}
-			set_country_flag = SER_supported_bulgaria
-		}
 		GER = { country_event = pact.8 }
 		ALB = { country_event = pact.8 }
 		BUL = {
@@ -313,12 +307,6 @@ country_event = {
 			country_event = pact.7
 		}
 		set_country_flag = SER_supported_bulgaria
-		every_country = {
-			limit = {
-				is_subject_of = ROOT
-			}
-			set_country_flag = SER_supported_bulgaria
-		}
 		BUL = {
 			add_opinion_modifier = { target = ROOT modifier = Belgrade_Pact_supported_us }
 		}

@@ -404,6 +404,24 @@ LEP_add_collapse_dm = {
 	}
 }
 
+LEP_create_militia_template = {
+	if = {
+		limit = { NOT = { has_template = "League War Militia" } }
+		division_template = {
+			name = "League War Militia"
+			is_locked = yes
+			division_names_group = CHYN_INF_01
+			regiments = {
+				irregular_infantry = { x = 0 y = 0 }
+				irregular_infantry = { x = 0 y = 1 }
+				irregular_infantry = { x = 0 y = 2 }
+				irregular_infantry = { x = 0 y = 3 }
+				irregular_infantry = { x = 0 y = 4 }
+			}
+		}
+	}
+}
+
 LEP_remove_collapse_dm = {
 	if = {
 		limit = { has_idea = league_collapse_ANQ }

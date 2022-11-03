@@ -2043,16 +2043,16 @@ focus_tree = {
 		will_lead_to_war_with = SRI
 		available = {
 			has_completed_focus = SIC_he_atacc
+			can_declare_war_on = SRI
 			is_subject = no
 			if = {
 				limit = { has_global_flag = KR_italy_balance }
-				has_war = no
 				is_in_faction = no
 			}
-			else = {
-				controls_all_owned_states = yes
+			OR = {
+				threat > 0.15 #ACW
+				SRI = { has_war_with = ITA }
 			}
-			can_declare_war_on = SRI
 		}
 		bypass = {
 			NOT = { can_declare_war_on = SRI }
@@ -2155,7 +2155,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_old_order"
 			add_political_power = 200
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 	}
@@ -2263,7 +2263,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_frattelli_ditalia"
 			add_political_power = 200
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 	}
@@ -2351,7 +2351,7 @@ focus_tree = {
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_free_thought"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2783,7 +2783,7 @@ focus_tree = {
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_royal_academy"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

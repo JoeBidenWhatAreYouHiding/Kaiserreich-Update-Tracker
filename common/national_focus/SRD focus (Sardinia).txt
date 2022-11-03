@@ -1523,7 +1523,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRD_university_of_turin"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2559,7 +2559,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRD_adopt_experimental_technologies"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			if = {
 				limit = { has_idea = SRD_underwater_threat_4 }
 				swap_ideas = {
@@ -3060,7 +3060,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRD_citta_dell_aria"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			if = {
 				limit = { has_idea = SRD_pilot_training_2 }
 				swap_ideas = {

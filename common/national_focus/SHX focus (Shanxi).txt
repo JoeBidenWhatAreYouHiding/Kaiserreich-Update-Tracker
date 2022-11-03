@@ -166,7 +166,7 @@ focus_tree = {
 				country_event = {
 					id = shx.301
 					days = 5
-					random = 240
+					random_days = 10
 				}
 			}
 		}
@@ -227,7 +227,7 @@ focus_tree = {
 				country_event = {
 					id = shx.300
 					days = 5
-					random = 240
+					random_days = 10
 				}
 			}
 		}
@@ -303,7 +303,7 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_Public_Education"
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 		}
 	}
 	focus = {
@@ -767,7 +767,7 @@ focus_tree = {
 				country_event = {
 					id = shx.16
 					days = 30
-					random = 240
+					random_days = 10
 				}
 			}
 		}
@@ -2086,7 +2086,7 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_military_science"
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 		}
 	}
 }
@@ -3032,7 +3032,7 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_A_University_In_Taiyuan"
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 		}
 	}
 

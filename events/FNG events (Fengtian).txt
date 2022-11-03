@@ -130,7 +130,7 @@ country_event = { #Protests Continue REPEATING
 			country_event = { # Repeating
 				id = fengtian.3
 				days = 20
-				random = 600
+				random_days = 25
 			}
 		}
 	}
@@ -180,7 +180,7 @@ country_event = { #The Harbin Riots
 			country_event = {
 				id = fengtian.6
 				days = 3
-				random = 72
+				random_days = 3
 			}
 		}
 		885 = {
@@ -339,7 +339,7 @@ country_event = { #Picking up the Educational Slack
 			country_event = {
 				id = fengtian.12
 				days = 12
-				random = 864
+				random_days = 36
 			}
 		}
 		ai_chance = {
@@ -369,7 +369,7 @@ country_event = { #Picking up the Educational Slack
 			country_event = {
 				id = fengtian.10
 				days = 150
-				random = 350
+				random_days = 350
 			}
 		}
 	}
@@ -1255,9 +1255,11 @@ country_event = { #Mantetsu Protests Railway Construction
 				}
 			}
 			30 = {
-				country_event = {
-					id = fengtian.27
-					days = 20
+				JAP = {
+					country_event = {
+						id = fengtian.27
+						days = 20
+					}
 				}
 			}
 			40 = {}
@@ -1852,7 +1854,7 @@ country_event = { # Drought ends
 			country_event = {
 				id = fengtian.47
 				days = 180
-				random = 12960
+				random_days = 540
 			}
 		}
 	}
@@ -1886,7 +1888,7 @@ country_event = { # Mantetsu's proposal
 			country_event = {
 				id = fengtian.48
 				days = 120
-				random = 11520
+				random_days = 480
 			}
 		}
 	}
@@ -1923,7 +1925,7 @@ country_event = { # Repeating Event
 			country_event = {
 				id = fengtian.47
 				days = 120
-				random = 11520
+				random_days = 480
 			}
 		}
 	}
@@ -1955,14 +1957,14 @@ country_event = { # Repeating Event
 					country_event = {
 						id = fengtian.49
 						days = 2
-						random = 120
+						random_days = 5
 					}
 				}
 				20 = {
 					country_event = {
 						id = fengtian.50
 						days = 2
-						random = 120
+						random_days = 5
 					}
 				}
 			}
@@ -2359,7 +2361,7 @@ country_event = { #Mantetsu Chosabu
 			country_event = {
 				id = fngsystem.7
 				days = 30
-				random = 720
+				random_days = 30
 			}
 		}
 	}
@@ -5485,7 +5487,7 @@ country_event = { #Prince Kan'in Kotohito Visits Fengtian
 			country_event = {
 				id = fengtian.142
 				days = 120
-				random = 800
+				random_days = 30
 			}
 			activate_targeted_decision = { target = THIS decision = FNG_increase_security_in_shenyang }
 			activate_targeted_decision = { target = THIS decision = FNG_investigate_the_junior_officer_corps }
@@ -6863,12 +6865,12 @@ country_event = { #Ma Zhanshan Offers to Defect!
 				country_event = {
 					id = fengtian.168
 					days = 2
-					random = 120
+					random_days = 5
 				}
 				country_event = {
 					id = fngsystem.18
 					days = 2
-					random = 120
+					random_days = 5
 				}
 			}
 			random_list = {
@@ -6876,14 +6878,14 @@ country_event = { #Ma Zhanshan Offers to Defect!
 					country_event = {
 						id = fengtian.169
 						days = 150
-						random = 120
+						random_days = 120
 					}
 				}
 				30 = {
 					country_event = {
 						id = fengtian.170
 						days = 150
-						random = 120
+						random_days = 120
 					}
 				}
 				40 = {}
@@ -11139,7 +11141,7 @@ country_event = { # Scandal in Beijing
 			country_event = {
 				id = fengtian.273
 				days = 9
-				random = 150
+				random_days = 6
 			}
 		}
 		if = {
@@ -11245,7 +11247,7 @@ country_event = { # Disorder at Baoding
 			country_event = {
 				id = fengtian.275
 				days = 9
-				random = 150
+				random_days = 6
 			}
 		}
 		if = {
@@ -11396,7 +11398,7 @@ country_event = { # Bandits against Bandits
 			country_event = {
 				id = fengtian.278
 				days = 9
-				random = 150
+				random_days = 6
 			}
 		}
 		if = {
@@ -11535,7 +11537,7 @@ country_event = { # Destruction in Wuhan/Victory in Wuhan
 			country_event = {
 				id = fengtian.280
 				days = 9
-				random = 150
+				random_days = 6
 			}
 		}
 		FNG_decrease_legitimacy = yes
@@ -11589,7 +11591,7 @@ country_event = { # Disaster at the Daye Mines
 			country_event = {
 				id = fengtian.281
 				days = 9
-				random = 150
+				random_days = 6
 			}
 		}
 		add_manpower = -800
@@ -11928,7 +11930,7 @@ country_event = { #Zuolin Plans To Retire
 			country_event = {
 				id = fengtian.288
 				days = 5
-				random = 120
+				random_days = 5
 			}
 		}
 	}
@@ -11956,7 +11958,7 @@ country_event = { #The Shikan Clique Protests!
 				country_event = {
 					id = fengtian.289
 					days = 5
-					random = 120
+					random_days = 5
 				}
 			}
 		}
@@ -11983,7 +11985,7 @@ country_event = { #A Sinister Plot
 				country_event = {
 					id = fengtian.290
 					days = 5
-					random = 120
+					random_days = 5
 				}
 			}
 		}
@@ -12050,7 +12052,7 @@ country_event = { #Ambush in Shenyang
 			country_event = {
 				id = fengtian.291
 				hours = 8
-				random = 16
+				random_hours = 16
 			}
 		}
 	}
@@ -12085,7 +12087,7 @@ country_event = { #Ambush in Shenyang
 			country_event = {
 				id = fengtian.298
 				hours = 8
-				random = 16
+				random_hours = 16
 			}
 		}
 	}
@@ -12139,7 +12141,7 @@ country_event = { # The Zhaode Dajie Incident - Zuolin Dies
 			country_event = {
 				id = fengtian.292
 				days = 1
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -12172,7 +12174,7 @@ country_event = { # The Zhaode Dajie Incident - Zuolin Dies
 			country_event = {
 				id = fengtian.299
 				days = 1
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -12205,7 +12207,7 @@ country_event = { # The Zhaode Dajie Incident - Zuolin Dies
 			country_event = {
 				id = fengtian.299
 				days = 1
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -12234,7 +12236,7 @@ country_event = { #Xueliang Rallies The Government
 			country_event = {
 				id = fngsystem.17
 				days = 2
-				random = 72
+				random_days = 3
 			}
 		}
 	}
@@ -12277,7 +12279,7 @@ country_event = { #A Mystery
 				country_event = {
 					id = fengtian.294
 					days = 1
-					random = 24
+					random_hours = 24
 				}
 			}
 		}
@@ -12491,11 +12493,8 @@ country_event = { #The Zhaode Dajie Incident
 			country_event = {
 				id = fngsystem.17
 				days = 2
-				random = 48
+				random_days = 2
 			}
-		}
-
-		hidden_effect = {
 		}
 	}
 }
@@ -14217,7 +14216,7 @@ country_event = { #fire Chosabu events
 			country_event = {
 				id = fngsystem.7
 				days = 20
-				random = 120
+				random_days = 5
 			}
 		}
 	}
@@ -14380,7 +14379,7 @@ country_event = { #Shanhaiguan outcome event
 		country_event = {
 			id = fengtian.104 #Success
 			days = 30
-			random = 720
+			random_days = 30
 		}
 	}
 	option = {
@@ -14388,7 +14387,7 @@ country_event = { #Shanhaiguan outcome event
 		country_event = {
 			id = fengtian.105 #Failure
 			days = 30
-			random = 720
+			random_days = 30
 		}
 	}
 	option = {
@@ -14397,7 +14396,7 @@ country_event = { #Shanhaiguan outcome event
 		country_event = {
 			id = fengtian.106 #Infiltrators Disappeared
 			days = 30
-			random = 720
+			random_days = 30
 		}
 	}
 	option = {
@@ -14406,7 +14405,7 @@ country_event = { #Shanhaiguan outcome event
 		country_event = {
 			id = fengtian.106 #Infiltrators Disappeared
 			days = 30
-			random = 720
+			random_days = 30
 		}
 	}
 }
@@ -14481,7 +14480,7 @@ country_event = { #Ma Zhanshan defection
 			country_event = {
 				id = fengtian.167
 				days = 12
-				random = 1440
+				random_days = 60
 			}
 		}
 	}
@@ -15055,8 +15054,8 @@ country_event = { #Protest bounce event
 		}
 		country_event = {
 			id = fngpolitic.28
-			days = 125
-			random = 900
+			days = 120
+			random_days = 40
 		}
 	}
 	option = {

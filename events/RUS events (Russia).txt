@@ -1393,43 +1393,6 @@ country_event = { #Democratic republic
 	}
 }
 
-country_event = { #Russian capitulation system event
-	id = russia.1900
-	immediate = { log = "[GetDateText]: [Root.GetName]: event russia.1900 FROM = [From.GetName]" }
-	hidden = yes
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	trigger = {
-		OR = {
-			is_faction_leader = yes
-			tag = event_target:was_faction_leader
-		}
-	}
-
-	option = {
-		every_other_country = {
-			limit = {
-				is_in_faction_with = ROOT
-				is_subject = no
-				has_capitulated = no
-			}
-			faction_collapse_member_peace_effect = yes
-			country_event = russia.1901
-		}
-		every_country = {
-			limit = { is_in_tech_sharing_group = russian_research }
-			remove_from_tech_sharing_group = russian_research
-		}
-		if = {
-			limit = { is_in_faction = yes }
-			faction_leader = { dismantle_faction = yes }
-		}
-		news_event = { id = russia.1902 hours = 30 }
-	}
-}
-
 country_event = { #Inform former faction members of peace
 	id = russia.1901
 	immediate = { log = "[GetDateText]: [Root.GetName]: event russia.1901 FROM = [From.GetName]" }
@@ -7362,7 +7325,7 @@ country_event = { #Russia demands Azerbaijan
 			country_event = {
 				id = rusfor.1067
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7387,7 +7350,7 @@ country_event = { #Russia demands Azerbaijan
 			country_event = {
 				id = rusfor.1068
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7491,7 +7454,7 @@ country_event = { #Crush Transamur
 					country_event = {
 						id = rusfor.1084
 						days = 2
-						random = 48
+						random_days = 2
 					}
 				}
 			}
@@ -7500,7 +7463,7 @@ country_event = { #Crush Transamur
 					country_event = {
 						id = rusfor.1083
 						days = 2
-						random = 48
+						random_days = 2
 					}
 				}
 			}
@@ -7510,7 +7473,7 @@ country_event = { #Crush Transamur
 				country_event = {
 					id = rusfor.1089
 					days = 2
-					random = 48
+					random_days = 2
 				}
 			}
 		}
@@ -7544,7 +7507,7 @@ country_event = { #The Russians claim Transamur!
 			country_event = {
 				id = rusfor.1088
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7560,7 +7523,7 @@ country_event = { #The Russians claim Transamur!
 			country_event = {
 				id = rusfor.1089
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7612,7 +7575,7 @@ country_event = { #Russian Troops arrive in Vladivostok!
 			country_event = {
 				id = rusfor.1089
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7657,7 +7620,7 @@ country_event = { #The Japanese have sent a warning
 			country_event = {
 				id = rusfor.1084
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7719,7 +7682,7 @@ country_event = { #Russia demands northern Mongolia
 			country_event = {
 				id = rusfor.1114
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7733,7 +7696,7 @@ country_event = { #Russia demands northern Mongolia
 			country_event = {
 				id = rusfor.1116
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7842,7 +7805,7 @@ country_event = { #Russian demands ROM
 			country_event = {
 				id = rusfor.1182
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7875,7 +7838,7 @@ country_event = { #Russian demands ROM
 			country_event = {
 				id = rusfor.1181
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -7885,19 +7848,41 @@ country_event = { # Romania refuses!
 	id = rusfor.1181
 	immediate = { log = "[GetDateText]: [Root.GetName]: event rusfor.1181 FROM = [From.GetName]" }
 	title = rusfor.1181.t
-	desc = rusfor.1181.d
+
+	desc = {
+		text = rusfor.1181.d
+		trigger = { NOT = { has_country_flag = RUS_request_bessarabia_ally } }
+	}
+	desc = {
+		text = rusfor.1181.d.ally
+		trigger = { has_country_flag = RUS_request_bessarabia_ally }
+	}
+
 	picture = GFX_report_event_ROM_guards
 
 	is_triggered_only = yes
 
 	option = {
 		name = rusfor.1181.a #Then it is war
+		trigger = { NOT = { has_country_flag = RUS_request_bessarabia_ally } }
 	}
 
 	option = {
 		name = rusfor.1181.b #Back down
+		trigger = { NOT = { has_country_flag = RUS_request_bessarabia_ally } }
 		ai_chance = { base = 0 }
 		remove_decision = RUS_Demand_Bessarabia
+	}
+
+	option = {
+		name = rusfor.1181.c #Disappointing
+		trigger = { has_country_flag = RUS_request_bessarabia_ally }
+		remove_decision = RUS_Request_Bessarabia
+		add_opinion_modifier = {
+			target = FROM
+			modifier = KR_disapproves_of_govt
+		}
+		clr_country_flag = RUS_request_bessarabia_ally
 	}
 }
 
@@ -7905,34 +7890,122 @@ country_event = { #Transfer of the territory
 	id = rusfor.1182
 	immediate = { log = "[GetDateText]: [Root.GetName]: event rusfor.1182 FROM = [From.GetName]" }
 	title = rusfor.1182.t
-	desc = rusfor.1182.d
+
+	desc = {
+		text = rusfor.1182.d
+		trigger = { NOT = { has_country_flag = RUS_request_bessarabia_ally } }
+	}
+	desc = {
+		text = rusfor.1182.d.ally
+		trigger = { has_country_flag = RUS_request_bessarabia_ally }
+	}
 
 	is_triggered_only = yes
 
 	option = {
 		name = rusfor.1182.a #Another victory for Russian diplomacy!
-		remove_decision = RUS_Demand_Bessarabia
-		ROM = {
-			every_owned_state = {
-				limit = {
-					OR = {
-						is_core_of = ROOT
-						is_claimed_by = ROOT
-						state = 78 #Bessarabia
+		if = {
+			limit = { NOT = { has_country_flag = RUS_request_bessarabia_ally } }
+			remove_decision = RUS_Demand_Bessarabia
+			ROM = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+							state = 78 #Bessarabia
+						}
 					}
+					transfer_state_to = ROOT
 				}
-				transfer_state_to = ROOT
+				diplomatic_relation = {
+					country = ROOT
+					relation = non_aggression_pact
+				}
 			}
-			diplomatic_relation = {
-				country = ROOT
-				relation = non_aggression_pact
+			if = {
+				limit = { FROM = { NOT = { original_tag = ROM } } }
+				diplomatic_relation = {
+					country = FROM
+					relation = non_aggression_pact
+				}
 			}
 		}
-		if = {
-			limit = { FROM = { NOT = { original_tag = ROM } } }
-			diplomatic_relation = {
-				country = FROM
-				relation = non_aggression_pact
+		else = {
+			remove_decision = RUS_Request_Bessarabia
+			custom_effect_tooltip = tooltip_white_line
+			ROM = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+							state = 78 #Bessarabia
+						}
+					}
+					transfer_state_to = ROOT
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KR_returned_land
+			}
+			clr_country_flag = RUS_request_bessarabia_ally
+			hidden_effect = { add_state_claim = 78 } #Bessarabia
+		}
+	}
+}
+
+country_event = { #Russia requests ROM
+	id = rusfor.1183
+	immediate = { log = "[GetDateText]: [Root.GetName]: event rusfor.1183 FROM = [From.GetName]" }
+	title = rusfor.1183.t
+
+	desc = rusfor.1183.d
+
+	picture = GFX_report_event_RUS_kremlin_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = rusfor.1183.a #accept
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			ROM = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_core_of = FROM
+							is_claimed_by = FROM
+							state = 78 #Bessarabia
+						}
+					}
+					transfer_state_to = FROM
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = rusfor.1182
+				days = 2
+				random_days = 2
+			}
+		}
+	}
+
+	option = {
+		name = rusfor.1183.b #Never!
+		ai_chance = {
+			base = 0
+		}
+		FROM = {
+			country_event = {
+				id = rusfor.1181
+				days = 2
+				random_days = 2
 			}
 		}
 	}
@@ -7991,7 +8064,7 @@ country_event = { #Russia demands Armenia
 			country_event = {
 				id = rusfor.1192
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -8024,7 +8097,7 @@ country_event = { #Russia demands Armenia
 			country_event = {
 				id = rusfor.1191
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -8137,7 +8210,7 @@ country_event = { #Ultimatum for Galicia AUS owns it
 				country_event = {
 					id = rusfor.1222
 					days = 1
-					random = 24
+					random_hours = 24
 				}
 			}
 		}
@@ -8157,7 +8230,7 @@ country_event = { #Ultimatum for Galicia AUS owns it
 			country_event = {
 				id = rusfor.1211
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -8172,7 +8245,7 @@ country_event = { #Ultimatum for Galicia AUS owns it
 			country_event = {
 				id = rusfor.1212
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -8264,7 +8337,7 @@ country_event = { #AUS betrayed us
 			country_event = {
 				id = rusfor.1223
 				days = 1
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -8345,7 +8418,7 @@ country_event = { #Russian claims FIN
 			country_event = {
 				id = rusfor.1230
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -8406,7 +8479,7 @@ country_event = { #Russian claims FIN
 			country_event = {
 				id = rusfor.1231
 				days = 2
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -8551,7 +8624,7 @@ country_event = { #We've been defeated! FIN
 			country_event = {
 				id = rusfor.1233
 				days = 1
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -8563,7 +8636,7 @@ country_event = { #We've been defeated! FIN
 			country_event = {
 				id = rusfor.1233
 				days = 1
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -8823,7 +8896,7 @@ country_event = { #ROM-RUS peace deal
 			NOT = { has_global_flag = RUS_defeated_by_ROM }
 		}
 		var:219.owner = {
-			country_event = { id = rusfor.1237 days = 1 random = 24 }
+			country_event = { id = rusfor.1237 days = 1 random_hours = 24 }
 		}
 	}
 
@@ -8842,7 +8915,7 @@ country_event = { #ROM-RUS peace deal
 			has_global_flag = RUS_defeated_by_ROM
 		}
 		var:219.owner = {
-			country_event = { id = rusfor.1237 days = 1 random = 24 }
+			country_event = { id = rusfor.1237 days = 1 random_hours = 24 }
 		}
 	}
 
@@ -9034,7 +9107,7 @@ country_event = { #Spiritual Administration of the Muslims of Central Asia
 			country_event = {
 				id = rusfor.1274
 				days = 150
-				random = 720
+				random_days = 30
 			}
 		}
 	}
@@ -9048,7 +9121,7 @@ country_event = { #Spiritual Administration of the Muslims of Central Asia
 			country_event = {
 				id = rusfor.1275
 				days = 150
-				random = 720
+				random_days = 30
 			}
 		}
 	}

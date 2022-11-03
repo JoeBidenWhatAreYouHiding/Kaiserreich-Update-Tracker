@@ -571,15 +571,15 @@ SRI_next_neosanfedisti_attack = {
 	hidden_effect = {
 		if = {
 			limit = { has_idea = SRI_neosanfedisti_1 }
-			country_event = { id = socitaly.23 days = 90 random = 240 }
+			country_event = { id = socitaly.23 days = 90 random_days = 10 }
 		}
 		else_if = {
 			limit = { has_idea = SRI_neosanfedisti_2 }
-			country_event = { id = socitaly.23 days = 90 random = 1080 }
+			country_event = { id = socitaly.23 days = 90 random_days = 45 }
 		}
 		if = {
 			limit = { has_idea = SRI_neosanfedisti_3 }
-			country_event = { id = socitaly.23 days = 90 random = 2160 }
+			country_event = { id = socitaly.23 days = 90 random_days = 90 }
 		}
 	}
 }

@@ -607,7 +607,7 @@ ANQ_add_beijing_spirit = {
 						country_event = {
 							id = anq.71
 							days = 50
-							random = 960 #40
+							random_days = 40
 						}
 						set_country_flag = ANQ_wuchang_anqing_railway
 					}
@@ -627,7 +627,7 @@ ANQ_add_beijing_spirit = {
 							country_event = {
 								id = anq.75
 								days = 30
-								random = 480 #20
+								random_days = 20
 							}
 							set_country_flag = ANQ_banditry_troops_qing
 						}
@@ -647,7 +647,7 @@ ANQ_add_beijing_spirit = {
 								country_event = {
 									id = anq.92
 									days = 50
-									random = 600 #25
+									random_days = 25
 								}
 								set_country_flag = ANQ_can_qing_river_canal
 							}
@@ -667,7 +667,7 @@ ANQ_add_beijing_spirit = {
 									country_event = {
 										id = anq.83
 										days = 50
-										random = 960 #40
+										random_days = 40
 									}
 									set_country_flag = ANQ_qie_businesses_rights
 								}
@@ -686,7 +686,7 @@ ANQ_add_beijing_spirit = {
 										country_event = {
 											id = anq.81
 											days = 100
-											random = 2160 #90
+											random_days = 90
 										}
 										set_country_flag = ANQ_qie_legalrights
 									}
@@ -811,7 +811,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.116
 				days = 2
-				random = 36
+				random_hours = 36
 			}
 		}
 	}
@@ -824,7 +824,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.115
 				days = 2
-				random = 36
+				random_hours = 36
 			}
 		}
 		else_if = {
@@ -834,7 +834,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.115
 				days = 2
-				random = 36
+				random_hours = 36
 			}
 		}
 	}
@@ -852,7 +852,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.114
 				days = 2
-				random = 36
+				random_hours = 36
 			}
 		}
 		else_if = {
@@ -862,7 +862,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.114
 				days = 2
-				random = 36
+				random_hours = 36
 			}
 		}
 	}
@@ -881,7 +881,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.113
 				days = 2
-				random = 36
+				random_hours = 36
 			}
 		}
 		else_if = {
@@ -891,7 +891,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.113
 				days = 2
-				random = 36
+				random_hours = 36
 			}
 		}
 	}
@@ -910,7 +910,7 @@ ANQ_add_beijing_anger_effects = {
 			country_event = {
 				id = anq.117
 				days = 2
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -1691,7 +1691,7 @@ ANQ_negative_kmt_event = {
 			country_event = {
 				id = anq.47
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 		else_if = { limit = { always = yes }
@@ -1700,7 +1700,7 @@ ANQ_negative_kmt_event = {
 				country_event = {
 					id = anq.48
 					days = 5
-					random = 96
+					random_days = 4
 				}
 			}
 			else_if = { limit = { always = yes }
@@ -1708,7 +1708,7 @@ ANQ_negative_kmt_event = {
 				country_event = {
 					id = anq.49
 					days = 5
-					random = 96
+					random_days = 4
 				}
 			}
 		}
@@ -1723,7 +1723,7 @@ ANQ_negative_kmt_event = {
 			country_event = {
 				id = anq.45
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 		else_if = { limit = { always = yes }
@@ -1731,7 +1731,7 @@ ANQ_negative_kmt_event = {
 			country_event = {
 				id = anq.46
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 	}
@@ -1745,7 +1745,7 @@ ANQ_negative_kmt_event = {
 			country_event = {
 				id = anq.43
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 		else_if = { limit = { always = yes }
@@ -1753,7 +1753,7 @@ ANQ_negative_kmt_event = {
 			country_event = {
 				id = anq.44
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 	}
@@ -1765,7 +1765,7 @@ ANQ_negative_kmt_event = {
 			country_event = {
 				id = anq.41
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 		else_if = { limit = { always = yes }
@@ -1773,7 +1773,7 @@ ANQ_negative_kmt_event = {
 			country_event = {
 				id = anq.42
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 	}
@@ -1823,7 +1823,7 @@ ANQ_negative_yiguandao_event = {
 			country_event = {
 				id = anq.56
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 		else_if = { limit = { always = yes }
@@ -1831,7 +1831,7 @@ ANQ_negative_yiguandao_event = {
 			country_event = {
 				id = anq.57
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 	}
@@ -1845,7 +1845,7 @@ ANQ_negative_yiguandao_event = {
 			country_event = {
 				id = anq.54
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 		else_if = { limit = { always = yes }
@@ -1853,7 +1853,7 @@ ANQ_negative_yiguandao_event = {
 			country_event = {
 				id = anq.55
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 	}
@@ -1865,7 +1865,7 @@ ANQ_negative_yiguandao_event = {
 			country_event = {
 				id = anq.51
 				days = 5
-				random = 96
+				random_days = 4
 			}
 		}
 		else_if = { limit = { always = yes }
@@ -1874,7 +1874,7 @@ ANQ_negative_yiguandao_event = {
 				country_event = {
 					id = anq.52
 					days = 5
-					random = 96
+					random_days = 4
 				}
 			}
 			else_if = { limit = { always = yes }
@@ -1882,7 +1882,7 @@ ANQ_negative_yiguandao_event = {
 				country_event = {
 					id = anq.53
 					days = 5
-					random = 96
+					random_days = 4
 				}
 			}
 		}

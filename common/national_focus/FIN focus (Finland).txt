@@ -1226,8 +1226,8 @@ focus_tree = {
 			add_political_power = 100
 			set_party_name = {
 				ideology = national_populist
-				long_name = "Isänmaallinen Kansanliike"
-				name = "IKL"
+				name = FIN_party_patriotic_peoples_movement
+				long_name = FIN_party_patriotic_peoples_movement_long
 			}
 		}
 	}
@@ -3720,7 +3720,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FIN_university_of_helsinki"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

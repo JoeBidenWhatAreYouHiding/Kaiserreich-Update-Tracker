@@ -2759,7 +2759,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SWE_foa_focus"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -3254,7 +3254,7 @@ focus_tree = {
 				remove_idea = SWE_military_idea_2
 				add_idea = SWE_military_idea_3
 			}
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -3694,7 +3694,6 @@ focus_tree = {
 			add_equipment_production = {
 				equipment = {
 					type = ship_hull_heavy_2
-					creator = "SWE"
 					version_name = "Kustflottan Class"
 				}
 				name = "Karl XII"

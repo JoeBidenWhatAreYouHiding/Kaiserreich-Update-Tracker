@@ -329,7 +329,7 @@ focus_tree = {
 			custom_effect_tooltip = NEE_Reduce_Great_Depression_tt
 			# Custom Tooltip here that unlock additional decisions in the WPA category
 			hidden_effect = {
-				country_event = { id = newengland.215 days = 500 random = 250 }
+				country_event = { id = newengland.215 days = 50 random_days = 250 }
 			}
 		}
 	}
@@ -1746,7 +1746,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_Schenectady_Research_Workshop"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_tech_bonus = {
 				name = NEE_Schenectady_Research_Workshop
 				bonus = 1

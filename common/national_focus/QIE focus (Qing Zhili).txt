@@ -158,7 +158,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.19
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -230,7 +230,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.21
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -263,7 +263,7 @@ focus_tree = {
 					country_event = {
 						id = qieflavor.24
 						days = 30
-						random = 120
+						random_days = 120
 					}
 				}
 			}
@@ -290,7 +290,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.22
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -323,7 +323,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.23
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -744,7 +744,7 @@ focus_tree = {
 		ai_will_do = { factor = 4 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_expand_peking_uni"
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -831,7 +831,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.25
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -863,7 +863,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.25
 					days = 90
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -1031,7 +1031,7 @@ focus_tree = {
 		ai_will_do = { factor = 4 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germanresearch"
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2014,7 +2014,7 @@ focus_tree = {
 							country_event = {
 								id = qiefor.24
 								days = 20
-								random = 25
+								random_days = 25
 							}
 						}
 					}

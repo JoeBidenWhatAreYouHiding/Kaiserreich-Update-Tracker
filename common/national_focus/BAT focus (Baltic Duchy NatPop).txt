@@ -830,7 +830,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BAT_end_to_soul_theft"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			custom_effect_tooltip = BAT_conclude_transformation_tooltip
 			set_variable = { BAT_transformation_stability_weekly = 0 }
 			add_to_variable = { BAT_transformation_industrial_capacity_factory = 0.1 }

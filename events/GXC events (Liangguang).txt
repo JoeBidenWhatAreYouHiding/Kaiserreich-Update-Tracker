@@ -2061,13 +2061,15 @@ country_event = {#Integrating the rebel army
 		add_political_power = -50
 		if = {
 			limit = { GXC_has_guangxi_government = yes }
-			GXC_chen_jitang = { set_nationality = ROOT }
-			GXC_jiang_guangnai = { set_nationality = ROOT }
-			GXC_cai_tingkai = { set_nationality = ROOT }
-			GXC_huang_qixiang = { set_nationality = ROOT }
-			GXC_ye_jianying = { set_nationality = ROOT }
-			GXC_li_qingwen = { set_nationality = ROOT }
-			GXC_chen_ce = { set_nationality = ROOT }
+			event_target:original_liangguang = {
+				GXC_chen_jitang = { set_nationality = ROOT }
+				GXC_jiang_guangnai = { set_nationality = ROOT }
+				GXC_cai_tingkai = { set_nationality = ROOT }
+				GXC_huang_qixiang = { set_nationality = ROOT }
+				GXC_ye_jianying = { set_nationality = ROOT }
+				GXC_li_qingwen = { set_nationality = ROOT }
+				GXC_chen_ce = { set_nationality = ROOT }
+			}
 			division_template = {
 				name = "Guangdong Bubing Zhen" #Guangdong Army
 				division_names_group = "GXC_INF_01"
@@ -2093,9 +2095,11 @@ country_event = {#Integrating the rebel army
 			}
 		}
 		else = {
-			GXC_li_pinxian = { set_nationality = ROOT }
-			GXC_zhang_gan = { set_nationality = ROOT }
-			GXC_liu_fei = { set_nationality = ROOT }
+			event_target:original_liangguang = {
+				GXC_li_pinxian = { set_nationality = ROOT }
+				GXC_zhang_gan = { set_nationality = ROOT }
+				GXC_liu_fei = { set_nationality = ROOT }
+			}
 			division_template = { #Guangxi Army
 				name = "Guangxi Bubing Zhen"
 				division_names_group = "GXC_INF_01"
@@ -2273,6 +2277,10 @@ country_event = {#KMT controls both provinces
 		}
 		custom_effect_tooltip = GXC_reintegrate_gx_army
 		set_country_flag = GXC_KMT_takeover
+		promote_character = {
+			character = GXC_li_zongren
+			ideology = authoritarian_democrat_subtype
+		}
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no

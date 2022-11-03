@@ -246,7 +246,7 @@ country_event = { #The National Security Act, triggered by focus end of 1936, ve
 			country_event = {
 				id = japdom.51
 				days = 60
-				random = 4320
+				random_days = 180
 			}
 		}
 	}
@@ -2005,7 +2005,7 @@ country_event = { #Government asks the Emperor to speak, supports government
 			country_event = {
 				id = japdom.17
 				days = 40
-				random = 1440
+				random_days = 60
 			}
 		}
 	}
@@ -2062,7 +2062,7 @@ country_event = { #Government asks the Emperor to speak, does not support govern
 			country_event = {
 				id = japdom.17
 				days = 40
-				random = 1440
+				random_days = 60
 			}
 		}
 	}
@@ -2486,11 +2486,11 @@ country_event = { #New plane ready
 				limit = { has_tech = advanced_small_airframe }
 				create_equipment_variant = {
 					name = JAP_cv_fighter_equipment_3_short
-					type = cv_small_plane_airframe_3
+					type = cv_small_plane_cas_airframe_3
 					modules = {
-						fixed_main_weapon_slot = light_mg_4x
+						fixed_main_weapon_slot = bomb_locks
 						engine_type_slot = engine_3_1x
-						special_type_slot_1 = empty
+						special_type_slot_1 = dive_brakes_small
 					}
 				}
 			}
@@ -2498,10 +2498,10 @@ country_event = { #New plane ready
 				limit = { has_tech = improved_small_airframe }
 				create_equipment_variant = {
 					name = JAP_cv_fighter_equipment_2_short
-					type = cv_small_plane_airframe_2
+					type = cv_small_plane_cas_airframe_2
 					modules = {
 						fixed_main_weapon_slot = bomb_locks
-						engine_type_slot = engine_4_1x
+						engine_type_slot = engine_3_1x
 						special_type_slot_1 = dive_brakes_small
 					}
 				}
@@ -2510,10 +2510,10 @@ country_event = { #New plane ready
 				limit = { has_tech = basic_small_airframe }
 				create_equipment_variant = {
 					name = JAP_cv_fighter_equipment_1_short
-					type = cv_small_plane_airframe_1
+					type = cv_small_plane_cas_airframe_1
 					modules = {
 						fixed_main_weapon_slot = bomb_locks
-						engine_type_slot = engine_3_1x
+						engine_type_slot = engine_2_1x
 						special_type_slot_1 = dive_brakes_small
 					}
 				}
@@ -2521,7 +2521,7 @@ country_event = { #New plane ready
 			else = {
 				create_equipment_variant = {
 					name = JAP_cv_fighter_equipment_0_short
-					type = cv_small_plane_airframe_0
+					type = cv_small_plane_cas_airframe_0
 					modules = {
 						fixed_main_weapon_slot = bomb_locks
 						engine_type_slot = engine_1_1x
@@ -2630,7 +2630,7 @@ country_event = { #Mantetsu Declares Record Earnings
 				country_event = {
 					id = fengtian.125
 					hours = 8
-					random = 16
+					random_hours = 16
 				}
 			}
 		}
@@ -3006,7 +3006,7 @@ country_event = { #The Tokyo Conference Invitation
 				country_event = {
 					id = japfor.22
 					days = 4
-					random = 96
+					random_days = 4
 				}
 			}
 		}
@@ -3027,7 +3027,7 @@ country_event = { #The Tokyo Conference Invitation
 			country_event = {
 				id = japfor.23
 				days = 2
-				random = 50
+				random_days = 2
 			}
 		}
 	}
@@ -3160,7 +3160,7 @@ country_event = { #The condemnation proposal
 			country_event = {
 				id = japfor.26
 				days = 1
-				random = 18
+				random_hours = 18
 			}
 		}
 	}
@@ -3284,7 +3284,7 @@ country_event = { #Japan's resolution on trade
 			country_event = {
 				id = japfor.26
 				days = 1
-				random = 18
+				random_hours = 18
 			}
 		}
 	}
@@ -3402,7 +3402,7 @@ country_event = { #Japan's resolution on economic integration
 			country_event = {
 				id = japfor.26
 				days = 1
-				random = 18
+				random_hours = 18
 			}
 		}
 	}
@@ -3504,7 +3504,7 @@ country_event = { #Japan's resolution on military alliance
 			country_event = {
 				id = japfor.26
 				days = 1
-				random = 18
+				random_hours = 18
 			}
 		}
 	}
@@ -4069,7 +4069,7 @@ country_event = { #Philippines resists with foreign backing
 	is_triggered_only = yes
 
 	trigger = {
-		can_declare_war_on = "PHI"
+		can_declare_war_on = PHI
 	}
 
 	option = { #war
@@ -4082,7 +4082,7 @@ country_event = { #Philippines resists with foreign backing
 			}
 		}
 		declare_war_on = {
-			target = "PHI"
+			target = PHI
 			type = annex_everything
 		}
 	}
@@ -4095,7 +4095,7 @@ country_event = { #Philippines resists with foreign backing
 		event_target:philippines_backer = {
 			country_event = japfor.5701
 		}
-		"PHI" = {
+		PHI = {
 			country_event = japfor.5701
 		}
 	}
@@ -4125,13 +4125,13 @@ country_event = { #Philippines resists without backing
 	is_triggered_only = yes
 
 	trigger = {
-		can_declare_war_on = "PHI"
+		can_declare_war_on = PHI
 	}
 
 	option = { #war
 		name = japfor.58.a
 		declare_war_on = {
-			target = "PHI"
+			target = PHI
 			type = annex_everything
 		}
 	}
@@ -4147,33 +4147,33 @@ country_event = { #Philippines Surrenders!
 	is_triggered_only = yes
 
 	trigger = {
-		can_declare_war_on = "PHI"
+		can_declare_war_on = PHI
 	}
 
 	option = {
 		name = japfor.59.a
 		if = {
-			limit = { "PHI" = { has_socialist_government = yes } }
-			puppet = "PHI"
+			limit = { PHI = { has_socialist_government = yes } }
+			puppet = PHI
 		}
 		else = {
-			"PHI" = { get_current_government_type = yes }
-			puppet = "PHI"
-			"PHI" = { restore_previous_government_type = yes }
+			PHI = { get_current_government_type = yes }
+			puppet = PHI
+			PHI = { restore_previous_government_type = yes }
 		}
 		if = {
 			limit = { is_faction_leader = yes }
-			add_to_faction = "PHI"
+			add_to_faction = PHI
 		}
 	}
 
 	option = {
 		name = japfor.59.b
 		trigger = {
-			"PHI" = { is_ai = yes }
+			PHI = { is_ai = yes }
 		}
 		annex_country = {
-			target = "PHI"
+			target = PHI
 		}
 	}
 }
@@ -6915,40 +6915,6 @@ country_event = { #FROM Refuses Peace
 }
 
 ### Japan capitulates ###
-country_event = { #Fading Sun system event
-	id = japfor.250
-	immediate = { log = "[GetDateText]: [Root.GetName]: event japfor.250 FROM = [From.GetName]" }
-	hidden = yes
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	trigger = {
-		OR = {
-			is_faction_leader = yes
-			tag = event_target:was_faction_leader
-		}
-	}
-
-	option = {
-		JAP_fading_sun = yes
-		every_other_country = {
-			limit = {
-				is_in_faction_with = ROOT
-				is_subject = no
-				has_capitulated = no
-			}
-			faction_collapse_member_peace_effect = yes
-			country_event = japfor.251
-		}
-		if = {
-			limit = { is_in_faction = yes }
-			faction_leader = { dismantle_faction = yes }
-		}
-		news_event = { id = japfor.252 hours = 30 }
-	}
-}
-
 country_event = { #Inform former faction members of peace
 	id = japfor.251
 	immediate = { log = "[GetDateText]: [Root.GetName]: event japfor.251 FROM = [From.GetName]" }
@@ -7583,7 +7549,7 @@ country_event = { #Japan promotes investment
 			add_ideas = JAP_member_integration_1
 		}
 		hidden_effect = {
-			country_event = { id = japfor.406 days = 120 random = 1440 }
+			country_event = { id = japfor.406 days = 120 random_days = 60 }
 		}
 	}
 }
@@ -8152,8 +8118,8 @@ country_event = { #Japan and the Asian Economic Sphere embargo us!
 			}
 		}
 		add_ideas = JAP_trade_embargoed
-		add_opinion_modifier = { target = JAP modifier = embargo }
 		JAP = {
+			embargo_ROOT = yes
 			country_event = { id = japfor.451 days = 1 }
 		}
 	}
@@ -8185,7 +8151,7 @@ country_event = { #Japan and the Asian Economic Sphere embargo us!
 			base = 75
 		}
 		add_war_support = 0.05
-		declare_war_on = {
+		create_wargoal = {
 			target = FROM
 			type = annex_everything
 		}
@@ -8207,12 +8173,10 @@ country_event = { #Australia wants closer ties
 		custom_effect_tooltip = JAP_AST_joins_sphere
 		AST = {
 			country_event = austral.133
-		}
-		remove_opinion_modifier = { target = AST modifier = embargo }
-		hidden_effect = {
-			for_each_loop = {
+			clear_embargo_ROOT = yes
+			for_each_scope_loop = {
 				array = global.asian_economic_sphere
-				remove_opinion_modifier = { target = AST modifier = embargo }
+				clear_embargo_PREV = yes
 			}
 		}
 	}

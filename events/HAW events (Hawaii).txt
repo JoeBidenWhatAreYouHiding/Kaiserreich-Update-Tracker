@@ -351,8 +351,8 @@ country_event = { # the Hawaiian Revolution
 		hidden_effect = {
 			mark_focus_tree_layout_dirty = yes
 			complete_national_focus = HAW_revolution_succeeds
-			country_event = { id = hawaii.62 days = 360 random = 240 }
-			country_event = { id = hawaii.63 days = 85 random = 240 }
+			country_event = { id = hawaii.62 days = 360 random_days = 10 }
+			country_event = { id = hawaii.63 days = 85 random_days = 10 }
 		}
 	}
 }
@@ -494,9 +494,9 @@ country_event = { # The Declaration of a Republic
 			elections_allowed = yes
 		}
 		hidden_effect = {
-			country_event = { id = hawaii.31 days = 725 random = 240 }
-			country_event = { id = hawaii.32 days = 360 random = 240 }
-			country_event = { id = hawaii.33 days = 85 random = 240 }
+			country_event = { id = hawaii.31 days = 725 random_days = 10 }
+			country_event = { id = hawaii.32 days = 360 random_days = 10 }
+			country_event = { id = hawaii.33 days = 85 random_days = 10 }
 		}
 	}
 }
@@ -543,10 +543,10 @@ country_event = { # The Declaration of a Kingdom
 			mark_focus_tree_layout_dirty = yes
 			complete_national_focus = HAW_monarchy_restoration
 			country_event = { id = hawaii.17 days = 90 random_days = 180 }
-			country_event = { id = hawaii.23 days = 360 random = 240 }
-			country_event = { id = hawaii.24 days = 85 random = 240 }
-			country_event = { id = hawaii.25 days = 95 random = 240 }
-			country_event = { id = hawaii.26 days = 105 random = 240 }
+			country_event = { id = hawaii.23 days = 360 random_days = 10 }
+			country_event = { id = hawaii.24 days = 85 random_days = 10 }
+			country_event = { id = hawaii.25 days = 95 random_days = 10 }
+			country_event = { id = hawaii.26 days = 105 random_days = 10 }
 		}
 	}
 }
@@ -584,10 +584,10 @@ country_event = { # The Royal Hawaiian Tour
 		name = hawaii.17.a
 		add_political_power = 10
 		hidden_effect = {
-			BRA = { country_event = { id = hawaii.18 days = 85 random = 240 } } #Brazil
-			CAN = { country_event = { id = hawaii.20 days = 175 random = 240 } } #Canada
-			GER = { country_event = { id = hawaii.21 days = 265 random = 240 } } #Germany
-			JAP = { country_event = { id = hawaii.19 days = 360 random = 240 } } #Japan
+			BRA = { country_event = { id = hawaii.18 days = 85 random_days = 10 } } #Brazil
+			CAN = { country_event = { id = hawaii.20 days = 175 random_days = 10 } } #Canada
+			GER = { country_event = { id = hawaii.21 days = 265 random_days = 10 } } #Germany
+			JAP = { country_event = { id = hawaii.19 days = 360 random_days = 10 } } #Japan
 		}
 	}
 }

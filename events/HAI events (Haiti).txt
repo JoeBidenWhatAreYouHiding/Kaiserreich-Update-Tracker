@@ -634,8 +634,8 @@ country_event = { #1940 Elections
 		add_political_power = 50
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Parti Nationaliste"
-			name = "PN"
+			name = HAI_nationalist_party
+			long_name = HAI_nationalist_party_long
 		}
 		promote_character = HAI_stenio_vincent
 		set_politics = {
@@ -1002,15 +1002,10 @@ country_event = { #Bad shit in response to bitching out
 			country_event = {
 				id = hai.53
 				days = 90
-				random = 200
+				random_days = 200
 			}
 		}
 		promote_character = HAI_franck_lavaud
-		set_party_name = {
-			ideology = paternal_autocrat
-			long_name = "Junte"
-			name = "Junte"
-		}
 		set_politics = {
 			ruling_party = paternal_autocrat
 			elections_allowed = yes
@@ -1025,8 +1020,8 @@ country_event = { #Bad shit in response to bitching out
 		}
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Parti Nationaliste"
-			name = "PN"
+			name = HAI_nationalist_party
+			long_name = HAI_nationalist_party_long
 		}
 		add_popularity = {
 			ideology = national_populist
@@ -1318,7 +1313,7 @@ country_event = { ##Calixte Illegitimately Reelected
 			country_event = {
 				id = hai_civ.5
 				days = 7
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -1338,7 +1333,7 @@ country_event = { ##Lescot Gathers Support
 			country_event = {
 				id = hai_civ.6
 				days = 5
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -1358,7 +1353,7 @@ country_event = { ##Council Refuses to Ratify the election
 			country_event = {
 				id = hai_civ.7
 				days = 3
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -1380,7 +1375,7 @@ country_event = { ##Haitians Riot in the Streets
 			country_event = {
 				id = hai_civ.8
 				days = 3
-				random = 48
+				random_days = 2
 			}
 		}
 	}
@@ -1435,7 +1430,7 @@ country_event = { ##Lescot Declared Winner of the Election!
 			country_event = {
 				id = hai_les.2
 				days = 14
-				random = 48
+				random_days = 2
 			}
 		}
 		if = {
@@ -1544,8 +1539,8 @@ country_event = { ##Lescot's supporters counterprotest
 		retire_character = HAI_demosthenes_calixte
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Parti Nationaliste"
-			name = "PN"
+			name = HAI_nationalist_party
+			long_name = HAI_nationalist_party_long
 		}
 	}
 	option = { #destroy them
@@ -1557,7 +1552,7 @@ country_event = { ##Lescot's supporters counterprotest
 			country_event = {
 				id = hai_civ.8
 				days = 5
-				random = 36
+				random_hours = 36
 			}
 		}
 	}
@@ -1886,7 +1881,7 @@ country_event = { #Protesters clash in the streets!
 			country_event = {
 				id = hai_civ.8
 				days = 7
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -1913,8 +1908,8 @@ country_event = { #Protesters clash in the streets!
 		retire_character = HAI_demosthenes_calixte
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Parti Nationaliste"
-			name = "PN"
+			name = HAI_nationalist_party
+			long_name = HAI_nationalist_party_long
 		}
 	}
 }
@@ -2019,7 +2014,7 @@ country_event = { ##Calixte Chooses Government
 			country_event = {
 				id = hai_cal.7
 				days = 14
-				random = 10
+				random_days = 10
 			}
 		}
 	}
@@ -2047,8 +2042,8 @@ country_event = { ##Calixte Chooses Government
 		}
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Parti Nationaliste"
-			name = "PN"
+			name = HAI_nationalist_party
+			long_name = HAI_nationalist_party_long
 		}
 		unlock_national_focus = HAI_equality
 		hidden_effect = {
@@ -2125,7 +2120,7 @@ country_event = { ##Victory!
 			country_event = {
 				id = hai_cal.1
 				days = 14
-				random = 24
+				random_hours = 24
 			}
 			remove_targeted_decision = { target = THIS decision = HAI_regroup_and_retrain }
 			remove_targeted_decision = { target = THIS decision = HAI_raise_new_militias }
@@ -2209,8 +2204,8 @@ country_event = { ##Choosing a New Benefactor
 		}
 		set_party_name = {
 			ideology = radical_socialist
-			long_name = "Parti du Salut"
-			name = "PS"
+			name = HAI_social_democrat_party
+			long_name = HAI_social_democrat_party_long
 		}
 		add_popularity = {
 			ideology = radical_socialist
@@ -2292,7 +2287,7 @@ country_event = { ##Haitian Worlds fair
 			country_event = {
 				id = hai_cal.10
 				days = 100
-				random = 15
+				random_days = 15
 			}
 		}
 	}
@@ -2335,7 +2330,7 @@ country_event = { ##Haitian Worlds fair getting pricy
 			country_event = {
 				id = hai_cal.11
 				days = 150
-				random = 20
+				random_days = 20
 			}
 		}
 	}
@@ -2494,7 +2489,7 @@ country_event = { ##The Question of the Constitution
 			country_event = {
 				id = hai_les.4
 				days = 15
-				random = 50
+				random_days = 50
 			}
 
 			if = {
@@ -2504,25 +2499,25 @@ country_event = { ##The Question of the Constitution
 				country_event = {
 					id = hai_les.7
 					days = 90
-					random = 15
+					random_days = 15
 				}
 			}
 			else = {
 				country_event = {
 					id = hai_les.7
 					days = 360
-					random = 15
+					random_days = 15
 				}
 			}
 			country_event = {
 				id = hai_les.9
 				days = 360
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = hai_les.10
 				days = 180
-				random = 30
+				random_days = 30
 			}
 		}
 	}
@@ -2658,7 +2653,7 @@ country_event = { ##Victory
 			country_event = {
 				id = hai_les.2
 				days = 14
-				random = 24
+				random_days = 24
 			}
 			remove_targeted_decision = { target = THIS decision = HAI_regroup_and_retrain }
 			remove_targeted_decision = { target = THIS decision = HAI_raise_new_militias }
@@ -2667,8 +2662,8 @@ country_event = { ##Victory
 		}
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Parti Nationaliste"
-			name = "PN"
+			name = HAI_nationalist_party
+			long_name = HAI_nationalist_party_long
 		}
 		promote_character = HAI_stenio_vincent
 		if = {

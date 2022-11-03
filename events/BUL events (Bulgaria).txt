@@ -3368,7 +3368,6 @@ country_event = {
 				country_event = { id = bulfor.14 days = 1 }
 			}
 		}
-		set_country_flag = BUL_no_cancelling_now
 	}
 }
 country_event = {
@@ -3423,7 +3422,10 @@ country_event = {
 			country_event = { id = bulfor.10 days = 3 }
 			OTT = { country_event = { id = bulfor.10 days = 3 } }
 		}
-		set_global_flag = BUL_OTT_accepted_alliance
+		add_relation_modifier = {
+			target = TUR
+			modifier = volunteer_limit_plus_three
+		}
 	}
 	option = {
 		name = bulfor.9.b
@@ -3499,6 +3501,10 @@ country_event = {
 
 	option = {
 		name = bulfor.11.a
+		add_relation_modifier = {
+			target = BUL
+			modifier = volunteer_limit_plus_three
+		}
 	}
 }
 country_event = {
@@ -3594,13 +3600,9 @@ country_event = {
 		}
 		OTT = {
 			country_event = bulfor.16
-			country_event = {
-				id = ottkem.63
-				days = 7
-			}
-			country_event = {
-				id = ottkem.64
-				days = 60
+			hidden_effect = {
+				country_event = { id = ottkem.63 days = 7 }
+				country_event = { id = ottkem.64 days = 60 }
 			}
 		}
 	}
@@ -3797,32 +3799,11 @@ country_event = { #FROM has accepted
 	option = { #A toast to our new-faction-leader friends
 		name = bulfor.22.a
 		add_war_support = 0.05
-		FROM = {
-			if = {
-				limit = {
-					is_in_faction = yes
-					is_in_faction_with = GER #To allow for DAB merged w/ RP
-					is_faction_leader = no
-				}
-				set_country_flag = AUS_former_faction_member
-				faction_leader = { add_to_faction = ROOT }
-			}
-			else_if = {
-				limit = {
-					is_in_faction = yes
-					OR = {
-						is_in_faction_with = RUS #To allow for SER in the MA
-						is_in_faction_with = INT #To allow for SER in INT
-						is_in_faction_with = SOV #To allow for SER in EFTI
-					}
-					is_faction_leader = no
-				}
-				faction_leader = { add_to_faction = ROOT }
-			}
-			else = {
-				add_to_faction = ROOT
-			}
+		if = {
+			limit = { FROM = { original_tag = AUS } }
+			set_country_flag = AUS_former_faction_member
 		}
+		FROM = { faction_leader = { add_to_faction = ROOT } }
 	}
 }
 

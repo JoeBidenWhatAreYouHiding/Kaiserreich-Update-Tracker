@@ -989,7 +989,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_Blanqui_Research_Institute"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2741,15 +2741,10 @@ focus_tree = {
 				country_event = comfrance.165
 			}
 			hidden_effect = {
-				if = {
-					limit = { date > 1938.08.21 }
-					hidden_effect = {
-						country_event = {
-							id = comfrance.164
-							days = 15
-							random = 360
-						}
-					}
+				country_event = {
+					id = comfrance.164
+					days = 15
+					random_days = 30
 				}
 				NFA = {
 					country_event = {

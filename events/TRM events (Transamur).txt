@@ -2062,13 +2062,9 @@ country_event = { #We join the Entente Cordiale
 	option = {
 		name = tram.1001.a #This time we will win!
 		add_stability = 0.06
-		add_opinion_modifier = {
-			target = FRA
-			modifier = embargo
-		}
-		add_opinion_modifier = {
-			target = ENG
-			modifier = embargo
+		every_other_country = {
+			limit = { is_in_faction_with = INT }
+			embargo_ROOT = yes
 		}
 	}
 }

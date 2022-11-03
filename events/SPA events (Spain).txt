@@ -1021,6 +1021,7 @@ country_event = {
 			random_owned_controlled_state = { transfer_state_to = SPR }
 			SPR = {
 				inherit_technology = SPA
+				set_cosmetic_tag = SPA_carlists_kingdom
 				set_country_flag = election_success
 				add_stability = 0.10
 				change_tag_from = SPK

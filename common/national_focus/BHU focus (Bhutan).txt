@@ -571,7 +571,7 @@ focus_tree = {
 					add_ideas = BHU_Reformed_Bureaucracy_3
 				}
 			}
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			hidden_effect = {
 				BHU = {
 					country_event = {
@@ -1067,7 +1067,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus bhu_fund_monastic_schools"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			swap_ideas = {
 				remove_idea = BHU_Buddhist_Edu_1
 				add_idea = BHU_Buddhist_Edu_2

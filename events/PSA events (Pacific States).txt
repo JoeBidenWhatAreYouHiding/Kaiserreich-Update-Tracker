@@ -477,7 +477,9 @@ country_event = { # Pacific Movement of the Eastern World Uncovered
 	}
 
 	immediate = {
-		country_event = { id = pacificstates.65 days = 25 random = 240 }
+		hidden_effect = {
+			country_event = { id = pacificstates.65 days = 25 random_days = 10 }
+		}
 	}
 
 	option = { # Flavor
@@ -489,8 +491,8 @@ country_event = { # Pacific Movement of the Eastern World Uncovered
 country_event = { # Mormon Church and Politics
 	id = pacificstates.65
 	immediate = { log = "[GetDateText]: [Root.GetName]: event pacificstates.65 FROM = [From.GetName]" }
-	title = pacificstates.64.t
-	desc = pacificstates.64.d
+	title = pacificstates.65.t
+	desc = pacificstates.65.d
 	picture = GFX_report_event_generic_diplomacy2
 
 	is_triggered_only = yes

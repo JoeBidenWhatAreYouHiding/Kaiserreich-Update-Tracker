@@ -10753,10 +10753,6 @@ defined_text = {
 		localization_key = VICTORY_POINTS_11108
 	}
 	text = {
-		trigger = { is_french_speaking_tag = yes }
-		localization_key = VICTORY_POINTS_11108_FRENCH
-	}
-	text = {
 		localization_key = VICTORY_POINTS_11108
 	}
 }
@@ -13509,20 +13505,6 @@ defined_text = {
 	name = GetVictoryPointName_12977
 	text = {
 		localization_key = VICTORY_POINTS_12977
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_12983
-	text = {
-		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
-		localization_key = VICTORY_POINTS_12983
-	}
-	text = {
-		trigger = { is_quechua_speaking_tag = yes }
-		localization_key = VICTORY_POINTS_12983_QUECHUA
-	}
-	text = {
-		localization_key = VICTORY_POINTS_12983
 	}
 }
 defined_text = {

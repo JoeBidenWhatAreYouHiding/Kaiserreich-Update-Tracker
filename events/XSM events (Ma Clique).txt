@@ -224,9 +224,7 @@ country_event = { #Suiyuan status
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = mac.10 days = 20 random = 240
-			}
+			country_event = { id = mac.10 days = 20 random_days = 10 }
 		}
 	}
 
@@ -323,9 +321,7 @@ country_event = { #Bufang wants to publish Recent Events in Yushu
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = mac.13 days = 21 random = 144
-			}
+			country_event = { id = mac.13 days = 21 random_days = 6 }
 		}
 	}
 
@@ -1030,23 +1026,61 @@ country_event = { #Mas win
 		declare_war_on = { target = TIB type = annex_everything }
 		TIB = { country_event = mac.203 }
 		custom_effect_tooltip = XSM_deploy_yushu
-		if = {
-			limit = { has_country_flag = XSM_ma_biao_in_yushu }
-			hidden_effect = { load_oob = XSM_yushu_garrison_large_biao }
-			random_character = {
-				limit = { is_character = XSM_ma_biao }
-				add_corps_commander_role = {
-					traits = { urban_assault_specialist politically_connected }
-					skill = 3
-					attack_skill = 2
-					defense_skill = 3
-					planning_skill = 2
-					logistics_skill = 3
+		hidden_effect = {
+			### Delete templates - no cheating
+			if = {
+				limit = { has_template = "Yushu Garrison" }
+				delete_unit_template_and_units = { division_template = "Yushu Garrison" disband = yes }
+			}
+			### Create templates
+			division_template = {
+				name = "Yushu Garrison"
+				division_names_group = XSM_MIL_01
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+					irregular_infantry = { x = 1 y = 0 }
+					irregular_infantry = { x = 1 y = 1 }
 				}
 			}
-		}
-		else = {
-			hidden_effect = { load_oob = XSM_yushu_garrison_large }
+			### Create divisions
+			if = {
+				limit = { has_country_flag = XSM_ma_biao_in_yushu }
+				random_owned_controlled_state = {
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					prioritize = { 353 }
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+				}			
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					prioritize = { 353 }
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+						owner = ROOT
+					}
+				}	
+			}
 		}
 		hidden_effect = {
 			news_event = { id = mac.224 days = 1 }
@@ -1122,30 +1156,86 @@ country_event = { #Tie
 		declare_war_on = { target = TIB type = annex_everything }
 		TIB = { country_event = mac.205 }
 		custom_effect_tooltip = XSM_deploy_yushu
-		if = {
-			limit = { has_country_flag = XSM_ma_biao_in_yushu }
-			hidden_effect = { load_oob = XSM_yushu_garrison_small_biao }
-			random_character = {
-				limit = { is_character = XSM_ma_biao }
-				add_corps_commander_role = {
-					traits = { urban_assault_specialist politically_connected }
-					skill = 3
-					attack_skill = 2
-					defense_skill = 3
-					planning_skill = 2
-					logistics_skill = 3
+		hidden_effect = {
+			### Delete templates - no cheating
+			if = {
+				limit = { has_template = "Yushu Garrison" }
+				delete_unit_template_and_units = { division_template = "Yushu Garrison" disband = yes }
+			}
+			### Create templates
+			division_template = {
+				name = "Yushu Garrison"
+				division_names_group = XSM_MIL_01
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+					irregular_infantry = { x = 1 y = 0 }
+					irregular_infantry = { x = 1 y = 1 }
 				}
 			}
-		}
-		else = {
-			hidden_effect = { load_oob = XSM_yushu_garrison_small }
+			### Create divisions
+			if = {
+				limit = { has_country_flag = XSM_ma_biao_in_yushu }
+				random_owned_controlled_state = {
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					prioritize = { 353 }
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+				}			
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					prioritize = { 353 }
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+						owner = ROOT
+					}
+				}	
+			}
 		}
 		hidden_effect = {
 			TIB = {
-				load_oob = TIB_yushu_raiders_small
 				set_province_controller = 4914
 				set_province_controller = 12899
 				set_province_controller = 4964
+				hidden_effect = {
+					### Delete templates - no cheating
+					if = {
+						limit = { has_template = "Yushu Raiders" }
+						delete_unit_template_and_units = { division_template = "Yushu Raiders" disband = yes }
+					}
+					### Create templates
+					division_template = {
+						name = "Yushu Raiders"
+						division_names_group = TIB_GAR_01
+						regiments = {
+							irregular_infantry = { x = 0 y = 0 }
+							irregular_infantry = { x = 0 y = 1 }
+							irregular_infantry = { x = 1 y = 0 }
+							irregular_infantry = { x = 1 y = 1 }
+						}
+					}
+					### Create divisions
+					random_owned_controlled_state = {
+						limit = { valid_state_for_spawning_friendly_unit = yes }
+						prioritize = { 788 }
+						create_unit = {
+							division = "division_template = \"Yushu Raiders\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+							owner = TIB
+						}
+					}
+				}
 			}
 			QIE = {
 				activate_targeted_decision = { target = XSM decision = QIE_send_guns_to_mas }
@@ -1225,7 +1315,35 @@ country_event = { #Tibet wins
 			country_event = mac.203
 		}
 		hidden_effect = {
-			load_oob = TIB_yushu_raiders_large
+			### Delete templates - no cheating
+			if = {
+				limit = { has_template = "Yushu Raiders" }
+				delete_unit_template_and_units = { division_template = "Yushu Raiders" disband = yes }
+			}
+			### Create templates
+			division_template = {
+				name = "Yushu Raiders"
+				division_names_group = TIB_GAR_01
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+					irregular_infantry = { x = 1 y = 0 }
+					irregular_infantry = { x = 1 y = 1 }
+				}
+			}
+			### Create divisions
+			random_owned_controlled_state = {
+				limit = { valid_state_for_spawning_friendly_unit = yes }
+				prioritize = { 353 }
+				create_unit = {
+					division = "division_template = \"Yushu Raiders\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "division_template = \"Yushu Raiders\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+					owner = ROOT
+				}
+			}
 			news_event = { id = mac.224 days = 1 }
 			QIE = {
 				activate_targeted_decision = { target = XSM decision = QIE_send_guns_to_mas }

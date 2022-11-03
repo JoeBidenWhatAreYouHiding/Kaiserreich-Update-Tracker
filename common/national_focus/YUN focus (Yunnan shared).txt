@@ -477,7 +477,7 @@ shared_focus = {
 		}
 		hidden_effect = {
 			country_event = { id = yun.317 days = 40 }
-			country_event = { id = yun.319 days = 200 random = 80 }
+			country_event = { id = yun.319 days = 200 random_days = 80 }
 		}
 	}
 }
@@ -554,7 +554,7 @@ shared_focus = {
 		}
 		hidden_effect = {
 			country_event = { id = yun.317 days = 40 }
-			country_event = { id = yun.319 days = 200 random = 80 }
+			country_event = { id = yun.319 days = 200 random_days = 80 }
 			#activating sinicization/colonising decisions for Shan and Kachin
 			hidden_effect = {
 				activate_targeted_decision = { decision = YUN_begin_colonize_kachin target = 701 }
@@ -3166,7 +3166,7 @@ shared_focus = {
 	relative_position_id = YUN_Develop_East_Continent_University
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_National_Southwestern_Associated_University"
-		SZC_add_research_slot = yes
+		add_research_slot_until_four = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }
@@ -4286,7 +4286,7 @@ shared_focus = {
 			set_cosmetic_tag = YUN_CHI_ROC
 		}
 		add_political_power = 100
-		SZC_add_research_slot = yes
+		add_research_slot_until_four = yes
 		#load_focus_tree = { tree = YUN_KMT_United_Tree }
 		set_capital = { state = 608 remember_old_capital = no } #Beijing
 		if = {
@@ -4839,7 +4839,7 @@ shared_focus = {
 	relative_position_id = YUN_CHI_the_new_capital
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_CHI_academia_sinica"
-		SZC_add_research_slot = yes
+		add_research_slot_until_four = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }

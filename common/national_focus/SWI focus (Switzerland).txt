@@ -1910,7 +1910,7 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -3836,7 +3836,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SWI_swiss_miracle"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -3880,12 +3880,6 @@ focus_tree = {
 				popularity = 0.20
 			}
 			add_ideas = command_economy
-			every_country = {
-				reverse_add_opinion_modifier = {
-					target = SWI
-					modifier = embargo
-				}
-			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 	}

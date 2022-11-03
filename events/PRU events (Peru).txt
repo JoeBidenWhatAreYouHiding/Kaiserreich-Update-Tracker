@@ -936,7 +936,6 @@ country_event = {
 			set_province_controller = 8191
 			set_province_controller = 13297
 			set_province_controller = 2226
-			BRA = { country_event = { id = bra.141 days = 2 random_days = 4 } }
 			clear_global_event_target = quechua
 		}
 	}

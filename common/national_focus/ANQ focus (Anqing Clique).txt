@@ -265,7 +265,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ANQ_tokyo_university_exchange_program"
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 			custom_effect_tooltip = anq_increase_jap_1
 			add_to_variable = { ANQ_tokyo_score = 1 }
 			if = {
@@ -1329,7 +1329,7 @@ focus_tree = {
 				ANQ_remove_beijing_spirit = yes
 				ANQ_calculate_beijing_level = yes
 				ANQ_add_beijing_spirit = yes
-				country_event = { id = anq.73 days = 50 random = 20 }
+				country_event = { id = anq.73 days = 50 random_days = 20 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -1419,7 +1419,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ANQ_academia_sinica"
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

@@ -67,8 +67,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_adnan_menderes
 			available = {
 				has_authoritarian_government = no
@@ -331,8 +329,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_sultanzade_mehmed_sabahaddin_advisor
 			available = {
 				not_already_hired_except_as = political_advisor
@@ -454,8 +450,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_mehmet_nuri_conker
 			available = {
 				has_authoritarian_government = yes
@@ -472,8 +466,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_falih_rifki_atay
 			available = {
 				has_authoritarian_government = yes
@@ -490,8 +482,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_mahmut_esat_bozkurt
 			available = {
 				has_government = national_populist
@@ -508,8 +498,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_ali_kemal_kuneralp
 			available = {
 				has_authoritarian_government = no
@@ -526,8 +514,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_mehmet_cavit_yalcin
 			available = {
 				has_authoritarian_government = no
@@ -544,8 +530,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_mustafa_vasif_karakol
 			traits = { KR_secret_police_chief }
 		}
@@ -559,8 +543,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_yusuf_kemal_tengirsenk
 			traits = { KR_interventionist_economist }
 		}
@@ -576,8 +558,6 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			available = { is_country_leader = no }
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_yakup_kadri_karaosmanoglu
 			traits = { KR_health_and_safety_adherent }
 		}
@@ -591,8 +571,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_ismail_hakki_canbulat
 			traits = { KR_administrative_genius }
 		}
@@ -606,8 +584,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_ahmet_naci_tinaz
 			traits = { KR_crime_fighter }
 		}
@@ -631,8 +607,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_riza_nur
 			traits = { KR_naive_optimist }
 		}
@@ -646,8 +620,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_mehmed_sukru_saracoglu
 			available = {
 				has_authoritarian_government = yes
@@ -664,8 +636,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_resat_muhlis_erkmen
 			traits = { KR_agricultural_economist }
 		}
@@ -679,8 +649,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_suleiman_sirri_aral
 			traits = { KR_captain_of_industry }
 		}
@@ -694,8 +662,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_yunus_nadi_abalioglu
 			traits = { KR_backroom_backstabber }
 		}
@@ -709,8 +675,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_fatin_rustu_zorlu
 			traits = { KR_austere_finance_advocate }
 		}
@@ -724,8 +688,6 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 			idea_token = TUR_husnu_bingol
 			traits = { KR_head_of_intelligence }
 			allowed = {

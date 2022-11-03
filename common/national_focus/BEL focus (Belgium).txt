@@ -540,13 +540,7 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BEL_Create_Free_Education"
-			if = {
-				limit = { amount_research_slots > 4 }
-				add_ideas = BEL_State_Funded_Research
-			}
-			else = {
-				add_research_slot = 1
-			}
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2114,13 +2108,7 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus BEL_Repair_Leuven_Library"
-		if = {
-			limit = { amount_research_slots > 4 }
-			add_ideas = BEL_State_Funded_Research
-		}
-		else = {
-			add_research_slot = 1
-		}
+		add_research_slot_until_five = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }
@@ -3648,13 +3636,7 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus BEL_Cooperation_with_the_Universities"
-		if = {
-			limit = { amount_research_slots > 4 }
-			add_ideas = BEL_State_Funded_Research
-		}
-		else = {
-			add_research_slot = 1
-		}
+		add_research_slot_until_five = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }

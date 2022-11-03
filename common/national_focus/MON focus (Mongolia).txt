@@ -2037,7 +2037,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MON_promote_cooperation_between_us"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_opinion_modifier = {
 				target = RUS
 				modifier = MON_cooperation_opinion
@@ -2178,7 +2178,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MON_ready_for_war"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_war_support = 0.10
 			add_manpower = 10000
 		}
@@ -2513,7 +2513,7 @@ focus_tree = {
 			set_temp_variable = { ideology_change_var = 0.05 }
 			change_ruling_party_popularity = yes
 			add_political_power = -50
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
 	}
@@ -3729,7 +3729,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MON_remembering_our_history"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			swap_ideas = {
 				remove_idea = MON_mongol_nationalism_idea
 				add_idea = MON_mongol_nationalism_idea2
@@ -4017,7 +4017,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MON_teach_in_monasteries"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

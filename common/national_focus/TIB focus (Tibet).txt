@@ -249,16 +249,7 @@ focus_tree = {
 		y = 2
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TIB_invite_kk"
-			if = {
-				limit = { amount_research_slots < 3 }
-				add_research_slot = 1
-			}
-			else = {
-				add_timed_idea = {
-					idea = SZC_increased_research_efforts
-					days = 365
-				}
-			}
+			add_research_slot_until_four = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -635,12 +626,6 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = 0.15
 			add_ideas = command_economy
-			every_country = {
-				reverse_add_opinion_modifier = {
-					target = TIB
-					modifier = embargo
-				}
-			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 	}
@@ -976,22 +961,16 @@ focus_tree = {
 		relative_position_id = TIB_foreign_assistance
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TIB_qing_focus"
-			add_to_tech_sharing_group = entente_research
+			add_research_slot_until_four = yes
+			if = {
+				limit = { has_dlc_tfv = yes }
+				add_to_tech_sharing_group = entente_research
+			}
 			add_tech_bonus = {
 				name = TIB_qing_focus
 				bonus = 1
 				uses = 1
 				category = electronics
-			}
-			if = {
-				limit = { amount_research_slots < 3 }
-				add_research_slot = 1
-			}
-			else = {
-				add_timed_idea = {
-					idea = SZC_increased_research_efforts
-					days = 365
-				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }

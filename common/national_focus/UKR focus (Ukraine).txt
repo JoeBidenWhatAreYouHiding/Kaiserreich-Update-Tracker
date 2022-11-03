@@ -353,7 +353,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus UKR_Friendship_Nations"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -908,7 +908,7 @@ focus_tree = {
 				country_event = {
 					id = ukraine.68
 					days = 20
-					random = 480
+					random_days = 20
 				}
 			}
 		}
@@ -1036,7 +1036,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus UKR_New_Scientists"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

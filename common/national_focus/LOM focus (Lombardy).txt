@@ -436,7 +436,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LOM_crown_king"
 			set_cosmetic_tag = LOM_kingdom
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			hidden_effect = {
 				news_event = lombardy.5
 			}
@@ -897,7 +897,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LOM_republic_triumphant"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1166,7 +1166,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LOM_education_reform"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			if = {
 				limit = {
 					NOT = {

@@ -3653,8 +3653,30 @@ country_event = { #Haiti hears of parsley
 			type = annex_everything
 		}
 		custom_effect_tooltip = DOMHAI_volunteers
-		hidden_effect = {
-			load_oob = HAI_parsley
+		hidden_effect = {		
+			### Delete templates if existed before - no cheating
+			if = {
+				limit = { has_template = "Brigade des Volontaires Haïtiens" }
+				delete_unit_template_and_units = { division_template = "Brigade des Volontaires Haïtiens" disband = yes }
+			}
+			### Create templates
+			division_template = {
+				name = "Brigade des Volontaires Haïtiens"
+				division_names_group = FREN_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+				}
+				template_counter = 68
+			}
+			### Create divisions
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Brigade des Volontaires Haïtiens\" start_experience_factor = 0.05"
+					owner = ROOT
+				}
+			}
 			DOM = {
 				country_event = {
 					id = domrep.70
@@ -4498,10 +4520,8 @@ country_event = { #COS war ready
 			type = topple_government
 			target = DOM
 		}
-		hidden_effect = {
-			load_oob = COSDOM_demrebels
-		}
 		custom_effect_tooltip = DOMCOS_reb_tooltip
+		hidden_effect = { COS_create_democratic_rebels_divisions = yes }
 		add_timed_idea = {
 			idea = DOM_cosinvasion_idea
 			days = 10

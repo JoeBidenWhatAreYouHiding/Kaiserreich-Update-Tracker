@@ -498,7 +498,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ASY_Basra_University"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			remove_ideas = ASY_Technical_Illiteracy2
 		}
 	}
@@ -1754,7 +1754,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ASY_port_basra_naval_college"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {

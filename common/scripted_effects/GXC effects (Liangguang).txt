@@ -91,7 +91,7 @@ GXC_spawn_liangguang_clique = {
 
 #scope is destination
 GXC_move_new_guangxi_clique_characters = {
-	GXC = {
+	event_target:original_liangguang = {
 		GXC_li_zongren = { set_nationality = PREV.PREV }
 		GXC_bai_chongxi = { set_nationality = PREV.PREV }
 		GXC_yu_zuobai = { set_nationality = PREV.PREV }
@@ -100,7 +100,7 @@ GXC_move_new_guangxi_clique_characters = {
 
 #scope is destination
 GXC_move_old_guangxi_clique_characters = {
-	GXC = {
+	event_target:original_liangguang = {
 		GXC_ma_ji = { set_nationality = PREV.PREV }
 		GXC_lu_yuguang = { set_nationality = PREV.PREV }
 	}
@@ -108,7 +108,7 @@ GXC_move_old_guangxi_clique_characters = {
 
 #scope is destination
 GXC_move_federalist_generals = {
-	GXC = {
+	event_target:original_liangguang = {
 		GXC_chen_jiongming = { set_nationality = PREV.PREV }
 		GXC_lin_hu = { set_nationality = PREV.PREV }
 		GXC_hong_zhaolin = { set_nationality = PREV.PREV }
@@ -141,6 +141,7 @@ setup_rebel_guangxi = {
 		}
 
 		#start the civil war
+		civil_war_set_flag_to_restore_elections = yes
 		start_civil_war = {
 			### basics ###
 			ideology = var:guangxi_ideology
@@ -274,6 +275,7 @@ setup_rebel_guangdong = {
 		}
 
 		#start the civil war
+		civil_war_set_flag_to_restore_elections = yes
 		start_civil_war = {
 			### basics ###
 			ruling_party = var:guangxi_ideology
@@ -682,7 +684,7 @@ GXC_federalists_flee = {
 					country_event = {
 						id = sichuan.511
 						days = 20
-						random = 480
+						random_days = 20
 					}
 				}
 			}
@@ -691,7 +693,7 @@ GXC_federalists_flee = {
 					country_event = {
 						id = lechotung.21
 						days = 2
-						random = 120
+						random_days = 5
 					}
 				}
 			}

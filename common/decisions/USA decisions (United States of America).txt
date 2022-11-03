@@ -1484,11 +1484,11 @@ USA_reconstruction_decisions = {# Reconstruction Stuff
 		allowed = { original_tag = CSA }
 		available = {
 			is_subject = no
-			NOT = { is_in_faction_with = "PHI" }
+			NOT = { is_in_faction_with = PHI }
 		}
 		visible = {
 			797 = { is_owned_and_controlled_by = ROOT }
-			"PHI" = {
+			PHI = {
 				exists = yes
 				is_in_faction = no
 				has_socialist_government = yes
@@ -1507,8 +1507,8 @@ USA_reconstruction_decisions = {# Reconstruction Stuff
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision CSA_protect_philippines"
-			effect_tooltip = { give_guarantee = "PHI" }
-			"PHI" = { country_event = { id = csa.104 days = 1 } }
+			effect_tooltip = { give_guarantee = PHI }
+			PHI = { country_event = { id = csa.104 days = 1 } }
 		}
 	}
 

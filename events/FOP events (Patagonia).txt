@@ -3215,6 +3215,10 @@ country_event = {#First Socialist Party Elections
 	immediate = {
 		hidden_effect = {
 			country_event = { id = fop.335 months = 72 }
+			ARG = {
+				ARG_nicolas_repetto = { set_nationality = PREV.PREV }
+				ARG_alicia_moreau = { set_nationality = PREV.PREV }
+			}
 		}
 	}
 	title = fop.334.t
@@ -3260,15 +3264,6 @@ country_event = {#Second Socialist Party Elections
 	picture = GFX_report_event_JAP_voting
 
 	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			ARG = {
-				ARG_alicia_moreau = { set_nationality = PREV.PREV }
-				ARG_nicolas_repetto = { set_nationality = PREV.PREV }
-			}
-		}
-	}
 
 	option = {#Palacios Remains
 		name = fop.335.a
@@ -3352,6 +3347,10 @@ country_event = {#First Socialist Republic Elections
 			ARG = {
 				ARG_elpidio_gonzalez = { set_nationality = PREV.PREV }
 				ARG_robustiano_costas = { set_nationality = PREV.PREV }
+				ARG_alicia_moreau = { set_nationality = PREV.PREV }
+				ARG_nicolas_repetto = { set_nationality = PREV.PREV }
+				ARG_arturo_frondizi = { set_nationality = PREV.PREV }
+				ARG_ricardo_balbin = { set_nationality = PREV.PREV }
 			}
 			country_event = { id = fop.338 months = 72 }
 			country_event = { id = fop.339 months = 68 }
@@ -3432,17 +3431,6 @@ country_event = {#Second Socialist Republic Elections
 	picture = GFX_report_event_JAP_voting
 
 	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			ARG = {
-				ARG_alicia_moreau = { set_nationality = PREV.PREV }
-				ARG_nicolas_repetto = { set_nationality = PREV.PREV }
-				ARG_arturo_frondizi = { set_nationality = PREV.PREV }
-				ARG_ricardo_balbin = { set_nationality = PREV.PREV }
-			}
-		}
-	}
 
 	option = {#PS wins
 		name = fop.338.a
@@ -5596,22 +5584,11 @@ country_event = { #Expeditionary Force Returns to France (FRA)
 		name = fopcoup.43.a
 		if = {
 			limit = { NOT = { has_character = FRA_nestor_makhno } }
-			FRA_nestor_makhno = { set_nationality = ROOT }
-			add_advisor_role = {
-				character = FRA_nestor_makhno
-				advisor = {
-					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
-					idea_token = FRA_nestor_makhno_advisor
-					available = {
-						has_government = radical_socialist
-					}
-					traits = { KR_modern_dombrowvski }
-					ai_will_do = {
-						factor = 1
-					}
-				}
+			FRA = { FRA_nestor_makhno = { set_nationality = ROOT } }
+			if = {
+				limit = { tag = FRA }
+				custom_effect_tooltip = available_political_advisor
+				show_ideas_tooltip = FRA_nestor_makhno_political_advisor
 			}
 		}
 		if = {

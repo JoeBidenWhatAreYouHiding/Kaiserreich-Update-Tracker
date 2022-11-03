@@ -22,7 +22,7 @@ country_event = { # loop event for unit desertions during ARG-CHL war (donotlog)
 	}
 
 	immediate = {
-		country_event = { id = arg_chl_war.100 days = 24 random = 24 random_days = 10 }
+		country_event = { id = arg_chl_war.100 days = 24 random_days = 10 random_hours = 24 }
 	}
 
 	option = {
@@ -3433,7 +3433,7 @@ country_event = { #Navy surrenders
 				id = argdem.1
 				days = 16
 			}
-			load_oob = ARG_OOB
+			ARG_create_starting_divisions = yes
 			if = {
 				limit = {
 					has_country_flag = ARG_gendarmeria_expanded
@@ -3508,7 +3508,7 @@ country_event = { #Carles instates cabinet
 	option = {
 		name = argcar.12.a
 		hidden_effect = {
-			load_oob = ARG_OOB
+			ARG_create_starting_divisions = yes
 			if = {
 				limit = {
 					has_country_flag = ARG_gendarmeria_expanded

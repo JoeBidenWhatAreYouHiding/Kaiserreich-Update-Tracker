@@ -724,7 +724,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NIC_rebuild_academy"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1465,7 +1465,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NIC_revolutionary_guerilla_academy"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_doctrine_cost_reduction = {
 				name = NIC_revolutionary_guerilla_academy
 				cost_reduction = 0.5
@@ -2706,7 +2706,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NIC_central_university"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

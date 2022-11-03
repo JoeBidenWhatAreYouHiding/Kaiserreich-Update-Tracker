@@ -38,7 +38,7 @@ political_actions = {
 			964 = { remove_claim_and_add_core_of_ROOT = yes }
 			hidden_effect = {
 				remove_targeted_decision = { decision = SAF_core_south_west target = NMB }
-				country_event = { id = saf.314 days = 90 random = 30 }
+				country_event = { id = saf.314 days = 90 random_days = 30 }
 			}
 		}
 	}
@@ -75,7 +75,7 @@ political_actions = {
 				set_state_name = STATE_950_SOUTH_AFRICAN
 			}
 			hidden_effect = {
-				country_event = { id = saf.313 days = 90 random = 30 }
+				country_event = { id = saf.313 days = 90 random_days = 30 }
 			}
 		}
 	}

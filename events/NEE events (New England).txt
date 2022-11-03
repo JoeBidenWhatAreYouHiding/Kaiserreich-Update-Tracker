@@ -271,7 +271,7 @@ country_event = { # Canada Debates Question of New England
 			set_variable = {
 				CAN_yankee_rebellion = 0
 			}
-			country_event = { id = newengland.80 days = 25 random = 240 }
+			country_event = { id = newengland.80 days = 25 random_days = 10 }
 			if = {
 				limit = { has_dlc_lar = yes	}
 				CAN = {
@@ -310,32 +310,30 @@ country_event = { # Independent New England
 			country_event = {
 				id = newengland.54
 				days = 200
-				random = 100
+				random_days = 100
 			}
 			country_event = { #This should probably get moved to the USA history file later so a more concrete date may be set.
 				id = newengland.64
 				days = 1100
-				random = 1000
 			}
 			country_event = {
 				id = newengland.59
 				days = 600
-				random = 3000
 			}
 			country_event = {
 				id = newengland.68
 				days = 60
-				random = 15
+				random_days = 15
 			}
 			country_event = {
 				id = newengland.151
 				days = 400
-				random = 45
+				random_days = 45
 			}
 			country_event = {
 				id = newengland.153
 				days = 245
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = newengland.159
@@ -746,18 +744,36 @@ country_event = { # RCAF crash - Aug 42
 				tag = CAN
 			}
 			add_manpower = -1
-			add_equipment_to_stockpile = {
-				type = small_plane_airframe_0
-				amount = -1
+			if = {
+				limit = { has_dlc_bba = yes }
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe_0
+					amount = -1
+				}
+			}	
+			else = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_0
+					amount = -1
+				}
 			}
 		}
 		else = {
 			effect_tooltip = {
 				CAN = {
 					add_manpower = -1
-					add_equipment_to_stockpile = {
-						type = small_plane_airframe_0
-						amount = -1
+					if = {
+						limit = { has_dlc_bba = yes }
+						add_equipment_to_stockpile = {
+							type = small_plane_airframe_0
+							amount = -1
+						}
+					}	
+					else = {
+						add_equipment_to_stockpile = {
+							type = fighter_equipment_0
+							amount = -1
+						}
 					}
 				}
 			}
@@ -1302,12 +1318,12 @@ country_event = { # Creation of the Railroad
 				country_event = { #Erie lake
 					id = newengland.51
 					days = 14
-					random = 168
+					random_days = 7
 				}
 				country_event = { #Monthly intake refugees
 					id = newengland.55
 					days = 60
-					random = 168
+					random_days = 7
 				}
 			}
 			if = { #TEX Refugees
@@ -1329,7 +1345,7 @@ country_event = { # Creation of the Railroad
 				country_event = { #Monthly intake refugees
 					id = newengland.56
 					days = 60
-					random = 168
+					random_days = 7
 				}
 			}
 		}
@@ -1367,14 +1383,14 @@ country_event = { # Refugees flood in from the Great Lakes (Underground Railroad
 				country_event = {
 					id = newengland.52
 					days = 14
-					random = 168
+					random_days = 7
 				}
 			}
 			34 = {
 				country_event = {
 					id = newengland.53
 					days = 8
-					random = 144
+					random_days = 6
 				}
 			}
 		}
@@ -1439,14 +1455,14 @@ country_event = { # Successful Smuggling action in the Great Lakes Region (Under
 				country_event = {
 					id = newengland.52
 					days = 25
-					random = 168
+					random_days = 7
 				}
 			}
 			34 = {
 				country_event = {
 					id = newengland.53
 					days = 8
-					random = 144
+					random_days = 6
 				}
 			}
 		}
@@ -1497,14 +1513,14 @@ country_event = { # Smuggling operation caught in the Great Lakes Region (Underg
 				country_event = {
 					id = newengland.52
 					days = 25
-					random = 168
+					random_days = 7
 				}
 			}
 			66 = {
 				country_event = {
 					id = newengland.53
 					days = 8
-					random = 144
+					random_days = 6
 				}
 			}
 		}
@@ -1564,7 +1580,7 @@ country_event = { # Migration Report CSA
 			country_event = {
 				id = newengland.55
 				days = 35
-				random = 72
+				random_days = 72
 			}
 			add_to_variable = {
 				var = NEE_ugr_csa_times
@@ -1604,7 +1620,7 @@ country_event = { # Migration Report TEX
 			country_event = {
 				id = newengland.56
 				days = 35
-				random = 72
+				random_days = 72
 			}
 			add_to_variable = {
 				var = NEE_ugr_tex_times
@@ -1643,7 +1659,7 @@ country_event = { # Pelley becomes President of the AUS
 			country_event = {
 				id = newengland.56
 				days = 35
-				random = 72
+				random_days = 72
 			}
 		}
 	}
@@ -1687,7 +1703,7 @@ country_event = { # Pelley becomes President of the AUS
 			country_event = {
 				id = newengland.58
 				days = 90
-				random = 150
+				random_days = 150
 			}
 		}
 	}
@@ -1716,7 +1732,7 @@ country_event = { # Unchecked Migration
 			country_event = {
 				id = newengland.56
 				days = 35
-				random = 72
+				random_days = 72
 			}
 		}
 	}
@@ -5173,8 +5189,6 @@ country_event = { # Kennedy Recalled
 			character = NEE_john_winant
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = NEE_john_winant
 				available = {
 					is_country_leader = no
@@ -5404,8 +5418,6 @@ country_event = { # Moffat Passes Away
 					character = NEE_ray_atherton
 					advisor = {
 						slot = political_advisor
-						on_add = { political_advisor_on_add = yes }
-						on_remove = { political_advisor_on_remove = yes }
 						idea_token = NEE_ray_atherton
 						visible = {
 							is_in_faction_with = ENT
@@ -5424,8 +5436,6 @@ country_event = { # Moffat Passes Away
 					character = NEE_ray_atherton
 					advisor = {
 						slot = political_advisor
-						on_add = { political_advisor_on_add = yes }
-						on_remove = { political_advisor_on_remove = yes }
 						idea_token = NEE_ray_atherton
 						visible = {
 							is_in_faction_with = ENT
@@ -5724,8 +5734,6 @@ country_event = { # Steinhardt Plane Crash
 					character = NEE_charles_yost
 					advisor = {
 						slot = political_advisor
-						on_add = { political_advisor_on_add = yes }
-						on_remove = { political_advisor_on_remove = yes }
 						idea_token = NEE_charles_yost
 						visible = {
 							is_in_faction_with = ENT
@@ -5744,8 +5752,6 @@ country_event = { # Steinhardt Plane Crash
 					character = NEE_charles_yost
 					advisor = {
 						slot = political_advisor
-						on_add = { political_advisor_on_add = yes }
-						on_remove = { political_advisor_on_remove = yes }
 						idea_token = NEE_charles_yost
 						visible = {
 							is_in_faction_with = ENT
@@ -8762,7 +8768,7 @@ country_event = { #PAN returns decision about the Panama Canal
 		}
 		add_political_power = -50
 		declare_war_on = {
-			target = "PAN"
+			target = PAN
 			type = annex_everything
 		}
 	}
@@ -8843,7 +8849,7 @@ country_event = { #NEE invites us into the OAS
 				}
 				count_triggers = {
 					amount = 1
-					"PAN" = { is_in_faction_with = NEE }
+					PAN = { is_in_faction_with = NEE }
 					COS = { is_in_faction_with = NEE }
 					GUA = { is_in_faction_with = NEE }
 					ELS = { is_in_faction_with = NEE }
@@ -8858,7 +8864,7 @@ country_event = { #NEE invites us into the OAS
 				}
 				count_triggers = {
 					amount = 2
-					"PAN" = { is_in_faction_with = NEE }
+					PAN = { is_in_faction_with = NEE }
 					COS = { is_in_faction_with = NEE }
 					GUA = { is_in_faction_with = NEE }
 					ELS = { is_in_faction_with = NEE }
@@ -8873,7 +8879,7 @@ country_event = { #NEE invites us into the OAS
 				}
 				count_triggers = {
 					amount = 4
-					"PAN" = { is_in_faction_with = NEE }
+					PAN = { is_in_faction_with = NEE }
 					COS = { is_in_faction_with = NEE }
 					GUA = { is_in_faction_with = NEE }
 					ELS = { is_in_faction_with = NEE }
@@ -11220,9 +11226,7 @@ country_event = { #PT 109
 			limit = {
 				has_country_flag = kennedy_line_disgraced
 			}
-			country_event = {
-				id = newengland.376 days = 187 random = 54
-			}
+			country_event = { id = newengland.376 days = 187 random_days = 54 }
 		}
 	}
 }
@@ -14107,8 +14111,6 @@ country_event = { # Replace Winant
 			character = NEE_jay_pierrepont_moffat
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = NEE_jay_pierrepont_moffat
 				visible = {
 					is_in_faction_with = ENT
@@ -14126,8 +14128,6 @@ country_event = { # Replace Winant
 				character = NEE_william_harriman
 				advisor = {
 					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
 					idea_token = NEE_william_harriman
 					available = {
 						is_country_leader = no
@@ -14164,8 +14164,6 @@ country_event = { # Replace Winant
 			character = NEE_william_harriman
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = NEE_william_harriman
 				available = {
 					is_country_leader = no
@@ -14186,8 +14184,6 @@ country_event = { # Replace Winant
 				character = NEE_jay_pierrepont_moffat
 				advisor = {
 					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
 					idea_token = NEE_jay_pierrepont_moffat
 					visible = {
 						is_in_faction_with = ENT
@@ -14213,8 +14209,6 @@ country_event = { # Replace Winant
 				character = NEE_jay_pierrepont_moffat
 				advisor = {
 					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
 					idea_token = NEE_jay_pierrepont_moffat
 					visible = {
 						is_in_faction_with = ENT
@@ -14230,8 +14224,6 @@ country_event = { # Replace Winant
 				character = NEE_william_harriman
 				advisor = {
 					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
 					idea_token = NEE_william_harriman
 					available = {
 						is_country_leader = no
@@ -14294,8 +14286,6 @@ country_event = {
 			character = NEE_charles_bohlen
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = NEE_charles_bohlen
 				visible = {
 					is_in_faction_with = ENT
@@ -14313,8 +14303,6 @@ country_event = {
 				character = NEE_laurence_steinhardt
 				advisor = {
 					slot = political_advisor
-					on_add = { political_advisor_on_add = yes }
-					on_remove = { political_advisor_on_remove = yes }
 					idea_token = NEE_laurence_steinhardt
 					visible = {
 						is_in_faction_with = ENT
@@ -14339,8 +14327,6 @@ country_event = {
 			character = NEE_charles_bohlen
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = NEE_charles_bohlen
 				visible = {
 					is_in_faction_with = ENT
@@ -14356,8 +14342,6 @@ country_event = {
 			character = NEE_laurence_steinhardt
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = NEE_laurence_steinhardt
 				visible = {
 					is_in_faction_with = ENT

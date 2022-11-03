@@ -1682,7 +1682,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WAL_Build_Our_Own_Cyclotron"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_tech_bonus = {
 				name = WAL_Build_Our_Own_Cyclotron
 				bonus = 0.50
@@ -1770,7 +1770,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WAL_Fund_University_of_Liege"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

@@ -32,7 +32,7 @@ focus_tree = {
 				country_event = {
 					id = fengtian.110
 					days = 13
-					random = 1248
+					random_days = 52
 				}
 			}
 		}
@@ -142,7 +142,7 @@ focus_tree = {
 				country_event = {
 					id = fengtian.4
 					days = 5
-					random = 125
+					random_days = 125
 				}
 				if = {
 					limit = {
@@ -180,7 +180,7 @@ focus_tree = {
 				country_event = {
 					id = fengtian.111
 					days = 13
-					random = 1248
+					random_days = 52
 				}
 			}
 			set_temp_variable = { RLPOP = 3 }
@@ -418,7 +418,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Mantetsu_Research_Wing"
 			country_event = fengtian.60
-			SZC_add_research_slot = yes
+			add_research_slot_until_four = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -502,7 +502,7 @@ focus_tree = {
 				country_event = {
 					id = fengtian.115
 					days = 13
-					random = 1248
+					random_days = 52
 				}
 			}
 		}
@@ -990,7 +990,7 @@ focus_tree = {
 					country_event = {
 						id = fengtian.32
 						days = 20
-						random = 600
+						random_days = 30
 					}
 				}
 				#Tang Yulin causes trouble event triggers
@@ -2270,7 +2270,7 @@ focus_tree = {
 			country_event = {
 				id = fengtian.287
 				days = 24
-				random = 144
+				random_days = 12
 			}
 		}
 		relative_position_id = FNG_Unification_through_Subjugation

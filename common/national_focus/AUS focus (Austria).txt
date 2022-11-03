@@ -1280,7 +1280,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus AUS_vienna_circle_1"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -5458,6 +5458,12 @@ focus_tree = {
 			}
 		}
 
+		select_effect = {
+			ALB = {
+				set_country_flag = { flag = KR_getting_faction_invite days = 28 value = 1 }
+			}
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus AUS_potb_albania"
 			ALB = { country_event = aus.tree.4020 }
@@ -5501,6 +5507,12 @@ focus_tree = {
 				is_subject = no
 				has_civil_war = no
 				at_peace_or_same_enemies_as_ROOT = yes
+			}
+		}
+
+		select_effect = {
+			GRE = {
+				set_country_flag = { flag = KR_getting_faction_invite days = 42 value = 1 }
 			}
 		}
 
@@ -5549,6 +5561,12 @@ focus_tree = {
 				BUL = { is_subject = yes }
 				BUL = { is_in_faction = yes }
 				BUL = { has_socialist_government = yes }
+			}
+		}
+
+		select_effect = {
+			BUL = {
+				set_country_flag = { flag = KR_getting_faction_invite days = 42 value = 1 }
 			}
 		}
 

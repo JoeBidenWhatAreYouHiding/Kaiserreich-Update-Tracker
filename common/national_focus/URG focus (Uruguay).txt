@@ -1568,7 +1568,7 @@ focus_tree = {
 				}
 			}
 			add_stability = 0.10
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
@@ -1849,7 +1849,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus URG_prosperity_abundant"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			custom_effect_tooltip = URG_prosperity
 			if = {
 				limit = {

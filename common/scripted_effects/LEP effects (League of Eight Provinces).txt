@@ -688,13 +688,13 @@ LEP_decrease_yiguandao_unrest_level = {
 	subtract_from_variable = { lep_suppress_yiguandao_mission_timeout = lep_temp_mission_calc_y }
 }
 LEP_negative_kmt_event = {
-	set_variable = { lep_kmt_attack_location = random }
+	set_variable = { lep_kmt_attack_location = random_days }
 	multiply_variable = { lep_kmt_attack_location = 10 }
 	set_variable = { lep_attack_adder_temp_kmt = lep_kmt_unrest_level }
 	multiply_temp_variable = { lep_attack_adder_temp_kmt = 3 }
 	add_to_variable = { lep_kmt_attack_location = lep_attack_adder_temp_kmt }
 
-	set_variable = { lep_kmt_attack_type_seed = random }
+	set_variable = { lep_kmt_attack_type_seed = random_days }
 
 	if = {
 		limit = {
@@ -728,7 +728,7 @@ LEP_negative_kmt_event = {
 			country_event = {
 				id = lep.47
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 		else = {
@@ -738,7 +738,7 @@ LEP_negative_kmt_event = {
 				country_event = {
 					id = lep.48
 					days = 5
-					random = 4
+					random_days = 4
 				}
 			}
 			else = {
@@ -746,7 +746,7 @@ LEP_negative_kmt_event = {
 				country_event = {
 					id = lep.49
 					days = 5
-					random = 4
+					random_days = 4
 				}
 			}
 		}
@@ -762,7 +762,7 @@ LEP_negative_kmt_event = {
 			country_event = {
 				id = lep.45
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 		else = {
@@ -770,7 +770,7 @@ LEP_negative_kmt_event = {
 			country_event = {
 				id = lep.46
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 	}
@@ -785,7 +785,7 @@ LEP_negative_kmt_event = {
 			country_event = {
 				id = lep.43
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 		else = {
@@ -793,7 +793,7 @@ LEP_negative_kmt_event = {
 			country_event = {
 				id = lep.44
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 	}
@@ -805,7 +805,7 @@ LEP_negative_kmt_event = {
 			country_event = {
 				id = lep.41
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 		else = {
@@ -813,20 +813,20 @@ LEP_negative_kmt_event = {
 			country_event = {
 				id = lep.42
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 	}
 }
 
 LEP_negative_yiguandao_event = {
-	set_variable = { lep_yiguandao_attack_location = random }
+	set_variable = { lep_yiguandao_attack_location = random_days }
 	multiply_variable = { lep_yiguandao_attack_location = 10 }
 	set_temp_variable = { lep_attack_adder_temp_y = lep_yiguandao_unrest_level }
 	multiply_temp_variable = { lep_attack_adder_temp_y = 3 }
 	add_to_variable = { lep_yiguandao_attack_location = lep_attack_adder_temp_y }
 
-	set_variable = { lep_yiguandao_attack_type_seed = random }
+	set_variable = { lep_yiguandao_attack_type_seed = random_days }
 
 	if = {
 		limit = {
@@ -863,7 +863,7 @@ LEP_negative_yiguandao_event = {
 			country_event = {
 				id = lep.56
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 		else = {
@@ -871,7 +871,7 @@ LEP_negative_yiguandao_event = {
 			country_event = {
 				id = lep.57
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 	}
@@ -886,7 +886,7 @@ LEP_negative_yiguandao_event = {
 			country_event = {
 				id = lep.54
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 		else = {
@@ -894,7 +894,7 @@ LEP_negative_yiguandao_event = {
 			country_event = {
 				id = lep.55
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 	}
@@ -906,7 +906,7 @@ LEP_negative_yiguandao_event = {
 			country_event = {
 				id = lep.51
 				days = 5
-				random = 4
+				random_days = 4
 			}
 		}
 		else = {
@@ -916,7 +916,7 @@ LEP_negative_yiguandao_event = {
 				country_event = {
 					id = lep.52
 					days = 5
-					random = 4
+					random_days = 4
 				}
 			}
 			else = {
@@ -924,7 +924,7 @@ LEP_negative_yiguandao_event = {
 				country_event = {
 					id = lep.53
 					days = 5
-					random = 4
+					random_days = 4
 				}
 			}
 		}

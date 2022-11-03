@@ -266,13 +266,6 @@ XSM_yushu_conflict = {
 			log = "[GetDateText]: [Root.GetName]: Decision XSM_ma_biao_decision"
 			add_war_support = 0.05
 			add_manpower = -500
-			if = {
-				limit = { has_character = XSM_ma_biao }
-				random_character = {
-					limit = { is_character = XSM_ma_biao }
-					remove_unit_leader_role = yes
-				}
-			}
 			TIB = {
 				country_event = {
 					id = mac.106 days = 3
@@ -334,17 +327,6 @@ XSM_yushu_conflict = {
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout XSM_reinforce_biao_garrison"
 			clr_country_flag = XSM_ma_biao_in_yushu
-			random_character = {
-				limit = { is_character = XSM_ma_biao }
-				add_corps_commander_role = {
-					traits = { urban_assault_specialist }
-					skill = 3
-					attack_skill = 2
-					defense_skill = 3
-					planning_skill = 2
-					logistics_skill = 3
-				}
-			}
 			YUS_add_15_TIB = yes
 			TIB = {
 				country_event = mac.107

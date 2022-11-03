@@ -462,7 +462,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRQ_Baghdadi_Technical_University"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			custom_effect_tooltip = irq_baghdad_university
 			add_to_variable = {
 				irq_researc = 0.05
@@ -2752,7 +2752,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRQ_Foreign_Military_Mission"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			army_experience = 50
 		}
 	}

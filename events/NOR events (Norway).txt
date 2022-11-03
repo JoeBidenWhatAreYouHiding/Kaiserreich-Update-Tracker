@@ -2021,7 +2021,7 @@ country_event = { # Joining the Internationale
 	option = { # Yes
 		name = norway.143.a
 		ai_chance = {
-			base = 95
+			base = 100
 		}
 		add_to_faction = NOR
 		NOR = {
@@ -2035,7 +2035,7 @@ country_event = { # Joining the Internationale
 	option = { # No
 		name = norway.143.b
 		ai_chance = {
-			base = 5
+			base = 0
 		}
 		NOR = {
 			country_event = {

@@ -65,7 +65,6 @@ RUS_setup_civil_war = {
 			transfer_technology_without_doctrines = yes
 			transfer_navy = { target = RUS }
 			add_ideas = SOV_chaotic_revolution
-			country_lock_all_division_template = yes
 			add_state_claim = 329 #Tuva
 			every_owned_state = {
 				remove_core_of = RUS
@@ -102,7 +101,7 @@ RUS_setup_civil_war = {
 		every_core_state = { add_core_of = SOV }
 		set_major = yes
 
-		country_event = { id = rusd.123 days = 60 random = 720 }
+		country_event = { id = rusd.123 days = 60 random_days = 30 }
 		country_event = { id = russia.1924 days = 200 }
 		news_event = { id = russianews.7 days = 1 }
 		DKB = { country_event = { id = russia.1922 days = 3 } }
@@ -110,7 +109,7 @@ RUS_setup_civil_war = {
 		TRM = { country_event = { id = tram.80 days = 2 random_days = 6 } }
 		INT = { country_event = { id = fopcoup.44 days = 3 random_days = 3 } }
 		FOP = { country_event = { id = fopcoup.44 days = 3 random_days = 3 } }
-		ENG = { country_event = { id = russia.1920 days = 2 random_days = 1 } }
+		ENG = { country_event = { id = russia.1920 days = 2 random_hours = 24 } }
 		country_lock_all_division_template = no
 	}
 	declare_war_on = {
@@ -1062,7 +1061,7 @@ RUS_puppet_setup = {
 			}
 			INT = { country_event = { id = fopcoup.44 days = 3 random_days = 3 } }
 			FOP = { country_event = { id = fopcoup.44 days = 3 random_days = 3 } }
-			ENG = { country_event = { id = russia.1920 days = 2 random_days = 1 } }
+			ENG = { country_event = { id = russia.1920 days = 2 random_hours = 24 } }
 		}
 		else_if = {
 			limit = { tag = TRM }
@@ -1176,8 +1175,6 @@ RUS_cossack_ataman_effect = {
 			slot = political_advisor
 			idea_token = RUS_gerasim_vdovenko
 			traits = { RUS_cossack_ataman_spawned }
-			on_add = { political_advisor_on_add = yes }
-			on_remove = { political_advisor_on_remove = yes }
 		}
 		activate = yes
 	}

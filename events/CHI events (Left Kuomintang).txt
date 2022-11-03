@@ -299,7 +299,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = { id = chi_dom.21 days = 30 random = 10 }
+			country_event = { id = chi_dom.21 days = 30 random_days = 10 }
 		}
 	}
 }
@@ -657,7 +657,6 @@ country_event = {
 		add_to_variable = { CHI_minsheng = party_popularity@radical_socialist }
 		add_to_variable = { CHI_minquan = party_popularity@social_democrat }
 		add_to_variable = { CHI_minquan = party_popularity@social_liberal }
-		activate_advisor = CHI_ye_ting
 		if = {
 			limit = { has_template = "Dúli Bubing Lü" }
 			set_division_template_lock = {
@@ -686,7 +685,6 @@ country_event = {
 		add_to_variable = { CHI_minsheng = party_popularity@radical_socialist }
 		add_to_variable = { CHI_minquan = party_popularity@social_democrat }
 		add_to_variable = { CHI_minquan = party_popularity@social_liberal }
-		activate_advisor = CHI_he_zhonghan
 		if = {
 			limit = { has_template = "Dúli Bubing Lü" }
 			set_division_template_lock = {
@@ -707,9 +705,6 @@ country_event = {
 	}
 	option = {
 		name = chi_cng.9.c
-		trigger = {
-			has_character = HNN_cheng_qian
-		}
 		army_experience = 15
 		if = {
 			limit = { has_idea = KR_CHI_start_army }
@@ -718,7 +713,6 @@ country_event = {
 		add_to_variable = { CHI_minsheng = party_popularity@radical_socialist }
 		add_to_variable = { CHI_minquan = party_popularity@social_democrat }
 		add_to_variable = { CHI_minquan = party_popularity@social_liberal }
-		activate_advisor = HNN_cheng_qian
 		if = {
 			limit = { has_template = "Dúli Bubing Lü" }
 			set_division_template_lock = {
@@ -823,8 +817,6 @@ country_event = {
 			character = CHI_chiang_ching_kuo
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = CHI_chiang_ching_kuo
 				traits = { KR_political_protege }
 				ai_will_do = { factor = 1 }

@@ -6306,7 +6306,7 @@ country_event = { #New Markets
 		}
 		if = {
 			limit = {
-				"PAN" = {
+				PAN = {
 					same_government_type_as_ROOT = yes
 					NOT = { has_war_with = CUB }
 				}
@@ -7980,62 +7980,10 @@ country_event = { #CSA/USA/TEX/PSA notice of cuban volunteers
 
 	option = {
 		name = cuba.150.a
-		trigger = {
-			tag = CSA
-		}
-
-		add_opinion_modifier = { target = CUB modifier = CUB_ACWsupport }
-		set_country_flag = CUB_Alliance_Option
-		if = {
-			limit = { controls_state = 395 }
-			hidden_effect = {
-				load_oob = CUB_acwvolcsaunit
-			}
-			custom_effect_tooltip = cub_cubvol_tt
-		}
-	}
-	option = {
-		name = cuba.150.b
-		trigger = {
-			OR = {
-				tag = USA
-				tag = TEX
-				tag = PSA
-			}
-		}
-
 		set_country_flag = CUB_Alliance_Option
 		add_opinion_modifier = { target = CUB modifier = CUB_ACWsupport }
-		if = {
-			limit = {
-				tag = USA
-				controls_state = 361
-			}
-			hidden_effect = {
-				load_oob = CUB_acwvolusaunit
-			}
-			custom_effect_tooltip = cub_cubvol_tt
-		}
-		else_if = {
-			limit = {
-				tag = TEX
-				controls_state = 371
-			}
-			hidden_effect = {
-				load_oob = CUB_acwvoltexunit
-			}
-			custom_effect_tooltip = cub_cubvol_tt
-		}
-		else_if = {
-			limit = {
-				tag = PSA
-				controls_state = 797
-			}
-			hidden_effect = {
-				load_oob = CUB_acwvolpsaunit
-			}
-			custom_effect_tooltip = cub_cubvol_tt
-		}
+		hidden_effect = { CUB_create_acw_volunteer_divisions = yes }
+		custom_effect_tooltip = cub_cubvol_tt
 	}
 }
 
@@ -8208,17 +8156,8 @@ country_event = { #War with the union State
 		name = cuba.155.a
 
 		declare_war_on = { target = TEX type = annex_everything }
-		hidden_effect = {
-			load_oob = CUB_acwmiami
-		}
-		custom_effect_tooltip = cub_miamidiv_tt
-		if = {
-			limit = { has_manpower > 4500 }
-			hidden_effect = {
-				load_oob = CUB_acwinvasion
-			}
-			custom_effect_tooltip = cub_orlandodiv_tt
-		}
+		add_manpower = 10000
+		add_war_support = 0.05
 		hidden_effect = {
 			TEX = {
 				country_event = cuba.158

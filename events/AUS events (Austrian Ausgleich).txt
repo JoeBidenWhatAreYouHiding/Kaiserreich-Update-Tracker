@@ -2757,7 +2757,7 @@ country_event = { #Austria seeks peace (SER/ROM/BUL/POL/ITA)
 		add_stability = -0.2
 		add_war_support = -0.2
 		AUS = {
-			country_event = { id = ausgleich.new.804 hours = 4 random = 12 }
+			country_event = { id = ausgleich.new.804 hours = 4 random_hours = 12 }
 		}
 		if = {
 			limit = { num_subjects > 0 }

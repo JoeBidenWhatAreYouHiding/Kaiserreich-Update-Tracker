@@ -646,7 +646,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_centralise_authority"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_ideas = syr_unitary_civil_code
 		}
 	}
@@ -1140,7 +1140,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_syrian_federation"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_ideas = syr_federative_civil_code
 		}
 	}
@@ -1788,7 +1788,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SYR_mandatory_education"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {# Fight the 'Forces of Darkness'

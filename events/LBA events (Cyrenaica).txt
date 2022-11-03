@@ -990,7 +990,7 @@ country_event = { #Cyrenaica Declares Independence
 
 	option = {
 		name = libya.34.a
-		"LBA" = {
+		LBA = {
 			declare_war_on = {
 				target = OTT
 				type = annex_everything
@@ -1419,13 +1419,13 @@ country_event = { #General Revolt in Fezzan
 				448 = {
 					create_unit = {
 						division = "name = \"al-Mushati\" division_template = \"Cavalry Division\" start_experience_factor = 0.1"
-						owner = "LBA"
+						owner = LBA
 						prioritize_location = 10037
 						allow_spawning_on_enemy_provs = yes
 					}
 					create_unit = {
 						division = "name = \"al-Mushati\" division_template = \"Cavalry Division\" start_experience_factor = 0.1"
-						owner = "LBA"
+						owner = LBA
 						prioritize_location = 4117
 						allow_spawning_on_enemy_provs = yes
 					}
@@ -1590,7 +1590,7 @@ country_event = { #Return of the Cyrenaican Emirate
 	option = {
 		name = librev.4.a
 		effect_tooltip = {
-			"LBA" = {
+			LBA = {
 				transfer_state = 451
 				transfer_state = 663
 				transfer_state = 1009

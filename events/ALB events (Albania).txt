@@ -231,8 +231,8 @@ country_event = {
 		}
 		set_party_name = {
 			ideology = social_conservative
-			long_name = "Partia Republikane e Shqipërisë"
-			name = "Partia Republikane"
+			name = ALB_social_conservative_ahmet_zogu
+			long_name = ALB_social_conservative_ahmet_zogu_long
 		}
 		retire_character = ALB_shefqet_verlaci
 	}
@@ -603,8 +603,8 @@ country_event = {
 		}
 		set_party_name = {
 			ideology = social_democrat
-			long_name = "Partia Socialdemokrate e Shqipërisë"
-			name = "PSD"
+			name = ALB_social_democrat_fan_noli
+			long_name = ALB_social_democrat_fan_noli_long
 		}
 		retire_character = ALB_avni_rustemi
 	}
@@ -941,8 +941,8 @@ country_event = {
 		retire_character = ALB_shefqet_verlaci
 		set_party_name = {
 			ideology = social_conservative
-			long_name = "Partia Republikane e Shqipërisë"
-			name = "Partia Republikane"
+			name = ALB_social_conservative_ahmet_zogu
+			long_name = ALB_social_conservative_ahmet_zogu_long
 		}
 		set_politics = {
 			ruling_party = social_democrat
@@ -994,8 +994,8 @@ country_event = {
 		}
 		set_party_name = {
 			ideology = social_democrat
-			long_name = "Partia Socialdemokrate e Shqipërisë"
-			name = "PSD"
+			name = ALB_social_democrat_fan_noli
+			long_name = ALB_social_democrat_fan_noli_long
 		}
 		retire_character = ALB_avni_rustemi
 	}
@@ -1025,8 +1025,8 @@ country_event = {
 		retire_character = ALB_avni_rustemi
 		set_party_name = {
 			ideology = social_democrat
-			long_name = "Partia Socialdemokrate e Shqipërisë"
-			name = "PSD"
+			name = ALB_social_democrat_fan_noli
+			long_name = ALB_social_democrat_fan_noli_long
 		}
 		set_politics = {
 			ruling_party = social_conservative
@@ -1079,8 +1079,8 @@ country_event = {
 		}
 		set_party_name = {
 			ideology = social_conservative
-			long_name = "Partia Republikane e Shqipërisë"
-			name = "Partia Republikane"
+			name = ALB_social_conservative_ahmet_zogu
+			long_name = ALB_social_conservative_ahmet_zogu_long
 		}
 		retire_character = ALB_shefqet_verlaci
 	}
@@ -1265,6 +1265,11 @@ country_event = {
 					ruling_party = social_democrat
 					election_frequency = 48
 					elections_allowed = yes
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = ALB_authoritarian_democrat_party
+					long_name = ALB_authoritarian_democrat_party_long
 				}
 				add_popularity = {
 					ideology = authoritarian_democrat

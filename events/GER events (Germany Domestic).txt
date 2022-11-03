@@ -195,7 +195,10 @@ country_event = {
 		name = gerdom.8.a
 		custom_effect_tooltip = GER_colonial_resources_distribution_full_tt
 		add_political_power = -20
-		activate_decision = GER_factories_for_colonies_full
+		add_timed_idea = {
+			idea = GER_colonial_subsidies
+			days = 365
+		}
 		reverse_add_opinion_modifier = {
 			target = MAF
 			modifier = financial_help_granted
@@ -210,7 +213,10 @@ country_event = {
 		name = gerdom.8.b
 		custom_effect_tooltip = GER_colonial_resources_distribution_partly_tt
 		add_political_power = -50
-		activate_decision = GER_factories_for_colonies_partly
+		add_timed_idea = {
+			idea = GER_partial_colonial_subsidies
+			days = 260
+		}
 		reverse_add_opinion_modifier = {
 			target = MAF
 			modifier = financial_help_satisfactionary
@@ -309,36 +315,41 @@ country_event = { # Agricultural Crisis in the Völkerbund
 	option = { #refuse aid
 		name = gerdom.11.a
 		ai_chance = {
-			base = 95
+			base = 60
 		}
 		add_political_power = 20
 		reverse_add_opinion_modifier = {
 			target = POL
-			modifier = GER_raised_tarrifs
+			modifier = agriculture_help_denied
 		}
 		reverse_add_opinion_modifier = {
-			target = GAL
-			modifier = GER_raised_tarrifs
+			target = WHR
+			modifier = agriculture_help_denied
 		}
 		reverse_add_opinion_modifier = {
 			target = UKR
 			modifier = agriculture_help_denied
 		}
-		UKR = {
-			country_event = {
-				id = ukraine.4
-				days = 40
-			}
-		}
+		UKR = { country_event = ukraine.4 }
 		custom_effect_tooltip = GER_angry_ukraine
 	}
 
 	option = { #promise aid
 		name = gerdom.11.b
-		custom_effect_tooltip = GER_agricultural_mitteleuropa_help_tt
-		activate_decision = GER_agricultural_help
+		add_timed_idea = {
+			idea = GER_agricultural_aid_to_eastern_europe
+			days = 105
+		}
 		ai_chance = {
-			base = 5
+			base = 40
+		}
+		reverse_add_opinion_modifier = {
+			target = POL
+			modifier = agriculture_help_granted
+		}
+		reverse_add_opinion_modifier = {
+			target = WHR
+			modifier = agriculture_help_granted
 		}
 		reverse_add_opinion_modifier = {
 			target = UKR
@@ -2539,7 +2550,7 @@ country_event = {
 		clr_global_flag = GER_SYNDIE_RUS
 		hidden_effect = {
 			INT = {
-				country_event = { id = gerdom.209 days = 20 random = 60 }
+				country_event = { id = gerdom.209 days = 20 random_days = 60 }
 			}
 		}
 	}
@@ -2620,6 +2631,21 @@ country_event = { # resetting elections
 	option = {
 		clr_country_flag = GER_1937_elections_cancelled
 		clr_country_flag = GER_1942_elections_cancelled
+	}
+}
+
+country_event = { #Germany Increases Support for Mitteleuropa
+	id = gerdom.300
+	immediate = { log = "[GetDateText]: [Root.GetName]: event gerdom.300 FROM = [From.GetName]" }
+	title = gerdom.300.t
+	desc = gerdom.300.d
+	picture = GFX_report_event_GER_march
+
+	is_triggered_only = yes
+
+	option = {
+		name = gerdom.300.a
+		add_ideas = GER_paul_lejeune_jung_effect
 	}
 }
 

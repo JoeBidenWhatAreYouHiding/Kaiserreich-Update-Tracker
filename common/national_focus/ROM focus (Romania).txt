@@ -1210,7 +1210,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ROM_royal_foundation_of_arts_and_sciences"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {
@@ -1818,7 +1818,7 @@ focus_tree = {
 		ai_will_do = { factor = 20 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ROM_intellectuals_and_the_green_banner"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 
@@ -1998,7 +1998,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ROM_academia_tehnica_militara"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 

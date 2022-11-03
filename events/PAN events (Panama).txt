@@ -28,7 +28,7 @@ country_event = { ####elections, 1936
 	desc = panama.2.d
 
 	trigger = {
-		tag = "PAN"
+		tag = PAN
 		date < 1937.1.1
 	}
 
@@ -219,7 +219,7 @@ country_event = { ####Canada requests Panama in Entente
 		set_country_flag = PAN_canada_accepted
 		complete_national_focus = PAN_entente_support
 		CAN = {
-			add_to_faction = "PAN"
+			add_to_faction = PAN
 			country_event = {
 				id = panama.101
 				days = 1
@@ -321,7 +321,7 @@ country_event = { ####Canada prepares to invade
 
 	option = {
 		name = panama.8.a #Oh no
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.103
 				days = 180
@@ -583,14 +583,14 @@ country_event = { ####Panama asks for investments
 			idea = PAN_investing
 			days = 30
 		}
-		"PAN" = {
+		PAN = {
 			add_ideas = PAN_foreign_investments_idea
 			country_event = panama.16
 		}
 	}
 	option = {
 		name = panama.14.b ####Nah
-		"PAN" = {
+		PAN = {
 			country_event = panama.15
 		}
 	}
@@ -1393,7 +1393,7 @@ country_event = { ####Canadian reaction to canal seized
 				}
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.7
 				days = 1
@@ -1418,7 +1418,7 @@ country_event = { ####Canadian reaction to canal seized
 				}
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.6
 				days = 1
@@ -1449,7 +1449,7 @@ country_event = { ####Canadian reaction to canal seized
 		}
 		add_political_power = 20
 		add_stability = 0.025
-		"PAN" = {
+		PAN = {
 			hidden_effect = { complete_national_focus = PAN_stand_alone }
 			activate_targeted_decision = { target = COS decision = PAN_pressure_coto_2 }
 		}
@@ -1480,7 +1480,7 @@ country_event = { ####PAN says yes - CAN event
 
 	option = {
 		name = panama.101.a #yeeeeee
-		"PAN" = {
+		PAN = {
 			hidden_effect = { complete_national_focus = PAN_stand_alone }
 			activate_targeted_decision = { target = COS decision = PAN_pressure_coto_2 }
 		}
@@ -1507,14 +1507,14 @@ country_event = { ####Panama says NO - CAN event
 				}
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.8
 				days = 1
 			}
 		}
 		declare_war_on = {
-			target = "PAN"
+			target = PAN
 			type = annex_everything
 		}
 		hidden_effect = {
@@ -1539,7 +1539,7 @@ country_event = { ####Panama says NO - CAN event
 			}
 		}
 		add_political_power = -10
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.106
 				days = 1
@@ -1599,7 +1599,7 @@ country_event = { ####Panama proposes peace - CAN event
 
 	option = {
 		name = panama.104.a #ok sure - this does the peace
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.105
 				days = 1
@@ -1680,7 +1680,7 @@ country_event = { ####PAN pressures Coto in '36 - USA event
 
 	option = {
 		name = panama.31.a #Heck you get out
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.32
 				days = 1
@@ -1752,7 +1752,7 @@ country_event = { ####PAN investments event
 
 	option = {
 		name = panama.35.a #Ok
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.36
 				days = 1
@@ -1781,7 +1781,7 @@ country_event = { ####PAN investments event
 	}
 	option = {
 		name = panama.35.b #No
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = panama.37
 				days = 1

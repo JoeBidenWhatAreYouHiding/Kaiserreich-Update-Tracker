@@ -576,6 +576,10 @@ is_in_central_america = {
 	has_country_flag = is_in_central_america
 }
 
+is_in_caribbean = {
+	has_country_flag = is_in_caribbean
+}
+
 is_in_south_america = {
 	has_country_flag = is_in_south_america
 }

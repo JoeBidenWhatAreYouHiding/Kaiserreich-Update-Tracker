@@ -1380,29 +1380,17 @@ country_event = { # Offer from Germany
 
 	option = { # yes
 		name = gerfor.44.a
-		trigger = {
-			NOT = {
-				is_in_faction_with = GER
-			}
-		}
-		ai_chance = {
-			base = 80
-		}
-		GER = {
-			country_event = {
-				id = gerfor.45
-				days = 1
-			}
-		}
-	}
-
-	option = { # yes
-		name = gerfor.44.a
-		trigger = {
-			is_in_faction_with = GER
-		}
 		ai_chance = {
 			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_DETENTE }
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_WORKWITHGER }
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_ENT }
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_NEUT }
+				}
+			}
 		}
 		GER = {
 			country_event = {
@@ -1414,29 +1402,17 @@ country_event = { # Offer from Germany
 
 	option = { # no
 		name = gerfor.44.b
-		trigger = {
-			NOT = {
-				is_in_faction_with = GER
-			}
-		}
-		ai_chance = {
-			base = 20
-		}
-		GER = {
-			country_event = {
-				id = gerfor.46
-				days = 1
-			}
-		}
-	}
-
-	option = { # no
-		name = gerfor.44.b
-		trigger = {
-			is_in_faction_with = GER
-		}
 		ai_chance = {
 			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_DETENTE }
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_WORKWITHGER }
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_ENT }
+					has_game_rule = { rule = IRE_forpol option = IRE_FORPOL_NEUT }
+				}
+			}
 		}
 		GER = {
 			country_event = {
@@ -1462,7 +1438,12 @@ country_event = { # The Irish accept!
 			amount = -3000
 		}
 		set_country_flag = GER_IRE_buildup
-		add_to_faction = IRE
+		if = {
+			limit = {
+				IRE = { is_in_faction = no }
+			}
+			add_to_faction = IRE
+		}
 	}
 }
 
@@ -1648,12 +1629,10 @@ country_event = {
 	title = gerfor.51.t
 	desc = gerfor.51.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { is_in_faction_with = GER }
+		NOT = { is_in_faction_with = FROM }
 	}
 
 	option = {
@@ -1675,31 +1654,8 @@ country_event = {
 				}
 			}
 		}
-		set_country_flag = AUS_intervened_in_weltkrieg
-		add_political_power = 100
-		custom_effect_tooltip = joining_reichspakt_tt
-
-		hidden_effect = {
-			every_other_country = {
-				limit = {
-					is_in_faction_with = ROOT
-				}
-				set_country_flag = AUS_former_faction_member
-				if = {
-					limit = { is_subject = no }
-					set_global_flag = TEMPORARY_DISABLED_FACTION_POPUP
-					GER = { add_to_faction = PREV }
-				}
-			}
-			dismantle_faction = yes
-		}
-		GER = {
-			add_to_faction = ROOT
-			country_event = {
-				id = gerfor.54
-				days = 1
-			}
-		}
+		effect_tooltip = { AUS_faction_merges_with_reichspakt = yes }
+		FROM = { country_event = { id = gerfor.54 days = 1 } }
 	}
 
 	option = {
@@ -1722,12 +1678,7 @@ country_event = {
 			}
 		}
 		add_political_power = -20
-		GER = {
-			country_event = {
-				id = gerfor.57
-				days = 1
-			}
-		}
+		FROM = { country_event = { id = gerfor.57 days = 1 } }
 	}
 
 	option = {
@@ -1750,17 +1701,14 @@ country_event = {
 			}
 		}
 		add_manpower = -10000
-		send_equipment = {
-			target = GER
-			type = infantry_equipment
-			amount = 10000
-		}
-		GER = {
-			country_event = {
-				id = gerfor.60
-				days = 1
+		effect_tooltip = {
+			send_equipment = {
+				type = infantry_equipment
+				amount = 10000
+				target = FROM
 			}
 		}
+		FROM = { country_event = { id = gerfor.60 days = 1 } }
 	}
 }
 
@@ -1771,12 +1719,10 @@ country_event = {
 	title = gerfor.53.t
 	desc = gerfor.53.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { is_in_faction_with = GER }
+		NOT = { is_in_faction_with = FROM }
 	}
 
 	option = {
@@ -1801,12 +1747,9 @@ country_event = {
 			}
 		}
 		add_political_power = 40
-		GER = {
+		FROM = {
 			effect_tooltip = { add_to_faction = ROOT }
-			country_event = {
-				id = gerfor.56
-				days = 1
-			}
+			country_event = { id = gerfor.56 days = 1 }
 		}
 	}
 
@@ -1828,12 +1771,7 @@ country_event = {
 			}
 		}
 		add_political_power = -20
-		GER = {
-			country_event = {
-				id = gerfor.59
-				days = 1
-			}
-		}
+		FROM = { country_event = { id = gerfor.59 days = 1 } }
 	}
 
 	option = {
@@ -1854,17 +1792,14 @@ country_event = {
 			}
 		}
 		add_manpower = -10000
-		send_equipment = {
-			target = GER
-			type = infantry_equipment
-			amount = 10000
-		}
-		GER = {
-			country_event = {
-				id = gerfor.62
-				days = 1
+		effect_tooltip = {
+			send_equipment = {
+				type = infantry_equipment
+				amount = 10000
+				target = FROM
 			}
 		}
+		FROM = { country_event = { id = gerfor.62 days = 1 } }
 	}
 }
 
@@ -1875,38 +1810,16 @@ country_event = {
 	title = gerfor.54.t
 	desc = gerfor.54.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
 		name = gerfor.54.a
 		add_political_power = 60
-
-		if = {
-			limit = { has_war_with = INT }
+		every_enemy_country = {
 			FROM = {
 				add_to_war = {
 					targeted_alliance = ROOT
-					enemy = INT
-				}
-			}
-		}
-		if = {
-			limit = { has_war_with = RUS }
-			FROM = {
-				add_to_war = {
-					targeted_alliance = ROOT
-					enemy = RUS
-				}
-			}
-		}
-		if = {
-			limit = { has_war_with = SOV }
-			FROM = {
-				add_to_war = {
-					targeted_alliance = ROOT
-					enemy = SOV
+					enemy = PREV
 				}
 			}
 		}
@@ -1920,39 +1833,17 @@ country_event = {
 	title = gerfor.56.t
 	desc = gerfor.56.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
 		name = gerfor.56.a
 		add_political_power = 40
 		add_to_faction = FROM
-
-		if = {
-			limit = { has_war_with = INT }
+		every_enemy_country = {
 			FROM = {
 				add_to_war = {
 					targeted_alliance = ROOT
-					enemy = INT
-				}
-			}
-		}
-		if = {
-			limit = { has_war_with = RUS }
-			FROM = {
-				add_to_war = {
-					targeted_alliance = ROOT
-					enemy = RUS
-				}
-			}
-		}
-		if = {
-			limit = { has_war_with = SOV }
-			FROM = {
-				add_to_war = {
-					targeted_alliance = ROOT
-					enemy = SOV
+					enemy = PREV
 				}
 			}
 		}
@@ -1965,8 +1856,6 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event gerfor.57 FROM = [From.GetName]" }
 	title = gerfor.57.t
 	desc = gerfor.57.d
-
-	fire_only_once = yes
 
 	is_triggered_only = yes
 
@@ -1983,8 +1872,6 @@ country_event = {
 	title = gerfor.58.t
 	desc = gerfor.58.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
@@ -1999,8 +1886,6 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event gerfor.59 FROM = [From.GetName]" }
 	title = gerfor.59.t
 	desc = gerfor.59.d
-
-	fire_only_once = yes
 
 	is_triggered_only = yes
 
@@ -2017,14 +1902,20 @@ country_event = {
 	title = gerfor.60.t
 	desc = gerfor.60.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
 		name = gerfor.60.a
 		add_manpower = 10000
-		custom_effect_tooltip = GER_received_equipment_10000
+		effect_tooltip = {
+			FROM = {
+				send_equipment = {
+					type = infantry_equipment
+					amount = 10000
+					target = ROOT
+				}
+			}
+		}
 	}
 }
 
@@ -2035,14 +1926,20 @@ country_event = {
 	title = gerfor.61.t
 	desc = gerfor.61.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
 		name = gerfor.61.a
 		add_manpower = 10000
-		custom_effect_tooltip = GER_received_equipment_10000
+		effect_tooltip = {
+			FROM = {
+				send_equipment = {
+					type = infantry_equipment
+					amount = 10000
+					target = ROOT
+				}
+			}
+		}
 	}
 }
 
@@ -2053,14 +1950,20 @@ country_event = {
 	title = gerfor.62.t
 	desc = gerfor.62.d
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
 		name = gerfor.62.a
 		add_manpower = 10000
-		custom_effect_tooltip = GER_received_equipment_10000
+		effect_tooltip = {
+			FROM = {
+				send_equipment = {
+					type = infantry_equipment
+					amount = 10000
+					target = ROOT
+				}
+			}
+		}
 	}
 }
 

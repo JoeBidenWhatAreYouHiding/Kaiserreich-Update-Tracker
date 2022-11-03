@@ -302,6 +302,7 @@ focus_tree = {
 			}
 			add_opinion_modifier = { target = TUR modifier = KR_approves_of_govt }
 			reverse_add_opinion_modifier = { target = TUR modifier = KR_approves_of_govt }
+			TUR = { set_country_flag = SER_supported_bulgaria }
 			if = {
 				limit = {
 					has_country_flag = BUL_OTT_accepted_turkish_autonomy
@@ -1631,7 +1632,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus BUL_universities"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {

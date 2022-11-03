@@ -17,7 +17,6 @@ country_event = { # Bittersweet Victory
 		name = KRLAT.1.a
 		complete_national_focus = LAT_2nd_awakening
 		hidden_effect = {
-			set_capital = { state = 12 }
 			country_event = {
 				id = KRLAT.2
 				days = 1

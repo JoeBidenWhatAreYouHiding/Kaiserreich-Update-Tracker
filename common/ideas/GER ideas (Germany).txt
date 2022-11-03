@@ -5,19 +5,6 @@ ideas = {
 	##############
 
 	country = {
-		GER_ready_to_surrender = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_ready_to_surrender" }
-			picture = generic_morale_bonus
-			allowed = { always = no }
-			modifier = {
-				surrender_limit = -0.50
-				army_org_factor = -0.25
-				army_morale_factor = -0.25
-				army_defence_factor = -0.50
-				army_attack_factor = -0.50
-			}
-		}
-
 		# Start
 		GER_victors_of_wwi = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_victors_of_wwi" }
@@ -338,6 +325,33 @@ ideas = {
 				consumer_goods_factor = 0.10
 			}
 		}
+		
+		GER_colonial_subsidies = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_colonial_subsidies" }
+			picture = ITA_devaluated_lira
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.10
+			}
+		}
+		
+		GER_partial_colonial_subsidies = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_partial_colonial_subsidies" }
+			picture = ITA_devaluated_lira
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.06
+			}
+		}
+		
+		GER_agricultural_aid_to_eastern_europe = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_agricultural_aid_to_eastern_europe" }
+			picture = LIT_invested_in_farms
+			allowed = { always = no }
+			modifier = {
+				stability_weekly = -0.01
+			}
+		}
 
 		# Events
 
@@ -453,6 +467,17 @@ ideas = {
 				political_power_gain = -0.03
 				industrial_capacity_factory = 0.05
 				conscription = 0.02
+			}
+		}
+		GER_paul_lejeune_jung_effect = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_paul_lejeune_jung_effect" }
+			name = GER_paul_lejeune_jung
+			available = {
+				GER_is_in_mitteleuropa = yes
+				GER = { GER_paul_lejeune_jung = { is_political_advisor = yes } }
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
 			}
 		}
 	}

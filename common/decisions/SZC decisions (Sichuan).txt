@@ -584,7 +584,7 @@ Sichuan_Famine_decisions = {
 				country_event = {
 					id = sichuan.167
 					days = 15
-					random = 240
+					random_days = 10
 				}
 			}
 		}
@@ -1102,7 +1102,7 @@ Sichuan_Opium_Monopoly_decisions = {
 				country_event = {
 					id = sichuan.207
 					days = 2
-					random = 120
+					random_days = 5
 				}
 			}
 		}
@@ -1270,7 +1270,7 @@ Sichuan_Opium_Removal_decisions = {
 				country_event = {
 					id = sichuan.207
 					days = 2
-					random = 120
+					random_days = 5
 				}
 			}
 		}

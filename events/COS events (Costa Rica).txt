@@ -679,9 +679,7 @@ country_event = { #German garisson instated
 
 	option = { #Wilkommen meine Freunden
 		name = cos.18.a
-		hidden_effect = {
-			load_oob = COS_GER
-		}
+		hidden_effect = { COS_create_GER_garrison_divisions = yes }
 		custom_effect_tooltip = COS_gerdiv_tt
 	}
 }
@@ -1198,7 +1196,8 @@ country_event = { #Canadian response to the border conflict
 		ai_chance = {
 			base = 80
 		}
-		name = cos.31.a "PAN" = {
+		name = cos.31.a
+		PAN = {
 			country_event = {
 				id = cos.32
 				days = 2
@@ -1213,12 +1212,12 @@ country_event = { #Canadian response to the border conflict
 		name = cos.31.b
 		trigger = {
 			NOT = {
-				"PAN" = {
+				PAN = {
 					has_country_flag = PAN_canada_accepted
 				}
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = cos.44
 				days = 2
@@ -1287,7 +1286,7 @@ country_event = { #Panama reacts to mediation
 		name = cos.32.c
 		trigger = {
 			NOT = {
-				"PAN" = {
+				PAN = {
 					has_country_flag = PAN_canada_accepted
 				}
 			}
@@ -1377,7 +1376,7 @@ country_event = { #Panama demands monetary compensation
 		}
 		trigger = {
 			NOT = {
-				"PAN" = {
+				PAN = {
 					has_country_flag = PAN_canada_accepted
 				}
 			}
@@ -1389,7 +1388,7 @@ country_event = { #Panama demands monetary compensation
 				days = 2
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = cos.40
 				days = 2
@@ -1417,7 +1416,7 @@ country_event = { #Panama demands monetary compensation (COS reaction)
 				days = 2
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = cos.38
 				days = 2
@@ -1435,7 +1434,7 @@ country_event = { #Panama demands monetary compensation (COS reaction)
 		}
 		trigger = {
 			NOT = {
-				"PAN" = {
+				PAN = {
 					has_country_flag = PAN_canada_accepted
 				}
 			}
@@ -1447,7 +1446,7 @@ country_event = { #Panama demands monetary compensation (COS reaction)
 				days = 2
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = cos.40
 				days = 2
@@ -1714,7 +1713,8 @@ country_event = { #German response to the border conflict
 		ai_chance = {
 			base = 80
 		}
-		name = cos.45.a "PAN" = {
+		name = cos.45.a
+		PAN = {
 			country_event = {
 				id = cos.46
 				days = 2
@@ -1726,7 +1726,8 @@ country_event = { #German response to the border conflict
 		ai_chance = {
 			base = 20
 		}
-		name = cos.45.b "PAN" = {
+		name = cos.45.b
+		PAN = {
 			country_event = {
 				id = cos.58
 				days = 2
@@ -1877,7 +1878,7 @@ country_event = { #Panama demands monetary compensation
 				days = 2
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = cos.54
 				days = 2
@@ -1905,7 +1906,7 @@ country_event = { #Panama demands monetary compensation (COS reaction)
 				days = 2
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = cos.52
 				days = 2
@@ -1928,7 +1929,7 @@ country_event = { #Panama demands monetary compensation (COS reaction)
 				days = 2
 			}
 		}
-		"PAN" = {
+		PAN = {
 			country_event = {
 				id = cos.54
 				days = 2
@@ -4384,14 +4385,12 @@ country_event = { #Costa Rica defeats the CAR
 			base = 30
 		}
 		name = cos.114.b
-		CEN = {
-			white_peace_with_ROOT = yes
-		}
+		CEN = { white_peace_with_ROOT = yes }
 		annex_country = {
 			target = CEN
 			transfer_troops = no
 		}
-		unlock_decision_tooltip = CEN_unite_central_america
+		activate_targeted_decision = { decision = CEN_unite_central_america target = THIS }
 	}
 }
 
@@ -4765,13 +4764,20 @@ country_event = { #Offering a hand? (Invasion of Panama)
 		has_war = no
 		CAN = {
 			is_faction_leader = yes
-			has_war_with = "PAN"
+			has_war_with = PAN
 		}
 	}
 
 	option = { #YES
 		ai_chance = {
 			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_REICHSPAKT }
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_NEUTRAL }
+				}
+			}
 		}
 		name = cos.128.a
 		CAN = {
@@ -4781,6 +4787,13 @@ country_event = { #Offering a hand? (Invasion of Panama)
 	option = { #NO
 		ai_chance = {
 			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_REICHSPAKT }
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_NEUTRAL }
+				}
+			}
 		}
 		name = cos.126.b
 	}
@@ -4806,7 +4819,7 @@ country_event = { #Offering a hand? (Invasion of Panama)
 			country_event = cos.130
 			add_to_war = {
 				targeted_alliance = CAN
-				enemy = "PAN"
+				enemy = PAN
 				hostility_reason = asked_to_join
 			}
 			give_military_access = CAN

@@ -1282,18 +1282,18 @@ BUL_spawn_chetnik_revolt = {
 		}
 		set_party_name = {
 			ideology = national_populist
-			long_name = "Srpska četnička organizacija (Serbian Chetnik Organisation)"
-			name = "Četnici"
+			name = SER_serbian_chetnik_organisation
+			long_name = SER_serbian_chetnik_organisation
 		}
 		set_party_name = {
 			ideology = paternal_autocrat
-			long_name = "Srpska četnička organizacija (Serbian Chetnik Organisation)"
-			name = "Četnici"
+			name = SER_serbian_chetnik_organisation
+			long_name = SER_serbian_chetnik_organisation
 		}
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Srpska četnička organizacija (Serbian Chetnik Organisation)"
-			name = "Četnici"
+			name = SER_serbian_chetnik_organisation
+			long_name = SER_serbian_chetnik_organisation
 		}
 		event_target:BUL_chetnik_headquarters = {
 			teleport_armies = {

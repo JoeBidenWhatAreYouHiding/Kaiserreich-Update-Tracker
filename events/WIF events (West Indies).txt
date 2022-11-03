@@ -2368,7 +2368,7 @@ country_event = {# Puerto Rico given to the Federation
 				id = wiffor.4
 				days = 1500
 			}
-			country_event = { id = pue.5 days = 30 random = 40 }
+			country_event = { id = pue.5 days = 30 random_days = 40 }
 		}
 	}
 }

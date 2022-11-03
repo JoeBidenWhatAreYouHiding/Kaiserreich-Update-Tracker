@@ -161,7 +161,7 @@ country_event = { #Afterwar Chairman
 			}
 			country_event = { id = chl.4 days = 7 }
 			# country_event = { id = chl.24 days = 24 }
-			country_event = { id = chl.22 days = 40 random = 720 }
+			country_event = { id = chl.22 days = 40 random_days = 30 }
 			add_to_variable = { CHL_election = 1 }
 		}
 	}
@@ -235,7 +235,7 @@ country_event = { # Second party congress
 			}
 			country_event = { id = chl.4 days = 7 }
 			# country_event = { id = chl.24 days = 24 }
-			country_event = { id = chl.22 days = 40 random = 720 }
+			country_event = { id = chl.22 days = 40 random_days = 30 }
 			add_to_variable = { CHL_election = 1 }
 		}
 	}
@@ -337,7 +337,7 @@ country_event = { #The Fifth Chairman!
 			}
 			country_event = { id = chl.4 days = 7 }
 			# country_event = { id = chl.24 days = 24 }
-			country_event = { id = chl.22 days = 40 random = 720 }
+			country_event = { id = chl.22 days = 40 random_days = 30 }
 		}
 	}
 

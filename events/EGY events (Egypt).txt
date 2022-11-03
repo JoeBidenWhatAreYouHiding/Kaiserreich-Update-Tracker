@@ -1442,7 +1442,7 @@ country_event = { # Sudan Revolts
 			EGY = {
 				SUD = {
 					transfer_technology = yes
-					load_oob = SUD_mahdist_militias
+					EGY_create_mandist_militia_divisions = yes
 				}
 			}
 			ETH = {
@@ -1491,7 +1491,7 @@ country_event = { # South Sudan Tribes stays loyal
 	option = {
 		name = egy.77.a
 		hidden_effect = {
-			load_oob = SUD_mahdist_loyal_militias
+			EGY_create_mandist_militia_divisions = yes
 		}
 		custom_effect_tooltip = EGY_sudloytribe_tt
 		549 = { #Southern Sudan

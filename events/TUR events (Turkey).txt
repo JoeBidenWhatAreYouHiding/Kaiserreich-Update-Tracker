@@ -1804,7 +1804,7 @@ country_event = { #They said yes
 
 	option = {
 		name = tur.36.a
-		FROM = { add_to_faction = ROOT }
+		FROM = { faction_leader = { add_to_faction = ROOT } }
 	}
 }
 country_event = { #They said no
@@ -1852,7 +1852,7 @@ country_event = { #They said yes
 
 	option = {
 		name = tur.36.a
-		FROM = { add_to_faction = ROOT }
+		FROM = { faction_leader = { add_to_faction = ROOT } }
 	}
 }
 country_event = { #They said no
@@ -2425,7 +2425,7 @@ country_event = { #They said yes
 
 	option = {
 		name = tur.57.a
-		FROM = { add_to_faction = ROOT }
+		FROM = { faction_leader = { add_to_faction = ROOT } }
 	}
 }
 country_event = { #They said no
@@ -3162,19 +3162,10 @@ country_event = { #Turkey/Ottoman Asks for enter the Internationale
 	option = {
 		name = tur.94.a
 		ai_chance = {
-			base = 70
+			base = 100
 		}
 		effect_tooltip = {
-			if = {
-				limit = {
-					SER = {
-						is_faction_leader = yes
-					}
-				}
-				SER = {
-					add_to_faction = TUR
-				}
-			}
+			faction_leader = { add_to_faction = FROM }
 		}
 		hidden_effect = {
 			TUR = {
@@ -3185,7 +3176,7 @@ country_event = { #Turkey/Ottoman Asks for enter the Internationale
 	option = {
 		name = tur.94.b
 		ai_chance = {
-			base = 30
+			base = 0
 		}
 		hidden_effect = {
 			TUR = {
@@ -3207,19 +3198,7 @@ country_event = { #They said yes
 
 	option = {
 		name = tur.95.a
-		ai_chance = {
-			base = 30
-		}
-		if = {
-			limit = {
-				SER = {
-					is_faction_leader = yes
-				}
-			}
-			SER = {
-				add_to_faction = TUR
-			}
-		}
+		FROM = { faction_leader = { add_to_faction = ROOT } }
 	}
 }
 country_event = { #They said no

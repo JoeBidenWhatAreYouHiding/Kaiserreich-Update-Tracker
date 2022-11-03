@@ -900,8 +900,8 @@ country_event = { #NP takes control
 		}
 		set_party_name = {
 			ideology = paternal_autocrat
-			long_name = "Verdinaso"
-			name = "Verdinaso"
+			long_name = BEL_verdinaso_party
+			name = BEL_verdinaso_party
 		}
 	}
 }
@@ -2003,12 +2003,12 @@ country_event = { #Great Protest of '36
 			country_event = {
 				id = bel.8
 				days = 64
-				random = 72
+				random_days = 72
 			}
 			country_event = {
 				id = bel.14
 				days = 124
-				random = 36
+				random_days = 36
 			}
 			country_event = { id = bel.15 days = 144 }
 			country_event = { id = bel.16 days = 144 }
@@ -3890,8 +3890,8 @@ country_event = { #German Forces return to Germany
 		hidden_effect = { BEL_remove_monarchy = yes }
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = Interim_Governement
-			name = Interim_Governement
+			long_name = BEL_interim_government
+			name = BEL_interim_government
 		}
 		add_country_leader_role = {
 			character = BEL_belgian_parliament
@@ -6622,8 +6622,8 @@ country_event = { #Flemish Coup 3
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
-			name = Interim_Governement
-			long_name = Interim_Governement
+			name = BEL_interim_government
+			long_name = BEL_interim_government
 		}
 		hidden_effect = {
 			country_event = { id = flawa.32 days = 7 }
@@ -6674,8 +6674,8 @@ country_event = { #Flemish Coup 4 Choice between dictatorship or democracy
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
-			name = Interim_Governement
-			long_name = Interim_Governement
+			name = BEL_interim_government
+			long_name = BEL_interim_government
 		}
 
 		hidden_effect = {
@@ -6785,8 +6785,8 @@ country_event = { #The army steps in and restores order
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
-			name = "Military Government"
-			long_name = "Military Government"
+			name = BEL_military_government
+			long_name = BEL_military_government
 		}
 	}
 }
@@ -7795,8 +7795,8 @@ country_event = { #The first 'Talentelling'
 		set_country_flag = { flag = BEL_Trust value = 0 }
 		set_party_name = {
 			ideology = authoritarian_democrat
-			long_name = "Volksunie"
-			name = "Volksunie"
+			name = BEL_peoples_union
+			long_name = BEL_peoples_union
 		}
 	}
 }

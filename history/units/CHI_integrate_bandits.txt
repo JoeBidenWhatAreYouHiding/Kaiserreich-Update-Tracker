@@ -3,12 +3,11 @@ division_template = {
 	name = "Minbing Lü"	# Represents: militia brigades
 	division_names_group = CHI_MIL_01
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
+		irregular_infantry = { x = 0 y = 0 }
+		irregular_infantry = { x = 0 y = 1 }
+		irregular_infantry = { x = 1 y = 0 }
+		irregular_infantry = { x = 1 y = 1 }
 	}
-	template_counter = 68
 }
 
 ### OOB ###

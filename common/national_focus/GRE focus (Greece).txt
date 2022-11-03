@@ -1450,17 +1450,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_education_programs"
-			if = {
-				limit = { has_idea = GRE_research_idea }
-				modify_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else_if = {
-				limit = { amount_research_slots > 4 }
-				add_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else = {
-				add_research_slot = 1
-			}
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {
@@ -1905,17 +1895,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_sponsor_church_schools"
-			if = {
-				limit = { has_idea = GRE_research_idea }
-				modify_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else_if = {
-				limit = { amount_research_slots > 4 }
-				add_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else = {
-				add_research_slot = 1
-			}
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {
@@ -2380,17 +2360,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_planned_research"
-			if = {
-				limit = { has_idea = GRE_research_idea }
-				modify_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else_if = {
-				limit = { amount_research_slots > 4 }
-				add_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else = {
-				add_research_slot = 1
-			}
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {
@@ -2779,17 +2749,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_leap_forward"
-			if = {
-				limit = { has_idea = GRE_research_idea }
-				modify_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else_if = {
-				limit = { amount_research_slots > 4 }
-				add_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else = {
-				add_research_slot = 1
-			}
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {
@@ -3323,17 +3283,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_greek_science"
-			if = {
-				limit = { has_idea = GRE_research_idea }
-				modify_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else_if = {
-				limit = { amount_research_slots > 4 }
-				add_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else = {
-				add_research_slot = 1
-			}
+			add_research_slot_until_five = yes
 		}
 	}
 	focus = {
@@ -3868,17 +3818,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_innovation"
-			if = {
-				limit = { has_idea = GRE_research_idea }
-				modify_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else_if = {
-				limit = { amount_research_slots > 4 }
-				add_timed_idea = { idea = GRE_research_idea days = 730 }
-			}
-			else = {
-				add_research_slot = 1
-			}
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

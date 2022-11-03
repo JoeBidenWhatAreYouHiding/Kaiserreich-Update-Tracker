@@ -634,10 +634,7 @@ focus_tree = {
 		id = RUS_Empower_The_Senate
 		icon = GFX_focus_generic_self_management
 		available = {
-			OR = {
-				RUS_dmitriy_romanov_in_power = yes
-				RUS_trubetskoy_in_power = yes
-			}
+			RUS_dmitriy_romanov_in_power = yes
 		}
 		prerequisite = {
 			focus = RUS_The_Republic_Survives
@@ -816,12 +813,7 @@ focus_tree = {
 		id = RUS_Empower_The_Duma
 		icon = GFX_goal_DOM_End_Judicial_Corruption
 		available = {
-			OR = {
-				RUS_tsereteli_in_power = yes
-				RUS_chernov_in_power = yes
-				RUS_milyukov_in_power = yes
-				RUS_trubetskoy_in_power = yes
-			}
+			RUS_dmitriy_romanov_in_power = no
 		}
 		bypass = {
 			is_subject = yes
@@ -1608,7 +1600,7 @@ focus_tree = {
 				country_event = {
 					id = rusd.137
 					days = 90
-					random = 720
+					random_days = 30
 				}
 			}
 		}
@@ -2457,7 +2449,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_Research_Investments"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

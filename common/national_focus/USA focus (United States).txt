@@ -1102,7 +1102,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_democratic_education"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1750,12 +1750,12 @@ focus_tree = {
 				country_event = {
 					id = ustates.301
 					days = 90
-					random = 6480
+					random_days = 270
 				}
 				country_event = {
 					id = ustates.308
 					days = 90
-					random = 6480
+					random_days = 270
 				}
 			}
 		}
@@ -2106,7 +2106,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_army_education"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

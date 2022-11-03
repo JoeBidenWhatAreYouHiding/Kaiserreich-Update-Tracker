@@ -406,7 +406,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WIF_increase_funding_oak_ridge"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -674,7 +674,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WIF_close_cooperation"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_doctrine_cost_reduction = {
 				name = WIF_close_cooperation
 				cost_reduction = 0.5
@@ -2319,7 +2319,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus WIF_university"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

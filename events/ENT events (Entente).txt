@@ -1686,6 +1686,47 @@ country_event = {
 
 	option = {
 		name = entente.21.a
+		trigger = { NOT = { tag = IRE } }
+		custom_effect_tooltip = CAN_king_three_month_tour
+		add_dynamic_modifier = {
+			modifier = CAN_royal_visit_effect
+		}
+		hidden_effect = {
+			FROM = { save_event_target_as = original_home_country }
+			save_event_target_as = tour_country
+			country_event = { id = entente.29 days = 365 }
+			random_other_country = {
+				limit = { is_ai = yes }
+				country_event = entente.22
+			}
+		}
+	}
+	option = {
+		name = entente.21.b
+		trigger = {
+			tag = IRE
+			ENT_king_edward_viii = yes
+		}
+		custom_effect_tooltip = CAN_king_three_month_tour
+		add_dynamic_modifier = {
+			modifier = CAN_royal_visit_effect
+		}
+		hidden_effect = {
+			FROM = { save_event_target_as = original_home_country }
+			save_event_target_as = tour_country
+			country_event = { id = entente.29 days = 365 }
+			random_other_country = {
+				limit = { is_ai = yes }
+				country_event = entente.22
+			}
+		}
+	}
+	option = {
+		name = entente.21.c
+		trigger = {
+			tag = IRE
+			ENT_king_edward_viii = no
+		}
 		custom_effect_tooltip = CAN_king_three_month_tour
 		add_dynamic_modifier = {
 			modifier = CAN_royal_visit_effect
@@ -1724,7 +1765,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.23 days = 10 random = 50 }
+			country_event = { id = entente.23 days = 10 random_days = 50 }
 		}
 	}
 	option = {
@@ -1745,7 +1786,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.24 days = 10 random = 50 }
+			country_event = { id = entente.24 days = 10 random_days = 50 }
 		}
 	}
 	option = {
@@ -1761,7 +1802,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.25 days = 10 random = 50 }
+			country_event = { id = entente.25 days = 10 random_days = 50 }
 		}
 	}
 	option = {
@@ -1774,7 +1815,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.26 days = 10 random = 50 }
+			country_event = { id = entente.26 days = 10 random_days = 50 }
 		}
 	}
 	option = {
@@ -1802,7 +1843,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.27 days = 10 random = 50 }
+			country_event = { id = entente.27 days = 10 random_days = 50 }
 		}
 	}
 	option = {
@@ -1827,7 +1868,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.28 days = 10 random = 50 }
+			country_event = { id = entente.28 days = 10 random_days = 50 }
 		}
 	}
 	option = {
@@ -3127,7 +3168,7 @@ country_event = {
 			}
 		}
 		event_target:KR_king_base = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3173,7 +3214,7 @@ country_event = {
 		CAN_calc_royal_visit_effects = yes
 		add_war_support = -0.05
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -3196,7 +3237,7 @@ country_event = {
 		CAN_calc_exile_influence_effects = yes
 		add_stability = -0.05
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -3241,7 +3282,7 @@ country_event = {
 		set_temp_variable = { ideology_change_var = -0.1 }
 		change_ruling_party_popularity = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3287,7 +3328,7 @@ country_event = {
 		CAN_calc_royal_visit_effects = yes
 		add_war_support = -0.10
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -3311,7 +3352,7 @@ country_event = {
 		add_stability = -0.05
 		add_war_support = -0.05
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -3356,7 +3397,7 @@ country_event = {
 		set_temp_variable = { ideology_change_var = -0.1 }
 		change_ruling_party_popularity = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3448,7 +3489,7 @@ country_event = {
 		}
 		CAN_calc_exile_influence_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -3474,7 +3515,7 @@ country_event = {
 			CAN_calc_exile_influence_effects = yes
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -3500,7 +3541,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3546,7 +3587,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 			if = {
 				limit = { tag = CAN }
 				set_country_flag = CAN_king_replaces_pm
@@ -3628,7 +3669,7 @@ country_event = {
 			CAN_calc_exile_influence_effects = yes
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3709,7 +3750,7 @@ country_event = {
 		}
 		CAN_calc_exile_influence_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3790,7 +3831,7 @@ country_event = {
 		}
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3865,7 +3906,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3940,7 +3981,7 @@ country_event = {
 			clear_variable = time_off
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -3963,7 +4004,7 @@ country_event = {
 		name = entente.61.a
 		add_war_support = 0.05
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4000,7 +4041,7 @@ country_event = {
 			CAN_calc_royal_visit_effects = yes
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4027,7 +4068,7 @@ country_event = {
 		name = entente.63.a
 		set_variable = { global.king_edward_story = 2 }
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4089,7 +4130,7 @@ country_event = {
 			CAN_calc_royal_visit_effects = yes
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4152,7 +4193,7 @@ country_event = {
 			add_stability = -0.05
 			add_political_power = -100
 			hidden_effect = {
-				country_event = { id = entente.50 days = 90 random = 1440 }
+				country_event = { id = entente.50 days = 90 random_days = 60 }
 			}
 		}
 		else = {
@@ -4207,7 +4248,7 @@ country_event = {
 		name = entente.66.a
 		set_variable = { global.king_edward_story = 10 }
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4241,7 +4282,7 @@ country_event = {
 				limit = { is_ai = yes }
 				news_event = entente.90
 			}
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4272,7 +4313,7 @@ country_event = {
 				limit = { is_ai = yes }
 				news_event = entente.91
 			}
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4309,7 +4350,7 @@ country_event = {
 			CAN_calc_royal_visit_effects = yes
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4358,7 +4399,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4384,7 +4425,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4410,7 +4451,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4456,7 +4497,7 @@ country_event = {
 		set_variable = { global.king_henry_story = 1 }
 		add_war_support = 0.05
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4482,7 +4523,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4508,7 +4549,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4557,7 +4598,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4583,7 +4624,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4608,7 +4649,7 @@ country_event = {
 		custom_effect_tooltip = CAN_king_takes_time_off
 		set_global_flag = { flag = CAN_king_busy days = 180 value = 1 }
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -4791,7 +4832,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.102 days = 1 random = 72 }
+			country_event = { id = entente.102 days = 1 random_hours = 72 }
 		}
 	}
 	option = {
@@ -4825,7 +4866,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { id = entente.103 days = 1 random = 72 }
+			country_event = { id = entente.103 days = 1 random_hours = 72 }
 		}
 	}
 	option = {
@@ -5028,7 +5069,7 @@ country_event = {
 		add_to_variable = { king_popularity = 1 }
 		CAN_calc_royal_visit_effects = yes
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -5079,7 +5120,7 @@ country_event = {
 			CAN_calc_royal_visit_effects = yes
 		}
 		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -5214,7 +5255,7 @@ country_event = {
 		}
 		hidden_effect = {
 			news_event = { id = entente.110 days = 1 }
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -5268,7 +5309,7 @@ country_event = {
 			GBR_create_albert = yes
 
 			news_event = { id = entente.111 days = 1 }
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -5318,7 +5359,7 @@ country_event = {
 			GBR_create_henry = yes
 
 			news_event = { id = entente.111 days = 1 }
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 	option = {
@@ -5359,7 +5400,7 @@ country_event = {
 			GBR_create_george = yes
 
 			news_event = { id = entente.111 days = 1 }
-			country_event = { id = entente.50 days = 90 random = 1440 }
+			country_event = { id = entente.50 days = 90 random_days = 60 }
 		}
 	}
 }
@@ -5601,7 +5642,7 @@ country_event = {
 					NOT = { tag = CAN }
 					is_in_array = { global.CAN_imperial_conference = THIS }
 				}
-				country_event = { id = entente.203 days = 1 random = 24 }
+				country_event = { id = entente.203 days = 1 random_hours = 24 }
 			}
 		}
 	}
@@ -5870,12 +5911,12 @@ country_event = {
 						NOT = { has_country_flag = CAN_spoke_at_conference }
 						NOT = { tag = CAN }
 					}
-					country_event = { id = entente.203 days = 1 random = 24 }
+					country_event = { id = entente.203 days = 1 random_hours = 24 }
 				}
 			}
 			else = {
 				CAN = {
-					country_event = { id = entente.205 days = 1 random = 72 }
+					country_event = { id = entente.205 days = 1 random_hours = 72 }
 				}
 			}
 		}
@@ -6052,7 +6093,7 @@ country_event = {
 		add_ideas = CAN_air_training_plan_idea
 		ENT = {
 			add_opinion_modifier = { target = ROOT modifier = KR_pleased }
-			country_event = { id = entente.212 days = 1 random = 264 }
+			country_event = { id = entente.212 days = 1 random_days = 10 }
 		}
 	}
 	option = { # Refuse

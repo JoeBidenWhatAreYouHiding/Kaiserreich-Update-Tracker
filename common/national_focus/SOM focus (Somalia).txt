@@ -720,12 +720,12 @@ focus_tree = {
 				#country_event = {
 				#	id = som.11
 				#	days = 360
-				#	random = 180
+				#	random_days = 180
 				#}
 				country_event = {
 					id = som.13
 					days = 360
-					random = 180
+					random_days = 180
 				}
 			}
 		}
@@ -930,7 +930,7 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SOM_techslot2"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1475,7 +1475,7 @@ focus_tree = {
 
 	focus = {
 		id = SOM_hobyoyards
-		icon = GFX_SOM_goal_hoboyards
+		icon = GFX_SOM_goal_hobyards
 		cost = 8
 
 		relative_position_id = SOM_clanmilitiaarmament

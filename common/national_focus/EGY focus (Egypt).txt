@@ -829,7 +829,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus EGY_new_universities"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			hidden_effect = {
 				country_event = {
 					id = egy.150
@@ -1821,7 +1821,7 @@ focus_tree = {
 		icon = GFX_EGY_Liberate_Tripolitania
 
 		available = {
-			"LBA" = {
+			LBA = {
 				is_subject_of = OTT
 				has_country_leader = { character = LBA_senussi_regency_council }
 			}
@@ -1845,14 +1845,14 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		bypass = {
-			"LBA" = {
+			LBA = {
 				has_country_leader = { character = LBA_idris }
 			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus EGY_Liberate_Tripolitania"
-			"LBA" = {
+			LBA = {
 				country_event = libya.4
 			}
 			custom_effect_tooltip = egy_cyrenaica_tt
@@ -2620,7 +2620,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus EGY_Arab_University_Damascus"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			effect_tooltip = {
 				every_state = {
 					limit = {
@@ -3013,7 +3013,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus EGY_Arab_Academiae"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			custom_effect_tooltip = egy_memberstates_buff
 			if = {
 				limit = {

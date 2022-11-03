@@ -108,11 +108,6 @@ COG_KON = {
 	color_ui = rgb { 199 160 139 }
 }
 
-LIB_AUTHDEM = {
-	color = rgb { 129 169 177 }
-	color_ui = rgb { 129 169 177 }
-}
-
 RAS_ARB = {
 	color = rgb { 243 191 80 }
 	color_ui = rgb { 243 191 80 }

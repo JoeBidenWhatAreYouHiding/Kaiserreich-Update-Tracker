@@ -741,7 +741,7 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus JAP_tech_team"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -3519,18 +3519,17 @@ focus_tree = {
 		will_lead_to_war_with = AST
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus JAP_isolate_australasia"
-			add_opinion_modifier = { target = AST modifier = embargo }
 			AST = {
+				embargo_ROOT = yes
 				country_event = japfor.450
-			}
-			hidden_effect = {
-				for_each_loop = {
-					array = global.asian_economic_sphere
-					add_opinion_modifier = {
-						target = AST
-						modifier = embargo
+				hidden_effect = {
+					for_each_scope_loop = {
+						array = global.asian_economic_sphere
+						embargo_PREV = yes
 					}
 				}
+			}
+			hidden_effect = {
 				activate_targeted_decision = { target = AST decision = JAP_attack_australia }
 				activate_targeted_decision = { target = NZL decision = JAP_attack_australia }
 			}
@@ -3774,12 +3773,12 @@ focus_tree = {
 				OR = {
 					any_enemy_country = { is_actual_major = yes }
 					has_war_with = CHN
-					"PHI" = { is_in_faction = yes }
+					PHI = { is_in_faction = yes }
 				}
 			}
 			modifier = {
 				factor = 0
-				is_in_array = { global.JAP_possible_allies_array = "PHI" }
+				is_in_array = { global.JAP_possible_allies_array = PHI }
 			}
 			modifier = {
 				factor = 0
@@ -3798,7 +3797,7 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus JAP_philippines"
-			"PHI" = {
+			PHI = {
 				country_event = japfor.55
 			}
 			hidden_effect = { activate_targeted_decision = { target = PHI decision = JAP_threaten_philippines } }

@@ -412,7 +412,7 @@ FNG_fixing_the_economy_category = { # Wang Yongjiang's Legacy
 				country_event = {
 					id = fengtian.126
 					days = 90
-					random = 6480
+					random_days = 270
 				}
 			}
 		}
@@ -1020,7 +1020,7 @@ china_army_decisions = {
 					country_event = {
 						id = fengtian.32
 						days = 20
-						random = 600
+						random_days = 30
 					}
 				}
 			}
@@ -2072,12 +2072,12 @@ FNG_railways = {
 				country_event = {
 					id = fengtian.195
 					days = 10
-					random = 480
+					random_days = 20
 				}
 				country_event = {
 					id = fengtian.196
 					days = 10
-					random = 480
+					random_days = 20
 				}
 			}
 		}
@@ -2129,12 +2129,12 @@ FNG_railways = {
 				country_event = {
 					id = fengtian.195
 					days = 10
-					random = 480
+					random_days = 20
 				}
 				country_event = {
 					id = fengtian.196
 					days = 10
-					random = 480
+					random_days = 20
 				}
 			}
 		}
@@ -2186,12 +2186,12 @@ FNG_railways = {
 				country_event = {
 					id = fengtian.195
 					days = 10
-					random = 480
+					random_days = 20
 				}
 				country_event = {
 					id = fengtian.196
 					days = 10
-					random = 480
+					random_days = 20
 				}
 			}
 		}

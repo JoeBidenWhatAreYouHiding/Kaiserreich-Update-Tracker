@@ -1002,6 +1002,9 @@ country_event = {	#Elections of [GetYear]
 
 	option = {
 		name = ottpol.18.a
+		trigger = {
+			NOT = { has_country_flag = mil_elections }
+		}
 		ai_chance = {
 			base = 40
 			modifier = {
@@ -1115,9 +1118,7 @@ country_event = {	#Elections of [GetYear]
 			}
 		}
 		trigger = {
-			NOT = {
-				has_country_flag = mil_elections
-			}
+			NOT = { has_country_flag = mil_elections }
 		}
 		add_popularity = {
 			ideology = market_liberal
@@ -1725,7 +1726,7 @@ country_event = {	#Death of Kemal
 
 	option = {
 		name = ottpol.34.a
-		retire_character = TUR_mustafa_kemal
+		TUR_mustafa_kemal = { kill_character = yes }
 		hidden_effect = {
 			country_event = { id = ottpol.35 days = 7 }
 			news_event = worldnews.434
@@ -2028,7 +2029,7 @@ country_event = {	#Implementation of the Turkish Language
 			country_event = {
 				id = ottkem.3
 				days = 60
-				random = 500
+				random_days = 500
 			}
 		}
 	}
@@ -2061,12 +2062,12 @@ country_event = {	#Student Protest at the Damascus School of Law
 			country_event = {
 				id = ottkem.4
 				days = 15
-				random = 100
+				random_days = 100
 			}
 			country_event = {
 				id = ottkem.6
 				days = 30
-				random = 100
+				random_days = 100
 			}
 		}
 	}
@@ -2091,7 +2092,7 @@ country_event = {	#Formation of the Türk Dil Kurumu
 			country_event = {
 				id = ottkem.5
 				days = 30
-				random = 100
+				random_days = 100
 			}
 		}
 		set_country_flag = ott_language_reformed
@@ -2156,7 +2157,7 @@ country_event = {	#Language Trouble in the Mashriq
 			country_event = {
 				id = ottkem.7
 				days = 30
-				random = 100
+				random_days = 100
 			}
 		}
 	}
@@ -3447,7 +3448,7 @@ country_event = {	#The Palace Raid
 
 	option = {
 		name = ottkem.43.a
-		retire_character = TUR_abdulmecid_osmanoglu
+		TUR_abdulmecid_osmanoglu = { kill_character = yes }
 		OTT_create_ahmed = yes
 		hidden_effect = {
 			country_event = { id = ottkem.44 hours = 4 }
@@ -3631,7 +3632,7 @@ country_event = {	#Death of Kemal
 
 	option = {
 		name = ottkem.52.a
-		retire_character = TUR_mustafa_kemal
+		TUR_mustafa_kemal = { kill_character = yes }
 	}
 }
 
@@ -5287,7 +5288,7 @@ country_event = {	#Death of Abdülmecid II
 
 	option = {
 		name = ottfla.21.a
-		retire_character = TUR_abdulmecid_osmanoglu
+		TUR_abdulmecid_osmanoglu = { kill_character = yes }
 		OTT_create_ahmed = yes
 	}
 }
@@ -6278,7 +6279,7 @@ country_event = {	#Fall of Ha'il
 			country_event = {
 				id = ottfor.2
 				days = 30
-				random = 300
+				random_days = 300
 			}
 		}
 	}
@@ -11223,22 +11224,22 @@ country_event = {	#The Meclis-i-Mebusân reconvenes
 			country_event = {
 				id = ottlib.5
 				days = 260
-				random = 2000
+				random_days = 30
 			}
 			country_event = {
 				id = ottlib.6
 				days = 270
-				random = 2000
+				random_days = 30
 			}
 			country_event = {
 				id = ottlib.7
 				days = 280
-				random = 2000
+				random_days = 30
 			}
 			country_event = {
 				id = ottlib.14
 				days = 320
-				random = 2000
+				random_days = 30
 			}
 			PAL = { country_event = pal.32 }
 		}
@@ -12780,7 +12781,7 @@ country_event = {	#Death of [OTT.GetLeader]
 
 	option = {
 		name = ottars.12.a
-		retire_character = TUR_abdulmecid_osmanoglu
+		TUR_abdulmecid_osmanoglu = { kill_character = yes }
 		OTT_create_ahmed = yes
 	}
 }

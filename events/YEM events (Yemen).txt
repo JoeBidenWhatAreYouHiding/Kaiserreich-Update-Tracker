@@ -924,7 +924,7 @@ country_event = { #Germany gives ship
 				}
 				obsolete = yes
 			}
-			load_oob = YEM_Ship
+			create_ship = { type = ship_hull_cruiser_coastal_defense_ship equipment_variant = "Yahya Sanaa Aden Arwa Class" creator = ROOT }
 		}
 		custom_effect_tooltip = YEM_flagship_tooltip
 	}

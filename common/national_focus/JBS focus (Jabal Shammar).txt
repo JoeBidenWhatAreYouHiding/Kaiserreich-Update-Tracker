@@ -113,7 +113,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus JBS_invite_syrian_educators"
 			country_event = jbs.2
 			JBS_Decrease_Urban_Nobility_Support = yes
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 		}
 	}
 
@@ -1676,14 +1676,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus JBS_Majlis_al_Wukala"
-			add_research_slot = 1
+			add_research_slot_until_five = yes
 			add_stability = 0.1
-			custom_effect_tooltip = jbs_majlis_tt
-			effect_tooltip = {
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = JBS_Fundamental_Provisions
+						NOT = { has_completed_focus = JBS_Constituent_Assembly }
+					}
+				}
+				custom_effect_tooltip = jbs_majlis_tt
 				set_party_name = {
 					ideology = market_liberal
-					long_name = "Hizb Hajazi al-Liybiralii (Hejazi Liberal Party)"
-					name = "HHL"
+					name = HEJ_market_liberal_party
+					long_name = HEJ_market_liberal_party_long
 				}
 				add_popularity = {
 					ideology = market_liberal
@@ -1691,8 +1697,8 @@ focus_tree = {
 				}
 				set_party_name = {
 					ideology = social_conservative
-					long_name = "Hizb Hajazi al-Watani (Hejazi National Party)"
-					name = "HHW"
+					name = HEJ_social_conservative_party
+					long_name = HEJ_social_conservative_party_long
 				}
 				add_popularity = {
 					ideology = social_conservative
@@ -1700,29 +1706,6 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				if = {
-					limit = {
-						has_completed_focus = JBS_Fundamental_Provisions
-					}
-					set_party_name = {
-						ideology = market_liberal
-						long_name = "Hizb Hajazi al-Liybiralii (Hejazi Liberal Party)"
-						name = "HHL"
-					}
-					add_popularity = {
-						ideology = market_liberal
-						popularity = 0.08
-					}
-					set_party_name = {
-						ideology = social_conservative
-						long_name = "Hizb Hajazi al-Watani (Hejazi National Party)"
-						name = "HHW"
-					}
-					add_popularity = {
-						ideology = social_conservative
-						popularity = 0.24
-					}
-				}
 				country_event = {
 					id = jbs.24
 					days = 10

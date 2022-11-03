@@ -2785,7 +2785,7 @@ OTT_Handling_Libyan_Vilayets = {
 		icon = oppression
 
 		available = {
-			"LBA" = {
+			LBA = {
 				exists = yes
 				is_subject = no
 			}
@@ -2805,7 +2805,7 @@ OTT_Handling_Libyan_Vilayets = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision OTT_TRI_Combat_Senussi_Order"
-			"LBA" = {
+			LBA = {
 				add_stability = -0.05
 				set_temp_variable = { ideology_change_var = -0.1 }
 				change_ruling_party_popularity = yes

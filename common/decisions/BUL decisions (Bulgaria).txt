@@ -586,6 +586,12 @@ foreign_politics = {
 					has_completed_focus = BUL_hijack_yugoslavism
 				}
 			}
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
 		}
 
 		visible = {
@@ -651,6 +657,12 @@ foreign_politics = {
 			if = {
 				limit = { has_elected_government = yes }
 				NOT = { AUS = { has_government = paternal_autocrat } }
+			}
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
 			}
 		}
 
@@ -739,6 +751,12 @@ foreign_politics = {
 					is_in_faction_with = SER
 				}
 			}
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
 		}
 
 		visible = {
@@ -802,6 +820,12 @@ foreign_politics = {
 			FROM = {
 				is_faction_leader = yes
 			}
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
 		}
 
 		visible = {
@@ -864,6 +888,12 @@ foreign_politics = {
 			OR = {
 				is_owner_neighbor_of = FROM
 				any_allied_country = { is_owner_neighbor_of = FROM }
+			}
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
 			}
 		}
 
@@ -1032,6 +1062,12 @@ foreign_politics = {
 				RUS = {
 					has_war_with = GER
 				}
+			}
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
 			}
 		}
 
@@ -1392,6 +1428,12 @@ foreign_politics = {
 				}
 				second_weltkrieg_can_start = yes
 			}
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
 		}
 
 		visible = {
@@ -1613,6 +1655,14 @@ foreign_politics = {
 	BUL_Balkan_Union = {
 		icon = GFX_decision_generic_nationalism
 		allowed = { tag = BUL }
+		available = {
+			if = {
+				limit = {
+					has_country_flag = KR_getting_faction_invite
+				}
+				is_being_invited_into_faction = no
+			}
+		}
 		visible = {
 			has_elected_government = yes
 			has_global_flag = balkan_war_ended

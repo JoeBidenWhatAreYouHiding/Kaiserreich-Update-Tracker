@@ -3452,8 +3452,6 @@ country_event = { # Visit from the King's Brother
 			character = LIT_wilhelm_von_urach
 			advisor = {
 				slot = political_advisor
-				on_add = { political_advisor_on_add = yes }
-				on_remove = { political_advisor_on_remove = yes }
 				idea_token = LIT_wilhelm_von_urach
 				available = {
 					NOT = { has_government = national_populist }

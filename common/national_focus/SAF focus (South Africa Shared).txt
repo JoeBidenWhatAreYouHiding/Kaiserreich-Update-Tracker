@@ -689,7 +689,7 @@ shared_focus = {
 			add_popularity = { ideology = authoritarian_democrat popularity = 0.02 }
 		}
 		hidden_effect = {
-			country_event = { id = saf.316 days = 90 random = 30 }
+			country_event = { id = saf.316 days = 90 random_days = 30 }
 			SAF_teardown_nuweveld_decisions = yes
 		}
 	}

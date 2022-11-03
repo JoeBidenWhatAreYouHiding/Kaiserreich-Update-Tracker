@@ -117,7 +117,7 @@ country_event = {
 			country_event = {
 				id = romania.9
 				days = 30
-				random = 60
+				random_days = 60
 			}
 		}
 	}
@@ -366,12 +366,12 @@ country_event = { #Next Great Game event
 				}
 			}
 		}
-		country_event = { id = romania.9 days = 120 random = 30 }
+		country_event = { id = romania.9 days = 120 random_days = 30 }
 	}
 
 	option = {
 		ai_chance = { base = 20 }
-		country_event = { id = romania.9 days = 60 random = 30 }
+		country_event = { id = romania.9 days = 60 random_days = 30 }
 	}
 
 	option = {
@@ -386,7 +386,7 @@ country_event = { #Next Great Game event
 				national_populist > 0.9
 			}
 		}
-		country_event = { id = romania.9 days = 30 random = 30 }
+		country_event = { id = romania.9 days = 30 random_days = 30 }
 	}
 }
 
@@ -2120,7 +2120,7 @@ country_event = {
 			country_event = {
 				id = romania.62
 				days = 150
-				random = 30
+				random_days = 30
 			}
 		}
 	}
@@ -2136,7 +2136,7 @@ country_event = {
 			country_event = {
 				id = romania.62
 				days = 150
-				random = 30
+				random_days = 30
 			}
 		}
 	}
@@ -2596,7 +2596,7 @@ country_event = {
 			country_event = {
 				id = romania.156
 				days = 50
-				random = 25
+				random_days = 25
 			}
 			country_event = {
 				id = romania.160
@@ -4794,7 +4794,13 @@ country_event = {
 	option = {
 		name = romania.110.a #Of course
 		ai_chance = {
-			base = 90
+			base = 100
+			modifier = {
+				factor = 0
+				tag = CAN
+				ROM = { has_war_with = RUS }
+				CAN = { NOT = { has_war_with = RUS } }
+			}
 		}
 		ROM = {
 			country_event = {
@@ -4806,9 +4812,9 @@ country_event = {
 	option = {
 		name = romania.110.b #No way
 		ai_chance = {
-			base = 10
+			base = 0
 			modifier = {
-				factor = 100
+				add = 100
 				tag = CAN
 				ROM = { has_war_with = RUS }
 				CAN = { NOT = { has_war_with = RUS } }
@@ -5947,7 +5953,7 @@ country_event = {
 			country_event = {
 				id = romania.157
 				days = 20
-				random = 5
+				random_days = 5
 			}
 		}
 	}
@@ -6076,7 +6082,7 @@ country_event = {
 			country_event = {
 				id = romania.162
 				days = 400
-				random = 70
+				random_days = 70
 			}
 		}
 	}
@@ -7866,6 +7872,11 @@ country_event = {
 	option = {
 		name = romania.226.a
 		add_stability = 0.05
+		set_party_name = {
+			ideology = national_populist
+			long_name = ROM_nat_pop_green_democracy_long
+			name =  ROM_nat_pop_green_democracy
+		}
 	}
 }
 #PNT constitution

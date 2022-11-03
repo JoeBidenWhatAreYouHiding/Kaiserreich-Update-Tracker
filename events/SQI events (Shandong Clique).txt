@@ -286,8 +286,8 @@ country_event = { # Qing Magistrates Arrest Zongchang
 			QIE = { country_event = qiefor.107 }
 			country_event = { id = shandong.992 days = 7 } # Zongchang and Yiguadao Riot
 			set_country_flag = SQI_Yingguang_beat_Zongchang
-			add_opinion_modifier = { target = FNG modifier = embargo }
-			add_opinion_modifier = { target = JAP modifier = embargo }
+			FNG = { embargo_ROOT = yes }
+			JAP = { embargo_ROOT = yes }
 		}
 	}
 }
@@ -410,8 +410,8 @@ country_event = { # Tianran Passes Judgement on Zongchang
 			QIE = { country_event = qiefor.105 }
 			country_event = { id = shandong.991 days = 7 } #Zongchang and Peasants Riot
 			set_country_flag = SQI_Tianran_beat_Zongchang
-			add_opinion_modifier = { target = FNG modifier = embargo }
-			add_opinion_modifier = { target = JAP modifier = embargo }
+			FNG = { embargo_ROOT = yes }
+			JAP = { embargo_ROOT = yes }
 		}
 		custom_effect_tooltip = tooltip_white_line
 		custom_effect_tooltip = characters_will_be_recruited
@@ -492,52 +492,52 @@ country_event = {# Yiguandao and Peasants Riot
 			country_event = {
 				id = shandong.424
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = shandong.425
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = shandong.426
 				days = 280
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = shandong.427
 				days = 360
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = shandong.428
 				days = 440
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = shandong.429
 				days = 520
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = shandong.430
 				days = 600
-				random = 40
+				random_days = 40
 			}
 			country_event = {
 				id = shandong.431
 				days = 680
-				random = 40
+				random_days = 40
 			}
 			country_event = {
 				id = shandong.432
 				days = 760
-				random = 50
+				random_days = 50
 			}
 			country_event = {
 				id = shandong.433
 				days = 840
-				random = 50
+				random_days = 50
 			}
 		}
 	}
@@ -563,52 +563,52 @@ country_event = {# Zongchang and Peasants Riot
 			country_event = {
 				id = shandong.400
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = shandong.401
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = shandong.402
 				days = 280
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = shandong.403
 				days = 360
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = shandong.404
 				days = 440
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = shandong.405
 				days = 520
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = shandong.406
 				days = 600
-				random = 40
+				random_days = 40
 			}
 			country_event = {
 				id = shandong.407
 				days = 600
-				random = 40
+				random_days = 40
 			}
 			country_event = {
 				id = shandong.408
 				days = 680
-				random = 50
+				random_days = 50
 			}
 			country_event = {
 				id = shandong.409
 				days = 760
-				random = 50
+				random_days = 50
 			}
 		}
 	}
@@ -634,32 +634,32 @@ country_event = {# Zongchang and Yiguandao Riot
 			country_event = {
 				id = shandong.414
 				days = 120
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = shandong.415
 				days = 200
-				random = 10
+				random_days = 10
 			}
 			country_event = {
 				id = shandong.416
 				days = 280
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = shandong.417
 				days = 360
-				random = 20
+				random_days = 20
 			}
 			country_event = {
 				id = shandong.418
 				days = 440
-				random = 30
+				random_days = 30
 			}
 			country_event = {
 				id = shandong.419
 				days = 520
-				random = 30
+				random_days = 30
 			}
 		}
 		hidden_effect = {
@@ -1798,7 +1798,7 @@ country_event = {
 		add_equipment_production = {
 			equipment = {
 				type = ship_hull_cruiser_2
-				creator = "SQI"
+				creator = SQI
 				version_name = "Yahagi Class"
 			}
 			requested_factories = 1
@@ -1808,7 +1808,7 @@ country_event = {
 		add_equipment_production = {
 			equipment = {
 				type = ship_hull_light_1
-				creator = "SQI"
+				creator = SQI
 				version_name = "Minekaze/Mutsuki Class"
 			}
 			requested_factories = 1
@@ -1818,7 +1818,7 @@ country_event = {
 		add_equipment_production = {
 			equipment = {
 				type = ship_hull_light_1
-				creator = "SQI"
+				creator = SQI
 				version_name = "Minekaze/Mutsuki Class"
 			}
 			requested_factories = 1

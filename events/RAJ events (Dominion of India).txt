@@ -166,7 +166,7 @@ country_event = {
 				country_event = {
 					id = afg.8
 					days = 7
-					random = 864
+					random_days = 36
 				}
 			}
 		}
@@ -305,7 +305,7 @@ country_event = {
 			country_event = {
 				id = delhi.115
 				days = 1460
-				random = 480
+				random_days = 480
 			}
 		}
 	}
@@ -388,7 +388,7 @@ country_event = {
 			country_event = {
 				id = delhi.115
 				days = 1460
-				random = 480
+				random_days = 480
 			}
 		}
 	}
@@ -1684,7 +1684,7 @@ country_event = {
 			country_event = {
 				id = delhi.116
 				days = 1460
-				random = 480
+				random_days = 480
 			}
 		}
 	}
@@ -1843,7 +1843,7 @@ country_event = {
 			country_event = {
 				id = delhi.117
 				days = 1460
-				random = 480
+				random_days = 480
 			}
 		}
 	}
@@ -2002,7 +2002,7 @@ country_event = {
 			country_event = {
 				id = delhi.118
 				days = 1460
-				random = 480
+				random_days = 480
 			}
 		}
 	}
@@ -2161,7 +2161,7 @@ country_event = {
 			country_event = {
 				id = delhi.119
 				days = 1460
-				random = 480
+				random_days = 480
 			}
 		}
 	}
@@ -2320,7 +2320,7 @@ country_event = {
 			country_event = {
 				id = delhi.120
 				days = 1460
-				random = 480
+				random_days = 480
 			}
 		}
 	}

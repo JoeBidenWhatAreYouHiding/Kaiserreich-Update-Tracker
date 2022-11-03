@@ -975,7 +975,7 @@ country_event = { #New Union Sacree
 			country_event = {
 				id = nfa.270
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -1235,7 +1235,7 @@ country_event = { #CSN Path
 			country_event = {
 				id = nfa.270
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -1350,7 +1350,7 @@ country_event = { #AF Full Power
 			country_event = {
 				id = nfa.271
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -2124,7 +2124,7 @@ country_event = { #Mordacq's Election UNUSED
 			country_event = {
 				id = nfa.270
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -2323,7 +2323,7 @@ country_event = { #En Marche!
 			country_event = {
 				id = nfa.271
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -2455,7 +2455,7 @@ country_event = { #Operation Tocata (4)
 			country_event = {
 				id = nfa.270
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -2781,7 +2781,7 @@ country_event = { #Form the CSN
 			country_event = {
 				id = nfa.270
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -3041,7 +3041,7 @@ country_event = { #Parades end slowly
 			country_event = {
 				id = nfa.271
 				days = 40
-				random = 50
+				random_days = 50
 			}
 			if = {
 				limit = { has_dlc_lar = yes }
@@ -3449,7 +3449,7 @@ country_event = { #Anti-syndicalist volunteers arrive!
 				country_event = {
 					id = nfa.87
 					days = 20
-					random = 40
+					random_days = 40
 				}
 			}
 		}
@@ -6469,7 +6469,7 @@ country_event = { #Fourth Republic President
 			}
 		}
 		hidden_effect = {
-			country_event = { id = nfa.226 days = 500 random = 1000 } #Does Napoleon create the Empire?
+			country_event = { id = nfa.226 days = 500 random_days = 1000 } #Does Napoleon create the Empire?
 		}
 	}
 
@@ -6531,7 +6531,7 @@ country_event = { #Hidden Event to check if NFA owns Alsace-Lorraine
 			country_event = { id = nfa.227 days = 1 } #Does Napoleon create the Empire?
 		}
 		else = {
-			country_event = { id = nfa.226 days = 100 random = 1000 } #Does Napoleon create the Empire?
+			country_event = { id = nfa.226 days = 100 random_days = 1000 } #Does Napoleon create the Empire?
 		}
 	}
 }
@@ -8107,7 +8107,7 @@ country_event = { #Workers Run Away
 						has_country_flag = nfa_transahara_almost_cf
 					}
 				}
-				country_event = { id = nfa.254 days = 75 random = 100 } # Workers Strike
+				country_event = { id = nfa.254 days = 75 random_days = 100 } # Workers Strike
 			}
 		}
 	}
@@ -8167,7 +8167,7 @@ country_event = { #Workers strike
 						has_country_flag = nfa_transahara_almost_cf
 					}
 				}
-				country_event = { id = nfa.255 days = 75 random = 100 } # Workers Strike
+				country_event = { id = nfa.255 days = 75 random_days = 100 } # Workers Strike
 			}
 		}
 	}
@@ -8203,7 +8203,7 @@ country_event = { #Railway Sabotaged
 							temp_255 < 86
 						}
 					}
-					country_event = { id = nfa.252 days = 75 random = 100 } # Workers Strike
+					country_event = { id = nfa.252 days = 75 random_days = 100 } # Workers Strike
 				}
 				else = {
 					# Nothing happens
@@ -8345,6 +8345,7 @@ country_event = { #Fate of Deloncle
 		ai_chance = {
 			base = 50
 		}
+		add_stability = -0.1
 		if = {
 			limit = { has_dlc_lar = yes }
 			add_ideas = NFA_deloncle_traitor_idea
@@ -8390,10 +8391,10 @@ country_event = { #Fate of Groussard
 		ai_chance = {
 			base = 80
 		}
+		add_stability = -0.05
 		if = {
 			limit = { has_dlc_lar = yes }
 			add_ideas = NFA_groussard_operative_idea
-			add_stability = -0.05
 			create_operative_leader = {
 				name = "George Groussard"
 				GFX = GFX_portrait_kr_george_groussard_operative
@@ -8407,7 +8408,6 @@ country_event = { #Fate of Groussard
 		}
 		else = {
 			add_ideas = NFA_groussard_operative_idea_no_lar
-			add_stability = -0.05
 		}
 	}
 }
@@ -8449,7 +8449,7 @@ country_event = { #Law of Exile
 		}
 		add_political_power = 15
 		hidden_effect = {
-			country_event = { id = nfa.302 days = 45 random = 72 } # Napoleon in France
+			country_event = { id = nfa.302 days = 45 random_days = 72 } # Napoleon in France
 		}
 	}
 
@@ -8480,7 +8480,7 @@ country_event = { #Napoleon in France
 		}
 		add_manpower = 2000
 		hidden_effect = {
-			country_event = { id = nfa.303 days = 1050 random = 300 } # General Napoleon
+			country_event = { id = nfa.303 days = 1050 random_days = 300 } # General Napoleon
 		}
 	}
 }
@@ -9724,7 +9724,7 @@ country_event = { #Dispute in Sanekui
 		}
 		add_political_power = -10
 		hidden_effect = {
-			country_event = { id = nfa.441 days = 300 random = 500 } # Boost in Compliance
+			country_event = { id = nfa.441 days = 300 random_days = 500 } # Boost in Compliance
 		}
 	}
 
@@ -10302,7 +10302,7 @@ country_event = { #Crowning ceremony for the AF
 				set_cosmetic_tag = NFA_kingdom
 			}
 			country_event = { id = nfa.513 days = 100 } #Women's suffrage
-			country_event = { id = nfa.517 days = 40 random = 50 } #Meeting with the pope
+			country_event = { id = nfa.517 days = 40 random_days = 50 } #Meeting with the pope
 			country_event = { id = nfa.537 days = 550 } #Knights of Malta
 			country_event = { id = nfa.546 days = 50 } #Attacks against the Anti-France
 			random_country = {
@@ -10780,7 +10780,7 @@ country_event = { #Hidden event to check if post-war events can fire, depending 
 			limit = {
 				owns_state = 762 #Nice
 			}
-			country_event = { id = nfa.518 days = 8 random = 48 } #Restoration of Monaco
+			country_event = { id = nfa.518 days = 8 random_days = 48 } #Restoration of Monaco
 		}
 		if = {
 			limit = {
@@ -11461,7 +11461,7 @@ country_event = { #Hidden event to decide the chain - French Guinea
 		}
 		set_country_flag = nfa_guinea_mission_attacked
 		country_event = nfa.444
-		country_event = { id = nfa.443 days = 108 random = 96 } #loop
+		country_event = { id = nfa.443 days = 108 random_days = 96 } #loop
 	}
 	option = { #Volta kings dispute - 471
 		trigger = {
@@ -11480,7 +11480,7 @@ country_event = { #Hidden event to decide the chain - French Guinea
 		}
 		set_country_flag = nfa_volta_kingdoms_dispute
 		country_event = nfa.471
-		country_event = { id = nfa.443 days = 108 random = 96 } #loop
+		country_event = { id = nfa.443 days = 108 random_days = 96 } #loop
 	}
 	option = { #Infrastructure Sabotaged - 445
 		trigger = {
@@ -11506,7 +11506,7 @@ country_event = { #Hidden event to decide the chain - French Guinea
 			}
 		}
 		country_event = nfa.445
-		country_event = { id = nfa.443 days = 144 random = 96 } #loop
+		country_event = { id = nfa.443 days = 144 random_days = 96 } #loop
 	}
 	option = { #Garrison Attacked - 446
 		trigger = {
@@ -11526,7 +11526,7 @@ country_event = { #Hidden event to decide the chain - French Guinea
 			}
 		}
 		country_event = nfa.446
-		country_event = { id = nfa.443 days = 216 random = 96 } #loop
+		country_event = { id = nfa.443 days = 216 random_days = 96 } #loop
 	}
 	option = { #no effect
 		ai_chance = {
@@ -11542,7 +11542,7 @@ country_event = { #Hidden event to decide the chain - French Guinea
 				has_country_flag = nfa_volta_kingdoms_dispute
 			}
 		}
-		country_event = { id = nfa.443 days = 108 random = 96 } #loop
+		country_event = { id = nfa.443 days = 108 random_days = 96 } #loop
 	}
 }
 
@@ -11691,7 +11691,7 @@ country_event = { #Hidden event to decide the chain - French Sudan
 		}
 		set_country_flag = nfa_sudan_rail_strike
 		country_event = nfa.448
-		country_event = { id = nfa.447 days = 172 random = 96 }
+		country_event = { id = nfa.447 days = 172 random_days = 96 }
 	}
 
 	option = { #Infrastructure Sabotaged - 449
@@ -11707,7 +11707,7 @@ country_event = { #Hidden event to decide the chain - French Sudan
 			}
 		}
 		country_event = nfa.449
-		country_event = { id = nfa.447 days = 172 random = 96 }
+		country_event = { id = nfa.447 days = 172 random_days = 96 }
 	}
 
 	option = { #Garrison Attacked - 450
@@ -11723,7 +11723,7 @@ country_event = { #Hidden event to decide the chain - French Sudan
 			}
 		}
 		country_event = nfa.450
-		country_event = { id = nfa.447 days = 236 random = 96 }
+		country_event = { id = nfa.447 days = 236 random_days = 96 }
 	}
 
 	option = { #no effect
@@ -11734,7 +11734,7 @@ country_event = { #Hidden event to decide the chain - French Sudan
 				has_country_flag = nfa_sudan_rail_strike
 			}
 		}
-		country_event = { id = nfa.447 days = 108 random = 96 }
+		country_event = { id = nfa.447 days = 108 random_days = 96 }
 	}
 }
 
@@ -11939,7 +11939,7 @@ country_event = { #Bedouin Raid Event Checker
 			base = 30
 		}
 		country_event = nfa.453
-		country_event = { id = nfa.452 days = 208 random = 172 } #loop
+		country_event = { id = nfa.452 days = 208 random_days = 172 } #loop
 	}
 
 	option = { #Burnt Village - 454
@@ -11952,7 +11952,7 @@ country_event = { #Bedouin Raid Event Checker
 		}
 		set_country_flag = nfa_burnt_village
 		country_event = nfa.454
-		country_event = { id = nfa.452 days = 208 random = 172 } #loop
+		country_event = { id = nfa.452 days = 208 random_days = 172 } #loop
 	}
 
 	option = { #no effect
@@ -11965,10 +11965,10 @@ country_event = { #Bedouin Raid Event Checker
 		}
 		if = {
 			limit = { has_country_flag = nfa_burnt_village }
-			country_event = { id = nfa.452 days = 108 random = 96 } # Nothing happens
+			country_event = { id = nfa.452 days = 108 random_days = 96 } # Nothing happens
 		}
 		else = {
-			country_event = { id = nfa.452 days = 208 random = 96 } # Nothing happens
+			country_event = { id = nfa.452 days = 208 random_days = 96 } # Nothing happens
 		}
 	}
 }
@@ -12043,10 +12043,10 @@ country_event = { #Burnt Village
 				limit = {
 					check_variable = { temp_454 < 58 }
 				}
-				country_event = { id = nfa.455 days = 1 random = 36 } # Lost in the Sand
+				country_event = { id = nfa.455 days = 1 random_hours = 36 } # Lost in the Sand
 			}
 			else = {
-				country_event = { id = nfa.456 days = 1 random = 36 } # Caravan Captured
+				country_event = { id = nfa.456 days = 1 random_hours = 36 } # Caravan Captured
 			}
 		}
 	}
@@ -12158,7 +12158,7 @@ country_event = { #Hidden event to decide the chain - Tunisia
 		}
 		set_country_flag = nfa_strike_cgtt
 		country_event = nfa.458
-		country_event = { id = nfa.457 days = 178 random = 96 } #loop
+		country_event = { id = nfa.457 days = 178 random_days = 96 } #loop
 	}
 
 	option = { #Moncef Bey collaborates with nationalists - 459
@@ -12176,7 +12176,7 @@ country_event = { #Hidden event to decide the chain - Tunisia
 		}
 		set_country_flag = nfa_moncef_bey_nationalist
 		country_event = nfa.459
-		country_event = { id = nfa.457 days = 178 random = 96 } #loop
+		country_event = { id = nfa.457 days = 178 random_days = 96 } #loop
 	}
 
 	option = { #Terrorist attack - 460
@@ -12203,7 +12203,7 @@ country_event = { #Hidden event to decide the chain - Tunisia
 			}
 		}
 		country_event = nfa.460
-		country_event = { id = nfa.457 days = 178 random = 96 } #loop
+		country_event = { id = nfa.457 days = 178 random_days = 96 } #loop
 	}
 
 	option = { #Leaflets found - 461
@@ -12230,7 +12230,7 @@ country_event = { #Hidden event to decide the chain - Tunisia
 			}
 		}
 		country_event = nfa.461
-		country_event = { id = nfa.457 days = 178 random = 96 } #loop
+		country_event = { id = nfa.457 days = 178 random_days = 96 } #loop
 	}
 
 	option = { #no effect
@@ -12252,7 +12252,7 @@ country_event = { #Hidden event to decide the chain - Tunisia
 				has_country_flag = nfa_strike_cgtt
 			}
 		}
-		country_event = { id = nfa.457 days = 108 random = 96 } #loop
+		country_event = { id = nfa.457 days = 108 random_days = 96 } #loop
 	}
 }
 
@@ -12423,7 +12423,7 @@ country_event = { #Leaflets found in Tunis
 			}
 		}
 		hidden_effect = {
-			country_event = { id = nfa.474 days = 75 random = 36 } # Fervor dies down
+			country_event = { id = nfa.474 days = 75 random_days = 36 } # Fervor dies down
 		}
 	}
 }
@@ -12483,7 +12483,7 @@ country_event = { #Hidden event to decide the chain - Algeria
 		}
 		set_country_flag = nfa_speech_ENA
 		country_event = nfa.463
-		country_event = { id = nfa.462 days = 158 random = 96 } #loop
+		country_event = { id = nfa.462 days = 158 random_days = 96 } #loop
 	}
 
 	option = { #Street fight between algerian syndies and muslims - 464
@@ -12499,7 +12499,7 @@ country_event = { #Hidden event to decide the chain - Algeria
 		}
 		set_country_flag = nfa_street_fight_algeria
 		country_event = nfa.464
-		country_event = { id = nfa.462 days = 158 random = 96 } #loop
+		country_event = { id = nfa.462 days = 158 random_days = 96 } #loop
 	}
 
 	option = { #A shipment from the Communards - 4650
@@ -12526,7 +12526,7 @@ country_event = { #Hidden event to decide the chain - Algeria
 			}
 		}
 		country_event = nfa.465
-		country_event = { id = nfa.462 days = 158 random = 96 } #loop
+		country_event = { id = nfa.462 days = 158 random_days = 96 } #loop
 	}
 
 	option = { #Nationalist books seized - 466
@@ -12549,7 +12549,7 @@ country_event = { #Hidden event to decide the chain - Algeria
 			}
 		}
 		country_event = nfa.466
-		country_event = { id = nfa.462 days = 158 random = 96 } #loop
+		country_event = { id = nfa.462 days = 158 random_days = 96 } #loop
 	}
 
 	option = { #Nothing happens
@@ -12571,7 +12571,7 @@ country_event = { #Hidden event to decide the chain - Algeria
 				has_country_flag = nfa_speech_ENA
 			}
 		}
-		country_event = { id = nfa.462 days = 158 random = 96 } #loop
+		country_event = { id = nfa.462 days = 158 random_days = 96 } #loop
 	}
 }
 
@@ -12659,7 +12659,7 @@ country_event = { #Hidden event to decide the chain - Senegal
 	}
 
 	immediate = {
-		country_event = { id = nfa.467 days = 158 random = 36 } #loop
+		country_event = { id = nfa.467 days = 158 random_days = 36 } #loop
 	}
 
 	option = { #Miner strike - 468
@@ -12845,7 +12845,7 @@ country_event = { #Hidden event to decide the chain - Niger and Wadai
 		}
 		set_country_flag = nfa_mad_prophet_chad
 		country_event = nfa.476
-		country_event = { id = nfa.475 days = 108 random = 96 } #loop
+		country_event = { id = nfa.475 days = 108 random_days = 96 } #loop
 	}
 
 	option = { #Clash between bedouins and the army in Niger - 477
@@ -12862,7 +12862,7 @@ country_event = { #Hidden event to decide the chain - Niger and Wadai
 			}
 		}
 		country_event = nfa.477
-		country_event = { id = nfa.475 days = 108 random = 96 } #loop
+		country_event = { id = nfa.475 days = 108 random_days = 96 } #loop
 	}
 
 	option = { #Assassination in Chad! - 478
@@ -12879,7 +12879,7 @@ country_event = { #Hidden event to decide the chain - Niger and Wadai
 			}
 		}
 		country_event = nfa.478
-		country_event = { id = nfa.475 days = 108 random = 96 } #loop
+		country_event = { id = nfa.475 days = 108 random_days = 96 } #loop
 	}
 
 	option = { #Bedouins attack a patrol Niger - 479
@@ -12896,7 +12896,7 @@ country_event = { #Hidden event to decide the chain - Niger and Wadai
 			}
 		}
 		country_event = nfa.479
-		country_event = { id = nfa.475 days = 158 random = 96 } #loop
+		country_event = { id = nfa.475 days = 158 random_days = 96 } #loop
 	}
 
 	option = { #Nothing happens
@@ -12907,7 +12907,7 @@ country_event = { #Hidden event to decide the chain - Niger and Wadai
 				has_country_flag = nfa_mad_prophet_chad
 			}
 		}
-		country_event = { id = nfa.475 days = 108 random = 96 } #loop
+		country_event = { id = nfa.475 days = 108 random_days = 96 } #loop
 	}
 }
 
@@ -13071,7 +13071,7 @@ country_event = { #Hidden event to decide the chain - Ivory Coast
 		ai_chance = {
 			base = 10
 		}
-		country_event = { id = nfa.490 days = 108 random = 96 } #loop
+		country_event = { id = nfa.490 days = 108 random_days = 96 } #loop
 	}
 }
 

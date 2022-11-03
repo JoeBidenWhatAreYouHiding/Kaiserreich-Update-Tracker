@@ -58535,11 +58535,11 @@ spriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_SOM_goal_hoboyards_shine"
-		texturefile = "gfx/interface/goals/SOM_goal_hoboyards.png"
+		name = "GFX_SOM_goal_hobyards_shine"
+		texturefile = "gfx/interface/goals/SOM_goal_hobyards.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/SOM_goal_hoboyards.png"
+			animationmaskfile = "gfx/interface/goals/SOM_goal_hobyards.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -58552,7 +58552,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/SOM_goal_hoboyards.png"
+			animationmaskfile = "gfx/interface/goals/SOM_goal_hobyards.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

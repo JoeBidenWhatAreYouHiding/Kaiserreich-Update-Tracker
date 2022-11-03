@@ -113,3 +113,22 @@ RUS_we_dont_need_garrisons = {
 		value = -60
 	}
 }
+
+RUS_civilian_buildup = {
+	allowed = {
+		OR = {
+			original_tag = RUS
+			original_tag = SOV
+		}
+	}
+	enable = {
+		date < 1939.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 85
+	}
+}

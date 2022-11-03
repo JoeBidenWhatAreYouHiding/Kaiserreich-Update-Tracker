@@ -1548,7 +1548,11 @@ country_event = { #The National Assembly gives in
 
 	option = {
 		name = flnrev.63.a
-		set_party_name = { ideology = authoritarian_democrat long_name = "Flemish Council" name = "Flemish Council" }
+		set_party_name = {
+			ideology = authoritarian_democrat
+			name = FLA_paternal_autocrat_party
+			long_name = FLA_paternal_autocrat_party
+		}
 		unlock_national_focus = FLA_Regency_By_The_Flemish_Council
 		hidden_effect = {
 			country_event = {
