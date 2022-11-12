@@ -769,10 +769,7 @@ focus_tree = {
 			add_popularity = { ideology = syndicalist popularity = -0.10 }
 			add_popularity = { ideology = totalist popularity = -0.10 }
 			hidden_effect = {
-				country_event = {
-					id = urg.55
-					days = 7
-				}
+				country_event = { id = urg.55 days = 7 }
 			}
 		}
 	}

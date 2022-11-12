@@ -38,18 +38,9 @@ country_event = { #elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_CONSERVATIVE
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_SOCIALISM
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_DICTATE
-					}
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCCON }
+					has_game_rule = { rule = COL_path option = COL_PATH_RADSOC }
+					has_game_rule = { rule = COL_path option = COL_PATH_PATAUT }
 				}
 			}
 		}
@@ -72,18 +63,9 @@ country_event = { #elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_LIBERAL
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_SOCIALISM
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_DICTATE
-					}
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCDEM }
+					has_game_rule = { rule = COL_path option = COL_PATH_RADSOC }
+					has_game_rule = { rule = COL_path option = COL_PATH_PATAUT }
 				}
 			}
 		}
@@ -109,18 +91,9 @@ country_event = { #elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_LIBERAL
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_CONSERVATIVE
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_DICTATE
-					}
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCDEM }
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCCON }
+					has_game_rule = { rule = COL_path option = COL_PATH_PATAUT }
 				}
 			}
 		}
@@ -146,18 +119,9 @@ country_event = { #elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_LIBERAL
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_CONSERVATIVE
-					}
-					has_game_rule = {
-						rule = COL_path
-						option = COL_PATH_SOCIALISM
-					}
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCDEM }
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCCON }
+					has_game_rule = { rule = COL_path option = COL_PATH_RADSOC }
 				}
 			}
 		}
@@ -195,10 +159,7 @@ country_event = { #elections
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = COL_path
-					option = COL_PATH_CONSERVATIVE
-				}
+				has_game_rule = { rule = COL_path option = COL_PATH_SOCCON }
 			}
 		}
 		add_political_power = -25
@@ -218,10 +179,7 @@ country_event = { #elections
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = COL_path
-					option = COL_PATH_LIBERAL
-				}
+				has_game_rule = { rule = COL_path option = COL_PATH_SOCDEM }
 			}
 		}
 		add_political_power = -25
@@ -256,7 +214,7 @@ country_event = { #elections
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = COL_path option = COL_PATH_CONSERVATIVE }				
+				has_game_rule = { rule = COL_path option = COL_PATH_SOCCON }
 			}
 		}
 		add_political_power = -25
@@ -277,7 +235,7 @@ country_event = { #elections
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = COL_path option = COL_PATH_LIBERAL }				
+				has_game_rule = { rule = COL_path option = COL_PATH_SOCDEM }
 			}
 		}
 		promote_character = COL_laureano_gomez_castro
@@ -302,8 +260,8 @@ country_event = { #elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = COL_path option = COL_PATH_LIBERAL }
-					has_game_rule = { rule = COL_path option = COL_PATH_CONSERVATIVE }
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCDEM }
+					has_game_rule = { rule = COL_path option = COL_PATH_SOCCON }
 				}
 			}
 		}
@@ -344,10 +302,7 @@ country_event = {
 			}
 		}
 		COL = {
-			country_event = {
-				id = col.6
-				days = 1
-			}
+			country_event = { id = col.6 days = 1 }
 		}
 	}
 
@@ -372,10 +327,7 @@ country_event = {
 			}
 		}
 		COL = {
-			country_event = {
-				id = col.7
-				days = 1
-			}
+			country_event = { id = col.7 days = 1 }
 			if = {
 				limit = {
 					is_in_faction_with = ECU
@@ -443,10 +395,7 @@ country_event = {
 			}
 			ECU = {
 				OVERLORD = {
-					country_event = {
-						id = col.20
-						days = 1
-					}
+					country_event = { id = col.20 days = 1 }
 				}
 			}
 		}
@@ -500,10 +449,7 @@ country_event = {
 			}
 		}
 		COL = {
-			country_event = {
-				id = col.9
-				days = 1
-			}
+			country_event = { id = col.9 days = 1 }
 		}
 	}
 
@@ -528,10 +474,7 @@ country_event = {
 			}
 		}
 		COL = {
-			country_event = {
-				id = col.10
-				days = 1
-			}
+			country_event = { id = col.10 days = 1 }
 			if = {
 				limit = {
 					is_in_faction_with = VEN
@@ -599,10 +542,7 @@ country_event = {
 			}
 			VEN = {
 				OVERLORD = {
-					country_event = {
-						id = col.21
-						days = 1
-					}
+					country_event = { id = col.21 days = 1 }
 				}
 			}
 		}
@@ -649,10 +589,7 @@ country_event = {
 			}
 		}
 		COL = {
-			country_event = {
-				id = col.12
-				days = 1
-			}
+			country_event = { id = col.12 days = 1 }
 		}
 	}
 
@@ -677,10 +614,7 @@ country_event = {
 			}
 		}
 		COL = {
-			country_event = {
-				id = col.13
-				days = 1
-			}
+			country_event = { id = col.13 days = 1 }
 			if = {
 				limit = {
 					is_in_faction_with = ROOT
@@ -748,10 +682,7 @@ country_event = {
 			}
 			PAN = {
 				OVERLORD = {
-					country_event = {
-						id = col.22
-						days = 1
-					}
+					country_event = { id = col.22 days = 1 }
 				}
 			}
 		}
@@ -869,10 +800,7 @@ country_event = {
 			base = 95
 		}
 		COL = {
-			country_event = {
-				id = col.17
-				days = 1
-			}
+			country_event = { id = col.17 days = 1 }
 		}
 	}
 
@@ -930,10 +858,7 @@ country_event = {
 			base = 95
 		}
 		COL = {
-			country_event = {
-				id = col.19
-				days = 1
-			}
+			country_event = { id = col.19 days = 1 }
 		}
 	}
 

@@ -1019,10 +1019,7 @@ focus_tree = {
 			factor = 90
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LBA_path
-					option = LBA_PATH_UMAR_ISLAM
-				}
+				has_game_rule = { rule = LBA_path option = LBA_PATH_NATPOP_WAR }
 			}
 		}
 		completion_reward = {
@@ -1103,10 +1100,7 @@ focus_tree = {
 			factor = 90
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LBA_path
-					option = LBA_PATH_UMAR_OTTOMANS
-				}
+				has_game_rule = { rule = LBA_path option = LBA_PATH_NATPOP_OTT }
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }

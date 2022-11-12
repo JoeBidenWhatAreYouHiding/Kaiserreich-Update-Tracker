@@ -54,13 +54,13 @@ characters = {
 		name = HNN_cheng_qian
 		portraits = {
 			army = {
-				small = "gfx/interface/advisors/HNN/HNN_cheng_qian.png"
+				small = "gfx/interface/advisors/CHI/CHI_cheng_qian.png"
 				large = "gfx/leaders/CHI/Portrait_CHI_Cheng_Qian.png"
 			}
 		}
 		field_marshal = {
 			desc = HNN_cheng_qian_commander_desc
-			traits = { old_guard politically_connected career_officer war_hero artillery_officer }
+			traits = { CHI_left_kmt_officer old_guard politically_connected career_officer war_hero artillery_officer }
 			skill = 2
 			attack_skill = 1
 			defense_skill = 2

@@ -3,52 +3,6 @@
 ## By Alpinia       ##
 ######################
 political_actions = {
-	DKB_join_reichspakt = {
-		name = GEO_join_reichspakt_decision
-		icon = generic_agreement
-
-		allowed = { tag = DKB }
-
-		available = {
-			has_war = yes
-			all_enemy_country = { has_war_with = FROM }
-		}
-
-		visible = {
-			has_war_with = 219.owner
-			is_subject = no
-			is_in_faction = no
-			FROM = {
-				is_faction_leader = yes
-				NOT = { has_war_with = ROOT }
-			}
-		}
-
-		fire_only_once = yes
-		cost = 0
-
-		targets = { GER }
-		target_root_trigger = { has_war_with = 219.owner }
-		target_trigger = {
-			FROM = {
-				is_faction_leader = yes
-				NOT = { has_war_with = ROOT }
-			}
-		}
-
-		ai_will_do = {
-			factor = 25
-			modifier = {
-				factor = 0
-				FROM = { surrender_progress > 0.3 }
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision DKB_join_reichspakt target: [From.GetName]"
-			FROM = { country_event = sic.34 }
-		}
-	}
 	RUS_Join_The_Academy_of_Sciences = {
 		icon = generic_research
 
@@ -60,7 +14,6 @@ political_actions = {
 				tag = MAF
 				tag = GEA
 				tag = BAT
-				tag = DKB
 				tag = ALO
 				tag = TRK
 				tag = BUK
@@ -923,6 +876,34 @@ RUS_Alliance_decisions = {
 					any_owned_state = { is_claim_or_core_of_ROOT = yes }
 				}
 			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = BUL_forpol option = BUL_FORPOL_RUS }
+				BUL = {
+					NOT = {
+						is_in_faction_with = ROOT
+						has_socialist_government = yes
+						AND = {
+							has_government = authoritarian_democrat
+							NOT = { has_country_leader = { character = BUL_alexander_stamboliyski } }
+						}
+					}
+					is_valid_peace_target = yes
+					exists = yes
+				}
+				if = {
+					limit = {
+						BUL = { has_democratic_government = yes }
+					}
+					has_democratic_government = yes
+				}
+				else_if = {
+					limit = {
+						BUL = { has_government = national_populist }
+					}
+					has_authoritarian_government = yes
+				}
+			}
 		}
 
 		complete_effect = {
@@ -1383,20 +1364,12 @@ RUS_Foreign_Policy_decisions = {
 					FROM = { is_subject = yes }
 				}
 				var:FROM.overlord = {
-					country_event = {
-						id = rusfor.1229	#warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1229 days = 2 random_days = 2 } #warning event
 				}
 			}
 			else = {
 				FROM = {
-					country_event = {
-						id = rusfor.1229	#warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1229 days = 2 random_days = 2 } #warning event
 				}
 			}
 		}
@@ -1451,7 +1424,7 @@ RUS_Foreign_Policy_decisions = {
 			}
 		}
 
-		targets = { EST LAT LIT WHR UKR DKB }
+		targets = { EST LAT LIT WHR UKR }
 		target_root_trigger = {
 			has_completed_focus = RUS_The_Road_To_War
 		}
@@ -1741,20 +1714,12 @@ RUS_Foreign_Policy_decisions = {
 					FROM = { is_subject = yes }
 				}
 				var:FROM.overlord = {
-					country_event = {
-						id = rusfor.1180   #warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1180 days = 2 random_days = 2 } #warning event
 				}
 			}
 			else = {
 				FROM = {
-					country_event = {
-						id = rusfor.1180   #warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1180 days = 2 random_days = 2 } #warning event
 				}
 			}
 		}
@@ -1827,11 +1792,7 @@ RUS_Foreign_Policy_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_Request_Bessarabia target: [From.GetName]"
 			var:FROM.overlord = {
-				country_event = {
-					id = rusfor.1183   #request event
-					days = 2
-					random_days = 2
-				}
+				country_event = { id = rusfor.1183 days = 2 random_days = 2 } #request event
 			}
 			set_country_flag = RUS_request_bessarabia_ally
 		}
@@ -1930,20 +1891,12 @@ RUS_Foreign_Policy_decisions = {
 					FROM = { is_subject = yes }
 				}
 				var:FROM.overlord = {
-					country_event = {
-						id = rusfor.1210   #warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1210 days = 2 random_days = 2 } #warning event
 				}
 			}
 			else = {
 				FROM = {
-					country_event = {
-						id = rusfor.1210   #warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1210 days = 2 random_days = 2 } #warning event
 				}
 			}
 		}
@@ -2361,20 +2314,12 @@ RUS_Foreign_Policy_decisions = {
 					FROM = { is_subject = yes }
 				}
 				var:FROM.overlord = {
-					country_event = {
-						id = rusfor.1066   #warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1066 days = 2 random_days = 2 } #warning event
 				}
 			}
 			else = {
 				FROM = {
-					country_event = {
-						id = rusfor.1066   #warning event
-						days = 2
-						random_days = 2
-					}
+					country_event = { id = rusfor.1066 days = 2 random_days = 2 } #warning event
 				}
 			}
 		}
@@ -2391,7 +2336,7 @@ RUS_Foreign_Policy_decisions = {
 				every_state = {
 					limit = {
 						OR = {
-							region = 134 #Caucasus
+							region = 134 #Transcaucasia
 							state = 418 #Ashkhabad
 							is_claim_or_core_of_ROOT = yes
 						}
@@ -2663,10 +2608,7 @@ RUS_Integration_decisions = {
 							is_core_of = ROOT
 						}
 					}
-					country_event = {
-						id = rusfor.1273
-						days = 150
-					}
+					country_event = { id = rusfor.1273 days = 150 }
 				}
 			}
 		}

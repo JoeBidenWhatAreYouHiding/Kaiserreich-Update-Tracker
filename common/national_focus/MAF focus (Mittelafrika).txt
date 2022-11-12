@@ -316,7 +316,7 @@ focus_tree = {
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SER_will_be_unlocked
+				tooltip = tooltip_focus_unlocked_by_event
 				always = no
 			}
 			hidden_trigger = {
@@ -433,10 +433,7 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 100
-				has_game_rule = {
-					rule = MAF_collapse
-					option = MAF_COLLAPSE_GUARANTEED
-				}
+				has_game_rule = { rule = MAF_collapse option = MAF_COLLAPSE_GUARANTEED }
 			}
 		}
 
@@ -471,10 +468,7 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 100
-				has_game_rule = {
-					rule = MAF_collapse
-					option = MAF_COLLAPSE_GUARANTEED
-				}
+				has_game_rule = { rule = MAF_collapse option = MAF_COLLAPSE_GUARANTEED }
 			}
 		}
 
@@ -542,10 +536,7 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 100
-				has_game_rule = {
-					rule = MAF_collapse
-					option = MAF_COLLAPSE_GUARANTEED
-				}
+				has_game_rule = { rule = MAF_collapse option = MAF_COLLAPSE_GUARANTEED }
 			}
 		}
 
@@ -609,7 +600,7 @@ focus_tree = {
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SER_will_be_unlocked
+				tooltip = tooltip_focus_unlocked_by_event
 				always = no
 			}
 			hidden_trigger = {
@@ -648,6 +639,7 @@ focus_tree = {
 		}
 
 		prerequisite = { focus = MAF_New_Administration }
+		ai_will_do = { factor = 50 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_African_Landtag"
@@ -1042,7 +1034,7 @@ focus_tree = {
 				amount = 20
 				producer = GER
 			}
-			
+
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = MAF_modify_colonial_budget
 			add_to_variable = {
@@ -1851,10 +1843,7 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 100
-				has_game_rule = {
-					rule = MAF_collapse
-					option = MAF_COLLAPSE_GUARANTEED
-				}
+				has_game_rule = { rule = MAF_collapse option = MAF_COLLAPSE_GUARANTEED }
 			}
 		}
 
@@ -1946,10 +1935,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 
 			BEL = {
-				country_event = {
-					id = mittel.110
-					days = 1
-				}
+				country_event = { id = mittel.110 days = 1 }
 			}
 		}
 		search_filters = {
@@ -2321,7 +2307,7 @@ focus_tree = {
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SER_will_be_unlocked
+				tooltip = tooltip_focus_unlocked_by_event
 				always = no
 			}
 			hidden_trigger = { NOT = { tag = SWA } }
@@ -2428,7 +2414,7 @@ focus_tree = {
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SER_will_be_unlocked
+				tooltip = tooltip_focus_unlocked_by_event
 				always = no
 			}
 			hidden_trigger = { NOT = { tag = SWA } }
@@ -2448,7 +2434,7 @@ focus_tree = {
 	focus = {
 		id = MAF_African_Breadbasket
 		icon = GFX_goal_generic_food_processing
-		cost = 5
+		cost = 8
 
 		relative_position_id = MAF_1937_Budget
 		x = -1
@@ -2495,7 +2481,7 @@ focus_tree = {
 	focus = {
 		id = MAF_Strategic_Export
 		icon = GFX_goal_generic_coal_mining
-		cost = 5
+		cost = 8
 
 		relative_position_id = MAF_African_Breadbasket
 		x = 0

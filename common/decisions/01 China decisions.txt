@@ -9,7 +9,7 @@ political_actions = {
 			}
 			NOT = {
 				tag = QIE
-				tag = FNG 
+				tag = FNG
 				tag = CHI
 				tag = UPC
 				tag = NPA
@@ -378,10 +378,7 @@ political_actions = {
 			add_political_power = 25
 			LEC_add_to_legation_council_observer = yes
 			LEC = {
-				country_event = {
-					id = lec.29
-					days = 1
-				}
+				country_event = { id = lec.29 days = 1 }
 			}
 		}
 	}

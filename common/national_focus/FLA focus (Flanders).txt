@@ -68,42 +68,15 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_ADELBERT
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_SOCCON
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_SOCDEM
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_MARLIB
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_SOCLIB
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_SOCCON
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_SOCDEM
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_MARLIB
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_SOCLIB
-					}
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_AUTDEM }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_SOCCON }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_SOCDEM }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_MARLIB }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_SOCLIB }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_SOCCON }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_SOCDEM }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_MARLIB }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_SOCLIB }
 				}
 			}
 		}
@@ -258,10 +231,7 @@ focus_tree = {
 			factor = 190
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = FLA_path
-					option = FLA_PATH_FLEMISH_COUNCIL_SEVEREN
-				}
+				has_game_rule = { rule = FLA_path option = FLA_PATH_NATPOP }
 			}
 		}
 
@@ -355,10 +325,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = FLA_path
-					option = FLA_PATH_FLEMISH_COUNCIL_ADELBERT
-				}
+				has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_AUTDEM }
 			}
 		}
 
@@ -399,22 +366,10 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_SOCCON
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_SOCDEM
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_MARLIB
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_REPUBLIC_SOCLIB
-					}
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_SOCCON }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_SOCDEM }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_MARLIB }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_REPUBLIC_SOCLIB }
 				}
 			}
 		}
@@ -458,22 +413,10 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_SOCCON
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_SOCDEM
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_SOCLIB
-					}
-					has_game_rule = {
-						rule = FLA_path
-						option = FLA_PATH_FLEMISH_COUNCIL_CONSTITUTIONAL_MONARCHY_MARLIB
-					}
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_SOCCON }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_SOCDEM }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_SOCLIB }
+					has_game_rule = { rule = FLA_path option = FLA_PATH_MONARCHY_MARLIB }
 				}
 			}
 		}

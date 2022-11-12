@@ -166,17 +166,11 @@ foreign_politics = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_FORPOL
-					option = LAT_FORPOL_NEUT
-				}
+				has_game_rule = { rule = LAT_forpol option = LAT_FORPOL_NEUT }
 			}
 			modifier = {
 				factor = 10
-				has_game_rule = {
-					rule = LAT_FORPOL
-					option = LAT_FORPOL_ALLIANCE
-				}
+				has_game_rule = { rule = LAT_forpol option = LAT_FORPOL_RUS }
 			}
 		}
 		complete_effect = {

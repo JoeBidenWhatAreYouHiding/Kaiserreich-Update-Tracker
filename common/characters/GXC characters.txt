@@ -116,7 +116,6 @@ characters = {
 			available = {
 				has_elected_government = yes
 				not_already_hired_except_as = army_chief
-				is_country_leader = no
 			}
 			traits = { KR_army_chief_defensive_1 }
 			cost = 50

@@ -2,10 +2,7 @@ on_actions = {
 	on_startup = {
 		effect = {
 			PUE = {
-				country_event = {
-					id = pue.205
-					days = 1433
-				}
+				country_event = { id = pue.205 days = 1433 }
 			}
 
 			USA = {

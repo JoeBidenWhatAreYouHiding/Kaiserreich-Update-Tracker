@@ -306,10 +306,7 @@ country_event = { #Reichspakt surrenders
 		add_war_support = -0.1
 		add_stability = -0.1
 		GER = {
-			country_event = {
-				id = asiapeace.3
-				days = 1
-			}
+			country_event = { id = asiapeace.3 days = 1 }
 		}
 	}
 }

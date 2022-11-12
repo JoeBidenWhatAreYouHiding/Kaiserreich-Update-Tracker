@@ -2233,15 +2233,6 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CSA_every_man_a_truck"
 			add_ideas = CSA_leveraging_industry
-			if = {
-				limit = {
-					NOT = {
-						has_global_flag = USA_civil_war_over_flag
-						has_idea = tot_economic_mobilisation
-					}
-				}
-				add_ideas = tot_economic_mobilisation
-			}
 		}
 		search_filters = { FOCUS_FILTER_PRODUCTION FOCUS_FILTER_INDUSTRY }
 	}
@@ -3689,10 +3680,7 @@ focus_tree = {
 			factor = 400
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CSA_forpol
-					option = CSA_FORPOL_FREE_THE_NEW_WORLD
-				}
+				has_game_rule = { rule = CSA_forpol option = CSA_FORPOL_FREE_NEW_WORLD }
 			}
 			modifier = {
 				factor = 5
@@ -3702,10 +3690,7 @@ focus_tree = {
 				factor = 0.5
 				has_government = totalist
 				NOT = {
-					has_game_rule = {
-						rule = CSA_forpol
-						option = CSA_FORPOL_INTERNATIONALE
-					}
+					has_game_rule = { rule = CSA_forpol option = CSA_FORPOL_INTERNATIONALE }
 				}
 			}
 		}
@@ -3880,10 +3865,7 @@ focus_tree = {
 			factor = 400
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CSA_forpol
-					option = CSA_FORPOL_INTERNATIONALE
-				}
+				has_game_rule = { rule = CSA_forpol option = CSA_FORPOL_INTERNATIONALE }
 			}
 			modifier = {
 				factor = 5

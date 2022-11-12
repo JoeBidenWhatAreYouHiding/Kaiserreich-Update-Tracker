@@ -1360,14 +1360,8 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = MOR_forpol
-						option = MOR_FORPOL_CAIRO
-					}
-					has_game_rule = {
-						rule = MOR_forpol
-						option = MOR_FORPOL_ISTANBUL
-					}
+					has_game_rule = { rule = MOR_forpol option = MOR_FORPOL_EGY }
+					has_game_rule = { rule = MOR_forpol option = MOR_FORPOL_OTT }
 				}
 			}
 		}
@@ -1455,14 +1449,8 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = MOR_forpol
-						option = MOR_FORPOL_ENTENTE
-					}
-					has_game_rule = {
-						rule = MOR_forpol
-						option = MOR_FORPOL_ISTANBUL
-					}
+					has_game_rule = { rule = MOR_forpol option = MOR_FORPOL_ENT }
+					has_game_rule = { rule = MOR_forpol option = MOR_FORPOL_OTT }
 				}
 			}
 		}

@@ -502,10 +502,7 @@ focus_tree = {
 		}
 		select_effect = {
 			log = "[GetDateText]: [Root.GetName]: Select Focus SIA_yuwachontaharn"
-			country_event = {
-				id = siam.32
-				days = 35
-			}
+			country_event = { id = siam.32 days = 35 }
 		}
 		relative_position_id = SIA_khana_ratsadon
 		x = -4
@@ -767,10 +764,7 @@ focus_tree = {
 			air_experience = 10
 			hidden_effect = {
 				set_country_flag = SIA_post_war_reconstruction
-				country_event = {  # Civil War Monument
-					id = siam.58
-					days = 1035
-				}
+				country_event = { id = siam.58 days = 1035 } # Civil War Monument
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }

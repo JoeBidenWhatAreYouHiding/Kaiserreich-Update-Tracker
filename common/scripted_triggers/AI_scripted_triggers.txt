@@ -1106,7 +1106,6 @@ is_normal_european_focused_tag = {
 		original_tag = BAT
 		original_tag = WHR
 		original_tag = UKR
-		original_tag = DKB
 
 		#Russia has its own logic
 	}

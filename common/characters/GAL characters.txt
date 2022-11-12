@@ -95,6 +95,7 @@ characters = {
 			cost = 100
 		}
 		corps_commander = {
+			desc = GAL_wladyslaw_sikorski_desc
 			traits = {
 				politically_connected
 				career_officer
@@ -219,7 +220,7 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = GAL_alfred_antoni_potocki
-			traits = { KR_old_noble }
+			traits = { KR_grand_magnate }
 			available = {
 				has_socialist_government = no
 			}

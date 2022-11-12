@@ -113,12 +113,6 @@ GAL_characters_join_poland_immediate = {
 	}
 }
 
-GAL_characters_join_poland = {
-	hidden_effect = {
-		POL = { country_event = { id = gal.6 days = 3 random_days = 3 } }
-	}
-}
-
 GAL_characters_join_ukraine_effect = {
 	GAL = {
 		if = {
@@ -178,7 +172,10 @@ GAL_characters_join_ukraine = {
 GAL_remove_karl_albrecht = {
 	GAL = {
 		if = {
-			limit = { has_character = AUS_karl_albrecht_von_habsburg }
+			limit = {
+				exists = no
+				has_character = AUS_karl_albrecht_von_habsburg
+			}
 			hidden_effect = {
 				AUS_karl_albrecht_von_habsburg = { remove_all_country_leader_roles = yes }
 			}

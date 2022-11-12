@@ -1929,10 +1929,7 @@ COS_Election_decisions = {
 			add_to_variable = { var = cos_prn_factor value = 1 }
 			custom_effect_tooltip = PRN_1
 			hidden_effect = {
-				country_event = {
-					id = cos.105
-					days = 40
-				}
+				country_event = { id = cos.105 days = 40 }
 			}
 		}
 
@@ -1941,10 +1938,7 @@ COS_Election_decisions = {
 			subtract_from_variable = { var = cos_prn_factor value = 3 }
 			custom_effect_tooltip = PRN_min_3
 			hidden_effect = {
-				country_event = {
-					id = cos.105
-					days = 20
-				}
+				country_event = { id = cos.105 days = 20 }
 			}
 		}
 	}
@@ -2001,10 +1995,7 @@ COS_Election_decisions = {
 			add_to_variable = { var = cos_prn_factor value = 1 }
 			custom_effect_tooltip = PRN_1
 			hidden_effect = {
-				country_event = {
-					id = cos.104
-					days = 40
-				}
+				country_event = { id = cos.104 days = 40 }
 			}
 		}
 
@@ -2013,10 +2004,7 @@ COS_Election_decisions = {
 			add_to_variable = { var = cos_pvp_factor value = 3 }
 			custom_effect_tooltip = PVP_3
 			hidden_effect = {
-				country_event = {
-					id = cos.104
-					days = 20
-				}
+				country_event = { id = cos.104 days = 20 }
 			}
 		}
 	}
@@ -2334,8 +2322,8 @@ COS_Diplomacy_decisions = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = COS_forpol option = COS_FORPOL_ENTENTE }
-					has_game_rule = { rule = COS_forpol option = COS_FORPOL_NEUTRAL }
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_ENT }
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_NEUT }
 				}
 			}
 		}
@@ -2375,8 +2363,8 @@ COS_Diplomacy_decisions = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = COS_forpol option = COS_FORPOL_REICHSPAKT }
-					has_game_rule = { rule = COS_forpol option = COS_FORPOL_NEUTRAL }
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_GER }
+					has_game_rule = { rule = COS_forpol option = COS_FORPOL_NEUT }
 				}
 			}
 		}

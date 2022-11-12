@@ -342,8 +342,8 @@ SIK_xinjiang_war_category = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = SIK_coup option = SIK_COUP_SHENG }
-					has_game_rule = { rule = SIK_coup option = SIK_COUP_SHAOWU }
+					has_game_rule = { rule = SIK_path option = SIK_PATH_SOCDEM }
+					has_game_rule = { rule = SIK_path option = SIK_PATH_AUTDEM }
 				}
 			}
 		}
@@ -387,8 +387,8 @@ SIK_xinjiang_war_category = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = SIK_coup option = SIK_COUP_SHENG }
-					has_game_rule = { rule = SIK_coup option = SIK_COUP_SHAOWU }
+					has_game_rule = { rule = SIK_path option = SIK_PATH_SOCDEM }
+					has_game_rule = { rule = SIK_path option = SIK_PATH_AUTDEM }
 				}
 			}
 		}
@@ -412,7 +412,7 @@ SIK_xinjiang_war_category = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SIK_coup option = SIK_COUP_JIN }
+				has_game_rule = { rule = SIK_path option = SIK_PATH_PATAUT }
 			}
 		}
 		cost = 25

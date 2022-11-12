@@ -438,10 +438,7 @@ focus_tree = {
 
 		select_effect = {
 			log = "[GetDateText]: [Root.GetName]: Select Focus SYR_abolish_mt_lebanon"
-			country_event = {
-				id = syrrep.25
-				days = 10
-			}
+			country_event = { id = syrrep.25 days = 10 }
 		}
 
 		completion_reward = {
@@ -1516,10 +1513,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = SYR_path
-					option = SYR_PATH_NATPOP
-				}
+				has_game_rule = { rule = SYR_path option = SYR_PATH_NATPOP }
 			}
 		}
 
@@ -1583,10 +1577,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = SYR_path
-					option = SYR_PATH_PATAUT
-				}
+				has_game_rule = { rule = SYR_path option = SYR_PATH_PATAUT }
 			}
 		}
 
@@ -1743,10 +1734,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = SYR_path
-					option = SYR_PATH_PATAUT
-				}
+				has_game_rule = { rule = SYR_path option = SYR_PATH_PATAUT }
 			}
 		}
 
@@ -1903,10 +1891,7 @@ focus_tree = {
 
 		select_effect = {
 			log = "[GetDateText]: [Root.GetName]: Select Focus SYR_syrian_assimilation"
-			country_event = {
-				id = syrrep.25
-				days = 10
-			}
+			country_event = { id = syrrep.25 days = 10 }
 		}
 
 		completion_reward = {
@@ -2344,10 +2329,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = SYR_forpol
-					option = SYR_FORPOL_ARAB_FED
-				}
+				has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_ARAB_FED }
 			}
 		}
 
@@ -2544,18 +2526,9 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_CP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_RP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_NEUT
-					}
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_EGY }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_GER }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_NEUT }
 				}
 			}
 		}
@@ -2694,14 +2667,8 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_CP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_PH
-					}
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_EGY }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_INT }
 				}
 			}
 		}
@@ -2856,14 +2823,8 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_RP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_PH
-					}
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_GER }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_INT }
 				}
 			}
 		}
@@ -3019,10 +2980,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = SYR_forpol
-					option = SYR_FORPOL_NEUT
-				}
+				has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_NEUT }
 			}
 		}
 
@@ -3064,14 +3022,8 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_CP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_RP
-					}
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_EGY }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_GER }
 				}
 			}
 		}
@@ -3368,26 +3320,11 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = SYR_path
-						option = SYR_PATH_NATPOP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_CP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_RP
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_PH
-					}
-					has_game_rule = {
-						rule = SYR_forpol
-						option = SYR_FORPOL_NEUT
-					}
+					has_game_rule = { rule = SYR_path option = SYR_PATH_NATPOP }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_EGY }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_GER }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_INT }
+					has_game_rule = { rule = SYR_forpol option = SYR_FORPOL_NEUT }
 				}
 			}
 		}

@@ -13,10 +13,7 @@ ARG_interservice_rivalry_towards_army = {
 				has_country_flag = NAVY_ANGERY
 			}
 		}
-		country_event = {
-			id = argmil.10
-			days = 5
-		}
+		country_event = { id = argmil.10 days = 5 }
 	}
 	if = {
 		limit = { has_idea = ARG_interservice_rivalry_army_strengthened }
@@ -83,10 +80,7 @@ ARG_interservice_rivalry_towards_navy = {
 				has_country_flag = ARMY_ANGERY
 			}
 		}
-		country_event = {
-			id = argmil.20
-			days = 5
-		}
+		country_event = { id = argmil.20 days = 5 }
 	}
 	if = {
 		limit = { has_idea = ARG_interservice_rivalry_navy_strengthened }
@@ -119,7 +113,7 @@ ARG_interservice_rivalry_towards_navy = {
 }
 
 ARG_create_starting_divisions = {
-	log =  "[GetDateText]: [Root.GetName]: Create divisions ARG_create_starting_divisions"
+	log = "[GetDateText]: [Root.GetName]: Create divisions ARG_create_starting_divisions"
 	### Delete templates if existed before - no cheating
 	if = {
 		limit = { has_template = "División de Infantería" }

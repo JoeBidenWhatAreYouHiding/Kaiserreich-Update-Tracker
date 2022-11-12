@@ -5231,18 +5231,9 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_NEUTRAL
-					}
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_GER
-					}
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_ENT
-					}
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_NEUTRAL }
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_GER }
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_ENT }
 				}
 			}
 		}
@@ -5442,14 +5433,8 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_NEUTRAL
-					}
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_PAX_AMERICANA
-					}
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_NEUTRAL }
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_PAX_AMERICANA }
 				}
 			}
 		}
@@ -5676,18 +5661,9 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_PAX_AMERICANA
-					}
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_GER
-					}
-					has_game_rule = {
-						rule = TEX_forpol
-						option = TEX_FORPOL_ENT
-					}
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_PAX_AMERICANA }
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_GER }
+					has_game_rule = { rule = TEX_forpol option = TEX_FORPOL_ENT }
 				}
 			}
 		}

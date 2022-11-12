@@ -258,6 +258,29 @@ characters = {
 			logistics_skill = 1
 		}
 	}
+	GEO_shalva_maglakelidze = {
+		name = GEO_shalva_maglakelidze
+		portraits = {
+			army = {
+				large = "gfx/leaders/GEO/Portrait_GEO_Shalva_Maglakedize.png"
+				small = "gfx/interface/advisors/GEO/Portrait_GEO_shalva_maglakelidze.png"
+			}
+		}
+		corps_commander = {
+			traits = { organizer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = GEO_shalva_maglakelidze
+			traits = { KR_army_chief_offensive_2 }
+			cost = 100
+		}
+	}
 	GEO_giorgi_abashvili = {
 		name = GEO_giorgi_abashvili
 		portraits = {
@@ -382,20 +405,6 @@ characters = {
 	}
 
 	### Armed force heads
-	GEO_shalva_maglakelidze = {
-		name = GEO_shalva_maglakelidze
-		portraits = {
-			army = {
-				small = "gfx/interface/advisors/GEO/Portrait_GEO_shalva_maglakelidze.png"
-			}
-		}
-		advisor = {
-			slot = army_chief
-			idea_token = GEO_shalva_maglakelidze
-			traits = { KR_army_chief_offensive_2 }
-			cost = 100
-		}
-	}
 	GEO_mikheil_grigorashvili = {
 		name = GEO_mikheil_grigorashvili
 		portraits = {

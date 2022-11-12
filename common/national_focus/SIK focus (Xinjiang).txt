@@ -143,9 +143,7 @@ focus_tree = {
 				idea = SIK_more_workers_employed
 				days = 364
 			}
-			country_event = {
-				id = xin.49 days = 1
-			}
+			country_event = { id = xin.49 days = 1 }
 		}
 	}
 
@@ -182,9 +180,7 @@ focus_tree = {
 					add_idea = SIK_armed_neutrality3
 				}
 			}
-			country_event = {
-				id = xin.50 days = 1
-			}
+			country_event = { id = xin.50 days = 1 }
 		}
 		search_filters = { FOCUS_FILTER_RESISTANCE FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
@@ -213,9 +209,7 @@ focus_tree = {
 							has_country_flag = SIK_uyghurs_in_government
 						}
 					}
-					country_event = {
-						id = xin.51 days = 4
-					}
+					country_event = { id = xin.51 days = 4 }
 				}
 				else_if = {
 					limit = {
@@ -234,18 +228,14 @@ focus_tree = {
 							}
 						}
 					}
-					country_event = {
-						id = xin.52 days = 4
-					}
+					country_event = { id = xin.52 days = 4 }
 				}
 				else_if = {
 					limit = {
 						has_country_flag = SIK_officials_forgiven
 						has_country_flag = SIK_uyghurs_in_government
 					}
-					country_event = {
-						id = xin.53 days = 4
-					}
+					country_event = { id = xin.53 days = 4 }
 				}
 				SIK_zhang_fengjiu = { retire = yes }
 				SIK_liu_wenlong = { retire = yes }

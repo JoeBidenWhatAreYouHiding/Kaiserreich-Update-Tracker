@@ -33,16 +33,14 @@ SIK_raise_discontent = {
 			has_idea = SIK_rumors_discontent_3
 		}
 		hidden_effect = {
-			country_event = {
-				id = xin.47 days = 2
-			}
+			country_event = { id = xin.47 days = 2 }
 		}
 		custom_effect_tooltip = SIK_jin_unrest_rise
 	}
 }
 
 SIK_create_turfan_garrison = {
-	log =  "[GetDateText]: [Root.GetName]: Create divisions SIK_create_turfan_garrison"
+	log = "[GetDateText]: [Root.GetName]: Create divisions SIK_create_turfan_garrison"
 	### Delete templates if existed before - no cheating
 	if = {
 		limit = { has_template = "Turfan Garrison" }

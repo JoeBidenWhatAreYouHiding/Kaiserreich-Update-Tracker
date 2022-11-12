@@ -819,6 +819,7 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/QIE/Portrait_QIE_cadet1.png"
+				small = "gfx/interface/advisors/QIE/QIE_cadet1.png"
 			}
 		}
 		corps_commander = {
@@ -836,6 +837,7 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/QIE/Portrait_QIE_cadet2.png"
+				small = "gfx/interface/advisors/QIE/QIE_cadet2.png"
 			}
 		}
 		corps_commander = {

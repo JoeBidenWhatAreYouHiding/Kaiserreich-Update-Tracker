@@ -985,10 +985,7 @@ shared_focus = {
 			ideology = paternal_autocrat popularity = -0.05
 		}
 		hidden_effect = {
-			country_event = {
-				id = mon.49
-				days = 5
-			}
+			country_event = { id = mon.49 days = 5 }
 		}
 	}
 	search_filters = { FOCUS_FILTER_WAR_SUPPORT }
@@ -1284,9 +1281,7 @@ shared_focus = {
 			ideology = authoritarian_democrat popularity = 0.02
 		}
 		hidden_effect = {
-			country_event = {
-				id = mon.77 days = 3
-			}
+			country_event = { id = mon.77 days = 3 }
 		}
 	}
 	search_filters = { FOCUS_FILTER_POLITICAL }
@@ -1389,10 +1384,7 @@ shared_focus = {
 		MON_remove_sternberg = yes
 		MON_remove_russian_diplo_relations = yes
 		hidden_effect = { # Authdem flavor
-			country_event = {
-				id = mon.446
-				days = 7
-			}
+			country_event = { id = mon.446 days = 7 }
 			country_event = { id = mon.436 days = 90 random_hours = 10 }
 			country_event = { id = mon.437 days = 120 random_hours = 10 }
 			country_event = { id = mon.438 days = 150 random_hours = 20 }
@@ -1805,9 +1797,7 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				country_event = {
-					id = mon.178 days = 22
-				}
+				country_event = { id = mon.178 days = 22 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
@@ -2351,9 +2341,7 @@ focus_tree = {
 				ideology = totalist popularity = -0.10
 			}
 			hidden_effect = {
-				country_event = {
-					id = mon.179 days = 11
-				}
+				country_event = { id = mon.179 days = 11 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -2403,9 +2391,7 @@ focus_tree = {
 				add_idea = MON_sternberg_power_3
 			}
 			hidden_effect = {
-				country_event = {
-					id = mon.180 days = 7
-				}
+				country_event = { id = mon.180 days = 7 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -2557,9 +2543,7 @@ focus_tree = {
 				increase_state_category_by_one_level = yes
 			}
 			hidden_effect = {
-				country_event = {
-					id = mon.181 days = 5
-				}
+				country_event = { id = mon.181 days = 5 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }

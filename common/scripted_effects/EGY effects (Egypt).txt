@@ -18,7 +18,7 @@ EGY_create_mandist_militia_divisions = {
 		template_counter = 68
 	}
 	### Create divisions
-	if = { 
+	if = {
 		limit = { tag = SUD }
 		capital_scope = {
 			create_unit = {
@@ -93,6 +93,6 @@ EGY_create_mandist_militia_divisions = {
 				division = "division_template = \"Al-Milishiya\" start_experience_factor = 0.05"
 				owner = PREV
 			}
-		}	
+		}
 	}
 }

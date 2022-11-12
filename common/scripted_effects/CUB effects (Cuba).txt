@@ -243,11 +243,11 @@ CUB_remove_autentico_generals = {
 }
 
 CUB_create_acw_volunteer_divisions = {
-	log =  "[GetDateText]: [Root.GetName]: Create divisions CUB_create_acw_volunteer_divisions"
+	log = "[GetDateText]: [Root.GetName]: Create divisions CUB_create_acw_volunteer_divisions"
 	### Delete templates if existed before - no cheating
 	if = {
 		limit = { has_template = "Cuban Volunteers" }
-		delete_unit_template_and_units = { division_template = "División de Infantería" disband = yes }
+		delete_unit_template_and_units = { division_template = "Cuban Volunteers" disband = yes }
 	}
 	### Create templates
 	division_template = {

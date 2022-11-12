@@ -96,14 +96,8 @@ focus_tree = {
 			modifier = {
 				factor = 1.5
 				OR = {
-					has_game_rule = {
-						rule = SRI_neosanfedisti_terror
-						option = SRI_NEOSANFEDISTI_TERROR_WAR_NO_ITA
-					}
-					has_game_rule = {
-						rule = SRI_neosanfedisti_terror
-						option = SRI_NEOSANFEDISTI_TERROR_WAR_ITA
-					}
+					has_game_rule = { rule = SRI_terror option = SRI_TERROR_WAR_NO_ITA }
+					has_game_rule = { rule = SRI_terror option = SRI_TERROR_WAR_ITA }
 				}
 			}
 		}
@@ -387,14 +381,8 @@ focus_tree = {
 			modifier = {
 				factor = 1.5
 				OR = {
-					has_game_rule = {
-						rule = SRI_neosanfedisti_terror
-						option = SRI_NEOSANFEDISTI_TERROR_WAR_NO_ITA
-					}
-					has_game_rule = {
-						rule = SRI_neosanfedisti_terror
-						option = SRI_NEOSANFEDISTI_TERROR_WAR_ITA
-					}
+					has_game_rule = { rule = SRI_terror option = SRI_TERROR_WAR_NO_ITA }
+					has_game_rule = { rule = SRI_terror option = SRI_TERROR_WAR_ITA }
 				}
 			}
 			modifier = {
@@ -2677,14 +2665,8 @@ focus_tree = {
 			show_unit_leaders_tooltip = SRI_ines_donati
 			hidden_effect = {
 				SRI_ines_donati = { set_nationality = ROOT }
-				country_event = {
-					id = socitaly.84
-					days = 60
-				}
-				country_event = {
-					id = socitaly.110
-					days = 360
-				}
+				country_event = { id = socitaly.84 days = 60 }
+				country_event = { id = socitaly.110 days = 360 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER }

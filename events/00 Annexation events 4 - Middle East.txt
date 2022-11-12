@@ -1429,7 +1429,7 @@ country_event = { #Fate of Georgia
 		}
 		every_state = {
 			limit = {
-				region = 134 #Caucasus
+				region = 134 #Transcaucasia
 				is_core_of = GEO
 				is_claim_or_core_of_ROOT = no
 				NOT = {
@@ -1538,7 +1538,7 @@ country_event = { #Fate of Azerbaijan
 		}
 		every_state = {
 			limit = {
-				region = 134 #Caucasus
+				region = 134 #Transcaucasia
 				is_core_of = AZR
 				is_claim_or_core_of_ROOT = no
 				NOT = {
@@ -1791,7 +1791,7 @@ country_event = { #Fate of Armenia
 		}
 		every_state = {
 			limit = {
-				region = 134 #Caucasus
+				region = 134 #Transcaucasia
 				is_core_of = ARM
 				is_claim_or_core_of_ROOT = no
 				NOT = {

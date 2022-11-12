@@ -201,10 +201,7 @@ country_event = { # Canada Debates Question of New England
 			base = 75
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_acw_new_england
-					option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-				}
+				has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 			}
 		}
 		USA_spawn_new_england = yes
@@ -235,10 +232,7 @@ country_event = { # Canada Debates Question of New England
 					has_government = social_democrat
 				}
 				NOT = {
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-					}
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 				}
 			}
 			modifier = {
@@ -251,10 +245,7 @@ country_event = { # Canada Debates Question of New England
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_acw_new_england
-					option = CAN_ACW_NEW_ENGLAND_FORM
-				}
+				has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_FORM }
 			}
 		}
 		every_owned_state = {
@@ -303,42 +294,14 @@ country_event = { # Independent New England
 		name = newengland.6.a
 		add_political_power = 10
 		hidden_effect = {
-			country_event = {
-				id = newengland.216
-				days = 90
-			}
-			country_event = {
-				id = newengland.54
-				days = 200
-				random_days = 100
-			}
-			country_event = { #This should probably get moved to the USA history file later so a more concrete date may be set.
-				id = newengland.64
-				days = 1100
-			}
-			country_event = {
-				id = newengland.59
-				days = 600
-			}
-			country_event = {
-				id = newengland.68
-				days = 60
-				random_days = 15
-			}
-			country_event = {
-				id = newengland.151
-				days = 400
-				random_days = 45
-			}
-			country_event = {
-				id = newengland.153
-				days = 245
-				random_days = 30
-			}
-			country_event = {
-				id = newengland.159
-				days = 353
-			}
+			country_event = { id = newengland.216 days = 90 }
+			country_event = { id = newengland.54 days = 200 random_days = 100 }
+			country_event = { id = newengland.64 days = 1100 } #This should probably get moved to the USA history file later so a more concrete date may be set.
+			country_event = { id = newengland.59 days = 600 }
+			country_event = { id = newengland.68 days = 60 random_days = 15 }
+			country_event = { id = newengland.151 days = 400 random_days = 45 }
+			country_event = { id = newengland.153 days = 245 random_days = 30 }
+			country_event = { id = newengland.159 days = 353 }
 			### Firing the flavour events
 			NEE_Flavour_Events = yes
 		}
@@ -398,10 +361,7 @@ country_event = { # New England requests home rule
 				limit = { has_country_flag = NEE_more_likely_independent }
 				clr_country_flag = NEE_more_likely_independent
 			}
-			country_event = {
-				id = newengland.13
-				days = 3
-			}
+			country_event = { id = newengland.13 days = 3 }
 		}
 	}
 	option = {
@@ -448,10 +408,7 @@ country_event = { # New England requests home rule
 				target = CAN
 				modifier = KR_outraged
 			}
-			country_event = {
-				id = newengland.14
-				days = 3
-			}
+			country_event = { id = newengland.14 days = 3 }
 		}
 	}
 }
@@ -750,7 +707,7 @@ country_event = { # RCAF crash - Aug 42
 					type = small_plane_airframe_0
 					amount = -1
 				}
-			}	
+			}
 			else = {
 				add_equipment_to_stockpile = {
 					type = fighter_equipment_0
@@ -768,7 +725,7 @@ country_event = { # RCAF crash - Aug 42
 							type = small_plane_airframe_0
 							amount = -1
 						}
-					}	
+					}
 					else = {
 						add_equipment_to_stockpile = {
 							type = fighter_equipment_0
@@ -1315,16 +1272,8 @@ country_event = { # Creation of the Railroad
 					var = NEE_ugr_csa_guns
 					value = 236
 				}
-				country_event = { #Erie lake
-					id = newengland.51
-					days = 14
-					random_days = 7
-				}
-				country_event = { #Monthly intake refugees
-					id = newengland.55
-					days = 60
-					random_days = 7
-				}
+				country_event = { id = newengland.51 days = 14 random_days = 7 } #Erie lake
+				country_event = { id = newengland.55 days = 60 random_days = 7 } #Monthly intake refugees
 			}
 			if = { #TEX Refugees
 				limit = {
@@ -1342,11 +1291,7 @@ country_event = { # Creation of the Railroad
 					var = NEE_ugr_tex_guns
 					value = 169
 				}
-				country_event = { #Monthly intake refugees
-					id = newengland.56
-					days = 60
-					random_days = 7
-				}
+				country_event = { id = newengland.56 days = 60 random_days = 7 } #Monthly intake refugees
 			}
 		}
 	}
@@ -1380,18 +1325,10 @@ country_event = { # Refugees flood in from the Great Lakes (Underground Railroad
 		custom_effect_tooltip = tooltip_white_line
 		random_list = {
 			66 = {
-				country_event = {
-					id = newengland.52
-					days = 14
-					random_days = 7
-				}
+				country_event = { id = newengland.52 days = 14 random_days = 7 }
 			}
 			34 = {
-				country_event = {
-					id = newengland.53
-					days = 8
-					random_days = 6
-				}
+				country_event = { id = newengland.53 days = 8 random_days = 6 }
 			}
 		}
 	}
@@ -1452,18 +1389,10 @@ country_event = { # Successful Smuggling action in the Great Lakes Region (Under
 		custom_effect_tooltip = tooltip_white_line
 		random_list = {
 			66 = {
-				country_event = {
-					id = newengland.52
-					days = 25
-					random_days = 7
-				}
+				country_event = { id = newengland.52 days = 25 random_days = 7 }
 			}
 			34 = {
-				country_event = {
-					id = newengland.53
-					days = 8
-					random_days = 6
-				}
+				country_event = { id = newengland.53 days = 8 random_days = 6 }
 			}
 		}
 	}
@@ -1510,18 +1439,10 @@ country_event = { # Smuggling operation caught in the Great Lakes Region (Underg
 		custom_effect_tooltip = tooltip_white_line
 		random_list = {
 			34 = {
-				country_event = {
-					id = newengland.52
-					days = 25
-					random_days = 7
-				}
+				country_event = { id = newengland.52 days = 25 random_days = 7 }
 			}
 			66 = {
-				country_event = {
-					id = newengland.53
-					days = 8
-					random_days = 6
-				}
+				country_event = { id = newengland.53 days = 8 random_days = 6 }
 			}
 		}
 	}
@@ -1577,11 +1498,7 @@ country_event = { # Migration Report CSA
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = newengland.55
-				days = 35
-				random_days = 72
-			}
+			country_event = { id = newengland.55 days = 35 random_days = 72 }
 			add_to_variable = {
 				var = NEE_ugr_csa_times
 				value = 1
@@ -1617,11 +1534,7 @@ country_event = { # Migration Report TEX
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = newengland.56
-				days = 35
-				random_days = 72
-			}
+			country_event = { id = newengland.56 days = 35 random_days = 72 }
 			add_to_variable = {
 				var = NEE_ugr_tex_times
 				value = 1
@@ -1656,11 +1569,7 @@ country_event = { # Pelley becomes President of the AUS
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = newengland.56
-				days = 35
-				random_days = 72
-			}
+			country_event = { id = newengland.56 days = 35 random_days = 72 }
 		}
 	}
 
@@ -1700,11 +1609,7 @@ country_event = { # Pelley becomes President of the AUS
 		}
 		add_stability = -0.10
 		hidden_effect = {
-			country_event = {
-				id = newengland.58
-				days = 90
-				random_days = 150
-			}
+			country_event = { id = newengland.58 days = 90 random_days = 150 }
 		}
 	}
 }
@@ -1729,11 +1634,7 @@ country_event = { # Unchecked Migration
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = newengland.56
-				days = 35
-				random_days = 72
-			}
+			country_event = { id = newengland.56 days = 35 random_days = 72 }
 		}
 	}
 
@@ -2492,10 +2393,7 @@ country_event = { # The Yankee Rebellion
 			base = 75
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_acw_new_england
-					option = CAN_ACW_NEW_ENGLAND_FORM
-				}
+				has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_FORM }
 			}
 			modifier = {
 				factor = 0
@@ -2505,10 +2403,7 @@ country_event = { # The Yankee Rebellion
 					has_government = social_democrat
 				}
 				NOT = {
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-					}
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 				}
 			}
 			modifier = {
@@ -2578,10 +2473,7 @@ country_event = { # The Yankee Rebellion
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_acw_new_england
-					option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-				}
+				has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 			}
 		}
 		USA_spawn_new_england = yes
@@ -2893,10 +2785,7 @@ country_event = { # New England receives request
 				}
 			}
 			FROM = {
-				country_event = {
-					id = newengland.93
-					hours = 8
-				}
+				country_event = { id = newengland.93 hours = 8 }
 			}
 		}
 	}
@@ -2946,10 +2835,7 @@ country_event = { # New England receives request
 				}
 			}
 			FROM = {
-				country_event = {
-					id = newengland.93
-					hours = 8
-				}
+				country_event = { id = newengland.93 hours = 8 }
 			}
 		}
 	}
@@ -2984,10 +2870,7 @@ country_event = { # New England receives request
 		set_country_flag = CAN_refused_rejoin_usa
 		FROM = {
 			set_country_flag = CAN_refused_new_england
-			country_event = {
-				id = newengland.99
-				hours = 8
-			}
+			country_event = { id = newengland.99 hours = 8 }
 		}
 	}
 }
@@ -3022,10 +2905,7 @@ country_event = { # Canada asked for permission
 			modifier = KR_approves_of_govt
 		}
 		NEE = {
-			country_event = {
-				id = newengland.92
-				hours = 8
-			}
+			country_event = { id = newengland.92 hours = 8 }
 		}
 	}
 	option = {
@@ -3040,10 +2920,7 @@ country_event = { # Canada asked for permission
 			base = 100
 		}
 		event_target:requester = {
-			country_event = {
-				id = newengland.94
-				hours = 8
-			}
+			country_event = { id = newengland.94 hours = 8 }
 		}
 	}
 	option = {
@@ -3075,10 +2952,7 @@ country_event = { # Canada asked for permission
 		}
 		add_political_power = 50
 		NEE = {
-			country_event = {
-				id = newengland.97
-				hours = 8
-			}
+			country_event = { id = newengland.97 hours = 8 }
 		}
 	}
 }
@@ -3101,10 +2975,7 @@ country_event = { # Canada gave permission
 	option = {
 		name = newengland.92.a
 		event_target:requester = {
-			country_event = {
-				id = newengland.93
-				hours = 8
-			}
+			country_event = { id = newengland.93 hours = 8 }
 		}
 		if = {
 			limit = {
@@ -3190,10 +3061,7 @@ country_event = { # New England peacefully reuniting
 			}
 			CAN = {
 				clr_country_flag = CAN_nee_disobeyed
-				country_event = {
-					id = newengland.100
-					days = 1
-				}
+				country_event = { id = newengland.100 days = 1 }
 			}
 		}
 	}
@@ -3242,10 +3110,7 @@ country_event = { # Canada demanded they join the Entente
 			leave_faction = yes
 		}
 		CAN = {
-			country_event = {
-				id = newengland.95
-				hours = 8
-			}
+			country_event = { id = newengland.95 hours = 8 }
 		}
 		if = {
 			limit = {
@@ -3333,10 +3198,7 @@ country_event = { # Canada demanded they join the Entente
 				target = ROOT
 				modifier = KR_disapproves_of_govt
 			}
-			country_event = {
-				id = newengland.96
-				hours = 8
-			}
+			country_event = { id = newengland.96 hours = 8 }
 		}
 	}
 }
@@ -3413,10 +3275,7 @@ country_event = { # They refused to join the Entente
 			clr_country_flag = USA_refused_entente_demand
 		}
 		NEE = {
-			country_event = {
-				id = newengland.92
-				hours = 8
-			}
+			country_event = { id = newengland.92 hours = 8 }
 		}
 	}
 	option = {
@@ -3447,10 +3306,7 @@ country_event = { # They refused to join the Entente
 		}
 		add_political_power = 50
 		NEE = {
-			country_event = {
-				id = newengland.97
-				hours = 8
-			}
+			country_event = { id = newengland.97 hours = 8 }
 		}
 	}
 }
@@ -3519,10 +3375,7 @@ country_event = { # New England has been refused permission
 			}
 		}
 		event_target:requester = {
-			country_event = {
-				id = newengland.93
-				hours = 8
-			}
+			country_event = { id = newengland.93 hours = 8 }
 		}
 		CAN = {
 			add_opinion_modifier = {
@@ -3559,10 +3412,7 @@ country_event = { # New England has been refused permission
 		NEE_Change_Legitimacy = yes
 		event_target:requester = {
 			set_country_flag = CAN_refused_new_england
-			country_event = {
-				id = newengland.99
-				days = 3
-			}
+			country_event = { id = newengland.99 days = 3 }
 		}
 	}
 }
@@ -3615,10 +3465,7 @@ country_event = { # New England has folded
 		}
 		event_target:requester = {
 			set_country_flag = CAN_refused_new_england
-			country_event = {
-				id = newengland.99
-				days = 3
-			}
+			country_event = { id = newengland.99 days = 3 }
 		}
 	}
 }
@@ -5266,10 +5113,7 @@ country_event = { # Hopkins under fire
 			popularity = -0.01
 		}
 		hidden_effect = {
-			country_event = {
-				id = newengland.158
-				days = 50
-			}
+			country_event = { id = newengland.158 days = 50 }
 		}
 	}
 }
@@ -6119,14 +5963,8 @@ country_event = { #Provisional President
 		hidden_effect = {
 			end_coalition = yes
 			country_event = { id = newengland.210 days = 16 }
-			country_event = {
-				id = newengland.160
-				days = 700
-			}
-			country_event = {
-				id = newengland.1550
-				days = 500
-			}
+			country_event = { id = newengland.160 days = 700 }
+			country_event = { id = newengland.1550 days = 500 }
 		}
 	}
 
@@ -6149,14 +5987,8 @@ country_event = { #Provisional President
 			popularity = 0.05
 		}
 		hidden_effect = {
-			country_event = {
-				id = newengland.152
-				days = 167
-			}
-			country_event = {
-				id = newengland.156
-				days = 234
-			}
+			country_event = { id = newengland.152 days = 167 }
+			country_event = { id = newengland.156 days = 234 }
 		}
 	}
 
@@ -6526,9 +6358,7 @@ country_event = { # Walsh Scandal
 		}
 		add_stability = -0.02
 		hidden_effect = {
-			country_event = {
-				id = newengland.220 days = 400
-			}
+			country_event = { id = newengland.220 days = 400 }
 		}
 	}
 }
@@ -7266,22 +7096,10 @@ country_event = { # Trial of the Weapons companies
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = newengland.263
-				days = 7
-			}
-			country_event = {
-				id = newengland.264
-				days = 14
-			}
-			country_event = {
-				id = newengland.265
-				days = 21
-			}
-			country_event = {
-				id = newengland.266
-				days = 28
-			}
+			country_event = { id = newengland.263 days = 7 }
+			country_event = { id = newengland.264 days = 14 }
+			country_event = { id = newengland.265 days = 21 }
+			country_event = { id = newengland.266 days = 28 }
 		}
 	}
 
@@ -14402,10 +14220,7 @@ country_event = {
 			limit = {
 				261 = { has_state_flag = blocked_route } #Ohio
 			}
-			country_event = {
-				id = newengland.500
-				days = 45
-			}
+			country_event = { id = newengland.500 days = 45 }
 		}
 		else_if = { #If Michigan is closed, furthest mission is Ohio
 			limit = {
@@ -14443,10 +14258,7 @@ country_event = {
 			limit = {
 				261 = { has_state_flag = blocked_route } #Ohio
 			}
-			country_event = {
-				id = newengland.501
-				days = 45
-			}
+			country_event = { id = newengland.501 days = 45 }
 		}
 		else_if = { #If Kentucky is closed, furthest mission is Ohio
 			limit = {
@@ -14484,10 +14296,7 @@ country_event = {
 			limit = {
 				359 = { has_state_flag = blocked_route } #Jersey
 			}
-			country_event = {
-				id = newengland.502
-				days = 45
-			}
+			country_event = { id = newengland.502 days = 45 }
 		}
 		else_if = { #If Virginia is closed, furthest mission is Jersey
 			limit = {

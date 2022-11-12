@@ -1929,7 +1929,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GEA_future option = GEA_FUTURE_COLLABORATION }
+				has_game_rule = { rule = GEA_path option = GEA_PATH_COLLABORATION }
 			}
 		}
 		x = 7
@@ -2487,14 +2487,11 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 100
-				has_game_rule = {
-					rule = GEA_rebellion
-					option = GEA_REBELLION_PATH_VIETNAM
-				}
+				has_game_rule = { rule = GEA_rebellion option = GEA_REBELLION_VIE }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GEA_future option = GEA_FUTURE_FISCAL_AUSTERITY }
+				has_game_rule = { rule = GEA_path option = GEA_PATH_FISCAL_AUSTERITY }
 			}
 		}
 		completion_reward = {
@@ -2553,10 +2550,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 100
-				has_game_rule = {
-					rule = GEA_rebellion
-					option = GEA_REBELLION_PATH_VIETNAM
-				}
+				has_game_rule = { rule = GEA_rebellion option = GEA_REBELLION_VIE }
 			}
 		}
 		completion_reward = {

@@ -111,7 +111,6 @@ GER_allies_let_germany_handle_france = {
 			original_tag = EST
 			original_tag = WHR
 			original_tag = UKR
-			original_tag = DKB
 		}
 	}
 	enable = {
@@ -241,7 +240,6 @@ GER_take_the_fight_to_england = {
 		value = 100
 	}
 }
-
 
 GER_civilian_buildup = {
 	allowed = {

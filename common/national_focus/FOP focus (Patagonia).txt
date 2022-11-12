@@ -353,7 +353,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_rally_the_workers"
-			add_manpower = 12000
+			add_manpower = 10000
 		}
 	}
 
@@ -745,7 +745,7 @@ focus_tree = {
 					amount = 50
 					producer = FRA
 				}
-			}	
+			}
 			else = {
 				add_equipment_to_stockpile = {
 					type = fighter_equipment_0
@@ -760,7 +760,7 @@ focus_tree = {
 					amount = 20
 					producer = FRA
 				}
-			}	
+			}
 			else = {
 				add_equipment_to_stockpile = {
 					type = tac_bomber_equipment_1
@@ -2420,10 +2420,7 @@ focus_tree = {
 				popularity = 0.075
 			}
 			hidden_effect = {
-				country_event = {
-					id = fopcoup.038
-					days = 15
-				}
+				country_event = { id = fopcoup.038 days = 15 }
 			}
 		}
 	}
@@ -5501,7 +5498,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FOP_AND_andesia_declared"
-			custom_effect_tooltip = SER_will_be_unlocked
+			custom_effect_tooltip = tooltip_focus_unlocked_by_event
 		}
 	}
 	focus = {

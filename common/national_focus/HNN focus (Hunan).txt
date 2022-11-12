@@ -1179,10 +1179,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_Hunan_Under_the_Kuomintang"
 			custom_effect_tooltip = cubanoeffect_tooltip
 			hidden_effect = {
-				country_event = {
-					id = hnn.65
-					days = 5
-				}
+				country_event = { id = hnn.65 days = 5 }
 			}
 		}
 	}

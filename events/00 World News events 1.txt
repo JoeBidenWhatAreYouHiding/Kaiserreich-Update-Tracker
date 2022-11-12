@@ -613,31 +613,6 @@ news_event = {
 	}
 }
 
-# PLC is formed
-news_event = {
-	id = worldnews.23
-	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.23 FROM = [From.GetName]" }
-	title = worldnews.23.t
-	desc = worldnews.23.d
-	picture = GFX_news_event_POL_election
-
-	major = yes
-	fire_for_sender = no
-	is_triggered_only = yes
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		regional_europe_news = yes
-	}
-
-	option = {
-		name = worldnews.23.a
-	}
-}
-
 # Chairman Mosley
 news_event = {
 	id = worldnews.24
@@ -1116,143 +1091,6 @@ news_event = {
 				name = war_in_the_desert_threat
 			}
 		}
-	}
-}
-
-# Poland Elects a New King
-news_event = {
-	id = worldnews.51
-	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.51 FROM = [From.GetName]" }
-	title = worldnews.51.t
-	desc = worldnews.51.d
-	picture = GFX_news_event_POL_election
-
-	major = yes
-	fire_for_sender = no
-	is_triggered_only = yes
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		regional_europe_news = yes
-	}
-
-	option = {
-		name = worldnews.51.a
-	}
-}
-
-# Poland Falls to Syndicalism
-news_event = {
-	id = worldnews.52
-	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.52 FROM = [From.GetName]" }
-	title = worldnews.52.t
-	desc = worldnews.52.d
-	picture = GFX_news_event_POL_syndicalism
-
-	major = yes
-	fire_for_sender = no
-	is_triggered_only = yes
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		regional_europe_news = yes
-	}
-
-	option = {
-		name = worldnews.52.a
-		effect_tooltip = {
-			add_named_threat = {
-				threat = 2
-				name = POL_revolution_threat
-			}
-		}
-	}
-}
-
-# Poland Falls to Nationalism
-news_event = {
-	id = worldnews.53
-	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.53 FROM = [From.GetName]" }
-	title = worldnews.53.t
-	desc = worldnews.53.d
-	picture = GFX_news_event_POL_nationalists
-
-	major = yes
-	fire_for_sender = no
-	is_triggered_only = yes
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		regional_europe_news = yes
-	}
-
-	option = {
-		name = worldnews.53.a
-		effect_tooltip = {
-			add_named_threat = {
-				threat = 2
-				name = POL_coup_threat
-			}
-		}
-	}
-}
-
-# Poland Declares the Republic
-news_event = {
-	id = worldnews.54
-	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.54 FROM = [From.GetName]" }
-	title = worldnews.54.t
-	desc = worldnews.54.d
-	picture = GFX_news_event_POL_republic
-
-	major = yes
-	fire_for_sender = no
-	is_triggered_only = yes
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		regional_europe_news = yes
-	}
-
-	option = {
-		name = worldnews.54.a
-	}
-}
-
-# The Polish Military Seizes Control
-news_event = {
-	id = worldnews.55
-	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.55 FROM = [From.GetName]" }
-	title = worldnews.55.t
-	desc = worldnews.55.d
-	picture = GFX_news_event_POL_military_takeover
-
-	major = yes
-	fire_for_sender = no
-	is_triggered_only = yes
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		regional_europe_news = yes
-	}
-
-	option = {
-		name = worldnews.55.a
 	}
 }
 
@@ -4522,21 +4360,6 @@ news_event = {
 
 	option = {
 		name = worldnews.191.a
-		if = {
-			limit = { tag = HOL }
-			add_named_threat = {
-				threat = 2
-				name = HOL_revolution_threat
-			}
-		}
-		else = {
-			effect_tooltip = {
-				add_named_threat = {
-					threat = 2
-					name = HOL_revolution_threat
-				}
-			}
-		}
 	}
 }
 # Military putsch in Netherlands
@@ -10131,5 +9954,39 @@ news_event = { # Italian Civil War Resumes
 				name = italian_wars_threat
 			}
 		}
+	}
+}
+
+news_event = { # 1938 Polish Elections
+	id = worldnews.486
+	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.486 FROM = [From.GetName]" }
+	title = worldnews.486.t
+	desc = {
+		trigger = { POL = { has_government = market_liberal } }
+		text = worldnews.486.d.mkp
+	}
+	desc = {
+		trigger = { POL = { has_left_democratic_government = yes } }
+		text = worldnews.486.d.centrolew
+	}
+	desc = {
+		trigger = { POL = { has_government = social_conservative } }
+		text = worldnews.486.d.chjena
+	}
+	desc = {
+		trigger = { POL = { has_government = authoritarian_democrat } }
+		text = worldnews.486.d.studnicki
+	}
+	picture = GFX_news_event_POL_election
+	is_triggered_only = yes
+	fire_for_sender = no
+	major = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	option = {
+		name = worldnews.486.a
 	}
 }

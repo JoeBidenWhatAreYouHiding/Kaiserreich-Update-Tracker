@@ -1534,9 +1534,7 @@ shared_focus = {
 		country_event = pue.90
 		set_country_flag = PUE_Government_Consolidated
 		hidden_effect = {
-			country_event = {
-				id = pue.201 days = 14
-			}
+			country_event = { id = pue.201 days = 14 }
 		}
 	}
 }
@@ -1908,15 +1906,9 @@ shared_focus = {
 	select_effect = {
 		log = "[GetDateText]: [Root.GetName]: Select Focus PUE_first_election"
 		hidden_effect = {
-			country_event = {
-				id = pue.76 days = 7
-			}
-			country_event = {
-				id = pue.77 days = 14
-			}
-			country_event = {
-				id = pue.78 days = 21
-			}
+			country_event = { id = pue.76 days = 7 }
+			country_event = { id = pue.77 days = 14 }
+			country_event = { id = pue.78 days = 21 }
 		}
 	}
 	completion_reward = {

@@ -328,10 +328,7 @@ GEA_colonial_decisions = {
 			add_manpower = 25000
 			hidden_effect = {
 				FROM = {
-					country_event = {
-						id = Ostasien.200
-						days = 1
-					}
+					country_event = { id = Ostasien.200 days = 1 }
 				}
 			}
 		}
@@ -369,10 +366,7 @@ GEA_colonial_decisions = {
 			custom_effect_tooltip = GEA_receive_guns_from_home
 			hidden_effect = {
 				GER = {
-					country_event = {
-						id = Ostasien.201
-						days = 1
-					}
+					country_event = { id = Ostasien.201 days = 1 }
 				}
 			}
 		}

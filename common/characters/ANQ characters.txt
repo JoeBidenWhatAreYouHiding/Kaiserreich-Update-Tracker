@@ -277,25 +277,25 @@ characters = {
 		}
 	}
 
-	ANQ_sun_li_jen = {
-		name = ANQ_sun_li_jen
+	ANQ_sun_liren = {
+		name = ANQ_sun_liren
 		portraits = {
 			army = {
-				small = "gfx/interface/advisors/ANQ/ANQ_sun_lijen.png"
-				large = "gfx/leaders/ANQ/Portrait_ANQ_Sun_Li_jen.png"
+				small = "gfx/interface/advisors/ANQ/ANQ_sun_liren.png"
+				large = "gfx/leaders/ANQ/Portrait_ANQ_Sun_Liren.png"
 			}
 		}
 		corps_commander = {
 			traits = { brilliant_strategist career_officer organizer urban_assault_specialist }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
 			logistics_skill = 2
 		}
 		advisor = {
 			slot = high_command
-			idea_token = ANQ_sun_li_jen_army_mhc
+			idea_token = ANQ_sun_liren_army_mhc
 			ledger = army
 			traits = { KR_MHC_army_regrouping_2 }
 			cost = 100

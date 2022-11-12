@@ -334,6 +334,14 @@ characters = {
 			}
 		}
 	}
+	RUS_boris_romanov = {
+		name = RUS_boris_romanov
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_RUS_Boris_Romanov.png"
+			}
+		}
+	}
 
 	##########################
 	### Seconds in Command ###

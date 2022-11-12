@@ -17,10 +17,7 @@ country_event = { #the confederation happens
 	option = {
 		name = cendem.1.a
 		hidden_effect = {
-			country_event = {
-				id = cendem.2
-				days = 3
-			}
+			country_event = { id = cendem.2 days = 3 }
 			set_temp_variable = { days_to_event = 1976 }
 			add_to_temp_variable = { days_to_event = 706640 }
 			subtract_from_temp_variable = { days_to_event = global.num_days }
@@ -44,10 +41,7 @@ country_event = { #Formation of the Partido Unionista
 			popularity = 0.05
 		}
 		hidden_effect = {
-			country_event = {
-				id = cendem.4
-				days = 4
-			}
+			country_event = { id = cendem.4 days = 4 }
 		}
 	}
 }
@@ -71,10 +65,7 @@ country_event = { #Formation of the Partido Unificacion Democratica
 			ideology = market_liberal_subtype
 		}
 		hidden_effect = {
-			country_event = {
-				id = cendem.5
-				days = 4
-			}
+			country_event = { id = cendem.5 days = 4 }
 		}
 	}
 	option = { #Choose Jose Maria Moncada
@@ -99,10 +90,7 @@ country_event = { #Formation of the Partido Unificacion Democratica
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = cendem.5
-				days = 4
-			}
+			country_event = { id = cendem.5 days = 4 }
 		}
 	}
 }
@@ -127,14 +115,8 @@ country_event = { #Formation of the Partido Liberal
 			ideology = social_liberal_subtype
 		}
 		hidden_effect = {
-			country_event = {
-				id = cendem.3
-				days = 4
-			}
-			country_event = {
-				id = cendem.31
-				months = 36
-			}
+			country_event = { id = cendem.3 days = 4 }
+			country_event = { id = cendem.31 months = 36 }
 		}
 	}
 }
@@ -159,14 +141,8 @@ country_event = { #Formation of the Partido del Trabajo
 			ideology = social_democrat_subtype
 		}
 		hidden_effect = {
-			country_event = {
-				id = cendem.18
-				days = 4
-			}
-			country_event = {
-				id = cendem.32
-				months = 36
-			}
+			country_event = { id = cendem.18 days = 4 }
+			country_event = { id = cendem.32 months = 36 }
 		}
 	}
 	option = { #The Red Rose takes root in Central America with Moreno
@@ -185,14 +161,8 @@ country_event = { #Formation of the Partido del Trabajo
 			ideology = social_democrat_subtype
 		}
 		hidden_effect = {
-			country_event = {
-				id = cendem.18
-				days = 4
-			}
-			country_event = {
-				id = cendem.32
-				months = 36
-			}
+			country_event = { id = cendem.18 days = 4 }
+			country_event = { id = cendem.32 months = 36 }
 		}
 	}
 }
@@ -224,10 +194,7 @@ country_event = { #Formation of the Partido Nacional Revolucionario
 					}
 				}
 			}
-			country_event = {
-				id = cendem.7
-				days = 2
-			}
+			country_event = { id = cendem.7 days = 2 }
 		}
 	}
 }
@@ -641,22 +608,10 @@ country_event = { #The snap election
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
 				}
 			}
 		}
@@ -691,22 +646,10 @@ country_event = { #The snap election
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
 				}
 			}
 		}
@@ -741,22 +684,10 @@ country_event = { #The snap election
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
 				}
 			}
 		}
@@ -791,22 +722,10 @@ country_event = { #The snap election
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
 				}
 			}
 		}
@@ -841,22 +760,10 @@ country_event = { #The snap election
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
 				}
 			}
 		}
@@ -917,22 +824,10 @@ country_event = { #Elections of [GetYear]
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
 				}
 			}
 		}
@@ -955,22 +850,10 @@ country_event = { #Elections of [GetYear]
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
 				}
 			}
 		}
@@ -993,22 +876,10 @@ country_event = { #Elections of [GetYear]
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
 				}
 			}
 		}
@@ -1031,22 +902,10 @@ country_event = { #Elections of [GetYear]
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_RADSOC }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
 				}
 			}
 		}
@@ -1069,22 +928,10 @@ country_event = { #Elections of [GetYear]
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = CEN_dem_path
-						option = CEN_DEM_PATH_MARLIB
-					}
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCCON }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCDEM }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_SOCLIB }
+					has_game_rule = { rule = CEN_dem_path option = CEN_DEM_PATH_MARLIB }
 				}
 			}
 		}
@@ -1175,10 +1022,7 @@ country_event = { #Changes in the parties, Soc.Dem.
 			promote_character = GUA_juan_jose_arevalo_bermejo
 		}
 		hidden_effect = {
-			country_event = {
-				id = cendem.32
-				days = 400
-			}
+			country_event = { id = cendem.32 days = 400 }
 		}
 	}
 }
@@ -1229,10 +1073,7 @@ country_event = { #Changes in the parties, Soc.dems.
 	immediate = { log = "[GetDateText]: [Root.GetName]: event cendem.32 FROM = [From.GetName]" }
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = cendem.30
-				months = 36
-			}
+			country_event = { id = cendem.30 months = 36 }
 		}
 	}
 	title = cendem.32.t
@@ -1598,10 +1439,7 @@ country_event = { #Foundation of the Universidad Zamorano
 	option = { #Great!
 		name = cendem.100.a
 		add_political_power = 25
-		country_event = {
-			id = cendem.101
-			days = 45
-		}
+		country_event = { id = cendem.101 days = 45 }
 	}
 }
 
@@ -1616,10 +1454,7 @@ country_event = { #Foundation of the Universidad Centroamericana
 	option = { #The Spirit of the Union is spreading
 		name = cendem.101.a
 		add_political_power = 25
-		country_event = {
-			id = cendem.102
-			days = 45
-		}
+		country_event = { id = cendem.102 days = 45 }
 	}
 }
 
@@ -1634,10 +1469,7 @@ country_event = { #Construction of the Ciudad Universitaria 'Dr. Fabio Castillo 
 	option = { #El Salvador will be a place of knowledge, rather than reaction!
 		name = cendem.102.a
 		add_political_power = 25
-		country_event = {
-			id = cendem.103
-			days = 45
-		}
+		country_event = { id = cendem.103 days = 45 }
 	}
 }
 
@@ -1652,10 +1484,7 @@ country_event = { #Autonomization of the Universidad Nacional Autónoma de Hondu
 	option = { #Honduras has its education freed from oppression
 		name = cendem.103.a
 		add_political_power = 25
-		country_event = {
-			id = cendem.105
-			days = 45
-		}
+		country_event = { id = cendem.105 days = 45 }
 	}
 }
 
@@ -1827,10 +1656,7 @@ country_event = { #Corruption Trials start
 		name = cendem.114.a
 		add_political_power = 25
 		hidden_effect = {
-			country_event = {
-				id = cendem.116
-				days = 70
-			}
+			country_event = { id = cendem.116 days = 70 }
 		}
 	}
 }
@@ -1974,7 +1800,7 @@ country_event = { #Friendship with Costa Rica accepted
 			country = FROM
 			relation = non_aggression_pact
 		}
-		FROM = { 
+		FROM = {
 			every_owned_state = {
 				limit = { is_claimed_by = ROOT }
 				remove_claim_by = ROOT
@@ -2036,7 +1862,6 @@ country_event = { #Canadians accept
 	desc = cendem.227.d
 
 	is_triggered_only = yes
-	
 
 	option = { #Yaaay
 		name = cendem.227.a
@@ -2078,10 +1903,7 @@ country_event = { #Central America Wants our support to stay neutral (Canada)
 				modifier = CEN_accepted_friendship
 			}
 			CEN = {
-				country_event = {
-					id = cendem.236
-					days = 2
-				}
+				country_event = { id = cendem.236 days = 2 }
 			}
 		}
 	}
@@ -2099,10 +1921,7 @@ country_event = { #Central America Wants our support to stay neutral (Canada)
 				modifier = CEN_refused_friendship
 			}
 			CEN = {
-				country_event = {
-					id = cendem.237
-					days = 2
-				}
+				country_event = { id = cendem.237 days = 2 }
 			}
 		}
 	}
@@ -2131,7 +1950,6 @@ country_event = { #Canada Refuses to Guarantee us
 
 	is_triggered_only = yes
 
-
 	option = { #Yaaay
 		name = cendem.237.a
 		add_political_power = -25
@@ -2158,10 +1976,7 @@ country_event = { #Central America Wants our support to stay neutral (USA)
 				modifier = CEN_accepted_friendship
 			}
 			CEN = {
-				country_event = {
-					id = cendem.239
-					days = 2
-				}
+				country_event = { id = cendem.239 days = 2 }
 			}
 		}
 	}
@@ -2179,10 +1994,7 @@ country_event = { #Central America Wants our support to stay neutral (USA)
 				modifier = CEN_refused_friendship
 			}
 			CEN = {
-				country_event = {
-					id = cendem.240
-					days = 2
-				}
+				country_event = { id = cendem.240 days = 2 }
 			}
 		}
 	}
@@ -2227,10 +2039,7 @@ country_event = { #Military Parades Nationwide
 
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = cendem.241
-				days = 365
-			}
+			country_event = { id = cendem.241 days = 365 }
 		}
 	}
 

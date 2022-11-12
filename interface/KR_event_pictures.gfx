@@ -2267,7 +2267,7 @@ spriteTypes = {
 		name = "GFX_report_event_CHI_chen_boer"
 		texturefile = "gfx/event_pictures/East_Asia/China/chi_chen_boer.png"
 	}
-	spriteType = { 
+	spriteType = {
 		name = "GFX_report_event_CHI_lu_xun"
 		texturefile = "gfx/event_pictures/East_Asia/China/chi_lu_xun.png"
 	}
@@ -4326,10 +4326,6 @@ spriteTypes = {
 
 
 	### LIT - Lithuania ##
-	spriteType = {
-		name = "GFX_report_event_LIT_alter"
-		texturefile = "gfx/event_pictures/Europe/Lithuania/alter.png"
-	}
 	spriteType = {
 		name = "GFX_report_event_LIT_ausrine_paper"
 		texturefile = "gfx/event_pictures/Europe/Lithuania/ausrine_paper.png"

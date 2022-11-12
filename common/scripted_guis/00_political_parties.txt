@@ -32,7 +32,7 @@ scripted_gui = {
 		ai_enabled = {
 			always = no
 		}
-		
+
 		visible = {
 			has_any_power_balance = no
 		}

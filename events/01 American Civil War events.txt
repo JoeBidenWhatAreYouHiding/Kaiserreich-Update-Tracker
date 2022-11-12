@@ -565,7 +565,6 @@ country_event = {
 		remove_ACW_claims = yes
 
 		### Events for other tags
-		BRA = { country_event = { id = bra.110 days = 15 random_days = 20 } }
 		LEC = { country_event = { id = lec.150 days = 5 random_days = 10 } }
 		HAI = { country_event = { id = hai.21 days = 5 random_days = 5 } }
 
@@ -1219,10 +1218,7 @@ country_event = { # Appeal to Reason
 			base = 0
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = TEX_path
-					option = TEX_PATH_PATAUT
-				}
+				has_game_rule = { rule = TEX_path option = TEX_PATH_PATAUT }
 			}
 		}
 	}
@@ -1282,10 +1278,7 @@ country_event = { # Pledge of Allegiance
 			base = 0
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = TEX_path
-					option = TEX_PATH_NATPOP
-				}
+				has_game_rule = { rule = TEX_path option = TEX_PATH_NATPOP }
 			}
 		}
 	}
@@ -2466,14 +2459,8 @@ country_event = { # Canadian Intervention in New England
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_FORM
-					}
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-					}
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_FORM }
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 				}
 			}
 		}
@@ -2515,10 +2502,7 @@ country_event = { # Canadian Intervention in New England
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_acw_new_england
-					option = CAN_ACW_NEW_ENGLAND_NOT_TAKE
-				}
+				has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_TAKE }
 			}
 		}
 		USA_canada_seizes_new_england = yes
@@ -2599,10 +2583,7 @@ country_event = { # Alaska asks Canada for intervention
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_acw_new_england
-					option = CAN_ACW_NEW_ENGLAND_NOT_TAKE
-				}
+				has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_TAKE }
 			}
 			modifier = {
 				factor = 0
@@ -3869,14 +3850,8 @@ country_event = { # PSA invited to join Entente during Ceasefire
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = PSA_forpol
-						option = PSA_FORPOL_NEUTRAL
-					}
-					has_game_rule = {
-						rule = PSA_forpol
-						option = PSA_FORPOL_JAP
-					}
+					has_game_rule = { rule = PSA_forpol option = PSA_FORPOL_NEUTRAL }
+					has_game_rule = { rule = PSA_forpol option = PSA_FORPOL_JAP }
 				}
 			}
 		}
@@ -3905,10 +3880,7 @@ country_event = { # PSA invited to join Entente during Ceasefire
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = PSA_forpol
-					option = PSA_FORPOL_ENT
-				}
+				has_game_rule = { rule = PSA_forpol option = PSA_FORPOL_ENT }
 			}
 		}
 		CAN = { country_event = amcivwar.168 }
@@ -4531,10 +4503,7 @@ country_event = { # America in Chaos
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LIB_independence
-					option = LIB_INDEPENDENCE_STAY_WITH_USA
-				}
+				has_game_rule = { rule = LIB_independence option = LIB_INDEPENDENCE_USA }
 			}
 			modifier = {
 				factor = 2
@@ -4569,10 +4538,7 @@ country_event = { # America in Chaos
 			base = 10
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LIB_independence
-					option = LIB_INDEPENDENCE_DECLARE_INDEPENDENCE
-				}
+				has_game_rule = { rule = LIB_independence option = LIB_INDEPENDENCE_DECLARE }
 			}
 			modifier = {
 				factor = 3
@@ -7637,14 +7603,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = USA_macarthur_war_plan
-						option = USA_WAR_PLAN_WHITE_SAN_JACINTO
-					}
-					has_game_rule = {
-						rule = USA_macarthur_war_plan
-						option = USA_WAR_PLAN_WHITE
-					}
+					has_game_rule = { rule = USA_macarthur_war_plan option = USA_MARCARTHUR_WAR_PLAN_SAN_JACINTO }
+					has_game_rule = { rule = USA_macarthur_war_plan option = USA_MARCARTHUR_WAR_PLAN }
 				}
 			}
 		}
@@ -7666,23 +7626,14 @@ country_event = {
 				factor = 0
 				PSA = { is_ai = no }
 				NOT = {
-					has_game_rule = {
-						rule = USA_macarthur_war_plan
-						option = USA_WAR_PLAN_WHITE_SAN_JACINTO
-					}
+					has_game_rule = { rule = USA_macarthur_war_plan option = USA_MARCARTHUR_WAR_PLAN_SAN_JACINTO }
 				}
 			}
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = USA_macarthur_war_plan
-						option = USA_WAR_PLAN_WHITE_YORKTOWN
-					}
-					has_game_rule = {
-						rule = USA_macarthur_war_plan
-						option = USA_WAR_PLAN_WHITE
-					}
+					has_game_rule = { rule = USA_macarthur_war_plan option = USA_MARCARTHUR_WAR_PLAN_YORKTOWN }
+					has_game_rule = { rule = USA_macarthur_war_plan option = USA_MARCARTHUR_WAR_PLAN }
 				}
 			}
 		}
@@ -7704,14 +7655,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = USA_macarthur_war_plan
-						option = USA_WAR_PLAN_WHITE_YORKTOWN
-					}
-					has_game_rule = {
-						rule = USA_macarthur_war_plan
-						option = USA_WAR_PLAN_WHITE_SAN_JACINTO
-					}
+					has_game_rule = { rule = USA_macarthur_war_plan option = USA_MARCARTHUR_WAR_PLAN_YORKTOWN }
+					has_game_rule = { rule = USA_macarthur_war_plan option = USA_MARCARTHUR_WAR_PLAN_SAN_JACINTO }
 				}
 			}
 		}
@@ -9891,14 +9836,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_FORM
-					}
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-					}
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_FORM }
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 				}
 			}
 		}
@@ -9927,14 +9866,8 @@ country_event = {
 			modifier = {
 				add = 100
 				OR = {
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_FORM
-					}
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-					}
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_FORM }
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 				}
 			}
 		}
@@ -11285,14 +11218,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_FORM
-					}
-					has_game_rule = {
-						rule = CAN_acw_new_england
-						option = CAN_ACW_NEW_ENGLAND_NOT_FORM
-					}
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_FORM }
+					has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_FORM }
 				}
 			}
 		}
@@ -11320,10 +11247,7 @@ country_event = {
 			base = 75
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_acw_new_england
-					option = CAN_ACW_NEW_ENGLAND_NOT_TAKE
-				}
+				has_game_rule = { rule = CAN_acw_new_england option = CAN_ACW_NEW_ENGLAND_NOT_TAKE }
 			}
 		}
 		USA_canada_seizes_new_england = yes

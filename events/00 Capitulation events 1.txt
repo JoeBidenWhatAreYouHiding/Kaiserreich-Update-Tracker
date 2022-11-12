@@ -52,47 +52,10 @@ country_event = {
 				}
 				set_global_flag = GER_flees_to_africa
 			}
-
-			if = { #Checking for UoB involvement in the war
-				limit = {
-					ENG = {
-						is_in_faction_with = FRA
-						has_war_with = GER
-						OR = {
-							any_war_score > 10
-							controls_state = 56
-							controls_state = 58
-							controls_state = 59
-						}
-					}
-				}
-				set_global_flag = UoB_war_par_1
-			}
-			if = {
-				limit = {
-					ENG = {
-						is_in_faction_with = FRA
-						has_war_with = GER
-						OR = {
-							any_war_score > 25
-							AND = {
-								controls_state = 5
-								controls_state = 62
-								controls_state = 86
-							}
-							controls_state = 64
-						}
-					}
-				}
-				set_global_flag = UoB_war_par_2
-			}
 			news_event = worldnews.145
 
 			LEC = {
-				country_event = {
-					id = lec.100
-					days = 1
-				}
+				country_event = { id = lec.100 days = 1 }
 			}
 		}
 	}
@@ -461,7 +424,6 @@ country_event = {
 						tag = BAT
 						tag = EST
 						tag = LAT
-						tag = DKB
 						tag = GEO
 						tag = AZR
 						tag = ARM

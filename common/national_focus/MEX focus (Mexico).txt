@@ -2464,11 +2464,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus MEX_synarchismo"
 			add_ideas = MEX_synarchismo_idea
 			hidden_effect = {
-				country_event = {
-					id = mexico.106
-					days = 60
-					random_days = 120
-				}
+				country_event = { id = mexico.106 days = 60 random_days = 120 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }

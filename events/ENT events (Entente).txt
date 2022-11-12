@@ -2933,19 +2933,13 @@ country_event = {
 					AND = {
 						date > 1938.1.1
 						check_variable = { var = global.king_edward_story value = 2 compare = equals }
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_EDWARD
-						}
+						has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
 					}
 					AND = {
 						date > 1938.6.1
 						event_target:KR_king_base = { tag = CAN }
 						NOT = {
-							has_game_rule = {
-								rule = CAN_british_king
-								option = CAN_BRITISH_KING_EDWARD
-							}
+							has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
 						}
 					}
 					AND = {
@@ -2984,22 +2978,10 @@ country_event = {
 			modifier = {
 				factor = 10
 				OR = {
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_ABDICATES
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_ALBERT
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_HENRY
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_GEORGE
-					}
+					has_game_rule = { rule = CAN_king option = CAN_KING_ABDICATES }
+					has_game_rule = { rule = CAN_king option = CAN_KING_ALBERT }
+					has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
+					has_game_rule = { rule = CAN_king option = CAN_KING_GEORGE }
 				}
 			}
 		}
@@ -4112,10 +4094,7 @@ country_event = {
 		check_variable = { var = global.king_edward_story value = 2 compare = equals }
 		date > 1938.6.1
 		NOT = {
-			has_game_rule = {
-				rule = CAN_british_king
-				option = CAN_BRITISH_KING_EDWARD
-			}
+			has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
 		}
 	}
 
@@ -4218,10 +4197,7 @@ country_event = {
 			AND = {
 				date > 1938.1.1
 				check_variable = { var = global.king_edward_story value = 2 compare = equals }
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_EDWARD
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
 			}
 			AND = {
 				date > 1938.1.1
@@ -4951,22 +4927,10 @@ country_event = {
 					check_variable = { king_popularity > 1 }
 					check_variable = { king_support > 3 }
 					NOT = {
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ABDICATES
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ALBERT
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_HENRY
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_GEORGE
-						}
+						has_game_rule = { rule = CAN_king option = CAN_KING_ABDICATES }
+						has_game_rule = { rule = CAN_king option = CAN_KING_ALBERT }
+						has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
+						has_game_rule = { rule = CAN_king option = CAN_KING_GEORGE }
 					}
 				}
 				# king is too popular to abdicate
@@ -4978,22 +4942,10 @@ country_event = {
 					NOT = { has_government = authoritarian_democrat }
 					check_variable = { king_influence > 3 }
 					NOT = {
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ABDICATES
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ALBERT
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_HENRY
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_GEORGE
-						}
+						has_game_rule = { rule = CAN_king option = CAN_KING_ABDICATES }
+						has_game_rule = { rule = CAN_king option = CAN_KING_ALBERT }
+						has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
+						has_game_rule = { rule = CAN_king option = CAN_KING_GEORGE }
 					}
 				}
 				# king's allies prevent him from abdicating
@@ -5005,22 +4957,10 @@ country_event = {
 					has_government = authoritarian_democrat
 					check_variable = { king_influence > 2 }
 					NOT = {
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ABDICATES
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ALBERT
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_HENRY
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_GEORGE
-						}
+						has_game_rule = { rule = CAN_king option = CAN_KING_ABDICATES }
+						has_game_rule = { rule = CAN_king option = CAN_KING_ALBERT }
+						has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
+						has_game_rule = { rule = CAN_king option = CAN_KING_GEORGE }
 					}
 				}
 				# king's allies prevent him from abdicating
@@ -5157,10 +5097,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_EDWARD
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
 			}
 		}
 		custom_effect_tooltip = CAN_edward_will_step_down
@@ -5211,22 +5148,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_ABDICATES
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_ALBERT
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_HENRY
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_GEORGE
-					}
+					has_game_rule = { rule = CAN_king option = CAN_KING_ABDICATES }
+					has_game_rule = { rule = CAN_king option = CAN_KING_ALBERT }
+					has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
+					has_game_rule = { rule = CAN_king option = CAN_KING_GEORGE }
 				}
 			}
 		}
@@ -5288,17 +5213,11 @@ country_event = {
 			base = 70
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_HENRY
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_GEORGE
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_GEORGE }
 			}
 		}
 		custom_effect_tooltip = CAN_prince_albert_king
@@ -5320,25 +5239,16 @@ country_event = {
 				factor = 0
 				tag = GBR
 				NOT = {
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_HENRY
-					}
+					has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
 				}
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_GEORGE
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_GEORGE }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_ALBERT
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_ALBERT }
 			}
 		}
 		custom_effect_tooltip = CAN_prince_henry_king
@@ -5369,17 +5279,11 @@ country_event = {
 			base = 10
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_HENRY
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_HENRY }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_ALBERT
-				}
+				has_game_rule = { rule = CAN_king option = CAN_KING_ALBERT }
 			}
 		}
 		custom_effect_tooltip = CAN_prince_george_king
@@ -7590,10 +7494,7 @@ country_event = {
 			base = 100
 			modifier = {
 				factor = 0.1
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_ENTENTE
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_ENTENTE }
 			}
 		}
 		set_country_flag = GER_conf_demand_alsace
@@ -7726,18 +7627,12 @@ country_event = {
 				NFA = { is_in_faction_with = ENT }
 				NOT = {
 					has_country_flag = GER_conf_demand_alsace
-					has_game_rule = {
-						rule = CAN_halifax_conference_rule
-						option = CAN_HALIFAX_FAVOUR_ENTENTE
-					}
+					has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_ENTENTE }
 				}
 			}
 			modifier = {
 				factor = 10
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_ENTENTE
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_ENTENTE }
 			}
 		}
 		ENT = {
@@ -7745,10 +7640,7 @@ country_event = {
 		}
 		hidden_effect = {
 			ENT = {
-				country_event = {
-					id = entente.325
-					days = 1
-				}
+				country_event = { id = entente.325 days = 1 }
 			}
 			GER = {
 				country_event = { id = entente.326 days = 1 }
@@ -7877,10 +7769,7 @@ country_event = {
 			base = 60
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_GERMANY
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_GERMANY }
 			}
 		}
 		GER = {
@@ -7900,10 +7789,7 @@ country_event = {
 				factor = 0
 				has_government = national_populist
 				NOT = {
-					has_game_rule = {
-						rule = CAN_halifax_conference_rule
-						option = CAN_HALIFAX_FAVOUR_GERMANY
-					}
+					has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_GERMANY }
 				}
 			}
 		}
@@ -7968,10 +7854,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_ENTENTE
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_ENTENTE }
 			}
 		}
 		ENT = {
@@ -8093,10 +7976,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_GERMANY
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_GERMANY }
 			}
 		}
 		GER = {
@@ -8175,10 +8055,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_ENTENTE
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_ENTENTE }
 			}
 		}
 		ENT = {
@@ -8304,10 +8181,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_GERMANY
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_GERMANY }
 			}
 		}
 		GER = {
@@ -8407,10 +8281,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_ENTENTE
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_ENTENTE }
 			}
 		}
 		ENT = {
@@ -8544,10 +8415,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_GERMANY
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_GERMANY }
 			}
 		}
 		GER = {
@@ -8633,10 +8501,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = CAN_halifax_conference_rule
-					option = CAN_HALIFAX_FAVOUR_ENTENTE
-				}
+				has_game_rule = { rule = CAN_halifax option = CAN_HALIFAX_FAVOUR_ENTENTE }
 			}
 		}
 		ENT = {
@@ -9876,10 +9741,7 @@ country_event = {
 	option = { #offer peace to the Entente
 		name = entente.343.a
 		ENT = {
-			country_event = {
-				id = entente.344
-				days = 2
-			}
+			country_event = { id = entente.344 days = 2 }
 		}
 	}
 	option = {
@@ -9932,10 +9794,7 @@ country_event = {
 		}
 		var:326.controller = {
 			white_peace_with_ROOT = yes
-			country_event = {
-				id = entente.345
-				days = 1
-			}
+			country_event = { id = entente.345 days = 1 }
 		}
 		hidden_effect = {
 			if = {
@@ -9954,10 +9813,7 @@ country_event = {
 		name = entente.344.b
 		ai_chance = { base = 0 }
 		var:326.controller = {
-			country_event = {
-				id = entente.346
-				days = 1
-			}
+			country_event = { id = entente.346 days = 1 }
 		}
 	}
 }
@@ -10028,10 +9884,7 @@ country_event = {
 	option = { #offer peace to the Entente
 		name = entente.347.a
 		ENT = {
-			country_event = {
-				id = entente.348
-				days = 2
-			}
+			country_event = { id = entente.348 days = 2 }
 		}
 	}
 	option = {
@@ -10088,10 +9941,7 @@ country_event = {
 		}
 		JAP = {
 			white_peace_with_ROOT = yes
-			country_event = {
-				id = entente.349
-				days = 1
-			}
+			country_event = { id = entente.349 days = 1 }
 		}
 		hidden_effect = { news_event = entente.351 }
 	}
@@ -10099,10 +9949,7 @@ country_event = {
 		name = entente.348.b
 		ai_chance = { base = 0 }
 		JAP = {
-			country_event = {
-				id = entente.350
-				days = 1
-			}
+			country_event = { id = entente.350 days = 1 }
 		}
 	}
 }

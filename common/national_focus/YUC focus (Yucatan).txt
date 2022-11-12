@@ -1326,10 +1326,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus YUC_central_american_overtures"
 			CEN = {
-				country_event = {
-					id = yucatan.28
-					days = 1
-				}
+				country_event = { id = yucatan.28 days = 1 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }

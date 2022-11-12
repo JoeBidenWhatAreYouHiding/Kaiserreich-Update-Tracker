@@ -23,14 +23,8 @@ country_event = { # The American Legion Appointment
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_PATAUT
-					}
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_NATPOP
-					}
+					has_game_rule = { rule = TEX_path option = TEX_PATH_PATAUT }
+					has_game_rule = { rule = TEX_path option = TEX_PATH_NATPOP }
 				}
 			}
 		}
@@ -40,10 +34,7 @@ country_event = { # The American Legion Appointment
 			popularity = 0.1
 		}
 		hidden_effect = {
-			country_event = {	# The Business Plot
-				id = unionstate.2
-				days = 7
-			}
+			country_event = { id = unionstate.2 days = 7 } # The Business Plot
 
 			# AuthDem Events
 			country_event = { id = unionstate.15 days = 90 random_days = 20 }
@@ -65,14 +56,8 @@ country_event = { # The American Legion Appointment
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_NATPOP
-					}
+					has_game_rule = { rule = TEX_path option = TEX_PATH_AUTDEM }
+					has_game_rule = { rule = TEX_path option = TEX_PATH_NATPOP }
 				}
 			}
 		}
@@ -82,10 +67,7 @@ country_event = { # The American Legion Appointment
 			popularity = 0.1
 		}
 		hidden_effect = {
-			country_event = {	# A special Session of Congress
-				id = unionstate.3
-				days = 10
-			}
+			country_event = { id = unionstate.3 days = 10 } # A special Session of Congress
 		}
 	}
 	option = { # William Pelley
@@ -99,14 +81,8 @@ country_event = { # The American Legion Appointment
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_PATAUT
-					}
+					has_game_rule = { rule = TEX_path option = TEX_PATH_AUTDEM }
+					has_game_rule = { rule = TEX_path option = TEX_PATH_PATAUT }
 				}
 			}
 		}
@@ -116,14 +92,8 @@ country_event = { # The American Legion Appointment
 			popularity = 0.1
 		}
 		hidden_effect = {
-			country_event = {	# The Business Plot
-				id = unionstate.2
-				days = 7
-			}
-			country_event = {	# A special Session of Congress
-				id = unionstate.3
-				days = 14
-			}
+			country_event = { id = unionstate.2 days = 7 } # The Business Plot
+			country_event = { id = unionstate.3 days = 14 } # A special Session of Congress
 		}
 	}
 }
@@ -180,14 +150,8 @@ country_event = { # A special Session of Congress
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_PATAUT
-					}
-					has_game_rule = {
-						rule = TEX_path
-						option = TEX_PATH_NATPOP
-					}
+					has_game_rule = { rule = TEX_path option = TEX_PATH_PATAUT }
+					has_game_rule = { rule = TEX_path option = TEX_PATH_NATPOP }
 				}
 			}
 		}

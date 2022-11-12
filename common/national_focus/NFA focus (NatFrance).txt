@@ -6977,10 +6977,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NATFRA_Demand_Alsace_Lorraine"
 			GER = {
-				country_event = {
-					id = nfa.211
-					days = 1
-				}
+				country_event = { id = nfa.211 days = 1 }
 			}
 			add_timed_idea = {
 				idea = NATFRA_War_GER_idea

@@ -179,10 +179,7 @@ political_actions = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = BRA_forpol
-					option = BRA_FORPOL_ENT_GUYANA
-				}
+				has_game_rule = { rule = BRA_forpol option = BRA_FORPOL_ENT_GUYANA }
 			}
 		}
 
@@ -232,10 +229,7 @@ political_actions = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = BRA_forpol
-					option = BRA_FORPOL_ENT_GUYANA
-				}
+				has_game_rule = { rule = BRA_forpol option = BRA_FORPOL_ENT_GUYANA }
 			}
 		}
 

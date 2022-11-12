@@ -93,11 +93,6 @@ political_actions = {
 			}
 		}
 
-		modifier = {
-			daily_popularity_drift = 0.01
-			daily_non_ruling_popularity_drift = -0.01
-		}
-
 		cost = 150
 		days_remove = 180
 		days_re_enable = 540

@@ -3852,10 +3852,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FIN_settle_the_russian_issue"
 			RUS = {
-				country_event = {
-					id = finland.95
-					days = 10
-				}
+				country_event = { id = finland.95 days = 10 }
 			}
 		}
 	}
@@ -3883,10 +3880,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus FIN_ties_with_sweden"
 
 			SWE = {
-				country_event = {
-					id = finland.99
-					days = 5
-				}
+				country_event = { id = finland.99 days = 5 }
 			}
 		}
 	}
@@ -3913,10 +3907,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FIN_ties_with_norway"
 			NOR = {
-				country_event = {
-					id = finland.102
-					days = 5
-				}
+				country_event = { id = finland.102 days = 5 }
 			}
 		}
 	}
@@ -3944,10 +3935,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FIN_ties_with_denmark"
 			DEN = {
-				country_event = {
-					id = finland.105
-					days = 5
-				}
+				country_event = { id = finland.105 days = 5 }
 			}
 		}
 	}

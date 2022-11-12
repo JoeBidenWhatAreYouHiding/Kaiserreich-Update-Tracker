@@ -1087,10 +1087,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ELS_rooting_military"
 			remove_ideas = ELS_unruly_military2
 			hidden_effect = {
-				country_event = {
-					id = els.209
-					days = 45
-				}
+				country_event = { id = els.209 days = 45 }
 			}
 		}
 	}
@@ -2054,14 +2051,10 @@ focus_tree = {
 						has_socialist_government = yes
 					}
 				}
-				country_event = {
-					id = els.134 days = 2
-				}
+				country_event = { id = els.134 days = 2 }
 			}
 			else = {
-				country_event = {
-					id = els.130 days = 2
-				}
+				country_event = { id = els.130 days = 2 }
 			}
 		}
 	}

@@ -2560,10 +2560,7 @@ focus_tree = {
 				promote_leader = yes
 			}
 			hidden_effect = {
-				country_event = {
-					id = pru.112
-					days = 90
-				}
+				country_event = { id = pru.112 days = 90 }
 			}
 		}
 	}

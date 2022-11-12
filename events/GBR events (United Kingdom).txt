@@ -486,22 +486,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -519,26 +507,11 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM_GUIDED
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 				}
 			}
 		}
@@ -555,10 +528,7 @@ country_event = {
 			base = 15
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GBR_path
-					option = GBR_PATH_AUTDEM_GUIDED
-				}
+				has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 			}
 		}
 		add_political_power = -100
@@ -687,10 +657,7 @@ country_event = {
 			base = 25
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GBR_path
-					option = GBR_PATH_AUTDEM_GUIDED
-				}
+				has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 			}
 			modifier = {
 				factor = 0
@@ -716,26 +683,11 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM_GUIDED
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 				}
 			}
 		}
@@ -762,22 +714,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -838,10 +778,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GBR_path
-					option = GBR_PATH_AUTDEM_GUIDED
-				}
+				has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 			}
 		}
 		custom_effect_tooltip = GBR_protests_will_fade
@@ -878,26 +815,11 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM_GUIDED
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 				}
 			}
 		}
@@ -918,22 +840,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -996,10 +906,7 @@ country_event = {
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GBR_path
-					option = GBR_PATH_AUTDEM_GUIDED
-				}
+				has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 			}
 			modifier = {
 				factor = 0.1
@@ -1027,22 +934,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -1105,10 +1000,7 @@ country_event = {
 			base = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GBR_path
-					option = GBR_PATH_AUTDEM_GUIDED
-				}
+				has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 			}
 		}
 		add_political_power = -100
@@ -1127,26 +1019,11 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM_GUIDED
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 				}
 			}
 		}
@@ -1174,22 +1051,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -1247,22 +1112,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -1282,26 +1135,11 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM_GUIDED
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 				}
 			}
 		}
@@ -1319,10 +1157,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GBR_path
-					option = GBR_PATH_AUTDEM_GUIDED
-				}
+				has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM_GUIDED }
 			}
 		}
 		add_political_power = -100
@@ -1385,14 +1220,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -1459,18 +1288,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -1508,18 +1328,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
 				}
 			}
 		}
@@ -1575,14 +1386,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -1629,18 +1434,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCDEM
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCDEM }
 				}
 			}
 		}
@@ -1667,18 +1463,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_AUTDEM
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = GBR_path
-						option = GBR_PATH_MARLIB
-					}
+					has_game_rule = { rule = GBR_path option = GBR_PATH_AUTDEM }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_SOCCON }
+					has_game_rule = { rule = GBR_path option = GBR_PATH_MARLIB }
 				}
 			}
 		}

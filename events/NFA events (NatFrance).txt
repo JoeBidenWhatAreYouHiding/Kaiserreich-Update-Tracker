@@ -74,9 +74,7 @@ country_event = { #Death of King George V
 	option = {
 		name = nfa.4.a #The King is dead, long live the king
 		hidden_effect = {
-			country_event = {
-				id = nfa.5 days = 3
-			}
+			country_event = { id = nfa.5 days = 3 }
 		}
 	}
 }
@@ -103,9 +101,7 @@ country_event = { #The Lion in Canada
 			modifier = committed_to_return_home
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.6 days = 14
-			}
+			country_event = { id = nfa.6 days = 14 }
 		}
 	}
 }
@@ -124,9 +120,7 @@ country_event = { #Book Competition - Setup
 	option = {
 		name = nfa.6.a #Let's see what they wrote
 		hidden_effect = {
-			country_event = {
-				id = nfa.7 days = 1
-			}
+			country_event = { id = nfa.7 days = 1 }
 		}
 		hidden_effect = { #Set up the variables for the power struggle
 			set_variable = {
@@ -167,21 +161,13 @@ country_event = { #Book Competition - Books
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_AF
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_RF
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_NATPOP }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_PATAUT }
 				}
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.8 days = 10
-			}
+			country_event = { id = nfa.8 days = 10 }
 			set_country_flag = nfa_lessons_1914_chosen_0
 		}
 	}
@@ -193,21 +179,13 @@ country_event = { #Book Competition - Books
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_SUS
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_CSN
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_AUTDEM }
 				}
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.9 days = 10
-			}
+			country_event = { id = nfa.9 days = 10 }
 			set_country_flag = nfa_discord_chosen_0
 		}
 	}
@@ -219,29 +197,15 @@ country_event = { #Book Competition - Books
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_SUS
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_CSN
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_AF
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_RF
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_AUTDEM }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_NATPOP }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_PATAUT }
 				}
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.10 days = 10
-			}
+			country_event = { id = nfa.10 days = 10 }
 			set_country_flag = nfa_no_book_chosen
 		}
 	}
@@ -261,9 +225,7 @@ country_event = { #Petain backs the Bear
 	option = {
 		name = nfa.8.a #Can the Bear really bring change?
 		hidden_effect = {
-			country_event = {
-				id = nfa.12 days = 5
-			}
+			country_event = { id = nfa.12 days = 5 }
 			add_to_variable = {
 				var = Mor_influence
 				value = 2
@@ -286,9 +248,7 @@ country_event = { #Petain backs the Rooster
 	option = {
 		name = nfa.9.a
 		hidden_effect = {
-			country_event = {
-				id = nfa.14 days = 5
-			}
+			country_event = { id = nfa.14 days = 5 }
 			add_to_variable = {
 				var = Pet_influence
 				value = 1
@@ -312,9 +272,7 @@ country_event = { #Petain backs no one
 		name = nfa.10.a
 		add_political_power = -15
 		hidden_effect = {
-			country_event = {
-				id = nfa.11 days = 5
-			}
+			country_event = { id = nfa.11 days = 5 }
 		}
 	}
 }
@@ -334,9 +292,7 @@ country_event = { #Drama
 		name = nfa.11.a
 		add_stability = -0.025
 		hidden_effect = {
-			country_event = {
-				id = nfa.13 days = 12
-			}
+			country_event = { id = nfa.13 days = 12 }
 		}
 	}
 }
@@ -356,9 +312,7 @@ country_event = { #CdG publishes his book regardless
 		name = nfa.12.a #A good read, but not much else.
 		add_political_power = -10
 		hidden_effect = {
-			country_event = {
-				id = nfa.13 days = 12
-			}
+			country_event = { id = nfa.13 days = 12 }
 			subtract_from_variable = {
 				var = Pet_influence
 				value = 1
@@ -390,14 +344,8 @@ country_event = { #Franchet d'Espèrey Retires
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_AF
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_RF
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_NATPOP }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_PATAUT }
 				}
 			}
 			modifier = {
@@ -447,22 +395,10 @@ country_event = { #Franchet d'Espèrey Retires
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_SUS
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_CSN
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_AF
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_RF
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_AUTDEM }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_NATPOP }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_PATAUT }
 				}
 			}
 		}
@@ -497,14 +433,8 @@ country_event = { #Franchet d'Espèrey Retires
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_SUS
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_CSN
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_AUTDEM }
 				}
 			}
 			modifier = {
@@ -610,9 +540,7 @@ country_event = { #Maréchal, merci!
 		add_stability = 0.05
 		remove_unit_leader_role = { character = NFA_philippe_petain }
 		hidden_effect = {
-			country_event = {
-				id = nfa.17 days = 3
-			}
+			country_event = { id = nfa.17 days = 3 }
 		}
 	}
 }
@@ -637,12 +565,8 @@ country_event = { #Put Mordacq in charge
 		clear_sic_slot = yes
 		activate_advisor = NFA_francois_de_la_rocque_sic
 		hidden_effect = {
-			country_event = {
-				id = nfa.89 days = 25
-			}
-			country_event = {
-				id = nfa.91 days = 13 #Trouble in the Garrison
-			}
+			country_event = { id = nfa.89 days = 25 }
+			country_event = { id = nfa.91 days = 13 } #Trouble in the Garrison
 		}
 	}
 }
@@ -665,21 +589,13 @@ country_event = { #Unrest in the Army
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_SUS
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_CSN
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_AUTDEM }
 				}
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.93 days = 20 #Sleeping Beauties
-			}
+			country_event = { id = nfa.93 days = 20 } #Sleeping Beauties
 		}
 	}
 
@@ -689,9 +605,7 @@ country_event = { #Unrest in the Army
 			base = 70
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.90 days = 5 #Marshal's Speech
-			}
+			country_event = { id = nfa.90 days = 5 } #Marshal's Speech
 		}
 	}
 }
@@ -718,9 +632,7 @@ country_event = { #Marshal's Speech
 			popularity = -0.05
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.93 days = 15 #Sleeping Beauties
-			}
+			country_event = { id = nfa.93 days = 15 } #Sleeping Beauties
 			set_country_flag = nfa_petain_helps_speech_cf
 		}
 	}
@@ -742,9 +654,7 @@ country_event = { #Trouble in the Garrison
 		add_stability = -0.02
 		add_political_power = -15
 		hidden_effect = {
-			country_event = {
-				id = nfa.92 days = 24
-			}
+			country_event = { id = nfa.92 days = 24 }
 		}
 	}
 }
@@ -780,9 +690,7 @@ country_event = { #Sleeping Beauties
 	option = {
 		name = nfa.93.a #Jousting
 		hidden_effect = {
-			country_event = {
-				id = nfa.94 days = 15
-			}
+			country_event = { id = nfa.94 days = 15 }
 		}
 	}
 }
@@ -804,16 +712,11 @@ country_event = { #Rumors of a Coup
 			base = 70
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = NFA_GOVERNMENT_PATH
-					option = NFA_GOVERNMENT_PATH_CSN
-				}
+				has_game_rule = { rule = NFA_path option = NFA_PATH_AUTDEM }
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.95 days = 7 #Beauties Awaken
-			}
+			country_event = { id = nfa.95 days = 7 } #Beauties Awaken
 		}
 	}
 
@@ -823,16 +726,11 @@ country_event = { #Rumors of a Coup
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = NFA_GOVERNMENT_PATH
-					option = NFA_GOVERNMENT_PATH_SUS
-				}
+				has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.99 days = 21 #Lonesome Bear
-			}
+			country_event = { id = nfa.99 days = 21 } #Lonesome Bear
 		}
 	}
 }
@@ -862,10 +760,7 @@ country_event = { #Beauties Awaken
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_SUS
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
 				}
 			}
 		}
@@ -875,9 +770,7 @@ country_event = { #Beauties Awaken
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.98 days = 12 #Bickering
-			}
+			country_event = { id = nfa.98 days = 12 } #Bickering
 		}
 	}
 
@@ -890,9 +783,7 @@ country_event = { #Beauties Awaken
 			has_country_flag = nfa_petain_helps_speech_cf
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.96 days = 10 #The New Union Sacree
-			}
+			country_event = { id = nfa.96 days = 10 } #The New Union Sacree
 		}
 	}
 
@@ -903,17 +794,12 @@ country_event = { #Beauties Awaken
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_SUS
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_DEM }
 				}
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.99 days = 14 #Lonesome Bear
-			}
+			country_event = { id = nfa.99 days = 14 } #Lonesome Bear
 		}
 	}
 }
@@ -968,15 +854,8 @@ country_event = { #New Union Sacree
 		add_to_coalition = yes
 		hidden_effect = {
 			set_variable = { NFA.coalition_stability = 0.25 }
-			country_event = {
-				id = nfa.97
-				days = 14
-			}
-			country_event = {
-				id = nfa.270
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.97 days = 14 }
+			country_event = { id = nfa.270 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -1065,9 +944,7 @@ country_event = { #Parliamentary Infighting
 		add_stability = -0.05
 		add_political_power = -25
 		hidden_effect = {
-			country_event = {
-				id = nfa.103 days = 16
-			}
+			country_event = { id = nfa.103 days = 16 }
 		}
 	}
 
@@ -1079,9 +956,7 @@ country_event = { #Parliamentary Infighting
 		add_stability = -0.075
 		add_political_power = -40
 		hidden_effect = {
-			country_event = {
-				id = nfa.96 days = 10
-			}
+			country_event = { id = nfa.96 days = 10 }
 		}
 	}
 }
@@ -1103,16 +978,11 @@ country_event = { #Lonesome Bear
 			base = 35
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = NFA_GOVERNMENT_PATH
-					option = NFA_GOVERNMENT_PATH_CSN
-				}
+				has_game_rule = { rule = NFA_path option = NFA_PATH_AUTDEM }
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.103 days = 14
-			}
+			country_event = { id = nfa.103 days = 14 }
 		}
 	}
 
@@ -1123,9 +993,7 @@ country_event = { #Lonesome Bear
 		}
 		add_political_power = -10
 		hidden_effect = {
-			country_event = {
-				id = nfa.100 days = 2
-			}
+			country_event = { id = nfa.100 days = 2 }
 		}
 	}
 }
@@ -1149,9 +1017,7 @@ country_event = { #Petain Helps
 			popularity = 0.03
 		}
 		hidden_effect = {
-			country_event = {
-				id = nfa.101 days = 23
-			}
+			country_event = { id = nfa.101 days = 23 }
 		}
 	}
 }
@@ -1232,11 +1098,7 @@ country_event = { #CSN Path
 				set_country_flag = nfa_lessons_1914_chosen
 			}
 			mark_focus_tree_layout_dirty = yes
-			country_event = {
-				id = nfa.270
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.270 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -1347,11 +1209,7 @@ country_event = { #AF Full Power
 				value = 0
 			}
 			country_event = { id = nfa.512 days = 28 } #Restore the King
-			country_event = {
-				id = nfa.271
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.271 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -2121,11 +1979,7 @@ country_event = { #Mordacq's Election UNUSED
 				set_country_flag = nfa_lessons_1914_chosen
 			}
 			mark_focus_tree_layout_dirty = yes
-			country_event = {
-				id = nfa.270
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.270 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -2320,11 +2174,7 @@ country_event = { #En Marche!
 			set_country_flag = NFA_Petain_wins_ffi
 			set_variable = { NFA_Invite_Investors_cost = 5 }
 			random_other_country = { news_event = worldnews.446 }
-			country_event = {
-				id = nfa.271
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.271 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -2452,11 +2302,7 @@ country_event = { #Operation Tocata (4)
 		}
 		hidden_effect = {
 			set_country_flag = NATFRA_CSN
-			country_event = {
-				id = nfa.270
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.270 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -2613,14 +2459,8 @@ country_event = { #Parades Continue
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_AF
-					}
-					has_game_rule = {
-						rule = NFA_GOVERNMENT_PATH
-						option = NFA_GOVERNMENT_PATH_RF
-					}
+					has_game_rule = { rule = NFA_path option = NFA_PATH_NATPOP }
+					has_game_rule = { rule = NFA_path option = NFA_PATH_PATAUT }
 				}
 			}
 		}
@@ -2778,11 +2618,7 @@ country_event = { #Form the CSN
 				set_country_flag = nfa_lessons_1914_chosen
 			}
 			mark_focus_tree_layout_dirty = yes
-			country_event = {
-				id = nfa.270
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.270 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -2801,10 +2637,7 @@ country_event = { #Form the CSN
 					has_country_flag = NFA_Napoleon_0
 				}
 				clr_country_flag = NFA_Napoleon_0
-				country_event = {
-					id = nfa.301
-					days = 71
-				}
+				country_event = { id = nfa.301 days = 71 }
 			}
 		}
 	}
@@ -2827,10 +2660,7 @@ country_event = { #AF Contacts us
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = NFA_GOVERNMENT_PATH
-					option = NFA_GOVERNMENT_PATH_RF
-				}
+				has_game_rule = { rule = NFA_path option = NFA_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
@@ -2850,10 +2680,7 @@ country_event = { #AF Contacts us
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = NFA_GOVERNMENT_PATH
-					option = NFA_GOVERNMENT_PATH_AF
-				}
+				has_game_rule = { rule = NFA_path option = NFA_PATH_NATPOP }
 			}
 		}
 		add_political_power = -10
@@ -2880,10 +2707,7 @@ country_event = { #400 Coups
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = NFA_GOVERNMENT_PATH
-					option = NFA_GOVERNMENT_PATH_AF
-				}
+				has_game_rule = { rule = NFA_path option = NFA_PATH_NATPOP }
 			}
 		}
 		hidden_effect = {
@@ -2925,10 +2749,7 @@ country_event = { #Handle it ourselves
 			base = 40
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = NFA_GOVERNMENT_PATH
-					option = NFA_GOVERNMENT_PATH_RF
-				}
+				has_game_rule = { rule = NFA_path option = NFA_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
@@ -3038,11 +2859,7 @@ country_event = { #Parades end slowly
 				}
 				news_event = worldnews.446
 			}
-			country_event = {
-				id = nfa.271
-				days = 40
-				random_days = 50
-			}
+			country_event = { id = nfa.271 days = 40 random_days = 50 }
 			if = {
 				limit = { has_dlc_lar = yes }
 				create_operative_leader = {
@@ -3446,11 +3263,7 @@ country_event = { #Anti-syndicalist volunteers arrive!
 				country_event = nfa.61
 			}
 			NFA = {
-				country_event = {
-					id = nfa.87
-					days = 20
-					random_days = 40
-				}
+				country_event = { id = nfa.87 days = 20 random_days = 40 }
 			}
 		}
 	}
@@ -3602,10 +3415,7 @@ country_event = { #French invasion of Morocco GEX
 			}
 		}
 		NFA = {
-			country_event = {
-				id = nfa.113
-				days = 1
-			}
+			country_event = { id = nfa.113 days = 1 }
 		}
 	}
 
@@ -3629,10 +3439,7 @@ country_event = { #French invasion of Morocco GEX
 			}
 		}
 		NFA = {
-			country_event = {
-				id = nfa.112
-				days = 1
-			}
+			country_event = { id = nfa.112 days = 1 }
 		}
 	}
 
@@ -3643,10 +3450,7 @@ country_event = { #French invasion of Morocco GEX
 		}
 		add_stability = 0.04
 		NFA = {
-			country_event = {
-				id = nfa.114
-				days = 1
-			}
+			country_event = { id = nfa.114 days = 1 }
 		}
 	}
 }
@@ -3734,10 +3538,7 @@ country_event = { #The German Warning
 			base = 80
 		}
 		GEX = {
-			country_event = {
-				id = nfa.115
-				days = 1
-			}
+			country_event = { id = nfa.115 days = 1 }
 		}
 	}
 }
@@ -3770,10 +3571,7 @@ country_event = { #Our threats have been ignored
 			}
 		}
 		NFA = {
-			country_event = {
-				id = nfa.113
-				days = 1
-			}
+			country_event = { id = nfa.113 days = 1 }
 		}
 	}
 
@@ -3796,10 +3594,7 @@ country_event = { #Our threats have been ignored
 			}
 		}
 		NFA = {
-			country_event = {
-				id = nfa.112
-				days = 1
-			}
+			country_event = { id = nfa.112 days = 1 }
 		}
 	}
 
@@ -3834,10 +3629,7 @@ country_event = { #French invasion of Morocco - independent Morocco
 			annex_country = {
 				target = MOR
 			}
-			country_event = {
-				id = nfa.113
-				days = 1
-			}
+			country_event = { id = nfa.113 days = 1 }
 		}
 	}
 
@@ -3848,10 +3640,7 @@ country_event = { #French invasion of Morocco - independent Morocco
 		}
 		add_stability = 0.1
 		NFA = {
-			country_event = {
-				id = nfa.117
-				days = 1
-			}
+			country_event = { id = nfa.117 days = 1 }
 		}
 	}
 }
@@ -5284,12 +5073,8 @@ country_event = { #Trial of the Commune - Military
 		add_political_power = 25
 		add_manpower = -200
 		hidden_effect = {
-			country_event = {
-				id = nfa.181 days = 28
-			}
-			country_event = {
-				id = nfa.182 days = 12
-			}
+			country_event = { id = nfa.181 days = 28 }
+			country_event = { id = nfa.182 days = 12 }
 		}
 	}
 
@@ -5301,12 +5086,8 @@ country_event = { #Trial of the Commune - Military
 		add_stability = 0.02
 		add_political_power = -20
 		hidden_effect = {
-			country_event = {
-				id = nfa.181 days = 28
-			}
-			country_event = {
-				id = nfa.182 days = 12
-			}
+			country_event = { id = nfa.181 days = 28 }
+			country_event = { id = nfa.182 days = 12 }
 		}
 	}
 
@@ -5319,12 +5100,8 @@ country_event = { #Trial of the Commune - Military
 		add_political_power = -40
 		army_experience = 50
 		hidden_effect = {
-			country_event = {
-				id = nfa.181 days = 28
-			}
-			country_event = {
-				id = nfa.182 days = 12
-			}
+			country_event = { id = nfa.181 days = 28 }
+			country_event = { id = nfa.182 days = 12 }
 		}
 	}
 }
@@ -13396,6 +13173,7 @@ country_event = { #Collapse of the French Republic caused by native revolts with
 
 	option = {
 		name = nfa.624.a
+		log = "KR_Event_Logging;NFA FALLS - BY CHA;[GetDateText];[ROOT.GetName];[FROM.GetName]"
 		add_stability = -0.5
 		add_war_support = -0.5
 		add_political_power = -300

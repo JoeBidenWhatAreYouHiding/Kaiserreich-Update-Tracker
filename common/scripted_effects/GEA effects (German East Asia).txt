@@ -24,11 +24,7 @@ GEA_generals_flee = {
 				}
 			}
 			GER = {
-				country_event = {
-					id = asiapeace.7
-					days = 10
-					random_days = 20
-				}
+				country_event = { id = asiapeace.7 days = 10 random_days = 20 }
 			}
 		}
 	}

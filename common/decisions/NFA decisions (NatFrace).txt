@@ -108,10 +108,7 @@ NFA_seize_morocco_decisions = {
 			}
 			else = {
 				FROM = {
-					country_event = {
-						id = nfa.116
-						days = 2
-					}
+					country_event = { id = nfa.116 days = 2 }
 				}
 			}
 		}

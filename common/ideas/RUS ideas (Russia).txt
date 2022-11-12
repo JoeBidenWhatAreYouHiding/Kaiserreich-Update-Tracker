@@ -1449,21 +1449,6 @@ ideas = {
 				infantry_weapons = 0.1
 			}
 		}
-
-		### Foreign Policy ideas ###
-		RUS_fraying_union = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_fraying_union" }
-			picture = SPR_disbanded_army
-			allowed = { always = no }
-			modifier = {
-				stability_weekly = -0.01
-			}
-			targeted_modifier = {
-				tag = RUS
-				attack_bonus_against = -0.10
-				defense_bonus_against = -0.10
-			}
-		}
 	}
 
 	##############

@@ -1126,7 +1126,7 @@ technologies = {
 
 		ai_will_do = {
 			base = 1
-   
+
 			modifier = {
 				add = 160
 				has_war = yes

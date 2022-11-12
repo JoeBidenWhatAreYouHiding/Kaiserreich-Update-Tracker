@@ -17,10 +17,7 @@ country_event = { # Bittersweet Victory
 		name = KRLAT.1.a
 		complete_national_focus = LAT_2nd_awakening
 		hidden_effect = {
-			country_event = {
-				id = KRLAT.2
-				days = 1
-			}
+			country_event = { id = KRLAT.2 days = 1 }
 		}
 	}
 }
@@ -36,10 +33,7 @@ country_event = { # Dual Rule explained
 	option = {
 		name = KRLAT.2.a
 		hidden_effect = {
-			country_event = {
-				id = KRLAT.3
-				days = 2
-			}
+			country_event = { id = KRLAT.3 days = 2 }
 		}
 	}
 }
@@ -58,24 +52,15 @@ country_event = { # Manteuffel's Insurgency
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_RADSOC
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_RADSOC }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_TOTALIST
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_TOTALIST }
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = KRLAT.4
-				days = 2
-			}
+			country_event = { id = KRLAT.4 days = 2 }
 		}
 	}
 	option = {
@@ -84,24 +69,15 @@ country_event = { # Manteuffel's Insurgency
 			base = 70
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_AUTDEM
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_AUTDEM }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_PATAUT
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = ISKO.1
-				days = 2
-			}
+			country_event = { id = ISKO.1 days = 2 }
 		}
 	}
 }
@@ -289,10 +265,7 @@ country_event = { ####constituent assembly####
 				var = cons_autho
 				value = 0
 			}
-			country_event = {
-				id = KRLAT.11
-				days = 3
-			}
+			country_event = { id = KRLAT.11 days = 3 }
 		}
 	}
 }
@@ -311,10 +284,7 @@ country_event = {
 			factor = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_PATAUT
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
@@ -322,10 +292,7 @@ country_event = {
 				var = cons_liberal
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.12
-				days = 3
-			}
+			country_event = { id = KRLAT.12 days = 3 }
 		}
 	}
 	option = {
@@ -334,10 +301,7 @@ country_event = {
 			factor = 80
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_AUTDEM
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_AUTDEM }
 			}
 		}
 		hidden_effect = {
@@ -345,10 +309,7 @@ country_event = {
 				var = cons_autho
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.12
-				days = 3
-			}
+			country_event = { id = KRLAT.12 days = 3 }
 		}
 	}
 }
@@ -367,10 +328,7 @@ country_event = {
 			factor = 80
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_AUTDEM
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_AUTDEM }
 			}
 		}
 		hidden_effect = {
@@ -378,10 +336,7 @@ country_event = {
 				var = cons_autho
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.13
-				days = 3
-			}
+			country_event = { id = KRLAT.13 days = 3 }
 		}
 	}
 	option = {
@@ -390,10 +345,7 @@ country_event = {
 			factor = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_PATAUT
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
@@ -401,10 +353,7 @@ country_event = {
 				var = cons_liberal
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.13
-				days = 3
-			}
+			country_event = { id = KRLAT.13 days = 3 }
 		}
 	}
 }
@@ -423,10 +372,7 @@ country_event = {
 			factor = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_AUTDEM
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_AUTDEM }
 			}
 		}
 		hidden_effect = {
@@ -434,10 +380,7 @@ country_event = {
 				var = cons_autho
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.14
-				days = 3
-			}
+			country_event = { id = KRLAT.14 days = 3 }
 		}
 	}
 	option = {
@@ -446,10 +389,7 @@ country_event = {
 			factor = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_PATAUT
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
@@ -457,10 +397,7 @@ country_event = {
 				var = cons_liberal
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.14
-				days = 3
-			}
+			country_event = { id = KRLAT.14 days = 3 }
 		}
 	}
 }
@@ -479,10 +416,7 @@ country_event = {
 			factor = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_PATAUT
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
@@ -490,10 +424,7 @@ country_event = {
 				var = cons_liberal
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.15
-				days = 3
-			}
+			country_event = { id = KRLAT.15 days = 3 }
 		}
 	}
 	option = {
@@ -502,10 +433,7 @@ country_event = {
 			factor = 80
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_AUTDEM
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_AUTDEM }
 			}
 		}
 		hidden_effect = {
@@ -513,10 +441,7 @@ country_event = {
 				var = cons_autho
 				value = 1
 			}
-			country_event = {
-				id = KRLAT.15
-				days = 3
-			}
+			country_event = { id = KRLAT.15 days = 3 }
 		}
 	}
 }
@@ -535,10 +460,7 @@ country_event = {
 			factor = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_PATAUT
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_PATAUT }
 			}
 		}
 		hidden_effect = {
@@ -550,19 +472,13 @@ country_event = {
 				limit = {
 					check_variable = { cons_liberal < cons_autho }
 				}
-				country_event = {
-					id = KRLAT.16
-					days = 7
-				}
+				country_event = { id = KRLAT.16 days = 7 }
 			}
 			else_if = {
 				limit = {
 					check_variable = { cons_liberal > cons_autho }
 				}
-				country_event = {
-					id = KRLAT.17
-					days = 7
-				}
+				country_event = { id = KRLAT.17 days = 7 }
 			}
 		}
 	}
@@ -572,10 +488,7 @@ country_event = {
 			factor = 80
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_AUTDEM
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_AUTDEM }
 			}
 		}
 		hidden_effect = {
@@ -587,19 +500,13 @@ country_event = {
 				limit = {
 					check_variable = { cons_liberal < cons_autho }
 				}
-				country_event = {
-					id = KRLAT.16
-					days = 7
-				}
+				country_event = { id = KRLAT.16 days = 7 }
 			}
 			else_if = {
 				limit = {
 					check_variable = { cons_liberal > cons_autho }
 				}
-				country_event = {
-					id = KRLAT.17
-					days = 7
-				}
+				country_event = { id = KRLAT.17 days = 7 }
 			}
 		}
 	}
@@ -735,17 +642,11 @@ country_event = { ##Kurelis asked Peterss for help
 			factor = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_RADSOC
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_RADSOC }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_TOTALIST
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_TOTALIST }
 			}
 		}
 		hidden_effect = {
@@ -782,17 +683,11 @@ country_event = { ##The Capture Fails
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_RADSOC
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_RADSOC }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_TOTALIST
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_TOTALIST }
 			}
 		}
 		hidden_effect = {
@@ -814,10 +709,7 @@ country_event = { ##ideological path
 			factor = 60
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_TOTALIST
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_TOTALIST }
 			}
 		}
 		country_event = ISKO.4
@@ -828,10 +720,7 @@ country_event = { ##ideological path
 			factor = 40
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_PATH
-					option = LAT_PATH_RADSOC
-				}
+				has_game_rule = { rule = LAT_PATH option = LAT_PATH_RADSOC }
 			}
 		}
 		country_event = ISKO.5
@@ -901,10 +790,7 @@ country_event = { ####collectivisation####
 				var = partial_collectivization
 				value = 0
 			}
-			country_event = {
-				id = ISKO.7
-				days = 5
-			}
+			country_event = { id = ISKO.7 days = 5 }
 		}
 	}
 }
@@ -928,10 +814,7 @@ country_event = { ####who manages collectivization ?
 				var = complete_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.8
-				days = 5
-			}
+			country_event = { id = ISKO.8 days = 5 }
 		}
 	}
 	option = { #creates local management
@@ -945,10 +828,7 @@ country_event = { ####who manages collectivization ?
 				var = partial_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.8
-				days = 5
-			}
+			country_event = { id = ISKO.8 days = 5 }
 		}
 	}
 }
@@ -977,10 +857,7 @@ country_event = { ###the lands question
 				var = complete_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.9
-				days = 5
-			}
+			country_event = { id = ISKO.9 days = 5 }
 		}
 	}
 	option = { ####seize just the richest one
@@ -996,10 +873,7 @@ country_event = { ###the lands question
 				var = partial_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.9
-				days = 5
-			}
+			country_event = { id = ISKO.9 days = 5 }
 		}
 	}
 }
@@ -1023,10 +897,7 @@ country_event = { ###state properties question
 				var = complete_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.10
-				days = 3
-			}
+			country_event = { id = ISKO.10 days = 3 }
 		}
 	}
 	option = { ###leave them to the collective economy
@@ -1039,10 +910,7 @@ country_event = { ###state properties question
 				var = partial_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.10
-				days = 3
-			}
+			country_event = { id = ISKO.10 days = 3 }
 		}
 	}
 }
@@ -1066,10 +934,7 @@ country_event = { ###kulak question
 				var = complete_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.11
-				days = 5
-			}
+			country_event = { id = ISKO.11 days = 5 }
 		}
 	}
 	option = { ##just take their lands and leave them alone
@@ -1082,10 +947,7 @@ country_event = { ###kulak question
 				var = partial_collectivization
 				value = 1
 			}
-			country_event = {
-				id = ISKO.11
-				days = 5
-			}
+			country_event = { id = ISKO.11 days = 5 }
 		}
 	}
 }
@@ -1112,19 +974,13 @@ country_event = { ###question of people reactions
 				limit = {
 					check_variable = { partial_collectivization < complete_collectivization }
 				}
-				country_event = {
-					id = ISKO.12
-					days = 5
-				}
+				country_event = { id = ISKO.12 days = 5 }
 			}
 			else_if = {
 				limit = {
 					check_variable = { partial_collectivization > complete_collectivization }
 				}
-				country_event = {
-					id = ISKO.13
-					days = 5
-				}
+				country_event = { id = ISKO.13 days = 5 }
 			}
 		}
 	}
@@ -1143,19 +999,13 @@ country_event = { ###question of people reactions
 				limit = {
 					check_variable = { partial_collectivization < complete_collectivization }
 				}
-				country_event = {
-					id = ISKO.12
-					days = 5
-				}
+				country_event = { id = ISKO.12 days = 5 }
 			}
 			else_if = {
 				limit = {
 					check_variable = { partial_collectivization > complete_collectivization }
 				}
-				country_event = {
-					id = ISKO.13
-					days = 5
-				}
+				country_event = { id = ISKO.13 days = 5 }
 			}
 		}
 	}
@@ -1173,10 +1023,7 @@ country_event = { ###complete collectivization
 		name = ISKO.12.a
 		add_ideas = LAT_total_collectivization
 		hidden_effect = {
-			country_event = {
-				id = ISKO.14
-				days = 100
-			}
+			country_event = { id = ISKO.14 days = 100 }
 		}
 	}
 }
@@ -1206,10 +1053,7 @@ country_event = { ###rural exodus
 	option = {
 		name = ISKO.14.a
 		add_stability = -0.05
-		country_event = {
-			id = ISKO.15
-			days = 100
-		}
+		country_event = { id = ISKO.15 days = 100 }
 	}
 }
 country_event = { ###famines
@@ -1335,10 +1179,7 @@ country_event = {
 	option = {
 		name = LATFOR.4.a
 		add_political_power = 20
-		country_event = {
-			id = KRLAT.18
-			days = 60
-		}
+		country_event = { id = KRLAT.18 days = 60 }
 	}
 }
 
@@ -1720,10 +1561,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_FORPOL
-					option = LAT_FORPOL_NEUT
-				}
+				has_game_rule = { rule = LAT_forpol option = LAT_FORPOL_NEUT }
 			}
 		}
 		add_ideas = LAT_interventionism
@@ -1738,10 +1576,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = LAT_FORPOL
-					option = LAT_FORPOL_ALLIANCE
-				}
+				has_game_rule = { rule = LAT_forpol option = LAT_FORPOL_RUS }
 			}
 		}
 		add_ideas = LAT_neutrality
@@ -1769,10 +1604,7 @@ country_event = {
 		name = LATFOR.27.a
 		ai_chance = { base = 100 }
 		FROM = {
-			country_event = {
-				id = LATFOR.28
-				days = 1
-			}
+			country_event = { id = LATFOR.28 days = 1 }
 		}
 	}
 
@@ -1780,10 +1612,7 @@ country_event = {
 		name = LATFOR.27.b
 		ai_chance = { base = 0 }
 		FROM = {
-			country_event = {
-				id = LATFOR.29
-				days = 1
-			}
+			country_event = { id = LATFOR.29 days = 1 }
 		}
 	}
 }
@@ -1846,10 +1675,7 @@ country_event = {
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = {
-					id = LATFOR.31
-					days = 1
-				}
+				country_event = { id = LATFOR.31 days = 1 }
 			}
 		}
 	}
@@ -1858,10 +1684,7 @@ country_event = {
 		name = LATFOR.30.b
 		ai_chance = { base = 0 }
 		FROM = {
-			country_event = {
-				id = LATFOR.29
-				days = 1
-			}
+			country_event = { id = LATFOR.29 days = 1 }
 		}
 	}
 }

@@ -1497,9 +1497,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL_SOCDEM }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_CONSERVATIVE }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB_SOCDEM }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_SOCCON }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 				}
 			}
 		}
@@ -1538,8 +1538,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL_SOCDEM }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB_SOCDEM }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB }
 				}
 			}
 		}
@@ -1564,9 +1564,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_CONSERVATIVE }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_SOCCON }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 				}
 			}
 		}
@@ -1721,7 +1721,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+				has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 			}
 		}
 		add_political_power = 25
@@ -1995,7 +1995,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+				has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 			}
 		}
 		set_temp_variable = { ideology_change_var = -0.05 }
@@ -2017,7 +2017,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+				has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 			}
 		}
 		set_country_flag = CAN_C7_sec_none
@@ -2073,8 +2073,8 @@ country_event = {
 			else_if = {
 				limit = {
 					OR = {
-						has_game_rule = { rule = CAN_path option = CAN_PATH_CONSERVATIVE }
-						has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+						has_game_rule = { rule = CAN_path option = CAN_PATH_SOCCON }
+						has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 					}
 				}
 				country_event = { id = canada.59 days = 1 }
@@ -2137,8 +2137,8 @@ country_event = {
 			else_if = {
 				limit = {
 					OR = {
-						has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL_SOCDEM }
-						has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL }
+						has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB_SOCDEM }
+						has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB }
 					}
 				}
 				country_event = { id = canada.59 days = 1 }
@@ -3074,8 +3074,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = CAN_path option = CAN_PATH_CONSERVATIVE }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_SOCCON }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 				}
 			}
 		}
@@ -3115,10 +3115,10 @@ country_event = {
 				OR = {
 					AND = {
 						CAN_major_james_coldwell = { can_be_country_leader = yes }
-						has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL_SOCDEM }
+						has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB_SOCDEM }
 					}
-					has_game_rule = { rule = CAN_path option = CAN_PATH_CONSERVATIVE }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_SOCCON }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 				}
 			}
 		}
@@ -3157,10 +3157,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL_SOCDEM }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB_SOCDEM }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB }
 					AND = {
-						has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+						has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 						CAN_is_dominion = no
 						CAN_john_diefenbaker = { can_be_country_leader = yes }
 					}
@@ -3197,9 +3197,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL_SOCDEM }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_CONSERVATIVE }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB_SOCDEM }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_SOCCON }
 				}
 			}
 		}
@@ -3249,9 +3249,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = CAN_path option = CAN_PATH_LIBERAL }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_CONSERVATIVE }
-					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTHORITARIAN }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_MARLIB }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_SOCCON }
+					has_game_rule = { rule = CAN_path option = CAN_PATH_AUTDEM }
 				}
 			}
 		}
@@ -5522,10 +5522,7 @@ country_event = {
 				NOT = {
 					USA = { has_country_flag = USA_assassinated_reed }
 					has_country_flag = CAN_player_support_union
-					has_game_rule = {
-						rule = CAN_acw_support
-						option = CAN_ACW_SUPPORT_TEX
-					}
+					has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_TEX }
 				}
 			}
 			modifier = {
@@ -7828,7 +7825,7 @@ country_event = {
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = CAN_referendum option = CAN_REFERENDUM_MEMBER_OF_THE_EMPIRE }
+				has_game_rule = { rule = CAN_referendum option = CAN_REFERENDUM_EMPIRE }
 			}
 			modifier = {
 				factor = 1.5
@@ -7895,7 +7892,7 @@ country_event = {
 			base = 70
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = CAN_referendum option = CAN_POLITICAL_REPUBLIC }
+				has_game_rule = { rule = CAN_referendum option = CAN_REFERENDUM_REPUBLIC }
 			}
 			modifier = {
 				factor = 1.5

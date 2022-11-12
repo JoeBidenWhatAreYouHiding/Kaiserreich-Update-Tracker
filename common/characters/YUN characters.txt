@@ -283,7 +283,7 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = YUN_hu_ruoyu
-			available = {
+			visible = {
 				has_country_leader = { character = YUN_tang_jiyao }
 			}
 			traits = { YUN_defence_comissioner_of_mengzi }
@@ -359,8 +359,10 @@ characters = {
 			slot = political_advisor
 			idea_token = YUN_long_yun_pol
 			available = {
-				has_country_leader = { character = YUN_tang_jiyao }
 				not_already_hired_except_as = political_advisor
+			}
+			visible = {
+				has_country_leader = { character = YUN_tang_jiyao }
 			}
 			traits = { YUN_defence_comissioner_of_kunming }
 		}
@@ -391,7 +393,7 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = YUN_lu_han
-			available = {
+			visible = {
 				has_country_leader = { character = YUN_tang_jiyao }
 			}
 			traits = { YUN_defence_comissioner_of_zhaotong }

@@ -18,9 +18,7 @@ set_technology = {
 ### Planes - non BBA ###
 if = {
 	limit = { has_dlc_bba = no }
-	set_technology = {
-		early_fighter = 1
-	}
+	set_technology = { early_fighter = 1 }
 }
 
 add_offsite_building = {

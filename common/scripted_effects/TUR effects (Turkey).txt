@@ -70,7 +70,7 @@ TUR_apply_surnames = {
 		TUR_fevzi_cakmak = { owner = { TUR_fevzi_cakmak = { set_character_name = TUR_fevzi_cakmak_surname } } }
 		TUR_mehmet_kazim_orbay = { owner = { TUR_mehmet_kazim_orbay = { set_character_name = TUR_mehmet_kazim_orbay_surname } } }
 		TUR_mehmet_recep_peker = { owner = { TUR_mehmet_recep_peker = { set_character_name = TUR_mehmet_recep_peker_surname } } }
-	
+
 		### Second in Command ###
 		TUR_mustafa_kemal = { owner = { TUR_mustafa_kemal = { set_character_name = TUR_mustafa_kemal_surname } } }
 		TUR_sultanzade_mehmed_sabahaddin = { owner = { TUR_sultanzade_mehmed_sabahaddin = { set_character_name = TUR_sultanzade_mehmed_sabahaddin_surname } } }
@@ -78,7 +78,7 @@ TUR_apply_surnames = {
 		TUR_mahmud_celaleddin_bayar = { owner = { TUR_mahmud_celaleddin_bayar = { set_character_name = TUR_mahmud_celaleddin_bayar_surname } } }
 		TUR_sevket_sureyya_aydemir = { owner = { TUR_sevket_sureyya_aydemir = { set_character_name = TUR_sevket_sureyya_aydemir_surname } } }
 		TUR_mustafa_sabri = { owner = { TUR_mustafa_sabri = { set_character_name = TUR_mustafa_sabri_surname } } }
-	
+
 		### Advisors ###
 		TUR_mehmet_nuri_conker = { owner = { TUR_mehmet_nuri_conker = { set_character_name = TUR_mehmet_nuri_conker_surname } } }
 		TUR_falih_rifki_atay = { owner = { TUR_falih_rifki_atay = { set_character_name = TUR_falih_rifki_atay_surname } } }
@@ -98,12 +98,12 @@ TUR_apply_surnames = {
 		TUR_yunus_nadi_abalioglu = { owner = { TUR_yunus_nadi_abalioglu = { set_character_name = TUR_yunus_nadi_abalioglu_surname } } }
 		TUR_husnu_bingol = { owner = { TUR_husnu_bingol = { set_character_name = TUR_husnu_bingol_surname } } }
 		TUR_fatin_rustu_zorlu = { owner = { TUR_fatin_rustu_zorlu = { set_character_name = TUR_fatin_rustu_zorlu_surname } } }
-	
+
 		### Theorists ###
 		TUR_cemal_mersinli = { owner = { TUR_cemal_mersinli = { set_character_name = TUR_cemal_mersinli_surname } } }
 		TUR_izzetin_calislar = { owner = { TUR_izzetin_calislar = { set_character_name = TUR_izzetin_calislar_surname } } }
 		TUR_vecihi_hurkus = { owner = { TUR_vecihi_hurkus = { set_character_name = TUR_vecihi_hurkus_surname } } }
-	
+
 		### Generals ###
 		TUR_omer_fahrettin_turkkan = { owner = { TUR_omer_fahrettin_turkkan = { set_character_name = TUR_omer_fahrettin_turkkan_surname } } }
 		TUR_nuri_yamut = { owner = { TUR_nuri_yamut = { set_character_name = TUR_nuri_yamut_surname } } }
@@ -119,13 +119,13 @@ TUR_apply_surnames = {
 		TUR_fahrettin_altay = { owner = { TUR_fahrettin_altay = { set_character_name = TUR_fahrettin_altay_surname } } }
 		TUR_tahsin_yazici = { owner = { TUR_tahsin_yazici = { set_character_name = TUR_tahsin_yazici_surname } } }
 		TUR_selahattin_adil = { owner = { TUR_selahattin_adil = { set_character_name = TUR_selahattin_adil_surname } } }
-	
+
 		### Admirals ###
 		TUR_mehmet_ali_ulgen = { owner = { TUR_mehmet_ali_ulgen = { set_character_name = TUR_mehmet_ali_ulgen_surname } } }
 		TUR_sukru_okan = { owner = { TUR_sukru_okan = { set_character_name = TUR_sukru_okan_surname } } }
 		TUR_huseyin_rauf_orbay = { owner = { TUR_huseyin_rauf_orbay = { set_character_name = TUR_huseyin_rauf_orbay_surname } } }
 		TUR_mahmud_muhtar_katircioglu = { owner = { TUR_mahmud_muhtar_katircioglu = { set_character_name = TUR_mahmud_muhtar_katircioglu_surname } } }
-	
+
 		### Military Staff ###
 		TUR_refet_bele = { owner = { TUR_refet_bele = { set_character_name = TUR_refet_bele_surname } } }
 		TUR_mehmet_rustu_sakarya = { owner = { TUR_mehmet_rustu_sakarya = { set_character_name = TUR_mehmet_rustu_sakarya_surname } } }
@@ -227,29 +227,80 @@ TUR_OSP_takes_over = {
 	set_temp_variable = { coalition_partner_var = token:social_conservative }
 	add_to_coalition = yes
 	hidden_effect = {
-		TUR_refet_bele = {
-			remove_all_country_leader_roles = yes
-			add_country_leader_role = {
-				country_leader = { ideology = social_liberal_subtype }
-				promote_leader = yes
+		TUR_ismet_resit = {
+			if = {
+				limit = { has_ideology = authoritarian_democrat_subtype }
+				promote_character = authoritarian_democrat_subtype
 			}
-			add_country_leader_role = {
-				country_leader = { ideology = market_liberal_subtype }
-				promote_leader = yes
-			}
-			add_country_leader_role = {
-				country_leader = { ideology = social_conservative_subtype }
-				promote_leader = yes
-			}
-			add_country_leader_role = {
-				country_leader = { ideology = authoritarian_democrat_subtype }
-				promote_leader = yes
-			}
-			add_country_leader_role = {
-				country_leader = { ideology = paternal_autocrat_subtype }
-				promote_leader = yes
+			else = {
+				add_country_leader_role = {
+					country_leader = { ideology = authoritarian_democrat_subtype }
+					promote_leader = yes
+				}
 			}
 		}
+		TUR_hasan_ali_yucel = {
+			if = {
+				limit = { has_ideology = social_democrat_subtype }
+				promote_character = social_democrat_subtype
+			}
+			#else = {
+			#	add_country_leader_role = {
+			#		country_leader = { ideology = social_democrat_subtype }
+			#		promote_leader = yes
+			#	}
+			#}
+		}
+		if = {
+			limit = { has_country_flag = TUR_fahrettin_pasha_coup }
+			TUR_omer_fahrettin_turkkan = {
+				remove_all_country_leader_roles = yes
+				add_country_leader_role = {
+					country_leader = { ideology = social_liberal_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = market_liberal_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = social_conservative_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = paternal_autocrat_subtype }
+					promote_leader = yes
+				}
+			}
+			else = {
+				TUR_refet_bele = {
+					remove_all_country_leader_roles = yes
+					add_country_leader_role = {
+						country_leader = { ideology = social_liberal_subtype }
+						promote_leader = yes
+					}
+					add_country_leader_role = {
+						country_leader = { ideology = market_liberal_subtype }
+						promote_leader = yes
+					}
+					add_country_leader_role = {
+						country_leader = { ideology = social_conservative_subtype }
+						promote_leader = yes
+					}
+					add_country_leader_role = {
+						country_leader = { ideology = paternal_autocrat_subtype }
+						promote_leader = yes
+					}
+				}
+			}
+		#	news_event = {
+		#		id = worldnews. #TODO fix this
+		#		days = 2
+		#	}
+		}
+	}
+	if = {
+		limit = { NOT = { has_country_flag = TUR_fahrettin_pasha_coup } }
 		country_event = { id = tur_osp.2 days = 4 }
 		remove_ideas = {
 			ott_military_loyalty
@@ -259,11 +310,6 @@ TUR_OSP_takes_over = {
 			ott_model_farm
 			ott_autarky
 		}
-		# news_event = {
-		# 	id = worldnews. #TODO fix this
-		# 	days = 2
-		# }
-
 	}
 	clear_sic_slot = yes
 	activate_advisor = TUR_musa_kazim_karabekir_sic

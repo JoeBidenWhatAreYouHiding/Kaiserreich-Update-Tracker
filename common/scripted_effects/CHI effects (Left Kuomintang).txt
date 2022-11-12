@@ -318,26 +318,14 @@ HND_chinese_advisors_flees = {
 		}
 	}
 }
-
-CHI_add_yuming_and_anlan = {
-	add_corps_commander_role = {
-		character = CHI_du_yuming
-		desc = CHI_du_yuming_desc
-		traits = { inflexible_strategist armor_officer organizer career_officer }
-		skill = 3
-		attack_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		logistics_skill = 3
-	}
-	add_corps_commander_role = {
-		character = CHI_dai_anlan
-		desc = CHI_dai_anlan_commander_desc
-		traits = { trait_reckless armor_officer career_officer brilliant_strategist }
-		skill = 3
-		attack_skill = 3
-		defense_skill = 1
-		planning_skill = 3
-		logistics_skill = 2
-	}
+CHI_purge_characters = {
+	retire_character = CHI_deng_yanda
+	retire_character = CHI_wang_jingwei
+	retire_character = CHI_chen_bijun
+	retire_character = CHI_chen_gongbo
+	retire_character = CHI_li_shiqun
+	retire_character = CHI_zhou_fohai
+	retire_character = CHI_deng_yingchao
+	retire_character = CHI_eugene_chen
 }
+

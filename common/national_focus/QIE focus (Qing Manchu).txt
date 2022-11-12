@@ -54,7 +54,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -239,10 +239,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_gather_dynasties"
 			QIE_reduce_fractured_empire = yes
-			country_event = {
-				id = qiefocus.23
-				days = 14
-			}
+			country_event = { id = qiefocus.23 days = 14 }
 		}
 	}
 
@@ -307,7 +304,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -336,7 +333,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -371,7 +368,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -662,7 +659,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -758,7 +755,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 				NOT = { has_completed_focus = QIE_rural_loyalty }
 			}
 		}
@@ -796,7 +793,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 				NOT = { has_completed_focus = QIE_rural_loyalty }
 			}
 		}
@@ -829,15 +826,12 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = QIE_PATH
-					option = QIE_PATH_MANCHU_COUP_SOCCON
-				}
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_SOCCON }
 				has_completed_focus = QIE_centralize_state
 			}
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -875,10 +869,7 @@ focus_tree = {
 					has_completed_focus = QIE_centralize_state
 				}
 				hidden_effect = {
-					country_event = {
-						id = qiefocus.19
-						days = 7
-					}
+					country_event = { id = qiefocus.19 days = 7 }
 				}
 			}
 			if = {
@@ -917,7 +908,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -950,7 +941,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -994,7 +985,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -1006,11 +997,7 @@ focus_tree = {
 				popularity = 0.05
 			}
 			hidden_effect = {
-				country_event = {
-					id = qieflavor.20
-					days = 20
-					random_days = 5
-				}
+				country_event = { id = qieflavor.20 days = 20 random_days = 5 }
 			}
 		}
 	}
@@ -1031,7 +1018,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -1085,7 +1072,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -1122,7 +1109,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -1442,10 +1429,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = QIE_PATH
-					option = QIE_PATH_MANCHU_COUP_SOCCON
-				}
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_SOCCON }
 				has_completed_focus = QIE_reform_criminal_justice
 			}
 		}
@@ -1469,10 +1453,7 @@ focus_tree = {
 					has_completed_focus = QIE_reform_criminal_justice
 				}
 				hidden_effect = {
-					country_event = {
-						id = qiefocus.19
-						days = 7
-					}
+					country_event = { id = qiefocus.19 days = 7 }
 				}
 			}
 			if = {
@@ -2109,7 +2090,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -2143,7 +2124,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -2195,7 +2176,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 
@@ -2220,7 +2201,7 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = QIE_PATH option = QIE_PATH_MANCHU_COUP_SOCDEM_LEGITIMATE_ELECTION }
+				has_game_rule = { rule = QIE_PATH option = QIE_PATH_LEGIT_SOCDEM }
 			}
 		}
 

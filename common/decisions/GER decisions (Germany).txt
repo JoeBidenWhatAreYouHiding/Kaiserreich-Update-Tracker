@@ -158,13 +158,10 @@ political_actions = {
 				NOT = { has_country_flag = GER_appealed_old_friends }
 				is_subject = no
 				has_socialist_government = no
+				NOT = { has_government = national_populist }
 				OR = {
 					is_in_faction = no
 					is_faction_leader = yes
-				}
-				if = {
-					limit = { tag = BUL }
-					has_dictatorship_government = no
 				}
 			}
 		}
@@ -192,18 +189,14 @@ political_actions = {
 				limit = { FROM = { tag = AUS } }
 				AUS = {
 					set_country_flag = GER_appealed_old_friends
-					country_event = {
-						id = gerfor.51 days = 1
-					}
+					country_event = { id = gerfor.51 days = 1 }
 				}
 			}
 			else_if = {
 				limit = { FROM = { tag = BUL } }
 				BUL = {
 					set_country_flag = GER_appealed_old_friends
-					country_event = {
-						id = gerfor.53 days = 1
-					}
+					country_event = { id = gerfor.53 days = 1 }
 				}
 			}
 		}

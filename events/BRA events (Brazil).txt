@@ -764,30 +764,12 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SYNDIE
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_TOTALIST
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_NATPOP
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCLIB }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCDEM }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_RADSOC }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SYNDIE }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_TOTALIST }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_NATPOP }
 				}
 			}
 		}
@@ -809,34 +791,13 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_PATAUT
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SYNDIE
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_TOTALIST
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_NATPOP
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCCON }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_PATAUT }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCDEM }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_RADSOC }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SYNDIE }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_TOTALIST }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_NATPOP }
 				}
 			}
 		}
@@ -863,34 +824,13 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_PATAUT
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCDEM
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SYNDIE
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_TOTALIST
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCCON }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_PATAUT }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCLIB }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCDEM }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_RADSOC }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SYNDIE }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_TOTALIST }
 				}
 			}
 		}
@@ -912,22 +852,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCCON
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_PATAUT
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SOCLIB
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_NATPOP
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCCON }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_PATAUT }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SOCLIB }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_NATPOP }
 				}
 			}
 		}
@@ -5256,10 +5184,7 @@ country_event = {
 			base = 10
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = BRA_path
-					option = BRA_PATH_PATAUT
-				}
+				has_game_rule = { rule = BRA_path option = BRA_PATH_PATAUT }
 			}
 		}
 		custom_effect_tooltip = BRA_vargas_plan_foiled
@@ -5415,10 +5340,7 @@ country_event = {
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = BRA_path
-					option = BRA_PATH_PATAUT
-				}
+				has_game_rule = { rule = BRA_path option = BRA_PATH_PATAUT }
 			}
 		}
 		custom_effect_tooltip = BRA_vargas_plan_foiled
@@ -5446,10 +5368,7 @@ country_event = {
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = BRA_path
-					option = BRA_PATH_SOCCON
-				}
+				has_game_rule = { rule = BRA_path option = BRA_PATH_SOCCON }
 			}
 		}
 		add_stability = -0.10
@@ -5465,10 +5384,7 @@ country_event = {
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = BRA_path
-					option = BRA_PATH_PATAUT
-				}
+				has_game_rule = { rule = BRA_path option = BRA_PATH_PATAUT }
 			}
 		}
 		custom_effect_tooltip = BRA_vargas_plan_foiled
@@ -6482,18 +6398,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SYNDIE
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_TOTALIST
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_RADSOC }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SYNDIE }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_TOTALIST }
 				}
 			}
 		}
@@ -6594,18 +6501,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SYNDIE
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_TOTALIST
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_RADSOC }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SYNDIE }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_TOTALIST }
 				}
 			}
 		}
@@ -6626,10 +6524,7 @@ country_event = {
 			base = 70
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = BRA_path
-					option = BRA_PATH_SOCDEM
-				}
+				has_game_rule = { rule = BRA_path option = BRA_PATH_SOCDEM }
 			}
 		}
 		add_stability = -0.10
@@ -6822,14 +6717,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SYNDIE
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_TOTALIST
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SYNDIE }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_TOTALIST }
 				}
 			}
 		}
@@ -6860,14 +6749,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_TOTALIST
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_RADSOC }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_TOTALIST }
 				}
 			}
 		}
@@ -6899,14 +6782,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_RADSOC
-					}
-					has_game_rule = {
-						rule = BRA_path
-						option = BRA_PATH_SYNDIE
-					}
+					has_game_rule = { rule = BRA_path option = BRA_PATH_RADSOC }
+					has_game_rule = { rule = BRA_path option = BRA_PATH_SYNDIE }
 				}
 			}
 		}

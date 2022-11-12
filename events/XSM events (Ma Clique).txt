@@ -256,13 +256,9 @@ country_event = { #Fuxiang dies, Lin takes power
 	picture = GFX_report_event_POL_funeral
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = mac.11 days = 10
-			}
+			country_event = { id = mac.11 days = 10 }
 			MON = {
-				country_event = {
-					id = mon.66 days = 2
-				}
+				country_event = { id = mon.66 days = 2 }
 			}
 		}
 	}
@@ -331,13 +327,11 @@ country_event = { #Bufang wants to publish Recent Events in Yushu
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = XSM_head option = XSM_HEAD_LIN }
+				has_game_rule = { rule = XSM_path option = XSM_PATH_SOCCON }
 			}
 		}
 		TIB = {
-			country_event = {
-				id = mac.12 days = 5
-			}
+			country_event = { id = mac.12 days = 5 }
 		}
 		XSM_add_5_bufang = yes
 		YUS_add_5_XSM = yes
@@ -353,7 +347,7 @@ country_event = { #Bufang wants to publish Recent Events in Yushu
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = XSM_head option = XSM_HEAD_BUFANG }
+				has_game_rule = { rule = XSM_path option = XSM_PATH_NATPOP }
 			}
 		}
 		add_political_power = -15
@@ -388,9 +382,7 @@ country_event = { #Bufang builds momentum
 	picture = GFX_report_event_TIB_german_mission_tibet
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = mac.14 days = 41
-			}
+			country_event = { id = mac.14 days = 41 }
 		}
 	}
 
@@ -446,7 +438,7 @@ country_event = { #Ask Yuxiang for support from Guominjun FOR SHANXI
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = XSM_head option = XSM_HEAD_BUFANG }
+				has_game_rule = { rule = XSM_path option = XSM_PATH_NATPOP }
 			}
 		}
 		add_manpower = -2000
@@ -463,7 +455,7 @@ country_event = { #Ask Yuxiang for support from Guominjun FOR SHANXI
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = XSM_head option = XSM_HEAD_LIN }
+				has_game_rule = { rule = XSM_path option = XSM_PATH_SOCCON }
 			}
 		}
 		set_temp_variable = { SHX_change = 2 }
@@ -534,9 +526,7 @@ country_event = { #Beginning of Tibetan raids
 		set_country_flag = XSM_YUS_begin
 		TIB = {
 			country_event = { id = tib.10 days = 7 }
-			country_event = {
-				id = mac.105 days = 3
-			}
+			country_event = { id = mac.105 days = 3 }
 		}
 	}
 }
@@ -691,9 +681,7 @@ country_event = { #The Bufang coup
 	picture = GFX_report_event_JAP_coup
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = mac.115 days = 1
-			}
+			country_event = { id = mac.115 days = 1 }
 		}
 	}
 	is_triggered_only = yes
@@ -766,9 +754,7 @@ country_event = { #Lin's plot
 	picture = GFX_report_event_JAP_coup
 	immediate = {
 		hidden_effect = {
-			country_event = {
-				id = mac.117 days = 4
-			}
+			country_event = { id = mac.117 days = 4 }
 		}
 	}
 	is_triggered_only = yes
@@ -896,18 +882,14 @@ country_event = {#War begins event chain
 						has_country_flag = XSM_ma_biao_in_yushu
 					}
 				}
-				country_event = {
-					id = mac.202 days = 4
-				}
+				country_event = { id = mac.202 days = 4 }
 			}
 			else_if = { #Mas win with Ma Biao
 				limit = {
 					check_variable = { var = XSM.yushu_control value = 60 compare = greater_than_or_equals }
 					has_country_flag = XSM_ma_biao_in_yushu
 				}
-				country_event = {
-					id = mac.202 days = 4
-				}
+				country_event = { id = mac.202 days = 4 }
 			}
 			else_if = {#Tie without Ma Biao
 				limit = {
@@ -917,9 +899,7 @@ country_event = {#War begins event chain
 						has_country_flag = XSM_ma_biao_in_yushu
 					}
 				}
-				country_event = {
-					id = mac.204 days = 4
-				}
+				country_event = { id = mac.204 days = 4 }
 			}
 			else_if = { #Tie with Ma Biao
 				limit = {
@@ -927,9 +907,7 @@ country_event = {#War begins event chain
 					check_variable = { var = XSM.yushu_control value = 40 compare = greater_than_or_equals }
 					has_country_flag = XSM_ma_biao_in_yushu
 				}
-				country_event = {
-					id = mac.204 days = 4
-				}
+				country_event = { id = mac.204 days = 4 }
 			}
 			else_if = { #Tibet winning without Ma Biao
 				limit = {
@@ -939,9 +917,7 @@ country_event = {#War begins event chain
 					}
 				}
 				TIB = {
-					country_event = {
-						id = mac.206 days = 4
-					}
+					country_event = { id = mac.206 days = 4 }
 				}
 			}
 			else_if = { #Tibet winning with Ma Biao
@@ -950,9 +926,7 @@ country_event = {#War begins event chain
 					has_country_flag = XSM_ma_biao_in_yushu
 				}
 				TIB = {
-					country_event = {
-						id = mac.206 days = 4
-					}
+					country_event = { id = mac.206 days = 4 }
 				}
 			}
 		}
@@ -990,9 +964,7 @@ country_event = { #Tibet knows shit is going down
 		custom_effect_tooltip = YUS_conflict_decider
 		hidden_effect = {
 			BHU = {
-				country_event = {
-					id = bhutan.124 days = 75
-				}
+				country_event = { id = bhutan.124 days = 75 }
 			}
 		}
 	}
@@ -1061,7 +1033,7 @@ country_event = { #Mas win
 						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
 						owner = ROOT
 					}
-				}			
+				}
 			}
 			else = {
 				random_owned_controlled_state = {
@@ -1079,7 +1051,7 @@ country_event = { #Mas win
 						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
 						owner = ROOT
 					}
-				}	
+				}
 			}
 		}
 		hidden_effect = {
@@ -1187,7 +1159,7 @@ country_event = { #Tie
 						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
 						owner = ROOT
 					}
-				}			
+				}
 			}
 			else = {
 				random_owned_controlled_state = {
@@ -1201,7 +1173,7 @@ country_event = { #Tie
 						division = "division_template = \"Yushu Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
 						owner = ROOT
 					}
-				}	
+				}
 			}
 		}
 		hidden_effect = {
@@ -1455,8 +1427,8 @@ country_event = { #Agitation between Ma Hongkui and Ma Hongbin
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = XSM_head option = XSM_HEAD_LIN }
-					has_game_rule = { rule = XSM_head option = XSM_HEAD_BUFANG }
+					has_game_rule = { rule = XSM_path option = XSM_PATH_SOCCON }
+					has_game_rule = { rule = XSM_path option = XSM_PATH_NATPOP }
 				}
 			}
 		}
@@ -1481,7 +1453,7 @@ country_event = { #Governor Ma Hongkui of Gansu suggests Ma Liang can assist Ma 
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = XSM_head option = XSM_HEAD_HONGBIN }
+				has_game_rule = { rule = XSM_path option = XSM_PATH_AUTDEM }
 			}
 		}
 		add_political_power = -10
@@ -1495,9 +1467,9 @@ country_event = { #Governor Ma Hongkui of Gansu suggests Ma Liang can assist Ma 
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = XSM_head option = XSM_HEAD_LIN }
-					has_game_rule = { rule = XSM_head option = XSM_HEAD_BUFANG }
-					has_game_rule = { rule = XSM_head option = XSM_HEAD_HONGKUI }
+					has_game_rule = { rule = XSM_path option = XSM_PATH_SOCCON }
+					has_game_rule = { rule = XSM_path option = XSM_PATH_NATPOP }
+					has_game_rule = { rule = XSM_path option = XSM_PATH_PATAUT }
 				}
 			}
 		}
@@ -1521,7 +1493,7 @@ country_event = { #Governor Ma Hongbin of Ningxia claims Governor Ma Hongkui of 
 		ai_chance = {
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = XSM_head option = XSM_HEAD_HONGBIN }
+				has_game_rule = { rule = XSM_path option = XSM_PATH_AUTDEM }
 			}
 		}
 		add_stability = -0.05
@@ -1542,7 +1514,7 @@ country_event = { #Governor Ma Hongbin of Ningxia claims Governor Ma Hongkui of 
 		ai_chance = {
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = XSM_head option = XSM_HEAD_HONGKUI }
+				has_game_rule = { rule = XSM_path option = XSM_PATH_PATAUT }
 			}
 		}
 		add_stability = 0.05

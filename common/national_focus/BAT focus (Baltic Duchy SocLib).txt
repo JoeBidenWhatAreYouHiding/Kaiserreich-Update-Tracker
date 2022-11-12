@@ -968,10 +968,7 @@ focus_tree = {
 		}
 		select_effect = {
 			log = "[GetDateText]: [Root.GetName]: Select Focus BAT_constitutional_convention"
-			country_event = {
-				id = KRBAT.54
-				days = 7
-			}
+			country_event = { id = KRBAT.54 days = 7 }
 		}
 		prerequisite = {
 			focus = BAT_parliamentary_control

@@ -496,10 +496,7 @@ country_event = {
 			base = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_PATAUT
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 50
@@ -517,10 +514,7 @@ country_event = {
 			base = 25
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_PATAUT
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 25
@@ -540,10 +534,7 @@ country_event = {
 			base = 25
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_PATAUT
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 25
@@ -561,10 +552,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 100
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_PATAUT
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = -100
@@ -600,8 +588,8 @@ country_event = { # 1937 elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_MARLIB }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_AUTDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_MARLIB }
+					has_game_rule = { rule = GER_path option = GER_PATH_AUTDEM }
 				}
 			}
 		}
@@ -631,10 +619,7 @@ country_event = { # 1937 elections
 			clear_sic_slot = yes
 			activate_advisor = GER_otto_wels_sic
 			else = {
-				country_event = {
-					id = gerdom.28
-					days = 1
-				}
+				country_event = { id = gerdom.28 days = 1 }
 			}
 		}
 	}
@@ -646,8 +631,8 @@ country_event = { # 1937 elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_SOCDEM }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_AUTDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_AUTDEM }
 				}
 			}
 		}
@@ -673,10 +658,7 @@ country_event = { # 1937 elections
 			clear_sic_slot = yes
 			activate_advisor = GER_paul_von_lettow_vorbeck_sic
 			else = {
-				country_event = {
-					id = gerdom.29
-					days = 1
-				}
+				country_event = { id = gerdom.29 days = 1 }
 			}
 		}
 	}
@@ -688,8 +670,8 @@ country_event = { # 1937 elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_SOCDEM }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_MARLIB }
+					has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_MARLIB }
 				}
 			}
 		}
@@ -714,10 +696,7 @@ country_event = { # 1937 elections
 			set_temp_variable = { coalition_partner_var = token:social_conservative }
 			add_to_coalition = yes
 			else = {
-				country_event = {
-					id = gerdom.30
-					days = 1
-				}
+				country_event = { id = gerdom.30 days = 1 }
 			}
 		}
 	}
@@ -738,7 +717,7 @@ country_event = { # SPD-FVP Reichskanzler?
 			base = 45
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_PATAUT }
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 60
@@ -760,8 +739,8 @@ country_event = { # SPD-FVP Reichskanzler?
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_SOCDEM }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_PATAUT }
+					has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 				}
 			}
 		}
@@ -774,7 +753,7 @@ country_event = { # SPD-FVP Reichskanzler?
 			base = 20
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_SOCDEM }
+				has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
 			}
 		}
 		add_political_power = -100
@@ -809,7 +788,7 @@ country_event = { # Neue grosse Koalition Reichskanzler?
 			base = 40
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_PATAUT }
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 60
@@ -830,7 +809,7 @@ country_event = { # Neue grosse Koalition Reichskanzler?
 			base = 30
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_PATAUT }
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 20
@@ -852,8 +831,8 @@ country_event = { # Neue grosse Koalition Reichskanzler?
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_MARLIB }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_PATAUT }
+					has_game_rule = { rule = GER_path option = GER_PATH_MARLIB }
+					has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 				}
 			}
 		}
@@ -866,7 +845,7 @@ country_event = { # Neue grosse Koalition Reichskanzler?
 			base = 10
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_MARLIB }
+				has_game_rule = { rule = GER_path option = GER_PATH_MARLIB }
 			}
 		}
 		add_political_power = -100
@@ -901,7 +880,7 @@ country_event = { # DKP-Zentrum Reichskanzler?
 			base = 40
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_PATAUT }
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 60
@@ -913,7 +892,7 @@ country_event = { # DKP-Zentrum Reichskanzler?
 			base = 40
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_PATAUT }
+				has_game_rule = { rule = GER_path option = GER_PATH_PATAUT }
 			}
 		}
 		add_political_power = 20
@@ -929,7 +908,7 @@ country_event = { # DKP-Zentrum Reichskanzler?
 			base = 20
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = GER_election option = GER_ELECTION_AUTDEM }
+				has_game_rule = { rule = GER_path option = GER_PATH_AUTDEM }
 			}
 		}
 		add_political_power = -100
@@ -1004,8 +983,8 @@ country_event = { # 1942 elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_MARLIB }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_AUTDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_MARLIB }
+					has_game_rule = { rule = GER_path option = GER_PATH_AUTDEM }
 				}
 			}
 		}
@@ -1035,10 +1014,7 @@ country_event = { # 1942 elections
 			clear_sic_slot = yes
 			activate_advisor = GER_hans_vogel_sic
 			else = {
-				country_event = {
-					id = gerdom.34
-					days = 1
-				}
+				country_event = { id = gerdom.34 days = 1 }
 			}
 		}
 	}
@@ -1050,8 +1026,8 @@ country_event = { # 1942 elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_SOCDEM }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_AUTDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_AUTDEM }
 				}
 			}
 		}
@@ -1077,10 +1053,7 @@ country_event = { # 1942 elections
 			clear_sic_slot = yes
 			activate_advisor = GER_paul_von_lettow_vorbeck_sic
 			else = {
-				country_event = {
-					id = gerdom.35
-					days = 1
-				}
+				country_event = { id = gerdom.35 days = 1 }
 			}
 		}
 	}
@@ -1092,8 +1065,8 @@ country_event = { # 1942 elections
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = GER_election option = GER_ELECTION_SOCDEM }
-					has_game_rule = { rule = GER_election option = GER_ELECTION_MARLIB }
+					has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
+					has_game_rule = { rule = GER_path option = GER_PATH_MARLIB }
 				}
 			}
 		}
@@ -1116,10 +1089,7 @@ country_event = { # 1942 elections
 				elections_allowed = yes
 			}
 			else = {
-				country_event = {
-					id = gerdom.36
-					days = 1
-				}
+				country_event = { id = gerdom.36 days = 1 }
 			}
 		}
 	}
@@ -1358,10 +1328,7 @@ country_event = { # The first SPD Reichskanzler is dead!
 			base = 25
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_SOCDEM
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
 			}
 		}
 		retire_character = GER_otto_wels
@@ -1391,10 +1358,7 @@ country_event = { # The first SPD Reichskanzler is dead!
 			base = 20
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_SOCDEM
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
 			}
 		}
 		set_politics = {
@@ -1423,10 +1387,7 @@ country_event = { # The first SPD Reichskanzler is dead!
 			base = 45
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_SOCDEM
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
 			}
 		}
 		set_politics = {
@@ -1653,10 +1614,7 @@ country_event = { #Death of Wilhelm II
 	option = {
 		name = gerdom.47.a
 		GER_wilhelm_ii_dies = yes
-		country_event = {
-			id = gerdom.84
-			days = 5
-		}
+		country_event = { id = gerdom.84 days = 5 }
 	}
 }
 
@@ -1684,10 +1642,7 @@ country_event = { # ban parties
 			base = 70
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = GER_election
-					option = GER_ELECTION_SOCDEM
-				}
+				has_game_rule = { rule = GER_path option = GER_PATH_SOCDEM }
 			}
 		}
 		add_political_power = -30
@@ -1738,17 +1693,11 @@ country_event = { # The Free Workers Union of Germany
 		set_country_flag = FAUD_ban
 		add_political_power = -100
 		FRA = {
-			country_event = {
-				id = gerdom.53
-				days = 7
-			}
+			country_event = { id = gerdom.53 days = 7 }
 		}
 		custom_effect_tooltip = FAUD_ban1
 		hidden_effect = {
-			country_event = {
-				id = gerdom.54
-				days = 30
-			}
+			country_event = { id = gerdom.54 days = 30 }
 		}
 	}
 
@@ -1781,18 +1730,12 @@ country_event = { #Germany bans the FAUD
 			modifier = {
 				factor = 0
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RESTRICTED
-				}
+				has_game_rule = { rule = wk2_begin_options option = RESTRICTED }
 			}
 			modifier = {
 				factor = 0.2
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RARE
-				}
+				has_game_rule = { rule = wk2_begin_options option = RARE }
 			}
 		}
 		declare_war_on = {
@@ -1816,10 +1759,7 @@ country_event = { #Unrest in the Rhineland
 		add_political_power = -25
 		add_ideas = GER_rhine_unrest
 		FRA = {
-			country_event = {
-				id = gerdom.55
-				days = 7
-			}
+			country_event = { id = gerdom.55 days = 7 }
 		}
 	}
 }
@@ -1838,10 +1778,7 @@ country_event = { #Worker's Unrest in the Rhineland
 		}
 		add_manpower = -1000
 		GER = {
-			country_event = {
-				id = gerdom.56
-				days = 10
-			}
+			country_event = { id = gerdom.56 days = 10 }
 		}
 	}
 	option = { #no help
@@ -1851,10 +1788,7 @@ country_event = { #Worker's Unrest in the Rhineland
 		}
 		add_political_power = -40
 		GER = {
-			country_event = {
-				id = gerdom.57
-				days = 50
-			}
+			country_event = { id = gerdom.57 days = 50 }
 		}
 	}
 }
@@ -1871,10 +1805,7 @@ country_event = { #General Strike in the Rhineland
 			base = 10
 		}
 		add_political_power = -100
-		country_event = {
-			id = gerdom.60
-			days = 40
-		}
+		country_event = { id = gerdom.60 days = 40 }
 		add_ideas = GER_kill_workers
 	}
 	option = { #negotiation
@@ -1883,10 +1814,7 @@ country_event = { #General Strike in the Rhineland
 			base = 90
 		}
 		add_political_power = 40
-		country_event = {
-			id = gerdom.58
-			days = 5
-		}
+		country_event = { id = gerdom.58 days = 5 }
 	}
 }
 
@@ -1915,10 +1843,7 @@ country_event = { #Negotiating with the strikers
 		ai_chance = {
 			base = 40
 		}
-		country_event = {
-			id = gerdom.60
-			days = 40
-		}
+		country_event = { id = gerdom.60 days = 40 }
 		add_ideas = GER_kill_workers
 		add_political_power = -50
 	}
@@ -1932,10 +1857,7 @@ country_event = { #Negotiating with the strikers
 			idea = GER_strike_negot
 			days = 60
 		}
-		country_event = {
-			id = gerdom.59
-			days = 3
-		}
+		country_event = { id = gerdom.59 days = 3 }
 	}
 	option = { #full
 		name = gerdom.58.c
@@ -1947,10 +1869,7 @@ country_event = { #Negotiating with the strikers
 			idea = GER_strike_negot
 			days = 120
 		}
-		country_event = {
-			id = gerdom.59
-			days = 3
-		}
+		country_event = { id = gerdom.59 days = 3 }
 	}
 }
 country_event = { #factories return to work
@@ -1963,10 +1882,7 @@ country_event = { #factories return to work
 	option = {
 		name = gerdom.59.a
 		remove_ideas = GER_rhine_unrest
-		country_event = {
-			id = gerdom.61
-			days = 7
-		}
+		country_event = { id = gerdom.61 days = 7 }
 	}
 }
 country_event = { #factories return to work
@@ -1979,10 +1895,7 @@ country_event = { #factories return to work
 	option = {
 		name = gerdom.60.a
 		remove_ideas = GER_rhine_unrest
-		country_event = {
-			id = gerdom.61
-			days = 7
-		}
+		country_event = { id = gerdom.61 days = 7 }
 	}
 }
 
@@ -2000,18 +1913,12 @@ country_event = { #Syndicalist Involvement in the General Strike
 			modifier = {
 				factor = 0.25
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RARE
-				}
+				has_game_rule = { rule = wk2_begin_options option = RARE }
 			}
 			modifier = {
 				factor = 0
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RESTRICTED
-				}
+				has_game_rule = { rule = wk2_begin_options option = RESTRICTED }
 			}
 		}
 		add_political_power = -50
@@ -2058,18 +1965,12 @@ country_event = { #Germany bans french organisations
 			modifier = {
 				factor = 0
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RESTRICTED
-				}
+				has_game_rule = { rule = wk2_begin_options option = RESTRICTED }
 			}
 			modifier = {
 				factor = 0.25
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RARE
-				}
+				has_game_rule = { rule = wk2_begin_options option = RARE }
 			}
 		}
 		declare_war_on = {
@@ -2094,10 +1995,7 @@ country_event = { #Germany bans french organisations
 			base = 20
 		}
 		GER = {
-			country_event = {
-				id = gerdom.86
-				days = 3
-			}
+			country_event = { id = gerdom.86 days = 3 }
 		}
 	}
 	option = {
@@ -2123,18 +2021,12 @@ country_event = { #International community condemns us!
 			modifier = {
 				factor = 0
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RESTRICTED
-				}
+				has_game_rule = { rule = wk2_begin_options option = RESTRICTED }
 			}
 			modifier = {
 				factor = 0.25
 				date < 1939.6.1
-				has_game_rule = {
-					rule = wk2_begin_options
-					option = RARE
-				}
+				has_game_rule = { rule = wk2_begin_options option = RARE }
 			}
 		}
 		declare_war_on = {
@@ -2276,10 +2168,7 @@ country_event = { #Further increasing our internal security
 		}
 		add_political_power = -40
 		FRA = {
-			country_event = {
-				id = gerdom.85
-				days = 1
-			}
+			country_event = { id = gerdom.85 days = 1 }
 		}
 	}
 
@@ -2340,10 +2229,7 @@ country_event = {
 		}
 		hidden_effect = {
 			CSA = {
-				country_event = {
-					id = gerdom.201
-					days = 10
-				}
+				country_event = { id = gerdom.201 days = 10 }
 			}
 		}
 		set_global_flag = GER_SYNDIE_CSA
@@ -2363,10 +2249,7 @@ country_event = {
 			country_exists = SOV
 		}
 		SOV = {
-			country_event = {
-				id = gerdom.203
-				days = 10
-			}
+			country_event = { id = gerdom.203 days = 10 }
 		}
 		set_global_flag = GER_SYNDIE_RUS
 		add_political_power = 20
@@ -2385,10 +2268,7 @@ country_event = {
 			country_exists = SWF
 		}
 		SWF = {
-			country_event = {
-				id = gerdom.204
-				days = 10
-			}
+			country_event = { id = gerdom.204 days = 10 }
 		}
 		set_global_flag = GER_SYNDIE_SWF
 		add_political_power = 20
@@ -2927,6 +2807,25 @@ country_event = {
 			limit = { is_in_array = { global.african_tags_array = GEX } }
 			remove_from_array = { global.african_tags_array = GEX }
 			add_to_array = { global.european_tags_array = GEX }
+		}
+	}
+}
+country_event = { #Germans Fund the Government
+	id = gerfla.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event gerfla.13" }
+	title = gerfla.13.t
+	desc = gerfla.13.d
+	picture = GFX_report_event_POL_german_officer
+
+	is_triggered_only = yes
+
+	option = {
+		name = gerfla.13.a
+		set_temp_variable = { POL.POL_influence_change = 10 }
+		POL_add_ruling_influence = yes
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.05
 		}
 	}
 }

@@ -27,7 +27,6 @@ on_actions = {
 			add_to_array = { global.european_tags_array = CZE }
 			add_to_array = { global.european_tags_array = DDR } #Prussia
 			add_to_array = { global.european_tags_array = DEN }
-			add_to_array = { global.european_tags_array = DKB }
 			add_to_array = { global.european_tags_array = EMI }
 			add_to_array = { global.european_tags_array = ENG }
 			add_to_array = { global.european_tags_array = EST }

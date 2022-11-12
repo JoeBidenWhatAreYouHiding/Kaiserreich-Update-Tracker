@@ -104,7 +104,6 @@ RUS_setup_civil_war = {
 		country_event = { id = rusd.123 days = 60 random_days = 30 }
 		country_event = { id = russia.1924 days = 200 }
 		news_event = { id = russianews.7 days = 1 }
-		DKB = { country_event = { id = russia.1922 days = 3 } }
 		SOV = { country_event = { id = russia.1919 days = 7 } }
 		TRM = { country_event = { id = tram.80 days = 2 random_days = 6 } }
 		INT = { country_event = { id = fopcoup.44 days = 3 random_days = 3 } }
@@ -795,11 +794,7 @@ RUS_reduce_black_monday = {
 	if = {
 		limit = { has_idea = RUS_economic_depression_1 }
 		hidden_effect = {
-			country_event = {
-				id = rusd.121
-				days = 25
-				random_days = 25
-			}
+			country_event = { id = rusd.121 days = 25 random_days = 25 }
 		}
 	}
 	else_if = {
@@ -1518,6 +1513,67 @@ SOV_move_exiled_leaders = {
 			if = {
 				limit = { is_dead = no }
 				set_nationality = PREV.PREV
+			}
+		}
+	}
+}
+
+RUS_moscow_accord_threat = {
+	add_named_threat = {
+		threat = 10
+		name = RUS_moscow_accord_threat
+	}
+}
+
+RUS_create_puppet_boris_romanov = {
+	effect_tooltip = {
+		meta_effect = {
+			text = {
+				create_country_leader = {
+					name = "[NAME]"
+					picture = "gfx/leaders/RUS/Portrait_RUS_Boris_Romanov.png"
+					ideology = [IDEOLOGY]
+				}
+			}
+			NAME = "[RUS.RUS_boris_romanov.GetName]"
+			IDEOLOGY = "[ROOT.GetRulingIdeologySubtype]"
+		}
+	}
+	hidden_effect = {
+		RUS = { RUS_boris_romanov = { set_nationality = PREV.PREV } }
+		if = {
+			limit = { has_character = RUS_boris_romanov }
+			RUS_boris_romanov = {
+				set_character_name = RUS_boris_romanov_regnal
+				remove_all_country_leader_roles = yes
+				add_country_leader_role = {
+					country_leader = { ideology = social_democrat_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = social_liberal_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = market_liberal_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = social_conservative_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = authoritarian_democrat_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = paternal_autocrat_subtype }
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { ideology = national_populist_subtype }
+					promote_leader = yes
+				}
 			}
 		}
 	}

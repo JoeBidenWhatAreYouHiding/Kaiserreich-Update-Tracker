@@ -166,7 +166,7 @@ guiTypes = {
 				position = { x = 0 y = 0 }
 				quadTextureSprite = "GFX_power_balance_button_kr"
 			}
-				
+
 			iconType = {
 				name = "show_power_balance_glow"
 				position = { x = 0 y = 0 }
@@ -1790,7 +1790,7 @@ guiTypes = {
 
 		iconType = {
 			name = "power_balance_icon_disabled"
-			position = { x = 29 y = 7 }
+			position = { x = 30 y = 7 }
 			quadTextureSprite = "GFX_power_balance_icon_kr"
 			alwaystransparent = yes
 		}
