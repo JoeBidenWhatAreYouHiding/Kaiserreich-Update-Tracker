@@ -5,38 +5,7 @@
 
 add_namespace = saf
 
-### Introduction events
-
-country_event = {
-	id = saf.1
-	title = saf.1.t
-	desc = saf.1.d
-	picture = GFX_report_event_SAF_cape_town
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event saf.1 option saf.1.a"
-		name = saf.1.a
-		hidden_effect = {
-			country_event = { id = saf.106 days = 2 }
-		}
-	}
-}
-
-country_event = {
-	id = saf.2
-	title = saf.2.t
-	desc = saf.2.d
-	picture = GFX_report_event_SAF_parliament_2
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event saf.2 option saf.2.a"
-		name = saf.2.a
-	}
-}
+#Introduction events moved to intro screen
 
 ### Black Monday events
 
@@ -143,7 +112,9 @@ country_event = {
 				OR = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_AUTDEM }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -202,7 +173,9 @@ country_event = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_UNITED_SOCCON }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_UNITED_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -231,7 +204,9 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -306,7 +281,9 @@ country_event = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_UNITED_SOCCON }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_UNITED_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -375,7 +352,9 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -461,7 +440,9 @@ country_event = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_SOCDEM }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -665,7 +646,9 @@ country_event = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_SOCDEM }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -2457,7 +2440,9 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 				}
@@ -2581,7 +2566,9 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_AUTDEM }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
@@ -4094,23 +4081,6 @@ country_event = {
 
 ### End of original events
 
-country_event = { #Race in South Africa
-	id = saf.106
-	title = saf.106.t
-	desc = saf.106.d
-	picture = GFX_report_event_SAF_black_protest
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event saf.106 option saf.106.a"
-		name = saf.106.a
-		hidden_effect = {
-			country_event = { id = saf.2 days = 2 }
-		}
-	}
-}
-
 country_event = { #Chairman Jones and the War in Europe
 	id = saf.107
 	title = saf.107.t
@@ -4386,7 +4356,9 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_AUTDEM }
@@ -4605,7 +4577,9 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_PATAUT_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP }
+					has_game_rule = { rule = SAF_path option = SAF_PATH_NATPOP_GER }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_SOCLIB }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_DOMINION_PATAUT }
 					has_game_rule = { rule = SAF_path option = SAF_PATH_AUTDEM }
@@ -6895,7 +6869,7 @@ country_event = { #Collapse of the Portuguese Empire: seize Mozambique as ZIM
 	option = { #Move in
 		log = "[GetLogInfo]: event saf.190 option saf.190.a"
 		name = saf.190.a
-		ai_chance = { base = 99 }
+		ai_chance = { base = 100 }
 		544 = {
 			add_claim_by = ZIM
 		}
@@ -6952,7 +6926,7 @@ country_event = { #Collapse of the Portuguese Empire: seize Mozambique as ZIM
 	option = { #No - What you stupid, RHODESIA NEVER DIES!!
 		log = "[GetLogInfo]: event saf.190 option saf.190.b"
 		name = saf.190.b
-		ai_chance = { base = 1 }
+		ai_chance = { base = 0 }
 	}
 }
 country_event = { #ZIM poaches Mozambique (POR)
@@ -7116,7 +7090,6 @@ country_event = {
 			targeted_alliance = ENT
 			enemy = INT
 		}
-
 	}
 }
 
@@ -9452,7 +9425,7 @@ country_event = { #Conflict over the legislative branch
 	}
 }
 
-country_event = { #Conflict over the legislative branch
+country_event = { #Conflict over the judicial branch
 	id = saf.406
 	title = saf.406.t
 	desc = saf.406.d
@@ -9492,7 +9465,7 @@ country_event = { #Conflict over the legislative branch
 	}
 }
 
-country_event = { #Conflict over the legislative branch
+country_event = { #The Role of the Prime Minister
 	id = saf.407
 	title = saf.407.t
 	desc = saf.407.d

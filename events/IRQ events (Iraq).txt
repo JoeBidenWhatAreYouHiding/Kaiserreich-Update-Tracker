@@ -353,6 +353,8 @@ country_event = { #Tribal Revolt crushed
 	option = {
 		log = "[GetLogInfo]: event irq.5 option irq.5.a"
 		name = irq.5.a
+		custom_effect_tooltip = retire_saadun
+		hidden_effect = { IRQ_ajami_al_saadun = { retire = yes } }
 		country_event = { id = irq.14 days = 5 }
 		clr_country_flag = IRQ_Muntafiq_Supported
 	}
@@ -1479,8 +1481,8 @@ country_event = { #Iraq Challenges Egyptian Dominance
 			}
 			LOA_leave_other_spheres = yes
 		}
-		EGY = { country_event = irqfor.8 }
-		FROM = { country_event = irqfor.9 }
+		FROM = { country_event = irqfor.8 }
+		EGY = { country_event = irqfor.9 }
 	}
 
 	option = {
@@ -1543,8 +1545,8 @@ country_event = { #Iraq Challenges Egyptian Dominance
 				}
 			}
 		}
-		EGY = { country_event = irqfor.10 }
-		FROM = { country_event = irqfor.11 }
+		FROM = { country_event = irqfor.10 }
+		EGY = { country_event = irqfor.11 }
 	}
 }
 

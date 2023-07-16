@@ -14,7 +14,7 @@ add_namespace = lecjapfeud
 add_namespace = lechotung
 add_namespace = lecfuzhou
 
-country_event = { # Intro
+country_event = { # Intro (Used in intro screen as well. DO NOT DELETE!)
 	id = lec.1
 	title = lec.1.t
 	desc = lec.1.d
@@ -665,7 +665,7 @@ country_event = { #Vote on Russian Vote Restoration?
 	option = {	#Of course!
 		log = "[GetLogInfo]: event lec.10 option lec.10.a"
 		name = lec.10.a
-		ai_chance = { base = 99 }
+		ai_chance = { base = 100 }
 		set_global_flag = LEC_russia_vote
 		activate_mission = LEC_vote_timer
 		effect_tooltip = {
@@ -694,7 +694,7 @@ country_event = { #Vote on Russian Vote Restoration?
 	option = {	#We don't need a vote...
 		log = "[GetLogInfo]: event lec.10 option lec.10.b"
 		name = lec.10.b
-		ai_chance = { base = 1 }
+		ai_chance = { base = 0 }
 		add_political_power = -50
 		every_other_country = {
 			limit = { has_country_flag = legation_council_member }
@@ -2414,11 +2414,11 @@ country_event = { #Occupy Hong Kong?
 
 	desc = {
 		text = lec.70.d.AST
-		trigger = { tag = AST }
+		trigger = { var:326.owner = { tag = AST } }
 	}
 	desc = {
 		text = lec.70.d.LEC
-		trigger = { NOT = { tag = AST } }
+		trigger = { var:326.owner = { NOT = { tag = AST } } }
 	}
 
 	picture = GFX_report_event_CHI_riot
@@ -2591,9 +2591,9 @@ country_event = { #Shanghai in Chaos - LEC
 		}
 		mark_focus_tree_layout_dirty = yes
 		set_politics = {
-			ruling_party = paternal_autocrat
+			ruling_party = authoritarian_democrat
 		}
-		set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+		set_temp_variable = { coalition_partner_var = token:paternal_autocrat }
 		add_to_coalition = yes
 		hidden_effect = {
 			set_popularities = {
@@ -2604,8 +2604,8 @@ country_event = { #Shanghai in Chaos - LEC
 				social_liberal = 14
 				market_liberal = 7
 				social_conservative = 10
-				authoritarian_democrat = 23
-				paternal_autocrat = 27
+				authoritarian_democrat = 27
+				paternal_autocrat = 23
 				national_populist = 12
 			}
 		}
@@ -2658,9 +2658,9 @@ country_event = { #Shanghai in Chaos - LEC
 		}
 		mark_focus_tree_layout_dirty = yes
 		set_politics = {
-			ruling_party = national_populist
+			ruling_party = authoritarian_democrat
 		}
-		set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+		set_temp_variable = { coalition_partner_var = token:national_populist }
 		add_to_coalition = yes
 		hidden_effect = {
 			set_popularities = {
@@ -2671,9 +2671,9 @@ country_event = { #Shanghai in Chaos - LEC
 				social_liberal = 14
 				market_liberal = 9
 				social_conservative = 8
-				authoritarian_democrat = 23
+				authoritarian_democrat = 27
 				paternal_autocrat = 12
-				national_populist = 27
+				national_populist = 23
 			}
 		}
 		JAP = { country_event = lec.75 }
@@ -3899,7 +3899,7 @@ country_event = { #Vote on Transamurian Vote Restoration?
 	option = {	#Of course!
 		log = "[GetLogInfo]: event lec.110 option lec.110.a"
 		name = lec.110.a
-		ai_chance = { base = 99 }
+		ai_chance = { base = 100 }
 		set_global_flag = LEC_transamur_vote
 		activate_mission = LEC_vote_timer
 		effect_tooltip = {
@@ -3927,7 +3927,7 @@ country_event = { #Vote on Transamurian Vote Restoration?
 	option = {	#We don't need a vote...
 		log = "[GetLogInfo]: event lec.110 option lec.110.b"
 		name = lec.110.b
-		ai_chance = { base = 1 }
+		ai_chance = { base = 0 }
 		add_political_power = -50
 		every_other_country = {
 			limit = { has_country_flag = legation_council_member }
@@ -5607,7 +5607,7 @@ country_event = { #The Hong Kong Police find some doccuments
 	picture = GFX_report_event_LEC_shanghai_police_patrol
 	is_triggered_only = yes
 
-	option = {	#Grab the ZhongTeJu dossier
+	option = {	#Grab the BIS dossier
 		log = "[GetLogInfo]: event lecgreengangclash.10 option lecgreengangclash.10.a"
 		name = lecgreengangclash.10.a
 		custom_effect_tooltip = LEC_more_evidence_adler

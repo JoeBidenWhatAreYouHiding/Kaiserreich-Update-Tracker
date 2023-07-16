@@ -6,45 +6,6 @@
 
 add_namespace = Ostasien
 
-### Ostasien Description in-game per 1936 ###
-
-country_event = { #1936 Situation
-	id = Ostasien.0
-	title = Ostasien.0.t
-	desc = Ostasien.0.d
-	picture = GFX_report_event_SIA_German_Economical_Dominance
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { # Sehr Gut!
-		log = "[GetLogInfo]: event Ostasien.0 option Ostasien.0.a"
-		name = Ostasien.0.a
-	}
-
-	option = { # What about China?
-		log = "[GetLogInfo]: event Ostasien.0 option Ostasien.0.b"
-		name = Ostasien.0.b
-		country_event = Ostasien.1
-	}
-}
-
-country_event = { #China and the AOG?
-	id = Ostasien.1
-	title = Ostasien.1.t
-	desc = Ostasien.1.d
-	picture = GFX_report_event_FNG_fushun_mine
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = { # Sehr Gut!
-		log = "[GetLogInfo]: event Ostasien.1 option Ostasien.1.a"
-		name = Ostasien.1.a
-	}
-}
-
 ### Black Monday ###
 country_event = { # Black Monday
 	id = Ostasien.2
@@ -599,55 +560,8 @@ country_event = { # Time to Retreat?
 	option = {
 		log = "[GetLogInfo]: event Ostasien.18 option Ostasien.18.a"
 		name = Ostasien.18.a # Fight!
-		ai_chance = {
-			base = 90
-			modifier = {
-				factor = 0
-				any_enemy_country = {
-					is_major = yes
-				}
-			}
-			modifier = {
-				factor = 0.75
-				tag = GEA
-			}
-			modifier = {
-				factor = 0.75
-				has_war_support < 0.5
-			}
-			modifier = {
-				factor = 0.3
-				INC = {
-					controls_state = 671
-				}
-			}
-			modifier = {
-				factor = 0.3
-				INC = {
-					controls_state = 857
-				}
-			}
-			modifier = {
-				factor = 0.35
-				date > 1937.6.1
-			}
-			modifier = {
-				factor = 0.35
-				date > 1938.6.1
-			}
-			modifier = {
-				factor = 0.25
-				date > 1939.3.1
-			}
-			modifier = {
-				factor = 0
-				date > 1939.7.1
-			}
-			modifier = {
-				factor = 0
-				has_game_rule = { rule = GEA_peace option = GEA_PEACE_NO }
-			}
-		}
+		trigger = { is_ai = no }
+		ai_chance = { base = 0 }
 		add_political_power = -25
 		if = {
 			limit = {
@@ -664,21 +578,7 @@ country_event = { # Time to Retreat?
 	option = {
 		log = "[GetLogInfo]: event Ostasien.18 option Ostasien.18.b"
 		name = Ostasien.18.b # Time to retreat
-		ai_chance = {
-			base = 10
-			modifier = {
-				factor = 2
-				INC = { controls_state = 671 }
-			}
-			modifier = {
-				factor = 1.5
-				INC = { controls_state = 857 }
-			}
-			modifier = {
-				factor = 0
-				has_game_rule = { rule = GEA_peace option = GEA_PEACE_YES }
-			}
-		}
+		ai_chance = { base = 100 }
 		GEA = {
 			every_owned_state = {
 				limit = {

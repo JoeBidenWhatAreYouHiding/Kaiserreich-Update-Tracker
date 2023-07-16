@@ -6,6 +6,7 @@
 
  STATE_2: "Latium"
  STATE_2_ENDONYM: "[2.Controller.GetStateName_2]"
+ STATE_2_ITALIAN: "Lazio"
 
  STATE_3: "Swiss Plateau"
  STATE_3_ENDONYM: "[3.Controller.GetStateName_3]"
@@ -204,6 +205,7 @@
 
  STATE_49: "Ankara"
  STATE_49_ENDONYM: "[49.Controller.GetStateName_49]"
+ STATE_49_GREEK: "Ánkyra"
 
  STATE_50: "Württemberg"
  STATE_50_ENDONYM: "[50.Controller.GetStateName_50]"
@@ -710,6 +712,7 @@
  STATE_165_CATALAN: "Catalunya"
  STATE_165_ENDONYM: "[165.Controller.GetStateName_165]"
  STATE_165_SPANISH: "Cataluña"
+ STATE_165_FRENCH: "Catalogne"
 
  STATE_166: "Upper Aragon"
  STATE_166_ENDONYM: "[166.Controller.GetStateName_166]"
@@ -738,9 +741,8 @@
  STATE_172_ENDONYM: "[172.Controller.GetStateName_172]"
  STATE_172_SPANISH: "Navarra"
 
- STATE_173: "Almeria"
+ STATE_173: "Almería"
  STATE_173_ENDONYM: "[173.Controller.GetStateName_173]"
- STATE_173_SPANISH: "Almería"
 
  STATE_174: "León"
  STATE_174_ENDONYM: "[174.Controller.GetStateName_174]"
@@ -860,6 +862,7 @@
 
  STATE_200: "Alexandrovsk"
  STATE_200_ENDONYM: "[200.Controller.GetStateName_200]"
+ STATE_200_RUSSIAN: "Aleksandrovsk"
  STATE_200_UKRAINIAN: "Oleksandrivske"
  STATE_200_ZAPORIZHZHIA: "Zaporizhzhia"
 
@@ -1141,6 +1144,7 @@
 
  STATE_274: "Gold Coast"
  STATE_274_ENDONYM: "[274.Controller.GetStateName_274]"
+ STATE_274_FRENCH: "Côte-de-l'Or"
  STATE_274_GERMAN: "Goldküste"
 
  STATE_275: "Transvaal"
@@ -1183,7 +1187,6 @@
  STATE_286: "Cochinchina"
  STATE_286_CAMBODIAN: "Prey Nokor"
  STATE_286_ENDONYM: "[286.Controller.GetStateName_286]"
- STATE_286_INDOCHINESE: "Ho Chí Minh"
  STATE_286_THAI: "Prainakhon"
  STATE_286_VIETNAMESE: "Sài Gòn"
 
@@ -1203,6 +1206,7 @@
  STATE_290: "The Rif"
  STATE_290_ARABIC: "Al-Riyf"
  STATE_290_ENDONYM: "[290.Controller.GetStateName_290]"
+ STATE_290_FRENCH: "Le Rif"
  STATE_290_SPANISH: "El Rif"
 
  STATE_291: "Baghdad"
@@ -1236,6 +1240,7 @@
 
  STATE_298: "Liberia"
  STATE_298_ENDONYM: "[298.Controller.GetStateName_298]"
+ STATE_298_FRENCH: "Libéria"
  STATE_298_GERMAN: "Pfefferküste"
 
  STATE_299: "Falkland Islands"
@@ -1244,9 +1249,12 @@
 
  STATE_300: "Uruguay"
  STATE_300_ENDONYM: "[300.Controller.GetStateName_300]"
+ STATE_300_PORTUGUESE: "Uruguai"
+ STATE_300_CISPLATINA: "Cisplatina"
 
  STATE_301: "Paraguay"
  STATE_301_ENDONYM: "[301.Controller.GetStateName_301]"
+ STATE_301_PORTUGUESE: "Paraguai"
 
  STATE_302: "La Paz"
  STATE_302_AYMARA: "Chuqi Yapu"
@@ -1278,6 +1286,7 @@
  STATE_310: "East Guyana"
  STATE_310_ENDONYM: "[310.Controller.GetStateName_310]"
  STATE_310_FRENCH: "Guyane Orientale"
+ STATE_310_PORTUGUESE: "Guiana Oriental"
 
  STATE_311: "Belize"
  STATE_311_ENDONYM: "[311.Controller.GetStateName_311]"
@@ -1417,15 +1426,19 @@
 
  STATE_343: "Afyon"
  STATE_343_ENDONYM: "[343.Controller.GetStateName_343]"
+ STATE_343_GREEK: "Afión"
 
  STATE_344: "Adana"
  STATE_344_ENDONYM: "[344.Controller.GetStateName_344]"
+ STATE_344_GREEK: "Ádana"
 
  STATE_345: "Sivas"
  STATE_345_ENDONYM: "[345.Controller.GetStateName_345]"
+ STATE_345_GREEK: "Sevásteia"
 
  STATE_346: "Konya"
  STATE_346_ENDONYM: "[346.Controller.GetStateName_346]"
+ STATE_346_GREEK: "Ikónio"
 
  STATE_347: "Khasab"
  STATE_347_ARABIC: "Hasab"
@@ -1442,6 +1455,7 @@
 
  STATE_350: "Diyarbakir"
  STATE_350_ENDONYM: "[350.Controller.GetStateName_350]"
+ STATE_350_GREEK: "Ntigiarmpakír"
  STATE_350_PERSIAN: "Dyārbakar"
 
  STATE_351: "Vologda"
@@ -1449,6 +1463,7 @@
 
  STATE_352: "Van"
  STATE_352_ENDONYM: "[352.Controller.GetStateName_352]"
+ STATE_352_GREEK: "Éva"
  STATE_352_PERSIAN: "Vān"
 
  STATE_353: "Yushu"
@@ -1457,6 +1472,7 @@
 
  STATE_354: "Erzurum"
  STATE_354_ENDONYM: "[354.Controller.GetStateName_354]"
+ STATE_354_GREEK: "Erzeroúm"
 
  STATE_355: "Trebizond"
  STATE_355_ENDONYM: "[355.Controller.GetStateName_355]"
@@ -1465,6 +1481,7 @@
 
  STATE_356: "Kastamonu"
  STATE_356_ENDONYM: "[356.Controller.GetStateName_356]"
+ STATE_356_GREEK: "Kastamoní"
 
  STATE_357: "Maine"
  STATE_357_ENDONYM: "[357.Controller.GetStateName_357]"
@@ -1852,6 +1869,7 @@
  STATE_462: "$VICTORY_POINTS_4108$"
  STATE_462_ARABIC: "$VICTORY_POINTS_4108_ARABIC$"
  STATE_462_ENDONYM: "[462.Controller.GetStateName_462]"
+ STATE_462_FRENCH: "Marrakech"
 
  STATE_463: "Alaska"
  STATE_463_ENDONYM: "[463.Controller.GetStateName_463]"
@@ -2051,7 +2069,11 @@
  STATE_522_ENDONYM: "[522.Controller.GetStateName_522]"
 
  STATE_523: "SE. New Guinea"
+ STATE_523_DUTCH: "Z.O. Nieuw-Guinea"
  STATE_523_ENDONYM: "[523.Controller.GetStateName_523]"
+ STATE_523_GERMAN: "Sudostneuguinea"
+ STATE_523_INDONESIAN: "Irian Tenggara"
+ STATE_523_JAPANESE: "Nantō Nyū-Ginia"
 
  STATE_524: "Taiwan"
  STATE_524_ENDONYM: "[524.Controller.GetStateName_524]"
@@ -2063,6 +2085,7 @@
  STATE_525_CHINESE: "Nan Chaoxian"
 
  STATE_526: "Ryukyu Islands"
+ STATE_526_CHINESE: "Liuqiu Qundao"
  STATE_526_ENDONYM: "[526.Controller.GetStateName_526]"
  STATE_526_JAPANESE: "Ryūkyū Shōtō"
 
@@ -2107,6 +2130,7 @@
  STATE_536_RUSSIAN: "Yezovsk"
 
  STATE_537: "Sakhalin"
+ STATE_537_CHINESE: "Kuyedao"
  STATE_537_ENDONYM: "[537.Controller.GetStateName_537]"
  STATE_537_JAPANESE: "Karafuto"
 
@@ -2179,6 +2203,7 @@
  STATE_554_TURKISH: "Sam"
 
  STATE_555: "Kuril Islands"
+ STATE_555_CHINESE: "Qiandao Qundao"
  STATE_555_ENDONYM: "[555.Controller.GetStateName_555]"
  STATE_555_JAPANESE: "Chishima Rettō"
  STATE_555_RUSSIAN: "Kurilskiye Ostrova"
@@ -2204,6 +2229,7 @@
  STATE_560_CHINESE: "Miaojie"
 
  STATE_561: "Amur"
+ STATE_561_CHINESE: "Wai Heilongjiang"
  STATE_561_ENDONYM: "[561.Controller.GetStateName_561]"
 
  STATE_562: "Okhotsk"
@@ -2283,6 +2309,7 @@
 
  STATE_585: "Batumi"
  STATE_585_ENDONYM: "[585.Controller.GetStateName_585]"
+ STATE_585_GREEK: "Batúmi"
  STATE_585_TURKISH: "Batum"
 
  STATE_586: "Kokand"
@@ -2638,6 +2665,7 @@
  STATE_669_ENDONYM: "[669.Controller.GetStateName_669]"
  STATE_669_GERMAN: "Nordwestneuguinea"
  STATE_669_INDONESIAN: "Irian Barat Utara"
+ STATE_669_JAPANESE: "Hokusei Nyū-Ginia"
 
  STATE_670: "Laos"
  STATE_670_ENDONYM: "[670.Controller.GetStateName_670]"
@@ -2714,6 +2742,7 @@
 
  STATE_687: "West Guyana"
  STATE_687_ENDONYM: "[687.Controller.GetStateName_687]"
+ STATE_687_PORTUGUESE: "Guiana Ocidental"
 
  STATE_688: "Chaco Boreal"
  STATE_688_ENDONYM: "[688.Controller.GetStateName_688]"
@@ -2845,7 +2874,7 @@
 
  STATE_718: "Welle"
  STATE_718_ENDONYM: "[718.Controller.GetStateName_718]"
- STATE_718_FRENCH: "Uele"
+ STATE_718_FRENCH: "Uélé"
  STATE_718_GERMAN: "Uelle"
 
  STATE_719: "Natal"
@@ -2857,7 +2886,10 @@
  STATE_720_SPANISH: "Isla San Pedro"
 
  STATE_721: "East Timor"
+ STATE_721_DUTCH: "Oost-Timor"
  STATE_721_ENDONYM: "[721.Controller.GetStateName_721]"
+ STATE_721_GERMAN: "Osttimor"
+ STATE_721_INDONESIAN: "Timor Timur"
  STATE_721_PORTUGUESE: "Timor Português"
 
  STATE_722: "Petsamo"
@@ -3019,9 +3051,11 @@
  STATE_756_THAI_FULL: "Khemaratthaburi"
 
  STATE_757: "NE. New Guinea"
+ STATE_757_DUTCH: "N.O. Nieuw-Guinea"
  STATE_757_ENDONYM: "[757.Controller.GetStateName_757]"
  STATE_757_GERMAN: "Kaiser-Wilhelmsland"
- STATE_757_JAPANESE: "Nyū-Ginia"
+ STATE_757_INDONESIAN: "Irian Timur Laut"
+ STATE_757_JAPANESE: "Hokutō Nyū-Ginia"
 
  STATE_758: "Ionian Islands"
  STATE_758_ENDONYM: "[758.Controller.GetStateName_758]"
@@ -3375,6 +3409,7 @@
  STATE_843_ENDONYM: "[843.Controller.GetStateName_843]"
  STATE_843_GERMAN: "Südwestneuguinea"
  STATE_843_INDONESIAN: "Irian Barat Selatan"
+ STATE_843_JAPANESE: "Nansei Nyū-Ginia"
 
  STATE_844: "Lapland"
  STATE_844_ENDONYM: "[844.Controller.GetStateName_844]"
@@ -3646,12 +3681,14 @@
 
  STATE_911: "Borku-Ennedi"
  STATE_911_ENDONYM: "[911.Controller.GetStateName_911]"
+ STATE_911_FRENCH: "Borkou-Ennedi"
 
  STATE_912: "Bolivar"
  STATE_912_ENDONYM: "[912.Controller.GetStateName_912]"
 
  STATE_913: "Bornu"
  STATE_913_ENDONYM: "[913.Controller.GetStateName_913]"
+ STATE_913_FRENCH: "Bornou"
 
  STATE_914: "Cabinda"
  STATE_914_ENDONYM: "[914.Controller.GetStateName_914]"
@@ -3899,6 +3936,7 @@
 
  STATE_976: "Kasai"
  STATE_976_ENDONYM: "[976.Controller.GetStateName_976]"
+ STATE_976_FRENCH: "Kasaï"
 
  STATE_977: "Kivu"
  STATE_977_ENDONYM: "[977.Controller.GetStateName_977]"
@@ -3999,11 +4037,13 @@
 
  STATE_1000: "Kars"
  STATE_1000_ARMENIAN: "Ararat"
+ STATE_1000_GREEK: "Karsoúnta"
  STATE_1000_ENDONYM: "[1000.Controller.GetStateName_1000]"
 
  STATE_1001: "Lazistan"
  STATE_1001_ENDONYM: "[1001.Controller.GetStateName_1001]"
  STATE_1001_GEORGIAN: "Chaneli"
+ STATE_1001_GREEK: "Lazikí"
 
  STATE_1002: "Pahang"
  STATE_1002_ENDONYM: "[1002.Controller.GetStateName_1002]"
@@ -4037,6 +4077,7 @@
 
  STATE_1009: "Kufra"
  STATE_1009_ENDONYM: "[1009.Controller.GetStateName_1009]"
+ STATE_1009_FRENCH: "Koufra"
  STATE_1009_ITALIAN: "Cufra"
 
  STATE_1010: "Darfur"
@@ -4112,6 +4153,7 @@
 
  STATE_1025: "Congo-Ubangi"
  STATE_1025_ENDONYM: "[1025.Controller.GetStateName_1025]"
+ STATE_1025_FRENCH: "Congo-Oubangui"
  STATE_1025_GERMAN: "Kongo-Ubangi"
 
  STATE_1026: "Haut-Congo"
@@ -4135,7 +4177,7 @@
 
  STATE_1031: "Northern Amazonas"
  STATE_1031_ENDONYM: "[1031.Controller.GetStateName_1031]"
- STATE_1031_PORTUGUESE: "Amazonas do Norte"
+ STATE_1031_PORTUGUESE: "Amazônia Setentrional"
 
  STATE_1032: "Greater Unyamwezi"
  STATE_1032_ENDONYM: "[1032.Controller.GetStateName_1032]"
@@ -4154,22 +4196,25 @@
 
  STATE_1036: "Bolivar Jungle"
  STATE_1036_ENDONYM: "[1036.Controller.GetStateName_1036]"
- STATE_1036_PORTUGUESE: "Selva de Bolivar"
+ STATE_1036_PORTUGUESE: "Selvas de Bolivar"
 
  STATE_1037: "Inini Territory"
  STATE_1037_ENDONYM: "[1037.Controller.GetStateName_1037]"
  STATE_1037_FRENCH: "Terr. de l'Inini"
+ STATE_1037_PORTUGUESE: "Território Inini"
 
  STATE_1038: "Surinamese Interior"
  STATE_1038_DUTCH: "Surinaams Binnenland"
  STATE_1038_ENDONYM: "[1038.Controller.GetStateName_1038]"
+ STATE_1038_PORTUGUESE: "Alto Suriname"
 
  STATE_1039: "West Guyana Jungle"
  STATE_1039_ENDONYM: "[1039.Controller.GetStateName_1039]"
+ STATE_1039_PORTUGUESE: "Selvas da Guiana Ocidental"
 
  STATE_1040: "Acre Jungle"
  STATE_1040_ENDONYM: "[1040.Controller.GetStateName_1040]"
- STATE_1040_PORTUGUESE: "Selva do Acre"
+ STATE_1040_PORTUGUESE: "Selvas do Acre"
 
  STATE_1041: "Iguassú"
  STATE_1041_ENDONYM: "[1041.Controller.GetStateName_1041]"
@@ -4300,6 +4345,7 @@
 
  STATE_1079: "Mabaruma Jungle"
  STATE_1079_ENDONYM: "[1079.Controller.GetStateName_1079]"
+ STATE_1079_PORTUGUESE: "Selvas de Mabarumba"
 
  STATE_1080: "Abkhazia"
  STATE_1080_ENDONYM: "[1080.Controller.GetStateName_1080]"

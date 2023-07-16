@@ -17,7 +17,7 @@ ideas = {
 
 			allowed = { always = no }
 			cancel = {
-				743 = { owner = { has_country_flag = is_chinese_tag } }
+				743 = { owner = { is_chinese_tag = yes } }
 			}
 
 			modifier = {
@@ -30,7 +30,7 @@ ideas = {
 			}
 
 			allowed_to_remove = {
-				743 = { owner = { has_country_flag = is_chinese_tag } }
+				743 = { owner = { is_chinese_tag = yes } }
 			}
 		}
 
@@ -44,7 +44,7 @@ ideas = {
 
 			allowed = { always = no }
 			cancel = {
-				743 = { owner = { has_country_flag = is_chinese_tag } }
+				743 = { owner = { is_chinese_tag = yes } }
 			}
 
 			modifier = {
@@ -57,7 +57,7 @@ ideas = {
 			}
 
 			allowed_to_remove = {
-				743 = { owner = { has_country_flag = is_chinese_tag } }
+				743 = { owner = { is_chinese_tag = yes } }
 			}
 		}
 
@@ -71,7 +71,13 @@ ideas = {
 
 			allowed = { always = no }
 			cancel = {
-				NOT = { has_idea = FNG_mantetsu_influence_idea }
+				NOT = {
+					has_idea = FNG_mantetsu_influence_idea
+					AND = {
+						tag = MAN
+						is_subject_of = JAP
+					}
+				}
 			}
 
 			modifier = {
@@ -84,7 +90,13 @@ ideas = {
 			}
 
 			allowed_to_remove = {
-				NOT = { has_idea = FNG_mantetsu_influence_idea }
+				NOT = {
+					has_idea = FNG_mantetsu_influence_idea
+					AND = {
+						tag = MAN
+						is_subject_of = JAP
+					}
+				}
 			}
 		}
 	}
@@ -726,7 +738,7 @@ ideas = {
 				remove_dynamic_modifier = { modifier = china_morale_dm }
 			}
 			name = league_collapse_idea_1
-			picture = "generic_destruction"
+			picture = MEX_revolutionary_army
 
 			targeted_modifier = {
 				tag = LEP
@@ -769,7 +781,7 @@ ideas = {
 				remove_dynamic_modifier = { modifier = china_morale_dm }
 			}
 			name = league_collapse_idea_1
-			picture = "generic_destruction"
+			picture = MEX_revolutionary_army
 
 			targeted_modifier = {
 				tag = LEP
@@ -811,7 +823,7 @@ ideas = {
 				remove_dynamic_modifier = { modifier = china_morale_dm }
 			}
 			name = league_collapse_idea_1
-			picture = "generic_destruction"
+			picture = MEX_revolutionary_army
 
 			targeted_modifier = {
 				tag = LEP
@@ -853,7 +865,7 @@ ideas = {
 				remove_dynamic_modifier = { modifier = china_morale_dm }
 			}
 			name = league_collapse_idea_1
-			picture = "generic_destruction"
+			picture = MEX_revolutionary_army
 
 			targeted_modifier = {
 				tag = ANQ

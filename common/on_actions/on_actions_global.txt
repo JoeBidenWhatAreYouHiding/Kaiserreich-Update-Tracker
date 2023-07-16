@@ -311,6 +311,8 @@ on_actions = {
 
 	on_startup = {
 		effect = {
+			log = "=== MOD VERSION ==="
+			log = KR_CURRENT_VERSION
 			every_possible_country = {
 				#Party Popularity Setup
 				if = {
@@ -2049,6 +2051,24 @@ on_actions = {
 									}
 								}
 								50 = {}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							FROM = { has_idea = KR_whampoa_academy_spirit } #done here instead of the trait file to avoid some oddness with generating assignable traits under certain circumstances, makes it easier to control probabilities
+						}
+						root = {
+							random_list = {
+								50 = {
+									add_unit_leader_trait = politically_connected
+								}
+								40 = {
+									add_unit_leader_trait = media_personality
+								}
+								10 = {
+									add_unit_leader_trait = war_hero
+								}
 							}
 						}
 					}

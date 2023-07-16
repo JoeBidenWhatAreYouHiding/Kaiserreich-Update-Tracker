@@ -27,25 +27,34 @@ country_event = {
 				country_event = { id = ausgleich.new.101 days = 2 }
 			}
 			country_event = { id = ausgleich.new.200 days = 2 }
-		}
-		if = {
-			limit = { has_game_rule = { rule = AUS_ausgleich option = DEFAULT } }
-			random_list = {
-				70 = { set_global_flag = AUS_AI_ausgleich_pluralism }
-				10 = { set_global_flag = AUS_AI_ausgleich_status_quo }
-				20 = { set_global_flag = AUS_AI_ausgleich_military_occupation }
+
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { rule = AUS_ausgleich option = DEFAULT }
+						NOT = {
+							has_game_rule = { rule = AUS_ausgleich option = AUS_AUSGLEICH_STATUS_QUO }
+							has_game_rule = { rule = AUS_ausgleich option = AUS_AUSGLEICH_PATAUT }
+						}
+					}
+				}
+				random_list = {
+					70 = { set_global_flag = AUS_AI_ausgleich_pluralism }
+					10 = { set_global_flag = AUS_AI_ausgleich_status_quo }
+					20 = { set_global_flag = AUS_AI_ausgleich_military_occupation }
+				}
 			}
-		}
-		else_if = {
-			limit = { has_game_rule = { rule = AUS_ausgleich option = AUS_AUSGLEICH_STATUS_QUO } }
-			set_global_flag = AUS_AI_ausgleich_status_quo
-		}
-		else_if = {
-			limit = { has_game_rule = { rule = AUS_ausgleich option = AUS_AUSGLEICH_PATAUT } }
-			set_global_flag = AUS_AI_ausgleich_military_occupation
-		}
-		else = {
-			set_global_flag = AUS_AI_ausgleich_pluralism
+			else_if = {
+				limit = { has_game_rule = { rule = AUS_ausgleich option = AUS_AUSGLEICH_STATUS_QUO } }
+				set_global_flag = AUS_AI_ausgleich_status_quo
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = AUS_ausgleich option = AUS_AUSGLEICH_PATAUT } }
+				set_global_flag = AUS_AI_ausgleich_military_occupation
+			}
+			else = {
+				set_global_flag = AUS_AI_ausgleich_pluralism
+			}
 		}
 	}
 }
@@ -1273,7 +1282,7 @@ country_event = {
 		}
 		hidden_effect = {
 			HUN = {
-				country_event = { id = ausgleich.new.323 days = 2 }
+				country_event = { id = ausgleich.new.324 days = 2 }
 			}
 		}
 	}
@@ -3008,7 +3017,7 @@ country_event = { #Fall of the Habsburgs
 		every_owned_state = {
 			limit = {
 				is_core_of = HUN
-				is_claim_or_core_of_ROOT = no
+				NOT = { is_core_of = ROOT }
 			}
 			transfer_state_to = HUN
 		}

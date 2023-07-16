@@ -6,112 +6,6 @@
 
 add_namespace = KRBAT
 
-country_event = { #Welcome to the United Baltic Duchy
-	id = KRBAT.1
-	title = KRBAT.1.t
-	desc = KRBAT.1.d
-	picture = GFX_report_event_United_Baltic_Duchy
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event KRBAT.1 option KRBAT.1.a"
-		name = KRBAT.1.a # Our current government
-		ai_chance = { base = 0 }
-		country_event = KRBAT.2
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.1 option KRBAT.1.b"
-		name = KRBAT.1.b # Our system of government
-		ai_chance = { base = 0 }
-		country_event = KRBAT.3
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.1 option KRBAT.1.c"
-		name = KRBAT.1.c # Our political concerns
-		ai_chance = { base = 0 }
-		country_event = KRBAT.4
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.1 option KRBAT.1.e"
-		name = KRBAT.1.e # For the Duchy!
-	}
-}
-country_event = { #Current government
-	id = KRBAT.2
-	title = KRBAT.2.t
-	desc = KRBAT.2.d
-	picture = GFX_report_event_Paul_Schiemann
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event KRBAT.2 option KRBAT.2.a"
-		name = KRBAT.2.a # Our system of government
-		ai_chance = { base = 0 }
-		country_event = KRBAT.3
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.2 option KRBAT.2.b"
-		name = KRBAT.2.b # Our political concerns
-		ai_chance = { base = 0 }
-		country_event = KRBAT.4
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.2 option KRBAT.2.c"
-		name = KRBAT.2.c # For the Duchy!
-	}
-}
-country_event = { #System of government
-	id = KRBAT.3
-	title = KRBAT.3.t
-	desc = KRBAT.3.d
-	picture = GFX_report_event_Baltic_Knighthoods
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event KRBAT.3 option KRBAT.3.a"
-		name = KRBAT.3.a # Our current government
-		ai_chance = { base = 0 }
-		country_event = KRBAT.2
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.3 option KRBAT.3.b"
-		name = KRBAT.3.b # Our political concerns
-		ai_chance = { base = 0 }
-		country_event = KRBAT.4
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.3 option KRBAT.3.c"
-		name = KRBAT.3.c # For the Duchy!
-	}
-}
-country_event = { #Political concerns
-	id = KRBAT.4
-	title = KRBAT.4.t
-	desc = KRBAT.4.d
-	picture = GFX_report_event_Forest_Brothers
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event KRBAT.4 option KRBAT.4.a"
-		name = KRBAT.4.a # Our current government
-		ai_chance = { base = 0 }
-		country_event = KRBAT.2
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.4 option KRBAT.4.b"
-		name = KRBAT.4.b # Our system of government
-		ai_chance = { base = 0 }
-		country_event = KRBAT.3
-	}
-	option = {
-		log = "[GetLogInfo]: event KRBAT.4 option KRBAT.4.c"
-		name = KRBAT.4.c # For the Duchy!
-	}
-}
 country_event = { # Black Monday
 	id = KRBAT.5
 	title = KRBAT.5.t
@@ -944,7 +838,11 @@ country_event = {
 		custom_effect_tooltip = BAT_play_latvia_tooltip
 		BAT_collapses = yes
 		hidden_effect = {
-			LAT = { change_tag_from = BAT }
+			set_variable = { KR_welcome_splash_variable = 3 }
+			LAT = {
+				set_variable = { KR_welcome_splash_variable = 1 }
+				change_tag_from = BAT
+			}
 		}
 	}
 	option = {
@@ -954,7 +852,11 @@ country_event = {
 		custom_effect_tooltip = BAT_play_estonia_tooltip
 		BAT_collapses = yes
 		hidden_effect = {
-			EST = { change_tag_from = BAT }
+			set_variable = { KR_welcome_splash_variable = 3 }
+			EST = {
+				set_variable = { KR_welcome_splash_variable = 1 }
+				change_tag_from = BAT
+			}
 		}
 	}
 }
@@ -1113,7 +1015,7 @@ country_event = { # Flight of the Baltic Germans
 	is_triggered_only = yes
 
 	immediate = {
-		BAT_move_baltic_germans = yes
+		BAT = { BAT_move_baltic_germans = yes }
 	}
 
 	option = {
@@ -1132,11 +1034,7 @@ country_event = { # Flight of the Baltic Germans
 		ai_chance = { base = 0 }
 		add_manpower = 25000
 		hidden_effect = {
-			BAT_rudiger_von_der_goltz = { retire = yes }
-			BAT_wessel_von_loringhoven = { retire = yes }
-			BAT_heinrich_von_behr = { retire = yes }
-			BAT_hans_von_manteuffel_szoege = { retire = yes }
-			BAT_otto_goldfeld = { retire = yes }
+			XXA = { BAT_move_baltic_germans = yes }
 		}
 	}
 }
@@ -2123,6 +2021,12 @@ country_event = { # Riga flavor event, Defeatism
 		log = "[GetLogInfo]: event KRBAT.64 option KRBAT.64.a"
 		name = KRBAT.64.a
 		add_ideas = BAT_pessimism
+		hidden_effect = {
+			if = {
+				limit = { is_ai = yes }
+				clear_variable = KR_welcome_splash_variable
+			}
+		}
 	}
 }
 country_event = { # UBD flavor event, Rosenberg

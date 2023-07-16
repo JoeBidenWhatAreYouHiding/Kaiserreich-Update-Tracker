@@ -1793,7 +1793,6 @@ focus_tree = {
 					OR = {
 						has_country_leader = { character = YUN_zhu_peide }
 						has_country_leader = { character = YUN_zhu_de }
-						has_country_leader = { character = YUN_zhang_bojun }
 					}
 				}
 				date < 1937.06.15
@@ -2099,16 +2098,20 @@ focus_tree = {
 			add_to_array = { china_possible_allies_array_northwest = KUM }
 			add_to_array = { china_possible_allies_array_northwest = XSM }
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = QIE_imperial_consolidation_TT
 			hidden_effect = {
-				activate_targeted_decision = { target = FROM decision = QIE_prepare_national_pacification_campaign }
-			}
-			if = {
-				limit = { can_declare_war_on = CHI }
-				custom_effect_tooltip = tooltip_white_line
-				create_wargoal = {
-					target = CHI
-					type = annex_everything
+				china_enable_all_demand_submission_decisions = yes
+				FNG = { country_event = { id = qiefor.52 hours = 6 } }
+				if = {
+					limit = {
+						country_exists = LEP
+						country_exists = GEA
+						GEA = { has_capitulated = no }
+					}
+					GEA = { country_event = { id = qiefor.55 hours = 6 } }
+				}
+				random_other_country = {
+					limit = { is_ai = yes }
+					news_event = { id = worldnews.234 hours = 2 }
 				}
 			}
 		}
@@ -2152,6 +2155,10 @@ focus_tree = {
 		icon = GFX_goal_generic_attack_fengtian
 		cost = 5
 
+		relative_position_id = QIE_pick_MP
+		x = 2
+		y = 5
+
 		available = {
 			is_subject = no
 		}
@@ -2159,10 +2166,6 @@ focus_tree = {
 		bypass = {
 			NOT = { can_declare_war_on = FNG }
 		}
-
-		relative_position_id = QIE_pick_MP
-		x = 2
-		y = 5
 
 		prerequisite = {
 			focus = QIE_chinese_century

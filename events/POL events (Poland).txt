@@ -5,89 +5,6 @@ add_namespace = polandflavor
 add_namespace = polandnews
 
 ### Starting Events ###
-country_event = { #Intro
-	id = poland.0
-	title = poland.0.t
-	desc = poland.0.d
-	picture = GFX_report_event_POL_regency_stamp
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event poland.0 option poland.0.a"
-		name = poland.0.a
-		ai_chance = { base = 0 }
-		country_event = poland.1
-	}
-	option = {
-		log = "[GetLogInfo]: event poland.0 option poland.0.b"
-		name = poland.0.b
-	}
-}
-
-country_event = { #Intrigue at the Court
-	id = poland.1
-	title = poland.1.t
-	desc = poland.1.d
-	picture = GFX_report_event_generic_conference1
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event poland.1 option poland.1.a"
-		name = poland.1.a
-		country_event = poland.2
-	}
-	option = {
-		log = "[GetLogInfo]: event poland.1 option poland.0.b"
-		name = poland.0.b
-	}
-}
-
-country_event = { #The Republican movement
-	id = poland.2
-	title = poland.2.t
-	desc = poland.2.d
-	picture = GFX_report_event_POL_PSL
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event poland.2 option poland.2.a"
-		name = poland.2.a
-		country_event = poland.3
-	}
-}
-
-country_event = { #Polish Revolutionary Comittee
-	id = poland.3
-	title = poland.3.t
-	desc = poland.3.d
-	picture = GFX_report_event_POL_zzz
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event poland.3 option poland.3.a"
-		name = poland.3.a
-		country_event = poland.4
-	}
-}
-
-country_event = { #Polish National Comittee
-	id = poland.4
-	title = poland.4.t
-	desc = poland.4.d
-	picture = GFX_report_event_POL_dmowski
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event poland.4 option poland.4.a"
-		name = poland.4.a
-	}
-}
-
 country_event = { #The Emergency Session
 	id = poland.5
 	title = poland.5.t
@@ -3242,7 +3159,7 @@ country_event = { #Elections of 1938
 			check_variable = { POL_royal_influence > POL_nat_influence }
 			NOT = { has_idea = POL_coalition_broken }
 		}
-		ai_chance = { base = 80 }
+		ai_chance = { base = 20 }
 		hidden_effect = {
 			country_event = { id = poland.151 days = 1 }
 			country_event = { id = poland.155 days = 7 }
@@ -3266,7 +3183,7 @@ country_event = { #Elections of 1938
 		trigger = {
 			check_variable = { POL_royal_influence > 50 }
 		}
-		ai_chance = { base = 80 }
+		ai_chance = { base = 20 }
 		hidden_effect = {
 			country_event = { id = poland.151 days = 1 }
 			country_event = { id = poland.155 days = 7 }
@@ -3289,7 +3206,7 @@ country_event = { #Elections of 1938
 			check_variable = { POL_nat_influence > POL_royal_influence }
 			check_variable = { POL_nat_influence < 50 }
 		}
-		ai_chance = { base = 20 }
+		ai_chance = { base = 10 }
 		hidden_effect = {
 			country_event = { id = poland.151 days = 1 }
 			news_event = { id = polandnews.12 days = 1 }
@@ -3316,7 +3233,7 @@ country_event = { #Elections of 1938
 		trigger = {
 			check_variable = { POL_nat_influence > 50 }
 		}
-		ai_chance = { base = 20 }
+		ai_chance = { base = 10 }
 		hidden_effect = {
 			country_event = { id = poland.151 days = 1 }
 			news_event = { id = polandnews.12 days = 1 }
@@ -3427,7 +3344,7 @@ country_event = { #Elections of 1938
 			check_variable = { POL_soc_influence > POL_rep_influence }
 			has_country_flag = POL_PPS_Dubois
 		}
-		ai_chance = { base = 80 }
+		ai_chance = { base = 40 }
 		hidden_effect = {
 			country_event = { id = poland.151 days = 1 }
 			news_event = { id = polandnews.11 days = 1 }
@@ -3454,7 +3371,7 @@ country_event = { #Elections of 1938
 		log = "[GetLogInfo]: event poland.150 option poland.150.h"
 		name = poland.150.h #Appoint Statehood Party
 		ai_chance = {
-			base = 20
+			base = 40
 			modifier = {
 				factor = 0
 				OR = {
@@ -6264,6 +6181,7 @@ country_event = { #The Issue of Lemberg
 		log = "[GetLogInfo]: event poland.246 option poland.246.g"
 		name = poland.246.g
 		trigger = {
+			owns_state = 88 #Krakow
 			UKR = {
 				OR = {
 					is_in_faction_with = GER
@@ -9290,10 +9208,46 @@ country_event = {
 	option = {
 		log = "[GetLogInfo]: event poland.374 option poland.374.a"
 		name = poland.374.a
-		ai_chance = { base = 10 }
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						tag = ALB
+						NOT = { has_game_rule = { rule = ALB_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = BUL
+						NOT = { has_game_rule = { rule = BUL_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = EST
+						NOT = { has_game_rule = { rule = EST_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = GRE
+						NOT = { has_game_rule = { rule = GRE_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_KEEP } }
+					}
+					AND = {
+						tag = LAT
+						NOT = { has_game_rule = { rule = LAT_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = SER
+						NOT = { has_game_rule = { rule = BPL_dissolution option = DEFAULT } }
+					}
+					AND = {
+						tag = UKR
+						NOT = { has_game_rule = { rule = UKR_forpol option = DEFAULT } }
+					}
+				}
+			}
+		}
 		if = {
 			limit = {
-				tag = SER
+				tag = BPL
 				is_faction_leader = yes
 			}
 			dismantle_faction = yes
@@ -9303,7 +9257,43 @@ country_event = {
 	option = {
 		log = "[GetLogInfo]: event poland.374 option poland.374.b"
 		name = poland.374.b
-		ai_chance = { base = 0 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				OR = {
+					AND = {
+						tag = ALB
+						NOT = { has_game_rule = { rule = ALB_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = BUL
+						NOT = { has_game_rule = { rule = BUL_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = EST
+						NOT = { has_game_rule = { rule = EST_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = GRE
+						NOT = { has_game_rule = { rule = GRE_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_KEEP } }
+					}
+					AND = {
+						tag = LAT
+						NOT = { has_game_rule = { rule = LAT_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = SER
+						NOT = { has_game_rule = { rule = BPL_dissolution option = DEFAULT } }
+					}
+					AND = {
+						tag = UKR
+						NOT = { has_game_rule = { rule = UKR_forpol option = DEFAULT } }
+					}
+				}
+			}
+		}
 		POL = { country_event = poland.375 }
 	}
 }
@@ -10328,7 +10318,7 @@ country_event = {
 		add_popularity = { ideology = syndicalist popularity = 0.05 }
 		add_popularity = { ideology = totalist popularity = 0.05 }
 		hidden_effect = {
-			country_event = { id = poland.544 days = 45 } #Rival government
+			country_event = { id = poland.545 days = 45 } #Rival government
 		}
 	}
 	option = {
@@ -11852,30 +11842,82 @@ country_event = {
 		name = poland.650.a
 		if = {
 			limit = {
-				owns_state = 202 #Kiev
+				owns_state = 201 #Zhitomir
 				owns_state = 206 #Minsk
 				check_variable = { num_owned_states > 40 }
 			}
 			add_ideas = POL_eastern_governments_4
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = POL }
+					is_claimed_by = POL
+				}
+				add_state_modifier = {
+					modifier = {
+						local_building_slots_factor = 0.2
+						local_resources = 0.5
+						local_non_core_manpower = 0.1
+					}
+				}
+			}
 		}
 		else_if = {
 			limit = {
-				owns_state = 202
+				owns_state = 201
 				owns_state = 206
 			}
 			add_ideas = POL_eastern_governments_3
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = POL }
+					is_claimed_by = POL
+				}
+				add_state_modifier = {
+					modifier = {
+						local_building_slots_factor = 0.3
+						local_resources = 0.5
+						local_non_core_manpower = 0.2
+					}
+				}
+			}
 		}
 		else_if = {
 			limit = {
 				OR = {
-					owns_state = 202
+					owns_state = 201
 					owns_state = 206
 				}
 			}
 			add_ideas = POL_eastern_governments_2
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = POL }
+					is_claimed_by = POL
+				}
+				add_state_modifier = {
+					modifier = {
+						local_building_slots_factor = 0.4
+						local_resources = 0.5
+						local_non_core_manpower = 0.35
+					}
+				}
+			}
 		}
 		else = { #only Lithuania
 			add_ideas = POL_eastern_governments_1
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = POL }
+					is_claimed_by = POL
+				}
+				add_state_modifier = {
+					modifier = {
+						local_building_slots_factor = 0.5
+						local_resources = 0.5
+						local_non_core_manpower = 0.5
+					}
+				}
+			}
 		}
 		add_political_power = 100
 		country_event = poland.651
@@ -11919,8 +11961,20 @@ country_event = {
 		log = "[GetLogInfo]: event poland.660 option poland.660.a"
 		name = poland.660.a
 		set_capital = { state = 924 } #Tesin
-		add_stability = 0.12
 		add_ideas = POL_zapadoslavia
+		every_owned_state = {
+			limit = {
+				NOT = { is_core_of = POL }
+				is_claimed_by = POL
+			}
+			add_state_modifier = {
+				modifier = {
+					local_building_slots_factor = 0.5
+					local_resources = 0.5
+					local_non_core_manpower = 0.33
+				}
+			}
+		}
 		hidden_effect = { news_event = polandnews.8 }
 	}
 }
@@ -11978,6 +12032,11 @@ country_event = {
 			POL_create_rydz = yes
 		}
 		activate_advisor = POL_edward_rydz_smigly_army_chief
+		add_trait = {
+			character = POL_edward_rydz_smigly
+			slot = army_chief
+			trait = POL_marshal_of_the_nation
+		}
 		hidden_effect = {
 			set_can_be_fired_in_advisor_role = {
 				character = POL_edward_rydz_smigly
@@ -12514,6 +12573,7 @@ country_event = { #Prince marries commoner
 		set_temp_variable = { POL_influence_change = -3 }
 		POL_add_royal_influence = yes
 		retire_character = POL_alexander_von_hohenzollern
+		set_country_flag = POL_alex_married
 	}
 }
 
@@ -12532,6 +12592,7 @@ country_event = { #Prince marries Polish commoner publicly
 		set_temp_variable = { POL_influence_change = 3 }
 		POL_add_royal_influence = yes
 		set_country_flag = POL_alex_not_heir
+		set_country_flag = POL_alex_married
 	}
 }
 
@@ -12542,8 +12603,8 @@ country_event = { #Prince marries a noble
 	picture = GFX_report_event_POL_alexander
 
 	is_triggered_only = yes
-	trigger = { 
-		is_monarchy = yes 
+	trigger = {
+		is_monarchy = yes
 		NOT = { has_country_flag = POL_alex_married }
 	}
 

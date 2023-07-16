@@ -1103,8 +1103,8 @@
 
 ### Events - Pre Election ###
 
- ustates.1.t: "The United States in 1936"
- ustates.1.d: "In 1936, the United States of America are gripped by unrelenting crisis. Although able to avoid the horrors of the Weltkrieg, which allowed its prosperity to continue well into the 1920s, German victory in the Weltkrieg, followed by the French and British Revolutions, led to the Wall Street crash of 1925. This sent the United States spiralling into the Great Depression and allowed the Berlin Stock Market to take its place at the forefront of the world economy.\n\nThe election of Herbert Hoover in 1928, while initially promising, failed entirely to reverse the decline of the American economy, and by 1936 the country had spent over a decade in the midst of the worst financial crisis it had ever seen. This fuelled the rise of radical parties in America from the far-left Socialist Party of America, to the far-right America First Party. Hoover's contentious re-election by means of the House of Representatives in 1932, and the ongoing Great Depression means that these problems are unlikely to be resolved any time soon. Many throughout the country fear the upheaval that would result should one of the extreme parties come to power, or should the Depression continue unabated."
+ USA_country_intro_header: "The United States in 1936"
+ USA_country_intro_content: "In 1936, the United States of America are gripped by unrelenting crisis. Although able to avoid the horrors of the Weltkrieg, which allowed its prosperity to continue well into the 1920s, German victory in the Weltkrieg, followed by the French and British Revolutions, led to the Wall Street crash of 1925. This sent the United States spiralling into the Great Depression and allowed the Berlin Stock Market to take its place at the forefront of the world economy.\n\nThe election of Herbert Hoover in 1928, while initially promising, failed entirely to reverse the decline of the American economy, and by 1936 the country had spent over a decade in the midst of the worst financial crisis it had ever seen. This fuelled the rise of radical parties in America from the far-left Socialist Party of America, to the far-right America First Party. Hoover's contentious re-election by means of the House of Representatives in 1932, and the ongoing Great Depression means that these problems are unlikely to be resolved any time soon. Many throughout the country fear the upheaval that would result should one of the extreme parties come to power, or should the Depression continue unabated."
  ustates.1.a: "God Bless America."
 
  ustates.2.t: "Black Monday Hits America"
@@ -1550,7 +1550,7 @@
  ustates.102.a: "If Reed wants a fight, he's got one"
 
  ustates.103.t: "Austerity Bill Fails"
- ustates.103.d: "While President Garner campaigned long and hard into the night, at the end of the day there were simply too few Republican Senators willing to vote for a bill that they didn't have the support of the SPA and AFP, and which would likely result in violence anyhow. Garner's austerity plan is seen as a poor follow up to the Garner-Wagner bill he co-authored in 1934. The entire vote was even delayed by an actual fist-fight between a Republican and a AFP Senator. In the end, the vote failed by a slim margin... though the margin might as well have been a chasm, into which all of President Garner's hopes and aspirations could be tossed."
+ ustates.103.d: "While President Garner campaigned long and hard into the night, at the end of the day there were simply too few Republican Senators willing to vote for a bill that they didn't have the support of the SPA and AFP, and which would likely result in violence anyhow. Garner's austerity plan is seen as a poor follow up to the Garner-Wagner bill he co-authored in 1934. The entire vote was even delayed by an actual fist-fight between a Republican and an AFP Senator. In the end, the vote failed by a slim margin... though the margin might as well have been a chasm, into which all of President Garner's hopes and aspirations could be tossed."
  ustates.103.a: "Congress isn't worth piss anyways"
 
  ustates.104.t: "MacArthur and the Army Remove Garner"
@@ -2902,6 +2902,9 @@
  USA_robert_ferdinand_wagner_desc: "§YAdvisor Description\nBorn:§! §gJune 8th, 1877, Nastätten, Hesse-Nassau, German Empire§!\n§YPolitical Career:§! §gBorn in Hesse-Nassau, Prussia, Wagner emigrated to the USA and won a seat in New York State government. Wagner spent his decades in office as an advocate for labour unions and worker safety. The Democratic politician Al Smith relies in Wagner to bolster his own popularity among the urban North. Wagner is an advocate for direct intervention in the economy to reverse the effects of the Great Depression."
  USA_felix_frankfurter: "Felix Frankfurter"
  USA_felix_frankfurter_desc: "§YAdvisor Description\nBorn:§! §gNovember 15th, 1882, Vienna, Austria-Hungary§!\n§YPolitical Career:§! §gBorn in Vienna, Austria, Frankfurter emigrated to the USA and became an assistant to a U.S. District Attorney. Frankfurter's career in law saw him ruling in favour of Federal Agencies over state laws. This led Frankfurter to help found the ACLU, the American Civil Liberties Union. Frankfurter has used his allies in the establishment to sway labour unions away from syndicalism, and to push for intervention against genocidal regimes abroad."
+
+ USA_sam_rayburn: "Sam Rayburn"
+ USA_john_rockefeller_jr: "John Rockefeller Jr."
 
  USA_julius_robert_oppenheimer: "Julius Robert Oppenheimer"
  USA_theodore_edson_chandler: "Theodore Edson Chandler"

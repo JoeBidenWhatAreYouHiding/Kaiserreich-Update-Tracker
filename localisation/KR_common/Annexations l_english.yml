@@ -49,7 +49,7 @@
  annex.china.give_to_china_take_coastline: "Take the coastline and give the rest to [china_ally_target.GetNameDef]!"
  annex.china.fading_sun_return_to_china: "Hand it over to [japan_forced_return.GetNameDef] per the terms of our peace treaty."
 
- release_china_sun_fo: "Empower Sun Fo's moderates"
+ release_china_csp: "Install a syndicalist government in China."
  release_china_lkmt: "Empower the Left Kuomintang"
  release_china_rngroc: "Release the Reorganised Government of China"
  release_china_fengtian: "Restore the Fengtian Government"
@@ -882,8 +882,11 @@
  annexation_MLT_CONQ: "The Fate of Malta"
  annexation_MLT_CONQ_desc: "Malta has been brought under our leadership and our troops occupy the island. We must now decide what to do with it."
  annex.1103.a: "Release Malta as a puppet"
- annex.1103.b: "Give it back to the British"
- annex.1103.c: "Transfer it to our Italian ally"
+ annex.1103.b: "Give it to the British"
+ annex.1103.c: "[ITA.GetGrantTerritoryEventOption]"
+ annex.1103.d: "[SRI.GetGrantTerritoryEventOption]"
+ annex.1103.e: "[SIC.GetGrantTerritoryEventOption]"
+ annex.1103.f: "[SRD.GetGrantTerritoryEventOption]"
 
  annexation_ARDENNES_CONQ: "The Fate of the Ardennes"
  annexation_ARDENNES_CONQ_desc: "The forested, sparsely populated region of the Ardennes is now under our control, we must decide what to do with it."
@@ -1329,6 +1332,8 @@
  annex.3009.c: "Give it to our [SIB.GetAdjective] allies."
  annex.3009.d: "Give it to our [TRM.GetAdjective] allies."
  annex.3009.e: "Form the Republic of Green Ukraine."
+ annex.3009.f: "Give it to [MAN.GetAdjective] allies."
+ annex.3009.g: "Renounce the Treaty of Aigun."
 
  annexation_CHI_CONQ: "The Fate of China"
  annexation_CHI_CONQ_desc: "After a long and hard-fought campaign in the vast expanses of China we've finally achieved a historic victory. Now that we've won the war, we must decide how to best secure the peace. How should we go about managing the Chinese lands we've conquered?"
@@ -1363,7 +1368,7 @@
  annexation_MAN_CONQ: "The Fate of Manchuria"
  annexation_MAN_CONQ_desc: "After our successful campaign in Manchuria we now have the task to establish new local administrative authority in order to restore peace, however, there are several options for our choice."
  annex.3015.a: "Create an independent Manchuria."
- annex.3015.b: "create an independent Manchuria, but retain Port Arthur."
+ annex.3015.b: "Create an independent Manchuria, but retain Port Arthur."
  annex.3015.c: "Take the coastline and create an independent Manchuria."
  annex.3015.d: "[ROOT.china_annexation_release_event_option], but retain Port Arthur."
  annex.3015.e: "Give it to [china_ally_target.GetNameDef], but retain Port Arthur."
@@ -1416,12 +1421,14 @@
  annexation_LAO_CONQ_desc: "Our armies have taken control of Laos, and the locals are clamouring for self-government. We should decide what's to be done with the region."
  annex.3024.a: "Set up a puppet Laotian state."
  annex.3024.b: "Integrate it into our fold."
+ annex.3024.c: "Give it to [INC.GetNameDef] to manage."
 
  annexation_CAM_CONQ: "The Fate of Cambodia"
  annexation_CAM_CONQ_desc: "Our armies have taken control of Phnom Penh, and the local Cambodians are clamouring for self-government. We should decide what's to be done with the region."
  annex.3025.a: "Create a Cambodian republic."
  annex.3025.b: "Empower the Royal House of Sisowath."
  annex.3025.c: "Empower the Royal House of Norodom."
+ annex.3025.e: "Give it to [INC.GetNameDef] to manage."
 
  annexation_PHI_CONQ: "The Fate of the Philippines"
  annexation_PHI_CONQ_desc: "Our armies have managed to take control of the Philippines, and the archipelago is now occupied by us. Should we organise a puppet government?"
@@ -1757,8 +1764,9 @@
 
  annexation_KARABAKH_CONQ: "The Fate of Karabakh"
  annexation_KARABAKH_CONQ_desc: "The highlands of Karabakh have been brought under our control as our troops occupy the region. We must now decide what to do with it."
- annex.4011.a: "Give it to [ARM.GetNameDef]"
- annex.4011.b: "Give it to [AZR.GetNameDef]"
+ annex.4011.a: "[ARM.GetGrantTerritoryEventOption]"
+ annex.4011.b: "[AZR.GetGrantTerritoryEventOption]"
+ annex.4011.c: "[russia.GetGrantTerritoryEventOption]"
 
  annexation_ARM_CONQ: "The Fate of Armenia"
  annexation_ARM_CONQ_desc: "After fierce fighting in the Caucasus, we have conquered and annexed Armenia. The Armenian army has surrendered, and the territory is under our control, but the people are still resistant but soon they will submit."

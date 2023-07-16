@@ -3,56 +3,7 @@
 ###########################
 
 add_namespace = canada
-
-# Intro events
-country_event = {
-	id = canada.1
-	title = canada.1.t
-	desc = canada.1.d
-	picture = GFX_report_event_CAN_refugees
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		log = "[GetLogInfo]: event canada.1 option canada.1.a"
-		name = canada.1.a
-		hidden_effect = {
-			country_event = { id = canada.2 days = 1 }
-		}
-	}
-}
-
-country_event = {
-	id = canada.2
-	title = canada.1.t
-	desc = canada.2.d
-	picture = GFX_report_event_CAN_toronto
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event canada.2 option canada.2.a"
-		name = canada.2.a
-		hidden_effect = {
-			country_event = canada.3
-		}
-	}
-}
-
-country_event = {
-	id = canada.3
-	title = canada.1.t
-	desc = canada.3.d
-	picture = GFX_report_event_CAN_propaganda
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event canada.3 option canada.3.a"
-		name = canada.3.a
-	}
-}
+add_namespace = canada_flavour
 
 # Death of King George V
 country_event = {
@@ -4809,6 +4760,7 @@ country_event = {
 					type = independence_wargoal
 				}
 				hidden_effect = {
+					add_state_core = 119
 					if = {
 						limit = { has_template = "Irish Loyalist Rebels" }
 						delete_unit_template_and_units = { division_template = "Irish Loyalist Rebels" disband = yes } #no cheating
@@ -6388,6 +6340,12 @@ country_event = {
 			FROM = { tag = TEX }
 		}
 	}
+	title = {
+		text = canada.219.t.nee
+		trigger = {
+			FROM = { tag = NEE }
+		}
+	}
 
 	is_triggered_only = yes
 
@@ -6421,9 +6379,33 @@ country_event = {
 # ACW Faction informed of Entente support
 country_event = {
 	id = canada.220
-	title = canada.220.t
 	desc = canada.220.d
 	picture = GFX_report_event_CAN_parliament1
+
+	title = {
+		text = canada.220.t.usa
+		trigger = {
+			FROM = { tag = USA }
+		}
+	}
+	title = {
+		text = canada.220.t.psa
+		trigger = {
+			FROM = { tag = PSA }
+		}
+	}
+	title = {
+		text = canada.220.t.aus
+		trigger = {
+			FROM = { tag = TEX }
+		}
+	}
+	title = {
+		text = canada.220.t.nee
+		trigger = {
+			FROM = { tag = NEE }
+		}
+	}
 
 	is_triggered_only = yes
 
@@ -7108,6 +7090,11 @@ country_event = {
 					long_name = CAN_social_credit_party_long
 					name = CAN_social_credit_party
 				}
+			}
+			country_event = {
+				id = canada_flavour.1
+				days = 100
+				random = 80
 			}
 		}
 	}
@@ -8296,5 +8283,20 @@ country_event = {
 			CAN_garner_ormsby_currie = { set_nationality = ROOT }
 			CAN_horatio_nelson_lay = { set_nationality = ROOT }
 		}
+	}
+}
+
+### Flavour
+
+country_event = {
+	id = canada_flavour.1
+	title = canada_flavour.1.t
+	desc = canada_flavour.1.d
+	picture = GFX_report_event_CAN_their_finest_hour
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event canada_flavour.1 option canada_flavour.1.a"
+		name = canada_flavour.1.a
 	}
 }

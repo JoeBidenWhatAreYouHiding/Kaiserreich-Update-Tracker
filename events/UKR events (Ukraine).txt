@@ -1,10 +1,10 @@
-﻿##################################################################################################################################
-# Ukraine Events                       									                                                     #
-##################################################################################################################################
-# First Attempted Rework by ZimbabweSaltCo. with help from Alpinia and Ido                                                       #
-##################################################################################################################################
-# Second Rework By Zim, Hamfast, Cody, Katie, Klyntar (Dasha), Kano, Moieight, Matoro, Deliberus wtf I probably forgot someone lol#
-##################################################################################################################################
+﻿####################################################################################################################################
+# Ukraine Events                                                                                                                   #
+####################################################################################################################################
+# First Attempted Rework by ZimbabweSaltCo. with help from Alpinia and Ido                                                         #
+####################################################################################################################################
+# Second Rework By Zim, Hamfast, Cody, Katie, Klyntar (Dasha), Kano, Moieight, Matoro, Deliberus wtf I probably forgot someone lol #
+####################################################################################################################################
 
 add_namespace = ukraine
 add_namespace = ukraine_relief
@@ -20,21 +20,6 @@ add_namespace = ukraine_borotbist
 add_namespace = ukraine_forpol
 
 ### Intro Events ###
-country_event = { #Ukraine in 1936
-	id = ukraine.1
-	title = ukraine.1.t
-	desc = ukraine.1.d
-	picture = GFX_report_event_UKR_opening
-	trigger = {
-		is_ai = no
-	}
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event ukraine.1 option ukraine.1.a"
-		name = ukraine.1.a
-	}
-}
 
 country_event = { #Epistles to the Brothers-Agrarians
 	id = ukraine.2
@@ -279,8 +264,18 @@ country_event = { # Rally in Rivne
 	option = {
 		log = "[GetLogInfo]: event ukraine.14 option ukraine.14.a"
 		name = ukraine.14.a #Have Petlyura arrested
-		ai_chance = { factor = 65 }
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_stability = 0.01
+		custom_effect_tooltip = ukraine.14.a.tt
 		hidden_effect = {
 			country_event = { id = ukraine.15 days = 2 } # Petlyura evades arrest
 		}
@@ -754,7 +749,6 @@ country_event = { # Bailing Out The Germans
 	picture = GFX_report_event_generic_diplomacy1
 	is_triggered_only = yes
 	fire_only_once = yes
-	picture = GFX_report_event_generic_diplomacy1
 
 	option = {
 		log = "[GetLogInfo]: event ukraine.41 option ukraine.41.a"
@@ -1329,8 +1323,8 @@ country_event = { #Alexander x Olena
 		add_stability = 0.03
 		if = {
 			limit = { tag = UKR }
-			POL = { 
-				country_event = ukraine.66 
+			POL = {
+				country_event = ukraine.66
 				set_country_flag = POL_alex_married
 			}
 		}
@@ -1425,14 +1419,14 @@ country_event = { #Death of Pavlo Skoropadskyi
 	desc = {
 		trigger = {
 			has_completed_focus = UKR_fall_of_uskhd
-			has_government = social_conservative
+			has_government = authoritarian_democrat
 		}
 		text = ukraine.68.d4
 	}
 	desc = {
 		trigger = {
 			has_completed_focus = UKR_fall_of_uskhd
-			has_government = authoritarian_democrat
+			has_government = social_conservative
 		}
 		text = ukraine.68.d5
 	}
@@ -2820,6 +2814,7 @@ country_event = { # End of the Relief Bill negotiations
 		trigger = {
 			check_variable = { UKR_bill_success < 4 }
 		}
+		add_stability = -0.1
 		remove_ideas = UKR_black_monday
 		add_timed_idea = {
 			idea = UKR_black_monday_recovery
@@ -2834,8 +2829,6 @@ country_event = { # End of the Relief Bill negotiations
 		clear_variable = UKR_uskhd_support
 		clear_variable = UKR_udkhp_support
 		clear_variable = UKR_bill_success
-		add_to_variable = { UKR_vdr_strength = 5 }
-		subtract_from_variable = { UKR_hetman_strength = 5 }
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_relief.100 option ukraine_relief.100.b"
@@ -2852,7 +2845,7 @@ country_event = { # End of the Relief Bill negotiations
 			idea = UKR_black_monday_recovery
 			days = UKR_BM_length
 		}
-		add_stability = 0.1
+		add_stability = 0.05
 		if = {
 			limit = { check_variable = { UKR_bill_success = 4 } } # success
 			add_timed_idea = {
@@ -2946,8 +2939,8 @@ country_event = { # Revolt Begins
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_RADSOC }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_SYNDIE }
 				}
@@ -2966,6 +2959,10 @@ country_event = { # Revolt Begins
 			country_event = { id = ukraine_revolt.4 days = 5 } #Rebels secure west
 		}
 		if = {
+			limit = { NOT = { has_country_flag = UKR_bill_sucessfull } }
+			add_to_variable = { UKR_vdr_strength = 5 }
+		}
+		if = {
 			limit = { is_ai = yes }
 			country_event = { id = ukraine_revolt.52 days = 153 } #If AI can't win revolt by February, autowin it
 		}
@@ -2980,8 +2977,11 @@ country_event = { # Revolt Begins
 				OR = {
 					has_game_rule = { rule = UKR_path option = UKR_PATH_USKHD_AUTDEM }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_UDKHP_AUTDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCCON }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_PATAUT }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_NATPOP }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
 					has_country_flag = UKR_hetman_side_ai
 				}
 			}
@@ -2993,6 +2993,10 @@ country_event = { # Revolt Begins
 		set_variable = { UKR_hetman_strength = 75 }
 		activate_mission = UKR_RP_intervention_mission
 		activate_mission = UKR_borotbist_uprising
+		if = {
+			limit = { NOT = { has_country_flag = UKR_bill_sucessfull }}
+			subtract_from_variable = { UKR_hetman_strength = 5 }
+		}
 		hidden_effect = {
 			country_event = { id = ukraine_revolt.2 days = 1 }
 			if = {
@@ -3149,7 +3153,6 @@ country_event = { # Brest Saved
 	title = ukraine_revolt.5.t
 	desc = ukraine_revolt.5.d
 	is_triggered_only = yes
-	fire_only_once = yes
 	picture = GFX_report_event_POL_rebels
 	trigger = {
 		NOT = { has_country_flag = UKR_revolt_over }
@@ -3471,7 +3474,11 @@ country_event = { #VDR-Germany negotiations
 		log = "[GetLogInfo]: event ukraine_revolt.14 option ukraine_revolt.14.b"
 		name = ukraine_revolt.14.b
 		ai_chance = { base = 0 }
+		trigger = {
+			command_power > 49
+		}
 		add_command_power = -50
+		UKR = { set_country_flag = UKR_german_response }
 		if = {
 			limit = {
 				UKR = {
@@ -3509,7 +3516,7 @@ country_event = { #VDR-Germany negotiations
 		log = "[GetLogInfo]: event ukraine_revolt.14 option ukraine_revolt.14.c"
 		name = ukraine_revolt.14.c
 		ai_chance = { base = 0 }
-		add_command_power = -50
+		UKR = { set_country_flag = UKR_german_response }
 		if = {
 			limit = {
 				UKR = {
@@ -3818,7 +3825,6 @@ country_event = { #Prisovsky's Counter-Attack
 		hidden_effect = {
 			country_event = { id = ukraine_revolt.31 days = 5 }
 		}
-
 	}
 }
 country_event = { #Battle of Kaniv
@@ -4304,6 +4310,7 @@ country_event = { #Republican victory
 		UKR_yurii_tiutiunnyk = { set_nationality = UKR }
 		UKR_oleksandr_udovychenko = { set_nationality = UKR }
 		UKR_omelian_volokh = { set_nationality = UKR }
+		retire_character = UKR_ivan_poltavets_ostrianytsia
 		custom_effect_tooltip = tooltip_white_line
 		set_politics = {
 			ruling_party = social_democrat
@@ -4654,7 +4661,6 @@ news_event = {
 		NOT = {
 			tag = UKR
 		}
-
 	}
 
 	option = {
@@ -4692,12 +4698,10 @@ news_event = {
 		name = ukraine_revolt.130.g
 		trigger = {
 			NOT = {
-				OR = {
-					original_tag = GER
-					original_tag = AUS
-					original_tag = RUS
-					original_tag = SOV
-				}
+				original_tag = GER
+				original_tag = AUS
+				original_tag = RUS
+				original_tag = SOV
 				has_socialist_government = yes
 				is_in_faction_with = GER
 			}
@@ -4774,14 +4778,12 @@ news_event = {
 	option = {
 		trigger = {
 			NOT = {
-				OR = {
-					original_tag = GER
-					original_tag = AUS
-					original_tag = RUS
-					original_tag = SOV
-					has_socialist_government = yes
-					is_in_faction_with = GER
-				}
+				original_tag = GER
+				original_tag = AUS
+				original_tag = RUS
+				original_tag = SOV
+				has_socialist_government = yes
+				is_in_faction_with = GER
 			}
 		}
 		name = ukraine_revolt.131.g
@@ -4822,7 +4824,16 @@ country_event = { # Doroshenko and Coalition are ready to negotiate with VDR. SH
 	option = {	# Negotiate
 		log = "[GetLogInfo]: event ukraine_negotiations.2 option ukraine_negotiations.2.a"
 		name = ukraine_negotiations.2.a
-		ai_chance = { base = 0 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = {
 				id = ukraine_negotiations.4	# Empowered Coalition and Doroshenko trying to reach out to VDR through neutral third parties
@@ -4834,7 +4845,16 @@ country_event = { # Doroshenko and Coalition are ready to negotiate with VDR. SH
 	option = {	# Strike
 		log = "[GetLogInfo]: event ukraine_negotiations.2 option ukraine_negotiations.2.b"
 		name = ukraine_negotiations.2.b
-		ai_chance = { base = 100 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = {
 				id = ukraine_negotiations.3	# VDR Raided, Success?
@@ -4882,7 +4902,16 @@ country_event = { # Empowered Coalition and Doroshenko trying to reach out to VD
 			if = {
 				limit = {
 					has_country_flag = UKR_petliura_left_alone
-					NOT = { check_variable = { UKR_urdp_support < 70 } }
+					OR = {
+						NOT = { check_variable = { UKR_urdp_support < 70 } }
+						AND = {
+							is_ai = yes
+							OR = {
+								has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+								has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+							}
+						}
+					}
 				}
 				country_event = {
 					id = ukraine_negotiations.6	# VDR Agrees
@@ -4935,6 +4964,16 @@ country_event = { # Talks Begin
 	option = {	# Disagree
 		log = "[GetLogInfo]: event ukraine_negotiations.7 option ukraine_negotiations.7.a"
 		name = ukraine_negotiations.7.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = 20
 		hidden_effect = {
 			country_event = { id = ukraine.28 days = 7 } # Riots In Kyiv after failed negotiations between regime and VDR
@@ -4944,6 +4983,16 @@ country_event = { # Talks Begin
 	option = {	# Agree
 		log = "[GetLogInfo]: event ukraine_negotiations.7 option ukraine_negotiations.7.b"
 		name = ukraine_negotiations.7.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = -10
 		hidden_effect = {
 			country_event = {
@@ -4965,6 +5014,16 @@ country_event = { # Fatal incident between striking dock workers and police in O
 	option = {	# continue talks
 		log = "[GetLogInfo]: event ukraine_negotiations.8 option ukraine_negotiations.8.a"
 		name = ukraine_negotiations.8.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = {
 				id = ukraine_negotiations.9	# SHD intervention in order to stop talks
@@ -4976,6 +5035,16 @@ country_event = { # Fatal incident between striking dock workers and police in O
 	option = { # stop talks
 		log = "[GetLogInfo]: event ukraine_negotiations.8 option ukraine_negotiations.8.b"
 		name = ukraine_negotiations.8.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = -20
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.10 days = 10 } # VDR counterproposal
@@ -5011,6 +5080,16 @@ country_event = { # VDR's counter proposal
 	option = { # agree
 		log = "[GetLogInfo]: event ukraine_negotiations.10 option ukraine_negotiations.10.a"
 		name = ukraine_negotiations.10.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_stability = -0.05
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.11 days = 4 } # VDR wants to discuss things only with Hetman directly
@@ -5020,6 +5099,17 @@ country_event = { # VDR's counter proposal
 	option = { # refuse
 		log = "[GetLogInfo]: event ukraine_negotiations.10 option ukraine_negotiations.10.b"
 		name = ukraine_negotiations.10.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+
+		}
 		hidden_effect = {
 			country_event = {
 				id = ukraine.28  # Riots In Kyiv after failed negotiations between regime and VDR
@@ -5041,6 +5131,16 @@ country_event = { # VDR wants to discuss things only with Hetman directly
 	option = { # Try to convince Pavlo
 		log = "[GetLogInfo]: event ukraine_negotiations.11 option ukraine_negotiations.11.a"
 		name = ukraine_negotiations.11.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = -15
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.12 days = 2 } # Hetman refuses
@@ -5050,6 +5150,16 @@ country_event = { # VDR wants to discuss things only with Hetman directly
 	option = { # Tell VDR to deal with Doroshenko
 		log = "[GetLogInfo]: event ukraine_negotiations.11 option ukraine_negotiations.11.b"
 		name = ukraine_negotiations.11.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = -10
 		hidden_effect = {
 			country_event = {
@@ -5063,6 +5173,16 @@ country_event = { # VDR wants to discuss things only with Hetman directly
 	option = { # Suggest Danylo together with Doroshenko as an alternative
 		log = "[GetLogInfo]: event ukraine_negotiations.11 option ukraine_negotiations.11.c"
 		name = ukraine_negotiations.11.c
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = -5
 		hidden_effect = {
 			country_event = {
@@ -5138,6 +5258,16 @@ country_event = { # Allow participation of Socialists in local and national elec
 	option = { # Only local
 		log = "[GetLogInfo]: event ukraine_negotiations.15 option ukraine_negotiations.15.a"
 		name = ukraine_negotiations.15.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ukraine.29 days = 2 } #Negotiations are Stopped
 		}
@@ -5145,6 +5275,16 @@ country_event = { # Allow participation of Socialists in local and national elec
 	option = { # Accept
 		log = "[GetLogInfo]: event ukraine_negotiations.15 option ukraine_negotiations.15.b"
 		name = ukraine_negotiations.15.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.16 days = 2 } # Both SHD and Coalition are livid and threaten to end the talks
 		}
@@ -5162,6 +5302,16 @@ country_event = { # Both SHD and Coalition are livid and threaten to end the tal
 	option = { # Ignore them
 		log = "[GetLogInfo]: event ukraine_negotiations.16 option ukraine_negotiations.16.a"
 		name = ukraine_negotiations.16.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.17 days = 4 } # SHD and Coalition shut down talks
 		}
@@ -5169,6 +5319,16 @@ country_event = { # Both SHD and Coalition are livid and threaten to end the tal
 	option = { # Try to calm them: electoral relugations will make national elections unwinnable for leftists
 		log = "[GetLogInfo]: event ukraine_negotiations.16 option ukraine_negotiations.16.b"
 		name = ukraine_negotiations.16.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.18 days = 4 } # This is all leaked to VDR
 		}
@@ -5176,6 +5336,16 @@ country_event = { # Both SHD and Coalition are livid and threaten to end the tal
 	option = { # Allow participation of leftists with two caveats
 		log = "[GetLogInfo]: event ukraine_negotiations.16 option ukraine_negotiations.16.c"
 		name = ukraine_negotiations.16.c
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.19 days = 4 } # Literary Society
 		}
@@ -5227,6 +5397,16 @@ country_event = { # The Socialist Book Club
 	option = { # Leave it be
 		log = "[GetLogInfo]: event ukraine_negotiations.19 option ukraine_negotiations.19.a"
 		name = ukraine_negotiations.19.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = -20
 		add_stability = -0.02
 		add_popularity = {
@@ -5240,12 +5420,21 @@ country_event = { # The Socialist Book Club
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.20 days = 2 } # Full legislative control over executive
 		}
-
 	}
 
 	option = { # Shut it down
 		log = "[GetLogInfo]: event ukraine_negotiations.19 option ukraine_negotiations.19.b"
 		name = ukraine_negotiations.19.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_political_power = 10
 		add_stability = 0.01
 		add_popularity = {
@@ -5273,6 +5462,16 @@ country_event = { # Full legislative control over executive
 	option = { # Agree
 		log = "[GetLogInfo]: event ukraine_negotiations.20 option ukraine_negotiations.20.a"
 		name = ukraine_negotiations.20.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.21 days = 3 } # Hetman and SHD shut down talks
 		}
@@ -5280,6 +5479,16 @@ country_event = { # Full legislative control over executive
 	option = { # Disagree
 		log = "[GetLogInfo]: event ukraine_negotiations.20 option ukraine_negotiations.20.b"
 		name = ukraine_negotiations.20.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations.22 days = 3 } # Counterproposal from VDR
 		}
@@ -5290,10 +5499,10 @@ country_event = { # Hetman and SHD shut down talks
 	id = ukraine_negotiations.21
 	title = ukraine_negotiations.21.t
 	desc = ukraine_negotiations.21.d
-	picture = GFX_report_event_generic_conference1
+	picture = GFX_report_event_UKR_pavlo_skoropadskyi_writing
+
 	is_triggered_only = yes
 	fire_only_once = yes
-	picture = GFX_report_event_UKR_pavlo_skoropadskyi_writing
 
 	option = {
 		log = "[GetLogInfo]: event ukraine_negotiations.21 option ukraine_negotiations.21.a"
@@ -6139,9 +6348,21 @@ country_event = { # Starts Parliamentary Hetmanate Mechanic
 			country_event = { id = ukraine_danylo.15 days = 100 }
 			country_event = { id = ukraine_danylo.16 days = 170 }
 		}
-		set_variable = { UKR_vdr_strength = 20 }
-		set_variable = { UKR_opposition_strength = 40 }
-
+		if = {
+			limit = {
+				is_ai = yes
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+			set_variable = { UKR_vdr_strength = 40 }
+			set_variable = { UKR_opposition_strength = 0 }	### Only for AI w/ game rules
+		}
+		else = {
+			set_variable = { UKR_vdr_strength = 20 }
+			set_variable = { UKR_opposition_strength = 40 }	### For everything else
+		}
 	}
 }
 
@@ -6181,6 +6402,16 @@ country_event = { #Question of the Hetman's Authority
 	option = { #The Hetman should be a symbolic position
 		log = "[GetLogInfo]: event ukraine_danylo.4 option ukraine_danylo.4.a"
 		name = ukraine_danylo.4.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_to_variable = { UKR_vdr_strength = 20 }
 		clamp_variable = {
 			var = UKR_vdr_strength
@@ -6199,6 +6430,7 @@ country_event = { #Question of the Hetman's Authority
 	option = { #The Hetman should keep some powers
 		log = "[GetLogInfo]: event ukraine_danylo.4 option ukraine_danylo.4.b"
 		name = ukraine_danylo.4.b
+		ai_chance = { base = 100 }
 		add_to_variable = { UKR_vdr_strength = -20 }
 		clamp_variable = {
 			var = UKR_vdr_strength
@@ -6228,6 +6460,13 @@ country_event = { #Borotbists attack train
 			OR = {
 				has_completed_focus = UKR_defang_the_borotbists
 				has_completed_focus = UKR_support_the_usdrp
+			}
+			AND = {
+				is_ai = yes
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
 			}
 		}
 		has_active_mission = UKR_complete_the_reforms
@@ -6271,6 +6510,13 @@ country_event = { # SHD Offers to Take Care of Borotbists
 		NOT = {
 			has_completed_focus = UKR_defang_the_borotbists
 			has_active_mission = UKR_complete_the_reforms
+			AND = {
+				is_ai = yes
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
 		}
 	}
 
@@ -6359,6 +6605,16 @@ country_event = { #VSZV visits the Hetman
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.9 option ukraine_danylo.9.a"
 		name = ukraine_danylo.9.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_to_variable = { UKR_opposition_strength = -15 }
 		clamp_variable = {
 			var = UKR_opposition_strength
@@ -6373,6 +6629,16 @@ country_event = { #VSZV visits the Hetman
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.9 option ukraine_danylo.9.b"
 		name = ukraine_danylo.9.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_to_variable = { UKR_vdr_strength = 20 }
 		clamp_variable = {
 			var = UKR_vdr_strength
@@ -6384,6 +6650,16 @@ country_event = { #VSZV visits the Hetman
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.9 option ukraine_danylo.9.c"
 		name = ukraine_danylo.9.c
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 100
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_to_variable = { UKR_opposition_strength = -10 }
 		clamp_variable = {
 			var = UKR_opposition_strength
@@ -6397,7 +6673,7 @@ country_event = { #VSZV visits the Hetman
 			min = 0
 			max = 100
 		}
-		custom_effect_tooltip = UKR_strengthen_the_vdr_slight
+		custom_effect_tooltip = UKR_weaken_the_vdr_slight
 	}
 }
 
@@ -6437,6 +6713,7 @@ country_event = { #Question of the Administration
 	option = { #More Powers to the Lands
 		log = "[GetLogInfo]: event ukraine_danylo.12 option ukraine_danylo.12.a"
 		name = ukraine_danylo.12.a
+		ai_chance = { base = 100 }
 		add_to_variable = { UKR_vdr_strength = 20 }
 		clamp_variable = {
 			var = UKR_vdr_strength
@@ -6448,6 +6725,16 @@ country_event = { #Question of the Administration
 	option = { #Keep some of the old administration
 		log = "[GetLogInfo]: event ukraine_danylo.12 option ukraine_danylo.12.b"
 		name = ukraine_danylo.12.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_to_variable = { UKR_opposition_strength = -10 }
 		clamp_variable = {
 			var = UKR_opposition_strength
@@ -6477,6 +6764,16 @@ country_event = { ###Pavlo Skoropadskyi's Funeral
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.13 option ukraine_danylo.13.a"
 		name = ukraine_danylo.13.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_to_variable = { UKR_opposition_strength = 10 }
 		clamp_variable = {
 			var = UKR_opposition_strength
@@ -6490,6 +6787,7 @@ country_event = { ###Pavlo Skoropadskyi's Funeral
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.13 option ukraine_danylo.13.b"
 		name = ukraine_danylo.13.b
+		ai_chance = { base = 100 }
 		add_to_variable = { UKR_vdr_strength = 20 }
 		clamp_variable = {
 			var = UKR_vdr_strength
@@ -6534,6 +6832,16 @@ country_event = { ###Direction of the UDKhP
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.15 option ukraine_danylo.15.a"
 		name = ukraine_danylo.15.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		add_to_variable = { UKR_opposition_strength = 10 }
 		clamp_variable = {
 			var = UKR_opposition_strength
@@ -6546,6 +6854,7 @@ country_event = { ###Direction of the UDKhP
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.15 option ukraine_danylo.15.b"
 		name = ukraine_danylo.15.b
+		ai_chance = { base = 100 }
 		add_to_variable = { UKR_vdr_strength = -10 }
 		clamp_variable = {
 			var = UKR_vdr_strength
@@ -6759,6 +7068,13 @@ country_event = { #Post-War Elections
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.23 option ukraine_danylo.23.a"
 		name = ukraine_danylo.23.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+			}
+		}
 		set_politics = {
 			ruling_party = var:current_party_ideology_group
 			election_frequency = 48
@@ -6766,7 +7082,7 @@ country_event = { #Post-War Elections
 		}
 		add_popularity = {
 			ideology = social_liberal
-			popularity = 0.2
+			popularity = 0.1
 		}
 		hidden_effect = {
 			country_event = { id = ukraine.76 days = 7 }
@@ -6775,6 +7091,16 @@ country_event = { #Post-War Elections
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.23 option ukraine_danylo.23.b"
 		name = ukraine_danylo.23.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+				}
+			}
+		}
 		set_politics = {
 			ruling_party = var:current_party_ideology_group
 			election_frequency = 48
@@ -6784,11 +7110,11 @@ country_event = { #Post-War Elections
 		add_to_coalition = yes
 		add_popularity = {
 			ideology = social_liberal
-			popularity = 0.2
+			popularity = 0.1
 		}
 		add_popularity = {
 			ideology = social_conservative
-			popularity = 0.1
+			popularity = 0.05
 		}
 		activate_advisor = UKR_dmytro_doroshenko_sic
 		hidden_effect = {
@@ -6798,6 +7124,13 @@ country_event = { #Post-War Elections
 	option = {
 		log = "[GetLogInfo]: event ukraine_danylo.23 option ukraine_danylo.23.c"
 		name = ukraine_danylo.23.c
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+			}
+		}
 		set_politics = {
 			ruling_party = social_democrat
 			election_frequency = 48
@@ -6805,7 +7138,7 @@ country_event = { #Post-War Elections
 		}
 		add_popularity = {
 			ideology = social_democrat
-			popularity = 0.2
+			popularity = 0.1
 		}
 		activate_advisor = UKR_opanas_fedenko_sic
 		set_temp_variable = { coalition_partner_var = token:social_liberal }
@@ -6983,61 +7316,51 @@ country_event = { #End to Sickening, Disgusting Evil PARLIAMENTARISM
 	option = { #Parties renamed
 		log = "[GetLogInfo]: event ukraine_coalition.5 option ukraine_coalition.5.a"
 		name = ukraine_coalition.5.a
-		set_politics = {
-			ruling_party = authoritarian_democrat
-			elections_allowed = no
-		}
 		add_popularity = {
 			ideology = authoritarian_democrat
 			popularity = 0.05
 		}
 		if = {
-			limit = {
-				social_conservative < 0.05
-			}
+			limit = { social_conservative < 0.05 }
 			add_stability = 0.05
 			add_to_variable = { UKR_uskhd_points = 1 }
 		}
 		hidden_effect = {
 			set_party_name = {
 				ideology = social_liberal
-				long_name = UKR_social_liberal_party_long2
-				name = UKR_social_liberal_party2
+				long_name = UKR_hetman_opposition_party_long
+				name = UKR_hetman_opposition_party
 			}
 			if = {
-				limit = {
-					has_completed_focus = UKR_end_alliance_with_vszv_protofis
-				}
+				limit = { has_completed_focus = UKR_end_alliance_with_vszv_protofis }
 				set_party_name = {
 					ideology = market_liberal
-					long_name = UKR_market_liberal_party_long4
-					name = UKR_market_liberal_party4
+					long_name = UKR_hetman_opposition_party
+					name = UKR_hetman_opposition_party_long
 				}
 			}
 			else_if = {
-				limit = {
-					has_completed_focus = UKR_necessary_compromise
-				}
+				limit = { has_completed_focus = UKR_necessary_compromise }
 				set_party_name = {
 					ideology = market_liberal
-					long_name = UKR_market_liberal_party_long5
-					name = UKR_market_liberal_party5
+					long_name = UKR_hetman_government_party_long
+					name = UKR_hetman_government_party
 				}
 			}
 			set_party_name = {
 				ideology = social_conservative
-				long_name = UKR_social_conservative_party_long4
-				name = UKR_social_conservative_party4
+				long_name = UKR_hetman_government_party_long
+				name = UKR_hetman_government_party
 			}
 			set_party_name = {
 				ideology = paternal_autocrat
-				long_name = UKR_paternal_autocrat_party_long4
-				name = UKR_paternal_autocrat_party4
+				long_name = UKR_hetman_opposition_party_long
+				name = UKR_hetman_opposition_party
 			}
 			set_party_name = {
 				ideology = authoritarian_democrat
-				long_name = UKR_authoritarian_democrat_party_long6
-				name = UKR_authoritarian_democrat_party6
+				long_name = UKR_hetman_government_party_long
+				name = UKR_hetman_government_party
 			}
 		}
 	}
@@ -7547,21 +7870,27 @@ country_event = { #Elections Announced
 		log = "[GetLogInfo]: event ukraine_coalition.24 option ukraine_coalition.24.a"
 		name = ukraine_coalition.24.a
 		if = {
-			limit = { has_game_rule = { rule = UKR_path option = UKR_PATH_USKHD_AUTDEM } }
-			set_country_flag = UKR_uskhd_ai
-		}
-		else_if = {
-			limit = {
-				has_game_rule = { rule = UKR_path option = UKR_PATH_UDKHP_AUTDEM }
-			} #no flag needed here
-		}
-		else = {
-			hidden_effect = {
-				random_list = { #Tells the AI whether to go UDKhP or USKhD
-					60 = { #no flag needed here
-					}
-					40 = {
-						set_country_flag = UKR_uskhd_ai
+			limit = { is_ai = yes }
+			if = {
+				limit = { has_game_rule = { rule = UKR_path option = UKR_PATH_USKHD_AUTDEM } }
+				set_country_flag = UKR_uskhd_ai
+			}
+			else = {
+				hidden_effect = {
+					random_list = { #Tells the AI whether to go UDKhP or USKhD
+						60 = {} #no flag needed here
+						40 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_game_rule = { rule = UKR_path option = UKR_PATH_UDKHP_AUTDEM }
+									has_game_rule = { rule = UKR_path option = UKR_PATH_SOCCON }
+									has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+									has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
+								}
+							}
+							set_country_flag = UKR_uskhd_ai
+						}
 					}
 				}
 			}
@@ -7685,7 +8014,6 @@ country_event = { #New UDKhP Leadership?
 
 country_event = { #Death of Kistiakovskyi
 	id = ukraine_coalition.29
-	trigger = { has_government = authoritarian_democrat }
 	title = ukraine_coalition.29.t
 	desc = {
 		trigger = { NOT = { has_global_flag = GER_stay_out_france_uk } }
@@ -8144,7 +8472,7 @@ country_event = { #Question of USKhD and UDKhP
 	option = { #Fully integrate
 		log = "[GetLogInfo]: event ukraine_shd.3 option ukraine_shd.3.a"
 		name = ukraine_shd.3.a
-		add_stability = -0.10
+		add_stability = -0.12
 		custom_effect_tooltip = UKR_integrate_organisations_full
 		hidden_effect = {
 			set_temp_variable = { UKR_new_pataut = party_popularity_100@paternal_autocrat }
@@ -8181,7 +8509,7 @@ country_event = { #Question of USKhD and UDKhP
 	option = { #Somewhat integrate
 		log = "[GetLogInfo]: event ukraine_shd.3 option ukraine_shd.3.b"
 		name = ukraine_shd.3.b
-		add_stability = -0.05
+		add_stability = -0.06
 		custom_effect_tooltip = UKR_integrate_organisations_half
 		hidden_effect = {
 			set_temp_variable = { UKR_new_authdem = UKR.party_popularity_100@authoritarian_democrat }
@@ -8222,7 +8550,6 @@ country_event = { #Question of USKhD and UDKhP
 	option = { #Don't integrate
 		log = "[GetLogInfo]: event ukraine_shd.3 option ukraine_shd.3.c"
 		name = ukraine_shd.3.c
-		add_stability = 0.06
 	}
 }
 
@@ -8253,7 +8580,7 @@ country_event = { #SHD Party Congress
 	option = { #Homzyn
 		log = "[GetLogInfo]: event ukraine_shd.5 option ukraine_shd.5.a"
 		name = ukraine_shd.5.a
-		add_stability = 0.05
+		add_stability = 0.04
 	}
 	option = { #P-O
 		log = "[GetLogInfo]: event ukraine_shd.5 option ukraine_shd.5.b"
@@ -8290,7 +8617,7 @@ country_event = { #Establishment of Hereditary Monarchy
 	option = { # Empower Great Cossack Rada
 		log = "[GetLogInfo]: event ukraine_shd.6 option ukraine_shd.6.b"
 		name = ukraine_shd.6.b
-		add_stability = 0.05
+		add_stability = 0.04
 
 	}
 }
@@ -8374,7 +8701,7 @@ country_event = { #Pro-Homzyn Event 2
 	title = ukraine_shd.10.t
 	desc = ukraine_shd.10.d
 	is_triggered_only = yes
-	picture = GFX_report_event_UKR_homzyn
+	picture = GFX_report_event_UKR_borys_homzyn
 	trigger = { has_government = paternal_autocrat }
 
 	option = {
@@ -8422,6 +8749,7 @@ country_event = { #Crimean Autonomy Abolished
 				modifier = UKR_crimean_autonomy
 			}
 		}
+		add_stability = -0.02
 	}
 }
 
@@ -9389,7 +9717,7 @@ country_event = { #Election Results
 		}
 
 		country_event = { id = ukraine_republican.13 days = 1 } #Forming the New Government
-		custom_effect_tooltip = tooltip_white_line 
+		custom_effect_tooltip = tooltip_white_line
 		custom_effect_tooltip = UKR_fight_and_you_will_overcome_tt
 
 		clr_country_flag = UKR_elections_in_progress
@@ -9707,8 +10035,8 @@ country_event = { #Election - Land reform promises
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_SYNDIE }
 				}
 			}
@@ -9759,8 +10087,8 @@ country_event = { #Election - Land reform promises #2
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 				}
 			}
 		}
@@ -9833,8 +10161,8 @@ country_event = { #Democracy v socialism
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_SYNDIE }
 				}
 			}
@@ -9884,7 +10212,7 @@ country_event = { #URDP Under Scrutiny
 				factor = 0
 				OR = {
 					has_game_rule = { rule = UKR_path option = UKR_PATH_RADSOC }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 				}
 			}
 		}
@@ -9902,7 +10230,7 @@ country_event = { #URDP Under Scrutiny
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
+				has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
 			}
 		}
 		custom_effect_tooltip = UKR_republic_radicals_lose_pop_tt
@@ -9931,7 +10259,7 @@ country_event = { #Tapping into the Trade Unions
 				factor = 0
 				OR = {
 					has_game_rule = { rule = UKR_path option = UKR_PATH_RADSOC }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
 				}
 			}
 		}
@@ -10164,6 +10492,12 @@ country_event = { #Petliura's Proclamation
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.54 option ukraine_republican.54.a"
 		name = ukraine_republican.54.a
+		hidden_effect = { #Extra check to remove leftover DMZs that stay if one is created the same hour as revolt is won
+			every_owned_state = {
+				limit = { is_demilitarized_zone = yes }
+				set_demilitarized_zone = no
+			}
+		}
 	}
 }
 
@@ -10242,13 +10576,8 @@ country_event = { #UKR-WHR-POL cooperation for UKR
 					target = ROOT
 				}
 			}
-			hidden_effect = { country_event = { id = ukraine_republican.62 days = 30 } }
 		}
-		hidden_effect = {
-			set_variable = { UKR_small_pact_pp = 20 }
-			country_event = { id = ukraine_republican.62 days = 30 }
-			GER = { country_event = { id = ukraine_republican.63 days = 40 } }
-		}
+		set_variable = { UKR_small_pact_pp = 20 }
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.60 option ukraine_republican.60.b"
@@ -10263,6 +10592,8 @@ country_event = { #UKR-WHR-POL cooperation for others
 	is_triggered_only = yes
 	picture = GFX_report_event_generic_diplomacy3
 
+	immediate = { set_country_flag = UKR_small_pact_awaiting_response }
+
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.61 option ukraine_republican.61.a"
 		name = ukraine_republican.61.a
@@ -10271,12 +10602,44 @@ country_event = { #UKR-WHR-POL cooperation for others
 			modifier = KR_trade_agreement
 			target = FROM
 		}
-		hidden_effect = { UKR = { add_to_variable = { UKR_small_pact_pp = 20 } } }
+		hidden_effect = {
+			clr_country_flag = UKR_small_pact_awaiting_response
+			UKR = {
+				add_to_variable = { UKR_small_pact_pp = 20 }
+				if = {
+					limit = {
+						check_variable = { UKR_small_pact_pp > 20 }
+						NOT = {
+							POL = { has_country_flag = UKR_small_pact_awaiting_response }
+							WHR = { has_country_flag = UKR_small_pact_awaiting_response }
+							LIT = { has_country_flag = UKR_small_pact_awaiting_response }
+						}
+					}
+					country_event = ukraine_republican.62
+				}
+			}
+		}
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.61 option ukraine_republican.61.b"
 		name = ukraine_republican.61.b
 		ai_chance = { factor = 0 }
+		hidden_effect = {
+			clr_country_flag = UKR_small_pact_awaiting_response
+			UKR = {
+				if = {
+					limit = {
+						check_variable = { UKR_small_pact_pp > 20 }
+						NOT = {
+							POL = { has_country_flag = UKR_small_pact_awaiting_response }
+							WHR = { has_country_flag = UKR_small_pact_awaiting_response }
+							LIT = { has_country_flag = UKR_small_pact_awaiting_response }
+						}
+					}
+					country_event = ukraine_republican.62
+				}
+			}
+		}
 	}
 }
 country_event = { #UKR-WHR-POL pact done
@@ -10284,7 +10647,6 @@ country_event = { #UKR-WHR-POL pact done
 	title = ukraine_republican.62.t
 	desc = ukraine_republican.62.d
 	is_triggered_only = yes
-	fire_only_once = yes
 	picture = GFX_report_event_generic_conference4
 
 	option = {
@@ -10292,6 +10654,7 @@ country_event = { #UKR-WHR-POL pact done
 		name = ukraine_republican.62.a
 		add_political_power = UKR_small_pact_pp
 		add_ideas = UKR_EE_cooperation
+		GER = { country_event = ukraine_republican.63 }
 	}
 }
 
@@ -10344,6 +10707,22 @@ country_event = { #Join the Small Pact?
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.65 option ukraine_republican.65.a"
 		name = ukraine_republican.65.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						tag = BUL
+						NOT = { has_game_rule = { rule = BUL_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = EST
+						NOT = { has_game_rule = { rule = EST_forpol option = DEFAULT } }
+					}
+				}
+			}
+		}
 		add_political_power = 75
 		UKR = { add_to_faction = ROOT }
 		if = {
@@ -10357,7 +10736,22 @@ country_event = { #Join the Small Pact?
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.65 option ukraine_republican.65.b"
 		name = ukraine_republican.65.b
-		ai_chance = { factor = 0 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					AND = {
+						tag = BUL
+						NOT = { has_game_rule = { rule = BUL_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = EST
+						NOT = { has_game_rule = { rule = EST_forpol option = DEFAULT } }
+					}
+				}
+			}
+		}
 	}
 }
 country_event = { #GER meddle in Ukrainian elections?
@@ -10395,7 +10789,7 @@ country_event = { #Question of national defence
 				factor = 0
 				OR = {
 					has_game_rule = { rule = UKR_path option = UKR_PATH_RADSOC }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 				}
 			}
 		}
@@ -10412,7 +10806,7 @@ country_event = { #Question of national defence
 				factor = 0
 				OR = {
 					has_game_rule = { rule = UKR_path option = UKR_PATH_RADSOC }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
 				}
 			}
 		}
@@ -10610,7 +11004,6 @@ country_event = { #Galician negotiations for AUS from UKR
 		}
 		set_country_flag = UKR_AUS_Split
 		AUS = { country_event = poland.246 }
-		POL = { country_event = poland.249 }
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.100 option ukraine_republican.100.c"
@@ -10721,7 +11114,6 @@ country_event = { #Postwar elections
 	immediate = {
 		hidden_effect = {
 			hold_election = ROOT
-			country_event = { id = ukraine_republican.76 days = 1 } #Chairman
 			country_event = { id = ukraine_republican.75 days = 1460 } #Next elections
 		}
 	}
@@ -10734,7 +11126,7 @@ country_event = { #Postwar elections
 			base = 100
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+				has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 			}
 		}
 		set_politics = {
@@ -10782,6 +11174,9 @@ country_event = { #Postwar elections
 				popularity = 0.05
 			}
 		}
+		hidden_effect = {
+			country_event = { id = ukraine_republican.76 days = 1 } #Chairman
+		}
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.75 option ukraine_republican.75.b"
@@ -10790,7 +11185,7 @@ country_event = { #Postwar elections
 			base = 100
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+				has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 			}
 		}
 		set_politics = {
@@ -10813,6 +11208,9 @@ country_event = { #Postwar elections
 			ideology = social_democrat
 			popularity = 0.05
 		}
+		hidden_effect = {
+			country_event = { id = ukraine_republican.76 days = 1 } #Chairman
+		}
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.75 option ukraine_republican.75.c"
@@ -10821,7 +11219,7 @@ country_event = { #Postwar elections
 			base = 100
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
+				has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
 			}
 		}
 		set_politics = {
@@ -10844,6 +11242,9 @@ country_event = { #Postwar elections
 			ideology = social_democrat
 			popularity = 0.1
 		}
+		hidden_effect = {
+			country_event = { id = ukraine_republican.76 days = 1 } #Chairman
+		}
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican.75 option ukraine_republican.75.e"
@@ -10852,7 +11253,7 @@ country_event = { #Postwar elections
 			base = 100
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
+				has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
 			}
 		}
 		set_politics = {
@@ -10899,6 +11300,9 @@ country_event = { #Postwar elections
 				ideology = radical_socialist
 				popularity = 0.05
 			}
+		}
+		hidden_effect = {
+			country_event = { id = ukraine_republican.76 days = 1 } #Chairman
 		}
 	}
 }
@@ -11112,7 +11516,6 @@ news_event = { #News Event
 		NOT = {
 			tag = UKR
 		}
-
 	}
 
 	option = {
@@ -11136,11 +11539,9 @@ news_event = { #News Event
 	option = {
 		trigger = {
 			NOT = {
-				OR = {
-					tag = GER
-					tag = RUS
-					has_socialist_government = yes
-				}
+				tag = GER
+				tag = RUS
+				has_socialist_government = yes
 			}
 		}
 		name = ukraine_republican.200.e
@@ -11365,6 +11766,9 @@ country_event = { #LUN expands
 					promote_leader = yes
 				}
 			}
+			activate_targeted_decision = { target = ROOT decision = UKR_work_with_mil }
+			activate_targeted_decision = { target = ROOT decision = UKR_work_with_mod }
+			activate_targeted_decision = { target = ROOT decision = UKR_compromise_old_guard }
 		}
 	}
 }
@@ -11478,6 +11882,7 @@ country_event = { #LUN warning, fifth event
 		}
 		custom_effect_tooltip = UKR_radicals_could_takeover_tt
 		add_war_support = 0.02
+		country_event = { id = ukraine_lun.26 days = 185 }
 	}
 }
 
@@ -11523,7 +11928,7 @@ country_event = { #LUN warning, sixth event
 			remove_idea = UKR_nationalist_agitation_2
 			add_idea = UKR_nationalist_agitation
 		}
-		hidden_effect = { country_event = { id = ukraine_lun.26 days = 90 } }
+		hidden_effect = { country_event = { id = ukraine_lun.26 days = 30 } }
 		set_country_flag = UKR_coup_not_backed
 	}
 }
@@ -11597,9 +12002,6 @@ country_event = { #LUN coup part 2
 			add_dynamic_modifier = { modifier = UKR_lun_mechanic_modifier }
 			activate_advisor = UKR_the_soim_sic #1111 Replace with unique SiC if advisor in the future works for this
 			activate_targeted_decision = { target = ROOT decision = UKR_cohesion_increase }
-			activate_targeted_decision = { target = ROOT decision = UKR_work_with_mil }
-			activate_targeted_decision = { target = ROOT decision = UKR_work_with_mod }
-			activate_targeted_decision = { target = ROOT decision = UKR_compromise_old_guard }
 			set_temp_variable = { LUN_bonus_PP = days_mission_timeout@UKR_landreform_mission }
 			add_to_temp_variable = { var = LUN_bonus_PP value = days_mission_timeout@UKR_industrialisation_mission }
 			multiply_temp_variable = { var = LUN_bonus_PP value = 0.1 }
@@ -11607,6 +12009,17 @@ country_event = { #LUN coup part 2
 			add_political_power = LUN_bonus_PP
 			news_event = { id = ukraine_lun.100 days = 1 }
 			GER = { country_event = { id = ukraine_forpol.15 days = 1 } } #Negotiations with Germany
+			set_party_name = {
+				ideology = market_liberal
+				long_name = UKR_market_liberal_party_long2
+				name = UKR_market_liberal_party2
+			}
+			UKR_oleksandr_shulhyn = {
+				add_country_leader_role = {
+					country_leader = { ideology = market_liberal_subtype }
+					promote_leader = yes
+				}
+			}
 		}
 		complete_national_focus = UKR_triumph_of_the_national_revolution
 		set_politics = { ruling_party = national_populist elections_allowed = no }
@@ -11615,9 +12028,7 @@ country_event = { #LUN coup part 2
 		clr_country_flag = UKR_authdem_tree
 		set_country_flag = UKR_LUN_tree
 		mark_focus_tree_layout_dirty = yes
-		set_variable = { UKR_lun_mechanic_army_attack = 0 }
 		set_variable = { UKR_lun_mechanic_stability = 0 }
-		set_variable = { UKR_lun_mechanic_war_support = 0 }
 		set_variable = { UKR_lun_mechanic_political_power = 0 }
 		set_variable = { UKR_lun_mechanic_factory_output = 0 }
 		force_update_dynamic_modifier = yes
@@ -11735,41 +12146,41 @@ country_event = { #LUN coup part 2
 		if = {
 			limit = { check_variable = { UKR_industrial_score < 30 } }
 			swap_ideas = {
-				remove_idea = UKR_halted_industrialization_plans
+				remove_idea = UKR_halted_industrialisation_plans
 				add_idea = UKR_lun_industrialisation_1
 			}
 		}
 		else_if = {
 			limit = { check_variable = { UKR_industrial_score < 45 } }
 			swap_ideas = {
-				remove_idea = UKR_halted_industrialization_plans
+				remove_idea = UKR_halted_industrialisation_plans
 				add_idea = UKR_lun_industrialisation_2
 			}
 		}
 		else_if = {
 			limit = { check_variable = { UKR_industrial_score < 60 } }
 			swap_ideas = {
-				remove_idea = UKR_halted_industrialization_plans
+				remove_idea = UKR_halted_industrialisation_plans
 				add_idea = UKR_lun_industrialisation_3
 			}
 		}
 		else_if = {
 			limit = { check_variable = { UKR_industrial_score < 75 } }
 			swap_ideas = {
-				remove_idea = UKR_halted_industrialization_plans
+				remove_idea = UKR_halted_industrialisation_plans
 				add_idea = UKR_lun_industrialisation_4
 			}
 		}
 		else_if = {
 			limit = { check_variable = { UKR_industrial_score < 90 } }
 			swap_ideas = {
-				remove_idea = UKR_halted_industrialization_plans
+				remove_idea = UKR_halted_industrialisation_plans
 				add_idea = UKR_lun_industrialisation_5
 			}
 		}
 		else = {
 			swap_ideas = {
-				remove_idea = UKR_halted_industrialization_plans
+				remove_idea = UKR_halted_industrialisation_plans
 				add_idea = UKR_lun_industrialisation_6
 			}
 		}
@@ -11949,6 +12360,41 @@ country_event = { #Invitation to BSU
 					is_in_faction_with = ENT
 				}
 			}
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						tag = ALB
+						NOT = { has_game_rule = { rule = ALB_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = BUL
+						NOT = { has_game_rule = { rule = BUL_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = GRE
+						NOT = { has_game_rule = { rule = GRE_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_KEEP } }
+					}
+					AND = {
+						tag = OTT
+						NOT = { has_game_rule = { rule = OTT_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = ROM
+						NOT = { has_game_rule = { rule = BPL_dissolution option = DEFAULT } }
+					}
+					AND = {
+						tag = SER
+						NOT = { has_game_rule = { rule = BPL_dissolution option = DEFAULT } }
+					}
+					AND = {
+						tag = TUR
+						NOT = { has_country_flag = TUR_is_ottomans }
+						NOT = { has_game_rule = { rule = TUR_forpol option = DEFAULT } }
+					}
+				}
+			}
 		}
 		add_ideas = UKR_black_sea_member_idea
 		UKR = {
@@ -12016,6 +12462,41 @@ country_event = { #Invitation to BSU
 			modifier = {
 				add = 8
 				is_in_faction_with = GER
+			}
+			modifier = {
+				add = 100
+				OR = {
+					AND = {
+						tag = ALB
+						NOT = { has_game_rule = { rule = ALB_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = BUL
+						NOT = { has_game_rule = { rule = BUL_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = GRE
+						NOT = { has_game_rule = { rule = GRE_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_KEEP } }
+					}
+					AND = {
+						tag = OTT
+						NOT = { has_game_rule = { rule = OTT_forpol option = DEFAULT } }
+					}
+					AND = {
+						tag = ROM
+						NOT = { has_game_rule = { rule = BPL_dissolution option = DEFAULT } }
+					}
+					AND = {
+						tag = SER
+						NOT = { has_game_rule = { rule = BPL_dissolution option = DEFAULT } }
+					}
+					AND = {
+						tag = TUR
+						NOT = { has_country_flag = TUR_is_ottomans }
+						NOT = { has_game_rule = { rule = TUR_forpol option = DEFAULT } }
+					}
+				}
 			}
 		}
 		FROM = { country_event = ukraine_lun.53 }
@@ -12214,11 +12695,9 @@ news_event = { #News Event about Coup
 	option = {
 		trigger = {
 			NOT = {
-				OR = {
-					tag = RUS
-					tag = GER
-					has_socialist_government = yes
-				}
+				tag = RUS
+				tag = GER
+				has_socialist_government = yes
 			}
 		}
 		name = ukraine_lun.100.e
@@ -12945,7 +13424,6 @@ country_event = { # Bloc lets Borotbists into Parliament, They jointly dissolve 
 					}
 					AUS = { country_event = { id = ukraine_forpol.32 days = 5 } }
 				}
-				activate_targeted_decision = { target = SOV decision = UKR_join_moscow }
 			}
 			else_if = {
 				limit = {
@@ -13008,7 +13486,6 @@ country_event = { # Bloc lets Borotbists into Parliament, They jointly dissolve 
 					}
 					AUS = { country_event = { id = ukraine_forpol.32 days = 5 } }
 				}
-				activate_targeted_decision = { target = SOV decision = UKR_join_moscow }
 			}
 			mark_focus_tree_layout_dirty = yes
 			country_event = { id = ukraine_borotbist.73 days = 3 }
@@ -13059,6 +13536,7 @@ country_event = { # Borotbists storm the Parliament but are pushed back
 	option = {
 		log = "[GetLogInfo]: event ukraine_borotbist.39 option ukraine_borotbist.39.b"
 		name = ukraine_borotbist.39.b
+		trigger = { NOT = { has_country_leader = { character = UKR_symon_petliura } } }
 		hidden_effect = {
 			if = {
 				limit = { has_country_leader = { character = UKR_volodymyr_vynnychenko } }
@@ -13726,41 +14204,15 @@ country_event = { # Focus (Khvyliovyi) - Latinised Alphabet
 	option = { #Return to it after the war
 		log = "[GetLogInfo]: event ukraine_borotbist.66 option ukraine_borotbist.66.c"
 		name = ukraine_borotbist.66.c
-		trigger = {
-			OR = {
-				has_war_with = GER
-				has_war_with = RUS
-			}
-		}
-		add_political_power = -10
-		hidden_effect = {
-			country_event = { id = ukraine_borotbist.68 days = 60 } #Check is war has ended (2 months?)
-			country_event = { id = ukraine_borotbist.67 days = 30 }
-		}
-	}
-
-	option = { #Agree
-		log = "[GetLogInfo]: event ukraine_borotbist.66 option ukraine_borotbist.66.e"
-		name = ukraine_borotbist.66.e
-		trigger = {
-			NOT = {
-				has_war_with = GER
-				has_war_with = RUS
-			}
-		}
-		add_stability = -0.05
-		add_political_power = -50
+		add_political_power = -40
 		add_popularity = {
 			ideology = syndicalist
 			popularity = -0.02
 		}
 		UKR_syndie_khvyliovyi_buff = yes
 		hidden_effect = {
-			subtract_from_variable = {
-				var = UKR_khvyliovyi_anger_variable
-				value = -2
-			}
-			country_event = { id = ukraine_borotbist.68 days = 30 } #Check is war has ended (2 months?)
+			country_event = { id = ukraine_borotbist.68 days = 150 } #Check is war has ended/not started yet (5 months)
+			country_event = { id = ukraine_borotbist.67 days = 30 }
 		}
 	}
 }
@@ -13954,21 +14406,21 @@ country_event = { # Help of Ukapists
 		hidden_effect = {
 			228 = {
 				create_unit = {
-					division = "division_template = \"Chervoni Kozaky\" name = \"Starobilska Chervonoho Kozatstva Kavaleriiska Dyviziia\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Starobilska Chervonoho Kozatstva Kavaleriiska Dyviziia\" division_template = \"Chervoni Kozaky\" start_experience_factor = 1 start_equipment_factor = 1"
 					owner = ROOT
 					count = 1
 				}
 			}
 			227 = {
 				create_unit = {
-					division = "division_template = \"Chervoni Kozaky\" name = \"Yuzivska Chervonoho Kozatstva Kavaleriiska Dyviziia\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Yuzivska Chervonoho Kozatstva Kavaleriiska Dyviziia\" division_template = \"Chervoni Kozaky\" start_experience_factor = 1 start_equipment_factor = 1"
 					owner = ROOT
 					count = 1
 				}
 			}
 			221 = {
 				create_unit = {
-					division = "division_template = \"Chervoni Kozaky\" name = \"Kharkivska Chervonoho Kozatstva Kavaleriiska Dyviziia\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Kharkivska Chervonoho Kozatstva Kavaleriiska Dyviziia\" division_template = \"Chervoni Kozaky\" start_experience_factor = 1 start_equipment_factor = 1"
 					owner = ROOT
 					count = 1
 				}
@@ -14037,16 +14489,16 @@ country_event = { # FOCUS (Land Reform) - Komnezamy
 		add_political_power = 25
 		custom_effect_tooltip = UKR_land_reform_days_tt
 		if = {
-			limit = {
-				has_idea = UKR_borotbyst_land_reform_1
-			}
+			limit = { has_idea = UKR_borotbyst_land_reform_1 }
 			remove_ideas = UKR_borotbyst_land_reform_1
 		}
 		else_if = {
-			limit = {
-				has_idea = UKR_borotbyst_land_reform_2
-			}
+			limit = { has_idea = UKR_borotbyst_land_reform_2 }
 			remove_ideas = UKR_borotbyst_land_reform_2
+		}
+		else_if = {
+			limit = { has_idea = UKR_borotbyst_land_reform_3 }
+			remove_ideas = UKR_borotbyst_land_reform_3
 		}
 	}
 }
@@ -14424,14 +14876,12 @@ country_event = { #Russia-Ukraine peace, for RUS
 					is_controlled_by = UKR
 				}
 				NOT = {
-					OR = {
-						controls_state = 234 #Ekaterinodar
-						controls_state = 1006 #Novorossiysk
-						controls_state = 218 #Rostov
-						controls_state = 260 #Voronezh
-						controls_state = 240 #Belgorod
-						controls_state = 220 #Kursk
-					}
+					controls_state = 234 #Ekaterinodar
+					controls_state = 1006 #Novorossiysk
+					controls_state = 218 #Rostov
+					controls_state = 260 #Voronezh
+					controls_state = 240 #Belgorod
+					controls_state = 220 #Kursk
 				}
 			}
 		}
@@ -14586,6 +15036,7 @@ country_event = { #FRA decides on peace with RUS
 			exists = yes
 			has_socialist_government = yes
 			has_war_with = RUS
+			is_subject = no
 		}
 		OR = {
 			RUS = {
@@ -15042,6 +15493,9 @@ country_event = {
 		UKR = {
 			has_government = syndicalist
 			controls_state = 217 #Tsaritsyn
+			any_owned_state = {
+				NOT = { is_controlled_by = RUS }
+			}
 		}
 	}
 
@@ -15130,7 +15584,6 @@ news_event = { #Socialist Revolution News Event
 		NOT = {
 			tag = UKR
 		}
-
 	}
 
 	option = {
@@ -15170,11 +15623,9 @@ news_event = { #Socialist Revolution News Event
 	option = {
 		trigger = {
 			NOT = {
-				OR = {
-					tag = RUS
-					tag = GER
-					has_socialist_government = yes
-				}
+				tag = RUS
+				tag = GER
+				has_socialist_government = yes
 			}
 		}
 		name = ukraine_borotbist.200.g
@@ -15245,6 +15696,7 @@ country_event = { #Germany demands pre-revolution status quo
 	option = {
 		log = "[GetLogInfo]: event ukraine_forpol.16 option ukraine_forpol.16.a"
 		name = ukraine_forpol.16.a
+		ai_chance = { base = 10 }
 		add_political_power = -20
 		set_temp_variable = { ideology_change_var = 4 }
 		change_ruling_party_popularity = yes
@@ -15253,6 +15705,13 @@ country_event = { #Germany demands pre-revolution status quo
 	option = {
 		log = "[GetLogInfo]: event ukraine_forpol.16 option ukraine_forpol.16.b"
 		name = ukraine_forpol.16.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = UKR_FORPOL option = UKR_FORPOL_AUS }
+			}
+		}
 		set_temp_variable = { ideology_change_var = -2 }
 		change_ruling_party_popularity = yes
 		if = {
@@ -15273,6 +15732,7 @@ country_event = { #Germany demands more
 	option = {
 		log = "[GetLogInfo]: event ukraine_forpol.17 option ukraine_forpol.17.a"
 		name = ukraine_forpol.17.a
+		ai_chance = { base = 20 }
 		add_political_power = -20
 		set_temp_variable = { ideology_change_var = 4 }
 		change_ruling_party_popularity = yes
@@ -15281,6 +15741,13 @@ country_event = { #Germany demands more
 	option = {
 		log = "[GetLogInfo]: event ukraine_forpol.17 option ukraine_forpol.17.b"
 		name = ukraine_forpol.17.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = UKR_FORPOL option = UKR_FORPOL_AUS }
+			}
+		}
 		set_temp_variable = { ideology_change_var = -2 }
 		change_ruling_party_popularity = yes
 		if = {
@@ -15528,16 +15995,24 @@ country_event = { #AUS-GER-UKR deal
 			GER = { country_event = ukraine_forpol.23 }
 			mark_focus_tree_layout_dirty = yes
 		}
-
 	}
 	option = {
 		log = "[GetLogInfo]: event ukraine_forpol.23 option ukraine_forpol.23.b"
 		name = ukraine_forpol.23.b
-		trigger = { NOT = { tag = UKR } }
-		if = {
-			limit = { tag = AUS }
-			add_political_power = 50
+		trigger = { tag = GER }
+		effect_tooltip = {
+			AUS = { add_to_faction = UKR }
+			UKR = {
+				GER_add_to_mitteleuropa = yes
+				add_ideas = UKR_GER_deal_1
+			}
 		}
+	}
+	option = {
+		log = "[GetLogInfo]: event ukraine_forpol.23 option ukraine_forpol.23.c"
+		name = ukraine_forpol.23.c
+		trigger = { tag = AUS }
+		add_political_power = 50
 		effect_tooltip = {
 			AUS = { add_to_faction = UKR }
 			UKR = {
@@ -15821,7 +16296,6 @@ country_event = { #Germany approaches with alliance
 		log = "[GetLogInfo]: event ukraine_forpol.34 option ukraine_forpol.34.a"
 		name = ukraine_forpol.34.a
 		GER = { add_to_faction = UKR }
-
 	}
 }
 
@@ -15907,8 +16381,6 @@ country_event = { #debug for switching paths
 
 country_event = { #Hidden AI event for going radical paths
 	id = ukraine.1000
-	title = ukraine.999.t
-	desc = ukraine.999.b
 	is_triggered_only = yes
 	hidden = yes
 	fire_only_once = yes
@@ -15938,7 +16410,10 @@ country_event = { #Hidden AI event for going radical paths
 				OR = {
 					has_game_rule = { rule = UKR_path option = UKR_PATH_USKHD_AUTDEM }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_UDKHP_AUTDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCCON }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_PATAUT }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_HETMANATE_SOCDEM }
 				}
 			}
 		}
@@ -15967,8 +16442,8 @@ country_event = { #Hidden AI event for going radical paths
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCLIB }
-					has_game_rule = { rule = UKR_path option = UKR_PATH_SOCDEM }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCLIB }
+					has_game_rule = { rule = UKR_path option = UKR_PATH_REPUBLIC_SOCDEM }
 					has_game_rule = { rule = UKR_path option = UKR_PATH_RADSOC }
 				}
 			}

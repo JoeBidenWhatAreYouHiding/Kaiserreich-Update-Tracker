@@ -1,5 +1,5 @@
 ##################################################################################################################################
-# Ukraine Ideas                       									                                                     #
+# Ukraine Ideas                       																						 #
 ##################################################################################################################################
 # First Attempted Rework by ZimbabweSaltCo. with help from Alpinia and Ido                                                       #
 ##################################################################################################################################
@@ -18,8 +18,8 @@ ideas = {
 				research_speed_factor = -0.10
 			}
 		}
-		UKR_halted_industrialization_plans = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_halted_industrialization_plans" }
+		UKR_halted_industrialisation_plans = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_halted_industrialisation_plans" }
 			picture = POL_disjointed_industry
 			modifier = {
 				production_speed_buildings_factor = -0.1
@@ -164,13 +164,6 @@ ideas = {
 				war_support_weekly = -0.001
 			}
 		}
-		UKR_land_reform_bad_idea_3 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_land_reform_bad_idea_3" }
-			picture = KTG_Technological_Backwater
-			modifier = {
-				research_speed_factor = -0.15
-			}
-		}
 		###SHD Ideas###
 		UKR_knightly_virtues_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_knightly_virtues" }
@@ -184,8 +177,8 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_administrative_reorganisation" }
 			picture = generic_central_management
 			modifier = {
-				consumer_goods_factor = -0.03
 				political_power_gain = 0.07
+				industrial_capacity_factory = 0.05
 			}
 		}
 		UKR_common_interests = {
@@ -518,6 +511,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.07
 				production_factory_max_efficiency_factor = 0.05
+				consumer_goods_factor = -0.01
 			}
 		}
 		UKR_transformation_of_the_state_3 = {
@@ -527,7 +521,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.07
 				production_factory_max_efficiency_factor = 0.1
-				consumer_goods_factor = -0.025
+				consumer_goods_factor = -0.02
 			}
 		}
 		UKR_transformation_of_the_state_4 = {
@@ -537,7 +531,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.09
 				production_factory_max_efficiency_factor = 0.1
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.03
 			}
 		}
 		UKR_transformation_of_the_state_5 = {
@@ -547,7 +541,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.15
 				production_factory_max_efficiency_factor = 0.1
-				consumer_goods_factor = -0.1
+				consumer_goods_factor = -0.04
 			}
 		}
 		UKR_loyal_intelligentsia = {
@@ -1522,7 +1516,7 @@ ideas = {
 			picture = HOL_welfare_state
 			modifier = {
 				political_power_gain = 0.1
-				stability_weekly = 0.003
+				stability_weekly = 0.002
 				industrial_capacity_factory = 0.05
 			}
 		}
@@ -1747,7 +1741,7 @@ ideas = {
 			modifier = {
 				production_speed_arms_factory_factor = 0.1
 				industrial_capacity_factory = 0.1
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.04
 			}
 		}
 		UKR_industrialisation_protofis_6 = { # Very Good Industrialisation Progress - Hetmanate + Protofis
@@ -1757,7 +1751,7 @@ ideas = {
 			modifier = {
 				production_speed_arms_factory_factor = 0.12
 				industrial_capacity_factory = 0.12
-				consumer_goods_factor = -0.08
+				consumer_goods_factor = -0.05
 			}
 		}
 		UKR_industrialisation_protofis_7 = { # fantastic Industrialisation Progress - Hetmanate + Protofis
@@ -1767,7 +1761,7 @@ ideas = {
 			modifier = {
 				production_speed_arms_factory_factor = 0.15
 				industrial_capacity_factory = 0.15
-				consumer_goods_factor = -0.1
+				consumer_goods_factor = -0.06
 			}
 		}
 		UKR_industrialisation_hetmanate_1 = { # Very Bad Industrialisation Progress - Hetmanate (no Protofis)
@@ -2004,85 +1998,6 @@ ideas = {
 				production_speed_infrastructure_factor = 0.2
 			}
 		}
-		UKR_industrialisation_nationalist_1 = { # Very Bad Industrialisation Progress - Nationalist
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_industrialisation_nationalist_1" }
-			name = UKR_industrialisation
-			picture = POL_disjointed_industry
-			modifier = {
-				conversion_cost_civ_to_mil_factor = -0.05
-				production_speed_air_base_factor = 0.02
-				production_speed_naval_base_factor = 0.02
-				production_speed_bunker_factor = 0.02
-			}
-		}
-		UKR_industrialisation_nationalist_2 = { # Bad Industrialisation Progress - Nationalist
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_industrialisation_nationalist_2" }
-			name = UKR_industrialisation
-			picture = POL_disjointed_industry
-			modifier = {
-				conversion_cost_civ_to_mil_factor = -0.05
-				production_speed_air_base_factor = 0.05
-				production_speed_naval_base_factor = 0.05
-				production_speed_bunker_factor = 0.05
-			}
-		}
-		UKR_industrialisation_nationalist_3 = { # Okay Industrialisation Progress - Nationalist
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_industrialisation_nationalist_3" }
-			name = UKR_industrialisation
-			picture = SOV_second_five_year_plan
-			modifier = {
-				conversion_cost_civ_to_mil_factor = -0.1
-				production_speed_air_base_factor = 0.05
-				production_speed_naval_base_factor = 0.05
-				production_speed_bunker_factor = 0.05
-			}
-		}
-		UKR_industrialisation_nationalist_4 = { # Good Industrialisation Progress - Nationalist
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_industrialisation_nationalist_4" }
-			name = UKR_industrialisation
-			picture = SOV_second_five_year_plan
-			modifier = {
-				conversion_cost_civ_to_mil_factor = -0.15
-				production_speed_air_base_factor = 0.08
-				production_speed_naval_base_factor = 0.08
-				production_speed_bunker_factor = 0.08
-			}
-		}
-		UKR_industrialisation_nationalist_5 = { # Very Good Industrialisation Progress - Nationalist
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_industrialisation_nationalist_5" }
-			name = UKR_industrialisation
-			picture = SOV_third_five_year_plan
-			modifier = {
-				conversion_cost_civ_to_mil_factor = -0.20
-				production_speed_air_base_factor = 0.1
-				production_speed_naval_base_factor = 0.1
-				production_speed_bunker_factor = 0.1
-			}
-		}
-		UKR_industrialisation_nationalist_6 = { # Great Industrialisation Progress - Nationalist
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_industrialisation_nationalist_6" }
-			name = UKR_industrialisation
-			picture = SOV_third_five_year_plan
-			modifier = {
-				conversion_cost_civ_to_mil_factor = -0.30
-				production_speed_air_base_factor = 0.15
-				production_speed_naval_base_factor = 0.15
-				production_speed_bunker_factor = 0.15
-			}
-		}
-		UKR_industrialisation_nationalist_7 = { # fantastic Industrialisation Progress - Nationalist
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_industrialisation_leftist_7" }
-			name = UKR_industrialisation
-			picture = POL_succesful_four_year_plan
-			modifier = {
-				conversion_cost_civ_to_mil_factor = -0.4
-				production_speed_arms_factory_factor = 0.2
-				production_speed_air_base_factor = 0.2
-				production_speed_naval_base_factor = 0.2
-				production_speed_bunker_factor = 0.2
-			}
-		}
-
 		### Revolt Ideas
 		UKR_anti_hetman_revolt = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_anti_hetman_revolt" }
@@ -2361,7 +2276,7 @@ ideas = {
 			name = UKR_lun_natiocracy
 			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
 			modifier = {
-				party_popularity_stability_factor = 0.3
+				custom_modifier_tooltip = UKR_lun_stability_tt
 				political_power_factor = 0.15
 				war_stability_factor = 0.2
 				production_factory_start_efficiency_factor = 0.15
@@ -2369,7 +2284,8 @@ ideas = {
 				war_support_factor = 0.15
 				industrial_capacity_factory = 0.10
 				consumer_goods_factor = -0.05
-				production_factory_max_efficiency_factor = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				stability_factor = 0.1
 			}
 		}
 		UKR_lun_natiocracy_k1 = {
@@ -2377,7 +2293,7 @@ ideas = {
 			name = UKR_lun_natiocracy
 			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
 			modifier = {
-				party_popularity_stability_factor = 0.3
+				custom_modifier_tooltip = UKR_lun_stability_tt
 				political_power_factor = 0.15
 				war_stability_factor = 0.2
 				production_factory_start_efficiency_factor = 0.15
@@ -2385,7 +2301,108 @@ ideas = {
 				war_support_factor = 0.15
 				industrial_capacity_factory = 0.10
 				production_speed_buildings_factor = 0.10
-				production_factory_max_efficiency_factor = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+		UKR_lun_natiocracy_k2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_natiocracy_k2" }
+			name = UKR_lun_natiocracy
+			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
+			modifier = {
+				custom_modifier_tooltip = UKR_lun_stability_tt
+				political_power_factor = 0.15
+				war_stability_factor = 0.2
+				production_factory_start_efficiency_factor = 0.15
+				conscription = 0.005
+				war_support_factor = 0.15
+				industrial_capacity_factory = 0.10
+				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.2
+				stability_factor = 0.1
+			}
+		}
+		UKR_lun_natiocracy_k3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_natiocracy_k3" }
+			name = UKR_lun_natiocracy
+			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
+			modifier = {
+				custom_modifier_tooltip = UKR_lun_stability_tt
+				political_power_factor = 0.15
+				war_stability_factor = 0.2
+				production_factory_start_efficiency_factor = 0.15
+				conscription = 0.005
+				war_support_factor = 0.15
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.2
+				stability_factor = 0.1
+			}
+		}
+		UKR_lun_natiocracy_mel = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_natiocracy_mel" }
+			name = UKR_lun_natiocracy
+			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
+			modifier = {
+				custom_modifier_tooltip = UKR_lun_stability_tt
+				political_power_factor = 0.15
+				war_stability_factor = 0.2
+				production_factory_start_efficiency_factor = 0.15
+				conscription = 0.005
+				war_support_factor = 0.25
+				industrial_capacity_factory = 0.10
+				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		UKR_lun_natiocracy_mel1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_natiocracy_mel1" }
+			name = UKR_lun_natiocracy
+			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
+			modifier = {
+				custom_modifier_tooltip = UKR_lun_stability_tt
+				political_power_factor = 0.15
+				war_stability_factor = 0.2
+				production_factory_start_efficiency_factor = 0.15
+				conscription = 0.005
+				war_support_factor = 0.25
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		UKR_lun_natiocracy_mel2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_natiocracy_mel2" }
+			name = UKR_lun_natiocracy
+			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
+			modifier = {
+				custom_modifier_tooltip = UKR_lun_stability_tt
+				political_power_factor = 0.15
+				war_stability_factor = 0.2
+				production_factory_start_efficiency_factor = 0.15
+				conscription = 0.005
+				war_support_factor = 0.25
+				industrial_capacity_factory = 0.10
+				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.1
+				army_attack_factor = 0.075
+			}
+		}
+		UKR_lun_natiocracy_mel3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_natiocracy_mel3" }
+			name = UKR_lun_natiocracy
+			picture = UKR_immortal_will_of_the_ukrainian_nation_spirit
+			modifier = {
+				custom_modifier_tooltip = UKR_lun_stability_tt
+				political_power_factor = 0.15
+				war_stability_factor = 0.2
+				production_factory_start_efficiency_factor = 0.15
+				conscription = 0.005
+				war_support_factor = 0.25
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.1
+				army_attack_factor = 0.075
 			}
 		}
 		UKR_lun_natiocracy_my1 = {
@@ -2489,7 +2506,7 @@ ideas = {
 		}
 		UKR_lun_industrialisation_1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_industrialisation_1" }
-			name = UKR_halted_industrialization_plans
+			name = UKR_halted_industrialisation_plans
 			picture = man_five_year_plan_industry
 			modifier = {
 				production_speed_buildings_factor = -0.1
@@ -2705,7 +2722,7 @@ ideas = {
 			modifier = {
 				authoritarian_democrat_drift = -0.02
 				paternal_autocrat_drift = -0.02
-				stability_weekly = 0.003
+				stability_weekly = 0.002
 			}
 		}
 
@@ -2972,19 +2989,6 @@ ideas = {
 			}
 		}
 
-		UKR_labor_principle4 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_labor_principle4" }
-			name = UKR_congress_of_the_working_people_of_ukraine
-			picture = generic_syndicalist_worker
-			modifier = {
-				stability_factor = 0.15
-				political_power_factor = 0.1
-				radical_socialist_drift = 0.03
-				production_factory_efficiency_gain_factor = 0.08
-				production_speed_buildings_factor = 0.08
-			}
-		}
-
 		UKR_private_ownership_abolished = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_private_ownership_abolished" }
 			picture = TUS_syndie_economy
@@ -3005,7 +3009,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_EE_cooperation" }
 			picture = generic_flexible_foreign_policy2
 			cancel = {
-				has_left_democratic_government = no
+				has_democratic_government = no
 			}
 			modifier = {
 				local_resources_factor = 0.05
@@ -3019,7 +3023,7 @@ ideas = {
 			name = UKR_EE_cooperation
 			picture = generic_flexible_foreign_policy2
 			cancel = {
-				has_left_democratic_government = no
+				has_democratic_government = no
 			}
 			modifier = {
 				war_support_factor = 0.12
@@ -3052,34 +3056,6 @@ ideas = {
 				research_speed_factor = 0.1
 				experience_gain_army_factor = 0.15
 				production_speed_buildings_factor = 0.05
-			}
-		}
-		UKR_german_corporations = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_german_corporations" }
-			picture = GRE_german_ownership
-			modifier = {
-				political_power_factor = 0.05
-				production_speed_buildings_factor = 0.03
-			}
-			targeted_modifier = {
-				tag = GER
-				cic_to_target_factor = 0.05
-			}
-		}
-		UKR_mitteleuropa_embargo = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_mitteleuropa_embargo" }
-			picture = GRE_german_sanctions
-			modifier = {
-				political_power_factor = -0.05
-				consumer_goods_factor = 0.01
-			}
-		}
-		UKR_mitteleuropa_agreements = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_mitteleuropa_agreements" }
-			picture = GRE_german_ownership
-			targeted_modifier = {
-				tag = GER
-				extra_trade_to_target_factor = 0.2
 			}
 		}
 		UKR_progressive_tax = {
@@ -3120,7 +3096,7 @@ ideas = {
 		}
 		UKR_UNR_finisher_4 = { #socdem+radsoc
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_UNR_finisher_4" }
-			picture = spr_torchbearers_of_tomorrow
+			picture = generic_radical_socialist_revolution
 
 			modifier = {
 				stability_factor = 0.2
@@ -3283,7 +3259,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_revolutionary_might" }
 			picture = SPR_masters_of_our_own_fate
 			modifier = {
-				stability_weekly = 0.01
+				stability_factor = 0.05
 				army_morale_factor = 0.05
 				resistance_growth_on_our_occupied_states = 0.5
 			}
@@ -3384,7 +3360,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_revolution_under_siege" }
 			picture = generic_syndicalist_fort
 			modifier = {
-				war_support_weekly = 0.025
+				war_support_factor = 0.05
 				army_morale_factor = 0.05
 				surrender_limit = 0.1
 			}
@@ -3395,8 +3371,7 @@ ideas = {
 			picture = government
 			modifier = {
 				political_power_factor = 0.1
-				stability_weekly = 0.01
-				drift_defence_factor = 0.15
+				war_support_factor = 0.05
 			}
 		}
 		UKR_council_of_deputies_minorities = {
@@ -3404,10 +3379,9 @@ ideas = {
 			name = UKR_council_of_deputies
 			picture = government
 			modifier = {
-				political_power_factor = 0.05
-				stability_weekly = 0.01
-				war_support_weekly = 0.01
-				drift_defence_factor = 0.15
+				political_power_factor = 0.1
+				stability_factor = 0.075
+				war_support_factor = 0.05
 			}
 		}
 		UKR_syndie_constitution = {
@@ -3741,7 +3715,7 @@ ideas = {
 			}
 		}
 	}
-    hidden_ideas = {
+	hidden_ideas = {
 		UKR_lun_integration = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_lun_integration" }
 			targeted_modifier = {
@@ -3863,7 +3837,6 @@ ideas = {
 				motorized_equipment = 0.1
 			}
 		}
-
 	}
 
 	#### Heavy Equipment Manufacturer ####

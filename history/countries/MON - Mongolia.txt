@@ -43,7 +43,7 @@ set_popularities = {
 	national_populist = 12
 }
 
-country_event = { id = mon.1 days = 2 }
+set_variable = { country_intro_page_count = 1 } #Intro screen
 country_event = { id = mon.103 days = 10 }
 
 add_ideas = {
@@ -99,7 +99,7 @@ recruit_character = MON_damdin_sukhbaatar
 recruit_character = MON_gonchigiyn_bumtsend
 recruit_character = MON_balingiyn_tserendorj
 recruit_character = MON_zhamsranzhavyn_galsandash
-recruit_character = MON_sambadondogiyn_tseredorj
+recruit_character = MON_sambadondogiyn_tserendorj
 recruit_character = MON_xia_gong
 recruit_character = MON_kamil_gizycki
 recruit_character = MON_ferdynand_ossendowski

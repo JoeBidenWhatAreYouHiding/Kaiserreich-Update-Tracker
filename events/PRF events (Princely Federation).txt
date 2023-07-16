@@ -8,21 +8,6 @@ add_namespace = prf
 
 ### FLAVOR EVENTS
 
-# Introduction Event
-country_event = {
-	id = prf.0
-	title = prf.0.t
-	desc = prf.0.d
-	picture = GFX_report_event_PRF_palace
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event prf.0 option prf.0.a"
-		name = prf.0.a
-	}
-}
-
 # Silver Jubilee
 country_event = {
 	id = prf.1
@@ -1687,10 +1672,6 @@ country_event = {
 	option = {
 		log = "[GetLogInfo]: event prf.124 option prf.124.a"
 		name = prf.124.a
-		every_character = {
-			limit = { has_character_flag = MDR_character }
-			set_nationality = MDR
-		}
 		320 = {
 			add_core_of = MDR
 			transfer_state_to = MDR
@@ -1847,7 +1828,7 @@ country_event = {
 			is_faction_leader = yes
 		}
 		has_war_with = RAJ
-		controls_state = 439 #Delhi
+		controls_state = RAJ.capital #Lahore
 		surrender_progress < 0.2
 		RAJ = {
 			is_in_faction = yes
@@ -1860,6 +1841,8 @@ country_event = {
 	mean_time_to_happen = {
 		days = 10
 	}
+
+	fire_only_once = yes
 
 	option = {
 		log = "[GetLogInfo]: event prf.160 option prf.160.a"

@@ -231,8 +231,14 @@ characters = {
 		name = BOL_franz_tamayo_solares
 		portraits = {
 			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_Franz_Tamayo.png"
 				large = "gfx/leaders/BOL/Portrait_Bolivia_Franz_Tamayo.png"
 			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_franz_tamayo_solares
+			traits = { KR_ultranationalist_agitator }
 		}
 		country_leader = {
 			ideology = radical_socialist_subtype
@@ -392,6 +398,48 @@ characters = {
 		}
 	}
 
+	BOL_david_toro = {
+		name = BOL_david_toro
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_david_toro.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_david_toro
+			traits = { KR_pragmatic_statesman }
+		}
+	}
+
+	BOL_gabriel_gosalvez = {
+		name = BOL_gabriel_gosalvez
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_gabriel_gosalvez.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_gabriel_gosalvez
+			traits = { KR_conscientious_diplomat }
+		}
+	}
+
+	BOL_tomas_monje = {
+		name = BOL_tomas_monje
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_tomas_monje.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_tomas_monje
+			traits = { GBR_diligent_judge }
+		}
+	}
+
 	BOL_hugo_ballivian = {
 		name = BOL_hugo_ballivian
 		portraits = {
@@ -459,6 +507,65 @@ characters = {
 			traits = { KR_parliament_sic }
 			cost = 0
 			can_be_fired = no
+		}
+	}
+
+	BOL_petronila_infantes = {
+		name = BOL_petronila_infantes
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_petronila_infantes.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_petronila_infantes
+			available = {
+				has_socialist_government = yes
+			}
+			traits = { KR_tireless_organiser }
+		}
+	}
+
+	BOL_martin_cardenas_hermosa = {
+		name = BOL_martin_cardenas_hermosa
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_martin_cardenas_hermosa.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_martin_cardenas_hermosa
+			traits = { KR_exceptional_acamedician }
+		}
+	}
+
+	BOL_arthur_posnansky = {
+		name = BOL_arthur_posnansky
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_arthur_posnansky.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_arthur_posnansky
+			traits = { KR_folk_researcher }
+		}
+	}
+
+	BOL_maria_luisa_sanchez_bustamente = {
+		name = BOL_maria_luisa_sanchez_bustamente
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/BOL/BOL_maria_luisa_sanchez_bustamente.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BOL_maria_luisa_sanchez_bustamente
+			traits = { KR_civil_rights_advocate }
 		}
 	}
 }

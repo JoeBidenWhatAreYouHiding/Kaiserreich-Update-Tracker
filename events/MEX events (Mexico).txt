@@ -4,35 +4,6 @@
 
 add_namespace = mexico
 
-country_event = { # Start up Event
-	id = mexico.1
-	title = mexico.1.t
-	desc = mexico.1.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event mexico.1 option mexico.1.a"
-		name = mexico.1.a
-		country_event = { id = mexico.300 days = 1 }
-	}
-}
-country_event = { # Start up Event
-	id = mexico.300
-	title = mexico.300.t
-	desc = mexico.300.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event mexico.300 option mexico.300.a"
-		name = mexico.300.a
-	}
-}
 ### assassination attempt on Zapata's life ###
 country_event = { # assassination attempt
 	id = mexico.2
@@ -88,11 +59,8 @@ country_event = { # Zapata is dead!
 		hidden_effect = {
 			country_event = { id = mexico.5 days = 15 }
 			country_event = { id = mexico.8 days = 4 }
+			MEX_emiliano_zapata_salazar = { kill_character = yes }
 		}
-	}
-
-	immediate = {
-		MEX_emiliano_zapata_salazar = { kill_character = yes }
 	}
 
 	option = { # Calles seizes power
@@ -967,6 +935,16 @@ country_event = { # Elections of 1942
 				is_subject = no
 			}
 		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = MEX_path option = MEX_PATH_RADSOC }
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SOCDEM }
+				}
+			}
+		}
 		add_popularity = {
 			ideology = syndicalist
 			popularity = 0.10
@@ -986,6 +964,16 @@ country_event = { # Elections of 1942
 				is_subject = no
 			}
 		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SYNDIE }
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SOCDEM }
+				}
+			}
+		}
 		add_popularity = {
 			ideology = radical_socialist
 			popularity = 0.10
@@ -999,6 +987,16 @@ country_event = { # Elections of 1942
 	option = { # Social Democrat
 		log = "[GetLogInfo]: event mexico.26 option mexico.26.c"
 		name = mexico.26.c
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SYNDIE }
+					has_game_rule = { rule = MEX_path option = MEX_PATH_RADSOC }
+				}
+			}
+		}
 		add_popularity = {
 			ideology = social_democrat
 			popularity = 0.10
@@ -1040,6 +1038,16 @@ country_event = { # Elections of 1947
 				is_subject = no
 			}
 		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = MEX_path option = MEX_PATH_RADSOC }
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SOCDEM }
+				}
+			}
+		}
 		add_popularity = {
 			ideology = syndicalist
 			popularity = 0.10
@@ -1059,6 +1067,16 @@ country_event = { # Elections of 1947
 				is_subject = no
 			}
 		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SYNDIE }
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SOCDEM }
+				}
+			}
+		}
 		add_popularity = {
 			ideology = radical_socialist
 			popularity = 0.10
@@ -1072,6 +1090,16 @@ country_event = { # Elections of 1947
 	option = { # Social Democrat
 		log = "[GetLogInfo]: event mexico.27 option mexico.27.c"
 		name = mexico.27.c
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = MEX_path option = MEX_PATH_SYNDIE }
+					has_game_rule = { rule = MEX_path option = MEX_PATH_RADSOC }
+				}
+			}
+		}
 		add_popularity = {
 			ideology = social_democrat
 			popularity = 0.10

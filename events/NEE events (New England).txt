@@ -2321,6 +2321,17 @@ country_event = { # The Yankee Rebellion
 			set_variable = {
 				CAN_yankee_rebellion = 0
 			}
+			CSA = {
+				activate_targeted_decision = { target = 357 decision = CSA_extend_yankee_rebellion }
+				activate_targeted_decision = { target = 796 decision = CSA_extend_yankee_rebellion }
+				activate_targeted_decision = { target = 930 decision = CSA_extend_yankee_rebellion }
+				activate_targeted_decision = { target = 931 decision = CSA_extend_yankee_rebellion }
+				activate_targeted_decision = { target = 932 decision = CSA_extend_yankee_rebellion }
+				activate_targeted_decision = { target = 933 decision = CSA_extend_yankee_rebellion }
+				activate_targeted_decision = { target = 934 decision = CSA_extend_yankee_rebellion }
+				activate_targeted_decision = { target = 935 decision = CSA_extend_yankee_rebellion }
+				set_variable = { CSA_yankee_rebellion_cost = 50 }
+			}
 		}
 	}
 
@@ -4022,6 +4033,31 @@ country_event = { # Reassess American Commitment
 					has_war_with = USA
 				}
 			}
+			modifier = { #Don't support NEE if gamerule was set to only declare on CSA, or to never declare
+				factor = 0
+				OR = {
+					has_game_rule = { rule = CAN_acw_intervene option = CAN_ACW_INTERVENE_NO }
+					has_game_rule = { rule = CAN_acw_intervene option = CAN_ACW_INTERVENE_DECLARE_CSA }
+				}
+			}
+			modifier = { #Don't support NEE if gamerule is set to support a specific side (unless they don't exist), or to support no one
+				factor = 0
+				OR = {
+					has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_NONE }
+					AND = {
+						has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_USA }
+						USA = { exists = yes }
+					}
+					AND = {
+						has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_PSA }
+						PSA = { exists = yes }
+					}
+					AND = {
+						has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_TEX }
+						TEX = { exists = yes }
+					}
+				}
+			}
 		}
 		NEE = {
 			effect_tooltip = { NEE_Change_Legitimacy = yes }
@@ -4208,6 +4244,31 @@ country_event = { # Reassess American Commitment - Repeatable until CAN says yes
 					is_in_faction_with = TEX
 					is_in_faction_with = PSA
 					is_in_faction_with = USA
+				}
+			}
+			modifier = { #Don't support NEE if gamerule was set to only declare on CSA, or to never declare
+				factor = 0
+				OR = {
+					has_game_rule = { rule = CAN_acw_intervene option = CAN_ACW_INTERVENE_NO }
+					has_game_rule = { rule = CAN_acw_intervene option = CAN_ACW_INTERVENE_DECLARE_CSA }
+				}
+			}
+			modifier = { #Don't support NEE if gamerule is set to support a specific side (unless they don't exist), or to support no one
+				factor = 0
+				OR = {
+					has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_NONE }
+					AND = {
+						has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_USA }
+						USA = { exists = yes }
+					}
+					AND = {
+						has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_PSA }
+						PSA = { exists = yes }
+					}
+					AND = {
+						has_game_rule = { rule = CAN_acw_support option = CAN_ACW_SUPPORT_TEX }
+						TEX = { exists = yes }
+					}
 				}
 			}
 		}
@@ -4448,10 +4509,6 @@ country_event = {
 	picture = GFX_report_event_CAN_strike
 
 	is_triggered_only = yes
-
-	trigger = {
-		check_variable = { CSA_strikes < 1 }
-	}
 
 	option = {
 		log = "[GetLogInfo]: event newengland.129 option newengland.129.a"
