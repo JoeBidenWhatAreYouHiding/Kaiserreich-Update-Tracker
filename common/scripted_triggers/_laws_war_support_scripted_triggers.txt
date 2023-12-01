@@ -130,6 +130,9 @@ can_increase_conscription_law_level = {
 		limit = { has_idea = volunteer_only }
 		limited_conscription_available = yes
 	}
+	else = {
+		hidden_trigger = { always = no }
+	}
 }
 
 has_unsupported_economic_law = {
