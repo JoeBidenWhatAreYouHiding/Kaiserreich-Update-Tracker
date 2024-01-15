@@ -276,7 +276,6 @@ ideas = {
 			picture = advisors_italianfed
 			allowed = { always = no }
 			available = {
-				tag = PAP
 				is_ally_with = PAP
 			}
 			modifier = {
@@ -338,7 +337,8 @@ ideas = {
 			picture = generic_syndicalism_drift_bonus
 			allowed = { always = no }
 			modifier = {
-				political_power_factor = -0.02
+				resistance_target = 0.1
+				compliance_growth = -0.1
 				consumer_goods_factor = 0.06
 			}
 		}

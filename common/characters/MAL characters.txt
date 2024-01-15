@@ -2,7 +2,19 @@ characters = {
 
 	#PLACEHOLDER for Totalist Leader
 
-	#PLACEHOLDER for Radical Socialist Leader
+	MAL_ibrahim_yaacob = {
+		name = MAL_ibrahim_yaacob
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/MAL/MAL_ibrahim_yaacob.png"
+				large = "gfx/leaders/MAL/MAL_Portrait_ibrahim_yaacob.png"
+			}
+		}
+		country_leader = {
+			ideology = radical_socialist_subtype
+			desc = MAL_ibrahim_yaacob_desc
+		}
+	}
 
 	MAL_zhuang_mingli = {
 		name = MAL_zhuang_mingli
@@ -64,7 +76,25 @@ characters = {
 		}
 	}
 
-	#PLACEHOLDER for Soc Con Leader
+	MAL_tunku_abdul_rahman = {
+		name = MAL_tunku_abdul_rahman
+		portraits = {
+			civilian = {
+				small = "gfx/interface/advisors/MAL/MAL_tunku_abdul_rahman.png"
+				large = "gfx/leaders/MAL/MAL_Portrait_tunku_abdul_rahman.png"
+			}
+		}
+		country_leader = {
+			ideology = social_conservative_subtype
+			# desc = MAL_tunku_abdul_rahman_desc
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = MAL_tunku_abdul_rahman_pol
+			traits = { KR_pragmatic_statesman }
+		}
+	}
 
 	MAL_abu_bakar_al_baqir = {
 		name = MAL_abu_bakar_al_baqir
@@ -231,34 +261,6 @@ characters = {
 			slot = political_advisor
 			idea_token = MAL_leong_yew_koh_pol
 			traits = { KR_brilliant_lawyer }
-		}
-	}
-
-	MAL_tunku_abdul_rahman = {
-		name = MAL_tunku_abdul_rahman
-		portraits = {
-			civilian = {
-				small = "gfx/interface/advisors/MAL/MAL_Tunku_Abdul_Rahman.png"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = MAL_tunku_abdul_rahman_pol
-			traits = { KR_pragmatic_statesman }
-		}
-	}
-
-	MAL_ibrahim_bin_haji_yaacob = {
-		name = MAL_ibrahim_bin_haji_yaacob
-		portraits = {
-			civilian = {
-				small = "gfx/interface/advisors/MAL/MAL_Ibrahim_bin_Haji_Yaacob.png"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = MAL_ibrahim_bin_haji_yaacob_pol
-			traits = { KR_media_magnate }
 		}
 	}
 
