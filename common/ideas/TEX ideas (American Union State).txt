@@ -569,7 +569,12 @@ ideas = {
 			name = TEX_veteran_employment_act
 			picture = generic_research_bonus
 			allowed = { always = no }
-			available = { has_government = authoritarian_democrat }
+			available = {
+				OR = {
+					has_government = authoritarian_democrat
+					has_government = national_populist
+				}
+			}
 			modifier = {
 				industrial_capacity_factory = 0.05
 				research_speed_factor = 0.1

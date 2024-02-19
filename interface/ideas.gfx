@@ -3752,8 +3752,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/idea_FIN_patriotic_peoples_movement.dds"
 	}
 	spriteType = {
-		name = "GFX_idea_FIN_socialist_wellfare"
-		texturefile = "gfx/interface/ideas/idea_FIN_socialist_wellfare.dds"
+		name = "GFX_idea_FIN_socialist_welfare"
+		texturefile = "gfx/interface/ideas/idea_FIN_socialist_welfare.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_FIN_social_democratic_womens_union"

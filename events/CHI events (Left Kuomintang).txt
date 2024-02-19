@@ -13723,7 +13723,7 @@ country_event = { #Smouldering Embers
 	fire_only_once = yes
 	is_triggered_only = yes #Triggered by focus CHI_the_second_national_revolution
 
-	option = { #We won the war but not the peace…
+	option = { #We won the war but not the peace...
 		log = "[GetLogInfo]: event CHI.endgame.601 option CHI.endgame.601.a"
 		name = CHI.endgame.601.a
 		add_ideas = CHI_ongoing_resistance_idea
@@ -14195,7 +14195,7 @@ country_event = { #A Shattered Dream
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = { #China awakens to a harsh reality…
+	option = { #China awakens to a harsh reality...
 		log = "[GetLogInfo]: event CHI.endgame.801 option CHI.endgame.801.a"
 		name = CHI.endgame.801.a
 		add_ideas = CHI_unfulfilled_promises_idea

@@ -41,14 +41,14 @@ will_have_dictatorship_government = {
 	}
 }
 
-will_have_right_democratic_government = {
+will_have_left_democratic_government = {
 	OR = {
 		check_variable = { old_ideology_token = token:social_democrat }
 		check_variable = { old_ideology_token = token:social_liberal }
 	}
 }
 
-will_have_left_democratic_government = {
+will_have_right_democratic_government = {
 	OR = {
 		check_variable = { old_ideology_token = token:market_liberal }
 		check_variable = { old_ideology_token = token:social_conservative }
