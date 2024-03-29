@@ -229,8 +229,8 @@ FOP_estados_socialistas_de_america_latina_decisions = {
 			modifier = {
 				factor = 0
 				OR = {
-					ROOT_is_threatened_cautious = yes
-					FROM = { default_attack_AI_trigger_FROM = yes }
+					country_has_any_active_threat = yes
+					FROM = { default_attack_AI_trigger = yes }
 					NOT = {
 						OR = {
 							is_neighbor_of = FROM
@@ -1086,7 +1086,7 @@ FOP_Andesian_formation_decisions = {
 			factor = 100
 			modifier = {
 				factor = 0
-				ROOT_is_threatened = yes
+				country_is_in_dangerous_war = yes
 			}
 			modifier = {
 				factor = 0
@@ -1239,7 +1239,6 @@ FOP_Andesian_formation_decisions = {
 							is_core_of = SUR
 						}
 					}
-					set_variable = { ambition_area_@ROOT = 1 }
 					add_claim_by = ROOT
 					set_state_flag = FOP_andesian_claim
 				}
@@ -1273,8 +1272,8 @@ FOP_Andesian_formation_decisions = {
 			modifier = {
 				factor = 0
 				OR = {
-					ROOT_is_threatened_cautious = yes
-					FROM = { default_attack_AI_trigger_FROM = yes }
+					country_has_any_active_threat = yes
+					FROM = { default_attack_AI_trigger = yes }
 				}
 			}
 		}
@@ -1340,8 +1339,8 @@ FOP_Andesian_formation_decisions = {
 			modifier = {
 				factor = 0
 				OR = {
-					ROOT_is_threatened_cautious = yes
-					FROM = { default_attack_AI_trigger_FROM = yes }
+					country_has_any_active_threat = yes
+					FROM = { default_attack_AI_trigger = yes }
 				}
 			}
 		}
@@ -1407,8 +1406,8 @@ FOP_Andesian_formation_decisions = {
 			modifier = {
 				factor = 0
 				OR = {
-					ROOT_is_threatened_cautious = yes
-					FROM = { default_attack_AI_trigger_FROM = yes }
+					country_has_any_active_threat = yes
+					FROM = { default_attack_AI_trigger = yes }
 				}
 			}
 		}
@@ -1620,9 +1619,9 @@ FOP_strike_reactionaries_decisions = {
 			modifier = {
 				factor = 0
 				OR = {
-					ROOT_is_threatened_cautious = yes
+					country_has_any_active_threat = yes
 					FROM = { dont_start_major_faction_wars = yes }
-					FROM = { default_attack_AI_trigger_FROM = yes }
+					FROM = { default_attack_AI_trigger = yes }
 				}
 			}
 		}
@@ -1973,9 +1972,9 @@ FOP_sabotage_decisions_category = {
 		allowed = { always = no }				# Activated by focus FOP_strike_the_railroads
 		available = {
 			has_war_with = FROM
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = FOP_sabotage_success_tooltip
-				check_variable = { FOP_railways_sabotaged_states > 0 }
+				FOP_railways_sabotaged_states > 0
 			}
 		}
 
@@ -2051,9 +2050,9 @@ FOP_sabotage_decisions_category = {
 		allowed = { always = no }				# Activated by focus FOP_infiltrating_the_north
 		available = {
 			has_war_with = FROM
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = FOP_resistance_success_tooltip
-				check_variable = { FOP_resistance_states > 0 }
+				FOP_resistance_states > 0
 			}
 		}
 

@@ -278,7 +278,7 @@ ideas = {
 			}
 		}
 		UKR_mechanisation_of_mining = {
-			picture = IRE_heavy_industry
+			picture = generic_heavy_industry
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_mechanisation_of_mining" }
 			modifier = {
 				local_resources_factor = 0.10
@@ -311,7 +311,7 @@ ideas = {
 		}
 		UKR_balanced_approach = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_balanced_approach" }
-			picture = IRE_heavy_industry
+			picture = generic_heavy_industry
 			modifier = {
 				custom_modifier_tooltip = UKR_balanced_approach_tt
 			}
@@ -1439,7 +1439,6 @@ ideas = {
 			modifier = {
 				air_defence_factor = 0.1
 				air_range_factor = 0.1
-				air_air_superiority_agility_factor = 0.05
 				air_superiority_efficiency = 0.1
 			}
 		}
@@ -1452,8 +1451,7 @@ ideas = {
 			modifier = {
 				air_defence_factor = 0.1
 				air_range_factor = 0.1
-				air_close_air_support_agility_factor = 0.05
-				air_close_air_support_attack_factor = 0.1
+				air_cas_efficiency = 0.05
 			}
 		}
 
@@ -1465,7 +1463,6 @@ ideas = {
 			modifier = {
 				air_defence_factor = 0.1
 				air_range_factor = 0.2
-				air_air_superiority_agility_factor = 0.05
 				air_superiority_efficiency = 0.1
 			}
 		}
@@ -1478,8 +1475,7 @@ ideas = {
 			modifier = {
 				air_defence_factor = 0.1
 				air_range_factor = 0.2
-				air_close_air_support_agility_factor = 0.05
-				air_close_air_support_attack_factor = 0.1
+				air_cas_efficiency = 0.05
 			}
 		}
 
@@ -3002,7 +2998,7 @@ ideas = {
 
 		UKR_mass_nationalization = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_mass_nationalization" }
-			picture = IRE_heavy_industry
+			picture = generic_heavy_industry
 			modifier = {
 				consumer_goods_factor = -0.15
 				stability_factor = -0.05
@@ -3012,7 +3008,7 @@ ideas = {
 		UKR_mass_nationalization_2 = {
 			name = UKR_mass_nationalization
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea UKR_mass_nationalization_2" }
-			picture = IRE_heavy_industry
+			picture = generic_heavy_industry
 			modifier = {
 				consumer_goods_factor = -0.3
 				stability_factor = -0.05

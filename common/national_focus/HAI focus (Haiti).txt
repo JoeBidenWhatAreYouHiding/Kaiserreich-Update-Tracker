@@ -1519,11 +1519,9 @@ focus_tree = {
 			focus = HAI_mobilize_people
 		}
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 
@@ -1589,11 +1587,9 @@ focus_tree = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 		continue_if_invalid = yes
@@ -1635,11 +1631,9 @@ focus_tree = {
 			focus = HAI_organise_forces
 		}
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 		continue_if_invalid = yes
@@ -1713,11 +1707,9 @@ focus_tree = {
 			focus = HAI_prince_liberated
 		}
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 		continue_if_invalid = yes
@@ -1779,11 +1771,9 @@ focus_tree = {
 			focus = HAI_mobilize_guard
 		}
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 		continue_if_invalid = yes
@@ -1905,11 +1895,9 @@ focus_tree = {
 			focus = HAI_mobilize_guard
 		}
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 		continue_if_invalid = yes
@@ -1948,11 +1936,9 @@ focus_tree = {
 			focus = HAI_saint_marc
 		}
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 		continue_if_invalid = yes
@@ -2000,11 +1986,9 @@ focus_tree = {
 			focus = HAI_les_cayes_cache
 		}
 		available = {
-			custom_trigger_tooltip = {
+			check_variable = {
 				tooltip = HAI_has_10_momentum
-				check_variable = {
-					HAI_momentum > 9
-				}
+				HAI_momentum > 9
 			}
 		}
 		continue_if_invalid = yes

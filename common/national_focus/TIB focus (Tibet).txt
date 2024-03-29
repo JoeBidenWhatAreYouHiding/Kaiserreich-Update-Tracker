@@ -324,6 +324,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus TIB_tibetan_parliament"
 			activate_targeted_decision = { target = NEP decision = TIB_intervene_himalayas }
 			activate_targeted_decision = { target = BHU decision = TIB_intervene_himalayas }
+			unlock_decision_tooltip = TIB_join_ESU
 			add_war_support = 0.05
 			hidden_effect = {
 				country_event = { id = tib.120 days = 30 }

@@ -365,7 +365,7 @@ joint_focus = {
 		if = {
 			limit = { has_dlc_aat = no }
 			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = denmark_sas_company
+			show_ideas_tooltip = sca_sas_company
 		}
 		else = {
 			custom_effect_tooltip = available_mio_tt
@@ -559,7 +559,7 @@ joint_focus = {
 			}
 		}
 		custom_effect_tooltip = if_they_accept_tt
-		custom_effect_tooltip = DEN_SCA_formation_warning
+		custom_effect_tooltip = SCA_formation_warning
 		effect_tooltip = { SCA = { change_tag_from = ROOT } }
 	}
 }

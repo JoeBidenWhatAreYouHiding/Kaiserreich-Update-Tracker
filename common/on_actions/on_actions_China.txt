@@ -187,7 +187,7 @@ on_actions = {
 			614 = { set_state_flag = zhili_province_state } #Tangshan
 			1061 = { set_state_flag = zhili_province_state } #Daming
 			1062 = { set_state_flag = zhili_province_state } #Baoding
-			1063 = { set_state_flag = zhili_province_state } #Cangzhou
+			1068 = { set_state_flag = zhili_province_state } #Qinhuangdao
 
 			607 = { set_state_flag = henan_province_state } #Heluo
 			1058 = { set_state_flag = henan_province_state } #Ruyang
@@ -220,6 +220,7 @@ on_actions = {
 			597 = { set_state_flag = shandong_province_state } #Jinan
 			744 = { set_state_flag = shandong_province_state } #Qingdao
 			996 = { set_state_flag = shandong_province_state } #Weihaiwei
+			1063 = { set_state_flag = shandong_province_state } #Dezhou
 			1064 = { set_state_flag = shandong_province_state } #Linyi
 			1065 = { set_state_flag = shandong_province_state } #Jiaodong
 
@@ -231,7 +232,6 @@ on_actions = {
 			746 = { set_state_flag = zhejiang_province_state } #Ningbo
 			803 = { set_state_flag = zhejiang_province_state } #Wenzhou
 			1067 = { set_state_flag = zhejiang_province_state } #Jinhua
-			1068 = { set_state_flag = zhejiang_province_state } #Kuaiji
 			1069 = { set_state_flag = zhejiang_province_state } #Lishui
 
 			595 = { set_state_flag = fujian_province_state } #Jian'an
@@ -738,6 +738,14 @@ on_actions = {
 					}
 				}
 				activate_mission = SHX_collapse_of_shanxi
+				if = {
+					limit = { has_idea = SHX_strict_neutrality }
+					remove_ideas = SHX_strict_neutrality
+				}
+				else_if = {
+					limit = { has_idea = SHX_strict_neutrality1 }
+					remove_ideas = SHX_strict_neutrality1
+				}
 			}
 		}
 	}
@@ -815,7 +823,7 @@ on_actions = {
 		}
 	}
 
-	on_ruling_party_change = {
+	on_ruling_party_change_immediate = {
 		effect = {
 			if = {
 				limit = {
@@ -835,8 +843,8 @@ on_actions = {
 				if = {
 					limit = {
 						OR = {
-							will_have_totalist_government = yes
-							will_have_syndicalist_government = yes
+							has_government = totalist
+							has_government = syndicalist
 						}
 					}
 					activate_advisor = TAI_jian_ji_sic
@@ -844,8 +852,8 @@ on_actions = {
 				else_if = {
 					limit = {
 						OR = {
-							will_have_radical_socialist_government = yes
-							will_have_social_democrat_government = yes
+							has_government = radical_socialist
+							has_government = social_democrat
 						}
 					}
 					activate_advisor = TAI_cai_peihuo_sic
@@ -853,8 +861,8 @@ on_actions = {
 				else_if = {
 					limit = {
 						OR = {
-							will_have_social_liberal_government = yes
-							will_have_market_liberal_government = yes
+							has_government = social_liberal
+							has_government = market_liberal
 						}
 					}
 					activate_advisor = TAI_liao_wenyi_sic
@@ -862,8 +870,8 @@ on_actions = {
 				else_if = {
 					limit = {
 						OR = {
-							will_have_social_conservative_government = yes
-							will_have_authoritarian_democrat_government = yes
+							has_government = social_conservative
+							has_government = authoritarian_democrat
 						}
 					}
 					activate_advisor = TAI_chen_fengyuan_sic
@@ -890,6 +898,12 @@ on_actions = {
 							has_war_with_wargoal_against = {
 								target = 608.owner
 								type = annex_everything
+							}
+							var:608.owner = {
+								has_war_with_wargoal_against = {
+									target = PREV
+									type = annex_everything
+								}
 							}
 							AND = {
 								has_completed_focus = FNG_Begin_the_War_of_National_Reclamation
@@ -1308,13 +1322,13 @@ on_actions = {
 					country_event = { id = fengtian.280 days = 9 } #Disorder at Baoding
 				}
 			}
-			if = { # Capture of Cangzhou
+			if = { # Capture of Dezhou
 				limit = {
 					ROOT = { tag = FNG }
 					FROM.FROM = { state = 1063 }
 				}
 				ROOT = {
-					country_event = { id = fengtian.34 days = 36 random_hours = 1500 } #Red Spears in Cangzhou
+					country_event = { id = fengtian.34 days = 36 random_hours = 1500 } #Red Spears in Dezhou
 				}
 			}
 			if = { # Capture of Daming

@@ -293,6 +293,12 @@ country_event = { #FROM refuses
 			target = FROM
 			modifier = KR_outraged
 		}
+		if = {
+			limit = {
+				FROM = { tag = HND } # For PHI if HND rejects them
+			}
+			country_event = { id = beng.136 days = 1 }
+		}
 	}
 }
 
@@ -366,6 +372,16 @@ country_event = { #Country is invited to faction
 			}
 		}
 		effect_tooltip = {
+			if = {
+				limit = { is_faction_leader = yes }
+				every_other_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_subject = no
+					}
+					var:FROM.faction_leader = { add_to_faction = PREV }
+				}
+			}
 			var:FROM.faction_leader = { add_to_faction = ROOT }
 			apply_faction_joining_effects = yes
 		}
@@ -448,6 +464,16 @@ country_event = { #FROM accepts
 	option = {
 		log = "[GetLogInfo]: event generic_events.19 option generic_events.19.a"
 		name = generic_events.19.a
+		if = {
+			limit = { FROM = { is_faction_leader = yes } }
+			every_other_country = {
+				limit = {
+					is_in_faction_with = FROM
+					is_subject = no
+				}
+				var:ROOT.faction_leader = { add_to_faction = PREV }
+			}
+		}
 		faction_leader = { add_to_faction = FROM }
 	}
 }
@@ -1644,7 +1670,7 @@ country_event = {
 	trigger = {
 		is_ai = yes
 		NOT = { has_game_rule = { rule = demobilization_options option = NONE } }
-		ROOT_is_threatened_cautious = no
+		country_has_any_active_threat = no
 		OR = {
 			has_unsupported_economic_law_ai = yes
 			has_unsupported_manpower_law_ai = yes
@@ -1787,7 +1813,7 @@ country_event = {
 				has_exceeded_maximum_divisions = yes
 				is_ai = yes
 				NOT = { has_game_rule = { rule = unit_limit_options option = NONE } }
-				ROOT_is_threatened_cautious = no
+				country_has_any_active_threat = no
 				has_unattained_important_goals = no
 			}
 			disband_one_to_three_divisions = yes

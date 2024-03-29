@@ -592,8 +592,7 @@ ideas = {
 			picture = man_five_year_plan_air
 			allowed = { always = no }
 			modifier = {
-				air_air_superiority_attack_factor = 0.05
-				air_air_superiority_defence_factor = 0.05
+				air_superiority_efficiency = 0.05
 			}
 		}
 
@@ -605,8 +604,8 @@ ideas = {
 				experience_gain_air_factor = 0.1
 				air_ace_generation_chance_factor = 0.10
 				air_accidents_factor = -0.05
-				air_interception_attack_factor = 0.025
-				air_air_superiority_attack_factor = 0.025
+				air_intercept_efficiency = 0.05
+				air_superiority_efficiency = 0.05
 			}
 		}
 

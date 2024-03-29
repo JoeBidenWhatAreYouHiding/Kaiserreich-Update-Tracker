@@ -411,10 +411,7 @@ on_actions = {
 			if = {
 				limit = { is_american_tag = yes }
 				country_event = { id = amcivwar.2400 days = 1 } #End of the Civil War
-				if = {
-					limit = { has_country_flag = ACW_attacked_during_recovery }
-					country_event = { id = amcivwar.616 days = 2 random_days = 3 } #Remove emergency USA units
-				}
+				country_event = { id = amcivwar.616 days = 2 random_days = 3 } #Remove emergency USA units
 			}
 		}
 	}
@@ -457,13 +454,13 @@ on_actions = {
 		}
 	}
 
-	on_ruling_party_change = {
+	on_ruling_party_change_immediate = {
 		# temp var old_ideology_token is available for effects
 		effect = {
 			if = {
 				limit = { tag = USA }
 				if = {
-					limit = { will_have_dictatorship_government = yes }
+					limit = { has_dictatorship_government = yes }
 					USA_united_states_congress = {
 						if = {
 							limit = { has_trait = KR_parliament_sic }
