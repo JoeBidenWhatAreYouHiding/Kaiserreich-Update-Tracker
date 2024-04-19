@@ -2435,14 +2435,7 @@ country_event = { #The Balkan Research Initiative
 		log = "[GetLogInfo]: event serbia.35 option serbia.35.a"
 		name = serbia.35.a #Of course we'll join!
 		add_political_power = -30
-		if = {
-			limit = { has_tech_sharing_feature = yes }
-			add_to_tech_sharing_group = balkan_research
-		}
-		else = {
-			hidden_effect = { add_ideas = SER_balkan_research_idea }
-			custom_effect_tooltip = SER_balkan_research_idea_tooltip
-		}
+		add_to_tech_sharing_group = balkan_research
 		add_opinion_modifier = {
 			target = FROM
 			modifier = KR_pleased
@@ -2487,29 +2480,18 @@ country_event = { #End of the Balkan Research Initiative
 	desc = {
 		text = serbia.37.d.war
 		trigger = {
-			any_enemy_country = {
-				OR = {
-					is_in_tech_sharing_group = balkan_research
-					has_idea = SER_balkan_research_idea
-				}
-			}
+			any_enemy_country = { is_in_tech_sharing_group = balkan_research }
 		}
 	}
 	desc = {
 		text = serbia.37.d.joined_other_faction
 		trigger = {
-			NOT = {
-				is_in_faction_with = SER
-				SER = { is_faction_leader = yes }
-			}
+			NOT = { any_enemy_country = { is_in_tech_sharing_group = balkan_research } }
 		}
 	}
 
 	trigger = {
-		OR = {
-			is_in_tech_sharing_group = balkan_research
-			has_idea = SER_balkan_research_idea
-		}
+		is_in_tech_sharing_group = balkan_research
 	}
 
 	is_triggered_only = yes
@@ -2520,9 +2502,6 @@ country_event = { #End of the Balkan Research Initiative
 		if = {
 			limit = { is_in_tech_sharing_group = balkan_research }
 			remove_from_tech_sharing_group = balkan_research
-		}
-		else = {
-			remove_ideas = SER_balkan_research_idea
 		}
 	}
 }
@@ -2603,10 +2582,6 @@ country_event = { #FROM Accepts Serbia
 			remove_from_tech_sharing_group = balkan_research
 		}
 		if = {
-			limit = { has_idea = SER_balkan_research_idea }
-			remove_ideas = SER_balkan_research_idea
-		}
-		if = {
 			limit = { is_faction_leader = yes }
 			every_other_country = {
 				limit = { is_in_faction_with = ROOT }
@@ -2648,10 +2623,6 @@ country_event = { #Serbia has disbanded the Pact
 		if = {
 			limit = { is_in_tech_sharing_group = balkan_research }
 			remove_from_tech_sharing_group = balkan_research
-		}
-		if = {
-			limit = { has_idea = SER_balkan_research_idea }
-			remove_ideas = SER_balkan_research_idea
 		}
 		if = {
 			limit = {
@@ -2713,10 +2684,6 @@ country_event = { #Serbia has disbanded the Pact
 		if = {
 			limit = { is_in_tech_sharing_group = balkan_research }
 			remove_from_tech_sharing_group = balkan_research
-		}
-		if = {
-			limit = { has_idea = SER_balkan_research_idea }
-			remove_ideas = SER_balkan_research_idea
 		}
 		event_target:future_serbian_ally = { country_event = { id = serbia.42 hours = 8 } }
 	}
@@ -4514,24 +4481,12 @@ country_event = { # Nedić Brothers Coup
 			clr_country_flag = YUG_balkan_socialist_federation_formed
 			clr_country_flag = YUG_integral_yugoslavia_formed
 			if = {
-				limit = {
-					has_character = SER_konstantin_popovic
-				}
-				SER_konstantin_popovic = {
-					set_nationality = XXA
-				}
+				limit = { has_character = SER_konstantin_popovic }
+				retire_character = SER_konstantin_popovic
 			}
 			if = {
-				limit = {
-					NOT = {
-						has_character = SER_milutin_nedic
-					}
-				}
-				XXA = {
-					SER_milutin_nedic = {
-						set_nationality = SER
-					}
-				}
+				limit = { NOT = { has_character = SER_milutin_nedic } }
+				SER_milutin_nedic = { set_nationality = ROOT }
 			}
 			country_event = { id = serbia.74 days = 7 }
 		}

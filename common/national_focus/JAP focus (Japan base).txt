@@ -6778,9 +6778,6 @@ focus_tree = {
 			has_global_flag = JAP_defeated_by_china
 		}
 		ai_will_do = { factor = 50 }
-		allow_branch = {
-			has_dlc_wtt = yes
-		}
 		prerequisite = {
 			focus = JAP_new_order_in_east_asia
 		}

@@ -209,12 +209,9 @@ set_popularities = {
 }
 
 create_faction = co_prosperity_sphere
-if = {
-	limit = { has_tech_sharing_feature = yes }
-	every_country = {
-		limit = { is_ally_with = JAP }
-		add_to_tech_sharing_group = japan_research
-	}
+every_country = {
+	limit = { is_ally_with = JAP }
+	add_to_tech_sharing_group = japan_research
 }
 
 ### Country Leaders ###

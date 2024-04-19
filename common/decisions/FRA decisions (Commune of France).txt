@@ -388,7 +388,6 @@ FRA_phalanstere_category = {
 		icon = generic_research
 
 		allowed = {
-			has_tech_sharing_feature = yes
 			NOT = {
 				tag = FRA #added by event
 				tag = ENG

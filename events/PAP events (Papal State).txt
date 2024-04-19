@@ -1849,13 +1849,10 @@ country_event = {
 		log = "[GetLogInfo]: event papalstate.62 option papalstate.62.a"
 		name = papalstate.62.a
 		set_country_flag = PAP_permission_denied_neosanfedisti
-		if = {
-			limit = { has_subject_autonomy_feature = yes }
-			set_country_flag = KR_can_raise_autonomy_level
-			add_autonomy_score = {
-				value = 100
-				localization = PAP_permission_denied
-			}
+		set_country_flag = KR_can_raise_autonomy_level
+		add_autonomy_score = {
+			value = 100
+			localization = PAP_permission_denied
 		}
 	}
 }

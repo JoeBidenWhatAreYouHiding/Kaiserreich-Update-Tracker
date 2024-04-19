@@ -432,10 +432,6 @@ political_actions = {
 	KR_fight_for_independence = {
 		icon = generic_independence
 
-		allowed = {
-			has_subject_autonomy_feature = no
-		}
-
 		available = {
 			has_political_power > 0
 			has_stability > 0.70
@@ -841,6 +837,7 @@ propaganda_efforts = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision KR_end_military_occupations"
+			clr_country_flag = KR_has_active_occupation
 			clr_country_flag = ABKHAZIA_CONQ
 			clr_country_flag = AEGEAN_CONQ
 			clr_country_flag = AEGEAN_MACEDONIA_CONQ

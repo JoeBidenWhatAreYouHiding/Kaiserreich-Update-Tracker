@@ -424,10 +424,7 @@ joint_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: completion_reward SCANDINAVIA_common_tech"
-		if = {
-			limit = { has_tech_sharing_feature = yes }
-			add_to_tech_sharing_group = scandinavian_research
-		}
+		add_to_tech_sharing_group = scandinavian_research
 		add_tech_bonus = {
 			name = SCANDINAVIA_common_tech
 			bonus = 1
@@ -459,14 +456,14 @@ joint_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: completion_reward SCANDINAVIA_common_tech_2"
 		if = {
-			limit = { has_tech_sharing_feature = yes }
-			custom_effect_tooltip = SCA_tt_tech_sharing_increased
-			hidden_effect = {
-				modify_tech_sharing_bonus = {
-					id = scandinavian_research
-					bonus = 0.05
-				}
+			limit = { is_in_tech_sharing_group = scandinavian_research }
+			modify_tech_sharing_bonus = {
+				id = scandinavian_research
+				bonus = 0.05
 			}
+		}
+		else = {
+			custom_effect_tooltip = SCA_tt_tech_sharing_increased
 		}
 		add_tech_bonus = {
 			name = SCANDINAVIA_common_tech_2

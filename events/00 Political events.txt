@@ -293,12 +293,6 @@ country_event = { #FROM refuses
 			target = FROM
 			modifier = KR_outraged
 		}
-		if = {
-			limit = {
-				FROM = { tag = HND } # For PHI if HND rejects them
-			}
-			country_event = { id = beng.136 days = 1 }
-		}
 	}
 }
 
@@ -1134,16 +1128,8 @@ country_event = {
 country_event = {
 	id = generic_events.102
 	title = generic_events.102.t
+	desc = generic_events.102.d
 	picture = GFX_report_event_generic_diplomacy4
-
-	desc = {
-		text = generic_events.102.d.tfv
-		trigger = { has_subject_autonomy_feature = yes }
-	}
-	desc = {
-		text = generic_events.102.d
-		trigger = { has_subject_autonomy_feature = no }
-	}
 
 	trigger = {
 		has_autonomy_state = default_puppet
@@ -1209,34 +1195,15 @@ country_event = {
 
 	immediate = {
 		set_country_flag = KR_can_raise_autonomy_level
-		overlord = { save_event_target_as = overlord_name }
 	}
 
 	option = {
 		log = "[GetLogInfo]: event generic_events.102 option generic_events.102.a"
 		name = generic_events.102.a
-		if = {
-			limit = { has_subject_autonomy_feature = yes }
-			custom_effect_tooltip = may_raise_autonomy
-			add_autonomy_ratio = {
-				value = 0.25
-				localization = clamour_for_autonomy
-			}
-		}
-		else = {
-			get_current_government_type = yes
-			overlord = {
-				set_autonomy = {
-					target = ROOT
-					autonomy_state = autonomous_puppet
-					end_wars = no
-				}
-				hidden_effect = {
-					country_event = generic_events.103
-				}
-			}
-			restore_previous_government_type = yes
-			clr_country_flag = KR_can_raise_autonomy_level
+		custom_effect_tooltip = may_raise_autonomy
+		add_autonomy_ratio = {
+			value = 0.25
+			localization = clamour_for_autonomy
 		}
 	}
 }
@@ -1260,16 +1227,8 @@ country_event = {
 country_event = {
 	id = generic_events.104
 	title = generic_events.102.t
+	desc = generic_events.102.d
 	picture = GFX_report_event_generic_diplomacy4
-
-	desc = {
-		text = generic_events.102.d.tfv
-		trigger = { has_subject_autonomy_feature = yes }
-	}
-	desc = {
-		text = generic_events.102.d
-		trigger = { has_subject_autonomy_feature = no }
-	}
 
 	trigger = {
 		has_autonomy_state = autonomous_puppet
@@ -1357,34 +1316,15 @@ country_event = {
 
 	immediate = {
 		set_country_flag = KR_can_raise_autonomy_level
-		overlord = { save_event_target_as = overlord_name }
 	}
 
 	option = {
 		log = "[GetLogInfo]: event generic_events.104 option generic_events.102.a"
 		name = generic_events.102.a
-		if = {
-			limit = { has_subject_autonomy_feature = yes }
-			custom_effect_tooltip = may_raise_autonomy
-			add_autonomy_ratio = {
-				value = 0.25
-				localization = clamour_for_autonomy
-			}
-		}
-		else = {
-			get_current_government_type = yes
-			overlord = {
-				set_autonomy = {
-					target = ROOT
-					autonomy_state = nominal_puppet
-					end_wars = no
-				}
-				hidden_effect = {
-					country_event = generic_events.105
-				}
-			}
-			restore_previous_government_type = yes
-			clr_country_flag = KR_can_raise_autonomy_level
+		custom_effect_tooltip = may_raise_autonomy
+		add_autonomy_ratio = {
+			value = 0.25
+			localization = clamour_for_autonomy
 		}
 	}
 }
@@ -1408,16 +1348,8 @@ country_event = {
 country_event = {
 	id = generic_events.106
 	title = generic_events.106.t
+	desc = generic_events.106.d
 	picture = GFX_report_event_generic_diplomacy4
-
-	desc = {
-		text = generic_events.106.d.tfv
-		trigger = { has_subject_autonomy_feature = yes }
-	}
-	desc = {
-		text = generic_events.106.d
-		trigger = { has_subject_autonomy_feature = no }
-	}
 
 	trigger = {
 		has_autonomy_state = nominal_puppet
@@ -1484,36 +1416,17 @@ country_event = {
 
 	immediate = {
 		set_country_flag = KR_can_become_free
-		overlord = { save_event_target_as = overlord_name }
 	}
 
 	option = {
-		log = "[GetLogInfo]: event generic_events.106 option generic_events.106.a"
-		name = generic_events.106.a
-		trigger = { has_subject_autonomy_feature = yes }
-		custom_effect_tooltip = may_become_free
-		add_autonomy_ratio = {
-			value = 0.25
-			localization = clamour_for_independence
-		}
-	}
-	option = {
 		log = "[GetLogInfo]: event generic_events.106 option generic_events.106.b"
 		name = generic_events.106.b # Demand independence
-		trigger = {
-			has_subject_autonomy_feature = no
-		}
-		overlord = {
-			country_event = generic_events.107
-		}
+		overlord = { country_event = generic_events.107 }
 	}
 	option = {
 		log = "[GetLogInfo]: event generic_events.106 option generic_events.106.c"
 		name = generic_events.106.c # Leave it be
-		trigger = {
-			has_subject_autonomy_feature = no
-			is_ai = no
-		}
+		ai_chance = { base = 0 }
 		add_stability = -0.10
 	}
 }
