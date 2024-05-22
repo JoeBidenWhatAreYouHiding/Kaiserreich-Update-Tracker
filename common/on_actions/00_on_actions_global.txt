@@ -637,21 +637,24 @@ on_actions = {
 			### Impassable Control Check
 			FROM.FROM = {
 				if = {
-					limit = { impassable = yes }
+					limit = {
+						impassable = yes
+						NOT = { is_owned_by = XXA } #== system tag
+					}
 					if = {
-						limit = {
-							has_variable = paired_impassable
-							NOT = { is_controlled_by = paired_impassable:controller }
+						limit = { has_variable = paired_impassable }
+						if = {
+							limit = { NOT = { is_controlled_by = paired_impassable:controller } }
+							set_state_controller_to = paired_impassable:controller
 						}
-						set_state_controller_to = paired_impassable:controller
 					}
 					else_if = {
 						limit = {
 							NOT = { is_controlled_by = owner }
 							NOT = { controller = { has_war_with = PREV.owner } }
 						}
+						set_state_controller_to = owner
 					}
-					set_state_controller_to = owner
 				}
 			}
 
@@ -1187,21 +1190,27 @@ on_actions = {
 					clear_embargo_PREV = yes
 				}
 			}
-			save_event_target_as = volunteer_target
 			every_other_country = {
-				limit = { willing_to_send_volunteers_to_PREV = yes }
-				send_volunteers_to_TARGET = yes
-			}
-			FROM = {
-				save_event_target_as = volunteer_target
-				every_other_country = {
+				if = {
 					limit = { willing_to_send_volunteers_to_PREV = yes }
-					send_volunteers_to_TARGET = yes
+					PREV = { save_event_target_as = volunteer_target }
+					send_volunteers_to_PREV = yes
+				}
+				else = {
+					clear_volunteers_to_PREV = yes
+				}
+				ROOT = {
+					if = {
+						limit = { willing_to_send_volunteers_to_PREV = yes }
+						send_volunteers_to_PREV = yes
+					}
+					else = {
+						clear_volunteers_to_PREV = yes
+					}
 				}
 			}
 
 			#Government Flags
-			set_temp_variable = { new_government = current_party_ideology_group }
 			set_government_flags = yes
 
 			# Generic 2ICs

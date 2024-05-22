@@ -1,5 +1,10 @@
 enable_coring_at_fifty_compliance = {
 	if = {
+		limit = { PREV = { core_compliance = { occupied_country_tag = PREV value > 50 } } }
+		set_temp_variable = { target = THIS }
+		PREV = { add_country_cores_upon_reaching_compliance_threshold = yes }
+	}
+	else_if = {
 		limit = { NOT = { check_variable = { PREV.can_integrate_@THIS = 50 } } }
 		set_variable = { PREV.can_integrate_@THIS = 50 }
 		hidden_effect = { start_country_integration_resistance = yes }
@@ -9,6 +14,11 @@ enable_coring_at_fifty_compliance = {
 
 enable_coring_at_eighty_compliance = {
 	if = {
+		limit = { PREV = { core_compliance = { occupied_country_tag = PREV value > 80 } } }
+		set_temp_variable = { target = THIS }
+		PREV = { add_country_cores_upon_reaching_compliance_threshold = yes }
+	}
+	else_if = {
 		limit = { NOT = { check_variable = { PREV.can_integrate_@THIS = 80 } } }
 		set_variable = { PREV.can_integrate_@THIS = 80 }
 		hidden_effect = { start_country_integration_resistance = yes }
@@ -218,10 +228,10 @@ add_country_cores_upon_reaching_compliance_threshold = {
 	every_controlled_state = {
 		limit = {
 			OR = {
-				is_core_of = FROM
+				is_core_of = var:target
 				AND = {
 					has_resistance = yes
-					occupied_country_tag = FROM
+					occupied_country_tag = var:target
 				}
 			}
 			NOT = { is_core_of = ROOT }
@@ -235,19 +245,19 @@ add_country_cores_upon_reaching_compliance_threshold = {
 		#remove all cores of FROM, unless they're the last core of the state or the owner needs the core for integration
 		if = {
 			limit = {
-				NOT = { country_exists = FROM }
-				FROM = { remove_cores_of_tag_if_non_existent = yes }
+				NOT = { country_exists = var:target }
+				var:target = { remove_cores_of_tag_if_non_existent = yes }
 			}
-			FROM = { clear_cores_of_tag_if_possible = yes }
+			var:target = { clear_cores_of_tag_if_possible = yes }
 		}
 
 		#fire notification if player
 		if = {
 			limit = {
 				is_ai = no
-				NOT = { is_in_array = { ROOT.country_integration_alerts = FROM } }
+				NOT = { is_in_array = { ROOT.country_integration_alerts = target } }
 			}
-			add_to_array = { ROOT.country_integration_alerts = FROM }
+			add_to_array = { ROOT.country_integration_alerts = target }
 			ROOT = { scoped_sound_effect = coring_sfx }
 			set_variable_to_random = global.kaiserreich_alerts_dirty
 		}
@@ -283,7 +293,7 @@ fire_country_specific_integration_content = {
 	if = {
 		limit = { original_tag = SAF }
 		if = {
-			limit = { FROM = { original_tag = NMB } }
+			limit = { var:target = { original_tag = NMB } }
 			country_event = { id = saf.314 days = 90 random_days = 30 }
 		}
 		else_if = {
@@ -300,11 +310,11 @@ fire_country_specific_integration_content = {
 			}
 		}
 		if = {
-			limit = { FROM = { original_tag = PUE } }
+			limit = { var:target = { original_tag = PUE } }
 			country_event = ustates.155 #Puerto Rico statehood
 		}
 		else_if = {
-			limit = { FROM = { original_tag = HAW } }
+			limit = { var:target = { original_tag = HAW } }
 			country_event = ustates.154 #Hawaii statehood
 		}
 		else_if = {
