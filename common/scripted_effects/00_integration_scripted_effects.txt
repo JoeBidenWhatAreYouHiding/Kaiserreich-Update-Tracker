@@ -214,8 +214,12 @@ add_state_core_upon_reaching_compliance_threshold = {
 				FROM = { is_ai = no }
 				NOT = { is_in_array = { FROM.state_integration_alerts = THIS } }
 			}
+			set_variable = { FROM.integration_progressbar_value_@THIS = -317 }
+			set_variable = { FROM.integration_alert_timer_@THIS = 0 }
 			add_to_array = { FROM.state_integration_alerts = THIS }
+			save_event_target_as = integrated_state
 			FROM = { scoped_sound_effect = coring_sfx }
+			state_event = { id = generic_events.40 hours = 1 trigger_for = FROM }
 			set_variable_to_random = global.kaiserreich_alerts_dirty
 		}
 
@@ -254,10 +258,16 @@ add_country_cores_upon_reaching_compliance_threshold = {
 		#fire notification if player
 		if = {
 			limit = {
-				is_ai = no
+				ROOT = { is_ai = no }
 				NOT = { is_in_array = { ROOT.country_integration_alerts = target } }
 			}
+			set_variable = { integration_progressbar_value_@var:target = -317 }
+			set_variable = { integration_alert_timer_@var:target = 0 }
 			add_to_array = { ROOT.country_integration_alerts = target }
+			var:target = {
+				save_event_target_as = integrated_country
+				country_event = generic_events.45
+			}
 			ROOT = { scoped_sound_effect = coring_sfx }
 			set_variable_to_random = global.kaiserreich_alerts_dirty
 		}

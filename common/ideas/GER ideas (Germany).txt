@@ -3125,7 +3125,7 @@ ideas = {
 		}
 		GER_eastern_workers_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_eastern_workers_idea" }
-			picture = SOV_third_five_year_plan_civilian
+			picture = SOV_third_five_year_plan_civilian_ccp_2d_sov_compatibility
 			allowed = { always = no }
 			available = {
 				is_faction_leader = yes
@@ -3151,7 +3151,7 @@ ideas = {
 		}
 		GER_eastern_workers_idea_positive = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_eastern_workers_idea_positive" }
-			picture = SOV_second_five_year_plan
+			picture = SOV_second_five_year_plan_ccp_2d_sov_compatibility
 			allowed = { always = no }
 			modifier = {
 				research_speed_factor = 0.04
@@ -3179,7 +3179,7 @@ ideas = {
 		}
 		GER_military_conversion = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_military_conversion" }
-			picture = SOV_third_five_year_plan_military
+			picture = SOV_third_five_year_plan_military_ccp_2d_sov_compatibility
 			allowed = { always = no }
 			modifier = {
 				industrial_capacity_dockyard = 0.05
