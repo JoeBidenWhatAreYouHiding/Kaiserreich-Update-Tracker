@@ -1059,7 +1059,7 @@ characters = {
 		}
 		corps_commander = {
 			desc = FNG_su_bingwen_commander_desc
-			traits = { career_officer infantry_officer winter_specialist light_infantry_officer trickster commando }
+			traits = { career_officer infantry_officer winter_specialist light_infantry_officer commando }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2

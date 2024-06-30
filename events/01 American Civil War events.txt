@@ -346,6 +346,7 @@ country_event = {
 				country_event = { id = amcivwar.1 hours = 8 } #spawn CSA
 			}
 		}
+		TEX = { set_country_leader_description = { desc = TEX_huey_long_leader_desc_civil_war } }
 	}
 	option = {
 		log = "[GetLogInfo]: event amcivwar.2 option amcivwar.2.b"
@@ -555,10 +556,6 @@ country_event = {
 						AND = {
 							tag = NEE
 							has_country_flag = NEE_entered_the_civil_war
-							any_owned_state = {
-								is_mainland_america = yes
-								NOT = { is_new_england = yes }
-							}
 						}
 					}
 				}
@@ -566,15 +563,7 @@ country_event = {
 			}
 		}
 		else_if = {
-			limit = {
-				NEE = {
-					exists = yes
-					any_owned_state = {
-						is_mainland_america = yes
-						NOT = { is_new_england = yes }
-					}
-				}
-			}
+			limit = { country_exists = NEE }
 			NEE = { country_event = amcivwar.24 }
 		}
 		else = {

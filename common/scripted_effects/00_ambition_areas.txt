@@ -428,8 +428,7 @@ create_ambition_areas = {
 			OR = {
 				is_core_of = BRM
 				is_claimed_by = BRM
-				region = 195 # Burma
-				state = 749 # Tenasserim
+				is_burma = yes
 			}
 		}
 		set_variable = { ambition_area_@BRM = 1 }
@@ -914,7 +913,7 @@ create_ambition_areas = {
 				### Mainland Southeast Asia ###
 				region = 196 # Indochina
 				region = 142 # Siam
-				region = 195 # Burma
+				is_burma = yes
 				region = 194 # Malay Peninsula
 				### Maritime Southeast Asia ###
 				region = 159 # Borneo/Kalimantan
@@ -1128,9 +1127,8 @@ create_ambition_areas = {
 				is_core_of = HND
 				is_claimed_by = HND
 				is_india = yes
+				is_burma = yes
 				region = 146 #Himalayas
-				region = 195 #Burma
-				state = 749 #Tenasserim
 				state = 897 #Aksai Chin
 			}
 		}
@@ -1170,7 +1168,7 @@ create_ambition_areas = {
 				region = 196 # Indochina Proper
 				region = 142 # Siam
 				region = 194 # Malay Peninsular
-				region = 195 # Burma
+				is_burma = yes
 			}
 		}
 		set_variable = { ambition_area_@INC = 1 }
@@ -1825,9 +1823,8 @@ create_ambition_areas = {
 				is_core_of = PRF
 				is_claimed_by = PRF
 				is_india = yes
+				is_burma = yes
 				region = 146 #Himalayas
-				region = 195 #Burma
-				state = 749 #Tenasserim
 				state = 897 #Aksai Chin
 			}
 		}
@@ -1878,11 +1875,10 @@ create_ambition_areas = {
 				is_core_of = RAJ
 				is_claimed_by = RAJ
 				is_india = yes
+				is_burma = yes
 				region = 146 #Himalayas
-				region = 195 #Burma
 				state = 267 #Kabul
 				state = 415 #Herat
-				state = 749 #Tenasserim
 				state = 897 #Aksai Chin
 			}
 		}

@@ -415,6 +415,13 @@ is_india = {
 	}
 }
 
+is_burma = {
+	OR = {
+		region = 195 #Burma
+		state = 749 #Tenasserim
+	}
+}
+
 is_southeast_asia = {
 	OR = {
 		region = 196 #Indochina

@@ -246,7 +246,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_portrait_POR_jose_tristao_de_bettencourt_army_large"
-		texturefile = "gfx/leaders/POR/POR_jose_de_bettencourt.png"
+		texturefile = "gfx/leaders/POR/POR_jose_tristao_de_bettencourt.png"
 	}
 	spriteType = {
 		name = "GFX_portrait_POR_jose_tristao_de_bettencourt_army_small"

@@ -92,11 +92,6 @@ KOR_return_of_the_provisional_government = {
 
 KOR_socialist_government = {
 	KOR = {
-		set_politics = {
-			ruling_party = totalist
-			elections_allowed = no
-		}
-		activate_advisor = KOR_kim_kyu_sik_sic
 		set_popularities = {
 			totalist = 12
 			syndicalist = 8
@@ -122,6 +117,7 @@ KOR_socialist_government = {
 				ruling_party = radical_socialist
 				elections_allowed = no
 			}
+			activate_advisor = KOR_kim_kyu_sik_sic
 			uncomplete_national_focus = {
 				focus = KOR_true_korean_socialism
 				uncomplete_children = yes
@@ -136,6 +132,7 @@ KOR_socialist_government = {
 				ruling_party = syndicalist
 				elections_allowed = no
 			}
+			activate_advisor = KOR_kim_kyu_sik_sic
 			uncomplete_national_focus = {
 				focus = KOR_install_political_tutelage
 				uncomplete_children = yes
@@ -143,7 +140,14 @@ KOR_socialist_government = {
 		}
 	}
 	else = {
-		KOR = { set_country_flag = KOR_socialist }
+		KOR = {
+			set_country_flag = KOR_socialist
+			set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+			}
+			activate_advisor = KOR_kim_kyu_sik_sic
+		}
 	}
 }
 KOR_democratic_government = {

@@ -507,30 +507,6 @@ on_actions = {
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 	on_state_control_changed = {
 		effect = {
-			# RUS-FIN peace
-			if = {
-				limit = {
-					OR = {
-						tag = var:global.russia
-						146 = { #Karelia
-							is_owned_by = PREV
-							is_claim_or_core_of_PREV = yes
-						}
-					}
-					has_war_with = FROM
-					FROM = {
-						OR = {
-							tag = var:global.russia
-							146 = { #Karelia
-								is_owned_by = PREV
-								is_claim_or_core_of_PREV = yes
-							}
-						}
-					}
-				}
-				var:146.owner = { country_event = rusfor.1232 }
-			}
-
 			# RUS-ROM peace
 			if = {
 				limit = {

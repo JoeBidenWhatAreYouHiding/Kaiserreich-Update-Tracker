@@ -1764,7 +1764,7 @@ country_event = { #Propose peace to Mongolia/Tibet?
 
 	trigger = {
 		original_tag = XSM
-		surrender_progress > 0.3
+		surrender_progress > 0.4
 		OR = {
 			MON = {
 				has_war_with = ROOT

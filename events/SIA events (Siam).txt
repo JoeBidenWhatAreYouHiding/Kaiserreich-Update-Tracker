@@ -4035,8 +4035,7 @@ country_event = { #Unconditional Surrender Goes into Effect
 						OR = {
 							is_core_of = BRM
 							is_claimed_by = BRM
-							region = 195 #Burma
-							state = 749 #Tenasserim
+							is_burma = yes
 						}
 					}
 					transfer_state_to = BRM
@@ -4083,20 +4082,23 @@ country_event = { #Unconditional Surrender Goes into Effect
 				else = {
 					var:431.owner = { save_event_target_as = SIA_india }
 				}
-				every_owned_state = {
-					limit = {
-						is_india = yes
-						if = {
-							limit = {
-								OR = {
-									region = 195 #Burma
-									state = 749 #Tenasserim
-								}
+				if = {
+					limit = { owns_state = 288 } #Rangoon
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_india = yes
+								is_burma = yes
 							}
-							SIA = { owns_state = 288 } #Rangoon
 						}
+						transfer_state_to = event_target:SIA_india
 					}
-					transfer_state_to = event_target:SIA_india
+				}
+				else = {
+					every_owned_state = {
+						limit = { is_india = yes }
+						transfer_state_to = event_target:SIA_india
+					}
 				}
 			}
 
@@ -4197,8 +4199,7 @@ country_event = { #Unconditional Surrender Goes into Effect
 						limit = {
 							OR = {
 								is_core_of = BRM
-								region = 195 #Burma
-								state = 749 #Tenasserim
+								is_burma = yes
 							}
 						}
 						transfer_state_during_war = yes

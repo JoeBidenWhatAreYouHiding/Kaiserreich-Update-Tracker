@@ -2459,3 +2459,35 @@ country_event = { #Some Manchu flee to Shandong if they backed the failed coup
 		add_political_power = 20
 	}
 }
+
+country_event = { #Natpop SQI declares war on Zhili QIE if the coup fails and war breaks out with Shanxi
+	id = shandong.504
+	title = shandong.504.t
+	desc = shandong.504.d
+	picture = GFX_report_event_QIE_soldiers_planning
+
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event shandong.504 option shandong.504.a"
+		name = shandong.504.a
+		ai_chance = { base = 100 }
+		every_state = {
+			limit = { is_core_of = FROM }
+			add_claim_by = ROOT
+		}
+		create_wargoal = {
+			target = QIE
+			type = annex_everything
+		}
+		hidden_effect = {
+			QIE = { country_event = { id = china_events.0 days = 1 } }
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event shandong.504 option shandong.504.b"
+		name = shandong.504.b
+		ai_chance = { base = 0 }
+	}
+}

@@ -12951,13 +12951,10 @@ country_event = { #The National Army and the Nationalist Party
 		set_politics = {
 			ruling_party = radical_socialist
 			elections_allowed = no
+			name = SHX_kuomintang_feng
+			long_name = SHX_kuomintang_feng_long
 		}
 		hidden_effect = {
-			set_party_name = {
-				ideology = radical_socialist
-				long_name = SHX_kuomintang_feng_long
-				name = SHX_kuomintang_feng
-			}
 			set_party_name = {
 				ideology = authoritarian_democrat
 				long_name = SHX_kuomintang_feng_long
@@ -12986,6 +12983,8 @@ country_event = { #The National Army and the Nationalist Party
 				limit = {
 					has_socialist_government = no
 					NOT = {
+						original_tag = JAP
+						original_tag = KOR
 						AND = {
 							tag = INC
 							has_government = social_democrat
@@ -12996,14 +12995,16 @@ country_event = { #The National Army and the Nationalist Party
 					ruling_party = radical_socialist
 					elections_allowed = no
 				}
-				if = {
-					limit = { tag = JAP }
-					JAP_socialist_government = yes
-				}
-				else_if = {
-					limit = { tag = KOR }
+			}
+			if = {
+				limit = { has_subject = JAP }
+				JAP_socialist_government = yes
+			}
+			if = {
+				limit = { has_subject = KOR }
+				KOR = {
 					drop_cosmetic_tag = yes
-					KOR_return_of_the_provisional_government = yes
+					KOR_socialist_government = yes
 				}
 			}
 		}

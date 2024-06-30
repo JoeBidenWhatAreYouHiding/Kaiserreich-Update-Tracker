@@ -1211,6 +1211,20 @@ defined_text = {
 	}
 }
 defined_text = {
+	name = GetVictoryPointName_916
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = VICTORY_POINTS_916
+	}
+	text = {
+		trigger = { tag = MON }
+		localization_key = VICTORY_POINTS_916_MONGOLIAN
+	}
+	text = {
+		localization_key = VICTORY_POINTS_916
+	}
+}
+defined_text = {
 	name = GetVictoryPointName_921
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -1244,7 +1258,7 @@ defined_text = {
 	}
 	text = {
 		trigger = { tag = MON }
-		localization_key = VICTORY_POINTS_930_MONGOL
+		localization_key = VICTORY_POINTS_930_MONGOLIAN
 	}
 	text = {
 		localization_key = VICTORY_POINTS_930
@@ -12015,6 +12029,32 @@ defined_text = {
 	}
 }
 defined_text = {
+	name = GetVictoryPointName_10376
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = VICTORY_POINTS_10376
+	}
+	text = {
+		trigger = { original_tag = JAP }
+		localization_key = VICTORY_POINTS_10376_JAPANESE
+	}
+	text = {
+		trigger = { original_tag = KOR }
+		localization_key = VICTORY_POINTS_10376_KOREAN
+	}
+	text = {
+		trigger = { is_russian_tag = yes }
+		localization_key = VICTORY_POINTS_10376_RUSSIAN
+	}
+	text = {
+		trigger = { is_chinese_tag = yes }
+		localization_key = VICTORY_POINTS_10376_CHINESE
+	}
+	text = {
+		localization_key = VICTORY_POINTS_10376
+	}
+}
+defined_text = {
 	name = GetVictoryPointName_10397
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -12235,6 +12275,28 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_10578
+	}
+}
+defined_text = {
+	name = GetVictoryPointName_10612
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = VICTORY_POINTS_10612
+	}
+	text = {
+		trigger = { original_tag = MON }
+		localization_key = VICTORY_POINTS_10612_MONGOLIAN
+	}
+	text = {
+		trigger = { is_russian_tag = yes }
+		localization_key = VICTORY_POINTS_10612_RUSSIAN
+	}
+	text = {
+		trigger = { original_tag = JAP }
+		localization_key = VICTORY_POINTS_10612_JAPANESE
+	}
+	text = {
+		localization_key = VICTORY_POINTS_10612
 	}
 }
 defined_text = {
@@ -14437,6 +14499,20 @@ defined_text = {
 	}
 }
 defined_text = {
+	name = GetVictoryPointName_11808
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = VICTORY_POINTS_11808
+	}
+	text = {
+		trigger = { original_tag = MON }
+		localization_key = VICTORY_POINTS_11808_MONGOLIAN
+	}
+	text = {
+		localization_key = VICTORY_POINTS_11808
+	}
+}
+defined_text = {
 	name = GetVictoryPointName_11818
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -15468,6 +15544,20 @@ defined_text = {
 	name = GetVictoryPointName_12334
 	text = {
 		localization_key = VICTORY_POINTS_12334
+	}
+}
+defined_text = {
+	name = GetVictoryPointName_12337
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = VICTORY_POINTS_12337
+	}
+	text = {
+		trigger = { original_tag = MON }
+		localization_key = VICTORY_POINTS_12337_MONGOLIAN
+	}
+	text = {
+		localization_key = VICTORY_POINTS_12337
 	}
 }
 defined_text = {

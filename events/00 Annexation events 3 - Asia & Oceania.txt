@@ -9976,16 +9976,7 @@ country_event = { #Fate of Burma
 	immediate = {
 		hidden_effect = {
 			every_state = {
-				limit = {
-					OR = {
-						is_core_of = BRM
-						is_claimed_by = BRM
-					}
-					NOT = {
-						region = 195 #Burma
-						state = 749 #Tenasserim
-					}
-				}
+				limit = { is_burma = no }
 				remove_core_of = BRM
 				remove_claim_by = BRM
 			}
@@ -10072,10 +10063,7 @@ country_event = { #Fate of Burma
 		set_temp_variable = { tag_to_release = RAJ }
 		every_state = {
 			limit = {
-				OR = {
-					region = 195 #Burma
-					state = 749 #Tenasserim
-				}
+				is_burma = yes
 				is_valid_annexation_state = yes
 			}
 			add_claim_of_target_and_transfer_if_owned = yes
@@ -10102,10 +10090,7 @@ country_event = { #Fate of Burma
 		set_temp_variable = { tag_to_release = HND }
 		every_state = {
 			limit = {
-				OR = {
-					region = 195 #Burma
-					state = 749 #Tenasserim
-				}
+				is_burma = yes
 				is_valid_annexation_state = yes
 			}
 			add_claim_of_target_and_transfer_if_owned = yes
@@ -10132,10 +10117,7 @@ country_event = { #Fate of Burma
 		set_temp_variable = { tag_to_release = PRF }
 		every_state = {
 			limit = {
-				OR = {
-					region = 195 #Burma
-					state = 749 #Tenasserim
-				}
+				is_burma = yes
 				is_valid_annexation_state = yes
 			}
 			add_claim_of_target_and_transfer_if_owned = yes
@@ -10156,10 +10138,7 @@ country_event = { #Fate of Burma
 		ai_chance = { base = 90 }
 		every_state = {
 			limit = {
-				OR = {
-					region = 195 #Burma
-					state = 749 #Tenasserim
-				}
+				is_burma = yes
 				is_valid_annexation_state = yes
 			}
 			add_claim_by = ROOT

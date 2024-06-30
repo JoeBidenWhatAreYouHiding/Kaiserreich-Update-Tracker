@@ -240,20 +240,22 @@ country_event = {
 			}
 		}
 		effect_tooltip = { retire_character = HYD_madapati_hanumantha_rao }
+		if = {
+			limit = { HYD_madapati_hanumantha_rao = { is_second_in_command = yes } }
+			activate_advisor = PRF_mirza_muhammad_ismail_sic
+		}
 		hidden_effect = {
-			HYD_madapati_hanumantha_rao = { set_nationality = HYD }
-			HYD = {
-				HYD_madapati_hanumantha_rao = {
-					remove_second_in_command_role = yes
-					if = {
-						limit = { has_ideology = radical_socialist_subtype }
-						promote_character = radical_socialist_subtype
-					}
-					else = {
-						add_country_leader_role = {
-							country_leader = { ideology = radical_socialist_subtype }
-							promote_leader = yes
-						}
+			HYD_madapati_hanumantha_rao = {
+				set_nationality = HYD
+				remove_second_in_command_role = yes
+				if = {
+					limit = { has_ideology = radical_socialist_subtype }
+					promote_character = radical_socialist_subtype
+				}
+				else = {
+					add_country_leader_role = {
+						country_leader = { ideology = radical_socialist_subtype }
+						promote_leader = yes
 					}
 				}
 			}
@@ -1837,23 +1839,23 @@ country_event = {
 
 	trigger = {
 		OR = {
-			tag = PRF
-			tag = HND
-			tag = MDR
+			original_tag = PRF
+			original_tag = HND
 		}
+		has_war_with = RAJ
+		controls_state = RAJ.capital #Lahore
+		is_subject = no
 		OR = {
 			is_in_faction = no
 			is_faction_leader = yes
 		}
-		has_war_with = RAJ
-		controls_state = RAJ.capital #Lahore
-		surrender_progress < 0.2
 		RAJ = {
 			is_in_faction = yes
 			is_faction_leader = no
 			has_capitulated = yes
 			NOT = { has_country_flag = RAJ_considering_peace }
 		}
+		surrender_progress < 0.2
 	}
 
 	mean_time_to_happen = {
@@ -1893,20 +1895,69 @@ country_event = {
 	option = {
 		log = "[GetLogInfo]: event prf.161 option prf.161.a"
 		name = prf.161.a #We have no choice but to accept
-		ai_chance = { base = 80 }
+		ai_chance = { base = 100 }
 		add_political_power = -100
 		every_other_country = {
 			limit = {
 				is_in_faction_with = ROOT
-				is_indian_tag = yes
+				is_subject = yes
+				OR = {
+					is_indian_tag = yes
+					original_tag = NEP
+					original_tag = BHU
+					original_tag = CEY
+					original_tag = BRM
+					original_tag = SHA
+					original_tag = KAC
+					original_tag = AFG
+				}
+			}
+			overlord = {
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_free
+				}
+			}
+			leave_faction = yes
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+				is_subject = no
+				OR = {
+					is_indian_tag = yes
+					original_tag = NEP
+					original_tag = BHU
+					original_tag = CEY
+					original_tag = BRM
+					original_tag = SHA
+					original_tag = KAC
+					original_tag = AFG
+				}
 			}
 			leave_faction = yes
 		}
 
-		# If Goa is in the Entente, annex it
-		if = {
-			limit = { is_ally_with = 321.owner }
-			321 = { transfer_state_to = FROM }
+		# Give away any owned states in and around India
+		every_state = {
+			limit = {
+				OR = {
+					is_india = yes
+					is_burma = yes
+				}
+				owner = {
+					is_ally_with = FROM
+					is_indian_tag = no
+					NOT = { original_tag = NEP }
+					NOT = { original_tag = BHU }
+					NOT = { original_tag = CEY }
+					NOT = { original_tag = BRM }
+					NOT = { original_tag = SHA }
+					NOT = { original_tag = KAC }
+					NOT = { original_tag = AFG }
+				}
+			}
+			transfer_state_to = FROM
 		}
 
 		every_enemy_country = {
@@ -1915,29 +1966,23 @@ country_event = {
 					is_indian_tag = yes
 					original_tag = NEP
 					original_tag = BHU
+					original_tag = CEY
+					original_tag = BRM
+					original_tag = SHA
+					original_tag = KAC
+					original_tag = AFG
 				}
 				is_valid_peace_target = yes
 			}
 			white_peace_with_ROOT = yes
 		}
 	}
+
 	option = {
 		log = "[GetLogInfo]: event prf.161 option prf.161.b"
 		name = prf.161.b #No! The Delhi Government shall be restored!
-		ai_chance = {
-			base = 20
-			modifier = {
-				factor = 0
-				FROM = { surrender_progress < 0.1 }
-			}
-			modifier = {
-				factor = 0
-				has_war_with_major = yes
-			}
-		}
-		FROM = {
-			country_event = { id = prf.162 days = 1 }
-		}
+		ai_chance = { base = 0 }
+		FROM = { country_event = { id = prf.162 days = 1 } }
 	}
 }
 

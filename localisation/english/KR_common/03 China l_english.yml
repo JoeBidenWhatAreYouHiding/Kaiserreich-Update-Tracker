@@ -844,12 +844,12 @@
  china_seek_protection_paragraph_india_socialist: "While we have long struggled with our oppression under our Chinese overlords, new geo-political shifts around the world now present an opportunity. To the southern hemisphere of the Asian continent lies the recently reunified Indian nation - that will no doubt hope to seek to contain Chinese expansionism. Should we align with the Indians however, they may seek to demand that our government share in their revolution and establish a leftist government. This may arouse anger from our conservatives but we may need to do so in order to protect our nation from destruction."
  china_seek_protection_paragraph_india_default: "While we have long struggled with our oppression under our Chinese overlords, new geo-political shifts around the world now present an opportunity. To the southern hemisphere of the Asian continent lies the recently reunified Indian nation - that will no doubt hope to seek to contain Chinese expansionism. Perhaps with them, we can find protection against the Chinese encroachment on our borders."
 
- china_events.109.a: "We accept their offer for our help."
+ china_events.109.a: "We must surrender at once."
  china_events.109.b: "They must be part of our sphere for peace."
  china_events.109.c: "We will only demand the Han lands and leave them alone."
  china_events.109.d: "We seek help from the Russian Government."
  china_events.109.e: "We will seek help from the Indian Government."
- china_events.109.f: "We do not accept their offer."
+ china_events.109.f: "We shall never surrender!"
 
  china_events.110.intro: "We have received an urgent request from [FROM.GetNameDef] asking for our protection against Chinese irredentism and expansionism. While these regions were nominally under the sphere of the Qing Dynasty, following the 1911 Revolution, they emerged independent and many of them do not wish to see themselves reintegrated into the Chinese state. As a result, they have approached our government with the hopes that we come to their aid in their dire hour."
  china_events.110.t: "[FROM.GetNameDefCap] Requests Protection Against China"

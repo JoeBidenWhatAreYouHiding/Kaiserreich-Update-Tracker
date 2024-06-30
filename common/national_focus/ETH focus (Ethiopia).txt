@@ -720,8 +720,8 @@ focus_tree = {
 		ai_will_do = { base = 1.3 }
 
 		available = {
-			is_subject = no
 			has_country_flag = ETH_german_aligned
+			is_subject = no
 			country_exists = GER
 			NOT = { has_war_with = GER }
 		}
@@ -760,6 +760,11 @@ focus_tree = {
 		available = {
 			has_country_flag = ETH_german_aligned
 			is_subject = no
+			is_in_faction = no
+			OR = {
+				owns_state = 906 #Ogaden
+				NOT = { 906 = { is_claimed_by = ROOT } } #Ogaden
+			}
 			GER = {
 				is_faction_leader = yes
 				NOT = { has_war_with = ROOT }
@@ -768,15 +773,11 @@ focus_tree = {
 				INT = { has_war_with = GER }
 				NOT = { country_exists = INT }
 			}
-			OR = {
-				NOT = { country_exists = SOM }
-				SOM = { is_subject = yes }
-			}
-			is_in_faction = no
 		}
 		bypass = {
 			OR = {
 				is_subject = yes
+				is_in_faction = yes
 				has_war_with = GER
 				GER = { is_faction_leader = no }
 			}
@@ -861,8 +862,8 @@ focus_tree = {
 		ai_will_do = { base = 1.3 }
 
 		available = {
-			is_subject = no
 			has_country_flag = ETH_japanese_aligned
+			is_subject = no
 			country_exists = JAP
 			NOT = { has_war_with = JAP }
 		}
@@ -901,6 +902,11 @@ focus_tree = {
 		available = {
 			has_country_flag = ETH_japanese_aligned
 			is_subject = no
+			is_in_faction = no
+			OR = {
+				owns_state = 906 #Ogaden
+				NOT = { 906 = { is_claimed_by = ROOT } } #Ogaden
+			}
 			JAP = {
 				is_faction_leader = yes
 				NOT = { has_war_with = ROOT }
@@ -909,15 +915,11 @@ focus_tree = {
 				GER = { has_war_with = JAP }
 				NOT = { country_exists = GEA }
 			}
-			OR = {
-				NOT = { country_exists = SOM }
-				SOM = { is_subject = yes }
-			}
-			is_in_faction = no
 		}
 		bypass = {
 			OR = {
 				is_subject = yes
+				is_in_faction = yes
 				has_war_with = JAP
 				JAP = { is_faction_leader = no }
 			}
@@ -1305,43 +1307,26 @@ focus_tree = {
 		x = -2
 		y = 8
 
+		available = {
+			is_subject = no
+			can_declare_war_on = SOM
+			SOM = { owns_state = 906 } #Ogaden
+		}
+
 		prerequisite = { focus = ETH_Finish_The_Reforms }
+
+		will_lead_to_war_with = SOM
 
 		ai_will_do = {
 			base = 1.6
 			modifier = {
 				factor = 0
-				has_war = yes
-			}
-			modifier = {
-				factor = 0
-				strength_ratio = { tag = SOM ratio < 1 }
-			}
-			modifier = {
-				factor = 0
-				SOM = {
-					is_in_faction = yes
-					any_allied_country = {
-						strength_ratio = { tag = ROOT ratio > 0.8 }
-					}
+				OR = {
+					country_is_in_dangerous_war = yes
+					SOM = { dont_start_major_faction_wars = yes }
+					SOM = { default_attack_AI_trigger = yes }
 				}
 			}
-			modifier = {
-				factor = 0
-				SOM = {
-					is_subject = yes
-					overlord = {
-						strength_ratio = { tag = ROOT ratio > 0.8 }
-					}
-				}
-			}
-		}
-		will_lead_to_war_with = SOM
-
-		available = {
-			is_subject = no
-			can_declare_war_on = SOM
-			SOM = { owns_state = 906 }
 		}
 
 		completion_reward = {

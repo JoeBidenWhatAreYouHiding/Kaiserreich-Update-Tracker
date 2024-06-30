@@ -1141,6 +1141,11 @@
  shandong.503.a: "They are welcome here."
  shandong.503.b: "We have no use for them."
 
+ shandong.504.t: "An Unbridled Gambit"
+ shandong.504.d: "In a shocking turn of events, it would appear that the underworld of Beijing politics has unfurled onto the national scene. As it turns out, the iron grip of the Jade Marshal and the King of Baoding, Wu Peifu and Cao Kun respectively, was less concrete than was internationally believed. Following their inaction in the collapse of the League, the Zhili clique was sent into a miasma of disarray. Sensing both opportunity and weakness in their enemies, the Manchu royals colluded with Governor Yan Xishan of Shanxi in order to eject the Zhili from the Central Provinces.\n\nHowever, history has repeated itself, and Wu Peifu has oncemore defied the odds and turned them in his favour. Reportedly, the coup attempt failed dramatically, and has instilled the new ”National Protector” with vengeance and vigour. The Zhili Clique seem intent on descending down the warpath against Yan Xishan’s Jin Clique and Feng Yuxiang’s Guominjun, for the attempt on his life.\n\nYet there remains an opportunity for [SQI.GetLeader]. With monarchical sympathies, and the political situation of Shandong settled, this could be the necessary setpiece to see him ascend from the mere province to the national level. This is of course, presuming that his armies can fight the Jade Marshal’s on equal terms, a feat rarely achieved."
+ shandong.504.a: "Seize the initiative! For the Emperor!"
+ shandong.504.b: "We’d be fools to go against the Jade Marshal."
+
 ### Beijing loc - organise later ###
  SQI_imprisoned_emperor: "Emperor, Imprisoned"
  SQI_unify_the_country: "Unify the Errant Warlords"

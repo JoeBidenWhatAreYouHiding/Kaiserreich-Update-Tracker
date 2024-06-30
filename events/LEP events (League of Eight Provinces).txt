@@ -1320,7 +1320,7 @@ country_event = { # LEP collapse - ANQ dead
 				country_exists = QIE
 				QIE = {
 					NOT = { has_country_flag = wu_intervenes_proLEP }
-					NOT = { has_completed_focus = QIE_purge_zhili }
+					NOT = { china_is_aligned_with_manchu = yes }
 				}
 			}
 			ANQ = {
@@ -4102,7 +4102,7 @@ country_event = {
 		QIE = {
 			has_country_flag = wu_intervenes_proLEP
 			has_war_with = FNG
-			surrender_progress > 0.5
+			NOT = { controls_state = 608 }
 		}
 	}
 
@@ -4243,6 +4243,9 @@ country_event = { #Heads up to Fengtian of LEP intervention to support QIE
 				has_war_with = CHI
 				has_war_with = ANQ
 			}
+		}
+		QIE = {
+			has_country_flag = wu_intervenes_proLEP
 		}
 	}
 

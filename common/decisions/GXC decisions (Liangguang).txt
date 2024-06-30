@@ -689,6 +689,11 @@ GXC_finding_backers = {
 			factor = 10
 			modifier = {
 				factor = 0
+				NOT = { is_neighbor_of = FROM }
+				NOT = { FROM = { any_subject_country = { is_neighbor_of = ROOT } } }
+			}
+			modifier = {
+				factor = 0
 				FROM = { surrender_progress > 0.3 }
 				NOT = { has_game_rule = { rule = GXC_path option = GXC_PATH_PATAUT } }
 			}

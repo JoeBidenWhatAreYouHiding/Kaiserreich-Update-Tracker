@@ -2460,7 +2460,7 @@ focus_tree = {
 				has_country_leader = { character = FNG_tang_shaoyi }
 			}
 			JAP = { is_faction_leader = yes }
-			has_global_flag = china_united
+			china_is_the_unifier_of_china_trigger = yes
 		}
 		bypass = {
 			is_in_faction_with = JAP
@@ -2603,6 +2603,9 @@ focus_tree = {
 			set_temp_variable = { CAPOP = 2 }
 			FNG_CAPOP = yes
 			add_ideas = FNG_shikan_clique_army_1
+			FNG_yang_yuting = {
+				promote_leader = yes
+			}
 		}
 	}
 
@@ -2651,6 +2654,9 @@ focus_tree = {
 			set_temp_variable = { ZCPOP = 2 }
 			FNG_ZCPOP = yes
 			add_ideas = { FNG_zhang_clique_army_1 }
+			FNG_zhang_xueliang = {
+				promote_leader = yes
+			}
 		}
 	}
 

@@ -75,6 +75,21 @@ country_event = { #FROM demands ROOT submit
 			china_is_potential_government = no
 			china_is_unaligned = yes
 			is_subject = no
+			if = {
+				limit = {
+					OR = {
+						original_tag = LEP
+						original_tag = SQI
+					}
+				}
+				FROM = { china_is_aligned_with_republicans = no }
+			}
+			if = {
+				limit = {
+					original_tag = ANQ
+				}
+				FROM = { china_is_aligned_with_kmt = no }
+			}
 		}
 		ai_chance = {
 			base = 20
@@ -223,24 +238,6 @@ country_event = { #FROM demands ROOT submit
 				#Manchu QIE has a disadvantage in convincing warlords to submit.
 				FROM = { china_is_aligned_with_manchu = yes }
 				china_is_aligned_with_manchu = no
-			}
-			modifier = {
-				factor = 0
-				#LEP and SQI can become nonaligned and shouldn't be able to submit to KMT or Federalist tags
-				OR = {
-					tag = LEP
-					tag = SQI
-				}
-				OR = {
-					FROM = { china_is_aligned_with_kmt = yes }
-					FROM = { china_is_aligned_with_federalists = yes }
-				}
-			}
-			modifier = {
-				factor = 0
-				#ANQ can become nonaligned and shouldn't be able to submit to KMT tags
-				tag = ANQ
-				FROM = { china_is_aligned_with_kmt = yes }
 			}
 			modifier = {
 				factor = 2

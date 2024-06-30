@@ -8,7 +8,6 @@ cwtools_dummy_effect = {
 		set_country_flag = ACW_supported_@ROOT
 		set_country_flag = ACW_supported_@FROM
 		set_country_flag = SAF_antagonise_@ROOT
-		set_global_flag = IRE_gaelicisation
 		1 = { set_state_flag = was_core_of_@var:tag_to_release }
 		### Dynamic variables
 		set_variable = { building_target_states_1 = 0 }
@@ -26,11 +25,6 @@ cwtools_dummy_effect = {
 		set_variable = { building_target_states_13 = 0 }
 		set_variable = { building_target_states_14 = 0 }
 		set_variable = { building_target_states_15 = 0 }
-		set_variable = { ai_strategy_decrypt_target@THIS = 0 }
-		set_variable = { ai_strategy_conquer@THIS = 0 }
-		set_variable = { ai_strategy_declare_war@THIS = 0 }
-		set_variable = { ai_strategy_prepare_for_war@THIS = 0 }
-		set_variable = { ai_strategy_antagonize@THIS = 0 }
 		### Any variable with ^
 		set_variable = { enemies^0 = 0 }
 		set_variable = { enemies^1 = 0 }

@@ -29,7 +29,6 @@ foreign_politics = {
 			}
 			set_temp_variable = { target = FROM }
 			all_enemy_country_workaround_trigger = yes
-			has_global_flag = china_united
 		}
 
 		visible = {
@@ -38,6 +37,7 @@ foreign_politics = {
 				is_faction_leader = yes
 				NOT = { has_war_with = ROOT }
 			}
+			china_is_the_unifier_of_china_trigger = yes
 		}
 
 		targets = { INT }
@@ -118,7 +118,6 @@ foreign_politics = {
 				limit = { tag = SHX }
 				SHX_wang_xiang = { is_second_in_command = yes }
 			}
-			has_global_flag = china_united
 		}
 
 		visible = {
@@ -135,6 +134,7 @@ foreign_politics = {
 				limit = { tag = SHX }
 				has_completed_focus = SHX_statesman
 			}
+			china_is_the_unifier_of_china_trigger = yes
 		}
 
 		targets = { GER }
@@ -197,7 +197,6 @@ foreign_politics = {
 			}
 			set_temp_variable = { target = FROM }
 			all_enemy_country_workaround_trigger = yes
-			has_global_flag = china_united
 		}
 
 		visible = {
@@ -211,6 +210,7 @@ foreign_politics = {
 				NOT = { has_war_with = ROOT }
 				has_socialist_government = no
 			}
+			china_is_the_unifier_of_china_trigger = yes
 		}
 
 		targets = { RUS }
@@ -274,7 +274,6 @@ foreign_politics = {
 				SHX_komoto_daisaku = { is_second_in_command = yes }
 				has_completed_focus = SHX_currying_international_exports_focus
 			}
-			has_global_flag = china_united
 		}
 
 		visible = {
@@ -291,6 +290,7 @@ foreign_politics = {
 				limit = { tag = GXC }
 				has_country_leader = { character = GXC_chen_lianbo }
 			}
+			china_is_the_unifier_of_china_trigger = yes
 		}
 
 		targets = { JAP }
@@ -1059,11 +1059,19 @@ chinese_unification = {
 			}
 			else_if = {
 				limit = { check_variable = { country_leader:china_alignment = token:zhili } }
-				log = "KR_Event_Logging;CHINA UNITED BY A minor clique;[GetDateText]"
 				set_cosmetic_tag = ZHL_united_china
-				add_ideas = CHS_legitimacy1
-				add_ideas = CHS_bureaucracy1
-				add_ideas = CHS_military1
+				if = {
+					limit = {
+						SZC_zhili_in_exile = yes
+					}
+					log = "KR_Event_Logging;CHINA UNITED BY Sichuanese Exiles;[GetDateText]"
+				}
+				else = {
+					log = "KR_Event_Logging;CHINA UNITED BY A minor clique;[GetDateText]"
+					add_ideas = CHS_legitimacy1
+					add_ideas = CHS_bureaucracy1
+					add_ideas = CHS_military1
+				}
 				activate_targeted_decision = { decision = china_move_capital target = ROOT }
 				hidden_effect = { news_event = china_events.311 }
 			}

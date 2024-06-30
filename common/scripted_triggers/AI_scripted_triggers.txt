@@ -44,6 +44,7 @@ willing_to_send_volunteers_to_PREV = {
 		siamese_civil_war_volunteers = yes
 		maf_collapse_volunteers = yes
 		levantine_war_volunteers = yes
+		winter_war_volunteers = yes
 	}
 }
 
@@ -764,6 +765,21 @@ levantine_war_volunteers = {
 		}
 	}
 	log = "willing_to_send_volunteers_to_PREV -- levantine_war_volunteers --- THIS = [THIS.GetName] PREV = [PREV.GetName]"
+}
+
+winter_war_volunteers = {
+	PREV = {
+		original_tag = FIN
+		has_war_with = RUS
+		is_valid_peace_target = yes
+		has_socialist_government = no
+	}
+	OR = {
+		original_tag = GER
+		original_tag = SWE
+	}
+	has_socialist_government = no
+	log = "willing_to_send_volunteers_to_PREV -- winter_war_volunteers --- THIS = [THIS.GetName] PREV = [PREV.GetName]"
 }
 
 ##############################

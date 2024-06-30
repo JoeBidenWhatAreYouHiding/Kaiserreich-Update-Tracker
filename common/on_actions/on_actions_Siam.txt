@@ -152,36 +152,16 @@ on_actions = {
 				}
 				country_event = { id = siam.18 days = 1 }
 			}
+			## Remove SIA state reform if non-SIA get those states
 			if = {
-				## Remove SIA state reform if non-SIA get those states
 				limit = {
-					FROM.FROM = {
-						OR = {
-							state = 72
-							state = 670
-							state = 749
-							state = 750
-							state = 751
-							state = 756
-							state = 825
-							state = 826
-							state = 830
-							state = 831
-							state = 882
-							state = 999
-						}
-					}
+					FROM = { original_tag = SIA }
+					FROM.FROM = { NOT = { is_core_of = FROM } }
 				}
-				if = {
-					limit = {
-						FROM = { tag = SIA }
-						FROM.FROM = { NOT = { is_core_of = FROM } }
-					}
-					FROM.FROM = {
-						clr_state_flag = SIA_municipal_reform_implemented
-						clr_state_flag = SIA_local_police_reinforced
-						clr_state_flag = SIA_civil_service_expanded
-					}
+				FROM.FROM = {
+					clr_state_flag = SIA_municipal_reform_implemented
+					clr_state_flag = SIA_local_police_reinforced
+					clr_state_flag = SIA_civil_service_expanded
 				}
 			}
 		}

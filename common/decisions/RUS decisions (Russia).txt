@@ -1582,6 +1582,11 @@ RUS_Foreign_Policy_decisions = {
 			}
 			modifier = {
 				factor = 0
+				country_exists = GER
+				NOT = { FROM = { original_tag = FIN } }
+			}
+			modifier = {
+				factor = 0
 				OR = {
 					RUS_dont_attack_if_vulnerable_or_preparing = yes
 					FROM = { RUS_dont_attack_if_target_is_stronger = yes }

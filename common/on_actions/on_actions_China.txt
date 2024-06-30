@@ -352,10 +352,34 @@ on_actions = {
 				MAN = { remove_ideas = MAN_mantetsu_influence_idea }
 			}
 
-			# Enable Manchu alignment if QIE is annexed
+			# Enable Manchu alignment and swap zhili flags to republican if QIE is annexed
 			else_if = {
 				limit = { FROM = { tag = QIE } }
 				QIE_enable_manchu_qing_alignment = yes
+				if = {
+					limit = {
+						ANQ = { has_cosmetic_tag = LSEP_QIE }
+					}
+					ANQ = { set_cosmetic_tag = LSEP_REP }
+				}
+				if = {
+					limit = {
+						HNN = { has_cosmetic_tag = HNN_zhili_monarchy }
+					}
+					HNN = { set_cosmetic_tag = HNN_zhili_republic }
+				}
+				if = {
+					limit = {
+						LEP = { has_cosmetic_tag = LSEP_QIE }
+					}
+					LEP = { set_cosmetic_tag = LSEP_REP }
+				}
+				if = {
+					limit = {
+						SQI = { china_is_aligned_with_zhili = yes }
+					}
+					SQI = { set_cosmetic_tag = SQI_REP }
+				}
 			}
 			# Kuomintang Exiles arrive in SHX
 			else_if = {

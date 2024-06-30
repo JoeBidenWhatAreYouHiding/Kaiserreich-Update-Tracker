@@ -1689,20 +1689,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus PRU_fleet_renewal"
-			random_owned_controlled_state = {
-				prioritize = { 303 }
-				limit = {
-					is_core_of = ROOT
-					free_building_slots = { building = dockyard size > 1 include_locked = yes }
-					free_building_slots = { building = infrastructure size > 0 include_locked = yes }
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
+			303 = { prioritize_state = yes }
+			add_one_random_dockyard = yes
+			add_one_random_dockyard = yes
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1721,20 +1710,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus PRU_fleet_expansion"
-			random_owned_controlled_state = {
-				prioritize = { 303 }
-				limit = {
-					is_core_of = ROOT
-					free_building_slots = { building = dockyard size > 1 include_locked = yes }
-					free_building_slots = { building = infrastructure size > 0 include_locked = yes }
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
+			303 = { prioritize_state = yes }
+			add_one_random_dockyard = yes
+			add_one_random_dockyard = yes
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}

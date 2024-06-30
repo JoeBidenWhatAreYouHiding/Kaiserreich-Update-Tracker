@@ -154,7 +154,10 @@ QIE_zhili_clique_flees = {
 		### they'll be transferred to SZC by their events
 		if = {
 			limit = {
-				SZC = { has_government = authoritarian_democrat }
+				SZC = {
+					SZC_has_armament_government = yes
+					NOT = { has_idea = SZC_civil_war_idea }
+				}
 			}
 			every_unit_leader = {
 				limit = { has_character_flag = QIE_zhili_leader }

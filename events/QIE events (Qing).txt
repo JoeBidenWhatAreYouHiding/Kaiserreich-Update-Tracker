@@ -5009,6 +5009,13 @@ country_event = {
 			}
 			SQI = { set_cosmetic_tag = SQI_REP }
 		}
+		else_if = {
+			limit = {
+				SQI = { has_country_leader = { character = SQI_zhang_tianran } }
+				has_global_flag = LEP_collapse_SQI_out
+			}
+			hidden_effect = { SQI = { country_event = { id = shandong.504 days = 2 } } }
+		}
 	}
 }
 
@@ -5545,6 +5552,13 @@ country_event = {
 					SQI = { has_country_leader = { character = SQI_qu_yingguang } }
 				}
 				SQI = { set_cosmetic_tag = SQI_REP }
+			}
+			else_if = {
+				limit = {
+					SQI = { has_country_leader = { character = SQI_zhang_tianran } }
+					has_global_flag = LEP_collapse_SQI_out
+				}
+				hidden_effect = { SQI = { country_event = { id = shandong.504 days = 2 } } }
 			}
 		}
 		else_if = {

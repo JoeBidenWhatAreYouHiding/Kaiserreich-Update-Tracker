@@ -290,10 +290,7 @@ focus_tree = {
 			focus = HNN_establish_the_defence_commission
 		}
 		bypass = {
-			if = {
-				limit = { is_subject = yes }
-				owns_state = 592 #canton
-			}
+			owns_state = 592 #canton
 		}
 
 		completion_reward = {

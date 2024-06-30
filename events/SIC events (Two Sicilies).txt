@@ -2211,8 +2211,8 @@ country_event = { #They have decided to refuse because uniter won't join
 		FROM = { clr_country_flag = ITA_considering_invite_@FROM }
 	}
 	option = {
-		log = "[GetLogInfo]: event sic.121 option sic.121.b"
-		name = sic.121.b #Then this means war!
+		log = "[GetLogInfo]: event sic.121 option sic.120.b"
+		name = sic.120.b #Then this means war!
 		trigger = {
 			is_subject = no
 			has_capitulated = no
@@ -2411,8 +2411,8 @@ country_event = { #They have decided to refuse because faction leader asked them
 		FROM = { clr_country_flag = ITA_considering_invite_@FROM }
 	}
 	option = {
-		log = "[GetLogInfo]: event sic.125 option sic.121.b"
-		name = sic.121.b #Then this means war!
+		log = "[GetLogInfo]: event sic.125 option sic.120.b"
+		name = sic.120.b #Then this means war!
 		trigger = {
 			is_subject = no
 			has_capitulated = no
@@ -2435,8 +2435,6 @@ country_event = { #They have decided to refuse because faction leader asked them
 		}
 		FROM = {
 			add_war_support = 0.10
-			clr_country_flag = ITA_referendum_failed
-			clr_country_flag = ITA_referendum_passed
 			clr_country_flag = ITA_considering_invite_@FROM
 		}
 		add_war_support = 0.10

@@ -5798,7 +5798,7 @@ country_event = { #A Generous Surprise!
 		}
 		add_equipment_to_stockpile = {
 			type = light_tank_chassis
-			amount = 120
+			amount = 240
 			producer = JAP
 		}
 		hidden_effect = {
@@ -11734,6 +11734,8 @@ country_event = { #Yuting Takes Over
 		retire_character = FNG_tang_yulin
 		retire_character = FNG_feng_zhanhai
 		retire_character = FNG_he_zhuguo
+		retire_character = FNG_su_bingwen
+		retire_character = FNG_ma_zhanshan
 		hidden_effect = {
 			remove_dynamic_modifier = { modifier = FNG_factionalism_modifier }
 			default_party_popularity_PP_gain = yes
@@ -12037,6 +12039,9 @@ country_event = { #Attacks on the South Manchuria Railway
 			remove_dynamic_modifier = {
 				modifier = FNG_resistance_modifier
 			}
+		}
+		hidden_effect = {
+			clr_country_flag = FNG_old_guard_active
 		}
 	}
 }

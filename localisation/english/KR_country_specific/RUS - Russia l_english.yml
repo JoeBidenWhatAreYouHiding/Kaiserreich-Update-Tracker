@@ -1494,23 +1494,29 @@
  rusfor.1231.a: "Another victory for Russian diplomacy!"
 
  rusfor.1232.t.defeat: "We've Been Defeated!"
- rusfor.1232.t.victory: "Russia Is Defeated!"
  rusfor.1232.d.defeat: "The armed forces of the Russian state have inflicted a series of great defeats upon us, and they encroach further upon our lands by the day. We must end this war before they manage to overrun our entire homeland."
+ rusfor.1232.t.victory: "Russia Is Defeated!"
  rusfor.1232.d.victory: "We have successfully routed the armed forces of the Russian state and inflicted a series of great defeats upon them. This is an opportunity to offer them peace in exchange for Karelia."
- rusfor.1232.a: "Sue for peace!"
- rusfor.1232.b: "Let us end this war."
+ rusfor.1232.t.white_peace: "Stalemate in the North"
+ rusfor.1232.d.white_peace: "TEMP: Winter War has stalemated, ROOT considers offering Russia a white peace."
+ rusfor.1232.a: "Let us end this war."
  rusfor.1232.c: "We can still win this!"
  rusfor.1232.d: "No peace until we reach Moscow!"
+ 
+ RUS_winter_war_objective_karelia: "Karelia"
+ RUS_winter_war_objective_finland: "Finland"
 
  rusfor.1233.t: "Peace with [FROM.GetNonIdeologyNameDef]?"
- rusfor.1233.d.victory: "With the reconquest of Karelia the government of [FROM.GetNonIdeologyNameDef] has declared their desire to end the state of war between our nations, accepting our sovereignty over Karelia in the process. How shall we respond?"
- rusfor.1233.d.defeat: "With our armies completely routed, the government of [FROM.GetNonIdeologyNameDef] has declared their desire to end the state of war between our nations, demanding sovereignty over Karelia in the process. How shall we respond?"
+ rusfor.1233.d.victory: "With the reconquest of [FROM.RUS_GetWinterWarTarget] the government of [FROM.GetNonIdeologyNameDef] has declared their desire to end the state of war between our nations, accepting our sovereignty over [FROM.RUS_GetWinterWarTarget] in the process. How shall we respond?"
+ rusfor.1233.d.defeat: "With our armies completely routed, the government of [FROM.GetNonIdeologyNameDef] has declared their desire to end the state of war between our nations, demanding sovereignty over [FROM.RUS_GetWinterWarTarget] in the process. How shall we respond?"
+ rusfor.1233.d.white_peace: "TEMP: stalemate against [FROM.GetNonIdeologyNameDef], Russia considers offer of white peace."
  rusfor.1233.a: "Accept the peace offer!"
  rusfor.1233.b: "No, they shall be crushed!"
 
  rusfor.1234.t: "Treaty of Petrograd"
  rusfor.1234.d.defeat: "The Russian state has agreed to our offer of surrender and the war is finally over."
- rusfor.1234.d.victory: "The Russian state has agreed to our offer of peace. Karelia has been ceded, and the war is finally over."
+ rusfor.1234.d.victory: "The Russian state has agreed to our offer of peace. [ROOT.RUS_GetWinterWarTarget] has been ceded, and the war is finally over."
+ rusfor.1234.d.white_peace: "TEMP: Notification that Russia has accepted a white peace."
  rusfor.1234.a: "At least we still exist!"
  rusfor.1234.b: "A magnificent victory!"
 
@@ -1546,6 +1552,14 @@
  rusfor.1239.d: "Shocking news from Moscow have arrived recently, as the Russians have refused to begin peace negotiations! They claim that the injuries against the Russian nation are too great to overcome, and that the war will not end until Russian troops are marching through Bucharest. We must see to our defences..."
  rusfor.1239.a: "God have mercy."
  rusfor.1239.b: "If it's a fight they want..."
+
+ rusfor.1240.t: "[FROM.GetNonIdeologyNameDefCap] Betrays Us!"
+ rusfor.1240.d: "Notification for non-faction leader overlord of [FROM.GetNonIdeologyNameDef] that they've negotiated a separate peace with [?global.russia.GetNameDef], breaking all relations with [ROOT.GetNameDef]."
+ rusfor.1240.a: "Response."
+
+ rusfor.1241.t: "[FROM.GetNonIdeologyNameDefCap] Betrays Us!"
+ rusfor.1241.d: "Notification for faction leader of [FROM.GetNonIdeologyNameDef] that they've negotiated a separate peace with [?global.russia.GetNameDef], breaking all relations with [ROOT.GetFactionName]."
+ rusfor.1241.a: "Response."
 
  rusfor.1273.t: "Spiritual Administration of the Muslims of Central Asia."
  rusfor.1273.d: "After the annexation of Central Asia, we got many new Muslim citizens, who were ruled before by the local obscurantist priests and preachers. It is obvious that we have to do something with their legacy and turn our new citizens into loyal and peaceful members of the Russian society. Now we have two propositions - we can establish a special Spiritual Administration of the Muslims of Central Asia or give an additional powers to the Orenburg Muslim Spiritual Assembly, which is controlled by the loyal Tatars and Bashkirs."
