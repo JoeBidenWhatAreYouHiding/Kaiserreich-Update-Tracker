@@ -869,11 +869,11 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus PRU_claims_of_the_confederation"
-			add_state_core = 506
-			add_state_core = 688
-			add_state_core = 873
-			add_state_core = 1027
-			add_state_claim = 903
+			506 = { remove_claim_and_add_core_of_ROOT = yes }
+			688 = { remove_claim_and_add_core_of_ROOT = yes }
+			873 = { remove_claim_and_add_core_of_ROOT = yes }
+			1027 = { remove_claim_and_add_core_of_ROOT = yes }
+			903 = { add_claim_of_ROOT = yes }
 			swap_ideas = {
 				remove_idea = PRU_sa_hegemony_idea2
 				add_idea = PRU_sa_hegemony_idea3

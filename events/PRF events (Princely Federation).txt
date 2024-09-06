@@ -2321,7 +2321,10 @@ country_event = {
 			limit = { has_event_target = PRF_demand_govt }
 			if = {
 				limit = { both_socialist_or_both_not_socialist = yes }
-				puppet = FROM
+				puppet = {
+					target = FROM
+					end_wars = no
+				}
 			}
 			else = {
 				set_temp_variable = { target = FROM }
@@ -3020,12 +3023,15 @@ country_event = {
 		}
 		FROM = {
 			if = {
-				limit = { has_country_flag = JAP_economic_sphere_member }
+				limit = { JAP = { is_leader_of_economic_sphere_of_PREV = yes } }
 				custom_effect_tooltip = JAP_withdraws_from_sphere
 				hidden_effect = { country_event = japfor.404 }
 			}
 		}
-		puppet = FROM
+		puppet = {
+			target = FROM
+			end_wars = no
+		}
 	}
 	option = {
 		log = "[GetLogInfo]: event prf.203 option prf.203.b"
@@ -3140,7 +3146,6 @@ country_event = {
 	id = prf.206
 
 	hidden = yes
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -3176,15 +3181,15 @@ country_event = {
 				}
 			}
 
-			################
-			### Pakistan ###
-			################
+			##############
+			### Punjab ###
+			##############
 			every_character = {
-				limit = { has_character_flag = PAK_character }
-				set_nationality = PAK
+				limit = { has_character_flag = PJB_character }
+				set_nationality = PJB
 			}
-			PAK = {
-				PAK_aga_khan_iii = {
+			PJB = {
+				PJB_aga_khan_iii = {
 					remove_political_advisor_role = yes
 					if = {
 						limit = { has_ideology = social_conservative_subtype }
@@ -3294,7 +3299,7 @@ country_event = {
 						}
 						if = {
 							limit = { has_trait = politically_connected }
-							remove_trait = { trait = inspirational_leader }
+							remove_trait = { trait = politically_connected }
 						}
 						if = {
 							limit = { NOT = { has_trait = inspirational_leader } }

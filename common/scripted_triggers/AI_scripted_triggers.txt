@@ -578,7 +578,7 @@ GEA_zhili_volunteers = {
 			}
 			AND = {
 				original_tag = SZC
-				has_completed_focus = SZC_Contact_An_Old_Ally
+				has_completed_focus = SZC_partners_of_law_and_order
 			}
 		}
 	}
@@ -1275,6 +1275,10 @@ is_african_focused_tag = {
 		# POR uses European logic
 		original_tag = ANG
 		original_tag = MZB
+		original_tag = GNB
+
+		#Spanish Africa
+		original_tag = EQG
 
 		#German Africa
 		original_tag = MAF
@@ -1353,20 +1357,6 @@ is_pacific_focused_tag = {
 		original_tag = NZL
 		original_tag = HAW
 		original_tag = PNG
-	}
-}
-
-##############################
-### ANNEXATION AI TRIGGERS ###
-##############################
-
-AI_trigger_country_wants_to_dismantle_germany = {
-	OR = {
-		original_tag = IMP
-		original_tag = ENG
-		original_tag = AUS
-		is_french_tag = yes
-		is_russian_tag = yes
 	}
 }
 

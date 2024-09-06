@@ -1476,7 +1476,13 @@ country_event = { #Kirill Romanov dies
 			RUS_wrangel_in_power = yes
 			RUS_tsar_wrangel = no
 		}
-		ai_chance = { base = 60 }
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = RUS_aftermath option = RUS_AFTERMATH_WRANGEL_MILITARY }
+			}
+		}
 		add_stability = 0.1
 		set_cosmetic_tag = RUS_empire
 		set_politics = {
@@ -5848,13 +5854,19 @@ country_event = { #We've been defeated! FIN
 
 	immediate = {
 		set_global_flag = { flag = RUS_offered_peace_to_finland days = 365 value = 1 }
+		hidden_effect = { add_ideas = has_scripted_peace }
 		if = {
-			limit = { RUS_finland_wins_winter_war = yes }
-			save_event_target_as = RUS_lost_winter_war
+			limit = {
+				OR = {
+					is_valid_peace_target = no
+					RUS_finland_loses_winter_war = yes
+				}
+			}
+			save_event_target_as = RUS_won_winter_war
 		}
 		else_if = {
-			limit = { RUS_finland_loses_winter_war = yes }
-			save_event_target_as = RUS_won_winter_war
+			limit = { RUS_finland_wins_winter_war = yes }
+			save_event_target_as = RUS_lost_winter_war
 		}
 	}
 
@@ -5867,7 +5879,7 @@ country_event = { #We've been defeated! FIN
 	}
 
 	option = { #We can still win this!
-		log = "[GetLogInfo]: event rusfor.1232 option rusfor.1232.c"
+		log = "[GetLogInfo]: event rusfor.1232 option rusfor.1232.b"
 		name = rusfor.1232.b
 		trigger = {
 			NOT = { has_event_target = RUS_lost_winter_war }
@@ -5877,10 +5889,11 @@ country_event = { #We've been defeated! FIN
 			limit = { surrender_progress > 0.3 }
 			add_stability = -0.1
 		}
+		hidden_effect = { remove_ideas = has_scripted_peace }
 	}
 
 	option = {
-		log = "[GetLogInfo]: event rusfor.1232 option rusfor.1232.d"
+		log = "[GetLogInfo]: event rusfor.1232 option rusfor.1232.b"
 		name = rusfor.1232.b #No peace until we reach Moscow!
 		trigger = {
 			has_event_target = RUS_lost_winter_war
@@ -5888,6 +5901,7 @@ country_event = { #We've been defeated! FIN
 		ai_chance = { base = 0 }
 		add_stability = -0.1
 		add_war_support = -0.3
+		hidden_effect = { remove_ideas = has_scripted_peace }
 	}
 }
 
@@ -5970,7 +5984,7 @@ country_event = { #Peace with Finland?
 	}
 }
 
-country_event = { #Treaty of Petrograd FIN
+country_event = { #Treaty of Kotka FIN
 	id = rusfor.1234
 	title = rusfor.1234.t
 	picture = GFX_report_event_generic_diplomacy1
@@ -6021,6 +6035,7 @@ country_event = { #Treaty of Petrograd FIN
 			}
 			set_truce = { target = ROOT days = 730 }
 		}
+		hidden_effect = { remove_ideas = has_scripted_peace }
 	}
 
 	option = {
@@ -6032,7 +6047,7 @@ country_event = { #Treaty of Petrograd FIN
 		if = {
 			limit = { has_event_target = RUS_won_winter_war }
 			if = {
-				limit = { FROM = { NOT = { original_tag = FIN } } }
+				limit = { NOT = { original_tag = FIN } }
 				every_owned_state = {
 					limit = {
 						OR = {
@@ -6075,6 +6090,7 @@ country_event = { #Treaty of Petrograd FIN
 				faction_leader = { country_event = rusfor.1241 }
 				leave_faction = yes
 				peace_out_non_neighbours_after_leaving_faction = yes
+				add_ideas = generic_neutral_foreign_policy
 			}
 			else_if = {
 				limit = { is_subject = yes }
@@ -6086,6 +6102,7 @@ country_event = { #Treaty of Petrograd FIN
 					}
 				}
 				peace_out_non_neighbours_after_leaving_faction = yes
+				add_ideas = generic_neutral_foreign_policy
 			}
 		}
 		FROM = {
@@ -6096,6 +6113,7 @@ country_event = { #Treaty of Petrograd FIN
 			}
 			set_truce = { target = ROOT days = 730 }
 		}
+		hidden_effect = { remove_ideas = has_scripted_peace }
 	}
 }
 
@@ -6110,6 +6128,7 @@ country_event = { #Russia Refuses Peace
 		log = "[GetLogInfo]: event rusfor.1235 option rusfor.1235.a"
 		name = rusfor.1235.a
 		add_war_support = 0.1
+		hidden_effect = { remove_ideas = has_scripted_peace }
 	}
 }
 
@@ -6416,14 +6435,20 @@ country_event = { #Overlord of FIN: Finland has betrayed us
 
 country_event = { #Faction leader of FIN: Finland has betrayed us
 	id = rusfor.1241
-	title = rusfor.1241.t
-	desc = rusfor.1241.d
+	title = rusfor.1240.t
+	desc = rusfor.1240.d
 
+	major = yes
+	fire_for_sender = no
 	is_triggered_only = yes
 
+	show_major = {
+		is_in_faction_with = ROOT
+	}
+
 	option = {
-		log = "[GetLogInfo]: event rusfor.1241 option rusfor.1241.a"
-		name = rusfor.1241.a
+		log = "[GetLogInfo]: event rusfor.1241 option rusfor.1240.a"
+		name = rusfor.1240.a
 		effect_tooltip = { FROM = { leave_faction = yes } }
 	}
 }
@@ -6483,6 +6508,13 @@ country_event = { #Problems in Central Asia
 		log = "[GetLogInfo]: event rusfor.1274 option rusfor.1274.a"
 		name = rusfor.1274.a
 		add_political_power = -20
+		every_owned_state = {
+			limit = {
+				is_central_asia = yes
+				has_resistance = yes
+			}
+			add_compliance = -5
+		}
 	}
 }
 
@@ -6505,6 +6537,13 @@ country_event = { #Pacification of Central Asia
 		log = "[GetLogInfo]: event rusfor.1275 option rusfor.1275.a"
 		name = rusfor.1275.a
 		add_political_power = 20
+		every_owned_state = {
+			limit = {
+				is_central_asia = yes
+				has_resistance = yes
+			}
+			add_compliance = 5
+		}
 	}
 }
 
@@ -8229,8 +8268,10 @@ country_event = { #Russia accepts
 			}
 			else_if = {
 				limit = { has_event_target = RUS_demanded_petsamo }
-				722 = { remove_claim_and_add_core_of_ROOT = yes }
-				722 = { transfer_state_to = ROOT }
+				722 = {
+					remove_claim_and_add_core_of_ROOT = yes
+					transfer_state_to = ROOT
+				}
 			}
 			else = {
 				every_owned_state = {
@@ -8631,7 +8672,7 @@ news_event = { #Revolution Sweeps Russia
 	immediate = { log = "[GetLogInfo]: event russianews.4" }
 	title = russianews.4.t
 	desc = russianews.4.d
-	picture = GFX_news_event_SOV_civil_war_victory
+	picture = GFX_news_event_RUS_socialist_civil_war_victory
 
 	major = yes
 	fire_for_sender = no

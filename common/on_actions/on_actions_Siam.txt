@@ -1,40 +1,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			### Set Up State Resistance/Compliance in SIA/BRM
-			72 = { # Upper Shan
-				set_resistance = 20
-				set_compliance = 10
-			}
-			701 = { # Kachin
-				set_resistance = 20
-				set_compliance = 15
-			}
-			749 = { # Tanaosri
-				set_resistance = 30
-				set_compliance = 15
-			}
-			750 = { # Phnom Penh
-				set_resistance = 5
-				set_compliance = 10
-			}
-			751 = { # Trangkanu
-				set_resistance = 25
-				set_compliance = 10
-			}
-			756 = { # Kengtung
-				set_resistance = 10
-				set_compliance = 20
-			}
-			831 = { # Moulmein
-				set_resistance = 35
-				set_compliance = 10
-			}
-			882 = { # Chaiyaburi
-				set_resistance = 5
-				set_compliance = 30
-			}
-			SIA = { XXA = { set_occupation_law = territorial_integration } }
+			SIA = { XXA = { set_occupation_law_where_available = territorial_integration } }
 		}
 	}
 

@@ -290,7 +290,6 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus PER_long_live_revolution"
 			add_political_power = 150
-			effect_tooltip = { set_cosmetic_tag = PER_REP }
 			PER_remove_monarchy = yes
 			hidden_effect = {
 				activate_decision = PER_country_namechange_decision
