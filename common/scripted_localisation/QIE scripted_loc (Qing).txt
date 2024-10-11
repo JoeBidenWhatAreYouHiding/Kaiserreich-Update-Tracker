@@ -13,14 +13,20 @@ defined_text = { #President
 	name = QIE_president_scripted_loc
 	text = {
 		trigger = {
-			has_country_flag = QIE_coup_failed
+			OR = {
+				has_country_flag = QIE_coup_failed_early
+				has_country_flag = QIE_coup_failed
+			}
 			has_event_target = hu_picked
 		}
 		localization_key = QIE_hu_shih_president
 	}
 	text = {
 		trigger = {
-			has_country_flag = QIE_coup_failed
+			OR = {
+				has_country_flag = QIE_coup_failed_early
+				has_country_flag = QIE_coup_failed
+			}
 		}
 		localization_key = QIE_gu_weijun_president
 	}

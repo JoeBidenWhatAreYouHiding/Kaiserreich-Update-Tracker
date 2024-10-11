@@ -189,7 +189,12 @@ country_event = { #tax collector gets massacred and the revolt starts
 					limit = {
 						OR = { #If the Manchu Coup event chain happened (successful or not) Yulbars should be restorationist aligned
 							has_global_flag = QIE_manchu_restoration
-							QIE = { has_country_flag = QIE_coup_failed }
+							QIE = {
+								OR = {
+									has_country_flag = QIE_coup_failed
+									has_country_flag = QIE_coup_failed_early
+								}
+							}
 						}
 					}
 					add_trait = {

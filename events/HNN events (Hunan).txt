@@ -1561,7 +1561,10 @@ country_event = { #March on Changsha
 			every_other_country = {
 				limit = {
 					is_chinese_tag = yes
-					china_is_aligned_with_kmt = yes
+					OR = {
+						check_variable = { country_leader:china_alignment = token:left_kuomintang }
+						check_variable = { country_leader:china_alignment = token:right_kuomintang }
+					}
 				}
 				country_event = hnn.117 #Tang Xiangming seizes Hunan
 			}
@@ -1724,14 +1727,26 @@ country_event = { #Governor [FROM.GetLeader] Victorious!
 			if = {
 				limit = { HNN = { has_country_leader = { character = HNN_tang_shengzhi } } }
 				every_other_country = {
-					limit = { china_is_aligned_with_kmt = yes }
+					limit = {
+						is_chinese_tag = yes
+						OR = {
+							check_variable = { country_leader:china_alignment = token:left_kuomintang }
+							check_variable = { country_leader:china_alignment = token:right_kuomintang }
+						}
+					}
 					country_event = { id = hnn.106 days = 1 } #alerts kmt to Tang Shengzhi victory in hunan
 				}
 			}
 			else_if = {
 				limit = { HNN = { has_country_leader = { character = HNN_cheng_qian } } }
 				every_other_country = {
-					limit = { china_is_aligned_with_kmt = yes }
+					limit = {
+						is_chinese_tag = yes
+						OR = {
+							check_variable = { country_leader:china_alignment = token:left_kuomintang }
+							check_variable = { country_leader:china_alignment = token:right_kuomintang }
+						}
+					}
 					country_event = { id = hnn.108 days = 1 } #alerts kmt to Cheng Qian victory in hunan
 				}
 			}

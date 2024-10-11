@@ -148,6 +148,7 @@ scripted_gui = {
 	KR_sound_event_options_gui = {
 		context_type = player_context
 		window_name = "kr_sound_event_options_container"
+		parent_window_token = top_bar
 		#parent_window_name = kr_options_container
 		dirty = global.kr_options_dirty
 

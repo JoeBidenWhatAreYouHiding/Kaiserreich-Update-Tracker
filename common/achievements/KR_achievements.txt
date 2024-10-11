@@ -147,7 +147,7 @@ AUS_bismarcks_nightmare_achievement = {
 	}
 }
 
-AUS_held_together_by_super_glue_achievement_and_love = {
+AUS_held_together_by_super_glue_and_love_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = AUS
@@ -237,7 +237,7 @@ BAT_baltic_knight_rises_achievement = {
 	}
 }
 
-BAT_go_outside_achievement = {
+BAT_please_go_outside_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = BAT
@@ -247,7 +247,7 @@ BAT_go_outside_achievement = {
 		if = {
 			limit = { NOT = { has_global_flag = disallow_achievements_flag } }
 			custom_trigger_tooltip = {
-				tooltip = go_outside_achievement_tooltip
+				tooltip = please_go_outside_achievement_tooltip
 				has_cosmetic_tag = BAT_germany
 			}
 		}
@@ -313,7 +313,7 @@ BLR_get_out_of_my_marsh_achievement = {
 	}
 }
 
-BLR_land_scaping_achievement = {
+BLR_landscaping_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = WHR
@@ -363,7 +363,10 @@ BUL_circular_reasoning_achievement = {
 			limit = { NOT = { has_global_flag = disallow_achievements_flag } }
 			custom_trigger_tooltip = {
 				tooltip = circular_reasoning_achievement_tooltip
-				has_cosmetic_tag = BUL_YUG
+				OR = {
+					has_cosmetic_tag = BUL_YUG
+					has_cosmetic_tag = BUL_YUG_mon
+				}
 			}
 		}
 		else = { custom_trigger_tooltip = { tooltip = achievements_disabled	always = no } }
@@ -412,7 +415,7 @@ BUL_enemies_to_lovers_achievement = {
 	}
 }
 
-BUL_things_that_happen_when_you_talk_to_people_achievement = {
+BUL_things_that_happen_when_you_talk_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = BUL
@@ -785,7 +788,7 @@ CHINA_walking_on_sunshine_achievement = {
 	}
 }
 
-EGY_rights_above_power = {
+EGY_rights_above_power_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = EGY
@@ -925,7 +928,7 @@ FRA_syndicalist_bias_achievement = {
 	}
 }
 
-GBR_very_long_holiday_achievement = {
+GBR_just_a_very_long_holiday_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = IMP
@@ -937,7 +940,7 @@ GBR_very_long_holiday_achievement = {
 			has_global_flag = second_weltkrieg_has_started # 2WK has started
 			ENG = { exists = no }
 			custom_trigger_tooltip = {
-				tooltip = very_long_holiday_achievement_tooltip
+				tooltip = just_a_very_long_holiday_achievement_tooltip
 				has_country_flag = CAN_returned_king # UK restored
 				all_core_state = { is_owned_and_controlled_by = ROOT } # Great Britain is owned and controlled
 			}
@@ -946,7 +949,7 @@ GBR_very_long_holiday_achievement = {
 	}
 }
 
-GER_another_place_in_the_sun = {
+GER_another_place_in_the_sun_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = GER
@@ -1059,7 +1062,7 @@ GRE_greater_annexations_achievement = {
 	}
 }
 
-GRE_greeks_shall_inherit_achievement = {
+GRE_greeks_shall_inherit_the_earth_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = GRE
@@ -1357,7 +1360,7 @@ IRE_long_way_from_tipperary_achievement = {
 	}
 }
 
-IRE_never_beat_the_irish_achievement = {
+IRE_youll_never_beat_the_irish_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = IRE
@@ -1870,7 +1873,7 @@ NFA_third_times_the_charm_achievement = {
 	}
 }
 
-PER_sweet_fruits_of_bitter_patience = {
+PER_sweet_fruits_of_bitter_patience_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = PER
@@ -2031,7 +2034,7 @@ ROM_fourth_rome_achievement = {
 	}
 }
 
-RUS_see_nick_achievement = {
+RUS_see_nick_that_wasnt_so_hard_achievement_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = RUS
@@ -2072,7 +2075,6 @@ RUS_what_a_childish_fantasy_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		OR = {
-			tag = RUS
 			tag = LAT
 			hidden_trigger = { tag = BAT } #Tag switch
 		}
@@ -2124,7 +2126,7 @@ SER_coming_of_age_story_achievement = {
 	}
 }
 
-SER_consequences_of_my_actions_achievement = {
+SER_consequences_of_my_own_actions_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		tag = SER
@@ -2134,7 +2136,7 @@ SER_consequences_of_my_actions_achievement = {
 		if = {
 			limit = { NOT = { has_global_flag = disallow_achievements_flag } }
 			custom_trigger_tooltip = {
-				tooltip = consequences_of_my_actions_achievement_tooltip
+				tooltip = consequences_of_my_own_actions_achievement_tooltip
 				has_country_leader = { character = SER_milan_nedic }
 			}
 		}
@@ -2200,7 +2202,7 @@ SWE_scandinavian_twins_achievement = {
 	}
 }
 
-SYR_arab_awakening = {
+SYR_arab_awakening_achievement = {
 	possible = {
 		global_achievement_requirements_trigger = yes
 		OR = {

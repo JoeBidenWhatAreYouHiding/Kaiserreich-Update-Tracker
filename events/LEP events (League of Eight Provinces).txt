@@ -613,6 +613,10 @@ country_event = {
 			SHX = { country_event = { id = shx.5 days = 5 } }
 			XSM = { country_event = { id = mac.5 days = 2 } }
 			news_event = lepcollapse.1700
+
+			clr_global_flag = CHN_still_under_zhili
+			CHN_calculate_china_alignment_gui_effect = yes
+			CHN_update_china_alignment_gui = yes
 		}
 	}
 
@@ -801,6 +805,7 @@ country_event = { #Uprisings in Fujian
 					to_state = 1044
 				}
 			}
+			802 = { add_claim_of_ROOT = yes }
 			GXC = { country_event = lng.103 }
 			set_country_flag = LEP_league_war_flag
 		}

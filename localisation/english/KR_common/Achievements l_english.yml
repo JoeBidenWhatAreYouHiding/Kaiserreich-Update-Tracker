@@ -22,17 +22,17 @@
  ENG_the_peoples_flag_achievement_NAME: "The People's Flag Is Deepest Red"
  ENG_the_peoples_flag_achievement_DESC: "As the Union of Britain, defeat Germany and dismantle the Entente."
 
- RUS_see_nick_achievement_NAME: "See, Nick, That Wasn't So Hard"
- RUS_see_nick_achievement_DESC: "As Russia, defeat Germany and have all starting Oststaaten territories (except Finland) owned by your faction."
+ RUS_see_nick_that_wasnt_so_hard_achievement_achievement_NAME: "See, Nick, That Wasn't So Hard"
+ RUS_see_nick_that_wasnt_so_hard_achievement_achievement_DESC: "As Russia, defeat Germany and have all starting Oststaaten territories (except Finland) owned by your faction."
 
- GBR_very_long_holiday_achievement_NAME: "Just a Very Long Holiday"
- GBR_very_long_holiday_achievement_DESC: "As Canada, defeat the Union of Britain and restore the United Kingdom while owning all of its core territory."
+ GBR_just_a_very_long_holiday_achievement_NAME: "Just a Very Long Holiday"
+ GBR_just_a_very_long_holiday_achievement_DESC: "As Canada, defeat the Union of Britain and restore the United Kingdom while owning all of its core territory."
 
  NFA_macmahons_third_law_achievement_NAME: "MacMahon's Third Law"
  NFA_macmahons_third_law_achievement_DESC: "As the French Exiles, defeat the Commune of France and own at least one major French city."
 
- IRE_never_beat_the_irish_achievement_NAME: "You'll Never Beat the Irish"
- IRE_never_beat_the_irish_achievement_DESC: "As Ireland, survive the Second Weltkrieg."
+ IRE_youll_never_beat_the_irish_achievement_NAME: "You'll Never Beat the Irish"
+ IRE_youll_never_beat_the_irish_achievement_DESC: "As Ireland, survive the Second Weltkrieg."
 
  IRE_auld_love_triangle_achievement_NAME: "The Auld Love Triangle"
  IRE_auld_love_triangle_achievement_DESC: "As Ireland, remain independent after the Gateway to the Atlantic mechanic has completed, while extracting the most possible benefits from both Germany and Britain."
@@ -103,8 +103,8 @@
  AUS_renovatio_imperii_achievement_NAME: "Renovatio Imperii"
  AUS_renovatio_imperii_achievement_DESC: "As Austria, successfully federalise the Empire and integrate your subjects."
 
- AUS_held_together_by_super_glue_achievement_and_love_NAME: "Held Together By Super Glue And Love"
- AUS_held_together_by_super_glue_achievement_and_love_DESC: "As Austria, use military force to integrate your subjects into the Imperial government."
+ AUS_held_together_by_super_glue_and_love_achievement_NAME: "Held Together By Super Glue And Love"
+ AUS_held_together_by_super_glue_and_love_achievement_DESC: "As Austria, use military force to integrate your subjects into the Imperial government."
 
  ROM_fourth_rome_achievement_NAME: "The Fourth Rome"
  ROM_fourth_rome_achievement_DESC: "As Romania, realise the Great Union by conquering and integrating Transylvania, Dobrudja, and Silistria."
@@ -118,8 +118,8 @@
  BUL_enemies_to_lovers_achievement_NAME: "Enemies to Lovers"
  BUL_enemies_to_lovers_achievement_DESC: "As Bulgaria, lose the Fourth Balkan War, then join the Belgrade Pact and help them defeat Austria."
 
- GRE_greeks_shall_inherit_achievement_NAME: "The Greeks Shall Inherit The Earth"
- GRE_greeks_shall_inherit_achievement_DESC: "As Greece, reconquer Greek Macedonia and survive the Second Weltkrieg."
+ GRE_greeks_shall_inherit_the_earth_achievement_NAME: "The Greeks Shall Inherit The Earth"
+ GRE_greeks_shall_inherit_the_earth_achievement_DESC: "As Greece, reconquer Greek Macedonia and survive the Second Weltkrieg."
 
  GRE_greater_annexations_achievement_NAME: "Greater Annexations"
  GRE_greater_annexations_achievement_DESC: "As Greece, successfully press all Megali Idea claims."
@@ -130,19 +130,19 @@
  TUR_assembly_of_all_the_talents_achievement_NAME: "An Assembly of All The Talents"
  TUR_assembly_of_all_the_talents_achievement_DESC: "As a decentralist Ottoman Empire, open an expanded Grand Assembly after defeating the Cairo Pact."
 
- EGY_rights_above_power_NAME: "Rights Above Power"
- EGY_rights_above_power_DESC: "As Egypt, defeat the Ottoman Empire."
+ EGY_rights_above_power_achievement_NAME: "Rights Above Power"
+ EGY_rights_above_power_achievement_DESC: "As Egypt, defeat the Ottoman Empire."
 
- PER_sweet_fruits_of_bitter_patience_NAME: "Sweet Fruits Of Bitter Patience"
- PER_sweet_fruits_of_bitter_patience_DESC: "As Persia, defeat the Ottoman Empire."
+ PER_sweet_fruits_of_bitter_patience_achievement_NAME: "Sweet Fruits Of Bitter Patience"
+ PER_sweet_fruits_of_bitter_patience_achievement_DESC: "As Persia, defeat the Ottoman Empire."
 
- SYR_arab_awakening_NAME: "An Arab Awakening"
- SYR_arab_awakening_DESC: "Form the Arabian Federation as either Syria or Iraq."
+ SYR_arab_awakening_achievement_NAME: "An Arab Awakening"
+ SYR_arab_awakening_achievement_DESC: "Form the Arabian Federation as either Syria or Iraq."
 
  USA_rally_once_again_achievement_NAME: "Rally Once Again"
  USA_rally_once_again_achievement_DESC: "As a liberal federal government, win the Second American Civil War."
 
- USA_high_stakes_union_negotiations_achievement_NAME: "High-Stakes Union Negotations"
+ USA_high_stakes_union_negotiations_achievement_NAME: "High-Stakes Union Negotiations"
  USA_high_stakes_union_negotiations_achievement_DESC: "As the federal government, win the Second American Civil War after reaching a compromise with Reed."
 
  USA_kings_ransom_achievement_NAME: "A King's Ransom"
@@ -223,8 +223,8 @@
  JAP_longest_day_achievement_NAME: "The Longest Day"
  JAP_longest_day_achievement_DESC: "As Japan, proclaim victory over Western imperialism."
 
- BAT_go_outside_achievement_NAME: "Please, Go Outside"
- BAT_go_outside_achievement_DESC: "Form a National Populist Germany... as the Baltic State."
+ BAT_please_go_outside_achievement_NAME: "Please, Go Outside"
+ BAT_please_go_outside_achievement_DESC: "Form a National Populist Germany... as the Baltic State."
 
  RUS_what_a_childish_fantasy_achievement_NAME: "What a Childish Fantasy!"
  RUS_what_a_childish_fantasy_achievement_DESC: "Form the Soviet Union."
@@ -250,8 +250,8 @@
  SWE_scandinavian_twins_achievement_NAME: "Scandinavian Twins"
  SWE_scandinavian_twins_achievement_DESC: "As Sweden, re-create the union with Norway."
 
- SER_consequences_of_my_actions_achievement_NAME: "Well, Well, Well, If It Isn't The Consequences Of My Own Actions"
- SER_consequences_of_my_actions_achievement_DESC: "As Serbia, find out what happens when you rely too much on the Konspiracija."
+ SER_consequences_of_my_own_actions_achievement_NAME: "Well, Well, Well, If It Isn't The Consequences Of My Own Actions"
+ SER_consequences_of_my_own_actions_achievement_DESC: "As Serbia, find out what happens when you rely too much on the Konspiracija."
 
  SER_coming_of_age_story_achievement_NAME: "A Coming of Age Story"
  SER_coming_of_age_story_achievement_DESC: "As Serbia, re-establish a constitutional monarchy."
@@ -259,8 +259,8 @@
  BUL_tsars_new_clothes_achievement_NAME: "The Tsar's New Clothes"
  BUL_tsars_new_clothes_achievement_DESC: "Found the Third Bulgarian Empire."
 
- BUL_things_that_happen_when_you_talk_to_people_achievement_NAME: "The Things That Happen When You Talk To People"
- BUL_things_that_happen_when_you_talk_to_people_achievement_DESC: "As Bulgaria, create a (hopefully) lasting peace in the Balkans."
+ BUL_things_that_happen_when_you_talk_achievement_NAME: "The Things That Happen When You Talk To People"
+ BUL_things_that_happen_when_you_talk_achievement_DESC: "As Bulgaria, create a (hopefully) lasting peace in the Balkans."
 
  BUL_circular_reasoning_achievement_NAME: "Circular Reasoning"
  BUL_circular_reasoning_achievement_DESC: "Form Yugoslavia... as Bulgaria."
@@ -289,8 +289,8 @@
  00_fantastic_day_for_capitalism_achievement_NAME: "A Fantastic Day For Capitalism"
  00_fantastic_day_for_capitalism_achievement_DESC: "Be on the Legation Council or the Suez council as a country that doesn't start on either."
 
- GER_another_place_in_the_sun_NAME: "Another Place In The Sun"
- GER_another_place_in_the_sun_DESC: "As Germany, place all of the Caribbean islands under your faction's ownership."
+ GER_another_place_in_the_sun_achievement_NAME: "Another Place In The Sun"
+ GER_another_place_in_the_sun_achievement_DESC: "As Germany, place all of the Caribbean islands under your faction's ownership."
 
  NFA_liberte_egalite_fratricide_achievement_NAME: "Liberté, Egalité, Fratricide"
  NFA_liberte_egalite_fratricide_achievement_DESC: "As the French Exiles, inflict a million casualites against the rival Commune of France."
@@ -319,8 +319,8 @@
  UKR_hetmanaged_economy_achievement_NAME: "A Het-managed Economy"
  UKR_hetmanaged_economy_achievement_DESC: "As Ukraine, complete the industrialisation and land reform projects with the best possible outcome in both (and without triggering a coup)."
 
- BLR_land_scaping_achievement_NAME: "Land-scaping"
- BLR_land_scaping_achievement_DESC: "As White Ruthenia, earn the best possible result from the land reform project."
+ BLR_landscaping_achievement_NAME: "Land-scaping"
+ BLR_landscaping_achievement_DESC: "As White Ruthenia, earn the best possible result from the land reform project."
 
  USA_not_so_divided_states_achievement_NAME: "The Not-So-Divided States"
  USA_not_so_divided_states_achievement_DESC: "As any American faction, win the Second American Civil War before July 4, 1938."
@@ -378,7 +378,7 @@
 
  held_together_by_super_glue_achievement_tooltip: "Owns all Danubian territory."
 
- go_outside_achievement_tooltip: "You should probably stop playing video games."
+ please_go_outside_achievement_tooltip: "You should probably stop playing video games."
 
  one_city_challenge_achievement_tooltip: "Formed the Baltic Federation."
 
@@ -396,9 +396,9 @@
 
  tsars_new_clothes_achievement_tooltip: "Established the Third Bulgarian Empire."
 
- very_long_holiday_achievement_tooltip: "Restored the British monarchy, owning all states in Great Britain."
+ just_a_very_long_holiday_achievement_tooltip: "Restored the British monarchy, owning all states in Great Britain."
 
- little_trouble_in_big_china_achievement_tooltip: "Owns all claimed Chinese territory."
+ little_trouble_in_big_china_achievement_tooltip: "Owns all claimed Chinese territory, including §YXinjiang§!, §YTibet§!, §YMongolia§!, and §YTaiwan§!."
 
  walking_on_the_sun_achievement_tooltip: "Won the Second Sino-Japanese War."
 
@@ -406,7 +406,7 @@
 
  formed_roc_tooltip: "Formed the Republic of China."
 
- another_century_of_humiliation_achievement_tooltip: "Established a mandate over China."
+ another_century_of_humiliation_achievement_tooltip: "Established a mandate over China, including §YXinjiang§!, §YTibet§!, §YMongolia§!, and §YTaiwan§!."
 
  formed_qing_tooltip: "Formed the Qing Empire."
 
@@ -471,7 +471,7 @@
 
  what_a_childish_fantasy_achievement_tooltip: "Has formed the Soviet Union."
 
- consequences_of_my_actions_achievement_tooltip: "§RAre you sure you know what you're doing?§!"
+ consequences_of_my_own_actions_achievement_tooltip: "§RAre you sure you know what you're doing?§!"
 
  four_of_a_kind_achievement_tooltip: "Integrated a Bulgarian puppet BEFORE completing the Brotherhood and Unity focus."
 
