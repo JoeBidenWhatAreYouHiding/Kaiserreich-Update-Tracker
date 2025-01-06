@@ -1,4 +1,4 @@
-﻿#################################
+#################################
 ### Treaty of Budapest Events ###
 ### By Alpinia and Rylock 	  ###
 #################################
@@ -828,6 +828,7 @@ country_event = { #Treaty of Budapest
 						NOT = { country_exists = CRO }
 					}
 					release = CRO
+					45 = { transfer_state_to = 43.owner } #Vojvodina -> Central Hungary
 				}
 				if = {
 					limit = {
@@ -840,8 +841,30 @@ country_event = { #Treaty of Budapest
 					release = GAL
 				}
 				if = {
-					limit = { owns_state = 84 } #Transylvania
+					limit = {
+						owns_state = 84 #Transylvania
+						NOT = { country_exists = TRS }
+					}
 					release = TRS
+				}
+				if = {
+					limit = {
+						owns_state = 102 #Carniola
+						NOT = { country_exists = SLV }
+					}
+					release = SLV
+					hidden_effect = {
+						SLV = {
+							activate_targeted_decision = { target = GER decision = CZE_join_germany }
+							drop_cosmetic_tag = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 488 #Trieste
+					}
+					488 = { transfer_state_to = 759.owner } #Trieste -> Friuli
 				}
 			}
 

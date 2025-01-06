@@ -16,11 +16,7 @@ characters = {
 		}
 		corps_commander = {
 			desc = MEX_plutarco_elias_calles_theorist_desc
-			traits = {
-				politically_connected
-				trait_cautious
-				organizer
-			}
+			traits = { politically_connected trait_cautious organizer }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -87,10 +83,10 @@ characters = {
 		advisor = {
 			slot = high_command
 			idea_token = MEX_abelardo_rodriguez_lujan_high_command
+			ledger = army
 			available = {
 				is_country_leader = no
 			}
-			ledger = army
 			traits = { KR_MHC_army_logistics_1 }
 			cost = 50
 		}

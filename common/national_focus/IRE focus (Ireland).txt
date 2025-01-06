@@ -66,20 +66,11 @@ focus_tree = {
 				level = 1
 				path = { 7394 11267 9310 3342 11293 3359 3242 3379 }
 			}
-			if = {
-				limit = { NOT = { has_tech = basic_train } }
-				custom_effect_tooltip = IRE_train_tt
-				hidden_effect = {
-					set_technology = { basic_train = 1 }
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					name = IRE_renovate_rail_line
-					bonus = 0.5
-					uses = 1
-					category = train_tech
-				}
+			add_tech_bonus = {
+				name = IRE_renovate_rail_line
+				bonus = 0.5
+				uses = 1
+				category = train_tech
 			}
 			add_equipment_to_stockpile = {
 				type = train_equipment
@@ -1187,7 +1178,7 @@ focus_tree = {
 				days = 100
 			}
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = IRE_fishing_idea_tt
+			custom_effect_tooltip = after_idea_expires
 			custom_effect_tooltip = IRE_forestry_tt
 			add_to_variable = { IRE_agrarianism_offmap_civs = 1 }		# If editing, be sure to edit the loc tooltip aswell
 			hidden_effect = {
@@ -5108,6 +5099,12 @@ focus_tree = {
 				set_temp_variable = { IRE_GER_larger_by = 20 }
 				IRE_GER_influence_larger_by = yes
 			}
+			modifier = {
+				factor = 0
+				IRE_gateway_ENG_pp_trigger = yes
+				set_temp_variable = { IRE_ENG_larger_by = 35 }
+				IRE_ENG_influence_larger_by = no
+			}
 		}
 
 		completion_reward = {
@@ -5276,6 +5273,12 @@ focus_tree = {
 				set_temp_variable = { IRE_ENG_larger_by = 20 }
 				IRE_ENG_influence_larger_by = yes
 			}
+			modifier = {
+				factor = 0
+				IRE_gateway_GER_pp_trigger = yes
+				set_temp_variable = { IRE_GER_larger_by = 35 }
+				IRE_GER_influence_larger_by = no
+			}
 		}
 
 		completion_reward = {
@@ -5382,7 +5385,21 @@ focus_tree = {
 		prerequisite = { focus = IRE_resource_deficit }
 		prerequisite = { focus = IRE_contracts_with_rheinmetall focus = IRE_flying_with_hawker }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = {
+			factor = 1000
+			modifier = {
+				factor = 0
+				IRE_gateway_ENG_pp_trigger = yes
+				set_temp_variable = { IRE_GER_larger_by = 5 }
+				IRE_GER_influence_larger_by = yes
+			}
+			modifier = {
+				factor = 0
+				IRE_gateway_GER_pp_trigger = yes
+				set_temp_variable = { IRE_ENG_larger_by = 5 }
+				IRE_ENG_influence_larger_by = yes
+			}
+		}
 
 		select_effect = {
 			log = "[GetDateText]: [Root.GetName]: Select Focus IRE_liffey_hydro"
@@ -5596,6 +5613,12 @@ focus_tree = {
 				NOT = { has_completed_focus = IRE_engineering_advisors }
 				IRE_GER_winning_influence = yes
 			}
+			modifier = {
+				factor = 0
+				IRE_gateway_ENG_pp_trigger = yes
+				set_temp_variable = { IRE_ENG_larger_by = 35 }
+				IRE_ENG_influence_larger_by = no
+			}
 		}
 
 		completion_reward = {
@@ -5672,6 +5695,12 @@ focus_tree = {
 				NOT = { has_completed_focus = IRE_engineering_advisors }
 				IRE_GER_winning_influence = yes
 			}
+			modifier = {
+				factor = 0
+				IRE_gateway_ENG_pp_trigger = yes
+				set_temp_variable = { IRE_ENG_larger_by = 35 }
+				IRE_ENG_influence_larger_by = no
+			}
 		}
 
 		completion_reward = {
@@ -5727,6 +5756,12 @@ focus_tree = {
 				IRE_gateway_finished = no
 				NOT = { has_completed_focus = IRE_engineering_advisors }
 				IRE_GER_winning_influence = yes
+			}
+			modifier = {
+				factor = 0
+				IRE_gateway_ENG_pp_trigger = yes
+				set_temp_variable = { IRE_ENG_larger_by = 35 }
+				IRE_ENG_influence_larger_by = no
 			}
 		}
 
@@ -5863,6 +5898,12 @@ focus_tree = {
 				NOT = { has_completed_focus = IRE_new_aud }
 				IRE_ENG_winning_influence = yes
 			}
+			modifier = {
+				factor = 0
+				IRE_gateway_GER_pp_trigger = yes
+				set_temp_variable = { IRE_GER_larger_by = 35 }
+				IRE_GER_influence_larger_by = no
+			}
 		}
 
 		completion_reward = {
@@ -5919,6 +5960,12 @@ focus_tree = {
 				IRE_gateway_finished = no
 				IRE_ENG_winning_influence = yes
 			}
+			modifier = {
+				factor = 0
+				IRE_gateway_GER_pp_trigger = yes
+				set_temp_variable = { IRE_GER_larger_by = 35 }
+				IRE_GER_influence_larger_by = no
+			}
 		}
 
 		completion_reward = {
@@ -5973,6 +6020,12 @@ focus_tree = {
 				factor = 0
 				IRE_gateway_finished = no
 				IRE_ENG_winning_influence = yes
+			}
+			modifier = {
+				factor = 0
+				IRE_gateway_GER_pp_trigger = yes
+				set_temp_variable = { IRE_GER_larger_by = 35 }
+				IRE_ENG_influence_larger_by = no
 			}
 		}
 
@@ -6388,7 +6441,15 @@ focus_tree = {
 		prerequisite = { focus = IRE_subsidiaries }
 		continue_if_invalid = yes
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = {
+			factor = 1000
+			modifier = {
+				factor = 0
+				IRE_gateway_GER_pp_trigger = yes
+				set_temp_variable = { IRE_GER_larger_by = 35 }
+				IRE_GER_influence_larger_by = no
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRE_unpeg_punt"
@@ -8303,8 +8364,11 @@ focus_tree = {
 					}
 				}
 				else = {
-					custom_effect_tooltip = IRE_atlanto_pacific_navy_tech_tt
-					hidden_effect = {
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = tooltip_add_tech
+							TECH = submarine_3
+						}
 						set_technology = { improved_ship_hull_submarine = 1 }
 					}
 				}
@@ -8388,8 +8452,11 @@ focus_tree = {
 					}
 				}
 				else = {
-					custom_effect_tooltip = IRE_atlanto_pacific_navy_tech_tt
-					hidden_effect = {
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = tooltip_add_tech
+							TECH = submarine_3
+						}
 						set_technology = { improved_submarine = 1 }
 					}
 				}
@@ -8514,6 +8581,13 @@ focus_tree = {
 			}
 		}
 
+		on_uncomplete = {
+			if = {
+				limit = { has_idea = IRE_final_stand_against_socialism_idea }
+				remove_ideas = IRE_final_stand_against_socialism_idea
+			}
+		}
+
 		available_if_capitulated = yes
 
 		ai_will_do = { factor = 100 }
@@ -8557,6 +8631,13 @@ focus_tree = {
 				UKR = {
 					has_country_flag = UKR_small_pact_tree
 				}
+			}
+		}
+
+		on_uncomplete = {
+			if = {
+				limit = { has_idea = IRE_light_of_liberty_idea }
+				remove_ideas = IRE_light_of_liberty_idea
 			}
 		}
 
@@ -8743,6 +8824,17 @@ focus_tree = {
 			}
 		}
 
+		on_uncomplete = {
+			if = {
+				limit = { has_idea = IRE_final_stand_against_socialism_idea_2 }
+				remove_ideas = IRE_final_stand_against_socialism_idea_2
+			}
+			else_if = {
+				limit = { has_idea = IRE_light_of_liberty_idea_2 }
+				remove_ideas = IRE_light_of_liberty_idea_2
+			}
+		}
+
 		available_if_capitulated = yes
 
 		ai_will_do = { factor = 100 }
@@ -8799,6 +8891,28 @@ focus_tree = {
 
 		on_uncomplete = {
 			clr_country_flag = IRE_celtic_confederation
+			if = {
+				limit = { has_idea = IRE_celtic_congress_idea }
+				remove_ideas = IRE_celtic_congress_idea
+			}
+			SCO = {
+				if = {
+					limit = { has_idea = IRE_celtic_congress_idea }
+					remove_ideas = IRE_celtic_congress_idea
+				}
+			}
+			WLS = {
+				if = {
+					limit = { has_idea = IRE_celtic_congress_idea }
+					remove_ideas = IRE_celtic_congress_idea
+				}
+			}
+			BRI = {
+				if = {
+					limit = { has_idea = IRE_celtic_congress_idea }
+					remove_ideas = IRE_celtic_congress_idea
+				}
+			}
 		}
 
 		available_if_capitulated = yes
@@ -8960,6 +9074,31 @@ focus_tree = {
 			has_country_leader = { character = IRE_gearoid_o_cuinneagain }
 			hidden_trigger = {
 				has_country_flag = IRE_celtic_confederation
+			}
+		}
+
+		on_uncomplete = {
+			if = {
+				limit = { has_idea = IRE_celtic_congress_idea_2_IRE }
+				remove_ideas = IRE_celtic_congress_idea_2_IRE
+			}
+			SCO = {
+				if = {
+					limit = { has_idea = IRE_celtic_congress_idea_2_puppets }
+					remove_ideas = IRE_celtic_congress_idea_2_puppets
+				}
+			}
+			WLS = {
+				if = {
+					limit = { has_idea = IRE_celtic_congress_idea_2_puppets }
+					remove_ideas = IRE_celtic_congress_idea_2_puppets
+				}
+			}
+			BRI = {
+				if = {
+					limit = { has_idea = IRE_celtic_congress_idea_2_puppets }
+					remove_ideas = IRE_celtic_congress_idea_2_puppets
+				}
 			}
 		}
 
@@ -13121,11 +13260,12 @@ focus_tree = {
 				hidden_effect = {
 					IRE_hugo_macneill = {
 						add_advisor_role = {
+							# If editing, be sure to edit the loc tooltip aswell
 							advisor = {
 								slot = army_chief
 								idea_token = IRE_hugo_macneill_army_chief
 								desc = IRE_hugo_macneill_commander_desc
-								traits = { KR_army_chief_defensive_2 }		# If editing, be sure to edit the loc tooltip aswell
+								traits = { KR_army_chief_defensive_2 }
 								cost = 100
 								ai_will_do = { factor = 1 }
 							}

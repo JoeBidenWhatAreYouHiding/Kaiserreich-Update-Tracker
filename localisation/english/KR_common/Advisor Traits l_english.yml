@@ -205,6 +205,8 @@
  KR_fraternal_crony_sic: "Fraternal Crony"
  KR_chogyal_of_sikkim: "Chogyal of Sikkim"
  KR_venerable_diplomat: "Venerable Diplomat"
+ KR_master_quartermaster: "Master Quartermaster"
+ KR_je_khenpo: "The Chief Abbot"
  KR_nepalese_collaborator: "Nepalese Collaborator"
  KR_queen_mother: "The Queen Mother"
  KR_speech_incarnation: "The Incarnation of Speech"
@@ -436,6 +438,7 @@
 ### QIE ###
  KR_army_chief_imperial_commissioner: "Imperial Commissioner"
  KR_idealistic_monarchist: "Idealistic Monarchist"
+ KR_the_fugitive_self: "The Fugitive Self"
  KR_contentious_peacemaker: "Contentious Peacemaker"
  KR_hero_of_chinese_liberalism: "Hero of Chinese Liberalism"
  KR_conductor_of_the_banking_clans: "Conductor of the Banking Clans"
@@ -489,6 +492,7 @@
 
 ### SRI ###
  KR_catholic_syndicalist: "Catholic Syndicalist"
+ KR_nuclear_research_group: "Nuclear Research Group"
 
 ### SWE ###
  KR_staunch_idealist: "Staunch Idealist"
@@ -586,7 +590,7 @@
 ### VEN ###
  KR_malariologist: "Malariologist"
 
-### WHR ###
+### BLR ###
  KR_bundist: "Bundist"
 
 ### WLS ###

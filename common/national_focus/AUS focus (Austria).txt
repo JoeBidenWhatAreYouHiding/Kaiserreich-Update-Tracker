@@ -1415,7 +1415,8 @@ focus_tree = {
 						faction_leader = { tag = OTT }
 					}
 				}
-				every_allied_country = {
+				every_other_country = {
+					limit = { is_in_faction_with = ROOT }
 					add_to_tech_sharing_group = austrian_research
 					country_event = aus.tree.4030
 				}
@@ -2186,6 +2187,7 @@ focus_tree = {
 			}
 			NOT = { has_war_with = HUN }
 			is_subject = no
+			is_monarchy = yes
 		}
 
 		mutually_exclusive = {
@@ -2215,20 +2217,22 @@ focus_tree = {
 			set_global_flag = AUS_enacted_military_occupation
 			country_event = { id = ausgleich.new.330 days = 2 }
 			if = {
-				limit = { POL = { is_in_faction_with = AUS } }
-				POL = { country_event = { id = poland.283 days = 15 } }
-				if = {
-					limit = { UKR = { is_in_faction_with = AUS } }
-					UKR = { set_country_flag = POL_galicia_ask_only }
+				limit = {
+					POL = { is_in_faction_with = AUS }
+					UKR = { is_in_faction_with = AUS }
 				}
+				UKR = { set_country_flag = POL_galicia_ask_only }
 			}
-			if = {
-				limit = { UKR = { is_in_faction_with = AUS } }
-				UKR = { country_event = { id = ukraine_forpol.33 days = 15 } }
+			every_allied_country = {
+				limit = {
+					NOT = { is_subject_of = AUS }
+					has_democratic_government = yes
+				}
+				country_event = { id = ausgleich.new.90000 days = 5 } #Vienna Gone Insane
 			}
 			CZE = { country_event = { id = ausgleich.new.900 days = 20 } }
-			GAL = { country_event = { id = ausgleich.new.900 days = 22 } }
-			CRO = { country_event = { id = ausgleich.new.900 days = 24 } }
+			GAL = { country_event = { id = ausgleich.new.900 days = 20 } }
+			CRO = { country_event = { id = ausgleich.new.900 days = 20 } }
 			news_event = { id = ausgleich.new.919 days = 30 }
 		}
 
@@ -2277,7 +2281,6 @@ focus_tree = {
 			}
 			hidden_effect = {
 				activate_advisor = AUS_ludwig_huelgerth_sic
-				CRO = { country_event = { id = ausgleich.new.900 days = 24 } }
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }

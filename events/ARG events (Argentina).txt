@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # Argentina Events
 ###########################
 # By Jeankedezeehond
@@ -172,7 +172,7 @@ country_event = { # ARG-FOP desertion event - notification for the tag that rece
 	title = arg_chl_war.104.t
 	desc = arg_chl_war.104.d
 
-	picture = GFX_report_event_WHR_soldiers_review
+	picture = GFX_report_event_BLR_soldiers_review
 	is_triggered_only = yes
 
 	option = {
@@ -580,6 +580,7 @@ country_event = { #Volunteers arrive
 					division = "name = \"3rd Argentine Volunteers\" division_template = \"Argentine Volunteers\" start_experience_factor = 0.0 start_equipment_factor = 0.5"
 					owner = ROOT
 				}
+				ROOT = { clr_country_flag = ARG_sent_max_volunteers }
 			}
 		}
 	}

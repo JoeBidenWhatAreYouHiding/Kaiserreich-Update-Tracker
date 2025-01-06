@@ -36,6 +36,7 @@ characters = {
 			}
 		}
 		country_leader = {
+			desc = SLV_albert_kramer_leader_desc
 			ideology = social_liberal_subtype
 		}
 	}
@@ -127,10 +128,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = {
-				career_officer
-				inflexible_strategist
-			}
+			traits = { career_officer inflexible_strategist }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -338,11 +336,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = {
-				guerilla_fighter
-				hill_fighter
-				career_officer
-			}
+			traits = { guerilla_fighter hill_fighter career_officer }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -365,10 +359,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = {
-				artillery_specialist
-				career_officer
-			}
+			traits = { artillery_specialist career_officer }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -385,9 +376,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = {
-				trait_engineer
-			}
+			traits = { trait_engineer }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -404,9 +393,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = {
-				trickster
-			}
+			traits = { trickster }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1

@@ -149,8 +149,8 @@ focus_tree = {
 			character_list_tooltip = {
 				limit = {
 					OR = {
-						is_character = RUS_vasily_shulgin
-						is_character = RUS_ivan_ilyin
+						RUS = { RUS_vasily_shulgin = { is_character = PREV.PREV } }
+						RUS = { RUS_ivan_ilyin = { is_character = PREV.PREV } }
 					}
 				}
 			}
@@ -238,7 +238,7 @@ focus_tree = {
 			modifier = {
 				factor = 50
 				has_country_flag = RUS_old_svobodnik_ai
-				GER = { exists = no }
+				NOT = { country_exists = GER }
 			}
 		}
 		completion_reward = {
@@ -532,20 +532,14 @@ focus_tree = {
 					character = RUS_boris_savinkov
 					civilian = { large = GFX_portrait_RUS_boris_savinkov_large_suit }
 				}
-				RUS_boris_savinkov = {
-					add_temp_unit_leader_role = yes
-					unit_leader_event = russia.236
-				}
-				random_other_country = {
-					limit = { is_ai = no }
-					news_event = rusnews.2
-				}
+				RUS_boris_savinkov = { unit_leader_event = russia.236 }
 				activate_targeted_decision = { decision = RUS_destroy_VRBO target = ROOT }
 				country_event = { id = russia.294 days = 25 } #The Loyalty Clause
 				country_event = { id = russia.298 days = 150 } #Decree on Internal and External Border Controls
 				country_event = { id = russia.260 days = 365 } #The Vozhd is Unavailable
 				country_event = { id = russia.229 days = 500 random_days = 100 } #The Ustryalovite Faction
 				country_event = { id = rusfla.5 days = 700 } #Church of the Third Testament
+				news_event = rusnews.2
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -1266,7 +1260,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				factor = 100
-				GER = { exists = no }
+				NOT = { country_exists = GER }
 				has_country_flag = RUS_ideocrat_ai
 			}
 		}
@@ -1555,8 +1549,9 @@ focus_tree = {
 				}
 			}
 			else = {
-				sp:sp_nuclear_reactor = {
-					add_project_progress_ratio = 0.1
+				if = {
+					limit = { NOT = { is_special_project_being_researched = sp:sp_nuclear_reactor } }
+					sp:sp_nuclear_reactor = { add_project_progress_ratio = 0.1 }
 				}
 				if = { #second nuclear facility after rusfla.23
 					limit = {
@@ -2152,6 +2147,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_never_another_savinkov"
+			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = RUS_separation_of_powers
 			RUS_increase_democracy = yes
 		}
@@ -2259,7 +2256,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_controlling_the_military"
-			add_political_power = 50
+			add_political_power = 75
 			RUS_increase_democracy = yes
 			country_event = demrus.23
 			custom_effect_tooltip = tooltip_white_line
@@ -2286,8 +2283,11 @@ focus_tree = {
 		y = 1
 		bypass = { NOT = { has_idea = RUS_military_anger_dem } }
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = RUS_ally_army_tt
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_has_national_spirit
+					IDEA = RUS_republic_under_watch
+				}
 				OR = {
 					has_idea = RUS_republic_under_watch
 					has_idea = RUS_republic_under_watch_2
@@ -2325,6 +2325,10 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_sulimov_ai
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_rdp_ai
 			}
 		}
 		completion_reward = {
@@ -2400,11 +2404,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 15
 			modifier = {
-				factor = 0
-				has_government = social_democrat
-				has_active_mission = RUS_titov_demands_from_left
-			}
-			modifier = {
 				factor = 10
 				has_government = social_liberal
 				has_active_mission = RUS_bold_promises
@@ -2433,6 +2432,10 @@ focus_tree = {
 				factor = 0
 				has_country_flag = RUS_sulimov_ai
 			}
+			modifier = {
+				factor = 10
+				has_country_flag = RUS_rdp_ai
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_republicanisation_of_army"
@@ -2458,24 +2461,25 @@ focus_tree = {
 					remove_mission = RUS_rightwing_obscurantism_rikhter
 				}
 				custom_effect_tooltip = tooltip_white_line
-				random_unit_leader = {
+				random_character = {
 					limit = {
 						is_field_marshal = yes
 						skill > 3
 						NOT = {
-							is_character = RUS_mikhail_drozdovsky
-							is_character = RUS_pyotr_wrangel
-							is_character = RUS_anton_denikin
-							is_character = RUS_lavr_kornilov
+							RUS = { RUS_mikhail_drozdovsky = { is_character = PREV.PREV } }
+							RUS = { RUS_pyotr_wrangel = { is_character = PREV.PREV } }
+							RUS = { RUS_anton_denikin = { is_character = PREV.PREV } }
+							RUS = { RUS_lavr_kornilov = { is_character = PREV.PREV } }
 						}
 					}
 					add_advisor_role = {
 						activate = yes
+						# No idea_token means it will default to <character>_army_chief
 						advisor = {
 							slot = army_chief
 							idea_token = RUS_denikin_successor_army_chief
-							cost = 200
 							traits = { KR_army_chief_offensive_3 }
+							cost = 200
 							can_be_fired = no
 						}
 					}
@@ -2670,13 +2674,6 @@ focus_tree = {
 			country_event = demrus.19 #Crimes of the Past
 			custom_effect_tooltip = demrus.19.tt
 			hidden_effect = {
-				if = {
-					limit = { has_character = RUS_anton_turkul }
-					RUS_anton_turkul = {
-						remove_trait = { trait = RUS_savinkovist_officer }
-						add_trait = { trait = RUS_monarchist_officer }
-					}
-				}
 				country_event = { id = demrus.20 days = 30 random_days = 5 } #Trial Revelations
 				country_event = { id = demrus.27 days = 60 } #The Security Apparatus
 			}
@@ -2689,7 +2686,7 @@ focus_tree = {
 					limit = {
 						OR = {
 							has_trait = RUS_red_army_trait
-							is_character = RUS_yury_sablin
+							RUS = { RUS_yury_sablin = { is_character = PREV.PREV } }
 						}
 					}
 					retire = yes
@@ -2700,7 +2697,7 @@ focus_tree = {
 					limit = {
 						OR = {
 							has_trait = RUS_savinkovist_officer
-							is_character = RUS_nikolay_sakharov
+							RUS = { RUS_nikolay_sakharov = { is_character = PREV.PREV } }
 						}
 					}
 					retire = yes
@@ -2797,6 +2794,16 @@ focus_tree = {
 					slot = second_in_command
 					trait = KR_editor_in_chief_sic
 				}
+			}
+			if = {
+				limit = {
+					is_monarchy = yes
+					OR = {
+						has_government = market_liberal
+						has_government = social_liberal
+					}
+				}
+				custom_effect_tooltip = RUS_demands_from_unions_monarchy_tt
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL_CHARACTER }
@@ -3215,7 +3222,7 @@ focus_tree = {
 					has_government = social_liberal
 					is_monarchy = yes
 				}
-				add_ideas = RUS_literary_clubs_2
+				add_ideas = RUS_democratic_foundation #Fondaminsky gets this directly so that Sorokin reforms finisher works properly
 			}
 			else = {
 				add_ideas = RUS_literary_clubs
@@ -3849,9 +3856,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_elected_officials"
 			if = {
-				limit = {
-					has_idea = RUS_democratic_foundation
-				}
+				limit = { has_idea = RUS_democratic_foundation }
 				swap_ideas = {
 					remove_idea = RUS_democratic_foundation
 					add_idea = RUS_democratic_foundation_2
@@ -4133,7 +4138,7 @@ focus_tree = {
 				custom_effect_tooltip = tooltip_white_line
 				add_days_mission_timeout = {
 					mission = RUS_land_reform_in_progress
-					days = -60
+					days = -100
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
@@ -4295,7 +4300,7 @@ focus_tree = {
 				custom_effect_tooltip = tooltip_white_line
 			}
 			if = {
-				limit = { has_variable = global.RUS_german_economic_influence_idea }
+				limit = { has_variable = RUS.RUS_german_economic_influence }
 				set_temp_variable = { RUS_influence_change = -1 }
 				RUS_change_german_economic_influence = yes
 				custom_effect_tooltip = tooltip_white_line
@@ -4748,21 +4753,24 @@ focus_tree = {
 					every_character = {
 						limit = {
 							OR = {
-								is_character = RUS_kirill_romanov
-								is_character = RUS_vladimir_romanov
+								RUS = { RUS_kirill_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_vladimir_romanov = { is_character = PREV.PREV } }
 							}
 						}
-						add_trait = {
-							trait = RUS_figurehead_monarch
-							ideology = social_liberal_subtype
-						}
-						add_trait = {
-							trait = RUS_figurehead_monarch
-							ideology = market_liberal_subtype
-						}
-						add_trait = {
-							trait = RUS_figurehead_monarch
-							ideology = social_conservative_subtype
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										add_trait = {
+											trait = RUS_figurehead_monarch
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
 						}
 					}
 				}
@@ -4880,8 +4888,10 @@ focus_tree = {
 			if = {
 				limit = { has_completed_focus = RUS_new_russian_capitalism }
 				OR = {
-					set_temp_variable = { coalition_target = token:market_liberal }
-					has_coalition_with_target = yes
+					custom_trigger_tooltip = {
+						tooltip = RUS_marlib_advisor_tt
+						RUS_marlib_advisor = yes
+					}
 					set_temp_variable = { coalition_target = token:social_conservative }
 					has_coalition_with_target = yes
 				}
@@ -4930,7 +4940,7 @@ focus_tree = {
 			add_political_power = 50
 			custom_effect_tooltip = tooltip_white_line
 			if = {
-				limit = { has_variable = global.RUS_german_economic_influence_idea }
+				limit = { has_variable = RUS.RUS_german_economic_influence }
 				custom_effect_tooltip = RUS_restrict_foreign_business_tt
 				custom_effect_tooltip = tooltip_white_line
 				if = {
@@ -5266,6 +5276,10 @@ focus_tree = {
 			modifier = {
 				factor = 5
 				date > 1938.5.1
+			}
+			modifier = {
+				factor = 5
+				has_country_flag = RUS_maklakov_ai
 			}
 		}
 		completion_reward = {
@@ -5667,7 +5681,25 @@ focus_tree = {
 			}
 			if = {
 				limit = { is_monarchy = yes }
-				add_country_leader_trait = RUS_patron_of_sciences
+				effect_tooltip = { add_country_leader_trait = RUS_patron_of_sciences }
+				hidden_effect = {
+					var:country_leader = {
+						if = {
+							limit = { has_ideology = market_liberal_subtype }
+							add_trait = {
+								ideology = market_liberal_subtype
+								trait = RUS_patron_of_sciences
+							}
+						}
+						if = {
+							limit = { has_ideology = social_conservative_subtype }
+							add_trait = {
+								ideology = social_conservative_subtype
+								trait = RUS_patron_of_sciences
+							}
+						}
+					}
+				}
 			}
 			else_if = {
 				limit = { is_in_coalition_with_social_liberal = no }
@@ -5707,7 +5739,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			factor = 15
+			factor = 25
 			modifier = {
 				factor = 1.5
 				has_active_mission = RUS_SVR_activity
@@ -5971,21 +6003,24 @@ focus_tree = {
 					every_character = {
 						limit = {
 							OR = {
-								is_character = RUS_kirill_romanov
-								is_character = RUS_vladimir_romanov
+								RUS = { RUS_kirill_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_vladimir_romanov = { is_character = PREV.PREV } }
 							}
 						}
-						add_trait = {
-							trait = RUS_figurehead_monarch
-							ideology = social_liberal_subtype
-						}
-						add_trait = {
-							trait = RUS_figurehead_monarch
-							ideology = market_liberal_subtype
-						}
-						add_trait = {
-							trait = RUS_figurehead_monarch
-							ideology = social_conservative_subtype
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										add_trait = {
+											trait = RUS_figurehead_monarch
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
 						}
 					}
 				}
@@ -6097,36 +6132,31 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_entrench_kadets"
 			if = {
 				limit = { is_monarchy = yes }
-				add_country_leader_trait = RUS_guiding_hand
+				effect_tooltip = { add_country_leader_trait = RUS_guiding_hand }
 				RUS_increase_imperial_popularity = yes
 				hidden_effect = {
 					every_character = {
 						limit = {
 							OR = {
-								is_character = RUS_kirill_romanov
-								is_character = RUS_vladimir_romanov
-								is_character = RUS_pyotr_wrangel
+								RUS = { RUS_kirill_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_vladimir_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_pyotr_wrangel = { is_character = PREV.PREV } }
 							}
 						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = paternal_autocrat_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = authoritarian_democrat_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = social_conservative_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = market_liberal_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = social_liberal_subtype
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										add_trait = {
+											trait = RUS_guiding_hand
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
 						}
 					}
 				}
@@ -6141,6 +6171,11 @@ focus_tree = {
 				}
 			}
 			add_popularity = { ideology = market_liberal popularity = 0.08 }
+			if = {
+				limit = { is_monarchy = yes }
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = RUS_demands_from_unions_monarchy_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	}
@@ -6175,7 +6210,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_empower_MVD"
-			add_political_power = 50
+			add_political_power = 75
 			add_ideas = RUS_iron_fisted_ministry
 			if = {
 				limit = { is_monarchy = yes }
@@ -6411,7 +6446,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_honour_romanovs"
 			if = {
 				limit = { has_left_democratic_government = no }
-				set_temp_variable = { ideology_change_var = 5 }
+				set_temp_variable = { ideology_change_var = 8 }
 				change_ruling_party_popularity = yes
 			}
 			custom_effect_tooltip = tooltip_white_line
@@ -6452,57 +6487,58 @@ focus_tree = {
 						has_trait = RUS_cossack_guard
 					}
 				}
-				swap_ruler_traits = { remove = RUS_cossack_guard add = RUS_cossack_guard_2 }
+				effect_tooltip = {
+					swap_ruler_traits = {
+						remove = RUS_cossack_guard
+						add = RUS_cossack_guard_2
+					}
+				}
 				hidden_effect = {
 					RUS_pyotr_wrangel = {
-						swap_country_leader_traits = {
-							remove = RUS_cossack_guard
-							add = RUS_cossack_guard_2
-							ideology = authoritarian_democrat_subtype
-						}
-						swap_country_leader_traits = {
-							remove = RUS_cossack_guard
-							add = RUS_cossack_guard_2
-							ideology = social_conservative_subtype
-						}
-						swap_country_leader_traits = {
-							remove = RUS_cossack_guard
-							add = RUS_cossack_guard_2
-							ideology = market_liberal_subtype
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										swap_country_leader_traits = {
+											remove = RUS_cossack_guard
+											add = RUS_cossack_guard_2
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
 						}
 					}
 				}
 			}
 			else = {
-				add_country_leader_trait = RUS_imperial_life_guard
+				effect_tooltip = { add_country_leader_trait = RUS_imperial_life_guard }
 				hidden_effect = {
 					every_character = {
 						limit = {
 							OR = {
-								is_character = RUS_kirill_romanov
-								is_character = RUS_vladimir_romanov
-								is_character = RUS_pyotr_wrangel
+								RUS = { RUS_kirill_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_vladimir_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_pyotr_wrangel = { is_character = PREV.PREV } }
 							}
 						}
-						add_trait = {
-							trait = RUS_imperial_life_guard
-							ideology = paternal_autocrat_subtype
-						}
-						add_trait = {
-							trait = RUS_imperial_life_guard
-							ideology = authoritarian_democrat_subtype
-						}
-						add_trait = {
-							trait = RUS_imperial_life_guard
-							ideology = social_conservative_subtype
-						}
-						add_trait = {
-							trait = RUS_imperial_life_guard
-							ideology = market_liberal_subtype
-						}
-						add_trait = {
-							trait = RUS_imperial_life_guard
-							ideology = social_liberal_subtype
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										add_trait = {
+											trait = RUS_imperial_life_guard
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
 						}
 					}
 				}
@@ -6592,7 +6628,26 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_high_imperial_council"
 			country_event = monrus.25
-			add_country_leader_trait = RUS_high_imperial_council_trait
+			effect_tooltip = { add_country_leader_trait = RUS_high_imperial_council_trait }
+			hidden_effect = {
+				var:country_leader = {
+					for_each_loop = {
+						array = global.ideologies
+						meta_effect = {
+							text = {
+								if = {
+									limit = { has_ideology = [IDEOLOGY] }
+									add_trait = {
+										trait = RUS_high_imperial_council_trait
+										ideology = [IDEOLOGY]
+									}
+								}
+							}
+							IDEOLOGY = "[?v.GetTokenKey]"
+						}
+					}
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -6618,7 +6673,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			factor = 15
+			factor = 25
 			modifier = {
 				add = 5
 				has_government = social_conservative
@@ -6800,36 +6855,31 @@ focus_tree = {
 			}
 			if = {
 				limit = { is_monarchy = yes }
-				add_country_leader_trait = RUS_guiding_hand
+				effect_tooltip = { add_country_leader_trait = RUS_guiding_hand }
 				RUS_increase_imperial_popularity = yes
 				hidden_effect = {
 					every_character = {
 						limit = {
 							OR = {
-								is_character = RUS_kirill_romanov
-								is_character = RUS_vladimir_romanov
-								is_character = RUS_pyotr_wrangel
+								RUS = { RUS_kirill_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_vladimir_romanov = { is_character = PREV.PREV } }
+								RUS = { RUS_pyotr_wrangel = { is_character = PREV.PREV } }
 							}
 						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = paternal_autocrat_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = authoritarian_democrat_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = social_conservative_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = market_liberal_subtype
-						}
-						add_trait = {
-							trait = RUS_guiding_hand
-							ideology = social_liberal_subtype
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										add_trait = {
+											trait = RUS_guiding_hand
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
 						}
 					}
 				}
@@ -6887,13 +6937,15 @@ focus_tree = {
 			is_in_coalition_with_authoritarian_democrat = yes
 		}
 
-		ai_will_do = { factor = 15 }
+		ai_will_do = { factor = 25 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_invite_SOR"
 			country_event = demrus.72
 			add_political_power = 75
 			set_temp_variable = { RUS_anger_change = 1 }
 			RUS_change_left_anger = yes
+			set_temp_variable = { RUS_anger_change = -1 }
+			RUS_change_right_anger = yes
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = RUS_vasily_shulgin_advisor
@@ -6990,7 +7042,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				factor = 0
-				GER = { exists = yes }
+				country_exists = GER
 			}
 		}
 		completion_reward = {
@@ -7138,20 +7190,23 @@ focus_tree = {
 			set_temp_variable = { RUS_pop_increase = party_popularity@social_conservative }
 			divide_temp_variable = { RUS_pop_increase = 3 }
 			add_popularity = { ideology = authoritarian_democrat popularity = RUS_pop_increase }
-			add_country_leader_trait = RUS_guiding_hand
+			effect_tooltip = { add_country_leader_trait = RUS_guiding_hand }
 			hidden_effect = {
 				RUS_vladimir_romanov = {
-					add_trait = {
-						trait = RUS_guiding_hand
-						ideology = paternal_autocrat_subtype
-					}
-					add_trait = {
-						trait = RUS_guiding_hand
-						ideology = authoritarian_democrat_subtype
-					}
-					add_trait = {
-						trait = RUS_guiding_hand
-						ideology = social_conservative_subtype
+					for_each_loop = {
+						array = global.ideologies
+						meta_effect = {
+							text = {
+								if = {
+									limit = { has_ideology = [IDEOLOGY] }
+									add_trait = {
+										trait = RUS_guiding_hand
+										ideology = [IDEOLOGY]
+									}
+								}
+							}
+							IDEOLOGY = "[?v.GetTokenKey]"
+						}
 					}
 				}
 			}
@@ -7422,7 +7477,7 @@ focus_tree = {
 			trigger = { RUS_is_demrus = yes }
 		}
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 			NOT = {
 				has_government = national_populist
 				has_socialist_government = yes
@@ -7746,19 +7801,13 @@ focus_tree = {
 			change_ruling_party_popularity = yes
 			if = {
 				limit = { is_monarchy = yes }
-				for_each_scope_loop = {
-					array = RUS.RUS_monarchy_prime_minister_array
-					if = {
-						limit = { is_second_in_command = yes }
-						set_temp_variable = { current_second_in_command_character = THIS }
-						add_trait = {
-							character = var:current_second_in_command_character
-							slot = second_in_command
-							trait = RUS_the_statesman
-						}
+				random_character = {
+					limit = { is_second_in_command = yes }
+					add_trait = {
+						slot = second_in_command
+						trait = RUS_the_statesman
 					}
 				}
-				custom_effect_tooltip = RUS_add_pm_sic_trait_tt
 			}
 			else = {
 				add_country_leader_trait = RUS_the_statesman
@@ -7896,18 +7945,62 @@ focus_tree = {
 				limit = {
 					has_country_leader = { character = RUS_pyotr_wrangel }
 				}
-				swap_ruler_traits = {
-					remove = RUS_emperor_of_all_russias_wrangel
-					add = RUS_emperor_of_all_russias_wrangel_2
+				effect_tooltip = {
+					swap_ruler_traits = {
+						remove = RUS_emperor_of_all_russias_wrangel
+						add = RUS_emperor_of_all_russias_wrangel_2
+					}
+				}
+				hidden_effect = {
+					RUS_pyotr_wrangel = {
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										swap_country_leader_traits = {
+											remove = RUS_emperor_of_all_russias_wrangel
+											add = RUS_emperor_of_all_russias_wrangel_2
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
+						}
+					}
 				}
 			}
 			else_if = {
 				limit = {
 					has_country_leader = { character = RUS_vladimir_romanov }
 				}
-				swap_ruler_traits = {
-					remove = RUS_emperor_of_all_russias
-					add = RUS_emperor_of_all_russias_2
+				effect_tooltip = {
+					swap_ruler_traits = {
+						remove = RUS_emperor_of_all_russias
+						add = RUS_emperor_of_all_russias_2
+					}
+				}
+				hidden_effect = {
+					RUS_vladimir_romanov = {
+						for_each_loop = {
+							array = global.ideologies
+							meta_effect = {
+								text = {
+									if = {
+										limit = { has_ideology = [IDEOLOGY] }
+										swap_country_leader_traits = {
+											remove = RUS_emperor_of_all_russias
+											add = RUS_emperor_of_all_russias_2
+											ideology = [IDEOLOGY]
+										}
+									}
+								}
+								IDEOLOGY = "[?v.GetTokenKey]"
+							}
+						}
+					}
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
@@ -7936,7 +8029,11 @@ focus_tree = {
 		x = -5
 		y = 2
 		available = {
-			has_global_flag = tilsit_peace_success
+			custom_trigger_tooltip = {
+				tooltip = tilsit_peace_success
+				has_completed_focus = RUS_eureka_conference
+				NOT = { has_global_flag = tilsit_peace_collapsed }
+			}
 			has_war = no
 			if = {
 				limit = { has_left_democratic_government = no }
@@ -8129,7 +8226,7 @@ focus_tree = {
 				limit = {
 					OR = {
 						is_core_of = UKR
-						is_core_of = WHR
+						is_core_of = BLR
 						is_core_of = LIT
 						is_core_of = POL
 						is_core_of = LAT
@@ -8513,7 +8610,6 @@ focus_tree = {
 			show_ideas_tooltip = RUS_anton_kartashyov_advisor
 			show_ideas_tooltip = RUS_pyotr_dolgorukov_advisor
 			show_ideas_tooltip = RUS_ivan_solonevich_advisor
-			show_ideas_tooltip = RUS_vasily_grabin_advisor
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 	}
@@ -8567,14 +8663,14 @@ focus_tree = {
 			add_manpower = 40500
 			RUS_increase_imperial_popularity = yes
 			FER = {
-				every_unit_leader = {
+				every_character = {
 					limit = {
 						OR = {
-							is_character = RUS_mikhail_diterikhs
-							is_character = RUS_fyodor_bredov
-							is_character = RUS_viktorin_molchanov
-							is_character = RUS_nikolay_protopopov
-							is_character = RUS_leonid_skipetrov
+							RUS = { RUS_mikhail_diterikhs = { is_character = PREV.PREV } }
+							RUS = { RUS_fyodor_bredov = { is_character = PREV.PREV } }
+							RUS = { RUS_viktorin_molchanov = { is_character = PREV.PREV } }
+							RUS = { RUS_nikolay_protopopov = { is_character = PREV.PREV } }
+							RUS = { RUS_leonid_skipetrov = { is_character = PREV.PREV } }
 						}
 					}
 					hidden_effect = {
@@ -8587,13 +8683,13 @@ focus_tree = {
 				}
 				if = {
 					limit = { has_character = MON_roman_von_ungern_sternberg }
-					every_unit_leader = {
+					every_character = {
 						limit = {
 							OR = {
-								is_character = MON_roman_von_ungern_sternberg
-								is_character = MON_mikhail_tornovsky
-								is_character = MON_nikolay_kazagrandi
-								is_character = MON_boris_rezukhin
+								MON = { MON_roman_von_ungern_sternberg = { is_character = PREV.PREV } }
+								MON = { MON_mikhail_tornovsky = { is_character = PREV.PREV } }
+								MON = { MON_nikolay_kazagrandi = { is_character = PREV.PREV } }
+								MON = { MON_boris_rezukhin = { is_character = PREV.PREV } }
 							}
 						}
 						hidden_effect = {
@@ -8718,7 +8814,7 @@ focus_tree = {
 		y = 2
 		available = { has_war = yes }
 		bypass = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 		}
 		prerequisite = {
 			focus = RUS_pledge_of_democracy
@@ -8968,7 +9064,7 @@ focus_tree = {
 				limit = { has_dlc_lar = yes }
 				create_intelligence_agency = {
 					name = "VGPU"
-					icon = GFX_intelligence_agency_logo_sov
+					icon = GFX_intelligence_agency_logo_kr_rus2
 				}
 				add_ideas = RUS_vgpu_idea_lar
 			}
@@ -9014,7 +9110,7 @@ focus_tree = {
 			if = {
 				limit = {
 					RUS_has_black_monday = yes
-					has_variable = global.RUS_german_economic_influence_idea
+					has_variable = RUS.RUS_german_economic_influence
 				}
 				RUS_decrease_black_monday = yes
 				set_temp_variable = { RUS_influence_change = -2 }
@@ -9023,7 +9119,7 @@ focus_tree = {
 			else_if = {
 				limit = {
 					RUS_has_black_monday = no
-					has_variable = global.RUS_german_economic_influence_idea
+					has_variable = RUS.RUS_german_economic_influence
 				}
 				set_temp_variable = { RUS_influence_change = -3 }
 				RUS_change_german_economic_influence = yes
@@ -9098,11 +9194,15 @@ focus_tree = {
 			add_popularity = { ideology = paternal_autocrat popularity = -0.1 }
 			if = {
 				limit = { is_ai = yes }
-				219 = {
-					create_unit = {
-						division = "division_template = \"Pekhotnaya diviziya\" start_experience_factor = 0.5"
-						owner = ROOT
-						count = 14
+				hidden_effect = {
+					random_owned_controlled_state = {
+						prioritize = { 219 }
+						limit = { valid_state_for_spawning_friendly_unit = yes }
+						create_unit = {
+							division = "division_template = \"Pekhotnaya diviziya\" start_experience_factor = 0.5"
+							owner = ROOT
+							count = 14
+						}
 					}
 				}
 			}
@@ -9337,11 +9437,10 @@ focus_tree = {
 			RUS_decrease_antisoc_resistance = yes
 			custom_effect_tooltip = tooltip_white_line
 			country_event = socrus.124
-			custom_effect_tooltip = socrus.124.tt
-			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = tooltip_event_allows_choice
+			custom_effect_tooltip = tooltip_event_choice_option_1
 			event_option_tooltip = socrus.124.a
-			custom_effect_tooltip = socrus.124.line
-			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = tooltip_event_choice_option_2
 			event_option_tooltip = socrus.124.b
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -9497,7 +9596,7 @@ focus_tree = {
 					RUS_aleksey_ustinov = { is_second_in_command = yes }
 				}
 				hidden_effect = {
-					remove_trait = {
+					remove_trait = { #removed due to order of display
 						character = RUS_aleksey_ustinov
 						slot = second_in_command
 						trait = KR_maximalist_ustinov
@@ -9512,13 +9611,13 @@ focus_tree = {
 						slot = second_in_command
 						trait = KR_socialist_maximalist_sic_2
 					}
-					add_trait = {
+					add_trait = { #readded so it's in the right order of display
 						character = RUS_aleksey_ustinov
 						slot = second_in_command
 						trait = KR_maximalist_ustinov
 					}
 				}
-				custom_effect_tooltip = CHI_upgrades_sic
+				custom_effect_tooltip = modifies_sic
 				custom_effect_tooltip = KR_socialist_maximalist_sic_tt
 			}
 		}
@@ -9531,7 +9630,7 @@ focus_tree = {
 		cost = 2
 
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 		}
 
 		relative_position_id = RUS_russian_socialism
@@ -9846,7 +9945,7 @@ focus_tree = {
 		cost = 2
 
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 			has_government = totalist
 		}
 
@@ -9910,7 +10009,7 @@ focus_tree = {
 					trait = KR_peasant_populist_2
 				}
 			}
-			custom_effect_tooltip = CHI_upgrades_sic
+			custom_effect_tooltip = modifies_sic
 			custom_effect_tooltip = KR_socialist_maximalist_sic2_tt
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = RUS_last_narodniks_trait_tt
@@ -9971,7 +10070,6 @@ focus_tree = {
 						has_completed_focus = RUS_cast_out_western_agents
 					}
 					RUS_aleksey_ustinov = {
-						add_temp_unit_leader_role = yes
 						unit_leader_event = { id = socrus.180 days = 5 }
 					}
 				}
@@ -10030,7 +10128,6 @@ focus_tree = {
 						has_completed_focus = RUS_a_steady_end_to_partisanship
 					}
 					RUS_aleksey_ustinov = {
-						add_temp_unit_leader_role = yes
 						unit_leader_event = { id = socrus.180 days = 5 }
 					}
 				}
@@ -10090,7 +10187,6 @@ focus_tree = {
 						has_completed_focus = RUS_cast_out_western_agents
 					}
 					RUS_aleksey_ustinov = {
-						add_temp_unit_leader_role = yes
 						unit_leader_event = { id = socrus.180 days = 5 }
 					}
 				}
@@ -10730,7 +10826,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = RUS_socialist_education_tt
 			hidden_effect = {
-				add_research_slot = 1
+				add_temporary_research_slot = yes
 			}
 			RUS_decrease_maximalist_focus_variable = yes
 			RUS_faith_bonuses = yes
@@ -11126,7 +11222,7 @@ focus_tree = {
 	focus = {
 		id = RUS_invite_zeller
 		icon = GFX_goal_generic_enforce_labor_regulation
-		cost = 5
+		cost = 3
 
 		relative_position_id = RUS_syndicalists
 		x = -10
@@ -11370,7 +11466,32 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_reject_state_terror"
 			add_political_power = 100
-			swap_ruler_traits = { remove = KR_dream_of_democracy add = KR_dream_of_democracy_2 }
+			effect_tooltip = {
+				swap_ruler_traits = {
+					remove = KR_dream_of_democracy
+					add = KR_dream_of_democracy_2
+				}
+			}
+			hidden_effect = {
+				var:country_leader = {
+					for_each_loop = {
+						array = global.ideologies
+						meta_effect = {
+							text = {
+								if = {
+									limit = { has_ideology = [IDEOLOGY] }
+									swap_country_leader_traits = {
+										remove = KR_dream_of_democracy
+										add = KR_dream_of_democracy_2
+										ideology = [IDEOLOGY]
+									}
+								}
+							}
+							IDEOLOGY = "[?v.GetTokenKey]"
+						}
+					}
+				}
+			}
 			if = {
 				limit = { has_idea = RUS_reeducation_camps }
 				remove_ideas = RUS_reeducation_camps
@@ -11629,7 +11750,10 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { RUS_VST_left = no }
+				limit = {
+					RUS_VST_left = no
+					has_idea = RUS_workers_control
+				}
 				swap_ideas = {
 					remove_idea = RUS_workers_control
 					add_idea = RUS_fedplan
@@ -11846,7 +11970,7 @@ focus_tree = {
 				custom_effect_tooltip = RUS_healthcare_reform_centre_tt
 				if = {
 					limit = {
-						set_temp_variable = { RUS_relation_check = 7 }
+						set_temp_variable = { RUS_relation_check = 6 }
 						RUS_vst_right_check = yes
 					}
 					add_advisor_role = {
@@ -11855,8 +11979,8 @@ focus_tree = {
 							slot = political_advisor
 							idea_token = RUS_fyodor_dan_advisor
 							desc = RUS_fyodor_dan_sic_desc
-							cost = 75
 							traits = { KR_medical_expert KR_vst_right_dan }
+							cost = 75
 						}
 					}
 				}
@@ -11904,10 +12028,7 @@ focus_tree = {
 				set_temp_variable = { RUS_relation_check = 8 }
 				RUS_vst_centre_check = yes
 				RUS_socdem_check = yes
-				custom_trigger_tooltip = {
-					tooltip = RUS_social_solidarity_req_tt
-					RUS_has_antisoc_resistance = no
-				}
+				RUS_has_antisoc_resistance = no
 			}
 		}
 		ai_will_do = { factor = 15 }
@@ -12236,7 +12357,7 @@ focus_tree = {
 			}
 			OR = {
 				has_country_flag = RUS_maksimov_vision
-				GER = { exists = no }
+				NOT = { country_exists = GER }
 			}
 		}
 		ai_will_do = { factor = 100 }
@@ -12247,11 +12368,31 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			activate_advisor = RUS_grigory_maksimov_sic
 			custom_effect_tooltip = tooltip_white_line
-			swap_ruler_traits = {
-				remove = RUS_theorist_of_new_communism
-				add = RUS_theorist_of_new_communism_4
+			effect_tooltip = {
+				swap_ruler_traits = {
+					remove = RUS_theorist_of_new_communism
+					add = RUS_theorist_of_new_communism_4
+				}
 			}
 			hidden_effect = {
+				var:country_leader = {
+					for_each_loop = {
+						array = global.ideologies
+						meta_effect = {
+							text = {
+								if = {
+									limit = { has_ideology = [IDEOLOGY] }
+									swap_country_leader_traits = {
+										remove = RUS_theorist_of_new_communism
+										add = RUS_theorist_of_new_communism_4
+										ideology = [IDEOLOGY]
+									}
+								}
+							}
+							IDEOLOGY = "[?v.GetTokenKey]"
+						}
+					}
+				}
 				country_event = { id = socrus.185 days = 30 random_days = 30 } #Dreaming of the Future
 			}
 		}
@@ -12280,7 +12421,7 @@ focus_tree = {
 			is_in_coalition_with_totalist = yes
 			OR = {
 				has_country_flag = RUS_restore_socialist_unity
-				GER = { exists = no }
+				NOT = { country_exists = GER }
 			}
 		}
 		ai_will_do = { factor = 400 }
@@ -12289,9 +12430,31 @@ focus_tree = {
 			country_event = socrus.313 # Healing the Great Schism
 			add_political_power = 100
 			custom_effect_tooltip = tooltip_white_line
-			swap_ruler_traits = {
-				remove = RUS_theorist_of_new_communism
-				add = RUS_theorist_of_new_communism_3
+			effect_tooltip = {
+				swap_ruler_traits = {
+					remove = RUS_theorist_of_new_communism
+					add = RUS_theorist_of_new_communism_3
+				}
+			}
+			hidden_effect = {
+				var:country_leader = {
+					for_each_loop = {
+						array = global.ideologies
+						meta_effect = {
+							text = {
+								if = {
+									limit = { has_ideology = [IDEOLOGY] }
+									swap_country_leader_traits = {
+										remove = RUS_theorist_of_new_communism
+										add = RUS_theorist_of_new_communism_3
+										ideology = [IDEOLOGY]
+									}
+								}
+							}
+							IDEOLOGY = "[?v.GetTokenKey]"
+						}
+					}
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -12569,7 +12732,7 @@ focus_tree = {
 		prerequisite = {
 			focus = RUS_protect_revolution
 		}
-		ai_will_do = { factor = 15 }
+		ai_will_do = { factor = 40 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_united_behind_purpose"
 			activate_mission = RUS_soc_prepare_minds
@@ -12601,7 +12764,7 @@ focus_tree = {
 			set_temp_variable = { RUS_relation_check = 3 }
 			RUS_sr_check = yes
 		}
-		ai_will_do = { factor = 15 }
+		ai_will_do = { factor = 40 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_formalise_emergency_powers"
 			country_event = socrus.79 #The Committee for Defence of the Revolution
@@ -12693,7 +12856,7 @@ focus_tree = {
 			focus = RUS_protect_revolution
 		}
 		allow_branch = { RUS_sulimov = yes }
-		ai_will_do = { factor = 15 }
+		ai_will_do = { factor = 40 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_counter_reactionary_intelligence"
 			RUS_decrease_antisoc_resistance = yes
@@ -12730,7 +12893,7 @@ focus_tree = {
 		prerequisite = {
 			focus = RUS_counter_reactionary_intelligence
 		}
-		ai_will_do = { factor = 15 }
+		ai_will_do = { factor = 500 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_younger_generation"
 			add_ideas = RUS_socialism_in_practice
@@ -12837,6 +13000,8 @@ focus_tree = {
 				upgrade_intelligence_agency = upgrade_interrogation_techniques
 			}
 			custom_effect_tooltip = tooltip_white_line
+			set_temp_variable = { RUS_relation_change = 1 }
+			RUS_VST_left_relation = yes
 			set_temp_variable = { RUS_relation_change = -2 }
 			RUS_VST_right_relation = yes
 			set_temp_variable = { RUS_relation_change = -3 }
@@ -13015,7 +13180,6 @@ focus_tree = {
 					limit = { NOT = { has_country_leader = { character = RUS_grigory_zinovyev } } }
 					hidden_effect = {
 						RUS_grigory_zinovyev = {
-							add_temp_unit_leader_role = yes
 							unit_leader_event = { id = socrus.380 days = 2 }
 						}
 					}
@@ -13256,7 +13420,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_encourage_collectivisation"
-			add_political_power = 50
+			add_political_power = 75
 			random_owned_controlled_state = {
 				limit = { has_state_category = two }
 				increase_state_category_by_one_level = yes
@@ -13267,6 +13431,14 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = { has_state_category = two }
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_controlled_state = {
+				limit = { has_state_category = one }
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_controlled_state = {
+				limit = { has_state_category = one }
 				increase_state_category_by_one_level = yes
 			}
 			random_owned_controlled_state = {
@@ -13569,7 +13741,7 @@ focus_tree = {
 	focus = {
 		id = RUS_invite_sverdlov
 		icon = GFX_focus_SOV_the_path_of_marxism_leninism
-		cost = 5
+		cost = 3
 
 		relative_position_id = RUS_communists
 		x = 4
@@ -13788,7 +13960,7 @@ focus_tree = {
 			add_political_power = 50
 			country_event = socrus.411 #The Union of Socialist Labour Republics
 			add_to_array = { array = RUS_SSTR_tags value = UKR }
-			add_to_array = { array = RUS_SSTR_tags value = WHR }
+			add_to_array = { array = RUS_SSTR_tags value = BLR }
 			add_to_array = { array = RUS_SSTR_tags value = LIT }
 			add_to_array = { array = RUS_SSTR_tags value = LAT }
 			add_to_array = { array = RUS_SSTR_tags value = BAT }
@@ -13865,7 +14037,7 @@ focus_tree = {
 							tag = EST
 							tag = LAT
 							tag = LIT
-							tag = WHR
+							tag = BLR
 							tag = UKR
 							tag = POL
 						}
@@ -13884,7 +14056,7 @@ focus_tree = {
 									tag = EST
 									tag = LAT
 									tag = LIT
-									tag = WHR
+									tag = BLR
 									tag = UKR
 									tag = POL
 								}
@@ -13963,7 +14135,7 @@ focus_tree = {
 				has_completed_focus = RUS_franco_russian_treaty
 				has_war_with = INT
 				has_war_with = GER
-				FRA = { exists = no }
+				NOT = { country_exists = FRA }
 			}
 		}
 		prerequisite = {
@@ -14193,7 +14365,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						CHI = { exists = yes }
+						country_exists = CHI
 					}
 					add_relation_modifier = {
 						target = CHI
@@ -14222,7 +14394,7 @@ focus_tree = {
 			else = {
 				if = {
 					limit = {
-						CHI = { exists = yes }
+						country_exists = CHI
 					}
 					add_relation_modifier = {
 						target = CHI
@@ -14260,7 +14432,7 @@ focus_tree = {
 				}
 			}
 			activate_targeted_decision = { target = POL decision = RUS_invite_revolutionary_committee }
-			activate_targeted_decision = { target = WHR decision = RUS_secret_deal_with_belarus }
+			activate_targeted_decision = { target = BLR decision = RUS_secret_deal_with_belarus }
 			activate_targeted_decision = { target = CHI decision = RUS_military_mission_china_red }
 			activate_targeted_decision = { target = CHI decision = RUS_trade_deal_china_red }
 		}
@@ -14485,7 +14657,7 @@ focus_tree = {
 		will_lead_to_war_with = EST
 		will_lead_to_war_with = LAT
 		will_lead_to_war_with = LIT
-		will_lead_to_war_with = WHR
+		will_lead_to_war_with = BLR
 		will_lead_to_war_with = UKR
 		will_lead_to_war_with = GAL
 		will_lead_to_war_with = HUN
@@ -14530,23 +14702,6 @@ focus_tree = {
 				country_event = { id = socrus.82 days = 7 } #Comrade Dan's Departure
 				country_event = { id = rusfla.161 days = 365 } #Daughters of the Motherland
 				country_event = socrus.198
-				every_country = {
-					limit = {
-						is_ai = no
-						OR = {
-							has_country_flag = MIE_member
-							AND = {
-								OR = {
-									original_tag = POL
-									original_tag = UKR
-								}
-								is_in_faction_with = AUS
-								AUS = { is_faction_leader = yes }
-							}
-						}
-					}
-					country_event = mie.19 # MIE hard mode
-				}
 			}
 		}
 		completion_reward = {
@@ -14557,10 +14712,7 @@ focus_tree = {
 			if = {
 				limit = { RUS_is_maximalist = yes }
 				hidden_effect = {
-					RUS_aleksey_ustinov = {
-						add_temp_unit_leader_role = yes
-						unit_leader_event = socrus.145 #The Necessary Measures
-					}
+					RUS_aleksey_ustinov = { unit_leader_event = socrus.145 } #The Necessary Measures
 				}
 				effect_tooltip = {
 					set_politics = {
@@ -14591,7 +14743,6 @@ focus_tree = {
 				set_country_flag = UKR_had_dem_govt
 			}
 			hidden_effect = {
-				add_ideas = RUS_surrender_limit_idea
 				if = {
 					limit = { has_global_flag = allow_sound_events_flag }
 					scoped_play_song = "rus_katyusha"
@@ -14633,11 +14784,11 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					can_declare_war_on = WHR
-					WHR = { has_socialist_government = no }
+					can_declare_war_on = BLR
+					BLR = { has_socialist_government = no }
 				}
 				declare_war_on = {
-					target = WHR
+					target = BLR
 					type = annex_everything
 				}
 			}
@@ -14702,7 +14853,7 @@ focus_tree = {
 							original_tag = EST
 							original_tag = LAT
 							original_tag = LIT
-							original_tag = WHR
+							original_tag = BLR
 							original_tag = UKR
 							original_tag = POL
 						}
@@ -14713,7 +14864,7 @@ focus_tree = {
 						enemy = ROOT
 					}
 				}
-				WHR = { country_event = { id = whrpol.53 days = 2 } }
+				BLR = { country_event = { id = whrpol.53 days = 2 } }
 				country_event = { id = socrus.388 days = 200 } #The New Normal
 				RUS_western_march_plan = yes
 			}
@@ -14734,7 +14885,7 @@ focus_tree = {
 			base = 50
 			modifier = {
 				factor = 0
-				GER = { exists = yes }
+				country_exists = GER
 			}
 		}
 		prerequisite = {
@@ -14787,7 +14938,7 @@ focus_tree = {
 			focus = RUS_comrades_abroad
 		}
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 		}
 		ai_will_do = { base = 50 }
 		completion_reward = {
@@ -14821,7 +14972,7 @@ focus_tree = {
 			focus = RUS_abolish_war
 		}
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 			FRA = { is_subject = no }
 			ic_ratio = { tag = FRA ratio > 1 }
 			ic_ratio = { tag = ENG ratio > 1 }
@@ -14914,7 +15065,10 @@ focus_tree = {
 		}
 		available = {
 			GER = { exists = no }
-			NOT = { is_in_faction_with = INT }
+			NOT = {
+				is_in_faction_with = INT
+				has_war_with = INT
+			}
 		}
 		prerequisite = {
 			focus = RUS_anti_capitalist_warfare
@@ -14996,6 +15150,7 @@ focus_tree = {
 					tooltip = RUS_world_revolution_focus_tt2
 					NOT = { country_exists = INT }
 				}
+				INT = { is_subject_of = ROOT }
 			}
 		}
 		prerequisite = {
@@ -15271,94 +15426,102 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			add_political_power = 50
 			custom_effect_tooltip = RUS_expand_str_tt
-			add_to_array = { array = RUS_SSTR_tags value = FIN }
-			add_to_array = { array = RUS_SSTR_tags value = SWE }
-			add_to_array = { array = RUS_SSTR_tags value = NOR }
-			add_to_array = { array = RUS_SSTR_tags value = DEN }
-			add_to_array = { array = RUS_SSTR_tags value = POL }
-			add_to_array = { array = RUS_SSTR_tags value = ROM }
-			add_to_array = { array = RUS_SSTR_tags value = TRS }
-			add_to_array = { array = RUS_SSTR_tags value = GAL }
-			add_to_array = { array = RUS_SSTR_tags value = SLO }
-			add_to_array = { array = RUS_SSTR_tags value = CZE }
-			add_to_array = { array = RUS_SSTR_tags value = HUN }
-			add_to_array = { array = RUS_SSTR_tags value = BUL }
-			add_to_array = { array = RUS_SSTR_tags value = GRE }
-			add_to_array = { array = RUS_SSTR_tags value = CYP }
-			add_to_array = { array = RUS_SSTR_tags value = SER }
-			add_to_array = { array = RUS_SSTR_tags value = CRO }
-			add_to_array = { array = RUS_SSTR_tags value = BOS }
-			add_to_array = { array = RUS_SSTR_tags value = PRE }
-			add_to_array = { array = RUS_SSTR_tags value = EPR }
-			add_to_array = { array = RUS_SSTR_tags value = ALB }
-			add_to_array = { array = RUS_SSTR_tags value = MNT }
-			add_to_array = { array = RUS_SSTR_tags value = TRS }
-			add_to_array = { array = RUS_SSTR_tags value = SLV }
-			add_to_array = { array = RUS_SSTR_tags value = WLS }
-			add_to_array = { array = RUS_SSTR_tags value = SCO }
-			add_to_array = { array = RUS_SSTR_tags value = CAT }
-			add_to_array = { array = RUS_SSTR_tags value = GLC }
-			add_to_array = { array = RUS_SSTR_tags value = BAS }
-			add_to_array = { array = RUS_SSTR_tags value = BRI }
-			add_to_array = { array = RUS_SSTR_tags value = PER }
-			add_to_array = { array = RUS_SSTR_tags value = TUR }
-			add_to_array = { array = RUS_SSTR_tags value = KUR }
-			add_to_array = { array = RUS_SSTR_tags value = AFG }
-			add_to_array = { array = RUS_SSTR_tags value = MON }
-			add_to_array = { array = RUS_SSTR_tags value = ETS }
-			add_to_array = { array = RUS_SSTR_tags value = KUM }
-			add_to_array = { array = RUS_SSTR_tags value = MAN }
+			add_to_array = { RUS_SSTR_tags = FIN }
+			add_to_array = { RUS_SSTR_tags = SWE }
+			add_to_array = { RUS_SSTR_tags = NOR }
+			add_to_array = { RUS_SSTR_tags = DEN }
+			add_to_array = { RUS_SSTR_tags = POL }
+			add_to_array = { RUS_SSTR_tags = ROM }
+			add_to_array = { RUS_SSTR_tags = TRS }
+			add_to_array = { RUS_SSTR_tags = GAL }
+			add_to_array = { RUS_SSTR_tags = SLO }
+			add_to_array = { RUS_SSTR_tags = CZE }
+			add_to_array = { RUS_SSTR_tags = HUN }
+			add_to_array = { RUS_SSTR_tags = BUL }
+			add_to_array = { RUS_SSTR_tags = GRE }
+			add_to_array = { RUS_SSTR_tags = CYP }
+			add_to_array = { RUS_SSTR_tags = SER }
+			add_to_array = { RUS_SSTR_tags = CRO }
+			add_to_array = { RUS_SSTR_tags = BOS }
+			add_to_array = { RUS_SSTR_tags = PRE }
+			add_to_array = { RUS_SSTR_tags = EPR }
+			add_to_array = { RUS_SSTR_tags = ALB }
+			add_to_array = { RUS_SSTR_tags = MNT }
+			add_to_array = { RUS_SSTR_tags = TRS }
+			add_to_array = { RUS_SSTR_tags = SLV }
+			add_to_array = { RUS_SSTR_tags = WLS }
+			add_to_array = { RUS_SSTR_tags = SCO }
+			add_to_array = { RUS_SSTR_tags = CAT }
+			add_to_array = { RUS_SSTR_tags = GLC }
+			add_to_array = { RUS_SSTR_tags = BAS }
+			add_to_array = { RUS_SSTR_tags = BRI }
+			add_to_array = { RUS_SSTR_tags = PER }
+			add_to_array = { RUS_SSTR_tags = TUR }
+			add_to_array = { RUS_SSTR_tags = KUR }
+			add_to_array = { RUS_SSTR_tags = AFG }
+			add_to_array = { RUS_SSTR_tags = MON }
+			add_to_array = { RUS_SSTR_tags = ETS }
+			add_to_array = { RUS_SSTR_tags = KUM }
+			add_to_array = { RUS_SSTR_tags = MAN }
 			if = {
-				limit = {
-					has_country_leader = { character = RUS_grigory_maksimov }
-				}
-				every_other_country = {
+				limit = { has_country_leader = { character = RUS_grigory_maksimov } }
+				every_possible_country = {
 					limit = {
-						OR = {
-							is_in_europe = yes
-							tag = SRI
-							tag = SWF
-							tag = WLS
-							tag = SCO
-						}
+						var:original_tag = { is_in_europe = yes }
+						NOT = { has_autonomy_state = union_republic }
+						NOT = { has_autonomy_state = union_republic_autonomous }
 					}
-					add_to_array = { array = ROOT.RUS_SSTR_tags value = THIS }
+					add_to_array = { ROOT.RUS_SSTR_tags = THIS }
+				}
+				for_each_scope_loop = {
+					array = RUS_SSTR_tags
+					if = {
+						limit = {
+							OR = {
+								has_autonomy_state = union_republic
+								has_autonomy_state = union_republic_autonomous
+							}
+						}
+						add_to_temp_array = { tags_to_remove = THIS }
+					}
+				}
+				for_each_loop = {
+					array = tags_to_remove
+					remove_from_array = { RUS_SSTR_tags = v }
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			every_other_country = {
+			every_neighbor_country = {
 				limit = {
-					is_neighbor_of = ROOT
-					OR = {
-						tag = FIN
-						tag = SWE
-						tag = NOR
-						tag = POL
-						tag = ROM
-						tag = GAL
-						tag = SLO
-						tag = CZE
-						tag = HUN
-						tag = BUL
-						tag = GRE
-						tag = SER
-						tag = CRO
-						tag = BOS
-						tag = PRE
-						tag = ALB
-						tag = MNT
-						tag = TRV
-						tag = SLV
-						tag = PER
-						tag = AFG
-						tag = MON
-						tag = ETS
-						tag = KUM
-						tag = MAN
-					}
-					has_socialist_government = no
-					NOT = { has_non_aggression_pact_with = ROOT }
 					has_authoritarian_government = yes
+					NOT = { has_non_aggression_pact_with = ROOT }
+					OR = {
+						original_tag = FIN
+						original_tag = SWE
+						original_tag = NOR
+						original_tag = POL
+						original_tag = ROM
+						original_tag = GAL
+						original_tag = SLO
+						original_tag = CZE
+						original_tag = HUN
+						original_tag = BUL
+						original_tag = GRE
+						original_tag = SER
+						original_tag = CRO
+						original_tag = BOS
+						original_tag = PRE
+						original_tag = ALB
+						original_tag = MNT
+						original_tag = TRV
+						original_tag = SLV
+						original_tag = PER
+						original_tag = AFG
+						original_tag = MON
+						original_tag = ETS
+						original_tag = KUM
+						original_tag = MAN
+					}
 				}
 				ROOT = {
 					create_wargoal = {
@@ -15474,7 +15637,7 @@ focus_tree = {
 					add_ideas = RUS_centralised_union_government_puppet
 				}
 			}
-			WHR = {
+			BLR = {
 				if = {
 					limit = { is_subject_of = ROOT }
 					add_ideas = RUS_centralised_union_government_puppet
@@ -15571,7 +15734,7 @@ focus_tree = {
 						OR = {
 							is_core_of = RUS
 							is_core_of = UKR
-							is_core_of = WHR
+							is_core_of = BLR
 							is_core_of = RSA
 							is_central_asia = yes
 							is_core_of = GEO
@@ -17374,33 +17537,30 @@ focus_tree = {
 			hidden_effect = {
 				random_owned_controlled_state = {
 					prioritize = { 219 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Gvardeyskaya Mekhanizirovannaya diviziya\" start_experience_factor = 0.2"
-						owner = RUS
-						prioritize_location = 6380
+						owner = ROOT
 					}
 					if = {
 						limit = { ROOT = { has_completed_focus = RUS_NPP_tanks } }
 						create_unit = {
 							division = "division_template = \"Gvardeyskaya Mekhanizirovannaya diviziya\" start_experience_factor = 0.2"
-							owner = RUS
-							prioritize_location = 6380
+							owner = ROOT
 						}
 					}
 					if = {
 						limit = { ROOT = { has_completed_focus = RUS_military_production } }
 						create_unit = {
 							division = "division_template = \"Gvardeyskaya Mekhanizirovannaya diviziya\" start_experience_factor = 0.2"
-							owner = RUS
-							prioritize_location = 6380
+							owner = ROOT
 						}
 					}
 					if = {
 						limit = { ROOT = { has_completed_focus = RUS_academy_of_black_epaulettes } }
 						create_unit = {
 							division = "division_template = \"Gvardeyskaya Mekhanizirovannaya diviziya\" start_experience_factor = 0.2"
-							owner = RUS
-							prioritize_location = 6380
+							owner = ROOT
 						}
 					}
 					if = {
@@ -17415,8 +17575,7 @@ focus_tree = {
 						}
 						create_unit = {
 							division = "division_template = \"Gvardeyskaya Mekhanizirovannaya diviziya\" start_experience_factor = 0.2"
-							owner = RUS
-							prioritize_location = 6380
+							owner = ROOT
 						}
 					}
 				}
@@ -18486,7 +18645,12 @@ focus_tree = {
 			trigger = { RUS_is_spiridonist = yes }
 		}
 		available = {
-			any_enemy_country = { is_actual_major = yes }
+			OR = {
+				has_war_with = GER
+				has_war_with = INT
+				has_war_with = ENT
+				has_war_with = JAP
+			}
 		}
 		prerequisite = {
 			focus = RUS_address_the_army
@@ -18749,6 +18913,9 @@ focus_tree = {
 				category = land_doctrine
 			}
 			add_ideas = RUS_frunze_doctrine_1
+			custom_effect_tooltip = tooltip_white_line
+			set_temp_variable = { RUS_relation_change = 1 }
+			RUS_VST_left_relation = yes
 			hidden_effect = {
 				if = {
 					limit = { has_completed_focus = RUS_comrades_abroad }
@@ -18853,16 +19020,15 @@ focus_tree = {
 			add_manpower = -40500
 			RUS_fix_army_soc = yes
 			RUS_promote_socialist_generals = yes
+			RUS_basan_gorodovikov = { set_nationality = ROOT }
 			RUS_pavel_rychagov = {
 				add_advisor_role = {
 					advisor = {
 						slot = air_chief
 						idea_token = RUS_pavel_rychagov_air_chief
 						desc = RUS_pavel_rychagov_high_command_desc
+						traits = { KR_air_chief_reform_2 }
 						cost = 100
-						traits = {
-							KR_air_chief_reform_2
-						}
 					}
 				}
 			}
@@ -19429,11 +19595,11 @@ focus_tree = {
 				character = RUS_leonid_govorov
 				advisor = {
 					slot = high_command
-					cost = 100
 					idea_token = RUS_leonid_govorov_high_command
 					desc = RUS_leonid_govorov_commander_desc
-					traits = { KR_MHC_artillery_2 }
 					ledger = army
+					traits = { KR_MHC_artillery_2 }
+					cost = 100
 				}
 			}
 		}
@@ -19482,13 +19648,15 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_rehabilitate_red_army"
 			add_war_support = 0.1
 			RUS_fix_army_soc = yes
-			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = RUS_vasily_blyukher_high_command
 			show_ideas_tooltip = RUS_aleksandr_yegorov_high_command
 			show_ideas_tooltip = RUS_semyon_timoshenko_high_command
 			show_ideas_tooltip = RUS_kirill_meretskov_high_command
 			show_ideas_tooltip = RUS_boris_shaposhnikov_theorist
+			custom_effect_tooltip = tooltip_white_line
+			set_temp_variable = { RUS_relation_change = 1 }
+			RUS_VST_left_relation = yes
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -19541,43 +19709,44 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_end_army_factionalism"
 			RUS_fix_army_soc = yes
 			country_event = socrus.131
-			custom_effect_tooltip = socrus.131.tt
+			custom_effect_tooltip = tooltip_event_allows_choice
+			custom_effect_tooltip = tooltip_event_choice_option_1
 			if = {
 				limit = { RUS_is_maximalist = yes }
 				event_option_tooltip = socrus.132.a #Levandovsky
-				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tooltip_event_choice_option_2
 				event_option_tooltip = socrus.132.b #Frunze
-				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tooltip_event_choice_option_3
 				event_option_tooltip = socrus.132.c #Tukhachevsky
 			}
 			if = {
 				limit = { RUS_is_spiridonist = yes }
+				event_option_tooltip = socrus.132.a2 #Levandovsky
+				custom_effect_tooltip = tooltip_event_choice_option_2
+				event_option_tooltip = socrus.132.b2 #Sablin
 				if = {
 					limit = { NOT = { has_country_flag = RUS_sablin_only } }
+					custom_effect_tooltip = tooltip_event_choice_option_3
 					event_option_tooltip = socrus.132.c #Tukhachevsky
-					custom_effect_tooltip = tooltip_white_line
 				}
-				event_option_tooltip = socrus.132.a2 #Levandovsky
-				custom_effect_tooltip = tooltip_white_line
-				event_option_tooltip = socrus.132.b2 #Sablin
 			}
 			else = {
 				event_option_tooltip = socrus.132.a2 #Levandovsky
-				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tooltip_event_choice_or
 				event_option_tooltip = socrus.132.e #Yegorov
-				custom_effect_tooltip = tooltip_white_line
 				if = {
 					limit = {
 						has_character = RUS_mikhail_frunze
 					}
+					custom_effect_tooltip = tooltip_event_choice_or
 					event_option_tooltip = socrus.132.f #Frunze
-					custom_effect_tooltip = tooltip_white_line
 				}
 				if = {
 					limit = {
 						RUS_VST_right = yes
 						has_character = RUS_aleksandr_vasilevsky
 					}
+					custom_effect_tooltip = tooltip_event_choice_or
 					event_option_tooltip = socrus.132.g #Vasilevsky
 				}
 			}
@@ -19939,6 +20108,10 @@ focus_tree = {
 				has_government = paternal_autocrat
 				has_completed_focus = RUS_privatisation
 			}
+			modifier = {
+				factor = 10
+				has_government = paternal_autocrat #denikin-wrangel interim period
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_sponsor_belgrade"
@@ -19979,7 +20152,7 @@ focus_tree = {
 
 	focus = {
 		id = RUS_moscow_economic_council
-		icon = GFX_focus_russian_cooperation
+		icon = GFX_goal_RUS_moscow_economic_council
 		cost = 5
 
 		relative_position_id = RUS_end_vilnius_agreement
@@ -20002,7 +20175,7 @@ focus_tree = {
 			factor = 6
 			modifier = {
 				factor = 100
-				GER = { exists = no }
+				NOT = { country_exists = GER }
 				has_country_flag = RUS_ideocrat_ai
 			}
 		}
@@ -20044,7 +20217,7 @@ focus_tree = {
 				add = 20
 				OR = {
 					AND = {
-						EST = { exists = yes }
+						country_exists = EST
 						EST = { is_in_faction = no }
 					}
 					LAT = {
@@ -20174,7 +20347,7 @@ focus_tree = {
 			OR = {
 				NOT = {
 					country_exists = UKR
-					country_exists = WHR
+					country_exists = BLR
 					country_exists = GER
 				}
 				has_war_with = GER
@@ -20196,7 +20369,7 @@ focus_tree = {
 			}
 			activate_targeted_decision = { target = UKR decision = RUS_organise_russophile_groups }
 			activate_targeted_decision = { target = UKR decision = RUS_incite_antigermanism }
-			activate_targeted_decision = { target = WHR decision = RUS_anti_belarus }
+			activate_targeted_decision = { target = BLR decision = RUS_anti_belarus }
 			activate_targeted_decision = { target = BAT decision = RUS_free_baltics_free_russia }
 			activate_targeted_decision = { target = LIT decision = RUS_support_the_laf }
 			activate_targeted_decision = { target = POL decision = RUS_national_committee }
@@ -20240,7 +20413,7 @@ focus_tree = {
 		will_lead_to_war_with = EST
 		will_lead_to_war_with = LAT
 		will_lead_to_war_with = LIT
-		will_lead_to_war_with = WHR
+		will_lead_to_war_with = BLR
 		will_lead_to_war_with = UKR
 		will_lead_to_war_with = GAL
 		will_lead_to_war_with = HUN
@@ -20287,23 +20460,6 @@ focus_tree = {
 			country_event = { id = rusfla.131 days = 20 }
 			country_event = { id = rusfla.23 days = 200 random_days = 100 }
 			set_country_flag = { flag = imminent_war days = 60 value = 1 }
-			every_country = {
-				limit = {
-					is_ai = no
-					OR = {
-						has_country_flag = MIE_member
-						AND = {
-							OR = {
-								original_tag = POL
-								original_tag = UKR
-							}
-							is_in_faction_with = AUS
-							AUS = { is_faction_leader = yes }
-						}
-					}
-				}
-				country_event = mie.19 # MIE hard mode
-			}
 			country_event = { id = russia.269 days = 1 } #Radio speech by the Secretary of SZRS, Karol Vendzyagolsky
 			#Add war start events for other governments - Tsar's speech, etc
 			if = {
@@ -20313,21 +20469,10 @@ focus_tree = {
 				}
 				OTT = { country_event = ottfor.51 }
 			}
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = UKR
-						is_core_of = WHR
-					}
-					is_galicia = no
-				}
-				add_claim_by = ROOT
-			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_preemptive_war"
 			hidden_effect = {
-				add_ideas = RUS_surrender_limit_idea
 				if = {
 					limit = { has_global_flag = allow_sound_events_flag }
 					if = {
@@ -20397,11 +20542,11 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					can_declare_war_on = WHR
-					WHR = { NOT = { is_in_faction_with = INT } }
+					can_declare_war_on = BLR
+					BLR = { NOT = { is_in_faction_with = INT } }
 				}
 				declare_war_on = {
-					target = WHR
+					target = BLR
 					type = annex_everything
 				}
 			}
@@ -20477,7 +20622,7 @@ focus_tree = {
 							original_tag = EST
 							original_tag = LAT
 							original_tag = LIT
-							original_tag = WHR
+							original_tag = BLR
 							original_tag = UKR
 							original_tag = POL
 						}
@@ -20515,7 +20660,7 @@ focus_tree = {
 			focus = RUS_preemptive_war
 		}
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 		}
 
 		ai_will_do = {
@@ -20863,7 +21008,7 @@ focus_tree = {
 	}
 	focus = {
 		id = RUS_brotherhood_with_belarus
-		icon = GFX_goal_WHR_coat_of_arms_authoritarian
+		icon = GFX_goal_BLR_coat_of_arms_authoritarian
 		cost = 5
 
 		relative_position_id = RUS_rebirth_of_russia
@@ -20878,7 +21023,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			activate_targeted_decision = { decision = RUS_rebuild_belarus target = 206 }
 			#some mechanic
-			WHR = { enable_state_integration_80_tooltip = yes }
+			BLR = { enable_state_integration_80_tooltip = yes }
 			hidden_effect = {
 				1087 = { enable_state_integration_80_compliance = yes } #Mogilev
 				207 = { enable_state_integration_80_compliance = yes } #Braslav
@@ -20886,6 +21031,8 @@ focus_tree = {
 				194 = { enable_state_integration_80_compliance = yes } #Mozyr
 				204 = { enable_state_integration_80_compliance = yes } #Novogrudok
 				95 = { enable_state_integration_80_compliance = yes } #Pinsk
+				97 = { enable_state_integration_80_compliance = yes } #Bialystok
+				96 = { enable_state_integration_80_compliance = yes } #Vilnius
 				if = {
 					limit = {
 						owns_state = 94
@@ -20900,7 +21047,7 @@ focus_tree = {
 					has_left_democratic_government = yes
 				}
 				every_owned_state = {
-					limit = { is_core_of = WHR }
+					limit = { is_core_of = BLR }
 					add_compliance = 10
 				}
 			}
@@ -20910,14 +21057,14 @@ focus_tree = {
 					has_left_democratic_government = yes
 				}
 				every_owned_state = {
-					limit = { is_core_of = WHR }
+					limit = { is_core_of = BLR }
 					add_compliance = 5
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = RUS_ensure_federalism_law }
 				every_owned_state = {
-					limit = { is_core_of = WHR }
+					limit = { is_core_of = BLR }
 					add_compliance = 5
 				}
 			}
@@ -21205,7 +21352,7 @@ focus_tree = {
 					LAT = { is_in_faction_with = INT }
 					EST = { is_in_faction_with = INT }
 					UKR = { is_in_faction_with = INT }
-					WHR = { is_in_faction_with = INT }
+					BLR = { is_in_faction_with = INT }
 					FIN = { is_in_faction_with = INT }
 				}
 			}
@@ -21279,7 +21426,7 @@ focus_tree = {
 				check_variable = { RUS_left_anger > 5 }
 			}
 			modifier = {
-				factor = 4
+				factor = 10
 				has_government = social_democrat
 				has_active_mission = RUS_titov_demands_from_left
 			}
@@ -21296,7 +21443,7 @@ focus_tree = {
 		bypass = {
 			OR = {
 				has_war_with = GER
-				FRA = { exists = no }
+				NOT = { country_exists = FRA }
 			}
 		}
 		prerequisite = { focus = RUS_third_europe }
@@ -21350,8 +21497,8 @@ focus_tree = {
 		ai_will_do = { base = 5 }
 		bypass = {
 			OR = {
-				FRA = { exists = no }
-				GER = { exists = no }
+				NOT = { country_exists = FRA }
+				NOT = { country_exists = GER }
 			}
 		}
 
@@ -21523,7 +21670,7 @@ focus_tree = {
 					modifier = volunteer_limit_plus_three
 				}
 			}
-			if = {
+			else_if = {
 				limit = { has_country_flag = ACW_supported_TEX }
 				add_relation_modifier = {
 					target = TEX
@@ -21576,7 +21723,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_country_flag = ACW_supported_USA
-					USA = { exists = yes }
+					country_exists = USA
 				}
 				add_ideas = RUS_renewed_american_trade2
 
@@ -21584,14 +21731,14 @@ focus_tree = {
 			else_if = {
 				limit = {
 					has_country_flag = ACW_supported_TEX
-					TEX = { exists = yes }
+					country_exists = TEX
 				}
 				add_ideas = RUS_renewed_american_trade2
 			}
 			else_if = {
 				limit = {
 					has_country_flag = ACW_supported_PSA
-					PSA = { exists = yes }
+					country_exists = PSA
 				}
 				add_ideas = RUS_renewed_american_trade2
 			}
@@ -21617,7 +21764,7 @@ focus_tree = {
 		prerequisite = { focus = RUS_the_american_ice_march }
 		mutually_exclusive = { focus = RUS_kama_tank_centre }
 		available = {
-			ENT = { exists = yes }
+			country_exists = ENT
 			NOT = { has_war_with = ENT }
 			custom_trigger_tooltip = {
 				tooltip = RUS_power_projection_10_cost
@@ -21625,7 +21772,7 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			ENT = { exists = no }
+			NOT = { country_exists = ENT }
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_approach_entente"
@@ -21697,17 +21844,13 @@ focus_tree = {
 			RUS_cossack_division_check = yes
 			random_owned_controlled_state = {
 				prioritize = { 589 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				custom_effect_tooltip = RUS_central_asia_cav_tt
 				hidden_effect = {
 					create_unit = {
 						division = "division_template = \"Kazachya diviziya\" start_experience_factor = 0.5"
-						owner = RUS
-						prioritize_location = 1591
-					}
-					create_unit = {
-						division = "division_template = \"Kazachya diviziya\" start_experience_factor = 0.5"
-						owner = RUS
-						prioritize_location = 1591
+						owner = ROOT
+						count = 2
 					}
 				}
 			}
@@ -21748,11 +21891,14 @@ focus_tree = {
 				BUK = { enable_country_integration_80_compliance = yes }
 			}
 			hidden_effect = {
-				every_owned_state = {
-					limit = {
-						is_central_asia = yes
+				every_state = {
+					limit = { is_central_asia = yes }
+					if = {
+						limit = { has_dynamic_modifier = { modifier = RUS_central_asia_chaos } }
+						remove_dynamic_modifier = { modifier = RUS_central_asia_chaos }
 					}
-					add_claim_by = ROOT
+					force_enable_resistance = { occupier = RUS clear = yes }
+					add_claim_of_ROOT = yes
 					enable_state_integration_80_compliance = yes
 				}
 				418 = { enable_state_integration_50_compliance = yes } #Ashkhabad
@@ -21762,14 +21908,6 @@ focus_tree = {
 				country_event = { id = russia.577 days = 90 } #Spiritual Administration of the Muslims of Central Asia
 				country_event = { id = rusfla.174 days = 185 } #War of the Basmachi Goes On
 				every_owned_state = {
-					limit = {
-						has_dynamic_modifier = { modifier = RUS_central_asia_chaos }
-					}
-					remove_dynamic_modifier = { modifier = RUS_central_asia_chaos }
-				}
-				every_owned_state = {
-					limit = { is_alash = yes }
-					force_enable_resistance = { occupier = RUS clear = yes }
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
@@ -21828,6 +21966,20 @@ focus_tree = {
 						}
 					}
 					enable_state_integration_50_compliance = yes
+				}
+				BUK = {
+					every_state = {
+						limit = {
+							OR = {
+								is_central_asia = yes
+								is_xinjiang = yes
+								is_alash = no
+								state = 418 #Ashkabad
+							}
+							NOT = { has_variable = can_integrate_@ROOT }
+						}
+						enable_state_integration_50_compliance = yes
+					}
 				}
 				country_event = { id = russia.575 days = 5 } #Fate of Alash Autonomy
 				country_event = { id = russia.963 days = 30 } #Victory Parade
@@ -21983,18 +22135,23 @@ focus_tree = {
 			add_political_power = 40
 			custom_effect_tooltip = tooltip_white_line
 			if = {
-				limit = {
-					PER = { is_subject = yes }
-				}
-				PER = {
-					overlord = {
-						country_event = { id = rusfor.80 days = 2 random_days = 2 } #Demand Askhabad
+				limit = { has_subject = 418.owner }
+				418 = { transfer_state_to = 584.owner }
+			}
+			else_if = {
+				limit = { NOT = { is_ally_with = 418.owner } }
+				if = {
+					limit = { var:418.owner = { is_subject = yes } }
+					var:418.owner = {
+						overlord = {
+							country_event = { id = rusfor.80 days = 2 random_days = 2 } #Demand Askhabad
+						}
 					}
 				}
-			}
-			else = {
-				PER = {
-					country_event = { id = rusfor.80 days = 2 random_days = 2 } #Demand Askhabad
+				else = {
+					var:418.owner = {
+						country_event = { id = rusfor.80 days = 2 random_days = 2 } #Demand Askhabad
+					}
 				}
 			}
 			activate_targeted_decision = { decision = RUS_invite_alliance target = PER }
@@ -22036,6 +22193,7 @@ focus_tree = {
 		bypass = {
 			OR = {
 				AFG = { is_ally_with = ROOT }
+				AFG = { exists = no }
 				has_global_flag = RUSSIAN_OTTOMAN_DEAL
 
 			}
@@ -22061,6 +22219,7 @@ focus_tree = {
 			set_temp_variable = { RUS_power_change = 5 }
 			RUS_change_projection = yes
 			activate_targeted_decision = { decision = RUS_attack target = AFG }
+			activate_targeted_decision = { decision = RUS_invite_alliance target = AFG }
 			#as long as afghanistan is there, you get negative events about turkestan guerillas from there doing stuff, you can demand them to stop supporting them, and potentially subjugate afghans
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RUS_POWER_PROJECTION }
@@ -22071,14 +22230,15 @@ focus_tree = {
 		icon = GFX_goal_Unite_Arabia
 		cost = 4
 
-		relative_position_id = RUS_white_sun_of_desert
-		x = -1
-		y = 3
+		relative_position_id = RUS_mission_to_teheran
+		x = 0
+		y = 2
 
 		available = {
+			NOT = { 677 = { is_owned_by = TUR } } #Aleppo
 			OR = {
-				TUR = { is_subject_of = RUS }
-				NOT = { country_exists = OTT }
+				var:773.owner = { is_ally_with = RUS } #Constantinople
+				var:266.owner = { is_ally_with = RUS } #Teheran
 			}
 		}
 
@@ -22128,7 +22288,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 20
-				GER = { exists = no }
+				NOT = { country_exists = GER }
 			}
 		}
 		prerequisite = { focus = RUS_end_vilnius_agreement }
@@ -22254,21 +22414,16 @@ focus_tree = {
 				}
 			}
 			modifier = {
-				factor = 0
-				OR = {
-					has_left_democratic_government = yes
-					has_country_leader = { character = RUS_vasily_maklakov }
-					has_country_leader = { character = RUS_nikolay_nekrasov }
+				factor = 0 #just leave them alone
+				TUR = {
+					has_war = no
+					has_country_flag = TUR_is_ottomans
 				}
-				OR = {
-					TUR = { owns_state = 554 }
-					PER = { is_subject_of = TUR }
-				}
-				INT = { exists = yes }
+				country_exists = INT
 			}
 			modifier = {
 				factor = 0
-				GER = { exists = yes }
+				country_exists = GER
 			}
 			modifier = {
 				factor = 0
@@ -22288,7 +22443,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_old_enemy"
 			if = {
-				limit = { OTT = { exists = yes } }
+				limit = { country_exists = OTT }
 				log = "KR_Event_Logging;RUS INTERVENE AGAINST OTT;[GetDateText]"
 				clr_country_flag = RUS_attacking_ottomans
 				clr_country_flag = RUS_demanding_armenia
@@ -22313,7 +22468,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 			custom_trigger_tooltip = {
 				tooltip = RUS_new_brother_tt
 				TUR = {
@@ -22333,7 +22488,7 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 			is_in_faction_with = TUR
 		}
 		prerequisite = { focus = RUS_caucasus }
@@ -22422,7 +22577,7 @@ focus_tree = {
 		cost = 6
 
 		relative_position_id = RUS_chinese_gamble
-		x = -2
+		x = -3
 		y = 1
 
 		available = {
@@ -22431,11 +22586,14 @@ focus_tree = {
 				owns_state = 408
 				FER = { is_ally_with = JAP }
 			}
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 			custom_trigger_tooltip = {
 				tooltip = RUS_power_projection_10_cost
 				check_variable = { RUS_power_projection > 9 }
 			}
+		}
+		bypass = {
+			JAP = { NOT = { is_faction_leader = yes } }
 		}
 		prerequisite = {
 			focus = RUS_chinese_gamble
@@ -22479,7 +22637,7 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_old_svobodnik_ai
-				INT = { exists = yes }
+				country_exists = INT
 			}
 		}
 		completion_reward = {
@@ -22503,11 +22661,11 @@ focus_tree = {
 		cost = 6
 
 		relative_position_id = RUS_chinese_gamble
-		x = 0
-		y = 2
+		x = -1
+		y = 1
 
 		available = {
-			GER = { exists = no }
+			NOT = { country_exists = GER }
 			CHN = {
 				is_subject = no
 				owns_state = 608 #Beijing
@@ -22546,26 +22704,24 @@ focus_tree = {
 		icon = GFX_goal_JAP_target_india
 		cost = 5
 
-		relative_position_id = RUS_chinese_gamble
-		x = 1
+		relative_position_id = RUS_mission_to_teheran
+		x = -1
 		y = 1
 
 		available = {
-			is_subject = no
-			GER = { exists = no }
-			custom_trigger_tooltip = {
-				tooltip = RUS_power_projection_10_cost
-				check_variable = { RUS_power_projection > 9 }
+			OR = {
+				var:266.owner = { is_ally_with = ROOT } #Tehran
+				var:267.owner = { is_ally_with = ROOT } #Kabul
+				var:617.owner = { is_ally_with = ROOT } #Dihua
 			}
+			is_faction_leader = yes
+			#NOT = { country_exists = GER }
 		}
 		prerequisite = {
-			focus = RUS_chinese_gamble
+			focus = RUS_last_refuge_of_the_bandits
 		}
 		prerequisite = {
-			focus = RUS_ruins_of_old_empire
-		}
-		prerequisite = {
-			focus = RUS_preemptive_war
+			focus = RUS_mission_to_teheran
 		}
 		ai_will_do = {
 			factor = 10
@@ -22597,7 +22753,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_jewel_of_anticolonialism"
-			set_temp_variable = { RUS_power_change = -10 }
+			set_temp_variable = { RUS_power_change = 10 }
 			RUS_change_projection = yes
 			if = { #Invite Princely federation to MA if it still exists
 				limit = { country_exists = PRF }
@@ -23240,8 +23396,11 @@ focus_tree = {
 			}
 			activate_targeted_decision = { target = 223 decision = RUS_tula_arms_factory }
 			if = {
-				limit = { has_dlc_gtd = yes }
-				sp:sp_land_super_heavy_howitzer = { add_project_progress_ratio = 0.15 }
+				limit = {
+					has_dlc_gtd = yes
+					NOT = { is_special_project_being_researched = sp:sp_land_super_heavy_howitzer }
+				}
+				sp:sp_land_super_heavy_howitzer = { add_project_progress_ratio = 0.1 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_PRODUCTION FOCUS_FILTER_INDUSTRY }
@@ -23287,7 +23446,10 @@ focus_tree = {
 				}
 				custom_effect_tooltip = RUS_okmo_no_mio_desc
 			}
-			sp:sp_land_military_engineering_vehicles = { add_project_progress_ratio = 0.15 }
+			if = {
+				limit = { NOT = { is_special_project_being_researched = sp:sp_land_military_engineering_vehicles } }
+				sp:sp_land_military_engineering_vehicles = { add_project_progress_ratio = 0.15 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_PRODUCTION }
 	}
@@ -23455,6 +23617,7 @@ focus_tree = {
 						state = 589
 						state = 657
 					}
+					is_controlled_by = ROOT
 				}
 				create_unit = {
 					division = "division_template = \"Kazachya diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
@@ -23471,6 +23634,7 @@ focus_tree = {
 							state = 787
 							state = 236
 						}
+						is_controlled_by = ROOT
 					}
 					create_unit = {
 						division = "division_template = \"Kazachya diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
@@ -23488,6 +23652,7 @@ focus_tree = {
 							state = 787
 							state = 236
 						}
+						is_controlled_by = ROOT
 					}
 					create_unit = {
 						division = "division_template = \"Kazachya diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
@@ -23569,7 +23734,7 @@ focus_tree = {
 			air_experience = 30
 			country_event = rusfla.8
 			hidden_effect = {
-				country_event = { id = russia.267 days = 150 } #Terror Bombing Question
+				country_event = { id = russia.267 days = 20 } #Terror Bombing Question
 			}
 		}
 		search_filters = { FOCUS_FILTER_AIR_XP }
@@ -24342,34 +24507,34 @@ focus_tree = {
 			hidden_effect = {
 				random_owned_controlled_state = {
 					prioritize = { 219 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Vozdushno-Desantnaya Diviziya\" start_experience_factor = 0.1"
 						owner = ROOT
-						prioritize_location = 6380 #Moscow
 					}
 				}
 				random_owned_controlled_state = {
 					prioritize = { 195 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Vozdushno-Desantnaya Diviziya\" start_experience_factor = 0.1"
 						owner = ROOT
-						prioritize_location = 6174 #Petrograd
 					}
 				}
 				random_owned_controlled_state = {
 					prioritize = { 218 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Vozdushno-Desantnaya Diviziya\" start_experience_factor = 0.1"
 						owner = ROOT
-						prioritize_location = 9417 #Rostov
 					}
 				}
 				random_owned_controlled_state = {
 					prioritize = { 242 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
 					create_unit = {
 						division = "division_template = \"Vozdushno-Desantnaya Diviziya\" start_experience_factor = 0.1"
 						owner = ROOT
-						prioritize_location = 306 #Smolensk
 					}
 				}
 			}
@@ -24488,10 +24653,9 @@ focus_tree = {
 					category = nuclear
 				}
 			}
-			else = {
-				sp:sp_nuclear_reactor = {
-					add_project_progress_ratio = 0.1
-				}
+			else_if = {
+				limit = { NOT = { is_special_project_being_researched = sp:sp_nuclear_reactor } }
+				sp:sp_nuclear_reactor = { add_project_progress_ratio = 0.1 }
 			}
 			activate_targeted_decision = { target = GER decision = RUS_operation_masuria }
 			if = {
@@ -24902,11 +25066,12 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			195 = {
+			random_owned_controlled_state = {
+				prioritize = { 195 }
+				limit = { valid_state_for_spawning_friendly_unit = yes }
 				create_unit = {
 					division = "division_template = \"Morskaya Gvardeyskaya diviziya\" start_experience_factor = 1"
 					owner = ROOT
-					prioritize_location = 6174 #Petrograd
 				}
 			}
 		}
@@ -24927,16 +25092,22 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_attack_submarine_brigades"
 			add_ideas = RUS_attack_submarine_idea
-			custom_effect_tooltip = tooltip_white_line
-			add_advisor_role = {
-				character = RUS_nestor_monastyryov
-				advisor = {
-					slot = high_command
-					idea_token = RUS_nestor_monastyryov_high_command
-					desc = RUS_nestor_monastyryov_admiral_desc
-					ledger = navy
-					traits = { KR_MHC_submarine_2 }
-					cost = 50
+			if = {
+				limit = {
+					has_character = RUS_nestor_monastyryov
+					RUS_nestor_monastyryov = { NOT = { has_advisor_role = high_command } }
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_advisor_role = {
+					character = RUS_nestor_monastyryov
+					advisor = {
+						slot = high_command
+						idea_token = RUS_nestor_monastyryov_high_command
+						desc = RUS_nestor_monastyryov_admiral_desc
+						ledger = navy
+						traits = { KR_MHC_submarine_2 }
+						cost = 50
+					}
 				}
 			}
 		}
@@ -24964,7 +25135,10 @@ focus_tree = {
 				uses = 2
 				category = ss_tech
 			}
-			custom_effect_tooltip = RUS_new_generation_hunters_ss_tt
+			custom_effect_tooltip = {
+				localization_key = tooltip_add_tech
+				TECH = ship_hull_cruiser_submarine
+			}
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { NOT = { is_special_project_completed = sp:sp_naval_cruiser_submarine } }
@@ -25206,9 +25380,12 @@ focus_tree = {
 		ai_will_do = { factor = 3 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus RUS_linkor_programme"
-			complete_special_project = {
-				project = sp:sp_naval_super_heavy_battleship
-				show_modifiers = no
+			if = {
+				limit = { NOT = { is_special_project_completed = sp:sp_naval_super_heavy_battleship } }
+				complete_special_project = {
+					project = sp:sp_naval_super_heavy_battleship
+					show_modifiers = no
+				}
 			}
 			if = {
 				limit = { has_dlc_mtg = no }
@@ -25659,7 +25836,7 @@ focus_tree = {
 		y = 1
 		available = {
 			OR = {
-				GER = { exists = no }
+				NOT = { country_exists = GER }
 				has_navy_size = { size > 149 }
 			}
 		}

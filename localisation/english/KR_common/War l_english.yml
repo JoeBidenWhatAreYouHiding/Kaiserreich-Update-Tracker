@@ -168,10 +168,10 @@
 
 ### The Reichspakt Revolts ###
  WAR_NAME_GER_UKR: "The $ORDER$$SECOND$ Revolt"
- WAR_NAME_GER_WHR: "The $ORDER$$SECOND$ Revolt"
+ WAR_NAME_GER_BLR: "The $ORDER$$SECOND$ Revolt"
  WAR_NAME_GER_LIT: "The $ORDER$$SECOND$ Revolt"
  WAR_NAME_UKR_GER: "$ORDER$$FIRST$ War of Independence"
- WAR_NAME_WHR_GER: "$ORDER$$FIRST$ War of Independence"
+ WAR_NAME_BLR_GER: "$ORDER$$FIRST$ War of Independence"
  WAR_NAME_LIT_GER: "$ORDER$$FIRST$ War of Independence"
 
 ### Indian Wars ###

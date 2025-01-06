@@ -5,8 +5,9 @@
 
 JAP_capitulation_effect = {
 	JAP_fading_sun = yes
-	every_allied_country = {
+	every_other_country = {
 		limit = {
+			is_in_faction_with = PREV
 			is_subject = no
 			has_capitulated = no
 		}
@@ -33,14 +34,17 @@ JAP_fading_sun = {
 			if = {
 				limit = { FER = { exists = yes } }
 				FER = {
+					clr_country_flag = FER_semyonov_ai
+					set_country_flag = FER_diterikhs_ai
 					if = {
-						limit = { has_country_flag = FER_semyonov_ai }
-						clr_country_flag = FER_semyonov_ai
-						set_country_flag = FER_diterikhs_ai
-					}
-					if = {
-						limit = { has_country_leader = { character = RUS_grigory_semyonov } }
-						RUS_mikhail_diterikhs = { unit_leader_event = fer.10 } #Diterikhs takes over
+						limit = {
+							has_country_leader = { character = RUS_grigory_semyonov }
+							RUS_mikhail_diterikhs = { is_dead = no }
+						}
+						RUS_mikhail_diterikhs = {
+							set_nationality = FER
+							unit_leader_event = fer.10 #Diterikhs takes over
+						}
 					}
 					FER_banish_japanese = yes
 				}
@@ -1526,10 +1530,9 @@ JAP_regent_effect = {
 	hidden_effect = {
 		if = {
 			limit = { has_character = JAP_hirohito }
-			JAP_hirohito = { clr_character_flag = is_monarch }
 			retire_character = JAP_hirohito
 			JAP_takamatsu_nobuhito = {
-				set_character_flag = is_regent
+				set_character_as_regent = yes
 				if = {
 					limit = { has_ideology = authoritarian_democrat_subtype }
 					promote_character = authoritarian_democrat_subtype
@@ -1827,3 +1830,24 @@ JAP_modern_air_force_effect = {
 	}
 }
 
+JAP_war_planning_decision_cancel_effect = {
+	set_temp_variable = { JAP_CP_cost_temp = JAP_CP_cost?50 }
+	multiply_temp_variable = { JAP_CP_cost_temp = -1 }
+	add_command_power = var:JAP_CP_cost_temp
+}
+
+JAP_war_planning_decision_complete = {
+	add_command_power = var:JAP_CP_cost?50
+}
+
+JAP_war_planning_decision_remove = {
+	if = {
+		limit = { has_completed_focus = JAP_plan_edit_3 }
+		activate_targeted_decision = { target = FROM decision = JAP_strike_against_from_ii }
+	}
+	else = {
+		activate_targeted_decision = { target = FROM decision = JAP_strike_against_from_i }
+	}
+	custom_effect_tooltip = tooltip_white_line
+	custom_effect_tooltip = JAP_decision_unlocked_during_war
+}

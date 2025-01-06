@@ -1,4 +1,4 @@
-﻿##### Starting Production #####
+##### Starting Production #####
 instant_effect = {
 	### Variants ###
 	if = {
@@ -224,7 +224,7 @@ units = {
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 2002
+		location = 2032
 		division_template = "Rifle Division"
 		start_experience_factor = 0.15
 		start_equipment_factor = 0.6

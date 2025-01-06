@@ -278,8 +278,8 @@
  CEN_federal_army: "§YA Federal Army has been chosen by the assembly.§!"
  CEN_the_conflict_begins: "Preparing a war of unification for Central America"
  CENdem_succesful_negotiation: "We had a successful negotiation with the West Indies."
- CENdem_1_rail_completed: "Has completed decision £decision_icon_small §Y$CENdem_guatamala_san_salvador_railway$§!"
- CENdem_2_rail_completed: "Has completed decision £decision_icon_small §Y$CENdem_san_salvador_tegucigalpa_railway$§!"
+ CENdem_1_rail_completed: "$has_completed_decision$$CENdem_guatamala_san_salvador_railway$§!"
+ CENdem_2_rail_completed: "$has_completed_decision$$CENdem_san_salvador_tegucigalpa_railway$§!"
 
 ### Parties ###
  CEN_social_democrat_liberal: "PT"
@@ -389,8 +389,8 @@
 ### Tooltips ###
  CENdem_centralisation_idea: "§YThis will remove other national spirits related to centralisation.§!"
  CENdem_taxation_idea: "§YThis will remove other national spirits related to industrial taxation and welfare.§!"
- CEN_foreign_relations_tooltip: "Unlocks £decision_icon_small §HDecisions§! that will allow us to join the Entente or create the Democratic Alliance of the Caribbean."
- CEN_foreign_expansion_tooltip: "Unlocks £decision_icon_small §HDecisions§! for opportunistic expansion."
+ CEN_foreign_relations_tooltip: "$unlocks_decisions$ that will allow us to join the Entente or create the Democratic Alliance of the Caribbean."
+ CEN_foreign_expansion_tooltip: "$unlocks_decisions$ for opportunistic expansion."
  CENdem_no_belize_entente: "Unlocks £decision_icon_small §HJoin the Entente§! Decision"
  CENdem_moderate_land_reform_scaling: "Each land reform decision completed will modify the §YPending Land Reform§! spirit by:\n\nConsumer Goods Factories Factor: §Y-2.0%§!\nMax Factories in a State: §G+4%§!"
  CENdem_radical_land_reform_scaling: "Each land reform decision completed will modify the §YPending Land Reform§! spirit by:\n\nMonthly Population: §G+10.0%§!\nConsumer Goods Factories Factor: §Y-4.0%§!\nMax Factories in a State: §G+4%§!"
@@ -1052,9 +1052,9 @@
  CEN_elections_council: "Chose to make congress elect"
  CEN_no_more_centralisation: "We chose not to continue our plan of centralisation and consolidation of power."
 
- CEN_continue_land_improvement_in_nicaragua: "Has completed decision £decision_icon_small §YLand Reform in Nicaragua§!"
- CEN_expanded_road_south: "Has completed decision £decision_icon_small §YExtending the Road South§!"
- CEN_extented_road_peninsula: "Has completed decision £decision_icon_small §YExtending the Road to Yucatan§!"
+ CEN_continue_land_improvement_in_nicaragua: "$has_completed_decision$$CEN_land_reform_in_nicaragua$§!"
+ CEN_expanded_road_south: "$has_completed_decision$$CEN_extent_road_south$§!"
+ CEN_extented_road_peninsula: "$has_completed_decision$$CEN_extent_road_peninsula$§!"
  CEN_talks_begin: "We are not already having another focusing in other state."
 
 ### Tooltips
@@ -1064,7 +1064,6 @@
  CEN_retain_militias_tooltip: "If we elect the §rConfedearción Obrera§! or the §RRevolucionarios§!, we will receive the following idea:"
  CEN_socialist_breadbasket_tooltip: "If we elect the §SModerados§! or the §RRevolucionarios§!, we will receive the following idea:"
  CEN_a_step_forward_tooltip: "If we elect the §rConfedearción Obrera§! or the §oMaximist§!, we will receive the following idea:"
- CEN_after_idea_ends: "We will receive the following effect after this idea expires:"
  CEN_other_focus_not_completed: "If we have not completed the focus that grant us one of these §YNational Spirit§!, completing them will give us the upgraded idea."
  CEN_stop_consolidation: "§rWe will stop our consolidation of power.§!"
  CEN_stop_consolidation2: "§rWe will only seek to rule with the Confederación Obrera and thus stopping us from fully consolidating power over Centroamerica§!"

@@ -1,4 +1,4 @@
-﻿########################################
+########################################
 ######## Original Hunan Events #########
 ### By Roniius, Pietrus and Alpinia  ###
 ########################################
@@ -1230,10 +1230,7 @@ country_event = { #Aftermath of the Second Guangdong-Guangxi War (only fires if 
 		log = "[GetLogInfo]: event hnn.fed.3 option hnn.fed.3.a"
 		name = hnn.fed.3.a
 		trigger = {
-			OR = {
-				QIE = { china_is_aligned_with_zhili = yes }
-				SZC = { china_is_aligned_with_zhili = yes }
-			}
+			QIE = { china_is_aligned_with_zhili = yes }
 		}
 		diplomatic_relation = {
 			country = GXC
@@ -1848,14 +1845,7 @@ country_event = { #A Gamble for the Coast
 		log = "[GetLogInfo]: event hnn.zhili.8 option hnn.zhili.8.a"
 		name = hnn.zhili.8.a
 		save_event_target_as = HNN_attack_GXC
-		if = {
-			limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
-			QIE = { country_event = { id = hnn.zhili.9 days = 3 } }
-		}
-		else_if = {
-			limit = { SZC = { china_is_aligned_with_zhili = yes } }
-			SZC = { country_event = { id = hnn.zhili.9 days = 3 } }
-		}
+		overlord = { country_event = { id = hnn.zhili.9 days = 3 } }
 	}
 }
 
@@ -1874,18 +1864,21 @@ country_event = { #A Petition from Changsha
 			limit = {
 				has_event_target = HNN_attack_GXC
 			}
+			custom_effect_tooltip = HNN_overlord_attack_GXC_tt
 			GXC = { HNN_political_council_claim_effect = yes }
 		}
 		else_if = {
 			limit = {
 				has_event_target = HNN_attack_SZC
 			}
+			custom_effect_tooltip = HNN_overlord_attack_SZC_tt
 			SZC = { HNN_political_council_claim_effect = yes }
 		}
 		else_if = {
 			limit = {
 				has_event_target = HNN_attack_YUN
 			}
+			custom_effect_tooltip = HNN_overlord_attack_YUN_tt
 			SZC = { HNN_political_council_claim_effect = yes }
 		}
 		HNN = { country_event = { id = hnn.zhili.10 days = 3 } }
@@ -1934,31 +1927,19 @@ country_event = { #Our Petition is Accepted!
 			limit = {
 				has_event_target = HNN_attack_GXC
 			}
+			overlord = { declare_war_on = { target = GXC type = annex_everything } }
 			declare_war_on = { target = GXC type = annex_everything }
-			if = {
-				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
-				QIE = { declare_war_on = { target = GXC type = annex_everything } }
-			}
-			else_if = {
-				limit = { SZC = { SZC_zhili_in_exile = yes } }
-				SZC = { declare_war_on = { target = GXC type = annex_everything } }
-			}
 		}
 		else_if = {
-			limit = { has_event_target = HNN_attack_SZC }
+			limit = {
+				has_event_target = HNN_attack_SZC
+			}
+			overlord = { declare_war_on = { target = SZC type = annex_everything } }
 			declare_war_on = { target = SZC type = annex_everything }
-			QIE = { declare_war_on = { target = SZC type = annex_everything } }
 		}
 		else = {
+			overlord = { declare_war_on = { target = YUN type = annex_everything } }
 			declare_war_on = { target = YUN type = annex_everything }
-			if = {
-				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
-				QIE = { declare_war_on = { target = YUN type = annex_everything } }
-			}
-			else_if = {
-				limit = { SZC = { SZC_zhili_in_exile = yes } }
-				SZC = { declare_war_on = { target = YUN type = annex_everything } }
-			}
 		}
 	}
 }
@@ -2754,9 +2735,19 @@ country_event = { #Building the Foundations
 			}
 		}
 		HNN_sixth_army_medium_effect = yes
-		add_equipment_to_stockpile = {
-			type = motorized_equipment
-			amount = 100
+		if = {
+			limit = { has_tech = motorised_infantry }
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+				producer = GER
+			}
 		}
 		add_popularity = {
 			ideology = paternal_autocrat
@@ -3686,59 +3677,41 @@ country_event = { #Tang Xiangming
 	title = {
 		text = hnn.122.t_qie
 		trigger = {
-			overlord = {
-				china_is_aligned_with_zhili = yes
-				tag = QIE
-			}
-			QIE = { is_monarchy = yes }
+			is_subject_of = QIE
+			QIE = { is_monarchy = no }
 		}
 	}
 	title = {
 		text = hnn.122.t_szc
 		trigger = {
-			overlord = {
-				china_is_aligned_with_zhili = yes
-				tag = SZC
-			}
+			NOT = { is_subject_of = QIE }
 		}
 	}
 	title = {
 		text = hnn.122.t_zhili
 		trigger = {
-			overlord = {
-				china_is_aligned_with_zhili = yes
-				tag = QIE
-			}
-			NOT = { QIE = { is_monarchy = yes } }
+			is_subject_of = QIE
+			QIE = { is_monarchy = no }
 		}
 	}
 	desc = {
 		text = hnn.122.d_qie
 		trigger = {
-			overlord = {
-				china_is_aligned_with_zhili = yes
-				tag = QIE
-				QIE = { is_monarchy = yes }
-			}
+			is_subject_of = QIE
+			QIE = { is_monarchy = yes }
 		}
 	}
 	desc = {
 		text = hnn.122.d_szc
 		trigger = {
-			overlord = {
-				china_is_aligned_with_zhili = yes
-				tag = SZC
-			}
+			NOT = { is_subject_of = QIE }
 		}
 	}
 	desc = {
 		text = hnn.122.d_zhili
 		trigger = {
-			overlord = {
-				china_is_aligned_with_zhili = yes
-				tag = QIE
-			}
-			NOT = { QIE = { is_monarchy = yes } }
+			is_subject_of = QIE
+			QIE = { is_monarchy = no }
 		}
 	}
 
@@ -3749,7 +3722,7 @@ country_event = { #Tang Xiangming
 		log = "[GetLogInfo]: event hnn.122 option hnn.122.a_qie"
 		name = hnn.122.a_qie
 		trigger = {
-			overlord = { tag = QIE }
+			is_subject_of = QIE
 			QIE = { is_monarchy = yes }
 		}
 		custom_effect_tooltip = HNN_epilogue_tt
@@ -3758,15 +3731,17 @@ country_event = { #Tang Xiangming
 		log = "[GetLogInfo]: event hnn.122 option hnn.122.a_zhili"
 		name = hnn.122.a_zhili
 		trigger = {
-			overlord = { tag = QIE }
-			NOT = { QIE = { is_monarchy = yes } }
+			is_subject_of = QIE
+			QIE = { is_monarchy = no }
 		}
 		custom_effect_tooltip = HNN_epilogue_tt
 	}
 	option = {
 		log = "[GetLogInfo]: event hnn.122 option hnn.122.a_szc"
 		name = hnn.122.a_szc
-		trigger = { overlord = { tag = SZC } }
+		trigger = {
+			NOT = { is_subject_of = QIE }
+		}
 		custom_effect_tooltip = HNN_epilogue_tt
 	}
 }

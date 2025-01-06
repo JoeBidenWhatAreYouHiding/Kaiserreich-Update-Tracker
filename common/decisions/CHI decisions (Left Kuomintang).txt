@@ -3156,10 +3156,10 @@ CHI_national_reconstruction_category = {
 	CHI_minsheng_irrigation_canal = {
 		visible = {
 			has_completed_focus = CHI_national_reconstruction_commission
-			774 = { is_owned_and_controlled_by = ROOT }
+			621 = { is_owned_and_controlled_by = ROOT }
 		}
 		highlight_states = {
-			highlight_state_targets = { state = 774 } #hexi corridor
+			highlight_state_targets = { state = 621 } #suiyuan
 		}
 		allowed = { tag = CHI }
 		available = {
@@ -3180,7 +3180,7 @@ CHI_national_reconstruction_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_minsheng_irrigation_canal"
-			774 = {
+			621 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -3310,7 +3310,7 @@ CHI_national_reconstruction_category = {
 				}
 				build_railway = { #small rail to hotan supply hub
 					level = 2
-					path = { 13728 12524 5736 10900 2074 1943 13390 13386 5083 13531 4973 }
+					path = { 13728 12524 5736 10900 2074 1943 13390 13386 5083 13531 4973 5216 }
 				}
 				617 = {
 					add_extra_state_shared_building_slots = 1

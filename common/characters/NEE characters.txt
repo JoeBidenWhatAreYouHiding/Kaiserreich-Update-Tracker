@@ -58,6 +58,7 @@ characters = {
 		portraits = {
 			civilian = {
 				large = GFX_portrait_NEE_william_harriman_civilian_large
+				small = GFX_portrait_NEE_william_harriman_civilian_small
 			}
 		}
 		country_leader = {
@@ -75,11 +76,11 @@ characters = {
 				has_character_flag = show_political_advisor_role
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 	NEE_chester_bowles = {
@@ -144,11 +145,11 @@ characters = {
 				has_character_flag = show_political_advisor_role
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 	NEE_raymond_baldwin = {
@@ -243,10 +244,10 @@ characters = {
 			slot = political_advisor
 			idea_token = NEE_frances_perkins_advisor
 			traits = { KR_social_security_champion }
+			cost = 75
 			on_add = {
 				owner = { hidden_effect = { country_event = { id = newengland.180 days = 5 random_days = 15 } } } #Perkins calls for better conditions
 			}
-			cost = 75
 		}
 	}
 	NEE_roger_babson = {
@@ -347,11 +348,11 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = NEE_dean_acheson_advisor
+			traits = { KR_brilliant_lawyer }
+			cost = 125
 			on_add = {
 				owner = { hidden_effect = { country_event = { id = newengland.182 days = 90 } } } #Acherson Refuses Relief Cuts
 			}
-			traits = { KR_brilliant_lawyer }
-			cost = 125
 		}
 	}
 	NEE_francis_biddle = {
@@ -490,10 +491,10 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = NEE_learned_hand_advisor
-			traits = { KR_progressive_judge }
 			visible = {
 				has_country_flag = NEE_learned_hand_available
 			}
+			traits = { KR_progressive_judge }
 		}
 	}
 
@@ -511,11 +512,11 @@ characters = {
 			visible = {
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 	NEE_jay_pierrepont_moffat = {
@@ -531,11 +532,11 @@ characters = {
 			visible = {
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 	NEE_ray_atherton = {
@@ -551,11 +552,11 @@ characters = {
 			visible = {
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 	NEE_charles_bohlen = {
@@ -571,11 +572,11 @@ characters = {
 			visible = {
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 	NEE_laurence_steinhardt = {
@@ -591,11 +592,11 @@ characters = {
 			visible = {
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 	NEE_charles_yost = {
@@ -611,11 +612,11 @@ characters = {
 			visible = {
 				is_in_faction_with = ENT
 			}
+			traits = { NEE_ambassador_to_canada }
+			cost = 75
 			on_add = {
 				ROOT = { hidden_effect = { country_event = { id = newengland.450 days = 80 random_days = 10 } } }
 			}
-			traits = { NEE_ambassador_to_canada }
-			cost = 75
 		}
 	}
 
@@ -633,10 +634,10 @@ characters = {
 			slot = theorist
 			idea_token = NEE_vannevar_bush_theorist
 			ledger = civilian
+			traits = { KR_electronic_scientist }
 			research_bonus = {
 				electronics = 0.15
 			}
-			traits = { KR_electronic_scientist }
 		}
 	}
 

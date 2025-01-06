@@ -1,4 +1,4 @@
-﻿capital = 427
+capital = 427
 oob = "PRF"
 set_naval_oob = "PRF_naval"
 set_research_slots = 3

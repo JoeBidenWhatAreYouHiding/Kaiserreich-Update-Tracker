@@ -612,6 +612,7 @@ GER_create_wilhelm_iv = {
 			hidden_effect = {
 				set_nationality = PREV.PREV
 				remove_all_country_leader_roles = yes
+				set_character_as_monarch = yes
 				add_country_leader_role = {
 					country_leader = {
 						desc = GER_wilhelm_iv_leader_desc
@@ -800,7 +801,7 @@ GER_bm_cardgame_eastern_assistance_calculate = {
 	}
 	if = {
 		limit = {
-			WHR = {
+			BLR = {
 				GER_is_in_mitteleuropa = yes
 			}
 		}
@@ -3114,6 +3115,7 @@ GER_add_plane_variants = {
 				special_type_slot_4 = empty
 			}
 			obsolete = yes
+			icon = GFX_GER_medium_0_do23_medium
 		}
 		create_equipment_variant = {
 			name = "Ju 86"
@@ -3130,6 +3132,7 @@ GER_add_plane_variants = {
 				special_type_slot_4 = empty
 			}
 			obsolete = yes
+			icon = GFX_GER_medium_1_ju86a_medium
 		}
 		create_equipment_variant = {
 			name = "He 111"
@@ -3145,15 +3148,7 @@ GER_add_plane_variants = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-		}
-		create_equipment_variant = {
-			name = "Do 17"
-			type = small_plane_cas_airframe_0
-			modules = {
-				fixed_main_weapon_slot = small_bomb_bay
-				engine_type_slot = engine_1_2x
-				special_type_slot_1 = empty
-			}
+			icon = GFX_GER_medium_1_he111b_medium
 		}
 		create_equipment_variant = {
 			name = "Ff 68"
@@ -3175,6 +3170,7 @@ GER_add_plane_variants = {
 				special_type_slot_1 = empty
 			}
 			obsolete = yes
+			icon = GFX_GER_small_0_hs123_medium
 		}
 		create_equipment_variant = {
 			name = "Bf 109"
@@ -4365,6 +4361,7 @@ GER_setup_puppet_france = {
 			long_name = FRP_governorate_paternal_autocrat_party_long
 		}
 		hidden_effect = {
+			FRP_add_debuff = yes
 			add_ideas = {
 				free_trade
 				disarmed_nation
@@ -4806,8 +4803,11 @@ GER_spawn_five_ships = {
 		limit = { has_dlc_mtg = yes }
 		if = {
 			limit = { NOT = { has_tech = improved_ship_hull_light } }
-			custom_effect_tooltip = Fletcher_tech_unlock_tt
-			hidden_effect = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_add_tech
+					TECH = ship_hull_light_3
+				}
 				set_technology = { improved_ship_hull_light = 1 }
 			}
 		}
@@ -4926,8 +4926,13 @@ GER_spawn_five_ships = {
 	else = {
 		if = {
 			limit = { NOT = { has_tech = improved_destroyer } }
-			custom_effect_tooltip = Fletcher_tech_unlock_tt
-			hidden_effect = { set_technology = { improved_destroyer = 1 } }
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_add_tech
+					TECH = destroyer_3
+				}
+				set_technology = { improved_destroyer = 1 }
+			}
 		}
 
 		create_ship = { type = destroyer_3 equipment_variant = "Advanced Destroyer" creator = GER name = "Frankfurt" }
@@ -4986,19 +4991,6 @@ GER_USA_militias_spawn_effect = {
 			allow_spawning_on_enemy_provs = no
 			owner = PREV
 		}
-	}
-}
-
-GER_military_occupation_disable_division_lock = {
-	if = {
-		limit = {
-			NOT = { has_idea = GER_military_occupation }
-			NOT = { has_idea = GER_military_occupation_2 }
-			NOT = { has_idea = GER_military_occupation_3 }
-			NOT = { has_idea = GER_military_occupation_4 }
-			NOT = { has_idea = GER_military_occupation_5 }
-		}
-		country_lock_all_division_template = no
 	}
 }
 

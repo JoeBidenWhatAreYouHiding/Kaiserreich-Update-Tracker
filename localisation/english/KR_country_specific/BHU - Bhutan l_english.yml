@@ -8,13 +8,10 @@
  BHU_DEF: "Bhutan"
 
  BHU_DRUK_authoritarian_democrat: "Druk Empire"
- BHU_DRUK_authoritarian_democrat_ADJ: "Bhutanese"
  BHU_DRUK_authoritarian_democrat_DEF: "the Druk Empire"
  BHU_DRUK_paternal_autocrat: "Druk Empire"
- BHU_DRUK_paternal_autocrat_ADJ: "Bhutanese"
  BHU_DRUK_paternal_autocrat_DEF: "the Druk Empire"
  BHU_DRUK_national_populist: "Druk Empire"
- BHU_DRUK_national_populist_ADJ: "Bhutanese"
  BHU_DRUK_national_populist_DEF: "the Druk Empire"
 
 ### Ideas ###
@@ -991,6 +988,8 @@
  BHU_phuntsho_choden: "Phuntsho Choden"
  BHU_samten_jamtsho: "Samten Jamtsho"
  BHU_tashi_namgyal: "Tashi Namgyal"
+ BHU_ngawang_gyaltsen: "Ngawang Gyaltsen"
+ BHU_pedma_chandra: "Pedma Chandra"
  BHU_thinley_namgyel: "Thinley Namgyel"
  BHU_royal_army_council: "Royal Army Council"
 

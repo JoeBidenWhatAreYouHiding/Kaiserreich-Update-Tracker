@@ -104,10 +104,7 @@ characters = {
 			ideology = social_conservative_subtype
 		}
 		corps_commander = {
-			traits = {
-				politically_connected
-				old_guard
-			}
+			traits = { politically_connected old_guard }
 			skill = 2
 			attack_skill = 1
 			defense_skill = 3
@@ -244,10 +241,10 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = COL_esteban_jaramillo_advisor
-			traits = { KR_economic_reformer }
 			available = {
 				has_completed_focus = COL_the_new_economy
 			}
+			traits = { KR_economic_reformer }
 		}
 	}
 
@@ -331,20 +328,20 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = COL_ruben_piedrahita_arango_advisor
-			traits = { KR_reformist_soldier }
 			available = {
 				has_completed_focus = COL_complete_military_modernisation
 				not_already_hired_except_as = political_advisor
 			}
+			traits = { KR_reformist_soldier }
 		}
 		advisor = {
 			slot = navy_chief
 			idea_token = COL_ruben_piedrahita_arango_navy_chief
-			traits = { KR_navy_chief_commerce_raiding_1 }
 			available = {
 				has_completed_focus = COL_complete_military_modernisation
 				not_already_hired_except_as = navy_chief
 			}
+			traits = { KR_navy_chief_commerce_raiding_1 }
 		}
 	}
 

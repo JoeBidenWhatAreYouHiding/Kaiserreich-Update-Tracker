@@ -478,7 +478,7 @@ MIE_decisions = {
 			}
 		}
 	}
-	MIE_build_forts_in_whr = {
+	MIE_build_forts_in_blr = {
 		icon = GFX_decision_fortress
 
 		allowed = { always = no } #manually activated by MIE_move_to_next_intermarium_leader
@@ -527,22 +527,22 @@ MIE_decisions = {
 		ai_will_do = { factor = 1000 }
 
 		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancel MIE_build_forts_in_whr target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision cancel MIE_build_forts_in_blr target: [From.GetName]"
 			add_to_variable = { global.MIE_infantry_equipment = 2000 }
 			add_to_variable = { global.MIE_support_equipment = 500 }
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete MIE_build_forts_in_whr target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision complete MIE_build_forts_in_blr target: [From.GetName]"
 			subtract_from_variable = { global.MIE_infantry_equipment = 2000 }
 			subtract_from_variable = { global.MIE_support_equipment = 500 }
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove MIE_build_forts_in_whr target: [From.GetName]"
-			set_global_flag = MIE_build_forts_in_whr_completed
+			log = "[GetDateText]: [Root.GetName]: Decision remove MIE_build_forts_in_blr target: [From.GetName]"
+			set_global_flag = MIE_build_forts_in_blr_completed
 			FROM = { country_event = mie.1 }
-			custom_effect_tooltip = MIE_build_forts_in_whr_tt
+			custom_effect_tooltip = MIE_build_forts_in_blr_tt
 			hidden_effect = {
 				207 = {
 					add_building_construction = {
@@ -582,7 +582,7 @@ MIE_decisions = {
 				}
 			}
 			hidden_effect = {
-				remove_targeted_decision = { decision = MIE_build_forts_in_whr target = FROM }
+				remove_targeted_decision = { decision = MIE_build_forts_in_blr target = FROM }
 			}
 		}
 	}
@@ -1126,21 +1126,21 @@ MIE_decisions_GER = {
 			}
 		}
 	}
-	GER_WHR_coup = {
+	GER_BLR_coup = {
 		icon = GFX_decision_spr_political_assassination
 
 		available = {
-			WHR = { has_socialist_government = no }
+			BLR = { has_socialist_government = no }
 		}
 
 		visible = {
 			has_global_flag = RUS_will_puppet_belarus
-			is_ally_with = WHR
-			WHR = { is_ai = yes }
+			is_ally_with = BLR
+			BLR = { is_ai = yes }
 		}
 
 		cancel_trigger = {
-			NOT = { is_ally_with = WHR }
+			NOT = { is_ally_with = BLR }
 		}
 
 		cost = 90
@@ -1151,26 +1151,26 @@ MIE_decisions_GER = {
 			factor = 30
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = WHR_path option = WHR_PATH_RADSOC }
+				has_game_rule = { rule = BLR_path option = BLR_PATH_RADSOC }
 			}
 		}
 
 		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancel GER_WHR_coup"
+			log = "[GetDateText]: [Root.GetName]: Decision cancel GER_BLR_coup"
 			add_political_power = 90
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GER_WHR_coup"
+			log = "[GetDateText]: [Root.GetName]: Decision remove GER_BLR_coup"
 			effect_tooltip = {
 				add_named_threat = {
 					threat = 5
-					name = GER_coup_WHR
+					name = GER_coup_BLR
 				}
 			}
-			WHR = { country_event = whrpol.7 }
+			BLR = { country_event = whrpol.7 }
 			hidden_effect = {
 				RUS = { country_event = mie.17 }
-				WHR = { add_war_support = -0.2 }
+				BLR = { add_war_support = -0.2 }
 			}
 		}
 	}
@@ -1360,8 +1360,14 @@ MIE_decisions_GER = {
 		}
 		custom_cost_text = RUS_1000_rifle_30_cp
 		days_remove = 90
-		days_re_enable = 180
-		ai_will_do = { factor = 5 }
+		days_re_enable = 365
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_equipment = { infantry_equipment < 5000 }
+			}
+		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete RUS_GER_fund_resistance"
 			set_country_flag = RUS_ongoing_influence_action
@@ -1450,14 +1456,14 @@ MIE_decisions_GER = {
 				}
 			}
 		}
-		cost = 25
+		cost = 40
 		modifier = {
 			consumer_goods_factor = 0.05
 		}
 		days_remove = 90
-		days_re_enable = 180
+		days_re_enable = 365
 		ai_will_do = {
-			factor = 10
+			factor = 2
 			modifier = {
 				factor = 0
 				GER_dont_spend_PP_decision = yes
