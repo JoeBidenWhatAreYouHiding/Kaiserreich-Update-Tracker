@@ -163,17 +163,6 @@ GER_democratic_union_mechanics_category = {
 	}
 	visible_when_empty = yes
 }
-GER_prussian_budget_crisis = { # for a tooltip only. not used.
-	icon = GFX_decision_category_usa_congress
-
-	allowed = {
-		original_tag = GER
-	}
-
-	visible = {
-		always = no
-	}
-}
 GER_military_decisions_category = {
 	icon = GFX_decision_category_eng_move_to_secure_the_dominions
 

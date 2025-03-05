@@ -201,7 +201,7 @@ on_actions = {
 			515 = { #WADai
 				add_dynamic_modifier = { modifier = lba_senussi_zawiya_modifier }
 			}
-			452 = { #Mersa Matruh - This shouldn't do anything as this is always an Egypt core but consistency is key
+			452 = { #Libyan Plateau - This shouldn't do anything as this is always an Egypt core but consistency is key
 				add_dynamic_modifier = { modifier = lba_senussi_zawiya_modifier }
 			}
 		}

@@ -628,7 +628,7 @@ GER_kaiserliche_werft_wilhelmshaven_organisation = {
 }
 
 GER_germaniawerft_organisation = {
-	include = generic_refurbishment_repair_organization
+	include = generic_refurbishment_repair_dockyard_organization
 	name = germaniawerft
 	icon = GFX_idea_germaniawerft
 

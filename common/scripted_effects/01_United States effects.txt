@@ -4,7 +4,7 @@ USA_decrease_economic_depression = {
 		remove_ideas = USA_civil_war_depression_idea_2
 	}
 	else_if = {
-		limit = { has_idea = USA_civil_war_depression_idea_2 }
+		limit = { has_idea = USA_civil_war_depression_idea }
 		swap_ideas = {
 			remove_idea = USA_civil_war_depression_idea
 			add_idea = USA_civil_war_depression_idea_2

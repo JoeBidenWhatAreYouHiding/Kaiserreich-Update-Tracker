@@ -24,11 +24,11 @@ technology_sharing_group = { #ISAC (Canada)
 	research_sharing_per_country_bonus = 0.1
 
 	available = {
+		has_socialist_government = no
 		ENT = {
 			is_faction_leader = yes
 			NOT = { has_war_with = ROOT }
 		}
-		has_socialist_government = no
 	}
 }
 

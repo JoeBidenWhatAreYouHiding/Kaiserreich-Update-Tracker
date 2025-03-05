@@ -207,6 +207,7 @@ characters = {
 		advisor = {
 			slot = second_in_command
 			idea_token = PSA_united_states_congress_sic
+			desc = USA_united_states_congress_sic_desc
 			traits = { KR_parliament_sic }
 			cost = 0
 			can_be_fired = no
