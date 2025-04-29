@@ -122,11 +122,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_portrait_FNG_ma_zhanshan_army_large"
-		texturefile = "gfx/leaders/FNG/FNG_ma_zhanshan_army.png"
-	}
-	spriteType = {
-		name = "GFX_portrait_FNG_ma_zhanshan_army_large_kuomintang"
-		texturefile = "gfx/leaders/FNG/FNG_ma_zhanshan_kuomintang.png"
+		texturefile = "gfx/leaders/FNG/FNG_ma_zhanshan.png"
 	}
 	spriteType = {
 		name = "GFX_portrait_FNG_wan_fulin_army_small"

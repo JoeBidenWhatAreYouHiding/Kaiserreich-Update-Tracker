@@ -364,6 +364,7 @@ ideas = {
 				social_liberal_drift = 0.05
 				social_conservative_drift = 0.05
 				market_liberal_drift = 0.05
+				social_democrat_drift = 0.05
 			}
 		}
 		KOR_national_solidarity = {
@@ -381,8 +382,8 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				stability_factor = 0.15
-				army_morale = 0.5
-				army_org = 0.5
+				army_morale_factor = 0.5
+				army_org_factor = 0.5
 				war_support_factor = 0.15
 			}
 		}

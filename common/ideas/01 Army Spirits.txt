@@ -68,7 +68,7 @@ ideas = {
 				has_any_authoritarian_government = yes
 			}
 			modifier = {
-				military_leader_cost_factor = -0.5
+				army_leader_cost_factor = -0.5
 				party_popularity_stability_factor = 0.10
 				custom_modifier_tooltip = political_loyalty_spirit_tt
 			}
@@ -136,12 +136,18 @@ ideas = {
 			ledger = army
 			allowed = {
 				has_dlc_nsb = yes
-				is_chinese_tag = yes
+				is_chinese_or_potential_chinese_tag = yes
 			}
 			visible = {
 				OR = {
-					check_variable = { country_leader:china_alignment = token:left_kuomintang }
-					check_variable = { country_leader:china_alignment = token:right_kuomintang }
+					china_alignment_left_kuomintang = yes
+					china_alignment_right_kuomintang = yes
+				}
+				if = {
+					limit = {
+						original_tag = KUM
+					}
+					has_country_flag = KUM_is_chinese_tag
 				}
 			}
 			available = {
@@ -296,6 +302,7 @@ ideas = {
 			modifier = {
 				experience_gain_artillery_combat_factor = 0.1
 				unit_infantry_design_cost_factor = -1
+				unit_bicycle_battalion_design_cost_factor = -1
 				unit_artillery_brigade_design_cost_factor = -1
 				unit_artillery_design_cost_factor = -1
 				unit_mot_artillery_brigade_design_cost_factor = -1

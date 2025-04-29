@@ -53,6 +53,8 @@ MON_remove_russian_diplo_relations = {
 }
 
 MON_puppet_setup = {
+	#IF YOU CHANGE THIS, MAKE SURE TO EDIT china_orchestrate_sinophile_coup
+
 	if = {
 		limit = {
 			ROOT = { #Only authoritarian monarchy, Semyonov and Diterikhs should put Ungern in power
@@ -181,8 +183,7 @@ MON_puppet_setup = {
 			if = {
 				limit = {
 					ROOT = {
-						china_is_aligned_with_left_kmt = yes
-						NOT = { check_variable = { country_leader:china_alignment = token:chinese_southern_republican } }
+						china_alignment_left_kuomintang = yes
 					}
 				}
 				#Setup MAN
@@ -212,8 +213,7 @@ MON_puppet_setup = {
 			else_if = {
 				limit = {
 					ROOT = {
-						china_is_aligned_with_right_kmt = yes
-						NOT = { check_variable = { country_leader:china_alignment = token:chinese_southern_republican } }
+						china_alignment_right_kuomintang = yes
 					}
 				}
 				set_politics = {

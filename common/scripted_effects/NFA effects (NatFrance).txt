@@ -87,16 +87,6 @@ NFA_add_resistance_modifiers = {
 		limit = { NOT = { has_state_flag = NFA_already_had_resistance_once } }
 		set_state_flag = NFA_already_had_resistance_once
 		if = {
-			limit = { NOT = { has_state_flag = has_NFA_fra_resist_15 } }
-			set_state_flag = has_NFA_fra_resist_15
-			add_resistance_target = {
-				id = 1
-				amount = 15
-				occupier = NFA
-				tooltip = NFA_fra_partisans_tt
-			}
-		}
-		if = {
 			limit = { NOT = { has_dynamic_modifier = { modifier = NFA_Communard_Resistance } } }
 			add_dynamic_modifier = { modifier = NFA_Communard_Resistance }
 		}
@@ -108,7 +98,7 @@ GER_transfer_NFA = {
 	GER = {
 		every_owned_state = {
 			limit = {
-				is_mainland_france_state = yes
+				is_france = yes
 				is_claim_or_core_of_ROOT = no
 			}
 			transfer_state_to = NFA
@@ -122,7 +112,7 @@ GER_transfer_NFA_except_Belgium = {
 	GER = {
 		every_owned_state = {
 			limit = {
-				is_mainland_france_state = yes
+				is_france = yes
 				is_claim_or_core_of_ROOT = no
 				# Exceptions
 				# Thick Belgium
@@ -142,7 +132,7 @@ GER_transfer_NFA_except_Belgium_and_Brittany = {
 	GER = {
 		every_owned_state = {
 			limit = {
-				is_mainland_france_state = yes
+				is_france = yes
 				is_claim_or_core_of_ROOT = no
 				# Exceptions
 				# Thick Belgium
@@ -165,7 +155,7 @@ GER_transfer_NFA_except_Brittany = {
 	GER = {
 		every_owned_state = {
 			limit = {
-				is_mainland_france_state = yes
+				is_france = yes
 				is_claim_or_core_of_ROOT = no
 				# Exceptions #
 				# Brittany
@@ -218,7 +208,7 @@ GER_release_small_FRP = {
 	GER = {
 		every_owned_state = {
 			limit = {
-				is_mainland_france_state = yes
+				is_france = yes
 				is_claim_or_core_of_ROOT = no
 				# Exceptions
 				# Thick Belgium

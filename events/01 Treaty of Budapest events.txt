@@ -148,7 +148,7 @@ country_event = { #We're losing, sue for peace? (AUS)
 
 	immediate = {
 		hidden_effect = {
-			add_ideas = AUS_cannot_capitulate
+			add_ideas = has_scripted_peace
 			if = {
 				limit = {
 					has_war_with = BPL
@@ -219,7 +219,7 @@ country_event = { #We're losing, sue for peace? (AUS)
 		add_stability = -0.1
 		add_war_support = -0.1
 		hidden_effect = {
-			remove_ideas = AUS_cannot_capitulate
+			remove_ideas = has_scripted_peace
 		}
 	}
 
@@ -258,7 +258,7 @@ country_event = { #We're losing, sue for peace? (AUS)
 		add_stability = -0.1
 		add_war_support = -0.1
 		hidden_effect = {
-			remove_ideas = AUS_cannot_capitulate
+			remove_ideas = has_scripted_peace
 		}
 	}
 }
@@ -893,19 +893,15 @@ country_event = { #Treaty of Budapest
 				every_owned_state = {
 					limit = {
 						is_bulgaria = yes
+						NOT = { state = 106 } #Macedonia
 					}
 					transfer_state_to = BUL
 				}
 				every_owned_state = {
 					limit = {
-						OR = {
-							AND = {
-								is_serbia = yes
-								NOT = { state = 45 } #Vojvodina
-								NOT = { state = 875 } #West Banat
-							}
-							state = 106 #Macedonia
-						}
+						is_serbia = yes
+						NOT = { state = 45 } #Vojvodina
+						NOT = { state = 875 } #West Banat
 					}
 					transfer_state_to = SER
 				}
@@ -1118,7 +1114,7 @@ country_event = { #Treaty of Budapest
 			dismantle_faction = yes
 		}
 		hidden_effect = {
-			remove_ideas = AUS_cannot_capitulate
+			remove_ideas = has_scripted_peace
 			recheck_annexations = yes
 			every_subject_country = { recheck_annexations = yes }
 			country_event = { id = ausgleich.new.915 days = 7 }
@@ -1205,7 +1201,7 @@ country_event = { #FROM refuses peace (AUS)
 			}
 			hidden_effect = {
 				every_subject_country = { country_event = treaty_of_budapest_events.24 }
-				remove_ideas = AUS_cannot_capitulate
+				remove_ideas = has_scripted_peace
 			}
 			GER = { add_to_faction = ROOT }
 		}
@@ -1540,7 +1536,7 @@ country_event = { #Germany has refused to intervene
 		ai_chance = { base = 0 }
 		add_stability = -0.1
 		add_war_support = -0.1
-		hidden_effect = { remove_ideas = AUS_cannot_capitulate }
+		hidden_effect = { remove_ideas = has_scripted_peace }
 	}
 }
 

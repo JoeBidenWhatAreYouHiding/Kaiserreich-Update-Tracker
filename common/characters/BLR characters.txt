@@ -617,6 +617,7 @@ characters = {
 			desc = BLR_uladzimir_ksianievic_high_command_desc
 			available = {
 				has_authoritarian_government = yes
+				not_already_hired_except_as = political_advisor
 			}
 			traits = { KR_prince_of_terror }
 		}
@@ -624,6 +625,9 @@ characters = {
 			slot = high_command
 			idea_token = BLR_uladzimir_ksianievic_high_command
 			ledger = army
+			available = {
+				not_already_hired_except_as = high_command
+			}
 			traits = { KR_MHC_commando_2 }
 			cost = 100
 		}

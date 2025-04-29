@@ -60,7 +60,7 @@ political_actions = {
 			}
 			modifier = {
 				factor = 0
-				OTT = { exists = yes }
+				country_exists = OTT
 				has_game_rule = { rule = OTT_forpol option = OTT_FORPOL_AUS }
 			}
 			modifier = {
@@ -244,7 +244,7 @@ political_actions = {
 			}
 			modifier = {
 				factor = 0
-				OTT = { exists = yes }
+				country_exists = OTT
 				has_game_rule = { rule = OTT_forpol option = OTT_FORPOL_AUS }
 			}
 			modifier = {
@@ -576,6 +576,18 @@ political_actions = {
 				}
 			}
 			leave_faction = yes
+			if = {
+				limit = {
+					has_war_with = BUL
+				}
+				BUL = { white_peace_with_ROOT = yes }
+			}
+			if = {
+				limit = {
+					has_war_with = ALB
+				}
+				ALB = { white_peace_with_ROOT = yes }
+			}
 			peace_out_non_neighbours_after_leaving_faction = yes
 			BPL = { country_event = ausgleich.new.914 }
 		}

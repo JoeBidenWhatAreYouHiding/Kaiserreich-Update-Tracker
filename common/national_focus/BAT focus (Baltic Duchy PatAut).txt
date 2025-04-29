@@ -182,6 +182,7 @@ focus_tree = {
 
 	focus = {
 		id = BAT_sef_pataut
+		text = BAT_sef_focus
 		icon = GFX_BAT_walter_zapp_SEF
 		cost = 6
 
@@ -202,6 +203,7 @@ focus_tree = {
 
 	focus = {
 		id = BAT_infrastructure_commission_pataut
+		text = BAT_railroad_commission
 		icon = GFX_goal_generic_railway_construction
 		cost = 6
 

@@ -281,7 +281,7 @@ belgrade_pact_gain_land_from_albania = {
 		GRE = {
 			transfer_state = 766 # Northern Epirus
 			hidden_effect = {
-				add_state_core = 766 # Northern Epirus
+				766 = { add_claim_of_ROOT = yes } # Northern Epirus
 			}
 		}
 	}
