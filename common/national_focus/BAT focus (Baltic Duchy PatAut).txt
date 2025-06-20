@@ -25,7 +25,13 @@ focus_tree = {
 		x = 5
 		y = 0
 
-		ai_will_do = { factor = 150 }
+		ai_will_do = {
+			factor = 150
+			modifier = {
+				factor = 5
+				has_idea = BAT_forest_brothers
+			}
+		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -270,7 +276,14 @@ focus_tree = {
 		x = 6
 		y = 1
 
-		ai_will_do = { factor = 40 }
+		ai_will_do = {
+			factor = 40
+			modifier = {
+				factor = 15
+				has_idea = BAT_forest_brothers
+			}
+		}
+
 		prerequisite = {
 			focus = BAT_new_landratskollegium
 		}

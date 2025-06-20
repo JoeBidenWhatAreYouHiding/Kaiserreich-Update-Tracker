@@ -254,7 +254,7 @@ china_warlords_want_to_join_united_front = {
 
 china_united_front_leader_wants_to_invite_warlords_QIE = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -272,7 +272,7 @@ china_united_front_leader_wants_to_invite_warlords_QIE = {
 }
 china_united_front_leader_wants_to_invite_warlords_SHX = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -290,7 +290,7 @@ china_united_front_leader_wants_to_invite_warlords_SHX = {
 }
 china_united_front_leader_wants_to_invite_warlords_FNG = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -308,7 +308,7 @@ china_united_front_leader_wants_to_invite_warlords_FNG = {
 }
 china_united_front_leader_wants_to_invite_warlords_LEP = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -326,7 +326,7 @@ china_united_front_leader_wants_to_invite_warlords_LEP = {
 }
 china_united_front_leader_wants_to_invite_warlords_ANQ = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -344,7 +344,7 @@ china_united_front_leader_wants_to_invite_warlords_ANQ = {
 }
 china_united_front_leader_wants_to_invite_warlords_CHI = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -362,7 +362,7 @@ china_united_front_leader_wants_to_invite_warlords_CHI = {
 }
 china_united_front_leader_wants_to_invite_warlords_SHD = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -380,7 +380,7 @@ china_united_front_leader_wants_to_invite_warlords_SHD = {
 }
 china_united_front_leader_wants_to_invite_warlords_GXC = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -398,7 +398,7 @@ china_united_front_leader_wants_to_invite_warlords_GXC = {
 }
 china_united_front_leader_wants_to_invite_warlords_HNN = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -416,7 +416,7 @@ china_united_front_leader_wants_to_invite_warlords_HNN = {
 }
 china_united_front_leader_wants_to_invite_warlords_YUN = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -434,7 +434,7 @@ china_united_front_leader_wants_to_invite_warlords_YUN = {
 }
 china_united_front_leader_wants_to_invite_warlords_SZC = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -452,7 +452,7 @@ china_united_front_leader_wants_to_invite_warlords_SZC = {
 }
 china_united_front_leader_wants_to_invite_warlords_XSM = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -470,7 +470,7 @@ china_united_front_leader_wants_to_invite_warlords_XSM = {
 }
 china_united_front_leader_wants_to_invite_warlords_SIK = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -488,7 +488,7 @@ china_united_front_leader_wants_to_invite_warlords_SIK = {
 }
 china_united_front_leader_wants_to_invite_warlords_KUM = {
 	allowed = {
-		tag = CUF
+		is_chinese_or_potential_chinese_tag = yes
 	}
 	enable = {
 		is_faction_leader = yes
@@ -603,6 +603,93 @@ china_warlords_support_united_front = {
 	ai_strategy = { type = diplo_action_desire id = KUM target = join_allies value = 1000 }
 	ai_strategy = { type = diplo_action_acceptance id = KUM target = call_allies value = 1000 }
 	ai_strategy = { type = diplo_action_acceptance id = KUM target = join_allies value = 1000 }
+}
+
+china_dont_declare_wars_during_united_front = {
+	allowed = {
+		is_chinese_or_potential_chinese_tag = yes
+	}
+	enable = {
+		if = {
+			limit = {
+				original_tag = KUM
+			}
+			has_country_flag = KUM_is_chinese_tag
+		}
+		country_exists = CUF
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "ANQ"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "CHI"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "FNG"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "GXC"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "HNN"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "KUM"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "LEP"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "QIE"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SHD"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SHX"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SIK"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SZC"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "XSM"
+		value = -10000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "YUN"
+		value = -10000
+	}
 }
 
 china_league_war_participants_hate_each_other_SHD = {

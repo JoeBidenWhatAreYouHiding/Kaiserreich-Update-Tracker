@@ -376,7 +376,7 @@ MIT_improve_generic_agenda_rewards = {
 		}
 		MIT_generic_arms_industry = {
 			set_nationality = PREV
-			set_character_name = "MIT_generic_infrastructure_improved"
+			set_character_name = "MIT_generic_arms_industry_improved"
 			var:agenda_idea = { set_character_name = MIT_generic_arms_industry_improved_idea }
 			set_variable = { agenda_improved = 1 }
 			retire = yes

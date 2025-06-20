@@ -1,27 +1,15 @@
 SER_hates_austria = {
 	reversed = yes
 
-	enable_reverse = {
+	enable = {
+		is_ally_with = AUS
 		SER = {
 			is_subject = no
 			NOT = { is_ally_with = AUS }
 		}
-		AUS = {
-			AUS_is_led_by_habsburgs = yes
-			OR = {
-				owns_state = 102
-				owns_state = 109
-				102 = { owner = { has_autonomy_state = crownland } }
-				109 = { owner = { has_autonomy_state = crownland } }
-			}
-		}
-	}
-	enable = {
-		is_ally_with = AUS
+		AUS = { AUS_is_led_by_habsburgs = yes }
 	}
 	abort_when_not_enabled = yes
-
-	target_array = AUS.faction_members
 
 	ai_strategy = {
 		type = antagonize
@@ -44,6 +32,7 @@ SER_focus_on_imro = {
 	enable = {
 		has_idea = SER_IMRO_rebellion
 		NOT = { has_global_flag = SER_imro_dont_attack }
+		NOT = { BUL = { focus_progress = { focus = BUL_macedonia_intervention progress > 0 } } } #Abort strategy if BUL is about to attack
 	}
 
 	abort_when_not_enabled = yes
@@ -91,6 +80,7 @@ SER_dont_attack_during_lull_phase = {
 
 	enable = {
 		has_global_flag = SER_imro_dont_attack
+		NOT = { BUL = { focus_progress = { focus = BUL_macedonia_intervention progress > 0 } } } #Abort strategy if BUL is about to attack
 		if = {
 			limit = {
 				NOT = { original_tag = SER }
@@ -122,6 +112,7 @@ SER_garrison_kosovo_during_lull_phase = {
 	enable = {
 		has_global_flag = SER_imro_dont_attack
 		owns_state = 765
+		NOT = { BUL = { focus_progress = { focus = BUL_macedonia_intervention progress > 0 } } } #Abort strategy if BUL is about to attack
 	}
 
 	abort_when_not_enabled = yes
@@ -146,6 +137,7 @@ SER_rush_imro_in_action_phase = {
 		NOT = { has_global_flag = SER_imro_dont_attack }
 		NOT = { owns_state = 106 } #Macedonia
 		has_war_with = MAC
+		NOT = { BUL = { focus_progress = { focus = BUL_macedonia_intervention progress > 0 } } } #Abort strategy if BUL is about to attack
 		MAC = { has_cosmetic_tag = MAC_IMRO } #MAC has not declared open warfare, seperate ai strategy for that
 	}
 
@@ -188,6 +180,7 @@ SER_imro_open_warfare = {
 		has_war_with = MAC
 		NOT = { MAC = { has_cosmetic_tag = MAC_IMRO } } #MAC has declared open warfare
 		check_variable = { enemies^num = 1 } #Only at war with MAC
+		NOT = { BUL = { focus_progress = { focus = BUL_macedonia_intervention progress > 0 } } } #Abort strategy if BUL is about to attack
 		if = {
 			limit = {
 				NOT = { original_tag = SER }

@@ -1,3 +1,0 @@
-BAT_ongoing_partisan_action = {
-	has_country_flag = BAT_ongoing_partisan_action
-}

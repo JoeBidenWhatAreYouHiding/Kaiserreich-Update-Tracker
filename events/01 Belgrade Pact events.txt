@@ -527,9 +527,6 @@ country_event = {
 				country_event = pact.38
 			}
 		}
-
-		# Power Projection event for Russia
-		RUS = { country_event = { id = rusfor.256 days = 5 random_days = 5 } }
 	}
 }
 country_event = {
@@ -845,9 +842,27 @@ country_event = {
 				limit = {
 					is_faction_leader = yes
 					is_in_faction_with = SER
+					SER = { is_subject = no }
+					SER = { has_capitulated = no }
 				}
 				SER = { set_faction_leader = yes }
 				leave_faction = yes
+			}
+			else_if = {
+				limit = {
+					is_faction_leader = yes
+					is_in_faction_with = ROM
+					ROM = { is_subject = no }
+					ROM = { has_capitulated = no }
+				}
+				ROM = { set_faction_leader = yes }
+				leave_faction = yes
+			}
+			else_if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				dismantle_faction = yes
 			}
 			else_if = {
 				limit = {
@@ -855,6 +870,7 @@ country_event = {
 				}
 				leave_faction = yes
 			}
+			peace_out_non_neighbours_after_leaving_faction = yes
 			if = {
 				limit = {
 					has_war_with = ALB
@@ -1391,6 +1407,12 @@ country_event = {
 		log = "[GetLogInfo]: event pact.47 option pact.47.a"
 		name = pact.47.a # Sue for peace.
 		BUL = { country_event = pact.48 }
+		every_country = {
+			limit = {
+				is_in_faction_with = BPL
+			}
+			set_country_flag = { flag = balkan_war_loss_temp_flag days = 10 value = 1 }
+		}
 	}
 
 	option = {
@@ -1556,10 +1578,7 @@ country_event = {
 					CRO = { is_subject = no }
 					SER = { has_capitulated = yes }
 					CRO = { controls_state = 107 } #Belgrade
-					OR = {
-						has_global_flag = AUS_treaty_of_budapest
-						NOT = { AUS = { controls_state = 4 } } #Vienna
-					}
+					has_global_flag = AUS_treaty_of_budapest
 					NOT = {
 						has_global_flag = germany_demands_end_to_balkan_war
 						has_global_flag = austria_demands_end_to_balkan_war
@@ -1858,12 +1877,12 @@ country_event = {
 						OR = {
 							is_croatia = yes
 							is_bosnia = yes
-							state = 841 #Kotor
 						}
 						NOT = { state = 45 } #Vojvodina
 					}
 					transfer_state_to = CRO
 				}
+				841 = { transfer_state_to = 163.owner } #Kotor -> Dalmatia
 				every_owned_state = {
 					limit = {
 						is_slovenia = yes
@@ -2456,7 +2475,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				BUL = { surrender_progress > 0.5 }
+				BUL = { surrender_progress > 0.4 }
 			}
 			BUL = { save_event_target_as = balkan_war_limited_bpl_victory }
 		}
@@ -2503,6 +2522,8 @@ country_event = {
 			is_faction_leader = yes
 			has_war_with = BUL
 		}
+		has_global_flag = balkan_war_started
+		NOT = { has_global_flag = balkan_war_ended }
 	}
 
 	fire_only_once = yes
