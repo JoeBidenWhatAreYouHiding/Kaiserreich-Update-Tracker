@@ -109,6 +109,16 @@ characters = {
 				set_temp_variable = { RUS_relation_change = -1 }
 				RUS_VST_left_relation = yes
 			}
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = RUS_kamenev_ai
+						has_country_flag = RUS_zinovyev_ai
+					}
+				}
+			}
 		}
 		advisor = {
 			slot = second_in_command
@@ -5257,6 +5267,16 @@ characters = {
 			on_remove = {
 				set_temp_variable = { RUS_relation_change = -1 }
 				RUS_PSR_relation = yes
+			}
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = RUS_kamenev_ai
+						has_country_flag = RUS_zinovyev_ai
+					}
+				}
 			}
 		}
 		advisor = {

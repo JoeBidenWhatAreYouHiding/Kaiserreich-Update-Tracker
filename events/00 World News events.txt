@@ -1475,7 +1475,7 @@ news_event = { # Congress of Lyon
 	}
 }
 
-news_event = { # 1936 Irish Olympics
+news_event = { # 1936 Irish Olympics. 15/08/36.
 	id = worldnews.482
 	immediate = { log = "[GetLogInfo]: event worldnews.482" }
 	title = worldnews.482.t

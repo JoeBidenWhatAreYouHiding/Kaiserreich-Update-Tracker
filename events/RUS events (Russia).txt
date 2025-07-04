@@ -14713,9 +14713,7 @@ country_event = { #Tsar Appoints Conservative Cabinet
 		add_to_coalition = yes
 		mark_focus_tree_layout_dirty = yes
 		 ### Starts Solonevich monarchy path
-		set_temp_variable = { RUS_anger_change = 1 }
-		RUS_change_left_anger = yes
-		add_popularity = { ideology = social_conservative popularity = 0.05 }
+		add_popularity = { ideology = social_conservative popularity = 0.1 }
 		hidden_effect = {
 			country_event = { id = demrus.71 days = 30 } #Ascension of the People's Monarchists
 			country_event = { id = rusfla.90 days = 100 random_days = 160 } #Solonevich Attacked
@@ -18126,6 +18124,9 @@ country_event = { #Ascension of the People's Monarchists
 			limit = { is_monarchy = no }
 			activate_advisor = RUS_boris_suvorin_sic
 		}
+		else = {
+			add_stability = 0.05
+		}
 		hidden_effect = {
 			set_party_name = {
 				ideology = social_conservative
@@ -19773,6 +19774,7 @@ country_event = { #A Conspiracy to Destroy Germany
 	option = {
 		log = "[GetLogInfo]: event demrus.121 option demrus.121.a"
 		name = demrus.121.a
+		custom_effect_tooltip = RUS_preemptive_war_tt
 		add_war_support = 0.02
 		if = {
 			limit = { tag = RUS }
@@ -19852,6 +19854,7 @@ country_event = { #Emergency Meeting of the Cabinet
 		name = demrus.123.a
 		ai_chance = { base = 100 }
 		trigger = { has_left_democratic_government = yes }
+		custom_effect_tooltip = RUS_preemptive_war_tt
 		activate_mission = RUS_oncoming_war
 	}
 	option = {
@@ -19859,6 +19862,7 @@ country_event = { #Emergency Meeting of the Cabinet
 		name = demrus.123.b
 		ai_chance = { base = 100 }
 		trigger = { has_left_democratic_government = no }
+		custom_effect_tooltip = RUS_preemptive_war_tt
 		activate_mission = RUS_oncoming_war
 	}
 	option = {
@@ -19866,6 +19870,7 @@ country_event = { #Emergency Meeting of the Cabinet
 		name = demrus.123.c
 		ai_chance = { base = 0 }
 		trigger = { NOT = { has_government = social_conservative } }
+		custom_effect_tooltip = RUS_preemptive_war_tt
 		add_war_support = -0.05
 		set_country_flag = RUS_refused_war
 		hidden_effect = {
@@ -30408,7 +30413,7 @@ country_event = { #The Elders Debacle
 			base = 1
 			modifier = {
 				factor = 0
-				has_country_flag = RUS_zinovyev_ai
+				has_country_flag = RUS_kamenev_ai
 			}
 		}
 		set_temp_variable = { RUS_relation_change = 1 }
@@ -30538,6 +30543,7 @@ country_event = { #Sulimov's Offer
 	option = { #Side with Sulimov
 		log = "[GetLogInfo]: event socrus.369 option socrus.369.b"
 		name = socrus.369.b
+		ai_chance = { base = 0 }
 		add_political_power = -20
 		set_temp_variable = { RUS_relation_change = 1 }
 		RUS_VST_Centre_relation = yes
@@ -36238,27 +36244,7 @@ country_event = { #Russia offers us an alliance
 					}
 					AND = {
 						is_in_faction_with = BPL
-						OR = {
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_KEEP }
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_KEEP }
-							AND = {
-								OR = {
-									has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_AUS_BEATEN }
-									has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_AUS_BEATEN }
-								}
-								OR = {
-									AUS = { is_faction_leader = yes }
-									AUS = {
-										is_faction_leader = no
-										has_country_flag = AUS_intervened_in_weltkrieg
-									}
-								}
-								NOT = { AUS = { exists = no } }
-								NOT = { AUS = { is_subject = yes } }
-							}
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_INT_BEATEN }
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_INT_BEATEN }
-						}
+						BPL_game_rule_wait_to_disband_RUS = yes
 					}
 				}
 			}
@@ -36344,27 +36330,7 @@ country_event = { #Russia offers us an alliance
 			modifier = {
 				factor = 0
 				is_in_faction_with = BPL
-				OR = {
-					has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_KEEP }
-					has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_KEEP }
-					AND = {
-						OR = {
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_AUS_BEATEN }
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_AUS_BEATEN }
-						}
-						OR = {
-							AUS = { is_faction_leader = yes }
-							AUS = {
-								is_faction_leader = no
-								has_country_flag = AUS_intervened_in_weltkrieg
-							}
-						}
-						NOT = { AUS = { exists = no } }
-						NOT = { AUS = { is_subject = yes } }
-					}
-					has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_INT_BEATEN }
-					has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_INT_BEATEN }
-				}
+				BPL_game_rule_wait_to_disband_RUS = yes
 			}
 			modifier = {
 				factor = 0
@@ -36449,27 +36415,7 @@ country_event = { #Russia offers us an alliance
 					}
 					AND = {
 						is_in_faction_with = BPL
-						OR = {
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_KEEP }
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_KEEP }
-							AND = {
-								OR = {
-									has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_AUS_BEATEN }
-									has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_AUS_BEATEN }
-								}
-								OR = {
-									AUS = { is_faction_leader = yes }
-									AUS = {
-										is_faction_leader = no
-										has_country_flag = AUS_intervened_in_weltkrieg
-									}
-								}
-								NOT = { AUS = { exists = no } }
-								NOT = { AUS = { is_subject = yes } }
-							}
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_INT_BEATEN }
-							has_game_rule = { rule = BPL_dissolution option = BPL_DISSOLUTION_GRE_INT_BEATEN }
-						}
+						BPL_game_rule_wait_to_disband_RUS = yes
 					}
 				}
 			}
@@ -38237,8 +38183,16 @@ country_event = { #The Expedition Arrives in [ROOT.GetNameDef]
 		army_experience = 15
 		add_ideas = RUS_chinese_military_mission_idea
 		if = {
-			limit = { RUS = { RUS_savinkov = yes } }
+			limit = { FROM = { RUS_savinkov = yes } }
 			add_popularity = { ideology = national_populist popularity = 0.04 }
+		}
+		effect_tooltip = {
+			FROM = {
+				add_relation_modifier = {
+					target = ROOT
+					modifier = volunteer_limit_plus_two
+				}
+			}
 		}
 	}
 	option = {
