@@ -440,6 +440,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/IRE_PLP_idea.png"
 	}
 	SpriteType = {
+		name = "GFX_idea_IRE_PLP_alt_idea"
+		texturefile = "gfx/interface/ideas/IRE_PLP_alt_idea.png"
+	}
+	SpriteType = {
 		name = "GFX_idea_IRE_Labour_idea"
 		texturefile = "gfx/interface/ideas/IRE_Labour_idea.png"
 	}
@@ -770,10 +774,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_OTT_hafiz_mustafa"
 		texturefile = "gfx/interface/ideas/OTT_hafiz_mustafa.png"
-	}
-	spriteType = {
-		name = "GFX_idea_TUR_Ahmed_Nihad"
-		texturefile = "gfx/interface/ideas/TUR_Ahmed_Nihad.png"
 	}
 	spriteType = {
 		name = "GFX_idea_TUR_golden_age_of_islam"
