@@ -310,86 +310,42 @@ defined_text = {
 	name = UKR_radicalism_tt
 	text = {
 		trigger = { #0-14
-			check_variable = {
-				var = UKR_radicalism
-				value = 0
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_radicalism
-				value = 14
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_radicalism < 0 } }
+			NOT = { check_variable = { UKR_radicalism > 14 } }
 		}
 		localization_key = UKR_radicalism_very_low
 	}
 	text = {
 		trigger = { #15-29
-			check_variable = {
-				var = UKR_radicalism
-				value = 15
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_radicalism
-				value = 29
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_radicalism < 15 } }
+			NOT = { check_variable = { UKR_radicalism > 29 } }
 		}
 		localization_key = UKR_radicalism_low
 	}
 	text = {
 		trigger = { #30-44
-			check_variable = {
-				var = UKR_radicalism
-				value = 30
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_radicalism
-				value = 44
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_radicalism < 30 } }
+			NOT = { check_variable = { UKR_radicalism > 44 } }
 		}
 		localization_key = UKR_radicalism_medium
 	}
 	text = {
 		trigger = { #45-59
-			check_variable = {
-				var = UKR_radicalism
-				value = 45
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_radicalism
-				value = 59
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_radicalism < 45 } }
+			NOT = { check_variable = { UKR_radicalism > 59 } }
 		}
 		localization_key = UKR_radicalism_high
 	}
 	text = {
 		trigger = { #60-70 and beyond
-			check_variable = {
-				var = UKR_radicalism
-				value = 60
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_radicalism
-				value = 69
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_radicalism < 60 } }
+			NOT = { check_variable = { UKR_radicalism > 69 } }
 		}
 		localization_key = UKR_radicalism_very_high
 	}
 	text = {
 		trigger = { #70 and beyond
-			check_variable = {
-				var = UKR_radicalism
-				value = 70
-				compare = greater_than_or_equals
-			}
+			NOT = { check_variable = { UKR_radicalism < 70 } }
 		}
 		localization_key = UKR_radicalism_extremely_high
 	}
@@ -689,61 +645,29 @@ defined_text = {  #USDRP ATTITUDE
 	name = UKR_usdrp_attitude
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 0
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 5
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_usdrp_attitude < 0 } }
+			NOT = { check_variable = { UKR_usdrp_attitude > 5 } }
 		}
 		localization_key = UKR_usdrp_uncooperative
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 6
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 10
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_usdrp_attitude < 6 } }
+			NOT = { check_variable = { UKR_usdrp_attitude > 10 } }
 		}
 		localization_key = UKR_usdrp_indifferent
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 11
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 15
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_usdrp_attitude < 11 } }
+			NOT = { check_variable = { UKR_usdrp_attitude > 15 } }
 		}
 		localization_key = UKR_usdrp_cooperative
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 16
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_usdrp_attitude
-				value = 20
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_usdrp_attitude < 16 } }
+			NOT = { check_variable = { UKR_usdrp_attitude > 20 } }
 		}
 		localization_key = UKR_usdrp_amenable
 	}
@@ -753,61 +677,29 @@ defined_text = {  #URDP ATTITUDE - USES SAME LOC KEY
 	name = UKR_urdp_attitude
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 0
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 5
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_attitude < 0 } }
+			NOT = { check_variable = { UKR_urdp_attitude > 5 } }
 		}
 		localization_key = UKR_usdrp_uncooperative
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 6
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 10
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_attitude < 6 } }
+			NOT = { check_variable = { UKR_urdp_attitude > 10 } }
 		}
 		localization_key = UKR_usdrp_indifferent
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 11
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 15
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_attitude < 11 } }
+			NOT = { check_variable = { UKR_urdp_attitude > 15 } }
 		}
 		localization_key = UKR_usdrp_cooperative
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 16
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_attitude
-				value = 20
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_attitude < 16 } }
+			NOT = { check_variable = { UKR_urdp_attitude > 20 } }
 		}
 		localization_key = UKR_usdrp_amenable
 	}
@@ -817,46 +709,22 @@ defined_text = {
 	name = UKR_urdp_right_influence_level
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_right_influence
-				value = 0
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_right_influence
-				value = 3
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_right_influence < 0 } }
+			NOT = { check_variable = { UKR_urdp_right_influence > 3 } }
 		}
 		localization_key = UKR_urdp_low
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_right_influence
-				value = 4
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_right_influence
-				value = 7
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_right_influence < 4 } }
+			NOT = { check_variable = { UKR_urdp_right_influence > 7 } }
 		}
 		localization_key = UKR_urdp_moderate
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_right_influence
-				value = 8
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_right_influence
-				value = 9
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_right_influence < 8 } }
+			NOT = { check_variable = { UKR_urdp_right_influence > 9 } }
 		}
 		localization_key = UKR_urdp_high
 	}
@@ -866,46 +734,22 @@ defined_text = {
 	name = UKR_urdp_centre_influence_level
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_centre_influence
-				value = 0
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_centre_influence
-				value = 3
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_centre_influence < 0 } }
+			NOT = { check_variable = { UKR_urdp_centre_influence > 3 } }
 		}
 		localization_key = UKR_urdp_low
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_centre_influence
-				value = 4
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_centre_influence
-				value = 7
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_centre_influence < 4 } }
+			NOT = { check_variable = { UKR_urdp_centre_influence > 7 } }
 		}
 		localization_key = UKR_urdp_moderate
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_centre_influence
-				value = 8
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_centre_influence
-				value = 9
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_centre_influence < 8 } }
+			NOT = { check_variable = { UKR_urdp_centre_influence > 9 } }
 		}
 		localization_key = UKR_urdp_high
 	}
@@ -915,46 +759,22 @@ defined_text = {
 	name = UKR_urdp_left_influence_level
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_left_influence
-				value = 0
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_left_influence
-				value = 3
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_left_influence < 0 } }
+			NOT = { check_variable = { UKR_urdp_left_influence > 3 } }
 		}
 		localization_key = UKR_urdp_low
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_left_influence
-				value = 4
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_left_influence
-				value = 7
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_left_influence < 4 } }
+			NOT = { check_variable = { UKR_urdp_left_influence > 7 } }
 		}
 		localization_key = UKR_urdp_moderate
 	}
 	text = {
 		trigger = {
-			check_variable = {
-				var = UKR_urdp_left_influence
-				value = 8
-				compare = greater_than_or_equals
-			}
-			check_variable = {
-				var = UKR_urdp_left_influence
-				value = 9
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_urdp_left_influence < 8 } }
+			NOT = { check_variable = { UKR_urdp_left_influence > 9 } }
 		}
 		localization_key = UKR_urdp_high
 	}
@@ -1041,550 +861,300 @@ defined_text = {
 	}
 }
 
-#URDP as coalition partner modifiers
+# Coalition Partner Modifiers
+
+#Uncooperative - shared
 defined_text = {
-	name = UKR_urdp_uncooperative_pp
+	name = UKR_coalition_partner_uncooperative_ppg
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_uncooperative_political_power_gain = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_uncooperative_political_power_gain = 0 } }
 		}
-		localization_key = UKR_urdp_uncooperative_pp_tt
+		localization_key = UKR_coalition_partner_uncooperative_ppg_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_indifferent_pp
+	name = UKR_coalition_partner_uncooperative_sf
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_indifferent_political_power_gain = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_uncooperative_stability_factor = 0 } }
 		}
-		localization_key = UKR_urdp_indifferent_pp_tt
+		localization_key = UKR_coalition_partner_uncooperative_sf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_cooperative_pp
+	name = UKR_coalition_partner_uncooperative_wsf
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_cooperative_political_power_gain = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_uncooperative_war_support_factor = 0 } }
 		}
-		localization_key = UKR_urdp_cooperative_pp_tt
+		localization_key = UKR_coalition_partner_uncooperative_wsf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_amenable_pp
+	name = UKR_coalition_partner_uncooperative_pfsef
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_amenable_political_power_gain = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_uncooperative_production_factory_start_efficiency_factor = 0 } }
 		}
-		localization_key = UKR_urdp_amenable_pp_tt
+		localization_key = UKR_coalition_partner_uncooperative_pfsef_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_uncooperative_icf # Socdem only
+	text = {
+		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_uncooperative_industrial_capacity_factory = 0 } }
+		}
+		localization_key = UKR_coalition_partner_uncooperative_icf_tt
 	}
 }
 
+#Indifferent - shared
 defined_text = {
-	name = UKR_urdp_uncooperative_stab
+	name = UKR_coalition_partner_indifferent_ppg
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_uncooperative_stability_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_indifferent_political_power_gain = 0 } }
 		}
-		localization_key = UKR_urdp_uncooperative_stab_tt
+		localization_key = UKR_coalition_partner_indifferent_ppg_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_indifferent_stab
+	name = UKR_coalition_partner_indifferent_sf
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_indifferent_stability_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_indifferent_stability_factor = 0 } }
 		}
-		localization_key = UKR_urdp_indifferent_stab_tt
+		localization_key = UKR_coalition_partner_indifferent_sf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_cooperative_stab
+	name = UKR_coalition_partner_indifferent_wsf
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_cooperative_stability_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_indifferent_war_support_factor = 0 } }
 		}
-		localization_key = UKR_urdp_cooperative_stab_tt
+		localization_key = UKR_coalition_partner_indifferent_wsf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_amenable_stab
+	name = UKR_coalition_partner_indifferent_pfsef
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_amenable_stability_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_indifferent_production_factory_start_efficiency_factor = 0 } }
 		}
-		localization_key = UKR_urdp_amenable_stab_tt
-	}
-}
-
-defined_text = {
-	name = UKR_urdp_uncooperative_ws
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_uncooperative_war_support_factor = 0 }
-			}
-		}
-		localization_key = UKR_urdp_uncooperative_ws_tt
+		localization_key = UKR_coalition_partner_indifferent_pfsef_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_indifferent_ws
+	name = UKR_coalition_partner_indifferent_icf # Socdem only
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_indifferent_war_support_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_indifferent_industrial_capacity_factory = 0 } }
 		}
-		localization_key = UKR_urdp_indifferent_ws_tt
+		localization_key = UKR_coalition_partner_indifferent_icf_tt
 	}
 }
 
+#Cooperative - shared
 defined_text = {
-	name = UKR_urdp_uncooperative_factory_output
+	name = UKR_coalition_partner_cooperative_ppg
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_uncooperative_industrial_capacity_factory = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_cooperative_political_power_gain = 0 } }
 		}
-		localization_key = UKR_urdp_uncooperative_factory_output_tt
+		localization_key = UKR_coalition_partner_cooperative_ppg_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_indifferent_factory_output
+	name = UKR_coalition_partner_cooperative_sf # Socdem Only
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_indifferent_industrial_capacity_factory = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_cooperative_stability_factor = 0 } }
 		}
-		localization_key = UKR_urdp_indifferent_factory_output_tt
+		localization_key = UKR_coalition_partner_cooperative_sf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_cooperative_factory_output
+	name = UKR_coalition_partner_cooperative_cgf
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_cooperative_industrial_capacity_factory = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_cooperative_consumer_goods_factor = 0 } }
 		}
-		localization_key = UKR_urdp_cooperative_factory_output_tt
+		localization_key = UKR_coalition_partner_cooperative_cgf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_amenable_factory_output
+	name = UKR_coalition_partner_cooperative_psbf
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_amenable_industrial_capacity_factory = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_cooperative_production_speed_buildings_factor = 0 } }
 		}
-		localization_key = UKR_urdp_amenable_factory_output_tt
+		localization_key = UKR_coalition_partner_cooperative_psbf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_cooperative_construction_speed
+	name = UKR_coalition_partner_cooperative_pfmef
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_cooperative_production_speed_buildings_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_cooperative_production_factory_max_efficiency_factor = 0 } }
 		}
-		localization_key = UKR_urdp_cooperative_construction_speed_tt
+		localization_key = UKR_coalition_partner_cooperative_pfmef_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_amenable_construction_speed
+	name = UKR_coalition_partner_cooperative_pfsef
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_amenable_production_speed_buildings_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_cooperative_production_factory_start_efficiency_factor = 0 } }
 		}
-		localization_key = UKR_urdp_amenable_construction_speed_tt
-	}
-}
-
-defined_text = {
-	name = UKR_urdp_cooperative_prod_eff_cap
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_cooperative_production_factory_max_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_urdp_cooperative_prod_eff_cap_tt
+		localization_key = UKR_coalition_partner_cooperative_pfsef_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_amenable_prod_eff_cap
+	name = UKR_coalition_partner_cooperative_icf #Socdem Only
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_amenable_production_factory_max_efficiency_factor = 0 }
-			}
+			NOT = { check_variable = { UKR.UKR_coalition_partner_cooperative_industrial_capacity_factory = 0 } }
 		}
-		localization_key = UKR_urdp_amenable_prod_eff_cap_tt
-	}
-}
-
-defined_text = {
-	name = UKR_urdp_uncooperative_prod_eff_base
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_uncooperative_production_factory_start_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_urdp_uncooperative_prod_eff_base_tt
+		localization_key = UKR_coalition_partner_cooperative_icf_tt
 	}
 }
 defined_text = {
-	name = UKR_urdp_indifferent_prod_eff_base
+	name = UKR_coalition_partner_cooperative_land_reform
 	text = {
 		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_indifferent_production_factory_start_efficiency_factor = 0 }
+			OR = {
+				NOT = { has_completed_focus = UKR_absorb_forestry_companies }
+				has_idea = UKR_minority_government
 			}
 		}
-		localization_key = UKR_urdp_indifferent_prod_eff_base_tt
+		localization_key = loc_empty
 	}
-}
-defined_text = {
-	name = UKR_urdp_cooperative_prod_eff_base
 	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_cooperative_production_factory_start_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_urdp_cooperative_prod_eff_base_tt
-	}
-}
-defined_text = {
-	name = UKR_urdp_amenable_prod_eff_base
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_amenable_production_factory_start_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_urdp_amenable_prod_eff_base_tt
-	}
-}
-
-defined_text = {
-	name = UKR_urdp_cooperative_consumer_goods
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_cooperative_consumer_goods_factor = 0 }
-			}
-		}
-		localization_key = UKR_urdp_cooperative_consumer_goods_tt
-	}
-}
-defined_text = {
-	name = UKR_urdp_amenable_consumer_goods
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_urdp_attitude_amenable_consumer_goods_factor = 0 }
-			}
-		}
-		localization_key = UKR_urdp_amenable_consumer_goods_tt
-	}
-}
-
-defined_text = {
-	name = UKR_urdp_cooperative_land_reform
-	text = {
-		trigger = {
-			has_government = social_liberal
-			has_completed_focus = UKR_absorb_forestry_companies
-			NOT = { has_idea = UKR_minority_government }
-		}
+		trigger = { has_government = social_liberal }
 		localization_key = UKR_urdp_cooperative_land_reform_tt
 	}
-}
-defined_text = {
-	name = UKR_urdp_amenable_land_reform
 	text = {
-		trigger = {
-			has_government = social_liberal
-			has_completed_focus = UKR_absorb_forestry_companies
-			NOT = { has_idea = UKR_minority_government }
-		}
-		localization_key = UKR_urdp_amenable_land_reform_tt
-	}
-}
-
-#USDRP as coalition partner modifiers
-defined_text = {
-	name = UKR_usdrp_uncooperative_pp
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_uncooperative_political_power_gain = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_uncooperative_pp_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_indifferent_pp
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_indifferent_political_power_gain = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_indifferent_pp_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_cooperative_pp
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_cooperative_political_power_gain = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_cooperative_pp_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_amenable_pp
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_amenable_political_power_gain = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_amenable_pp_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_amenable_stab
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_amenable_stability_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_amenable_stab_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_uncooperative_ws
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_uncooperative_war_support_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_uncooperative_ws_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_indifferent_ws
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_indifferent_war_support_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_indifferent_ws_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_cooperative_production_speed_buildings_factor
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_cooperative_production_speed_buildings_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_cooperative_production_speed_buildings_factor_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_amenable_production_speed_buildings_factor
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_amenable_production_speed_buildings_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_amenable_production_speed_buildings_factor_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_uncooperative_prod_eff_base
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_uncooperative_production_factory_start_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_uncooperative_prod_eff_base_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_indifferent_prod_eff_base
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_indifferent_production_factory_start_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_indifferent_prod_eff_base_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_cooperative_prod_eff_base
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_cooperative_production_factory_start_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_cooperative_prod_eff_base_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_amenable_prod_eff_base
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_amenable_production_factory_start_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_amenable_prod_eff_base_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_cooperative_consumer_goods
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_cooperative_consumer_goods_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_cooperative_consumer_goods_tt
-	}
-}
-defined_text = {
-	name = UKR_usdrp_amenable_consumer_goods
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_amenable_consumer_goods_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_amenable_consumer_goods_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_cooperative_prod_eff_cap
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_cooperative_production_factory_max_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_cooperative_prod_eff_cap_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_amenable_prod_eff_cap
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_amenable_production_factory_max_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_amenable_prod_eff_cap_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_amenable_prod_eff_retention
-	text = {
-		trigger = {
-			NOT = {
-				check_variable = { UKR.UKR_usdrp_attitude_amenable_line_change_production_efficiency_factor = 0 }
-			}
-		}
-		localization_key = UKR_usdrp_amenable_prod_eff_retention_tt
-	}
-}
-
-defined_text = {
-	name = UKR_usdrp_cooperative_land_reform
-	text = {
-		trigger = {
-			has_completed_focus = UKR_absorb_forestry_companies
-			has_government = social_democrat
-			NOT = { has_idea = UKR_minority_government }
-		}
+		trigger = { has_government = social_democrat }
 		localization_key = UKR_usdrp_cooperative_land_reform_tt
 	}
 }
 defined_text = {
-	name = UKR_usdrp_amenable_land_reform
+	name = UKR_urdp_cooperative_industrialisation #Soclib Only
 	text = {
 		trigger = {
-			has_government = social_democrat
-			has_completed_focus = UKR_absorb_forestry_companies
+			has_government = social_liberal
+			has_completed_focus = UKR_nationalization_of_coal_mines
 			NOT = { has_idea = UKR_minority_government }
 		}
-		localization_key = UKR_usdrp_amenable_land_reform_tt
+		localization_key = UKR_urdp_cooperative_industrialisation_tt
 	}
 }
 
+#Amenable - shared
 defined_text = {
-	name = UKR_usdrp_cooperative_industrialisation
+	name = UKR_coalition_partner_amenable_ppg
 	text = {
 		trigger = {
-			has_completed_focus = UKR_nationalization_of_coal_mines
-			NOT = { has_idea = UKR_minority_government }
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_political_power_gain = 0 } }
 		}
-		localization_key = UKR_usdrp_cooperative_industrialisation_tt
+		localization_key = UKR_coalition_partner_amenable_ppg_tt
 	}
 }
 defined_text = {
-	name = UKR_usdrp_amenable_industrialisation
+	name = UKR_coalition_partner_amenable_sf
 	text = {
 		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_stability_factor = 0 } }
+		}
+		localization_key = UKR_coalition_partner_amenable_sf_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_amenable_cgf
+	text = {
+		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_consumer_goods_factor = 0 } }
+		}
+		localization_key = UKR_coalition_partner_amenable_cgf_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_amenable_psbf
+	text = {
+		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_production_speed_buildings_factor = 0 } }
+		}
+		localization_key = UKR_coalition_partner_amenable_psbf_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_amenable_pfmef
+	text = {
+		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_production_factory_max_efficiency_factor = 0 } }
+		}
+		localization_key = UKR_coalition_partner_amenable_pfmef_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_amenable_pfsef
+	text = {
+		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_production_factory_start_efficiency_factor = 0 } }
+		}
+		localization_key = UKR_coalition_partner_amenable_pfsef_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_amenable_lcpef #Soclib Only
+	text = {
+		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_line_change_production_efficiency_factor = 0 } }
+		}
+		localization_key = UKR_coalition_partner_amenable_lcpef_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_amenable_icf #Socdem Only
+	text = {
+		trigger = {
+			NOT = { check_variable = { UKR.UKR_coalition_partner_amenable_industrial_capacity_factory = 0 } }
+		}
+		localization_key = UKR_coalition_partner_amenable_icf_tt
+	}
+}
+defined_text = {
+	name = UKR_coalition_partner_amenable_land_reform
+	text = {
+		trigger = {
+			OR = {
+				NOT = { has_completed_focus = UKR_absorb_forestry_companies }
+				has_idea = UKR_minority_government
+			}
+		}
+		localization_key = loc_empty
+	}
+	text = {
+		trigger = { has_government = social_liberal }
+		localization_key = UKR_urdp_amenable_land_reform_tt
+	}
+	text = {
+		trigger = { has_government = social_democrat }
+		localization_key = UKR_usdrp_amenable_land_reform_tt
+	}
+}
+defined_text = {
+	name = UKR_urdp_amenable_industrialisation #Soclib Only
+	text = {
+		trigger = {
+			has_government = social_liberal
 			has_completed_focus = UKR_nationalization_of_coal_mines
 			NOT = { has_idea = UKR_minority_government }
 		}
-		localization_key = UKR_usdrp_amenable_industrialisation_tt
+		localization_key = UKR_urdp_amenable_industrialisation_tt
 	}
 }
 

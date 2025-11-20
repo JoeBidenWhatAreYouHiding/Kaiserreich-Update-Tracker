@@ -52,6 +52,7 @@ GRE_join_faction_decisions = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GRE_join_internationale"
 			FROM = { country_event = greece_events.14 }
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_join_entente = {
@@ -141,7 +142,7 @@ GRE_join_faction_decisions = {
 				factor = 0
 				has_completed_focus = GRE_diplomacy_focus
 				NOT = { has_game_rule = { rule = GRE_forpol option = GRE_FORPOL_ENT } }
-				FROM = { same_government_type_as_ROOT_authoritarian = yes }
+				FROM = { same_government_type_as_ROOT_authoritarian = no }
 			}
 			modifier = {
 				has_game_rule = { rule = GRE_forpol option = DEFAULT }
@@ -189,6 +190,7 @@ GRE_join_faction_decisions = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GRE_join_entente"
 			FROM = { country_event = greece_events.14 }
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_join_reichspakt = {
@@ -341,6 +343,7 @@ GRE_join_faction_decisions = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GRE_join_reichspakt"
 			FROM = { country_event = greece_events.14 }
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_join_austria = {
@@ -494,6 +497,7 @@ GRE_join_faction_decisions = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GRE_join_austria"
 			FROM = { country_event = greece_events.14 }
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_join_russia = {
@@ -612,6 +616,7 @@ GRE_join_faction_decisions = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GRE_join_russia"
 			FROM = { country_event = greece_events.14 }
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_rejoin_belgrade_pact = {
@@ -685,6 +690,7 @@ GRE_join_faction_decisions = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GRE_rejoin_belgrade_pact"
 			FROM = { country_event = greece_events.14 }
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -739,6 +745,7 @@ political_actions = {
 				remove_ideas = GRE_foreign_industry_GER3
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_nationalize_austrian_industry = {
@@ -786,6 +793,7 @@ political_actions = {
 				remove_ideas = GRE_foreign_industry_AUS3
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_balkans_mission = {
@@ -873,6 +881,7 @@ political_actions = {
 				FROM = { any_owned_state = { is_claim_or_core_of_ROOT = yes } }
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -889,7 +898,7 @@ GRE_regaining_greece = {
 					is_faction_leader = no
 					faction_leader = { is_actual_major = yes }
 				}
-				has_global_flag = second_weltkrieg_has_started
+				second_weltkrieg_has_begun = yes
 			}
 		}
 
@@ -984,6 +993,7 @@ GRE_regaining_greece = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_megali_war = {
@@ -1028,7 +1038,7 @@ GRE_regaining_greece = {
 				AND = {
 					is_in_faction = yes
 					hidden_trigger = { faction_leader = { is_actual_major = yes } }
-					NOT = { has_global_flag = second_weltkrieg_has_started }
+					second_weltkrieg_has_begun = no
 				}
 			}
 		}
@@ -1100,6 +1110,7 @@ GRE_regaining_greece = {
 				NOT = { FROM = { tag = TUR } }
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_megali_make_peace = {
@@ -1265,6 +1276,7 @@ GRE_regaining_greece = {
 		}
 
 		ai_will_do = { factor = 20 }
+		fixed_random_seed = no
 	}
 }
 
@@ -1320,32 +1332,18 @@ special_projects = {
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GRE_shipbuilding_program_1"
 			set_country_flag = GRE_ships_done_1
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_ship = { name = "HNS Adrias" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Aigaion" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Astings" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Kanaris" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Kriti" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Miaoulis" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Pindos" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Themistoklis" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Vasilefs Georgios"type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-				create_ship = { name = "HNS Vasilissa Olga" type = ship_hull_light_1 equipment_variant = "Adrias Class" creator = ROOT }
-			}
-			else = {
-				create_ship = { name = "HNS Adrias" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Aigaion" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Astings" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Kanaris" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Kriti" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Miaoulis" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Pindos" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Themistoklis" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Vasilefs Georgios"type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-				create_ship = { name = "HNS Vasilissa Olga" type = destroyer_1 equipment_variant = "Weltkrieg Destroyer" creator = ROOT }
-			}
+			create_ship = { name = "HNS Adrias" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Aigaion" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Astings" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Kanaris" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Kriti" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Miaoulis" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Pindos" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Themistoklis" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Vasilefs Georgios"type = ship_hull_light_1 equipment_variant = "Adrias Class" }
+			create_ship = { name = "HNS Vasilissa Olga" type = ship_hull_light_1 equipment_variant = "Adrias Class" }
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_shipbuilding_program_2 = {
@@ -1379,6 +1377,10 @@ special_projects = {
 
 		complete_effect = {
 			log = "[GetLogRoot]: Decision complete GRE_shipbuilding_program_2"
+			if = {
+				limit = { NOT = { is_special_project_completed = sp:sp_naval_armoured_cruiser } }
+				complete_special_project = sp:sp_naval_armoured_cruiser
+			}
 			create_equipment_variant = {
 				name = "Salamis Class"
 				type = ship_hull_armoured_cruiser
@@ -1418,24 +1420,12 @@ special_projects = {
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GRE_shipbuilding_program_2"
 			set_country_flag = GRE_ships_done_2
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_ship = { name = "HNS Feneos" type = ship_hull_armoured_cruiser equipment_variant = "Salamis Class" creator = ROOT }
-				create_ship = { name = "HNS Apostolis" type = ship_hull_cruiser_1 equipment_variant = "Elli Class" creator = ROOT }
-				create_ship = { name = "HNS Kriezis" type = ship_hull_cruiser_1 equipment_variant = "Elli Class" creator = ROOT }
-				create_ship = { name = "HNS Sachtouris" type = ship_hull_cruiser_1 equipment_variant = "Elli Class" creator = ROOT }
-			}
-			else = {
-				if = {
-					limit = { NOT = { has_tech = early_battlecruiser } }
-					set_technology = { early_battlecruiser = 1 }
-				}
-				create_ship = { name = "HNS Feneos" type = battle_cruiser_1 equipment_variant = "Weltkrieg Battlecruiser" creator = ROOT }
-				create_ship = { name = "HNS Apostolis" type = light_cruiser_1 equipment_variant = "Weltkrieg Light Cruiser" creator = ROOT }
-				create_ship = { name = "HNS Kriezis" type = light_cruiser_1 equipment_variant = "Weltkrieg Light Cruiser" creator = ROOT }
-				create_ship = { name = "HNS Sachtouris" type = light_cruiser_1 equipment_variant = "Weltkrieg Light Cruiser" creator = ROOT }
-			}
+			create_ship = { name = "HNS Feneos" type = ship_hull_armoured_cruiser equipment_variant = "Salamis Class" }
+			create_ship = { name = "HNS Apostolis" type = ship_hull_cruiser_1 equipment_variant = "Elli Class" }
+			create_ship = { name = "HNS Kriezis" type = ship_hull_cruiser_1 equipment_variant = "Elli Class" }
+			create_ship = { name = "HNS Sachtouris" type = ship_hull_cruiser_1 equipment_variant = "Elli Class" }
 		}
+		fixed_random_seed = no
 	}
 
 	GRE_shipbuilding_program_3 = {
@@ -1469,25 +1459,12 @@ special_projects = {
 
 		complete_effect = {
 			log = "[GetLogRoot]: Decision complete GRE_shipbuilding_program_3"
-			hidden_effect = {
-				if = {
-					limit = { has_dlc_mtg = yes }
-					set_technology = {
-						early_ship_hull_heavy = 1
-						popup = no
-					}
-				}
-				else = {
-					set_technology = {
-						early_battleship = 1
-						popup = no
-					}
-				}
-			}
+			set_technology = { early_ship_hull_heavy = 1 popup = no }
 			create_equipment_variant = {
 				name = "Tombazis Class"
 				type = ship_hull_heavy_1
 				name_group = GRE_BB_HISTORICAL
+				allow_without_tech = yes
 				modules = {
 					fixed_ship_battery_slot = ship_heavy_battery_1
 					fixed_ship_anti_air_slot = ship_anti_air_1
@@ -1506,17 +1483,8 @@ special_projects = {
 
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GRE_shipbuilding_program_3"
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_ship = { name = "HNS Tombazis" type = ship_hull_heavy_1 equipment_variant = "Tombazis Class" creator = ROOT }
-			}
-			else = {
-				if = {
-					limit = { NOT = { has_tech = early_battleship } }
-					set_technology = { early_battleship = 1 }
-				}
-				create_ship = { name = "HNS Tombazis" type = battleship_1 equipment_variant = "Weltkrieg Battleship" creator = ROOT }
-			}
+			create_ship = { name = "HNS Tombazis" type = ship_hull_heavy_1 equipment_variant = "Tombazis Class" }
 		}
+		fixed_random_seed = no
 	}
 }

@@ -79,7 +79,7 @@ technologies = {
 	interwar_artillery = {
 
 		artillery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
 		}
 		artillery_brigade = {
 			soft_attack = 0.1
@@ -204,13 +204,17 @@ technologies = {
 				factor = 5
 				date > 1941.1.1
 			}
+			modifier = {
+				factor = 50
+				has_tech = improved_medium_tank_chassis			# This tech is required for 1940 MARM design
+			}
 		}
 	}
 
 	artillery2 = {
 
 		artillery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
 		}
 		artillery_brigade = {
 			soft_attack = 0.1
@@ -266,13 +270,17 @@ technologies = {
 				factor = 5
 				date > 1942.1.1
 			}
+			modifier = {
+				factor = 50
+				has_tech = advanced_medium_tank_chassis			# This tech is required for 1943 MARM design
+			}
 		}
 	}
 
 	artillery3 = {
 
 		artillery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
 		}
 		artillery_brigade = {
 			soft_attack = 0.1
@@ -325,6 +333,10 @@ technologies = {
 			modifier = {
 				factor = 5
 				date > 1943.1.1
+			}
+			modifier = {
+				factor = 50
+				has_tech = advanced_medium_tank_chassis			# This tech is required for 1943 MARM design
 			}
 		}
 	}
@@ -388,7 +400,7 @@ technologies = {
 	artillery5 = {
 
 		artillery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
 		}
 		artillery_brigade = {
 			soft_attack = 0.1
@@ -489,16 +501,7 @@ technologies = {
 
 	rocket_artillery2 = {
 
-		rocket_artillery = {
-			soft_attack = 0.15
-		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		motorized_rocket_brigade = {
+		category_rocket_artillery = {
 			soft_attack = 0.15
 		}
 
@@ -532,16 +535,7 @@ technologies = {
 
 	rocket_artillery3 = {
 
-		rocket_artillery = {
-			soft_attack = 0.15
-		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		motorized_rocket_brigade = {
+		category_rocket_artillery = {
 			soft_attack = 0.15
 		}
 
@@ -1036,21 +1030,13 @@ technologies = {
 
 	antitank1 = {
 
-		category_tank_destroyers = {
-			hard_attack = 0.15
+		category_anti_tank = {
+			hard_attack = 0.1
 			ap_attack = 0.2
 		}
 
-		anti_tank = {
-			hard_attack = 0.1
-			ap_attack = 0.2
-		}
-		anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.2
-		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
+		category_tank_destroyers = {
+			hard_attack = 0.15
 			ap_attack = 0.2
 		}
 
@@ -1109,7 +1095,6 @@ technologies = {
 		armored_car = {
 			ap_attack = 0.1
 		}
-
 		enable_equipments = {
 			anti_tank_equipment_2
 		}
@@ -1163,18 +1148,12 @@ technologies = {
 		enable_equipment_modules = {
 			tank_medium_cannon_2
 		}
-		anti_tank = {
+
+		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-		anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
+
 		category_tank_destroyers = {
 			hard_attack = 0.1
 			ap_attack = 0.05
@@ -1226,18 +1205,12 @@ technologies = {
 		enable_equipment_modules = {
 			tank_high_velocity_cannon_2
 		}
-		anti_tank = {
+
+		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-		anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.05
-			ap_attack = 0.1
-		}
+
 		category_tank_destroyers = {
 			hard_attack = 0.05
 			ap_attack = 0.05
@@ -1293,7 +1266,6 @@ technologies = {
 		armored_car = {
 			ap_attack = 0.1
 		}
-
 		enable_equipment_modules = {
 			tank_high_velocity_cannon_3
 			tank_heavy_cannon_3

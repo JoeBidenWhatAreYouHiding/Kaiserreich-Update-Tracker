@@ -1233,9 +1233,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			AUS = {
-				country_event = { id = ausgleich_events.328 }
-			}
+			AUS = { country_event = ausgleich_events.328 }
 			CRO = {
 				set_cosmetic_tag = CRO_illyria
 				leave_faction = yes
@@ -1407,12 +1405,8 @@ country_event = {
 				}
 				activate_targeted_decision = { target = GER decision = CZE_join_germany }
 			}
-			CZE = {
-				country_event = { id = ausgleich_events.900 }
-			}
-			GAL = {
-				country_event = { id = ausgleich_events.900 }
-			}
+			CZE = { country_event = ausgleich_events.900 }
+			GAL = { country_event = ausgleich_events.900 }
 			SER = { activate_targeted_decision = { target = CRO decision = SER_Ultimatum_To_Illyria } }
 			random_other_country = {
 				news_event = { id = worldnews.7 days = 1 }
@@ -3378,7 +3372,8 @@ country_event = { #Germany refuses
 	}
 }
 
-news_event = { #Austria Collapses Into Anarchy
+#Austria Collapses Into Anarchy
+news_event = {
 	id = ausgleich_events.918
 	immediate = { log = "[GetLogInfo]: event ausgleich_events.918" }
 	title = ausgleich_events.918.t
@@ -3396,15 +3391,15 @@ news_event = { #Austria Collapses Into Anarchy
 	}
 	picture = GFX_news_event_ger_civil_war
 
+	trigger = { wants_world_news = yes } #Global news event
+
 	is_triggered_only = yes
 	fire_for_sender = no
-
 	major = yes
+
 	show_major = {
-		NOT = {
-			tag = AUS
-			tag = HUN
-		}
+		NOT = { tag = AUS }
+		NOT = { tag = HUN }
 	}
 
 	option = {
@@ -3429,14 +3424,21 @@ news_event = { #Austria Collapses Into Anarchy
 	}
 }
 
-news_event = { #Chaos in the Balkans
+#Chaos in the Balkans
+news_event = {
 	id = ausgleich_events.919
 	immediate = { log = "[GetLogInfo]: event ausgleich_events.919" }
 	title = ausgleich_events.919.t
 	desc = ausgleich_events.919.d
 	picture = GFX_news_event_ger_civil_war
 
-	trigger = {
+	trigger = { wants_world_news = yes } #Global news event
+
+	is_triggered_only = yes
+	fire_for_sender = no
+	major = yes
+
+	show_major = {
 		OR = {
 			CZE = { has_war_with = AUS }
 			CRO = { has_war_with = AUS }
@@ -3444,10 +3446,6 @@ news_event = { #Chaos in the Balkans
 			HUN = { has_war_with = AUS }
 		}
 	}
-
-	is_triggered_only = yes
-	fire_for_sender = no
-	major = yes
 
 	immediate = {
 		hidden_effect = {
@@ -3559,74 +3557,15 @@ country_event = { #Vienna gone insane
 	option = { #Inform Vienna of our decision.
 		log = "[GetLogInfo]: event ausgleich_events.1000 option ausgleich_events.1000.a"
 		name = ausgleich_events.1000.a
-
-		ai_chance = { base = 0 }
-
 		leave_faction = yes
 		if = {
-			limit = {
-				original_tag = POL
-			}
-			country_event = { id = poland_events.284 } #GER asks POL to join RP
+			limit = { original_tag = POL }
+			country_event = poland_events.284 #GER asks POL to join RP
 		}
 		else_if = {
-			limit = {
-				original_tag = UKR
-			}
+			limit = { original_tag = UKR }
 			UKR_update_military = yes
-			country_event = { id = ukraine_foreign_policy_events.34 }
-		}
-	}
-
-	option = { #Ask if the Galicians wish to join us.
-		log = "[GetLogInfo]: event ausgleich_events.1000 option ausgleich_events.1000.b"
-		name = ausgleich_events.1000.b
-
-		trigger = {
-			OR = {
-				original_tag = POL
-				AND = {
-					original_tag = UKR
-					NOT = { has_country_flag = POL_galicia_ask_only }
-				}
-			}
-		}
-
-		leave_faction = yes
-		if = {
-			limit = {
-				original_tag = POL
-				NOT = { owns_state = 88 } #Krakow
-			}
-			country_event = { id = poland_events.284 } #GER asks POL to join RP
-			var:88.owner = {
-				if = {
-					limit = { is_subject = yes }
-					OVERLORD = { country_event = { id = poland_events.233 days = 1 } }
-				}
-				else = { country_event = { id = poland_events.233 days = 1 } }
-			}
-		}
-		else_if = {
-			limit = {
-				original_tag = UKR
-				NOT = { owns_state = 89 } #Stanislawow
-			}
-			country_event = { id = ukraine_foreign_policy_events.34 } #GER asks UKR to join RP
-			var:89.owner = {
-				if = {
-					limit = { is_subject = yes }
-					overlord = { country_event = { id = ukraine_republican_events.100 days = 1 } }
-				}
-				else_if = {
-					limit = { owns_state = 88 }
-					country_event = { id = ukraine_republican_events.100 days = 1 }
-				}
-				else = {
-					country_event = { id = poland_events.246 days = 1 }
-				}
-			}
+			country_event = ukraine_foreign_policy_events.34 #GER asks UKR to join RP
 		}
 	}
 }
-

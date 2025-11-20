@@ -62,7 +62,7 @@ ideas = {
 		GER_black_monday_2 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_2" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				consumer_goods_factor = 0.2
@@ -71,7 +71,7 @@ ideas = {
 		GER_black_monday_3 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_3" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.05
@@ -83,7 +83,7 @@ ideas = {
 		GER_black_monday_4 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_4" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.1
@@ -95,7 +95,7 @@ ideas = {
 		GER_black_monday_5 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_5" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.15
@@ -107,7 +107,7 @@ ideas = {
 		GER_black_monday_6 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_6" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.20
@@ -119,7 +119,7 @@ ideas = {
 		GER_black_monday_7 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_7" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.25
@@ -131,7 +131,7 @@ ideas = {
 		GER_black_monday_8 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_8" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.30
@@ -143,7 +143,7 @@ ideas = {
 		GER_black_monday_9 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_9" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.35
@@ -155,7 +155,7 @@ ideas = {
 		GER_black_monday_10 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_black_monday_10" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				production_factory_max_efficiency_factor = -0.40
@@ -170,7 +170,7 @@ ideas = {
 		GER_removable_black_monday_2 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_2" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			modifier = {
 				consumer_goods_factor = 0.2
@@ -179,7 +179,7 @@ ideas = {
 		GER_removable_black_monday_3 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_3" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_3"
@@ -198,7 +198,7 @@ ideas = {
 		GER_removable_black_monday_4 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_4" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_4"
@@ -217,7 +217,7 @@ ideas = {
 		GER_removable_black_monday_5 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_5" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_5"
@@ -236,7 +236,7 @@ ideas = {
 		GER_removable_black_monday_6 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_6" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_6"
@@ -255,7 +255,7 @@ ideas = {
 		GER_removable_black_monday_7 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_7" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_7"
@@ -274,7 +274,7 @@ ideas = {
 		GER_removable_black_monday_8 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_8" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_8"
@@ -293,7 +293,7 @@ ideas = {
 		GER_removable_black_monday_9 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_9" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_9"
@@ -312,7 +312,7 @@ ideas = {
 		GER_removable_black_monday_10 = {
 			on_add = { log = "[GetLogRoot]: add idea GER_removable_black_monday_10" }
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_removable_black_monday_10"
@@ -337,7 +337,7 @@ ideas = {
 				set_variable = { GER_economic_health = -2 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_3"
@@ -353,7 +353,7 @@ ideas = {
 				set_variable = { GER_economic_health = -3 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_3"
@@ -375,7 +375,7 @@ ideas = {
 				set_variable = { GER_economic_health = -4 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_4"
@@ -397,7 +397,7 @@ ideas = {
 				set_variable = { GER_economic_health = -5 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_5"
@@ -419,7 +419,7 @@ ideas = {
 				set_variable = { GER_economic_health = -6 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_6"
@@ -441,7 +441,7 @@ ideas = {
 				set_variable = { GER_economic_health = -7 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_7"
@@ -463,7 +463,7 @@ ideas = {
 				set_variable = { GER_economic_health = -8 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_8"
@@ -485,7 +485,7 @@ ideas = {
 				set_variable = { GER_economic_health = -9 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_9"
@@ -507,7 +507,7 @@ ideas = {
 				set_variable = { GER_economic_health = -10 }
 			}
 			name = GER_black_monday
-			picture = great_depression
+			picture = usa_great_depression
 			allowed = { always = no }
 			on_remove = {
 				log = "[GetLogRoot]: remove idea GER_disabled_black_monday_10"
@@ -874,7 +874,7 @@ ideas = {
 			picture = capital_outflow
 			allowed = { always = no }
 			modifier = {
-				custom_modifier_tooltip = cannot_build_anything_tt
+				custom_modifier_tooltip = cannot_produce_anything_tt
 			}
 		}
 
@@ -3513,82 +3513,6 @@ ideas = {
 				materiel_manufacturer_cost_factor = -0.67
 			}
 		}
-		KR_prussian_1 = {
-			name = GER_siegfried_von_roedern
-			modifier = {
-				conscription_factor = 0.05
-				production_speed_buildings_factor = 0.05
-			}
-		}
-		KR_prussian_2 = {
-			name = GER_siegfried_von_roedern
-			modifier = {
-				conscription_factor = -0.05
-				production_speed_buildings_factor = -0.05
-			}
-		}
-		GER_kleist_1 = {
-			name = GER_ewald_von_kleist_schmenzin
-			modifier = {
-				conscription_factor = 0.06
-				war_support_weekly = 0.0025
-				consumer_goods_factor = 0.06
-			}
-		}
-		GER_kleist_2 = {
-			name = GER_ewald_von_kleist_schmenzin
-			modifier = {
-				conscription_factor = 0.1
-				war_support_weekly = 0.0025
-				consumer_goods_factor = 0.02
-				army_morale_factor = 0.05
-			}
-		}
-		GER_kleist_3 = {
-			name = GER_ewald_von_kleist_schmenzin
-			modifier = {
-				conscription_factor = 0.1
-				war_support_weekly = 0.0025
-				army_morale_factor = 0.05
-				paternal_autocrat_drift = 0.02
-			}
-		}
-		GER_kleist_4 = {
-			name = GER_ewald_von_kleist_schmenzin
-			modifier = {
-				conscription_factor = 0.1
-				war_support_weekly = 0.0025
-				army_morale_factor = 0.05
-				paternal_autocrat_drift = 0.04
-			}
-		}
-		GER_zuse_1 = {
-			name = GER_konrad_zuse
-			modifier = {
-				research_speed_factor = 0.01
-			}
-		}
-		GER_zuse_2 = {
-			name = GER_konrad_zuse
-			modifier = {
-				research_speed_factor = 0.06
-				production_speed_radar_station_factor = 0.1
-			}
-		}
-		GER_ufa_1 = {
-			name = GER_ufa
-			modifier = {
-				stability_factor = 0.1
-				war_support_factor = 0.05
-			}
-		}
-		GER_ufa_2 = {
-			name = GER_ufa
-			modifier = {
-				stability_factor = 0.1
-				war_support_factor = 0.15
-			}
-		}
 		GER_peenemunde_research = {
 			cancel = {
 				62 = { NOT = { has_dynamic_modifier = { modifier = GER_Peenemunde } } }
@@ -3737,39 +3661,6 @@ ideas = {
 				air_mission_efficiency = 0.02
 				navy_org_factor = 0.02
 				industrial_capacity_factory = 0.04
-			}
-		}
-		GER_zehrer_1 = {
-			name = GER_hans_zehrer
-			modifier = {
-				war_support_factor = 0.1
-				stability_factor = 0.1
-				political_power_factor = 0.05
-			}
-		}
-		GER_zehrer_2 = {
-			name = GER_hans_zehrer
-			modifier = {
-				war_support_factor = 0.2
-				stability_factor = 0.2
-				political_power_factor = 0.1
-			}
-		}
-		GER_schmitt_1 = {
-			name = GER_carl_schmitt
-			modifier = {
-				mobilization_laws_cost_factor = -0.25
-				stability_factor = 0.05
-				justify_war_goal_time = -0.25
-			}
-		}
-		GER_schmitt_2 = {
-			name = GER_carl_schmitt
-			modifier = {
-				mobilization_laws_cost_factor = -0.5
-				stability_factor = 0.05
-				justify_war_goal_time = -0.25
-				army_morale_factor = 0.05
 			}
 		}
 	}

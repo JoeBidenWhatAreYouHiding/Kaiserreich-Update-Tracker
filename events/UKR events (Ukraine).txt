@@ -467,7 +467,7 @@ country_event = { # Severity of protests increases in August
 			}
 		}
 		hidden_effect = {
-			GER = { country_event = { id = ukraine_foreign_policy_events.35 } }
+			GER = { country_event = ukraine_foreign_policy_events.35 }
 		}
 	}
 }
@@ -1380,7 +1380,7 @@ country_event = { #Death of Pavlo Skoropadskyi
 	id = ukraine_events.68
 	immediate = {
 		hidden_effect = {
-			retire_character = UKR_pavlo_skoropadskyi
+			UKR_pavlo_skoropadskyi = { kill_character = yes }
 			promote_character = {
 				character = UKR_danylo_skoropadskyi
 				ideology = social_conservative_subtype
@@ -1610,7 +1610,7 @@ country_event = { #Straits Treaty w/ TUR for UKR
 	desc = ukraine_events.73.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	picture = GFX_Ottoman_Parliament
+	picture = GFX_OTT_Parliament
 
 	option = {
 		name = ukraine_events.73.a
@@ -1644,13 +1644,14 @@ country_event = { #Renaming Cities
 		log = "[GetLogInfo]: event ukraine_events.74 option ukraine_events.74.a"
 		name = ukraine_events.74.a
 		if = {
-			limit = {
-				has_authoritarian_government = yes
-			}
+			limit = { has_authoritarian_government = yes }
 			set_global_flag = ekaterinoslav_renamed
 			226 = {
-				set_state_name = STATE_226_SICHESLAV
-				set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
+				effect_tooltip = {
+					set_state_name = VICTORY_POINTS_11437_SICHESLAV
+					set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
+				}
+				rename_state_effect = yes
 			}
 		}
 		else_if = {
@@ -1659,14 +1660,20 @@ country_event = { #Renaming Cities
 				NOT = { has_country_leader = { character = UKR_volodymyr_vynnychenko } }
 			}
 			set_global_flag = ekaterinoslav_renamed
-			226 = {
-				set_state_name = STATE_226_SICHESLAV
-				set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
-			}
 			set_global_flag = alexandrovsk_renamed
+			226 = {
+				effect_tooltip = {
+					set_state_name = VICTORY_POINTS_11437_SICHESLAV
+					set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
+				}
+				rename_state_effect = yes
+			}
 			200 = {
-				set_state_name = STATE_200_ZAPORIZHZHIA
-				set_province_name = { id = 11405 name = VICTORY_POINTS_11405_ZAPORIZHZHIA }
+				effect_tooltip = {
+					set_state_name = VICTORY_POINTS_11405_ZAPORIZHZHIA
+					set_province_name = { id = 11405 name = VICTORY_POINTS_11405_ZAPORIZHZHIA }
+				}
+				rename_state_effect = yes
 			}
 		}
 		else_if = {
@@ -1674,19 +1681,28 @@ country_event = { #Renaming Cities
 				has_country_leader = { character = UKR_volodymyr_vynnychenko }
 			}
 			set_global_flag = ekaterinoslav_renamed
-			226 = {
-				set_state_name = STATE_226_SICHESLAV
-				set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
-			}
 			set_global_flag = alexandrovsk_renamed
-			200 = {
-				set_state_name = STATE_200_ZAPORIZHZHIA
-				set_province_name = { id = 11405 name = VICTORY_POINTS_11405_ZAPORIZHZHIA }
-			}
 			set_global_flag = yuzivka_renamed
+			226 = {
+				effect_tooltip = {
+					set_state_name = VICTORY_POINTS_11437_SICHESLAV
+					set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
+				}
+				rename_state_effect = yes
+			}
+			200 = {
+				effect_tooltip = {
+					set_state_name = VICTORY_POINTS_11405_ZAPORIZHZHIA
+					set_province_name = { id = 11405 name = VICTORY_POINTS_11405_ZAPORIZHZHIA }
+				}
+				rename_state_effect = yes
+			}
 			227 = {
-				set_state_name = STATE_227_DONETSKE
-				set_province_name = { id = 6474 name = VICTORY_POINTS_6474_DONETSKE }
+				effect_tooltip = {
+					set_state_name = VICTORY_POINTS_6474_DONETSKE
+					set_province_name = { id = 6474 name = VICTORY_POINTS_6474_DONETSKE }
+				}
+				rename_state_effect = yes
 			}
 		}
 	}
@@ -1697,14 +1713,20 @@ country_event = { #Renaming Cities
 		}
 		name = ukraine_events.74.b
 		set_global_flag = ekaterinoslav_renamed
-		226 = {
-			set_state_name = STATE_226_SICHESLAV
-			set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
-		}
 		set_global_flag = alexandrovsk_renamed
+		226 = {
+			effect_tooltip = {
+				set_state_name = VICTORY_POINTS_11437_SICHESLAV
+				set_province_name = { id = 11437 name = VICTORY_POINTS_11437_SICHESLAV }
+			}
+			rename_state_effect = yes
+		}
 		200 = {
-			set_state_name = STATE_200_ZAPORIZHZHIA
-			set_province_name = { id = 11405 name = VICTORY_POINTS_11405_ZAPORIZHZHIA }
+			effect_tooltip = {
+				set_state_name = VICTORY_POINTS_11405_ZAPORIZHZHIA
+				set_province_name = { id = 11405 name = VICTORY_POINTS_11405_ZAPORIZHZHIA }
+			}
+			rename_state_effect = yes
 		}
 	}
 }
@@ -2326,7 +2348,7 @@ country_event = { #Hidden event for removing Interservice Cooperation
 	}
 }
 
-country_event = { #Hidden event for removing Primacy of Manuever debuff
+country_event = { #Hidden event for removing Primacy of Manoeuvre debuff
 	id = ukraine_events.99
 	title = ukraine_republican_events.242.t
 	desc = ukraine_republican_events.242.d
@@ -2334,15 +2356,14 @@ country_event = { #Hidden event for removing Primacy of Manuever debuff
 	picture = GFX_report_event_UKR_army
 
 	option = {
-		log = "[GetLogInfo]: event ukraine_events.99 option ukraine_republican_events.242.a"
-		name = ukraine_republican_events.242.a
+		log = "[GetLogInfo]: event ukraine_events.99 option ukraine_events.99.a"
+		name = ukraine_events.99.a
 		add_to_variable = { UKR.UKR_army_land_reinforce_rate = 0.03 }
-		UKR_yevhen_konovalets = {
-			add_attack = 1
-		}
+		UKR_yevhen_konovalets = { add_attack = 1 }
 		if = {
 			limit = { has_character = UKR_kostiantyn_prisovskyi }
 			UKR_kostiantyn_prisovskyi = {
+				custom_effect_tooltip = tooltip_line_break
 				add_attack = 1
 				if = {
 					limit = { NOT = { has_trait = panzer_expert } }
@@ -2351,17 +2372,19 @@ country_event = { #Hidden event for removing Primacy of Manuever debuff
 			}
 		}
 		UKR_petro_diachenko = {
+			custom_effect_tooltip = tooltip_line_break
 			add_attack = 1
 			if = {
 				limit = { NOT = { has_trait = panzer_expert } }
 				add_unit_leader_trait = panzer_leader
 			}
 		}
-		add_doctrine_cost_reduction = {
+		custom_effect_tooltip = tooltip_white_line
+		add_mastery_bonus = {
 			name = UKR_primacy_of_maneuver
-			cost_reduction = 0.5
-			uses = 1
-			category = land_doctrine
+			bonus = 0.1
+			days = 365
+			track = armor
 		}
 	}
 }
@@ -3397,11 +3420,7 @@ country_event = { # End of the Relief Bill negotiations
 		log = "[GetLogInfo]: event ukraine_relief_bill_events.100 option ukraine_relief_bill_events.100.b"
 		name = ukraine_relief_bill_events.100.b #success
 		trigger = {
-			check_variable = {
-				var = UKR_bill_success
-				value = 4
-				compare = greater_than_or_equals
-			}
+			NOT = { check_variable = { UKR_bill_success < 4 } }
 		}
 		remove_ideas = UKR_black_monday
 		add_timed_idea = {
@@ -4975,21 +4994,11 @@ news_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	major = yes
 	fire_for_sender = no
-	show_major = {
-		OR = {
-			regional_europe_news = yes
-			is_neighbor_of = UKR
-		}
-		NOT = {
-			tag = UKR
-		}
-	}
+	show_major = { regional_europe_news = yes }
 
 	option = {
 		trigger = { original_tag = GER }
@@ -5060,21 +5069,11 @@ news_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	major = yes
 	fire_for_sender = no
-	show_major = {
-		OR = {
-			regional_europe_news = yes
-			is_neighbor_of = UKR
-		}
-		NOT = {
-			tag = UKR
-		}
-	}
+	show_major = { regional_europe_news = yes }
 
 	option = {
 		trigger = { original_tag = GER }
@@ -5876,7 +5875,7 @@ country_event = { # Rogue assassin strikes at Pavlo
 	option = {
 		log = "[GetLogInfo]: event ukraine_negotiations_events.24 option ukraine_negotiations_events.24.a"
 		name = ukraine_negotiations_events.24.a
-		retire_character = UKR_pavlo_skoropadskyi
+		UKR_pavlo_skoropadskyi = { kill_character = yes }
 		hidden_effect = {
 			country_event = { id = ukraine_negotiations_events.26 days = 2 } # Emergency Soim session elects Danylo as new Hetman
 		}
@@ -5902,6 +5901,10 @@ country_event = { # Emergency Soim session elects Danylo as new Hetman
 			promote_character = {
 				character = UKR_danylo_skoropadskyi
 				ideology = social_conservative_subtype
+			}
+			promote_character = {
+				character = UKR_danylo_skoropadskyi
+				ideology = market_liberal_subtype
 			}
 			promote_character = {
 				character = UKR_danylo_skoropadskyi
@@ -7199,6 +7202,13 @@ country_event = { #Danylo minigame ends - URDP
 			elections_allowed = yes
 		}
 		activate_advisor = UKR_viacheslav_prokopovych_sic
+		set_temp_variable = { coalition_partner_var = token:market_liberal }
+		add_to_coalition = yes
+		set_party_name = {
+			ideology = market_liberal
+			long_name = UKR_market_liberal_party_long2
+			name = UKR_market_liberal_party2
+		}
 		custom_effect_tooltip = tooltip_white_line
 		UKR_symon_petliura = { set_nationality = UKR }
 		UKR_oleksandr_udovychenko = { set_nationality = UKR }
@@ -7270,9 +7280,15 @@ country_event = { #Post-War Elections
 			election_frequency = 48
 			elections_allowed = yes
 		}
+		set_temp_variable = { coalition_partner_var = token:market_liberal }
+		add_to_coalition = yes
 		add_popularity = {
 			ideology = social_liberal
 			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.05
 		}
 	}
 	option = {
@@ -7295,6 +7311,8 @@ country_event = { #Post-War Elections
 		}
 		set_temp_variable = { coalition_partner_var = token:social_conservative }
 		add_to_coalition = yes
+		set_temp_variable = { coalition_partner_var = token:market_liberal }
+		add_to_coalition = yes
 		add_popularity = {
 			ideology = social_liberal
 			popularity = 0.1
@@ -7302,6 +7320,10 @@ country_event = { #Post-War Elections
 		add_popularity = {
 			ideology = social_conservative
 			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.03
 		}
 		activate_advisor = UKR_dmytro_doroshenko_sic
 	}
@@ -7326,6 +7348,8 @@ country_event = { #Post-War Elections
 		}
 		activate_advisor = UKR_opanas_fedenko_sic
 		set_temp_variable = { coalition_partner_var = token:social_liberal }
+		add_to_coalition = yes
+		set_temp_variable = { coalition_partner_var = token:market_liberal }
 		add_to_coalition = yes
 	}
 }
@@ -8023,11 +8047,7 @@ country_event = { #Soimist-Hetmanist Diarchy
 	title = ukraine_coalition_events.18.t
 	desc = {
 		trigger = {
-			check_variable = {
-				var = UKR_reforms_passed
-				value = 1
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_reforms_passed > 1 } }
 		}
 		text = ukraine_coalition_events.18.d
 	}
@@ -8051,11 +8071,7 @@ country_event = { #Soimist-Hetmanist Diarchy
 	option = { #Option 1
 		log = "[GetLogInfo]: event ukraine_coalition_events.18 option ukraine_coalition_events.18.a"
 		trigger = {
-			check_variable = {
-				var = UKR_reforms_passed
-				value = 1
-				compare = less_than_or_equals
-			}
+			NOT = { check_variable = { UKR_reforms_passed > 1 } }
 		}
 		name = ukraine_coalition_events.18.a
 		add_ideas = UKR_hetmanist_soimist_idea_1
@@ -10263,38 +10279,26 @@ country_event = { #Election Results
 			check_variable = { UKR_radical_pop > UKR_socialist_pop }
 		}
 
-		set_variable = { UKR_usdrp_attitude_uncooperative_political_power_gain = -0.20 }
-		set_variable = { UKR_usdrp_attitude_indifferent_political_power_gain = -0.10 }
-		set_variable = { UKR_usdrp_attitude_cooperative_political_power_gain = 0.10 }
-		set_variable = { UKR_usdrp_attitude_amenable_political_power_gain = 0.20 }
+		set_variable = { UKR_coalition_partner_uncooperative_political_power_gain = -0.20 }
+		set_variable = { UKR_coalition_partner_indifferent_political_power_gain = -0.10 }
+		set_variable = { UKR_coalition_partner_cooperative_political_power_gain = 0.10 }
+		set_variable = { UKR_coalition_partner_amenable_political_power_gain = 0.20 }
 		hidden_effect = {
 			if = {
 				limit = { UKR_usdrp_uncooperative = yes }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
 			}
 			else_if = {
 				limit = { UKR_usdrp_indifferent = yes }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
 			}
 			else_if = {
 				limit = { UKR_usdrp_cooperative = yes }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
 			}
 			else_if = {
 				limit = { UKR_usdrp_amenable = yes }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
 			}
 		}
 
@@ -10335,38 +10339,26 @@ country_event = { #Election Results
 			}
 		}
 
-		set_variable = { UKR_urdp_attitude_uncooperative_political_power_gain = -0.20 }
-		set_variable = { UKR_urdp_attitude_indifferent_political_power_gain = -0.10 }
-		set_variable = { UKR_urdp_attitude_cooperative_political_power_gain = 0.10 }
-		set_variable = { UKR_urdp_attitude_amenable_political_power_gain = 0.20 }
+		set_variable = { UKR_coalition_partner_uncooperative_political_power_gain = -0.20 }
+		set_variable = { UKR_coalition_partner_indifferent_political_power_gain = -0.10 }
+		set_variable = { UKR_coalition_partner_cooperative_political_power_gain = 0.10 }
+		set_variable = { UKR_coalition_partner_amenable_political_power_gain = 0.20 }
 		hidden_effect = {
 			if = {
 				limit = { UKR_urdp_uncooperative = yes }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
 			}
 			else_if = {
 				limit = { UKR_urdp_indifferent = yes }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
 			}
 			else_if = {
 				limit = { UKR_urdp_cooperative = yes }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
 			}
 			else_if = {
 				limit = { UKR_urdp_amenable = yes }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
 			}
 		}
 
@@ -11646,10 +11638,7 @@ country_event = { #Debug event for incrementing land reform score - Republican
 	id = ukraine_republican_events.46
 	trigger = {
 		has_country_flag = UKR_land_reform_in_progress
-		OR = {
-			UKR_usdrp_cooperative = yes
-			UKR_usdrp_amenable = yes
-		}
+		NOT = { has_idea = UKR_minority_government }
 	}
 	is_triggered_only = yes
 	hidden = yes
@@ -11662,14 +11651,11 @@ country_event = { #Debug event for incrementing land reform score - Republican
 		log = "[GetLogInfo]: event ukraine_republican_events.46 option 1"
 		trigger = { has_government = social_liberal }
 		if = {
-			limit = {
-				UKR_usdrp_amenable = yes
-				NOT = { has_country_flag = UKR_urdp_right_revolted }
-			}
+			limit = { UKR_usdrp_amenable = yes }
 			set_temp_variable = { UKR_influence_change = 4 }
 			UKR_reform_score = yes
 		}
-		if = {
+		else_if = {
 			limit = {
 				UKR_usdrp_cooperative = yes
 				NOT = { has_country_flag = UKR_urdp_right_revolted }
@@ -11682,16 +11668,12 @@ country_event = { #Debug event for incrementing land reform score - Republican
 		log = "[GetLogInfo]: event ukraine_republican_events.46 option 2"
 		trigger = { has_government = social_democrat }
 		if = {
-			limit = {
-				UKR_urdp_amenable = yes
-			}
+			limit = { UKR_urdp_amenable = yes }
 			set_temp_variable = { UKR_influence_change = 3 }
 			UKR_reform_score = yes
 		}
-		if = {
-			limit = {
-				UKR_urdp_cooperative = yes
-			}
+		else_if = {
+			limit = { UKR_urdp_cooperative = yes }
 			set_temp_variable = { UKR_influence_change = 2 }
 			UKR_reform_score = yes
 		}
@@ -11702,34 +11684,27 @@ country_event = { #Debug event for incrementing land reform score - Republican
 	id = ukraine_republican_events.47
 	trigger = {
 		has_country_flag = UKR_land_reform_in_progress
-		OR = {
-			UKR_usdrp_cooperative = yes
-			UKR_usdrp_amenable = yes
-		}
+		NOT = { has_idea = UKR_minority_government }
 	}
 	is_triggered_only = yes
 	hidden = yes
 
+	immediate = {
+		country_event = { id = ukraine_republican_events.47 days = 150 }
+	}
+
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican_events.47 option 1"
-		trigger = { has_government = social_liberal }
 		if = {
-			limit = {
-				UKR_usdrp_amenable = yes
-				NOT = { has_country_flag = UKR_urdp_right_revolted }
-			}
+			limit = { UKR_usdrp_amenable = yes }
 			set_temp_variable = { UKR_influence_change = 3 }
 			UKR_industrial_score = yes
 		}
-		if = {
-			limit = {
-				UKR_usdrp_cooperative = yes
-				NOT = { has_country_flag = UKR_urdp_right_revolted }
-			}
+		else_if = {
+			limit = { UKR_usdrp_cooperative = yes }
 			set_temp_variable = { UKR_influence_change = 2 }
 			UKR_industrial_score = yes
 		}
-		country_event = { id = ukraine_republican_events.47 days = 70 }
 	}
 }
 
@@ -12004,18 +11979,14 @@ country_event = { #Ascension of the Sichovyky
 		log = "[GetLogInfo]: event ukraine_republican_events.58 option ukraine_republican_events.58.a"
 		name = ukraine_republican_events.58.a
 		if = {
-			limit = {
-				has_government = social_liberal
-			}
+			limit = { has_government = social_liberal }
 			custom_effect_tooltip = UKR_usdrp_effects_modified_by_tt
-			add_to_variable = { UKR.UKR_usdrp_attitude_uncooperative_war_support_factor = -0.1 tooltip = UKR_war_support_factor_uncooperative }
-			add_to_variable = { UKR.UKR_usdrp_attitude_indifferent_war_support_factor = -0.05 tooltip = UKR_war_support_factor_indifferent }
 		}
 		else = {
 			custom_effect_tooltip = UKR_urdp_effects_modified_by_tt
-			add_to_variable = { UKR.UKR_urdp_attitude_uncooperative_war_support_factor = -0.1 tooltip = UKR_war_support_factor_uncooperative }
-			add_to_variable = { UKR.UKR_urdp_attitude_indifferent_war_support_factor = -0.05 tooltip = UKR_war_support_factor_indifferent }
 		}
+		add_to_variable = { UKR.UKR_coalition_partner_uncooperative_war_support_factor = -0.1 tooltip = UKR_war_support_factor_uncooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_indifferent_war_support_factor = -0.05 tooltip = UKR_war_support_factor_indifferent }
 	}
 }
 
@@ -15071,15 +15042,15 @@ country_event = { #Revolt of Party Right
 		}
 		custom_effect_tooltip = tooltip_white_line
 		custom_effect_tooltip = ukraine_republican_events.168.a.tt
-		add_to_variable = { UKR_usdrp_attitude_uncooperative_political_power_gain = -0.20 tooltip = UKR_political_power_gain_uncooperative }
-		add_to_variable = { UKR_usdrp_attitude_uncooperative_stability_factor = -0.15 tooltip = UKR_stability_factor_uncooperative }
-		add_to_variable = { UKR_usdrp_attitude_indifferent_political_power_gain = -0.15 tooltip = UKR_political_power_gain_indifferent }
-		add_to_variable = { UKR_usdrp_attitude_indifferent_stability_factor = -0.10 tooltip = UKR_stability_factor_indifferent }
-		set_variable = { UKR.UKR_usdrp_attitude_cooperative_political_power_gain = -0.1 tooltip = UKR_political_power_gain_cooperative }
-		set_variable = { UKR.UKR_usdrp_attitude_cooperative_consumer_goods_factor = 0 }
-		set_variable = { UKR.UKR_usdrp_attitude_cooperative_production_speed_buildings_factor = 0 }
-		set_variable = { UKR.UKR_usdrp_attitude_cooperative_production_factory_max_efficiency_factor = 0 }
-		set_variable = { UKR.UKR_usdrp_attitude_cooperative_production_factory_start_efficiency_factor = 0 }
+		add_to_variable = { UKR_coalition_partner_uncooperative_political_power_gain = -0.20 tooltip = UKR_political_power_gain_uncooperative }
+		add_to_variable = { UKR_coalition_partner_uncooperative_stability_factor = -0.15 tooltip = UKR_stability_factor_uncooperative }
+		add_to_variable = { UKR_coalition_partner_indifferent_political_power_gain = -0.15 tooltip = UKR_political_power_gain_indifferent }
+		add_to_variable = { UKR_coalition_partner_indifferent_stability_factor = -0.10 tooltip = UKR_stability_factor_indifferent }
+		set_variable = { UKR.UKR_coalition_partner_cooperative_political_power_gain = -0.1 tooltip = UKR_political_power_gain_cooperative }
+		set_variable = { UKR.UKR_coalition_partner_cooperative_consumer_goods_factor = 0 }
+		set_variable = { UKR.UKR_coalition_partner_cooperative_production_speed_buildings_factor = 0 }
+		set_variable = { UKR.UKR_coalition_partner_cooperative_production_factory_max_efficiency_factor = 0 }
+		set_variable = { UKR.UKR_coalition_partner_cooperative_production_factory_start_efficiency_factor = 0 }
 		set_country_flag = UKR_urdp_right_revolted
 		UKR_remove_urdp_factionalism_decisions = yes
 	}
@@ -15108,23 +15079,27 @@ country_event = { #Paralysis of Party Centre
 		name = ukraine_republican_events.169.a
 		UKR_remove_urdp_factionalism_decisions = yes
 		if = {
-			limit = { has_country_leader_with_trait = KR_political_specialist }
-			remove_country_leader_trait = KR_political_specialist
-			custom_effect_tooltip = tooltip_white_line
-			add_country_leader_trait = KR_leader_of_the_party_in_disarray
-		}
-		else = {
+			limit = { has_country_leader = { character = UKR_wilhelm_franz_von_habsburg } }
 			retire_character = UKR_wilhelm_franz_von_habsburg
 			custom_effect_tooltip = tooltip_white_line
-			UKR_oleksandr_shulhyn = {
-				remove_trait = {
-					ideology = social_liberal_subtype
-					trait = KR_political_specialist
+			UKR_oleksandr_shulhyn = { promote_character = social_liberal_subtype }
+		}
+		UKR_oleksandr_shulhyn = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_replace_character_trait
+					ROLE = country_leader_loc
+					OLD_TRAIT = KR_political_specialist
+					NEW_TRAIT = KR_leader_of_the_party_in_disarray
 				}
-				add_trait = {
-					ideology = social_liberal_subtype
-					trait = KR_leader_of_the_party_in_disarray
-				}
+				swap_country_leader_traits = { remove = KR_political_specialist add = KR_leader_of_the_party_in_disarray ideology = social_liberal_subtype }
+			}
+			effect_tooltip = {
+				set_temp_variable = { modifier_change_tt = -0.10 tooltip = political_power_factor_tooltip }
+				set_temp_variable = { modifier_change_tt = 0.33 tooltip = trade_laws_cost_factor_tooltip }
+				set_temp_variable = { modifier_change_tt = 0.66 tooltip = mobilization_laws_cost_factor_tooltip }
+				set_temp_variable = { modifier_change_tt = 0.66 tooltip = economy_cost_factor_tooltip }
+				set_temp_variable = { modifier_change_tt = 0.66 tooltip = political_advisor_cost_factor_tooltip }
 			}
 		}
 	}
@@ -15141,15 +15116,31 @@ country_event = { #Revolt of Party Left
 		log = "[GetLogInfo]: event ukraine_republican_events.170 option ukraine_republican_events.170.a"
 		name = ukraine_republican_events.170.a
 		UKR_remove_urdp_factionalism_decisions = yes
-		remove_trait = {
-			character = UKR_andrii_nikovskyi
-			slot = second_in_command
-			trait = KR_compassionate_gentleman_sic
-		}
-		add_trait = {
-			character = UKR_andrii_nikovskyi
-			slot = second_in_command
-			trait = KR_rebellious_obstructionist
+		UKR_andrii_nikovskyi = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_replace_character_trait
+					ROLE = second_in_command
+					OLD_TRAIT = KR_compassionate_gentleman_sic
+					NEW_TRAIT = KR_rebellious_obstructionist
+				}
+				remove_trait = {
+					character = UKR_andrii_nikovskyi
+					slot = second_in_command
+					trait = KR_compassionate_gentleman_sic
+				}
+				add_trait = {
+					character = UKR_andrii_nikovskyi
+					slot = second_in_command
+					trait = KR_rebellious_obstructionist
+				}
+			}
+			effect_tooltip = {
+				set_temp_variable = { modifier_change_tt = -0.02 tooltip = compliance_gain_tooltip }
+				set_temp_variable = { modifier_change_tt = -0.1 tooltip = political_power_gain_tooltip }
+				set_temp_variable = { modifier_change_tt = -0.25 tooltip = stability_factor_tooltip }
+				set_temp_variable = { modifier_change_tt = -0.1 tooltip = industrial_capacity_factory_tooltip }
+			}
 		}
 	}
 }
@@ -15300,21 +15291,13 @@ country_event = { #USDRP Leaves Coalition
 	option = {
 		log = "[GetLogInfo]: event ukraine_republican_events.174 option ukraine_republican_events.174.a"
 		name = ukraine_republican_events.174.a
+		add_ideas = UKR_minority_government
 		if = {
-			limit = {
-				has_government = social_liberal
-			}
+			limit = { has_government = social_liberal }
 			set_temp_variable = { coalition_partner_var = token:social_democrat }
 			remove_from_coalition = yes
-			add_ideas = UKR_minority_government
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = ukraine_republican_events.174.a.tt
-			hidden_effect = {
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-			}
 		}
 		else = {
 			set_temp_variable = { coalition_partner_var = token:social_liberal }
@@ -15324,15 +15307,14 @@ country_event = { #USDRP Leaves Coalition
 			set_variable = { UKR_usdrp_idealism_points = 0 }
 			remove_mission = UKR_scepticism_within_the_party
 			remove_targeted_decision = { target = THIS decision = UKR_emphasise_commitment_to_principles }
-			add_ideas = UKR_minority_government
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = ukraine_republican_events.174.a2.tt
-			hidden_effect = {
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-			}
+		}
+		hidden_effect = {
+			remove_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
+			remove_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
+			remove_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
+			remove_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
 		}
 	}
 }
@@ -16424,7 +16406,6 @@ country_event = {
 		log = "[GetLogInfo]: event ukraine_republican_events.189 option ukraine_republican_events.189.e"
 		name = ukraine_republican_events.189.e
 		ai_chance = { base = 100 }
-		set_country_flag = UKR_weaker_deal
 		add_political_power = -75
 		if = {
 			limit = { has_idea = UKR_GER_deal_1 }
@@ -16654,14 +16635,14 @@ country_event = { #Dolenko Wins
 		set_temp_variable = { UKR_urdp_attitude_change = -4 }
 		UKR_urdp_relationship_worsen = yes
 		custom_effect_tooltip = UKR_urdp_effects_modified_by_tt
-		add_to_variable = { UKR.UKR_urdp_attitude_uncooperative_political_power_gain = -0.25 tooltip = UKR_political_power_gain_uncooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_indifferent_political_power_gain = -0.25 tooltip = UKR_political_power_gain_indifferent }
-		add_to_variable = { UKR.UKR_urdp_attitude_cooperative_political_power_gain = -0.20 tooltip = UKR_political_power_gain_cooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_amenable_political_power_gain = -0.20 tooltip = UKR_political_power_gain_amenable }
-		add_to_variable = { UKR.UKR_urdp_attitude_uncooperative_stability_factor = -0.15 tooltip = UKR_stability_factor_uncooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_indifferent_stability_factor = -0.15 tooltip = UKR_stability_factor_indifferent }
-		add_to_variable = { UKR.UKR_urdp_attitude_cooperative_stability_factor = -0.1 tooltip = UKR_stability_factor_cooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_amenable_stability_factor = -0.1 tooltip = UKR_stability_factor_amenable }
+		add_to_variable = { UKR.UKR_coalition_partner_uncooperative_political_power_gain = -0.25 tooltip = UKR_political_power_gain_uncooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_indifferent_political_power_gain = -0.25 tooltip = UKR_political_power_gain_indifferent }
+		add_to_variable = { UKR.UKR_coalition_partner_cooperative_political_power_gain = -0.20 tooltip = UKR_political_power_gain_cooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_amenable_political_power_gain = -0.20 tooltip = UKR_political_power_gain_amenable }
+		add_to_variable = { UKR.UKR_coalition_partner_uncooperative_stability_factor = -0.15 tooltip = UKR_stability_factor_uncooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_indifferent_stability_factor = -0.15 tooltip = UKR_stability_factor_indifferent }
+		add_to_variable = { UKR.UKR_coalition_partner_cooperative_stability_factor = -0.1 tooltip = UKR_stability_factor_cooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_amenable_stability_factor = -0.1 tooltip = UKR_stability_factor_amenable }
 		custom_effect_tooltip = ukraine_republican_events.195.a.tt
 		set_country_flag = UKR_dolenko_secretary
 	}
@@ -16702,14 +16683,14 @@ country_event = { #Revenge of the Left
 		set_temp_variable = { UKR_urdp_attitude_change = 1 }
 		UKR_urdp_relationship_improve = yes
 		custom_effect_tooltip = UKR_urdp_effects_modified_by_tt
-		add_to_variable = { UKR.UKR_urdp_attitude_uncooperative_stability_factor = 0.025 tooltip = UKR_stability_factor_uncooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_indifferent_stability_factor = 0.025 tooltip = UKR_stability_factor_indifferent }
-		add_to_variable = { UKR.UKR_urdp_attitude_cooperative_stability_factor = 0.05 tooltip = UKR_stability_factor_cooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_cooperative_political_power_gain = 0.05 tooltip = UKR_political_power_gain_cooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_cooperative_industrial_capacity_factory = 0.05 tooltip = UKR_industrial_capacity_factory_cooperative }
-		add_to_variable = { UKR.UKR_urdp_attitude_amenable_stability_factor = 0.075 tooltip = UKR_stability_factor_amenable }
-		add_to_variable = { UKR.UKR_urdp_attitude_amenable_political_power_gain = 0.075 tooltip = UKR_political_power_gain_amenable }
-		add_to_variable = { UKR.UKR_urdp_attitude_amenable_industrial_capacity_factory = 0.05 tooltip = UKR_industrial_capacity_factory_amenable }
+		add_to_variable = { UKR.UKR_coalition_partner_uncooperative_stability_factor = 0.025 tooltip = UKR_stability_factor_uncooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_indifferent_stability_factor = 0.025 tooltip = UKR_stability_factor_indifferent }
+		add_to_variable = { UKR.UKR_coalition_partner_cooperative_stability_factor = 0.05 tooltip = UKR_stability_factor_cooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_cooperative_political_power_gain = 0.05 tooltip = UKR_political_power_gain_cooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_cooperative_industrial_capacity_factory = 0.05 tooltip = UKR_industrial_capacity_factory_cooperative }
+		add_to_variable = { UKR.UKR_coalition_partner_amenable_stability_factor = 0.075 tooltip = UKR_stability_factor_amenable }
+		add_to_variable = { UKR.UKR_coalition_partner_amenable_political_power_gain = 0.075 tooltip = UKR_political_power_gain_amenable }
+		add_to_variable = { UKR.UKR_coalition_partner_amenable_industrial_capacity_factory = 0.05 tooltip = UKR_industrial_capacity_factory_amenable }
 	}
 }
 
@@ -16943,10 +16924,22 @@ country_event = { #Petliura
 		log = "[GetLogInfo]: event ukraine_republican_events.205 option ukraine_republican_events.205.a"
 		name = ukraine_republican_events.205.a
 		trigger = { UKR_USDRP_idealism_0 = yes }
-		add_trait = {
-			character = UKR_symon_petliura
-			slot = high_command
-			trait = KR_MHC_chief_otaman_4
+		UKR_symon_petliura = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_modify_character_trait
+					ROLE = high_command TRAIT = KR_MHC_chief_otaman_name_tt
+				}
+				add_trait = {
+					character = UKR_symon_petliura
+					slot = high_command
+					trait = KR_MHC_chief_otaman_4
+				}
+			}
+			effect_tooltip = {
+				set_temp_variable = { modifier_change_tt = 0.03 tooltip = stability_factor_tooltip }
+				set_temp_variable = { modifier_change_tt = 0.03 tooltip = war_support_factor_tooltip }
+			}
 		}
 	}
 	option = {
@@ -16958,10 +16951,22 @@ country_event = { #Petliura
 				UKR_USDRP_idealism_2 = yes
 			}
 		}
-		add_trait = {
-			character = UKR_symon_petliura
-			slot = high_command
-			trait = KR_MHC_chief_otaman_3
+		UKR_symon_petliura = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_modify_character_trait
+					ROLE = high_command TRAIT = KR_MHC_chief_otaman_name_tt
+				}
+				add_trait = {
+					character = UKR_symon_petliura
+					slot = high_command
+					trait = KR_MHC_chief_otaman_3
+				}
+			}
+			effect_tooltip = {
+				set_temp_variable = { modifier_change_tt = 0.01 tooltip = conscription_tooltip }
+				set_temp_variable = { modifier_change_tt = 0.03 tooltip = industrial_capacity_factory_tooltip }
+			}
 		}
 	}
 	option = {
@@ -16973,11 +16978,21 @@ country_event = { #Petliura
 				UKR_USDRP_idealism_4 = yes
 			}
 		}
-		add_trait = {
-			character = UKR_symon_petliura
-			slot = high_command
-			trait = KR_MHC_chief_otaman_2
+		UKR_symon_petliura = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_modify_character_trait
+					ROLE = high_command TRAIT = KR_MHC_chief_otaman_name_tt
+				}
+				add_trait = {
+					character = UKR_symon_petliura
+					slot = high_command
+					trait = KR_MHC_chief_otaman_2
+				}
+			}
+			set_temp_variable = { modifier_change_tt = 0.10 tooltip = political_power_factor_tooltip }
 		}
+		custom_effect_tooltip = tooltip_white_line
 		set_temp_variable = { UKR_influence_change = 4 }
 		UKR_reform_score = yes
 	}
@@ -18295,8 +18310,9 @@ country_event = { #Hidden event for removing Everyone a Soldier debuff
 	picture = GFX_report_event_UKR_army
 
 	option = {
-		log = "[GetLogInfo]: event ukraine_republican_events.247 option ukraine_republican_events.242.a"
-		name = ukraine_republican_events.242.a
+		log = "[GetLogInfo]: event ukraine_republican_events.247 option ukraine_republican_events.247.a"
+		name = ukraine_republican_events.247.a
+		add_to_variable = { UKR.UKR_army_max_planning_factor = 0.1 }
 		if = {
 			limit = { has_idea = UKR_peoples_army_3_unr }
 			swap_ideas = {
@@ -18325,7 +18341,14 @@ country_event = { #Hidden event for removing Everyone a Soldier debuff
 				add_idea = UKR_peoples_army_5_borotbist
 			}
 		}
-		add_to_variable = { UKR.UKR_army_max_planning_factor = 0.1 }
+		enable_tech_urban_warfare = yes
+		custom_effect_tooltip = tooltip_white_line
+		add_mastery_bonus = {
+			name = UKR_citizen_defence
+			bonus = 0.1
+			days = 365
+			track = infantry
+		}
 	}
 }
 country_event = { #Hidden event for removing Review Army Structure debuff
@@ -18730,7 +18753,8 @@ country_event = { #Emergency Party Congress! (USDRP)
 	}
 }
 
-news_event = { #News Event about Pro-German Coup in Ukraine
+#News Event about Pro-German Coup in Ukraine
+news_event = {
 	id = ukraine_republican_events.267
 	immediate = { log = "[GetLogInfo]: event ukraine_republican_events.267" }
 	title = ukraine_republican_events.267.t
@@ -18740,13 +18764,7 @@ news_event = { #News Event about Pro-German Coup in Ukraine
 	trigger = { wants_world_news = yes }
 	major = yes
 	fire_for_sender = no
-	show_major = {
-		OR = {
-			regional_europe_news = yes
-			is_neighbor_of = UKR
-		}
-		NOT = { tag = UKR }
-	}
+	show_major = { regional_europe_news = yes }
 
 	option = {
 		trigger = { has_socialist_government = no }
@@ -19214,7 +19232,8 @@ country_event = { #Spirit of Revolt
 		name = ukraine_republican_events.81.a
 	}
 }
-news_event = { #News Event
+#News Event
+news_event = {
 	id = ukraine_republican_events.200
 	immediate = { log = "[GetLogInfo]: event ukraine_republican_events.200" }
 	title = ukraine_republican_events.200.t
@@ -19223,21 +19242,11 @@ news_event = { #News Event
 
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	major = yes
 	fire_for_sender = no
-	show_major = {
-		OR = {
-			regional_europe_news = yes
-			is_neighbor_of = UKR
-		}
-		NOT = {
-			tag = UKR
-		}
-	}
+	show_major = { regional_europe_news = yes }
 
 	option = {
 		trigger = {
@@ -20387,7 +20396,8 @@ country_event = {
 	}
 }
 
-news_event = { #News Event about Coup
+#News Event about Coup
+news_event = {
 	id = ukraine_lun_events.100
 	immediate = { log = "[GetLogInfo]: event ukraine_lun_events.100" }
 	title = ukraine_lun_events.100.t
@@ -20397,13 +20407,7 @@ news_event = { #News Event about Coup
 	trigger = { wants_world_news = yes }
 	major = yes
 	fire_for_sender = no
-	show_major = {
-		OR = {
-			regional_europe_news = yes
-			is_neighbor_of = UKR
-		}
-		NOT = { tag = UKR }
-	}
+	show_major = { regional_europe_news = yes }
 
 	option = {
 		trigger = { tag = GER }
@@ -21212,7 +21216,6 @@ country_event = { # Bloc lets Borotbists into Parliament, They jointly dissolve 
 			}
 			mark_focus_tree_layout_dirty = yes
 			country_event = { id = ukraine_borotbyst_events.73 days = 3 }
-			set_country_flag = UKR_dont_attack_normally
 			news_event = { id = ukraine_borotbyst_events.200 days = 1 }
 		}
 	}
@@ -21761,21 +21764,13 @@ country_event = { # Focus (Khvyliovyi) - Latinised Alphabet
 			}
 			if = {
 				limit = { #Khvyliovyi Resigns
-					check_variable = {
-						var = UKR_khvyliovyi_anger_variable
-						value = 4
-						compare = greater_than_or_equals
-					}
+					NOT = { check_variable = { UKR_khvyliovyi_anger_variable < 4 } }
 				}
 				country_event = { id = ukraine_borotbyst_events.70 days = 30 }
 			}
 			else_if = {
 				limit = {
-					check_variable = {
-						var = UKR_khvyliovyi_anger_variable
-						value = 4
-						compare = less_than
-					}
+					check_variable = { UKR_khvyliovyi_anger_variable < 4 }
 				}
 				country_event = { id = ukraine_borotbyst_events.67 days = 30 }
 			}
@@ -21888,11 +21883,7 @@ country_event = { # Focus (Khvyliovyi) - Post-War Alphabet
 		}
 		if = {
 			limit = { #Khvyliovyi Resigns
-				check_variable = {
-					var = UKR_khvyliovyi_anger_variable
-					value = 4
-					compare = greater_than_or_equals
-				}
+				NOT = { check_variable = { UKR_khvyliovyi_anger_variable < 4 } }
 			}
 			country_event = { id = ukraine_borotbyst_events.70 days = 30 }
 		}
@@ -22158,7 +22149,7 @@ country_event = { #Execution of Pavlo Skoropadskyi
 		name = ukraine_borotbyst_events.77.a
 		add_stability = -0.05
 		add_manpower = -1
-		hidden_effect = { retire_character = UKR_pavlo_skoropadskyi }
+		hidden_effect = { UKR_pavlo_skoropadskyi = { kill_character = yes } }
 	}
 }
 
@@ -22478,7 +22469,6 @@ country_event = { #Russia-Ukraine peace, for RUS
 			}
 			UKR = {
 				country_event = { id = ukraine_borotbyst_events.113 days = 1 }
-				clr_country_flag = UKR_dont_attack_normally
 			}
 		}
 	}
@@ -22521,7 +22511,6 @@ country_event = { #Russia-Ukraine peace, for RUS
 		}
 		UKR = {
 			country_event = { id = ukraine_borotbyst_events.113 days = 1 }
-			clr_country_flag = UKR_dont_attack_normally
 		}
 	}
 	option = { #Ukraine gets Kuban
@@ -22611,7 +22600,6 @@ country_event = { #Russia-Ukraine peace, for RUS
 		}
 		UKR = {
 			country_event = { id = ukraine_borotbyst_events.113 days = 1 }
-			clr_country_flag = UKR_dont_attack_normally
 		}
 	}
 	option = { #Refuse peace
@@ -23152,43 +23140,37 @@ country_event = {
 	}
 }
 
-news_event = { #Socialist Revolution News Event
+#Socialist Revolution News Event
+news_event = {
 	id = ukraine_borotbyst_events.200
 	immediate = { log = "[GetLogInfo]: event ukraine_borotbyst_events.200" }
 	title = ukraine_borotbyst_events.200.t
+
 	desc = {
-		trigger = { RUS = { has_socialist_government = no } }
+		trigger = {
+			RUS = { has_socialist_government = no }
+			NOT = { GER = { has_war_with = RUS } }
+		}
 		text = ukraine_borotbyst_events.200.d1
 	}
+
 	desc = {
 		trigger = {
 			OR = {
 				RUS = { has_socialist_government = yes }
 				GER = { has_war_with = RUS }
-				GER = { has_war_with = RUS }
 			}
 		}
 		text = ukraine_borotbyst_events.200.d2
 	}
+
 	picture = GFX_news_event_UKR_socialist
 
+	trigger = { wants_world_news = yes } #Global news event
+
 	is_triggered_only = yes
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	major = yes
 	fire_for_sender = no
-	show_major = {
-		OR = {
-			regional_europe_news = yes
-			is_neighbor_of = UKR
-		}
-		NOT = {
-			tag = UKR
-		}
-	}
+	major = yes
 
 	option = {
 		trigger = {
@@ -23434,7 +23416,6 @@ country_event = { #Germans accept the counter-proposal
 		trigger = {
 			NOT = { has_autonomy_state = oststaat } #needs to be autonomous oststaat
 			AUS = {
-				exists = yes
 				is_faction_leader = yes
 				if = {
 					limit = { UKR = { has_democratic_government = yes } } #So LUN can join
@@ -23467,7 +23448,6 @@ country_event = { #Germans ignore the counter-proposal
 		name = ukraine_foreign_policy_events.20.a
 		trigger = {
 			AUS = {
-				exists = yes
 				is_faction_leader = yes
 				if = {
 					limit = { UKR = { has_democratic_government = yes } } #So LUN can join

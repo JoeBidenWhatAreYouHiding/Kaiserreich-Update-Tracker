@@ -59,6 +59,7 @@ foreign_politics = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_join_russia = {
 		icon = GFX_decision_generic_flags
@@ -109,6 +110,7 @@ foreign_politics = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete LAT_join_russia"
 			FROM = { country_event = latvia_foreign_policy_events.21 }
 		}
+		fixed_random_seed = no
 	}
 	LAT_attack_country = {
 		icon = hol_draw_up_staff_plans
@@ -152,6 +154,7 @@ foreign_politics = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_SOV_Create_Soviet_Union = {
 		icon = generic_prepare_civil_war
@@ -180,6 +183,7 @@ foreign_politics = {
 			add_stability = 0.1
 			country_event = latvia_socialist_events.16
 		}
+		fixed_random_seed = no
 	}
 	LAT_SOV_Attack_Europe = {
 		name = invade_country
@@ -246,6 +250,7 @@ foreign_politics = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_SOV_Attack_Asia = {
 		name = invade_country
@@ -312,6 +317,7 @@ foreign_politics = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -338,6 +344,7 @@ political_actions = {
 				country_event = { id = latvia_foreign_policy_events.6 hours = 8 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_visit_to_EST = {
 		icon = GFX_decision_generic_agreement
@@ -362,6 +369,7 @@ political_actions = {
 				country_event = { id = latvia_foreign_policy_events.6 hours = 8 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_nordic_investment = {
 		icon = GFX_decision_generic_agreement
@@ -388,6 +396,7 @@ political_actions = {
 				country_event = { id = latvia_foreign_policy_events.10 hours = 8 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_mutual_protection = {
 		icon = GFX_decision_generic_agreement
@@ -397,6 +406,7 @@ political_actions = {
 		available = {
 			has_idea = LAT_cooperation_with_estonia
 			is_in_faction = no
+			FROM = { is_in_faction = no }
 		}
 		visible = {
 			has_authdem_or_pataut_government = yes
@@ -418,6 +428,7 @@ political_actions = {
 				country_event = { id = latvia_foreign_policy_events.19 hours = 8 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_EST_Last_Stand = {
 		icon = GFX_decision_generic_agreement
@@ -452,13 +463,14 @@ political_actions = {
 			set_country_flag = LAT_setting_up_faction
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
-				create_faction = baltic_last_stand
+				create_faction_from_template = { template = faction_template_generic name = baltic_last_stand }
 				LAT = { add_to_faction = FROM }
 			}
 			hidden_effect = {
 				LIT = { activate_targeted_decision = { target = LAT decision = LIT_Last_Stand } }
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_LIT_Last_Stand = {
 		icon = GFX_decision_generic_agreement
@@ -493,13 +505,14 @@ political_actions = {
 			set_country_flag = LAT_setting_up_faction
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
-				create_faction = baltic_last_stand
+				create_faction_from_template = { template = faction_template_generic name = baltic_last_stand }
 				LAT = { add_to_faction = FROM }
 			}
 			hidden_effect = {
 				EST = { activate_targeted_decision = { target = LAT decision = EST_Last_Stand } }
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -531,6 +544,7 @@ economy_decisions = {
 				state = 12
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_extract_oil_from_peat = {
 		icon = GFX_decision_generic_operation
@@ -562,6 +576,7 @@ economy_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -596,6 +611,7 @@ LAT_military_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	LAT_form_training_camps = {
 		icon = GFX_decision_soldierly_discipline
@@ -627,6 +643,7 @@ LAT_military_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 

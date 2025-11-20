@@ -1067,6 +1067,7 @@ country_event = { #CSN Path
 			long_name = NFA_CSN_authoritarian_democrat_party_long
 			name = NFA_CSN_authoritarian_democrat_party
 		}
+		set_country_leader_description = { desc = NFA_henri_mordacq_csn_leader_desc }
 		hidden_effect = {
 			set_country_flag = NATFRA_CSN
 			if = {
@@ -1256,9 +1257,7 @@ country_event = { #DwPO Airwaves
 			multiply_temp_variable = { temp_20 = 100 }
 			if = {
 				limit = {
-					check_variable = {
-						temp_20 < 71
-					}
+					check_variable = { temp_20 < 71 }
 				}
 				subtract_from_variable = {
 					var = Pet_corruption
@@ -1388,9 +1387,7 @@ country_event = { #DwPO Parades
 			multiply_temp_variable = { temp_23 = 100 }
 			if = {
 				limit = {
-					check_variable = {
-						temp_23 < 21
-					}
+					check_variable = { temp_23 < 21 }
 				}
 				subtract_from_variable = {
 					var = Pet_corruption
@@ -1507,9 +1504,7 @@ country_event = { #DwPO Speech
 			multiply_temp_variable = { temp_26 = 100 }
 			if = {
 				limit = {
-					check_variable = {
-						temp_26 < 36
-					}
+					check_variable = { temp_26 < 36 }
 				}
 				subtract_from_variable = {
 					var = Pet_corruption
@@ -1581,9 +1576,7 @@ country_event = { #DwPO Barrack
 			multiply_temp_variable = { temp_27 = 100 }
 			if = {
 				limit = {
-					check_variable = {
-						temp_27 < 21
-					}
+					check_variable = { temp_27 < 21 }
 				}
 				subtract_from_variable = {
 					var = Pet_corruption
@@ -1630,11 +1623,7 @@ country_event = { #Competition Counter
 		name = french_republic_events.28.a
 		if = { #Loop Again
 			limit = {
-				check_variable = {
-					var = Competition_Loop_Counter
-					value = 1
-					compare = less_than_or_equals
-				}
+				NOT = { check_variable = { Competition_Loop_Counter > 1 } }
 			}
 			set_country_flag = Mordacq_Airwaves
 		}
@@ -1663,11 +1652,7 @@ country_event = { #Competition Counter
 			clr_country_flag = Fight_for_influence_on
 			if = { #Check if Mordacq has more influence than Petain
 				limit = {
-					check_variable = {
-						var = Mor_influence
-						value = Pet_influence
-						compare = greater_than_or_equals
-					}
+					NOT = { check_variable = { Mor_influence < Pet_influence } }
 				}
 				country_event = { id = french_republic_events.35 days = 7 } # Mordacq coups Petain
 				set_country_flag = NFA_Napoleon_0
@@ -1713,11 +1698,7 @@ country_event = { #Corruption Check
 		name = french_republic_events.30.a
 		if = {
 			limit = {
-				check_variable = {
-					var = Pet_corruption
-					value = 6
-					compare = greater_than_or_equals
-				}
+				NOT = { check_variable = { Pet_corruption < 6 } }
 				has_country_flag = NFA_Corruption_Checker_cf
 			}
 			country_event = { id = french_republic_events.32 days = 1 } # Corruption still coming
@@ -1727,16 +1708,8 @@ country_event = { #Corruption Check
 				NOT = {
 					has_country_flag = NFA_event_31
 				}
-				check_variable = {
-					var = Pet_corruption
-					value = 5
-					compare = less_than_or_equals
-				}
-				check_variable = {
-					var = Pet_corruption
-					value = 3
-					compare = greater_than_or_equals
-				}
+				NOT = { check_variable = { Pet_corruption > 5 } }
+				NOT = { check_variable = { Pet_corruption < 3 } }
 				has_country_flag = NFA_Corruption_Checker_cf
 			}
 			country_event = { id = french_republic_events.31 days = 1 } # High Corruption warning
@@ -1972,6 +1945,7 @@ country_event = { #Petain's Trial
 			ideology = authoritarian_democrat
 			popularity = 0.06
 		}
+		NFA_philippe_petain = { kill_character = yes }
 	}
 
 	option = {
@@ -1988,6 +1962,7 @@ country_event = { #Petain's Trial
 			ideology = authoritarian_democrat
 			popularity = 0.08
 		}
+		NFA_philippe_petain = { retire = yes }
 	}
 
 	option = {
@@ -2004,6 +1979,7 @@ country_event = { #Petain's Trial
 			ideology = authoritarian_democrat
 			popularity = 0.06
 		}
+		NFA_philippe_petain = { retire = yes }
 	}
 
 	after = {
@@ -2019,7 +1995,6 @@ country_event = { #Petain's Trial
 			ideology = market_liberal
 			popularity = 0.01
 		}
-		NFA_philippe_petain = { retire = yes }
 	}
 }
 
@@ -2162,23 +2137,23 @@ country_event = { #Operation Tocata (3)
 		}
 		if = {
 			limit = { has_character = NFA_philippe_petain }
-			retire_character = NFA_philippe_petain
+			NFA_philippe_petain = { kill_character = yes }
 		}
 		if = {
 			limit = { has_character = NFA_charles_de_gaulle }
-			retire_character = NFA_charles_de_gaulle
+			NFA_charles_de_gaulle = { kill_character = yes }
 		}
 		if = {
 			limit = { has_character = NFA_philippe_de_hauteclocque }
-			retire_character = NFA_philippe_de_hauteclocque
+			NFA_philippe_de_hauteclocque = { kill_character = yes }
 		}
 		if = {
 			limit = { has_character = NFA_maxime_weygand }
-			retire_character = NFA_maxime_weygand
+			NFA_maxime_weygand = { kill_character = yes }
 		}
 		if = {
 			limit = { has_character = NFA_thierry_dargenlieu }
-			retire_character = NFA_thierry_dargenlieu
+			NFA_thierry_dargenlieu = { kill_character = yes }
 		}
 		clr_country_flag = Fight_for_influence_on
 	}
@@ -2225,6 +2200,10 @@ country_event = { #Operation Tocata (4)
 			ideology = authoritarian_democrat
 			long_name = NFA_CSN_authoritarian_democrat_party_long
 			name = NFA_CSN_authoritarian_democrat_party
+		}
+		set_country_leader_description = {
+			ideology = authoritarian_democrat
+			desc = NFA_henri_mordacq_csn_leader_desc
 		}
 		hidden_effect = {
 			set_country_flag = NATFRA_CSN
@@ -2523,6 +2502,7 @@ country_event = { #Form the CSN
 			long_name = NFA_CSN_authoritarian_democrat_party_long
 			name = NFA_CSN_authoritarian_democrat_party
 		}
+		set_country_leader_description = { desc = NFA_henri_mordacq_csn_leader_desc }
 		hidden_effect = {
 			clr_country_flag = Fight_for_influence_on
 			set_country_flag = NATFRA_CSN
@@ -2741,9 +2721,10 @@ country_event = { #Parades end slowly
 			popularity = -0.08
 		}
 		custom_effect_tooltip = tooltip_white_line
-		NFA_philippe_petain = {
-			remove_trait = { ideology = paternal_autocrat_subtype trait = NFA_Lion_of_Verdun }
-			add_trait = { ideology = paternal_autocrat_subtype trait = NFA_Redressement }
+		# Petain
+		swap_ruler_traits = {
+			remove = NFA_Lion_of_Verdun
+			add = NFA_Redressement
 		}
 		custom_effect_tooltip = tooltip_white_line
 		remove_ideas = NFA_parades_idea
@@ -2951,7 +2932,7 @@ country_event = { #Petain killed
 		}
 		if = {
 			limit = { has_character = NFA_philippe_petain }
-			retire_character = NFA_philippe_petain
+			NFA_philippe_petain = { kill_character = yes }
 		}
 		activate_advisor = NFA_charles_maurras_sic
 		hidden_effect = {
@@ -8290,9 +8271,7 @@ country_event = { #The death of Jean III
 		log = "[GetLogInfo]: event french_republic_events.310 option french_republic_events.310.a"
 		name = french_republic_events.310.a #The king is dead, long live the king
 		add_political_power = -10
-		NFA_jean_iii = {
-			retire = yes
-		}
+		NFA_jean_iii = { kill_character = yes }
 		country_event = { id = french_republic_events.311 days = 30 }
 	}
 }
@@ -8581,34 +8560,22 @@ country_event = { #Conclusion of the Purge chain
 		set_country_flag = NFA_AF_purge_decisions_over
 		if = { #Give the idea of the most clicked option
 			limit = {
-				check_variable = {
-					NFA_AF_purged_low > NFA_AF_purged_high
-				}
-				check_variable = {
-					NFA_AF_purged_low > NFA_AF_purged_medium
-				}
+				check_variable = { NFA_AF_purged_low > NFA_AF_purged_high }
+				check_variable = { NFA_AF_purged_low > NFA_AF_purged_medium }
 			}
 			add_ideas = NFA_AF_purged_low_idea
 		}
 		else_if = {
 			limit = {
-				check_variable = {
-					NFA_AF_purged_medium > NFA_AF_purged_low
-				}
-				check_variable = {
-					NFA_AF_purged_medium > NFA_AF_purged_high
-				}
+				check_variable = { NFA_AF_purged_medium > NFA_AF_purged_low }
+				check_variable = { NFA_AF_purged_medium > NFA_AF_purged_high }
 			}
 			add_ideas = NFA_AF_purged_medium_idea
 		}
 		else_if = {
 			limit = {
-				check_variable = {
-					NFA_AF_purged_high > NFA_AF_purged_low
-				}
-				check_variable = {
-					NFA_AF_purged_high > NFA_AF_purged_medium
-				}
+				check_variable = { NFA_AF_purged_high > NFA_AF_purged_low }
+				check_variable = { NFA_AF_purged_high > NFA_AF_purged_medium }
 			}
 			add_ideas = NFA_AF_purged_high_idea
 		}
@@ -11447,7 +11414,7 @@ country_event = { #Konakry-Kankan Railway sabotaged
 	id = french_republic_events.445
 	title = french_republic_events.445.t
 	desc = french_republic_events.445.d
-	picture = GFX_report_event_CHI_train_bombing
+	picture = GFX_report_event_CHN_train_bombing
 
 	is_triggered_only = yes
 
@@ -12943,58 +12910,43 @@ country_event = { #Colony Revolts (donotlog)
 	picture = GFX_report_event_SOM_intro
 
 	trigger = {
-		if = {
-			limit = { is_ai = yes }
+		OR = {
+			is_ai = no
 			NOT = {
 				AND = {
 					event_target:revolter = { tag = CHA }
 					has_game_rule = { rule = CHA_revolt option = CHA_REVOLT_NO }
 				}
-			}
-			NOT = {
 				AND = {
 					event_target:revolter = { tag = NGR }
 					has_game_rule = { rule = NGR_revolt option = NGR_REVOLT_NO }
 				}
-			}
-			NOT = {
 				AND = {
 					event_target:revolter = { tag = VOL }
 					has_game_rule = { rule = VOL_revolt option = VOL_REVOLT_NO }
 				}
-			}
-			NOT = {
 				AND = {
 					event_target:revolter = { tag = MLI }
 					has_game_rule = { rule = MLI_revolt option = MLI_REVOLT_NO }
 				}
-			}
-			NOT = {
 				AND = {
 					event_target:revolter = { tag = GNA }
 					has_game_rule = { rule = GNA_revolt option = GNA_REVOLT_NO }
 				}
-			}
-			NOT = {
 				AND = {
 					event_target:revolter = { tag = MRT }
 					has_game_rule = { rule = MRT_revolt option = MRT_REVOLT_NO }
 				}
-			}
-			NOT = {
 				AND = {
 					event_target:revolter = { tag = TUN }
 					has_game_rule = { rule = TUN_revolt option = TUN_REVOLT_NO }
 				}
-			}
-			NOT = {
 				AND = {
 					event_target:revolter = { tag = IVO }
 					has_game_rule = { rule = IVO_revolt option = IVO_REVOLT_NO }
 				}
 			}
 		}
-		else = { always = yes }
 	}
 
 	is_triggered_only = yes
@@ -14071,17 +14023,7 @@ news_event = {
 	fire_for_sender = no
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		OR = {
-			regional_africa_news = yes
-			regional_europe_news = yes
-			tag = CAN
-		}
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = french_republic_news_events.1.a
@@ -14117,17 +14059,7 @@ news_event = {
 	fire_for_sender = no
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		OR = {
-			regional_africa_news = yes
-			regional_europe_news = yes
-			tag = CAN
-		}
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = french_republic_news_events.2.a
@@ -14163,17 +14095,7 @@ news_event = {
 	fire_for_sender = no
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		OR = {
-			regional_africa_news = yes
-			regional_europe_news = yes
-			tag = CAN
-		}
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = french_republic_news_events.3.a
@@ -14209,17 +14131,7 @@ news_event = {
 	fire_for_sender = no
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		OR = {
-			regional_africa_news = yes
-			regional_europe_news = yes
-			tag = CAN
-		}
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = french_republic_news_events.4.a
@@ -14256,17 +14168,7 @@ news_event = {
 	fire_for_sender = no
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		OR = {
-			regional_africa_news = yes
-			regional_europe_news = yes
-			tag = CAN
-		}
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = french_republic_news_events.5.a
@@ -14302,9 +14204,7 @@ news_event = {
 	fire_for_sender = no
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = french_republic_news_events.6.a
@@ -14340,9 +14240,7 @@ news_event = {
 	fire_for_sender = no
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = french_republic_news_events.7.a
@@ -14378,20 +14276,9 @@ news_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
-	show_major = {
-		NOT = {
-			tag = NFA
-		}
-		OR = {
-			regional_africa_news = yes
-			regional_europe_news = yes
-			tag = CAN
-		}
-	}
+	fire_for_sender = no
 
 	option = {
 		name = french_republic_news_events.8.a
@@ -14442,9 +14329,7 @@ news_event = {
 	picture = GFX_news_event_NFA_return_marseille
 	fire_for_sender = yes
 	is_triggered_only = yes
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = { # For a prosperous tomorrow!
 		name = french_republic_news_events.9.a

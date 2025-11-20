@@ -3595,11 +3595,7 @@ country_event = { #Iceland is getting rebellious (ENG)
 			modifier = {
 				factor = 0.5
 				ICE = {
-					check_variable = {
-						var = resistance_ICE_strength
-						value = 15
-						compare = less_than_or_equals
-					}
+					NOT = { check_variable = { resistance_ICE_strength > 15 } }
 				}
 			}
 		}
@@ -3612,7 +3608,8 @@ country_event = { #Iceland is getting rebellious (ENG)
 	}
 }
 
-news_event = { # Icelandic Independence
+# Icelandic Independence
+news_event = {
 	id = iceland_events.351
 	immediate = { log = "[GetLogInfo]: event iceland_events.351" }
 	title = iceland_events.351.t
@@ -3622,14 +3619,12 @@ news_event = { # Icelandic Independence
 	is_triggered_only = yes
 	major = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	show_major = {
 		OR = {
-			tag = CAN
 			regional_europe_news = yes
+			tag = CAN
 		}
 	}
 

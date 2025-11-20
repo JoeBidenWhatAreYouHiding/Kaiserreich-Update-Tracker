@@ -445,7 +445,7 @@ country_event = {
 				}
 				controller = { is_ally_with = ROOT }
 			}
-			set_state_controller_to = FROM
+			transfer_state_to = FROM
 		}
 	}
 }
@@ -464,6 +464,11 @@ country_event = {
 		name = india_events.61.a #Hand over the isles to the Indians
 		ai_chance = { base = 100 }
 		effect_tooltip = {
+			if = {
+				limit = { is_ally_with = CEY }
+				FROM = { annex_country = { target = CEY transfer_troops = no } }
+				custom_effect_tooltip = tooltip_white_line
+			}
 			every_state = {
 				display_individual_scopes = yes
 				limit = {
@@ -471,11 +476,20 @@ country_event = {
 						is_ceylon = yes
 						state = 818 #Pondicherry
 					}
+					NOT = { is_owned_by = CEY }
 					OR = {
 						is_owned_by = ROOT
 						owner = { is_subject_of = ROOT }
 					}
 					controller = { is_ally_with = ROOT }
+				}
+				if = {
+					limit = { is_claimed_by = var:owner }
+					remove_claim_by = var:owner
+				}
+				if = {
+					limit = { is_core_of = var:owner }
+					remove_core_of = var:owner
 				}
 				transfer_state_to = FROM
 			}
@@ -516,6 +530,12 @@ country_event = {
 		name = india_events.62.a #Merge the isles into our nation!
 		ai_chance = { base = 85 }
 		add_political_power = 50
+		if = {
+			limit = { FROM = { is_ally_with = CEY } }
+			CEY = { every_core_state = { add_claim_by = ROOT } }
+			annex_country = { target = CEY transfer_troops = no }
+			custom_effect_tooltip = tooltip_white_line
+		}
 		every_state = {
 			display_individual_scopes = yes
 			limit = {
@@ -523,16 +543,26 @@ country_event = {
 					is_ceylon = yes
 					state = 818 #Pondicherry
 				}
+				NOT = { is_owned_by = CEY }
 				OR = {
 					is_owned_by = FROM
 					owner = { is_subject_of = FROM }
 				}
 				controller = { is_ally_with = FROM }
 			}
+			if = {
+				limit = { is_claimed_by = var:owner }
+				remove_claim_by = var:owner
+			}
+			if = {
+				limit = { is_core_of = var:owner }
+				remove_core_of = var:owner
+			}
 			add_claim_by = ROOT
 			transfer_state_to = ROOT
 		}
 	}
+
 	option = {
 		log = "[GetLogInfo]: event india_events.62 option india_events.62.b"
 		name = india_events.62.b #Grant Ceylon wide internal autonomy and incorporate the atolls
@@ -1406,9 +1436,7 @@ news_event = {
 
 	major = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		trigger = {
@@ -1449,19 +1477,15 @@ news_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	show_major = {
-		NOT = {
-			tag = RAJ
-			tag = HND
-		}
 		OR = {
 			regional_middle_east_news = yes
 			regional_asia_news = yes
 		}
+		NOT = { tag = RAJ }
+		NOT = { tag = HND }
 	}
 
 	option = {
@@ -1501,9 +1525,7 @@ news_event = {
 	fire_for_sender = no
 	major = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	show_major = {
 		OR = {
@@ -1530,17 +1552,7 @@ news_event = {
 	fire_for_sender = no
 	major = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		OR = {
-			regional_middle_east_news = yes
-			regional_asia_news = yes
-			has_socialist_government = yes
-		}
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = india_events.103.a

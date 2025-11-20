@@ -152,7 +152,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			desc = MAL_abu_bakar_al_baqir_leader_desc
+			desc = MAL_onan_haji_siraj_leader_desc
 			ideology = national_populist_subtype
 		}
 	}
@@ -173,15 +173,6 @@ characters = {
 			civilian = {
 				small = GFX_portrait_MAL_ibrahim_i_of_johor_civilian_small
 				large = GFX_portrait_MAL_ibrahim_i_of_johor_civilian_large
-			}
-		}
-	}
-	MAL_yusof_bin_ishak = {
-		name = MAL_yusof_bin_ishak
-		portraits = {
-			civilian = {
-				small = GFX_portrait_MAL_yusof_bin_ishak_civilian_small
-				large = GFX_portrait_MAL_yusof_bin_ishak_civilian_large
 			}
 		}
 	}

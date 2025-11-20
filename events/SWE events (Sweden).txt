@@ -1967,16 +1967,8 @@ country_event = { #Black Monday starts to wear down!
 
 	trigger = {
 		NOT = { has_country_flag = SWE_black_monday_over }
-		check_variable = {
-			var = SWE_var_unemployment
-			value = 0.24
-			compare = less_than_or_equals
-		}
-		check_variable = {
-			var = SWE_var_unemployment
-			value = 0.2
-			compare = greater_than
-		}
+		NOT = { check_variable = { SWE_var_unemployment > 0.24 } }
+		check_variable = { SWE_var_unemployment > 0.2 }
 	}
 
 	option = { #Good Riddance!
@@ -2000,16 +1992,8 @@ country_event = { #Black Monday is starting to wear down more
 
 	trigger = {
 		NOT = { has_country_flag = SWE_black_monday_over }
-		check_variable = {
-			var = SWE_var_unemployment
-			value = 0.2
-			compare = less_than_or_equals
-		}
-		check_variable = {
-			var = SWE_var_unemployment
-			value = 0.16
-			compare = greater_than
-		}
+		NOT = { check_variable = { SWE_var_unemployment > 0.2 } }
+		check_variable = { SWE_var_unemployment > 0.16 }
 	}
 
 	option = { #Good Riddance!
@@ -2043,16 +2027,8 @@ country_event = { #Black Monday is starting to wear down more
 
 	trigger = {
 		NOT = { has_country_flag = SWE_black_monday_over }
-		check_variable = {
-			var = SWE_var_unemployment
-			value = 0.16
-			compare = less_than_or_equals
-		}
-		check_variable = {
-			var = SWE_var_unemployment
-			value = 0.12
-			compare = greater_than
-		}
+		NOT = { check_variable = { SWE_var_unemployment > 0.16 } }
+		check_variable = { SWE_var_unemployment > 0.12 }
 	}
 
 	option = { #Good Riddance!
@@ -2092,11 +2068,7 @@ country_event = { #Black Monday is over!
 
 	trigger = {
 		NOT = { has_country_flag = SWE_black_monday_over }
-		check_variable = {
-			var = SWE_var_unemployment
-			value = 0.12
-			compare = less_than_or_equals
-		}
+		NOT = { check_variable = { SWE_var_unemployment > 0.12 } }
 	}
 
 	option = { #Good Riddance!
@@ -2153,11 +2125,7 @@ country_event = { #The yearly report of the Commission
 		#Pay interest
 		if = {
 			limit = {
-				check_variable = {
-					var = SWE_var_debt
-					value = 0
-					compare = greater_than
-				}
+				check_variable = { SWE_var_debt > 0 }
 			}
 			set_temp_variable = {
 				var = SWE_var_interest
@@ -2176,11 +2144,7 @@ country_event = { #The yearly report of the Commission
 		#Automatically take an extra loan if this makes your budget go below 0
 		if = {
 			limit = {
-				check_variable = {
-					var = SWE_var_budget
-					value = 0
-					compare = less_than
-				}
+				check_variable = { SWE_var_budget < 0 }
 			}
 			set_temp_variable = {
 				var = SWE_var_extra_debt
@@ -2203,22 +2167,14 @@ country_event = { #The yearly report of the Commission
 		#Sovereign debt crisis if that makes your debt go over 100 million
 		if = {
 			limit = {
-				check_variable = {
-					var = SWE_var_debt
-					value = 100
-					compare = greater_than_or_equals
-				}
+				NOT = { check_variable = { SWE_var_debt < 100 } }
 			}
 			country_event = { id = sweden_events.68 days = 1 }
 		}
 		#Unemployment automatically slowly reverts to 8%
 		if = {
 			limit = {
-				check_variable = {
-					var = SWE_var_unemployment
-					value = 0.08
-					compare = greater_than
-				}
+				check_variable = { SWE_var_unemployment > 0.08 }
 			}
 			custom_effect_tooltip = SWE_tt_unemployment_lowered_two_percent_natural
 			add_to_variable = {
@@ -2228,11 +2184,7 @@ country_event = { #The yearly report of the Commission
 		}
 		else_if = {
 			limit = {
-				check_variable = {
-					var = SWE_var_unemployment
-					value = 0.08
-					compare = less_than
-				}
+				check_variable = { SWE_var_unemployment < 0.08 }
 			}
 			custom_effect_tooltip = SWE_tt_unemployment_upped_two_percent
 			add_to_variable = {
@@ -2316,11 +2268,7 @@ country_event = { #Unemployment decreases as a result of inflation
 		NOT = {
 			has_country_flag = SWE_black_monday_over
 		}
-		check_variable = {
-			var = SWE_var_inflation
-			value = 0.10
-			compare = greater_than
-		}
+		check_variable = { SWE_var_inflation > 0.10 }
 	}
 
 	option = { #Splendid!
@@ -2348,11 +2296,7 @@ country_event = { #Hyperinflation
 		NOT = {
 			has_country_flag = SWE_black_monday_over
 		}
-		check_variable = {
-			var = SWE_var_inflation
-			value = 1.5
-			compare = greater_than
-		}
+		check_variable = { SWE_var_inflation > 1.5 }
 	}
 
 	option = { #Oh no!
@@ -2437,7 +2381,7 @@ country_event = { #Death of Gustaf V
 		trigger = {
 			has_country_leader = { character = SWE_gustaf_bernadotte }
 		}
-		retire_character = SWE_gustaf_bernadotte
+		SWE_gustaf_bernadotte = { kill_character = yes }
 		SWE_create_gustaf_adolf = yes
 	}
 
@@ -2449,7 +2393,7 @@ country_event = { #Death of Gustaf V
 		}
 		if = {
 			limit = { has_character = SWE_gustaf_bernadotte }
-			retire_character = SWE_gustaf_bernadotte
+			SWE_gustaf_bernadotte = { kill_character = yes }
 		}
 	}
 }
@@ -3272,7 +3216,7 @@ country_event = { #Death of Nils Flyg
 			has_country_leader = { character = SWE_nils_flyg }
 			NOT = { has_country_flag = SWE_linderot_to_seize_power }
 		}
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 		SWE_create_olsson = yes
 		activate_advisor = SWE_karl_kilbom_sic
 	}
@@ -3284,7 +3228,7 @@ country_event = { #Death of Nils Flyg
 			has_country_leader = { character = SWE_nils_flyg }
 			has_country_flag = SWE_linderot_to_seize_power
 		}
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 		SWE_create_linderot = yes
 		activate_advisor = SWE_arvid_olsson_sic
 	}
@@ -3302,7 +3246,7 @@ country_event = { #Death of Nils Flyg
 				has_country_flag = SWE_nice_one_kilbom
 			}
 		}
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 	}
 
 	option = { #Rip
@@ -3316,7 +3260,7 @@ country_event = { #Death of Nils Flyg
 				has_country_flag = SWE_nice_one_kilbom
 			}
 		}
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 	}
 
 	option = { #Rip
@@ -3326,7 +3270,7 @@ country_event = { #Death of Nils Flyg
 			has_authoritarian_government = yes
 		}
 		add_political_power = 25
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 	}
 }
 
@@ -3347,7 +3291,7 @@ country_event = { #Nils Flyg ded, because he couldn't be evacuated
 		log = "[GetLogInfo]: event sweden_events.109 option sweden_events.109.a"
 		name = sweden_events.109.a
 		ai_chance = { base = 90 }
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 		SWE_create_olsson = yes
 		activate_advisor = SWE_karl_kilbom_sic
 	}
@@ -3356,7 +3300,7 @@ country_event = { #Nils Flyg ded, because he couldn't be evacuated
 		log = "[GetLogInfo]: event sweden_events.109 option sweden_events.109.b"
 		name = sweden_events.109.b
 		ai_chance = { base = 5 }
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 		SWE_create_linderot = yes
 		activate_advisor = SWE_arvid_olsson_sic
 	}
@@ -3371,7 +3315,7 @@ country_event = { #Nils Flyg ded, because he couldn't be evacuated
 				has_game_rule = { rule = SWE_path option = SWE_PATH_TOTALIST }
 			}
 		}
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 		SWE_create_olsson = yes
 		add_popularity = { ideology = radical_socialist popularity = 0.2 }
 		set_politics = {
@@ -3398,7 +3342,7 @@ country_event = { #Nils Flyg ded because Stockholm is occupied during his first 
 	option = { #Rip
 		log = "[GetLogInfo]: event sweden_events.110 option sweden_events.110.a"
 		name = sweden_events.110.a
-		retire_character = SWE_nils_flyg
+		SWE_nils_flyg = { kill_character = yes }
 		SWE_create_olsson = yes
 	}
 }
@@ -3776,7 +3720,7 @@ country_event = { #Riksledare confirmed dead
 			idea = SWE_idea_riksledare_dead
 			days = 180
 		}
-		retire_character = SWE_axel_gyllenkrok
+		SWE_axel_gyllenkrok = { kill_character = yes }
 		add_country_leader_role = {
 			character = SWE_archibald_douglas
 			country_leader = {
@@ -3805,7 +3749,7 @@ country_event = { #Death of the Riksledare
 		log = "[GetLogInfo]: event sweden_events.124 option sweden_events.124.a"
 		name = sweden_events.124.a
 		ai_chance = { base = 40 }
-		retire_character = SWE_axel_gyllenkrok
+		SWE_axel_gyllenkrok = { kill_character = yes }
 		add_country_leader_role = {
 			character = SWE_archibald_douglas
 			country_leader = {
@@ -3827,7 +3771,7 @@ country_event = { #Death of the Riksledare
 				has_game_rule = { rule = SWE_path option = SWE_PATH_NATPOP }
 			}
 		}
-		retire_character = SWE_axel_gyllenkrok
+		SWE_axel_gyllenkrok = { kill_character = yes }
 		add_country_leader_role = {
 			character = SWE_martin_ekstrom
 			country_leader = {
@@ -3848,7 +3792,7 @@ country_event = { #Death of the Riksledare
 				has_game_rule = { rule = SWE_path option = SWE_PATH_NATPOP }
 			}
 		}
-		retire_character = SWE_axel_gyllenkrok
+		SWE_axel_gyllenkrok = { kill_character = yes }
 		add_popularity = { ideology = paternal_autocrat popularity = 0.3 }
 		set_politics = {
 			ruling_party = paternal_autocrat
@@ -3925,20 +3869,17 @@ news_event = {
 	fire_for_sender = no
 	major = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
-	show_major = {
-		regional_europe_news = yes
-	}
+	show_major = { regional_europe_news = yes }
 
 	option = {
 		name = sweden_events.130.a
 	}
 }
 
-news_event = { # Military coups the government
+# Military coups the government
+news_event = {
 	id = sweden_events.131
 	immediate = { log = "[GetLogInfo]: event sweden_events.131" }
 	title = sweden_events.131.t
@@ -3949,13 +3890,7 @@ news_event = { # Military coups the government
 	fire_for_sender = no
 	major = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		regional_europe_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = sweden_events.131.a

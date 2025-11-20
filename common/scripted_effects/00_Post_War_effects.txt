@@ -498,6 +498,7 @@ germany_capitulates = {
 			country_event = { id = ireland_events.2007 days = 15 }		# IRE joining ENT?
 		}
 		else = {
+			country_event = { id = ireland_events.2032 days = 15 }		# IRE joining LoAS?
 			country_event = { id = ireland_events.2008 days = 15 }		# IRE joining MA?
 			if = {
 				limit = {
@@ -547,7 +548,7 @@ germany_capitulates = {
 			}
 		}
 		AUS = {
-			create_faction = donau_adriabund
+			create_faction_from_template = faction_template_donau_adriabund
 			set_country_flag = former_reichspakt_member
 			country_event = { id = austria_foreign_events.4016 hours = 8 }
 		}

@@ -536,11 +536,10 @@ country_event = {
 							is_coastal = yes
 							is_controlled_by_ROOT_or_ally = yes
 						}
-						any_neighbor_country = {
+						any_of_scopes = {
+							array = neighbors_owned
 							has_capitulated = yes
-							any_owned_state = {
-								is_controlled_by_ROOT_or_ally = yes
-							}
+							any_owned_state = { is_controlled_by_ROOT_or_ally = yes }
 						}
 						any_subject_country = {
 							OR = {
@@ -1180,7 +1179,8 @@ country_event = { # Country considers peace with INT
 	}
 }
 
-news_event = { # Treaty of London
+# Treaty of London
+news_event = {
 	id = capitulation_events.35
 	immediate = { log = "[GetLogInfo]: event capitulation_events.35" }
 	title = capitulation_events.35.t
@@ -1208,9 +1208,7 @@ news_event = { # Treaty of London
 	major = yes
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = capitulation_events.35.a

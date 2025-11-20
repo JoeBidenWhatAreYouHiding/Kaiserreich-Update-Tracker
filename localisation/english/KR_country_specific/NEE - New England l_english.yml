@@ -105,7 +105,7 @@
  NEE_MOEF: "Mid-Ocean Escort Force"
  NEE_MOEF_desc: "As proven by experiences of the British in the First Weltkrieg, submarine warfare can be detrimental towards the desperate needs of trade and supply convoys in times of war. In order to increase the effectiveness of our convoy escorts, we will create and organise new compositions of our destroyers - fitting them as well with new technology such as radar and modern anti-submarine weapons."
  NEE_MOEF_NB: "Coordinated Naval Bombardment"
- NEE_MOFF_NB_desc: "With the availability of portable radios and sophisticated relay networks, forward observers are now able to transmit targeting information and provide almost instantaneous accurate reports to the battleships off the shore. In addition, observer aircraft are also able to provide warships with accurate information in preparation for amphibious landings."
+ NEE_MOEF_NB_desc: "With the availability of portable radios and sophisticated relay networks, forward observers are now able to transmit targeting information and provide almost instantaneous accurate reports to the battleships off the shore. In addition, observer aircraft are also able to provide warships with accurate information in preparation for amphibious landings."
 
  NEE_marine_corps: "New England Marines"
  NEE_marine_corps_desc: "Inspired by the Canadian commandoes and marines, the Marines of New England are organised in innovative light infantry fire teams of three and are well-versed in amphibious invasions and asymmetrical warfare. The true successors to the Continental Marines of the American Revolution, the Marines of New England are given egalitarian and ethical indoctrination in their training to mould the perfect Marine rifleman. As a salute to their great heritage from the Halls of Montezuma to the shores of Tripoli, the New England Marines are some of New England's most elite regiments - always present and always faithful."
@@ -342,7 +342,7 @@
  NEE_CCC_desc: "With large numbers of young men out of work, families are struggling to make ends meet. The civilian conservation corps will provide eligible young men with meals, housing, and employment to help provide for themselves and their families!"
 
  NEE_Rural_Electrification: "Rural Electrification"
- NEE_Rural_Electrification_desc: "As much as 90% of rural America was left without any access to electricity at the tail end of the Smith Administration. Particulary affected were the northern states of Vermont and New Hampshire. We need to ensure that all citizens have access to it."
+ NEE_Rural_Electrification_desc: "As much as 90% of rural America was left without any access to electricity at the tail end of the Smith Administration. Particularly affected were the northern states of Vermont and New Hampshire. We need to ensure that all citizens have access to it."
 
 # Great Depression Decisions #
  NEE_Great_Depression_decisions: "Dealing with the Great Depression"
@@ -991,7 +991,7 @@
 
  NEE_regulate_labour_strikes: "§mRegulate Labour Strikes§!"
  NEE_regulated_strikes_idea: "Regulated Strikes"
- NEE_regulated_labour_strikes_desc: "While we support the right of American workers to strike, we must also be careful that they do not become a dangerous threat to society and order. This act will place a federal limit on the number of strikers to prevent American workers from becoming radicalised."
+ NEE_regulate_labour_strikes_desc: "While we support the right of American workers to strike, we must also be careful that they do not become a dangerous threat to society and order. This act will place a federal limit on the number of strikers to prevent American workers from becoming radicalised."
  NEE_veteran_housing: "§mCompensation to Veterans§!"
  NEE_veteran_housing_desc: "We owe the civil war veterans an outstanding debt; many of them willingly enlisted due to their patriotic fever. As our veterans struggle to readjust to civilian life, we should make efforts to alleviate their suffering. Passage of this act will ensure housing and a government pension for those who served our country."
  NEE_alcohol_protection_act: "§mAlcohol Protection Act§!"
@@ -999,7 +999,7 @@
  NEE_improve_roadways: "§mImprove Roadways§!"
  NEE_improve_roadways_desc: "Much of the national roadways lies in ruins due to the effects of the civil war. While aim to rebuild our roads to their pre-war standards, this legislation will allow us to develop and modernise national and local infrastructures."
  NEE_swords_to_plowshares: "§mSwords to Plowshares§!"
- NEE-swords_to_plowshares_desc: "As the war effort on the home front winds down, let us take steps to ensure a smooth transition back into a civilian economy. This act will see to it that military factories begin converting their production to civilian goods."
+ NEE_swords_to_plowshares_desc: "As the war effort on the home front winds down, let us take steps to ensure a smooth transition back into a civilian economy. This act will see to it that military factories begin converting their production to civilian goods."
 
  NEE_unite_legislature: "Unite the Legislature"
  NEE_unite_legislature_tt: "This will lower the cost of the £GFX_decision_icon_small §YParty Congress§! decisions by £GFX_pol_power §G5§! !"
@@ -1288,8 +1288,6 @@
  new_england_events.76.d.defender: "While bombings and air raid sirens have become increasingly frequent ever since the outbreak of hostilities, the New England government has begun an intensified period of bombing recently. They have escalated daylight bombing of our aircraft industries, perhaps in a bid to cripple our power in the air. While this may be a minor setback, for now, our determined fighter aces will ensure that none of their bombs will ever fall. We'll focus on defending our industries so that we will be able to strike back in time!"
  new_england_events.76.a: "Well Done!"
  new_england_events.76.b: "We will get revenge!"
-
- NEE_paratroopers_spawn: "Five Paratrooper Divisions will spawn in Upstate New York"
 
  new_england_events.77.t: "Government Rifle Contracts"
  new_england_events.77.d: "As the Provisional Government of New England finds itself on the doorstep of war, the question has been raised by businesses and the army as to which company the government will align itself with. To reclaim the rest of the nation means that New England infantrymen will have to be equipped with the most modern rifles - the old dusty national guard rifles hastily handed out will not do. Two names for an officially sponsored government contract have been consistent throughout the endless debates - the Springfield Armory and the Winchester Repeating Arms Company.\n\nScouted and approved by George Washington himself in 1777, the Springfield Armory is an obvious candidate. Briefly, the only government manufacturer of arms during the first American Civil War, choosing the Springfield Armory carries a symbolic resonance, especially as New England claims itself to be the last bastion of American democracy on the continent. An industrial powerhouse responsible for mass producing and developing the M1903 rifle, the Springfield Armory also features a curious new weapon designed by New Englander John Garand. Garand has been developing a semi-automatic rifle since 1919, and although many of his designs have failed to meet the army's specifications, his latest design, the \"M1, calibre 30,\" has shown to be extremely promising in initial tests. With the M1 in plans to be fully adopted within our armed forces, perhaps we should consider supporting the Springfield Armory.\n\nThe Winchester Repeating Arms Company has also been brought up in discussion. Founded in 1866, the company is responsible for the successful \"Model 1873\" known as the \"Gun that Won the West,\" named as such for its iconic use on the Great Plains. Since its early days, the Winchester Company has continuously released self-loading rifles in the many years of its operation. While the Great Depression had severely weakened the company, company vice president John M. Olin pushed a new company tradition of producing only the finest and well-crafted deluxe rifles and shotguns. Since its hard times, the company has bounced back, and their craftsmanship would surely come in handy for our uses. If Winchester secures the government contract, our soldiers will have their hands on sturdy and durable rifles."
@@ -2083,7 +2081,7 @@
  new_england_events.317.b: "A Shame."
 
  new_england_events.318.t: "[NEE.GetNameDefCap] requests that we leave our current faction"
- new_england_events.318.d: "For a century, the so-called \"Monroe Doctrine\" dictated our foreign policy by placing us against our will under the American sphere. The collapse of the American nation during their civil war led us to join the [THIS.faction_leader.GetName] sphere to seek out protection and economic ties. However, with the [NEE.GetName] has rebuilt their strength; they have expressed their desire to declare the Western hemisphere under America's sphere and guidance. They have demanded that we abandon our current alignment and join ourselves with them - we must inform [THIS.faction_leader.GetName] about these demands at once. We will not tolerate such blatant aggression, and we will need the powerful backing of [THIS.faction_leader.GetName] to back our independence!"
+ new_england_events.318.d: "For a century, the so-called \"Monroe Doctrine\" dictated our foreign policy by placing us against our will under the American sphere. The collapse of the American nation during their civil war led us to join the [ROOT.FactionLeader.GetName] sphere to seek out protection and economic ties. However, with the [NEE.GetName] has rebuilt their strength; they have expressed their desire to declare the Western hemisphere under America's sphere and guidance. They have demanded that we abandon our current alignment and join ourselves with them - we must inform [ROOT.FactionLeader.GetName] about these demands at once. We will not tolerate such blatant aggression, and we will need the powerful backing of [ROOT.FactionLeader.GetName] to back our independence!"
  new_england_events.318.a: "The Americans have threatened us!"
 
  new_england_events.319.t: "[NEE.GetNameDefCap] requests that [FROM.GetNameDef] leaves our faction"
@@ -2125,19 +2123,19 @@
  # War Option:
  new_england_events.320.c: "This is unacceptable. We will liberate them."
 
- new_england_events.321.t: "[THIS.faction_leader.GetName] has abandoned us!"
- new_england_events.321.d: "Grave news from [THIS.faction_leader.GetNameDef] as their ambassador today has informed us that they will no longer support us. Citing America's resurgent strength and the re-establishment of the Monroe Doctrine, they will withdraw their forces from our borders - we have been abandoned by Europe effectively."
+ new_england_events.321.t: "[ROOT.FactionLeader.GetName] has abandoned us!"
+ new_england_events.321.d: "Grave news from [ROOT.FactionLeader.GetNameDef] as their ambassador today has informed us that they will no longer support us. Citing America's resurgent strength and the re-establishment of the Monroe Doctrine, they will withdraw their forces from our borders - we have been abandoned by Europe effectively."
  new_england_events.321.a: "Some ally you are!"
 
  new_england_events.322.t: "[NEE.GetNameDefCap] backs down!"
  #FROM.FROM.FROM should be the target of the decision:
- new_england_events.322.d1: "In the end, it appears diplomacy, tact, and negotiations have won this day. The Americans will not push our allegiance further, and it is well understood that they will also not use force to demand our submission into their faction. Nonetheless, our gravitation towards [THIS.faction_leader.GetNameDef] has certainly brought tensions between our nation and [NEE.GetNameDef]."
- new_england_events.322.d2: "Despite our intentions to negotiate and hear out [NEE.GetNameDef], our calls for peace have fallen on deaf ears. We have received news that the American ambassador to our country has been recalled and that war is indeed imminent between the American nation and us. Nonetheless, our ally in [THIS.faction_leader.GetNameDef] has pledged to protect us and guarantee our independence. With our alliance solidified more than ever, we will defend our freedom from the American invaders!"
+ new_england_events.322.d1: "In the end, it appears diplomacy, tact, and negotiations have won this day. The Americans will not push our allegiance further, and it is well understood that they will also not use force to demand our submission into their faction. Nonetheless, our gravitation towards [ROOT.FactionLeader.GetNameDef] has certainly brought tensions between our nation and [NEE.GetNameDef]."
+ new_england_events.322.d2: "Despite our intentions to negotiate and hear out [NEE.GetNameDef], our calls for peace have fallen on deaf ears. We have received news that the American ambassador to our country has been recalled and that war is indeed imminent between the American nation and us. Nonetheless, our ally in [ROOT.FactionLeader.GetNameDef] has pledged to protect us and guarantee our independence. With our alliance solidified more than ever, we will defend our freedom from the American invaders!"
  new_england_events.322.a: "Stronger together!"
 
  new_england_events.323.t: "[FROM.GetName] goes to war!"
  new_england_events.323.d1: "Citing our refusal to abandon our allies in the Western Hemisphere as an \"intrusion on the peace and security of the New World,\" - this morning, the American ambassador announced to our government that they were being recalled back to their country and that a state of war exists between our nation and [FROM.GetNameDef]. It seems that there are no ends to American ambitions in the New World and that they have resorted to war to throw us out!"
- new_england_events.323.d2: "Despite pleas for peace at the negotiation table, it appears that [FROM.GetNameDef] sees our alignment with [THIS.faction_leader.GetNameDef] as a threat that must be dealt with. It has been reported to our government; that the American government has officially severed diplomatic relations with [THIS.faction_leader.GetNameDef] and that we will soon join [THIS.faction_leader.GetNameDef] in war with the American nation."
+ new_england_events.323.d2: "Despite pleas for peace at the negotiation table, it appears that [FROM.GetNameDef] sees our alignment with [ROOT.FactionLeader.GetNameDef] as a threat that must be dealt with. It has been reported to our government; that the American government has officially severed diplomatic relations with [ROOT.FactionLeader.GetNameDef] and that we will soon join [ROOT.FactionLeader.GetNameDef] in war with the American nation."
  new_england_events.323.a: "Warmongers!"
 
  NEE_Invite_Research: "Reciprocal Defense Treaty with [FROM.GetNameDef]"
@@ -2409,8 +2407,8 @@
  new_england_events.380.t: "[FROM.GetNameDefCap] Demands Reunion"
  new_england_events.380.d.in_faction: "As the smoke clouds and crackles of gunfire above continental American have died down, many [PHI.GetAdjective] politicians have questioned what the [FROM.GetName]'s policy towards [PHI.GetNameDef] will be. Today, [FROM.GetLeader], the leader of [FROM.GetNameDef], has made a radio broadcast across America addressing the outcome of the bloody civil war, along with requesting that [PHI.GetNameDef] abandon her alliance with the [ROOT.GetFactionName] and rejoin the republic as an equal partner, instead of a territory. At the same time, a small group of delegates have arrived in Manilla to await a reply."
  new_england_events.380.d.default: "As the smoke clouds and crackles of gunfire above continental America have died down, many [PHI.GetAdjective] politicians have questioned whether it is time to see ourselves return to the American sphere. Today, [FROM.GetLeader], the leader of [FROM.GetNameDef], has made a radio broadcast across America addressing the outcome of the bloody civil war, along with requesting that [PHI.GetNameDef] rejoin the republic as an equal partner, instead of a territory. At the same time, a small group of delegates have arrived in Manilla to await a reply."
- new_england_events.380.a: "Tell [THIS.faction_leader.GetNameDef] that we wish to rejoin."
- new_england_events.380.b: "Ask [THIS.faction_leader.GetNameDef] to intervene."
+ new_england_events.380.a: "Tell [ROOT.FactionLeader.GetNameDef] that we wish to rejoin."
+ new_england_events.380.b: "Ask [ROOT.FactionLeader.GetNameDef] to intervene."
  new_england_events.380.c: "We have no choice."
  new_england_events.380.d: "Absolutely not!"
 
@@ -2767,12 +2765,7 @@
 
 # Traits
  us_armor_companies_tank_destroyer: "Tank Destroyer Manufacturer"
- us_armor_companies_tank_destroyer_nsb: "Tank Destroyer Manufacturer"
  us_armor_companies_schenectady: "Main Battle Tank Manufacturer"
- us_armor_companies_schenectady_nsb: "Main Battle Tank Manufacturer"
-
- USA_congress_name: "Congress"
- USA_congress: "Legislative Branch"
 
  NEE_ambassador_to_canada: "Ambassador to Canada"
 

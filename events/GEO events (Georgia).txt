@@ -161,8 +161,8 @@ country_event = { #prices skyrocket
 		}
 	}
 	option = { #set prices
-		log = "[GetLogInfo]: event georgia_events.7 option georgia_events.7.b"
-		name = georgia_events.7.b
+		log = "[GetLogInfo]: event georgia_events.7 option georgia_events.7.b_temp"
+		name = georgia_events.7.b_temp
 		add_political_power = -50
 		hidden_effect = {
 			country_event = { id = georgia_events.9 days = 12 }
@@ -755,10 +755,9 @@ country_event = { # referendum
 			}
 			modifier = {
 				factor = 0
-				OR = {
-					has_game_rule = { rule = GEO_path option = GEO_PATH_REP_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_JOACHIM_SOCCON }
-				}
+				NOT = { has_game_rule = { rule = GEO_path option = DEFAULT } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_MON_GIORGI_SOCCON } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_PATAUT } }
 			}
 		}
 		GEO_create_giorgi = yes
@@ -779,10 +778,8 @@ country_event = { # referendum
 			base = 15
 			modifier = {
 				factor = 0
-				OR = {
-					has_game_rule = { rule = GEO_path option = GEO_PATH_REP_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_GIORGI_SOCCON }
-				}
+				NOT = { has_game_rule = { rule = GEO_path option = DEFAULT } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_MON_JOACHIM_SOCCON } }
 			}
 		}
 		GEO_create_ioachim = yes
@@ -805,11 +802,8 @@ country_event = { # referendum
 			}
 			modifier = {
 				factor = 0
-				OR = {
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_GIORGI_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_JOACHIM_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_PATAUT }
-				}
+				NOT = { has_game_rule = { rule = GEO_path option = DEFAULT } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_REP_SOCCON } }
 			}
 		}
 	}
@@ -889,10 +883,8 @@ country_event = { # Shalva Maglakelidze comes to Giorgi Bagration with a proposi
 			base = 1
 			modifier = {
 				factor = 0
-				OR = {
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_GIORGI_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_JOACHIM_SOCCON }
-				}
+				NOT = { has_game_rule = { rule = GEO_path option = DEFAULT } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_PATAUT } }
 			}
 		}
 		hidden_effect = {
@@ -1949,7 +1941,8 @@ country_event = { #Russia Refuse
 	}
 }
 
-news_event = { #Georgia Monarchy
+#Georgia Monarchy
+news_event = {
 	id = georgia_events.86
 	immediate = { log = "[GetLogInfo]: event georgia_events.86" }
 	title = georgia_events.86.t
@@ -1973,13 +1966,9 @@ news_event = { #Georgia Monarchy
 	major = yes
 	is_triggered_only = yes
 
-	show_major = {
-		regional_europe_news = yes
-	}
+	show_major = { regional_europe_news = yes }
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	option = {
 		name = georgia_events.86.a
@@ -2030,11 +2019,9 @@ country_event = { # 1936 election
 			base = 1
 			modifier = {
 				factor = 0
-				OR = {
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_GIORGI_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_JOACHIM_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_PATAUT }
-				}
+				NOT = { has_game_rule = { rule = GEO_path option = DEFAULT } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_SOCDEM_RADSOC } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_SOCDEM_SOCLIB } }
 			}
 		}
 		if = {
@@ -2197,12 +2184,9 @@ country_event = { # future elections
 			base = 1
 			modifier = {
 				factor = 0
-				OR = {
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_GIORGI_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_MON_JOACHIM_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_REP_SOCCON }
-					has_game_rule = { rule = GEO_path option = GEO_PATH_PATAUT }
-				}
+				NOT = { has_game_rule = { rule = GEO_path option = DEFAULT } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_SOCDEM_RADSOC } }
+				NOT = { has_game_rule = { rule = GEO_path option = GEO_PATH_SOCDEM_SOCLIB } }
 			}
 		}
 		if = {

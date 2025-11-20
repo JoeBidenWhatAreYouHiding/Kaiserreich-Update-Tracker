@@ -57,6 +57,7 @@ Belgrade_Pact_Balkan_War = {
 				country_event = belgrade_pact_events.2
 			}
 		}
+		fixed_random_seed = no
 	}
 	Belgrade_Pact_reinvite_member = {
 		icon = generic_agreement
@@ -113,6 +114,7 @@ Belgrade_Pact_Balkan_War = {
 				country_event = belgrade_pact_events.30
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	Belgrade_Pact_Romania_capture_dobrudzha_mission = {
@@ -133,10 +135,7 @@ Belgrade_Pact_Balkan_War = {
 				owns_state = 772
 				has_war_with = ROOT
 			}
-			SER = {
-				is_faction_leader = yes
-				is_in_faction_with = ROOT
-			}
+			is_in_faction_with = BPL
 		}
 
 		fire_only_once = yes
@@ -149,8 +148,7 @@ Belgrade_Pact_Balkan_War = {
 			OR = {
 				BUL = { NOT = { owns_state = 772 } }
 				NOT = { has_war_with = BUL }
-				SER = { NOT = { is_faction_leader = yes } }
-				NOT = { is_in_faction_with = SER }
+				NOT = { is_in_faction_with = BPL }
 			}
 		}
 
@@ -164,6 +162,7 @@ Belgrade_Pact_Balkan_War = {
 			add_war_support = 0.05
 			add_political_power = 50
 		}
+		fixed_random_seed = no
 	}
 
 	Belgrade_Pact_Serbia_capture_macedonia_mission = {
@@ -186,7 +185,7 @@ Belgrade_Pact_Balkan_War = {
 				owns_state = 106
 				has_war_with = ROOT
 			}
-			is_faction_leader = yes
+			is_in_faction_with = BPL
 		}
 
 		fire_only_once = yes
@@ -199,7 +198,7 @@ Belgrade_Pact_Balkan_War = {
 			OR = {
 				BUL = { NOT = { owns_state = 106 } }
 				NOT = { has_war_with = BUL }
-				NOT = { is_faction_leader = yes }
+				NOT = { is_in_faction_with = BPL }
 			}
 		}
 
@@ -213,6 +212,7 @@ Belgrade_Pact_Balkan_War = {
 			add_war_support = 0.05
 			add_political_power = 50
 		}
+		fixed_random_seed = no
 	}
 
 	Belgrade_Pact_Greece_capture_southern_macedonia = {
@@ -235,10 +235,7 @@ Belgrade_Pact_Balkan_War = {
 				owns_state = 731
 				has_war_with = ROOT
 			}
-			SER = {
-				is_faction_leader = yes
-				is_in_faction_with = ROOT
-			}
+			is_in_faction_with = BPL
 		}
 
 		fire_only_once = yes
@@ -251,8 +248,7 @@ Belgrade_Pact_Balkan_War = {
 			OR = {
 				BUL = { NOT = { owns_state = 731 } }
 				NOT = { has_war_with = BUL }
-				SER = { NOT = { is_faction_leader = yes } }
-				NOT = { is_in_faction_with = SER }
+				NOT = { is_in_faction_with = BPL }
 			}
 		}
 
@@ -266,6 +262,7 @@ Belgrade_Pact_Balkan_War = {
 			add_war_support = 0.05
 			add_political_power = 50
 		}
+		fixed_random_seed = no
 	}
 
 	Belgrade_Pact_race_to_sofia = {
@@ -280,17 +277,26 @@ Belgrade_Pact_Balkan_War = {
 			}
 		}
 
+		highlight_states = {
+			highlight_state_targets = { state = 48 }
+		}
+
 		available = {
-			48 = { is_controlled_by_ROOT_or_ally = yes } # Target of the mission: control Sofia
+			48 = { is_controlled_by_ROOT_or_subject = yes } # Target of the mission: control Sofia
 		}
 
 		activation = {
-			is_in_belgrade_pact = yes
-			has_war_with = BUL
+			OR = {
+				is_in_faction_with = BPL
+				AND = {
+					tag = TUR
+					NOT = { has_non_aggression_pact_with = BUL }
+				}
+			}
 			BUL = {
 				owns_state = 106 # Macedonia
 				owns_state = 48 # Sofia
-				NOT = { controls_state = 106 } #Macedonia
+				surrender_progress > 0.01 # BPL/TUR has started pushing into BUL's core territory
 			}
 		}
 
@@ -298,13 +304,16 @@ Belgrade_Pact_Balkan_War = {
 
 		is_good = no
 
-		days_mission_timeout = 30
+		days_mission_timeout = 60
 
 		cancel_trigger = {
 			OR = {
-				is_in_belgrade_pact = no
-				NOT = { has_war_with = BUL }
-				BUL = { NOT = { owns_state = 48 } }
+				AND = {
+					NOT = { controls_state = 48 }
+					NOT = { BUL = { controls_state = 48 } }
+				}
+				NOT = { SER = { has_war_with = BUL } }
+				has_truce_with = BUL
 			}
 		}
 
@@ -317,14 +326,19 @@ Belgrade_Pact_Balkan_War = {
 			add_war_support = 0.05
 			add_political_power = 50
 
-			every_country = {
+			if = {
 				limit = {
-					NOT = { tag = ROOT }
-					is_in_belgrade_pact = yes
+					is_in_faction_with = BPL
 				}
-				add_war_support = 0.05
+				every_other_country = {
+					limit = {
+						is_in_faction_with = BPL
+					}
+					add_war_support = 0.05
+				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 

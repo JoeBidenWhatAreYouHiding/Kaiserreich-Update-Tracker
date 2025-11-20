@@ -61,6 +61,7 @@ CEN_develop_core = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_developing_honduras = {
 		icon = GFX_decision_generic_agriculture
@@ -106,6 +107,7 @@ CEN_develop_core = {
 			}
 		}
 
+		fixed_random_seed = no
 	}
 }
 CEN_land_reform = {
@@ -161,6 +163,7 @@ CEN_land_reform = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_land_reform_in_guatemala = {
 		icon = GFX_decision_generic_agriculture
@@ -234,6 +237,7 @@ CEN_land_reform = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_land_reform_in_el_salvador = {
 		icon = GFX_decision_generic_agriculture
@@ -274,6 +278,7 @@ CEN_land_reform = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_land_reform_in_honduras = {
 		icon = GFX_decision_generic_agriculture
@@ -314,6 +319,7 @@ CEN_land_reform = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_land_reform_in_nicaragua = {
 		icon = GFX_decision_generic_agriculture
@@ -375,6 +381,7 @@ CEN_land_reform = {
 				set_country_flag = CEN_continue_land_improvement_in_nicaragua
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_land_development_in_eastern_nicaragua = {
 		icon = GFX_decision_generic_agriculture
@@ -404,6 +411,7 @@ CEN_land_reform = {
 				increase_state_category_by_one_level = yes
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_land_reform_in_costa_rica = {
 		icon = GFX_decision_generic_agriculture
@@ -456,6 +464,7 @@ CEN_land_reform = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_land_reform_in_panama = {
 		icon = GFX_decision_generic_agriculture
@@ -508,6 +517,7 @@ CEN_land_reform = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -556,6 +566,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_infra_project_in_yucatan = {
 		icon = GFX_decision_road
@@ -603,6 +614,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_infra_project_in_guatemala = {
 		icon = GFX_decision_road
@@ -660,6 +672,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_infra_project_in_el_salvador = {
 		icon = GFX_decision_road
@@ -699,6 +712,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_infra_project_in_honduras = {
 		icon = GFX_decision_road
@@ -737,6 +751,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_infra_project_in_nicaragua = {
 		icon = GFX_decision_road
@@ -786,6 +801,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_extent_road_south = {
 		icon = GFX_decision_road
@@ -835,6 +851,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_infra_project_in_costa_rica = {
 		icon = GFX_decision_road
@@ -881,6 +898,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_infra_project_in_panama = {
 		icon = GFX_decision_road
@@ -927,6 +945,7 @@ CEN_infrastructure_projects = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 CEN_resources_decisions = {
@@ -970,22 +989,16 @@ CEN_resources_decisions = {
 			log = "[GetLogRoot]: Decision remove CEN_nationalize_MEX_oil"
 			MEX = { MEX_oil_nationalisation_effect = yes }
 		}
+		fixed_random_seed = no
 	}
 	CEN_steal_southern_MEX_resources = {
+		icon = oil
+
 		available = {
-			OR = {
-				474 = { is_owned_and_controlled_by = CEN }
-				474 = { is_owned_and_controlled_by = MEX }
-				has_subject = YUC
-			}
-			OR = {
-				475 = { is_owned_and_controlled_by = CEN }
-				475 = { is_owned_and_controlled_by = MEX }
-			}
+			277 = { is_owned_and_controlled_by = MEX }
+			477 = { is_owned_and_controlled_by = MEX }
 			476 = { is_owned_and_controlled_by = MEX }
 			485 = { is_owned_and_controlled_by = MEX }
-			477 = { is_owned_and_controlled_by = MEX }
-			277 = { is_owned_and_controlled_by = MEX }
 		}
 
 		visible = {
@@ -1002,66 +1015,52 @@ CEN_resources_decisions = {
 
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove CEN_steal_southern_MEX_resources"
-			if = {
-				limit = { country_exists = YUC }
-				YUC = {
+			YUC = {
+				if = {
+					limit = {
+						owns_state = 474
+						is_subject_of = ROOT
+					}
 					give_resource_rights = {
-						receiver = CEN
+						receiver = ROOT
 						state = 474
-					}
-				}
-				MEX = {
-					give_resource_rights = {
-						receiver = CEN
-						state = 475
-					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 476
-					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 485
-					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 477
-					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 277
 					}
 				}
 			}
-			else = {
-				MEX = {
+			MEX = {
+				give_resource_rights = {
+					receiver = ROOT
+					state = 277
+				}
+				if = {
+					limit = { owns_state = 474 }
 					give_resource_rights = {
-						receiver = CEN
+						receiver = ROOT
 						state = 474
 					}
+				}
+				if = {
+					limit = { owns_state = 475 }
 					give_resource_rights = {
-						receiver = CEN
+						receiver = ROOT
 						state = 475
 					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 476
-					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 485
-					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 477
-					}
-					give_resource_rights = {
-						receiver = CEN
-						state = 277
-					}
+				}
+				give_resource_rights = {
+					receiver = ROOT
+					state = 476
+				}
+				give_resource_rights = {
+					receiver = ROOT
+					state = 477
+				}
+				give_resource_rights = {
+					receiver = ROOT
+					state = 485
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_request_oil = {
 		allowed = { always = no } # activated at the end of CEN_blood_of_navy event chain if Mexico agrees
@@ -1092,6 +1091,7 @@ CEN_resources_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_lower_oil = {
 		allowed = { always = no } # activated at the end of CEN_blood_of_navy event chain if Mexico agrees
@@ -1122,6 +1122,7 @@ CEN_resources_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 CEN_naval_expansion = {
@@ -1152,32 +1153,18 @@ CEN_naval_expansion = {
 
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CEN_subs"
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_equipment_variant = {
-					name = "Espada Class"
-					type = ship_hull_submarine_1
-					parent_version = 0
-					modules = {
-						fixed_ship_torpedo_slot = ship_torpedo_sub_1
-						fixed_ship_engine_slot = sub_ship_engine_1
-						rear_1_custom_slot = empty
-					}
-				}
-				custom_effect_tooltip = tooltip_white_line
-				create_ship = {
-					type = ship_hull_submarine_1
-					equipment_variant = "Espada Class"
-					creator = ROOT
+			create_equipment_variant = {
+				name = "Espada Class"
+				type = ship_hull_submarine_1
+				parent_version = 0
+				modules = {
+					fixed_ship_torpedo_slot = ship_torpedo_sub_1
+					fixed_ship_engine_slot = sub_ship_engine_1
+					rear_1_custom_slot = empty
 				}
 			}
-			else = {
-				create_ship = {
-					type = submarine_1
-					equipment_variant = "Weltkrieg Submarine"
-					creator = ROOT
-				}
-			}
+			custom_effect_tooltip = tooltip_white_line
+			create_ship = { type = ship_hull_submarine_1 equipment_variant = "Espada Class" }
 			hidden_effect = {
 				add_to_variable = { CEN_max_submarines = -1 }
 				if = {
@@ -1187,6 +1174,7 @@ CEN_naval_expansion = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_destroyers = {
 		allowed = { always = no } # activated by CEN_naval_destroyer
@@ -1231,21 +1219,7 @@ CEN_naval_expansion = {
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_ship = {
-					type = ship_hull_light_1
-					equipment_variant = "Caballero Class"
-					creator = ROOT
-				}
-			}
-			else = {
-				create_ship = {
-					type = destroyer_1
-					equipment_variant = "Weltkrieg Destroyer"
-					creator = ROOT
-				}
-			}
+			create_ship = { type = ship_hull_light_1 equipment_variant = "Caballero Class" }
 			hidden_effect = {
 				add_to_variable = { CEN_max_destroyers = -1 }
 				if = {
@@ -1255,6 +1229,7 @@ CEN_naval_expansion = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_cruisers = {
 		allowed = { always = no } # activated by CEN_naval_cruiser
@@ -1283,39 +1258,25 @@ CEN_naval_expansion = {
 
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CEN_cruisers"
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_equipment_variant = {
-					name = "Tegucigalpa Class"
-					type = ship_hull_cruiser_1
-					parent_version = 0
-					modules = {
-						fixed_ship_battery_slot = ship_light_medium_battery_1
-						fixed_ship_anti_air_slot = empty
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = cruiser_ship_engine_1
-						fixed_ship_secondaries_slot = ship_secondaries_1
-						fixed_ship_armor_slot = empty
-						mid_1_custom_slot = ship_light_battery_1
-						mid_2_custom_slot = empty
-						rear_1_custom_slot = empty
-					}
-				}
-				custom_effect_tooltip = tooltip_white_line
-				create_ship = {
-					type = ship_hull_cruiser_1
-					equipment_variant = "Tegucigalpa Class"
-					creator = ROOT
+			create_equipment_variant = {
+				name = "Tegucigalpa Class"
+				type = ship_hull_cruiser_1
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_light_medium_battery_1
+					fixed_ship_anti_air_slot = empty
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = cruiser_ship_engine_1
+					fixed_ship_secondaries_slot = ship_secondaries_1
+					fixed_ship_armor_slot = empty
+					mid_1_custom_slot = ship_light_battery_1
+					mid_2_custom_slot = empty
+					rear_1_custom_slot = empty
 				}
 			}
-			else = {
-				create_ship = {
-					type = light_cruiser_1
-					equipment_variant = "Weltkrieg Light Cruiser"
-					creator = ROOT
-				}
-			}
+			custom_effect_tooltip = tooltip_white_line
+			create_ship = { type = ship_hull_cruiser_1 equipment_variant = "Tegucigalpa Class" }
 			hidden_effect = {
 				add_to_variable = { CEN_max_cruisers = -1 }
 				if = {
@@ -1325,6 +1286,7 @@ CEN_naval_expansion = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_battleships = {
 		allowed = { always = no } # activated by CEN_naval_battleship
@@ -1353,39 +1315,25 @@ CEN_naval_expansion = {
 
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CEN_battleships"
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_equipment_variant = {
-					name = "Managua Class"
-					type = ship_hull_heavy_1
-					modules = {
-						fixed_ship_battery_slot = ship_heavy_battery_1
-						fixed_ship_anti_air_slot = ship_anti_air_1
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = heavy_ship_engine_1
-						fixed_ship_secondaries_slot = ship_secondaries_1
-						fixed_ship_armor_slot = ship_armor_bb_1
-						front_1_custom_slot = empty
-						mid_1_custom_slot = ship_airplane_launcher_1
-						mid_2_custom_slot = ship_secondaries_1
-						rear_1_custom_slot = ship_heavy_battery_1
-					}
-				}
-				custom_effect_tooltip = tooltip_white_line
-				create_ship = {
-					type = ship_hull_heavy_1
-					equipment_variant = "Managua Class"
-					creator = ROOT
+			create_equipment_variant = {
+				name = "Managua Class"
+				type = ship_hull_heavy_1
+				modules = {
+					fixed_ship_battery_slot = ship_heavy_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = heavy_ship_engine_1
+					fixed_ship_secondaries_slot = ship_secondaries_1
+					fixed_ship_armor_slot = ship_armor_bb_1
+					front_1_custom_slot = empty
+					mid_1_custom_slot = ship_airplane_launcher_1
+					mid_2_custom_slot = ship_secondaries_1
+					rear_1_custom_slot = ship_heavy_battery_1
 				}
 			}
-			else = {
-				create_ship = {
-					type = battleship_1
-					equipment_variant = "Weltkrieg Battleship"
-					creator = ROOT
-				}
-			}
+			custom_effect_tooltip = tooltip_white_line
+			create_ship = { type = ship_hull_heavy_1 equipment_variant = "Managua Class" }
 			hidden_effect = {
 				add_to_variable = { CEN_max_battleships = -1 }
 				if = {
@@ -1395,6 +1343,7 @@ CEN_naval_expansion = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_battlecruiser = {
 		allowed = { always = no } # activated by CEN_naval_battlecruiser
@@ -1423,39 +1372,25 @@ CEN_naval_expansion = {
 
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CEN_battlecruiser"
-			if = {
-				limit = { has_dlc_mtg = yes }
-				create_equipment_variant = {
-					name = "San Salvador Class"
-					type = ship_hull_heavy_1
-					modules = {
-						fixed_ship_battery_slot = ship_heavy_battery_1
-						fixed_ship_anti_air_slot = ship_anti_air_1
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = heavy_ship_engine_1
-						fixed_ship_secondaries_slot = ship_secondaries_1
-						fixed_ship_armor_slot = ship_armor_bc_1
-						front_1_custom_slot = ship_heavy_battery_1
-						mid_1_custom_slot = ship_secondaries_1
-						mid_2_custom_slot = ship_anti_air_1
-						rear_1_custom_slot = empty
-					}
-				}
-				custom_effect_tooltip = tooltip_white_line
-				create_ship = {
-					type = ship_hull_heavy_1
-					equipment_variant = "San Salvador Class"
-					creator = ROOT
+			create_equipment_variant = {
+				name = "San Salvador Class"
+				type = ship_hull_heavy_1
+				modules = {
+					fixed_ship_battery_slot = ship_heavy_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = heavy_ship_engine_1
+					fixed_ship_secondaries_slot = ship_secondaries_1
+					fixed_ship_armor_slot = ship_armor_bc_1
+					front_1_custom_slot = ship_heavy_battery_1
+					mid_1_custom_slot = ship_secondaries_1
+					mid_2_custom_slot = ship_anti_air_1
+					rear_1_custom_slot = empty
 				}
 			}
-			else = {
-				create_ship = {
-					type = battle_cruiser_1
-					equipment_variant = "Weltkrieg Battlecruiser"
-					creator = ROOT
-				}
-			}
+			custom_effect_tooltip = tooltip_white_line
+			create_ship = { type = ship_hull_heavy_1 equipment_variant = "San Salvador Class" }
 			hidden_effect = {
 				add_to_variable = { CEN_max_battlecruisers = -1 }
 				if = {
@@ -1465,6 +1400,7 @@ CEN_naval_expansion = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 CEN_expanding_socialism_in_central_america = {
@@ -1510,6 +1446,7 @@ CEN_expanding_socialism_in_central_america = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_take_costa_rica = {
 		icon = GFX_decision_generic_nationalism
@@ -1528,7 +1465,7 @@ CEN_expanding_socialism_in_central_america = {
 						}
 					}
 				}
-				has_global_flag = second_weltkrieg_has_started
+				second_weltkrieg_has_begun = yes
 			}
 		}
 
@@ -1581,6 +1518,7 @@ CEN_expanding_socialism_in_central_america = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_take_panama = {
 		icon = GFX_decision_generic_ignite_civil_war
@@ -1597,7 +1535,7 @@ CEN_expanding_socialism_in_central_america = {
 						}
 					}
 				}
-				has_global_flag = second_weltkrieg_has_started
+				second_weltkrieg_has_begun = yes
 			}
 		}
 
@@ -1631,28 +1569,20 @@ CEN_expanding_socialism_in_central_america = {
 			}
 			modifier = {
 				factor = 0
-				NOT = { has_tech = transport }
-				NOT = { has_tech = mtg_transport }
+				NOT = { is_neighbor_of = FROM }
+				has_navy_size = { size < 1 }
 			}
 			modifier = {
 				factor = 0
-				has_navy_size = {
-					size < 1
-				}
+				FROM = { naval_strength_comparison = { other = ROOT ratio > 1 } }
 			}
 			modifier = {
 				factor = 0
-				PAN = { naval_strength_comparison = { other = ROOT ratio > 1 } }
-			}
-			modifier = {
-				factor = 0
-				FROM = {
-					OR = {
-						is_in_faction_with = ENT
-						is_guaranteed_by = ENT
-					}
-				}
 				ENT = {
+					OR = {
+						is_in_faction_with = FROM
+						has_guaranteed = FROM
+					}
 					surrender_progress < 0.5
 				}
 			}
@@ -1677,6 +1607,7 @@ CEN_expanding_socialism_in_central_america = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_approach_yucatan = {
 		icon = GFX_decision_generic_ignite_civil_war
@@ -1745,6 +1676,7 @@ CEN_expanding_socialism_in_central_america = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_dealing_with_mexico = {
 		icon = GFX_decision_generic_ignite_civil_war
@@ -1753,13 +1685,8 @@ CEN_expanding_socialism_in_central_america = {
 			MEX = { has_authoritarian_government = yes }
 			if = {
 				limit = {
-					INT = {
-						exists = yes
-						is_in_faction_with = ROOT
-					}
-					MEX = {
-						is_in_faction_with = ENT
-					}
+					INT = { is_in_faction_with = ROOT }
+					MEX = { is_in_faction_with = ENT }
 				}
 				INT = { has_war_with = ENT }
 			}
@@ -1827,6 +1754,7 @@ CEN_expanding_socialism_in_central_america = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_integrate_yucatan = {
 
@@ -1856,6 +1784,7 @@ CEN_expanding_socialism_in_central_america = {
 			custom_effect_tooltip = CEN_integrate_yucatan_tt
 			country_event = central_america_socialist_events.029
 		}
+		fixed_random_seed = no
 	}
 }
 CEN_increasing_totalist_support = {
@@ -1889,6 +1818,7 @@ CEN_increasing_totalist_support = {
 				country_event = central_america_socialist_events.406
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_begin_talks_in_guatemala = {
 		available = {
@@ -1916,6 +1846,7 @@ CEN_increasing_totalist_support = {
 				set_country_flag = CEN_talk_in_gua_over
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_begin_talks_in_el_salvador = {
 		available = {
@@ -1943,6 +1874,7 @@ CEN_increasing_totalist_support = {
 				set_country_flag = CEN_talk_in_els_over
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_begin_talks_in_nicaragua = {
 		available = {
@@ -1970,5 +1902,6 @@ CEN_increasing_totalist_support = {
 				set_country_flag = CEN_talk_in_nic_over
 			}
 		}
+		fixed_random_seed = no
 	}
 }

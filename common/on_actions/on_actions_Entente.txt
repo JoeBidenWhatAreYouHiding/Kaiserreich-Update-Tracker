@@ -75,6 +75,17 @@ on_actions = {
 					limit = { FROM = { has_idea = CAN_iedc_main } }
 					CAN_transfer_iedc_leadership = yes
 				}
+				if = {
+					limit = { COS = { is_guaranteed_by = FROM } }
+					FROM = {
+						diplomatic_relation = {
+							country = COS
+							relation = guarantee
+							active = no
+						}
+					}
+					ROOT = { give_guarantee = COS }
+				}
 			}
 			if = {
 				limit = {
@@ -364,21 +375,6 @@ on_actions = {
 	on_war_relation_added = {
 		effect = {
 			if = {
-				limit = {
-					OR = {
-						tag = JAP
-						tag = ENT
-					}
-					FROM = {
-						OR = {
-							tag = JAP
-							tag = ENT
-						}
-					}
-				}
-				set_global_flag = JAP_war_vs_ENT
-			}
-			else_if = {
 				limit = {
 					OR = {
 						tag = ENT

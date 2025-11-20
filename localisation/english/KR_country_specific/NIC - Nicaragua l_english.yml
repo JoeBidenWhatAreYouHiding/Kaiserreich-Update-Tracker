@@ -38,7 +38,6 @@
  NIC_government_distrusted: "§RTrust in the government will decrease§!"
  NIC_government_trusted: "§GTrust in the government will increase.§!"
  NIC_angery_east_tooltip: "§RThis will upset the population in the east.§!"
- NIC_guardia_deployment_tooltip: "§YThe Guardia Nacional will be deployed.§!"
  NIC_HON_break_off: "§RHonduras will break free from our control§!"
  NIC_sandino_total_control: "§RSandino due to a lack of opposition will retain control over the country, for the sake of the people.§!"
  NIC_preparing_final_war: "§RThe liberation of Central America is at hand! Our allies and us will unite into an unstoppable force or perish trying!§!"
@@ -115,7 +114,7 @@
  NIC_education_economic_reform_desc: "One of Sequeira's first actions of his new presidency has been to move to help the significant poor population within the country. He started this with education reforms where attempts began to build local schools and decrease illiteracy within the country. He has now begun the second part of his reforms. He is trying to allocate government funds and funds from the small upper class to the majority uneducated population."
 
  NIC_remaining_UFC_influence_idea: "Lingering American Influence"
- NIC_remaining_UFC_influence_idae_desc: "Despite Sandino's many attempts to throw away the United States influence, it still lingers about as the economy is heavily reliant on the United Fruit Company, that continues to loom over us like a hawk. As long as the United States is watching however, we cannot remove this shackle off our back for good."
+ NIC_remaining_UFC_influence_idea_desc: "Despite Sandino's many attempts to throw away the United States influence, it still lingers about as the economy is heavily reliant on the United Fruit Company, that continues to loom over us like a hawk. As long as the United States is watching however, we cannot remove this shackle off our back for good."
 
  NIC_canadian_investments: "Canadian investments"
 

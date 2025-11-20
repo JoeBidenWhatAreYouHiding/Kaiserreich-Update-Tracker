@@ -45,6 +45,7 @@ FER_ride_to_west = {
 				add_stability = -0.5
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_secure_far_east = {
 		icon = GFX_decision_hol_draw_up_staff_plans
@@ -81,6 +82,7 @@ FER_ride_to_west = {
 				add_power_balance_value = { id = FER_power_balance value = 0.2 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_take_chita = {
 		icon = GFX_decision_hol_draw_up_staff_plans
@@ -122,6 +124,7 @@ FER_ride_to_west = {
 				add_power_balance_value = { id = FER_power_balance value = -0.1 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_take_irkutsk = {
 		icon = GFX_decision_hol_draw_up_staff_plans
@@ -166,15 +169,15 @@ FER_ride_to_west = {
 				add_power_balance_value = { id = FER_power_balance value = -0.1 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_reach_ob = {
 		icon = GFX_decision_hol_draw_up_staff_plans
 		allowed = { always = no }
 		available = {
-			OR = {
-				570 = { is_controlled_by_ROOT_or_ally = yes } #Novonikolayevsk
-				40 = { is_controlled_by_ROOT_or_ally = yes } #Barnaul
-				578 = { is_controlled_by_ROOT_or_ally = yes } #Omsk
+			any_state_of = {
+				target = { 40 570 578 } #Barnaul, Novonikolayevsk, Omsk
+				is_controlled_by_ROOT_or_ally = yes
 			}
 		}
 		cancel_trigger = {
@@ -214,15 +217,15 @@ FER_ride_to_west = {
 				add_power_balance_value = { id = FER_power_balance value = -0.1 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_reach_urals = {
 		icon = GFX_decision_hol_draw_up_staff_plans
 		allowed = { always = no }
 		available = {
-			OR = {
-				572 = { is_controlled_by_ROOT_or_ally = yes } #Chelyabinsk
-				653 = { is_controlled_by_ROOT_or_ally = yes } #Yekaterinburg
-				582 = { is_controlled_by_ROOT_or_ally = yes } #Orsk
+			any_state_of = {
+				target = { 572 582 653 } #Chelyabinsk, Orsk, Yekaterinburg
+				is_controlled_by_ROOT_or_ally = yes
 			}
 		}
 		cancel_trigger = {
@@ -263,6 +266,7 @@ FER_ride_to_west = {
 				add_power_balance_value = { id = FER_power_balance value = -0.1 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_last_crusade = {
 		icon = GFX_decision_generic_speech
@@ -289,6 +293,7 @@ FER_ride_to_west = {
 			country_event = russia_far_east_events.200
 			custom_effect_tooltip = FER_collapse_tt
 		}
+		fixed_random_seed = no
 	}
 	FER_army_reform = {
 		icon = GFX_decision_soldierly_discipline
@@ -304,8 +309,8 @@ FER_ride_to_west = {
 		}
 		custom_cost_text = decision_cost_army_xp_50_pp_50
 		custom_cost_trigger = {
-			has_political_power > 49
-			has_army_experience > 49.99
+			NOT = { has_political_power < 50 }
+			NOT = { has_army_experience < 50 }
 		}
 		ai_hint_pp_cost = 50
 		days_remove = 30
@@ -322,6 +327,7 @@ FER_ride_to_west = {
 			add_war_support = 0.05
 			FER_fix_army = yes
 		}
+		fixed_random_seed = no
 	}
 	FER_calm_tensions = {
 		icon = GFX_decision_hand_out
@@ -353,6 +359,7 @@ FER_ride_to_west = {
 				add_power_balance_value = { id = FER_power_balance value = -0.15 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_rifle_workshops = {
 		icon = GFX_decision_factories
@@ -374,6 +381,7 @@ FER_ride_to_west = {
 			add_one_random_military_factory = yes
 			RUS_upgrade_siberian_insurrection_idea = yes
 		}
+		fixed_random_seed = no
 	}
 	FER_armoured_train = {
 		icon = GFX_decision_generic_train
@@ -396,6 +404,7 @@ FER_ride_to_west = {
 				location = 12189
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_yakut_corps = {
 		icon = GFX_decision_generic_reorganize_irregulars
@@ -461,6 +470,7 @@ FER_ride_to_west = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_message_annenkov = {
 		icon = GFX_decision_generic_army_support
@@ -491,6 +501,7 @@ FER_ride_to_west = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_invite_faction = {
 		icon = GFX_decision_generic_flags
@@ -519,6 +530,7 @@ FER_ride_to_west = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete FER_invite_faction"
 			FROM = { country_event = { id = russia_foreign_policy_events.70 days = 3 random_days = 3 } }
 		}
+		fixed_random_seed = no
 	}
 	FER_transbaikal_host = {
 		icon = GFX_decision_cavalry
@@ -577,6 +589,7 @@ FER_ride_to_west = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -609,6 +622,7 @@ FER_japanese_support_cat = {
 				activate_mission = FER_siberian_expectations
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_lease_resources = {
 		icon = generic_steel
@@ -724,6 +738,7 @@ FER_japanese_support_cat = {
 				add_power_balance_value = { id = FER_power_balance value = 0.05 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_seek_funding = {
 		icon = GFX_decision_give_cash
@@ -748,6 +763,7 @@ FER_japanese_support_cat = {
 			FER_japanese_favours_check = yes
 			add_political_power = 60
 		}
+		fixed_random_seed = no
 	}
 	FER_buy_arms = {
 		icon = GFX_decision_generic_industry
@@ -782,6 +798,7 @@ FER_japanese_support_cat = {
 				producer = JAP
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_request_heavy_weapons = {
 		icon = GFX_decision_artillery
@@ -817,6 +834,7 @@ FER_japanese_support_cat = {
 				producer = JAP
 			}
 		}
+		fixed_random_seed = no
 	}
 	FER_buy_bombers = {
 		icon = GFX_decision_bomber
@@ -864,6 +882,7 @@ FER_japanese_support_cat = {
 				JAP = { country_event = { id = russia_foreign_policy_events.48 days = 5 } }
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -889,5 +908,6 @@ political_actions = {
 			log = "[GetLogRoot]: Decision remove FER_rebuilding"
 			FER_fix_russia = yes
 		}
+		fixed_random_seed = no
 	}
 }

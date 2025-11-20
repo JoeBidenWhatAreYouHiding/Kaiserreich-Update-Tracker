@@ -87,6 +87,7 @@ Forming_Central_America = {
 				CEN = {
 					transfer_state = 1071 #Basically makes sure it exists while all this goes down
 					CEN_reset_ideas = yes
+					CEN_remove_targeted_decisions = yes
 					every_state = {
 						remove_core_of = CEN
 						remove_claim_by = CEN
@@ -430,6 +431,7 @@ Forming_Central_America = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_conflict_escalates_mission = {
 		icon = generic_ignite_civil_war
@@ -547,6 +549,7 @@ Forming_Central_America = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_form_ties = {
 		icon = GFX_decision_generic_agreement
@@ -584,15 +587,14 @@ Forming_Central_America = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete CEN_form_ties"
-			set_country_flag = CEN_already_formed_ties
 			set_country_flag = CEN_already_formed_ties_with_@FROM
 			add_political_power = 20
 			FROM = {
-				set_country_flag = CEN_already_formed_ties
 				set_country_flag = CEN_already_formed_ties_with_@ROOT
 				country_event = central_america_unification_events.1
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_found_revolutionary_pact = {
 		icon = GFX_decision_generic_political_discourse
@@ -642,7 +644,7 @@ Forming_Central_America = {
 			log = "[GetLogRoot]: Decision complete CEN_found_revolutionary_pact"
 			CEN_conflict_escalates = yes
 			save_global_event_target_as = CEN_socialist_leader
-			create_faction = revolutionary_front
+			create_faction_from_template = { template = faction_template_generic name = revolutionary_front }
 			every_other_country = {
 				limit = {
 					OR = {
@@ -655,6 +657,7 @@ Forming_Central_America = {
 				country_event = { id = central_america_unification_events.5 days = 1 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_found_liberal_pact = {
 		icon = GFX_decision_generic_political_discourse
@@ -712,7 +715,7 @@ Forming_Central_America = {
 			log = "[GetLogRoot]: Decision complete CEN_found_liberal_pact"
 			CEN_conflict_escalates = yes
 			save_global_event_target_as = CEN_liberal_leader
-			create_faction = liberal_pact
+			create_faction_from_template = { template = faction_template_generic name = liberal_pact }
 			every_other_country = {
 				limit = {
 					OR = {
@@ -725,6 +728,7 @@ Forming_Central_America = {
 				country_event = { id = central_america_unification_events.6 days = 1 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_found_military_pact = {
 		icon = GFX_decision_generic_political_discourse
@@ -774,7 +778,7 @@ Forming_Central_America = {
 			log = "[GetLogRoot]: Decision complete CEN_found_military_pact"
 			CEN_conflict_escalates = yes
 			save_global_event_target_as = CEN_military_leader
-			create_faction = peoples_vanguard
+			create_faction_from_template = { template = faction_template_generic name = peoples_vanguard }
 			every_other_country = {
 				limit = {
 					OR = {
@@ -787,6 +791,7 @@ Forming_Central_America = {
 				country_event = { id = central_america_unification_events.7 days = 1 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_join_faction = {
 		icon = GFX_decision_generic_agreement
@@ -847,6 +852,7 @@ Forming_Central_America = {
 				event_target:CEN_liberal_leader = { country_event = central_america_unification_events.8 }
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_leave_faction = {
 		icon = GFX_decision_generic_agreement
@@ -908,6 +914,7 @@ Forming_Central_America = {
 				leave_faction = yes
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_invite_country_to_faction = {
 		icon = GFX_decision_generic_agreement
@@ -948,6 +955,7 @@ Forming_Central_America = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete CEN_invite_country_to_faction"
 			FROM = { country_event = central_america_unification_events.9 }
 		}
+		fixed_random_seed = no
 	}
 	# War stuff
 	CEN_attack_country = {
@@ -1102,6 +1110,7 @@ Forming_Central_America = {
 				type = annex_everything
 			}
 		}
+		fixed_random_seed = no
 	}
 	CEN_core_matagalpa = {
 		icon = GFX_decision_generic_nationalism
@@ -1124,6 +1133,7 @@ Forming_Central_America = {
 			log = "[GetLogRoot]: Decision remove CEN_core_matagalpa"
 			1071 = { remove_dynamic_modifier = { modifier = conscription_exemptions_granted } }
 		}
+		fixed_random_seed = no
 	}
 }
 

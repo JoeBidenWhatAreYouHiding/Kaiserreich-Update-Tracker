@@ -2317,7 +2317,7 @@ country_event = {
 			check_variable = { king_influence > 2 }
 			set_temp_variable = { temp = king_civ_factories }
 			add_to_temp_variable = { temp = king_mil_factories }
-			check_variable = { var = temp value = king_influence compare = less_than }
+			check_variable = { temp < king_influence }
 		}
 		ai_chance = { base = 50 }
 		set_country_flag = CAN_exile_inc_industry
@@ -2330,7 +2330,7 @@ country_event = {
 			check_variable = { king_influence > 2 }
 			set_temp_variable = { temp = king_civ_factories }
 			add_to_temp_variable = { temp = king_mil_factories }
-			check_variable = { var = temp value = king_influence compare = greater_than_or_equals }
+			NOT = { check_variable = { temp < king_influence } }
 		}
 		ai_chance = { base = 20 }
 		add_dynamic_modifier = {
@@ -2858,13 +2858,13 @@ country_event = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
 			ENT_king_edward_viii = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
-			check_variable = { var = global.king_edward_story value = 12 compare = less_than }
+			check_variable = { global.king_edward_story < 12 }
 			if = {
-				limit = { check_variable = { var = global.king_edward_story value = 0 compare = equals } }
+				limit = { check_variable = { global.king_edward_story = 0 } }
 				date > 1936.6.1
 			}
 			else_if = {
-				limit = { check_variable = { var = global.king_edward_story value = 1 compare = equals } }
+				limit = { check_variable = { global.king_edward_story = 1 } }
 				OR = {
 					AND = {
 						date > 1937.6.1
@@ -2885,11 +2885,11 @@ country_event = {
 				}
 			}
 			else_if = {
-				limit = { check_variable = { var = global.king_edward_story value = 2 compare = equals } }
+				limit = { check_variable = { global.king_edward_story = 2 } }
 				OR = {
 					AND = {
 						date > 1938.1.1
-						check_variable = { var = global.king_edward_story value = 2 compare = equals }
+						check_variable = { global.king_edward_story = 2 }
 						has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
 					}
 					AND = {
@@ -2908,21 +2908,21 @@ country_event = {
 				}
 			}
 			else_if = {
-				limit = { check_variable = { var = global.king_edward_story value = 3 compare = equals } }
+				limit = { check_variable = { global.king_edward_story = 3 } }
 				date > 1939.1.1
 				has_global_flag = CAN_edward_met_constance
 				NOT = { has_global_flag = { flag = CAN_king_busy value > 0 } }
 			}
 			else_if = {
-				limit = { check_variable = { var = global.king_edward_story value = 4 compare = equals } }
+				limit = { check_variable = { global.king_edward_story = 4 } }
 				date > 1939.6.1
 			}
 			else_if = {
-				limit = { check_variable = { var = global.king_edward_story value = 10 compare = equals } }
+				limit = { check_variable = { global.king_edward_story = 10 } }
 				date > 1940.1.1
 			}
 			else_if = {
-				limit = { check_variable = { var = global.king_edward_story value = 11 compare = equals } }
+				limit = { check_variable = { global.king_edward_story = 11 } }
 				date > 1942.1.1
 			}
 		}
@@ -2967,20 +2967,20 @@ country_event = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
 			ENT_king_albert_i = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
-			check_variable = { var = global.king_albert_story value = 3 compare = less_than }
+			check_variable = { global.king_albert_story < 3 }
 			if = {
-				limit = { check_variable = { var = global.king_albert_story value = 0 compare = equals } }
+				limit = { check_variable = { global.king_albert_story = 0 } }
 				event_target:KR_king_base = {
 					has_war = yes
 					any_enemy_country = { is_actual_major = yes }
 				}
 			}
 			if = {
-				limit = { check_variable = { var = global.king_albert_story value = 1 compare = equals } }
+				limit = { check_variable = { global.king_albert_story = 1 } }
 				date > 1940.1.1
 			}
 			if = {
-				limit = { check_variable = { var = global.king_albert_story value = 2 compare = equals } }
+				limit = { check_variable = { global.king_albert_story = 2 } }
 				GBR = { GBR_albert_windsor = { has_character_flag = { flag = GBR_british_king days > 1095 } } }
 			}
 		}
@@ -3005,21 +3005,21 @@ country_event = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
 			ENT_king_henry_ix = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
-			check_variable = { var = global.king_henry_story value = 3 compare = less_than }
+			check_variable = { global.king_henry_story < 3 }
 			if = {
-				limit = { check_variable = { var = global.king_henry_story value = 0 compare = equals } }
+				limit = { check_variable = { global.king_henry_story = 0 } }
 				event_target:KR_king_base = {
 					has_war = yes
 					any_enemy_country = { is_actual_major = yes }
 				}
 			}
 			if = {
-				limit = { check_variable = { var = global.king_henry_story value = 1 compare = equals } }
+				limit = { check_variable = { global.king_henry_story = 1 } }
 				GBR = { GBR_henry_windsor = { has_character_flag = { flag = GBR_british_king days > 120 } } }
 				date > 1940.1.1
 			}
 			if = {
-				limit = { check_variable = { var = global.king_henry_story value = 2 compare = equals } }
+				limit = { check_variable = { global.king_henry_story = 2 } }
 				date > 1943.6.1
 			}
 		}
@@ -3044,20 +3044,20 @@ country_event = {
 			event_target:KR_king_base = { surrender_progress < 0.15 }
 			ENT_king_george_vi = yes
 			NOT = { has_global_flag = { flag = CAN_king_on_tour value > 0 } }
-			check_variable = { var = global.king_george_story value = 3 compare = less_than }
+			check_variable = { global.king_george_story < 3 }
 			if = {
-				limit = { check_variable = { var = global.king_george_story value = 0 compare = equals } }
+				limit = { check_variable = { global.king_george_story = 0 } }
 				event_target:KR_king_base = {
 					has_war = yes
 					any_enemy_country = { is_actual_major = yes }
 				}
 			}
 			if = {
-				limit = { check_variable = { var = global.king_george_story value = 1 compare = equals } }
+				limit = { check_variable = { global.king_george_story = 1 } }
 				GBR = { GBR_george_windsor = { has_character_flag = { flag = GBR_british_king days > 120 } } }
 			}
 			if = {
-				limit = { check_variable = { var = global.king_george_story value = 2 compare = equals } }
+				limit = { check_variable = { global.king_george_story = 2 } }
 				GBR = { GBR_george_windsor = { has_character_flag = { flag = GBR_british_king days > 730 } } }
 				NOT = { has_global_flag = { flag = CAN_king_busy value > 0 } }
 			}
@@ -3941,7 +3941,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_edward_story value = 0 compare = equals }
+		check_variable = { global.king_edward_story = 0 }
 	}
 
 	option = {
@@ -3971,7 +3971,7 @@ country_event = {
 
 	trigger = {
 		tag = CAN
-		check_variable = { var = global.king_edward_story value = 1 compare = equals }
+		check_variable = { global.king_edward_story = 1 }
 		date > 1937.6.1
 		has_global_flag = USA_civil_war_begun_flag
 		NOT = { has_global_flag = USA_civil_war_over_flag }
@@ -4022,7 +4022,7 @@ country_event = {
 
 	trigger = {
 		tag = CAN
-		check_variable = { var = global.king_edward_story value = 2 compare = equals }
+		check_variable = { global.king_edward_story = 2 }
 		date > 1938.6.1
 		NOT = {
 			has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
@@ -4064,7 +4064,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_edward_story value = 3 compare = equals }
+		check_variable = { global.king_edward_story = 3 }
 	}
 
 	option = {
@@ -4127,12 +4127,12 @@ country_event = {
 		OR = {
 			AND = {
 				date > 1938.1.1
-				check_variable = { var = global.king_edward_story value = 2 compare = equals }
+				check_variable = { global.king_edward_story = 2 }
 				has_game_rule = { rule = CAN_king option = CAN_KING_EDWARD }
 			}
 			AND = {
 				date > 1938.1.1
-				check_variable = { var = global.king_edward_story value = 1 compare = equals }
+				check_variable = { global.king_edward_story = 1 }
 				NOT = {
 					AND = {
 						tag = CAN
@@ -4143,7 +4143,7 @@ country_event = {
 			}
 			AND = {
 				date > 1939.1.1
-				check_variable = { var = global.king_edward_story value = 2 compare = equals }
+				check_variable = { global.king_edward_story = 2 }
 				NOT = {
 					tag = CAN
 				}
@@ -4171,7 +4171,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_edward_story value = 4 compare = equals }
+		check_variable = { global.king_edward_story = 4 }
 	}
 
 	option = {
@@ -4205,7 +4205,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_edward_story value = 10 compare = equals }
+		check_variable = { global.king_edward_story = 10 }
 	}
 
 	option = {
@@ -4244,7 +4244,7 @@ country_event = {
 	}
 
 	trigger = {
-		check_variable = { var = global.king_edward_story value = 11 compare = equals }
+		check_variable = { global.king_edward_story = 11 }
 	}
 
 	option = {
@@ -4273,7 +4273,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_albert_story value = 0 compare = equals }
+		check_variable = { global.king_albert_story = 0 }
 	}
 
 	immediate = {
@@ -4322,7 +4322,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_albert_story value = 1 compare = equals }
+		check_variable = { global.king_albert_story = 1 }
 	}
 
 	option = {
@@ -4348,7 +4348,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_albert_story value = 2 compare = equals }
+		check_variable = { global.king_albert_story = 2 }
 	}
 
 	option = {
@@ -4374,7 +4374,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_henry_story value = 0 compare = equals }
+		check_variable = { global.king_henry_story = 0 }
 	}
 
 	immediate = {
@@ -4420,7 +4420,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_henry_story value = 1 compare = equals }
+		check_variable = { global.king_henry_story = 1 }
 	}
 
 	option = {
@@ -4446,7 +4446,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_henry_story value = 2 compare = equals }
+		check_variable = { global.king_henry_story = 2 }
 	}
 
 	option = {
@@ -4472,7 +4472,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_george_story value = 0 compare = equals }
+		check_variable = { global.king_george_story = 0 }
 	}
 
 	immediate = {
@@ -4521,7 +4521,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_george_story value = 1 compare = equals }
+		check_variable = { global.king_george_story = 1 }
 	}
 
 	option = {
@@ -4547,7 +4547,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = { var = global.king_george_story value = 2 compare = equals }
+		check_variable = { global.king_george_story = 2 }
 	}
 
 	option = {
@@ -4573,16 +4573,14 @@ news_event = {
 	major = yes
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	show_major = {
-		NOT = { tag = event_target:wedding_country }
 		OR = {
-			regional_europe_news = yes
-			regional_north_america_news = yes
+			is_ally_with = ENT
+			is_english_tag = yes
 		}
+		NOT = { tag = event_target:wedding_country }
 	}
 	option = {
 		name = entente_events.90.a
@@ -4605,16 +4603,14 @@ news_event = {
 	major = yes
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	show_major = {
-		NOT = { tag = event_target:wedding_country }
 		OR = {
-			regional_europe_news = yes
-			regional_north_america_news = yes
+			is_ally_with = ENT
+			is_english_tag = yes
 		}
+		NOT = { tag = event_target:wedding_country }
 	}
 	option = {
 		name = entente_events.90.a
@@ -5247,15 +5243,14 @@ news_event = {
 	major = yes
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes }
 
 	show_major = {
 		OR = {
-			regional_europe_news = yes
-			regional_north_america_news = yes
+			is_ally_with = ENT
+			is_english_tag = yes
 		}
+		NOT = { tag = event_target:wedding_country }
 	}
 
 	option = {
@@ -5301,16 +5296,7 @@ news_event = {
 	major = yes
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
-	show_major = {
-		OR = {
-			regional_europe_news = yes
-			regional_north_america_news = yes
-		}
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	option = {
 		name = entente_events.111.a
@@ -6447,9 +6433,7 @@ news_event = {
 	desc = entente_events.255.d
 	picture = GFX_news_event_canada_army
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	is_triggered_only = yes
 	fire_for_sender = no
@@ -6498,9 +6482,7 @@ news_event = {
 	desc = entente_events.256.d
 	picture = GFX_news_event_canada_army
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	is_triggered_only = yes
 	fire_for_sender = no
@@ -6871,16 +6853,11 @@ news_event = {
 		}
 	}
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	is_triggered_only = yes
+	fire_for_sender = no
 	major = yes
-
-	show_major = {
-		NOT = { tag = FROM }
-	}
 
 	option = {
 		name = entente_events.259.a
@@ -6938,16 +6915,11 @@ news_event = {
 		}
 	}
 
-	trigger = {
-		wants_world_news = yes
-	}
+	trigger = { wants_world_news = yes } #Global news event
 
 	is_triggered_only = yes
+	fire_for_sender = no
 	major = yes
-
-	show_major = {
-		NOT = { tag = FROM }
-	}
 
 	option = {
 		name = entente_events.260.a
@@ -6967,59 +6939,6 @@ news_event = {
 			NOT = {
 				has_war_with = FROM
 				is_in_faction_with = FROM
-			}
-		}
-	}
-}
-
-# The King returns to Canada/UK
-news_event = {
-	id = entente_events.261
-	immediate = { log = "[GetLogInfo]: event entente_events.261" }
-	title = entente_events.261.t
-	desc = entente_events.261.d
-	picture = GFX_news_event_royal_visit
-
-	trigger = {
-		wants_world_news = yes
-	}
-
-	is_triggered_only = yes
-	major = yes
-
-	option = {
-		name = entente_events.261.a
-		trigger = { tag = FROM }
-	}
-	option = {
-		name = entente_events.261.b
-		trigger = { tag = event_target:king_come_from }
-	}
-	option = {
-		name = entente_events.261.c
-		trigger = {
-			is_in_faction_with = FROM
-			NOT = {
-				tag = FROM
-				tag = event_target:king_come_from
-			}
-		}
-	}
-	option = {
-		name = entente_events.261.e
-		trigger = {
-			has_war_with = FROM
-			NOT = { tag = event_target:king_come_from }
-		}
-	}
-	option = {
-		name = entente_events.261.f
-		trigger = {
-			NOT = {
-				tag = FROM
-				is_in_faction_with = FROM
-				has_war_with = FROM
-				tag = event_target:king_come_from
 			}
 		}
 	}
@@ -7409,14 +7328,14 @@ country_event = {
 	major = yes
 
 	show_major = {
+		OR = {
+			is_in_faction_with = ENT
+			is_in_faction_with = GER
+		}
 		NOT = {
 			tag = ENT
 			tag = GER
 			tag = GBR
-		}
-		OR = {
-			is_in_faction_with = ENT
-			is_in_faction_with = GER
 		}
 	}
 
@@ -7592,11 +7511,9 @@ country_event = {
 		log = "[GetLogInfo]: event entente_events.305 option entente_events.305.c"
 		name = entente_events.305.c # German acquisitions in Afica/SE Asia must be recognised
 		trigger = {
-			OR = {
-				336 = { is_owned_by_ROOT_or_subject = yes } #Singapore
-				827 = { is_owned_by_ROOT_or_subject = yes } #Annam
-				547 = { is_owned_by_ROOT_or_subject = yes } #Kenya
-				807 = { is_owned_by_ROOT_or_subject = yes } #Ivory Coast
+			any_state_of = {
+				target = { 336 547 807 827 } #Singapore, Kenya, Ivory Coast, Annam
+				is_owned_by_ROOT_or_subject = yes
 			}
 			NOT = { has_country_flag = GER_conf_demand_colonies }
 			OR = {
@@ -8712,15 +8629,12 @@ news_event = {
 	desc = entente_events.319.d
 	picture = GFX_news_event_CAN_conference
 
+	trigger = { wants_world_news = yes } #Global news event
+
 	is_triggered_only = yes
 	major = yes
 
-	trigger = {
-		OR = {
-			wants_world_news = yes
-			is_in_faction_with = ENT
-			is_in_faction_with = GER
-		}
+	show_major = {
 		ENT = {
 			OR = {
 				tag = CAN
@@ -8887,11 +8801,12 @@ news_event = {
 		trigger = { ENT = { has_country_flag = ENT_britain_refuse_northire } }
 	}
 
+	trigger = { wants_world_news = yes } #Global news event
+
 	is_triggered_only = yes
 	major = yes
 
-	trigger = {
-		wants_world_news = yes
+	show_major = {
 		ENT = {
 			OR = {
 				tag = CAN
@@ -9544,21 +9459,8 @@ country_event = {
 				is_in_faction_with = ENT
 				is_subject = no
 				OR = {
-					GBP = {
-						is_subject = yes
-						overlord = {
-							is_ally_of_ROOT = yes
-							NOT = { has_country_flag = ENT_receiving_demand }
-						}
-					}
-					SCO = {
-						is_subject = yes
-						overlord = {
-							is_ally_of_ROOT = yes
-							NOT = { has_country_flag = ENT_receiving_demand }
-						}
-					}
-					WLS = {
+					any_country_of = {
+						target = { GBP SCO WLS }
 						is_subject = yes
 						overlord = {
 							is_ally_of_ROOT = yes
@@ -10109,18 +10011,14 @@ news_event = {
 	desc = entente_events.351.d
 	picture = GFX_news_event_generic_sign_treaty2
 
+	trigger = { wants_world_news = yes } #Global news event
+
 	major = yes
 	is_triggered_only = yes
 
-	trigger = {
-		wants_world_news = yes
-	}
-
 	show_major = {
-		NOT = {
-			tag = FROM.FROM
-			tag = ENT
-		}
+		NOT = { tag = FROM.FROM }
+		NOT = { tag = ENT }
 	}
 
 	option = {

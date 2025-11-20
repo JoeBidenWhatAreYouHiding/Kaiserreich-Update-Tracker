@@ -573,14 +573,10 @@ UKR_clear_republic_ideas = {
 				uncomplete_children = yes
 			}
 		}
-		remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-		remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-		remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-		remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-		remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-		remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-		remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-		remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
+		remove_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
+		remove_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
+		remove_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
+		remove_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
 		#Clear Republic spirits
 		remove_ideas = {
 			UKR_GER_deal_1
@@ -1209,64 +1205,70 @@ UKR_syndie_reduce_petlurite_resistance = {
 }
 
 UKR_syndie_khvyliovyi_buff = {
-	if = {
-		limit = {
-			has_idea_with_trait = KR_idealistic_communard1
-		}
-		remove_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard1
-		}
-		add_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard2
-		}
-	}
-	else_if = {
-		limit = {
-			has_idea_with_trait = KR_idealistic_communard2
-		}
-		remove_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard2
-		}
-		add_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard3
-		}
-	}
-	else_if = {
-		limit = {
-			has_idea_with_trait = KR_idealistic_communard3
-		}
-		remove_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard3
-		}
-		add_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard4
-		}
-	}
-	else_if = {
-		limit = {
-			has_idea_with_trait = KR_idealistic_communard4
-		}
-		remove_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard4
-		}
-		add_trait = {
-			character = UKR_mykola_khvyliovyi
-			slot = political_advisor
-			trait = KR_idealistic_communard5
+	UKR_mykola_khvyliovyi = {
+		if = {
+			limit = { NOT = { has_trait = KR_idealistic_communard5 } }
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_modify_character_trait
+					ROLE = political_advisor TRAIT = KR_idealistic_communard1
+				}
+				if = {
+					limit = { has_trait = KR_idealistic_communard1 }
+					remove_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard1
+					}
+					add_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard2
+					}
+				}
+				else_if = {
+					limit = { has_trait = KR_idealistic_communard2 }
+					remove_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard2
+					}
+					add_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard3
+					}
+				}
+				else_if = {
+					limit = { has_trait = KR_idealistic_communard3 }
+					remove_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard3
+					}
+					add_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard4
+					}
+				}
+				else = {
+					remove_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard4
+					}
+					add_trait = {
+						character = UKR_mykola_khvyliovyi
+						slot = political_advisor
+						trait = KR_idealistic_communard5
+					}
+				}
+			}
+			effect_tooltip = {
+				set_temp_variable = { modifier_change_tt = -0.01 tooltip = stability_factor_tooltip }
+				set_temp_variable = { modifier_change_tt = 0.03 tooltip = war_support_factor_tooltip }
+			}
 		}
 	}
 }
@@ -1614,104 +1616,41 @@ UKR_usdrp_attitude_modifiers = {
 				has_government = social_liberal
 				NOT = { has_idea = UKR_minority_government }
 			}
-
 			if = {
-				limit = {
-					UKR_usdrp_uncooperative = yes
-				}
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
+			}
+			else_if = {
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
+			}
+			else_if = {
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
+			}
+			else_if = {
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_amenable } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
+			}
+			if = {
+				limit = { UKR_usdrp_uncooperative = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
 				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-				}
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				if = {
-					limit = {
-						NOT = { has_active_mission = UKR_elections_in_progress }
-					}
+					limit = { NOT = { has_active_mission = UKR_elections_in_progress } }
 					activate_mission = UKR_usdrp_leave_coalition
 				}
 			}
 			else_if = {
-				limit = {
-					UKR_usdrp_indifferent = yes
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-				}
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
+				limit = { UKR_usdrp_indifferent = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
 			}
 			else_if = {
-				limit = {
-					UKR_usdrp_cooperative = yes
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-				}
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				if = {
-					limit = { has_country_flag = UKR_absorb_forestry_companies_activate_once }
-					country_event = { id = ukraine_republican_events.46 days = 70 }
-					clr_country_flag = UKR_absorb_forestry_companies_activate_once
-				}
-				else_if = {
-					limit = { has_country_flag = UKR_nationalization_of_coal_mines_activate_once }
-					country_event = { id = ukraine_republican_events.47 days = 70 }
-					clr_country_flag = UKR_nationalization_of_coal_mines_activate_once
-				}
+				limit = { UKR_usdrp_cooperative = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
 			}
 			else_if = {
-				limit = {
-					UKR_usdrp_amenable = yes
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_uncooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_indifferent }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative } }
-					remove_dynamic_modifier = { modifier = UKR_usdrp_attitude_cooperative }
-				}
-				add_dynamic_modifier = { modifier = UKR_usdrp_attitude_amenable }
-				if = {
-					limit = { has_country_flag = UKR_absorb_forestry_companies_activate_once }
-					country_event = { id = ukraine_republican_events.46 days = 70 }
-					clr_country_flag = UKR_absorb_forestry_companies_activate_once
-				}
-				else_if = {
-					limit = { has_country_flag = UKR_nationalization_of_coal_mines_activate_once }
-					country_event = { id = ukraine_republican_events.47 days = 70 }
-					clr_country_flag = UKR_nationalization_of_coal_mines_activate_once
-				}
+				limit = { UKR_usdrp_amenable = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
 			}
 		}
 	}
@@ -1725,92 +1664,40 @@ UKR_urdp_attitude_modifiers = {
 				NOT = { has_idea = UKR_minority_government }
 			}
 			if = {
-				limit = {
-					UKR_urdp_uncooperative = yes
-				}
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
+			}
+			else_if = {
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
+			}
+			else_if = {
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
+			}
+			else_if = {
+				limit = { has_dynamic_modifier = { modifier = UKR_coalition_partner_amenable } }
+				remove_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
+			}
+			if = {
+				limit = { UKR_urdp_uncooperative = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_uncooperative }
 				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-				}
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				if = {
-					limit = {
-						NOT = { has_active_mission = UKR_elections_in_progress }
-					}
+					limit = { NOT = { has_active_mission = UKR_elections_in_progress } }
 					activate_mission = UKR_urdp_leave_coalition
 				}
 			}
 			else_if = {
-				limit = {
-					UKR_urdp_indifferent = yes
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-				}
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
+				limit = { UKR_urdp_indifferent = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_indifferent }
 			}
 			else_if = {
-				limit = {
-					UKR_urdp_cooperative = yes
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-				}
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				if = {
-					limit = { has_country_flag = UKR_absorb_forestry_companies_activate_once }
-					country_event = { id = ukraine_republican_events.46 days = 70 }
-					clr_country_flag = UKR_absorb_forestry_companies_activate_once
-				}
+				limit = { UKR_urdp_cooperative = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_cooperative }
 			}
 			else_if = {
-				limit = {
-					UKR_urdp_amenable = yes
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_uncooperative }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_indifferent }
-				}
-				if = {
-					limit = { has_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative } }
-					remove_dynamic_modifier = { modifier = UKR_urdp_attitude_cooperative }
-				}
-				add_dynamic_modifier = { modifier = UKR_urdp_attitude_amenable }
-				if = {
-					limit = { has_country_flag = UKR_absorb_forestry_companies_activate_once }
-					country_event = { id = ukraine_republican_events.46 days = 70 }
-					clr_country_flag = UKR_absorb_forestry_companies_activate_once
-				}
+				limit = { UKR_urdp_amenable = yes }
+				add_dynamic_modifier = { modifier = UKR_coalition_partner_amenable }
 			}
 		}
 	}

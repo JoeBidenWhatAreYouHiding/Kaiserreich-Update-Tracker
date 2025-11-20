@@ -352,6 +352,14 @@ DIPLOMACY_LEAVE_FACTION_ENABLE_TRIGGER = {
 	}
 }
 
+DIPLOMACY_ASSUME_FACTION_LEADERSHIP_ENABLE_TRIGGER = { #TODO: remove if non-NCNS hardcoded trigger is fixed
+	if = {
+		limit = { has_dlc_ncns = no }
+		has_industry_to_become_leader = yes
+		has_manpower_to_become_leader = yes
+	}
+}
+
 DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 	if = {
 		limit = { check_variable = { FROM.modifier@cannot_receive_volunteers > 0 } }

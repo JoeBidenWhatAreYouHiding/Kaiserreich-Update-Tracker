@@ -23,6 +23,7 @@ GEA_indochina_war_decisions = {
 			log = "[GetLogRoot]: Decision complete GEA_start_naval_blockade"
 			INC = { country_event = { id = indochina_events.5 days = 3 } }
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_shelling_on_Saigon = {
@@ -41,6 +42,7 @@ GEA_indochina_war_decisions = {
 			add_war_support = 0.03
 			INC = { country_event = indochina_events.80 }
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_suppress_Tonkin = {
@@ -77,6 +79,7 @@ GEA_indochina_war_decisions = {
 			log = "[GetLogRoot]: Decision complete GEA_suppress_Tonkin"
 			activate_mission = GEA_maintain_Tonkin_control
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_maintain_Tonkin_control = {
@@ -112,6 +115,7 @@ GEA_indochina_war_decisions = {
 			custom_effect_tooltip = reduce_10_guerilla_tooltip
 			add_to_variable = { var = INC.guerilla_activity value = -10 }
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_reinforce_police = {
@@ -146,6 +150,7 @@ GEA_indochina_war_decisions = {
 			custom_effect_tooltip = reduce_10_guerilla_tooltip
 			add_to_variable = { var = INC.guerilla_activity value = -10 }
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_Zeppelin_decision = {
@@ -183,6 +188,7 @@ GEA_indochina_war_decisions = {
 			custom_effect_tooltip = reduce_10_guerilla_tooltip
 			add_to_variable = { var = INC.guerilla_activity value = -10 }
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_Fernspaher_decision = {
@@ -264,6 +270,7 @@ GEA_indochina_war_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 political_actions = {
@@ -301,6 +308,7 @@ political_actions = {
 			log = "[GetLogRoot]: Decision complete GEA_take_east_asian_navy"
 			GEA_transfer_navy_to_germany = yes
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_align_with_the_new_german_government = {
@@ -333,11 +341,10 @@ political_actions = {
 
 		complete_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GEA_align_with_the_new_german_government"
-			FROM = {
-				country_event = { id = german_east_asia_events.1000 }
-			}
 			set_country_flag = GEA_realignment_with_berlin_flag
+			FROM = { country_event = german_east_asia_events.1000 }
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_align_with_berlins_protector = {
@@ -371,11 +378,10 @@ political_actions = {
 
 		complete_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision complete GEA_align_with_berlins_protector"
-			FROM.overlord = {
-				country_event = { id = german_east_asia_events.1000 }
-			}
 			set_country_flag = GEA_realignment_with_berlin_flag
+			FROM = { country_event = german_east_asia_events.1000 }
 		}
+		fixed_random_seed = no
 	}
 
 }
@@ -412,6 +418,7 @@ GEA_colonial_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_steal_guns_from_home = {
@@ -448,6 +455,7 @@ GEA_colonial_decisions = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_reintegrate_indochina = {
@@ -469,15 +477,15 @@ GEA_colonial_decisions = {
 		available = {
 			has_stability > 0.5
 			286 = {
-				is_claimed_by = ROOT
+				is_claim_or_core_of_ROOT = yes
 				is_owned_and_controlled_by = ROOT
 			}
 			671 = {
-				is_claimed_by = ROOT
+				is_claim_or_core_of_ROOT = yes
 				is_owned_and_controlled_by = ROOT
 			}
 			827 = {
-				is_claimed_by = ROOT
+				is_claim_or_core_of_ROOT = yes
 				is_owned_and_controlled_by = ROOT
 			}
 		}
@@ -487,10 +495,15 @@ GEA_colonial_decisions = {
 			owns_state = 286
 			owns_state = 671
 			owns_state = 827
+			any_owned_state = {
+				region = 196 #Indochina
+				NOT = { state = 750 }
+				NOT = { is_core_of = ROOT }
+			}
 		}
 
 		cost = 60
-		days_remove = 300
+		days_remove = 200
 		fire_only_once = yes
 		target_non_existing = yes
 
@@ -507,10 +520,11 @@ GEA_colonial_decisions = {
 					region = 196 #Indochina
 					is_claimed_by = ROOT
 				}
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 30
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_german_indochinese_reconciliation = {
@@ -532,15 +546,15 @@ GEA_colonial_decisions = {
 		available = {
 			has_stability > 0.5
 			286 = {
-				is_claimed_by = ROOT
+				is_claim_or_core_of_ROOT = yes
 				is_owned_and_controlled_by = ROOT
 			}
 			671 = {
-				is_claimed_by = ROOT
+				is_claim_or_core_of_ROOT = yes
 				is_owned_and_controlled_by = ROOT
 			}
 			827 = {
-				is_claimed_by = ROOT
+				is_claim_or_core_of_ROOT = yes
 				is_owned_and_controlled_by = ROOT
 			}
 		}
@@ -550,10 +564,15 @@ GEA_colonial_decisions = {
 			owns_state = 286
 			owns_state = 671
 			owns_state = 827
+			any_owned_state = {
+				region = 196 #Indochina
+				NOT = { state = 750 }
+				NOT = { is_core_of = ROOT }
+			}
 		}
 
 		cost = 20
-		days_remove = 300
+		days_remove = 200
 		fire_only_once = yes
 		target_non_existing = yes
 
@@ -570,10 +589,11 @@ GEA_colonial_decisions = {
 					region = 196 #Indochina
 					is_claimed_by = ROOT
 				}
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 30
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_north_malaya = {
@@ -582,10 +602,9 @@ GEA_colonial_decisions = {
 			highlight_state_targets = { state = 751 }
 		}
 		visible = {
-			OR = {
-				751 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				830 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				999 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 751 830 999 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
@@ -603,16 +622,14 @@ GEA_colonial_decisions = {
 			751 = {
 				## add to territory
 				set_variable = { GEA_territory_capital_state = 751 }
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			999 = {
 				## add to territory
 				set_variable = { GEA_territory_capital_state = 846 }
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 
 			if = {
@@ -620,13 +637,13 @@ GEA_colonial_decisions = {
 				830 = {
 					## add to territory
 					set_variable = { GEA_territory_capital_state = 846 }
-					add_claim_by = ROOT
-					add_compliance = 20
 					add_resistance = -40
+					add_compliance = 20
 				}
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_sumatra = {
@@ -635,11 +652,9 @@ GEA_colonial_decisions = {
 			highlight_state_targets = { state = 672 }
 		}
 		visible = {
-			OR = {
-				672 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1021 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1022 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1023 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 672 1021 1022 1023 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
@@ -657,27 +672,24 @@ GEA_colonial_decisions = {
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GEA_reorganise_sumatra"
 			672 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1021 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1022 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1023 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_java = {
@@ -686,10 +698,9 @@ GEA_colonial_decisions = {
 			highlight_state_targets = { state = 1020 }
 		}
 		visible = {
-			OR = {
-				335 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1019 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1020 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 335 1019 1020 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
@@ -706,22 +717,20 @@ GEA_colonial_decisions = {
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GEA_reorganise_java"
 			335 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1019 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1020 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_kalimantan = {
@@ -730,9 +739,9 @@ GEA_colonial_decisions = {
 			highlight_state_targets = { state = 1016 }
 		}
 		visible = {
-			OR = {
-				334 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1016 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 334 1016 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
@@ -748,17 +757,16 @@ GEA_colonial_decisions = {
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GEA_reorganise_kalimantan"
 			334 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1016 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_sulawesi_sunda = {
@@ -767,11 +775,9 @@ GEA_colonial_decisions = {
 			highlight_state_targets = { state = 673 }
 		}
 		visible = {
-			OR = {
-				667 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				673 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1017 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1018 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 667 673 1017 1018 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
@@ -789,47 +795,40 @@ GEA_colonial_decisions = {
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GEA_reorganise_sulawesi_sunda"
 			667 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			673 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1017 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 			1018 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
-	GEA_reorganise_maluku_papua = {
+	GEA_reorganise_maluku = {
 		icon = infiltrate_state
 		highlight_states = {
 			highlight_state_targets = { state = 669 }
 		}
 		visible = {
-			OR = {
-				668 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				669 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				972 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				843 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 668 669 843 972 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
 			has_full_control_of_state = 668 # Moluccas
-			has_full_control_of_state = 669 # Northwest New Guinea
 			has_full_control_of_state = 972 # Aru Islands
-			has_full_control_of_state = 843 # Southwest New Guina
 		}
 		cost = 100
 		fire_only_once = yes
@@ -838,29 +837,18 @@ GEA_colonial_decisions = {
 		}
 		days_remove = 150
 		remove_effect = {
-			log = "[GetLogRoot]: Decision remove GEA_reorganise_maluku_papua"
+			log = "[GetLogRoot]: Decision remove GEA_reorganise_maluku"
 			668 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
-			}
-			669 = {
-				add_claim_by = ROOT
 				add_compliance = 20
-				add_resistance = -40
 			}
 			972 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
-			}
-			843 = {
-				add_claim_by = ROOT
 				add_compliance = 20
-				add_resistance = -40
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_east_timor = {
@@ -883,12 +871,12 @@ GEA_colonial_decisions = {
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GEA_reorganise_east_timor"
 			721 = {
-				add_claim_by = ROOT
-				add_compliance = 20
 				add_resistance = -40
+				add_compliance = 20
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_laos = {
@@ -897,9 +885,9 @@ GEA_colonial_decisions = {
 			highlight_state_targets = { state = 882 }
 		}
 		visible = {
-			OR = {
-				670 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				882 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 670 882 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
@@ -914,20 +902,16 @@ GEA_colonial_decisions = {
 		days_remove = 150
 		remove_effect = {
 			log = "[GetLogRoot]: Decision remove GEA_reorganise_laos"
-			670 = {
-				add_claim_by = ROOT
-				add_compliance = 20
-				add_resistance = -40
-			}
 			882 = {
 				## add to territory
 				set_variable = { GEA_territory_capital_state = 670 }
-				add_claim_by = ROOT
-				add_compliance = 20
+				enable_state_integration_50_compliance = yes
 				add_resistance = -40
+				add_compliance = 20
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 
 	GEA_reorganise_cambodia = {
@@ -936,10 +920,9 @@ GEA_colonial_decisions = {
 			highlight_state_targets = { state = 750 }
 		}
 		visible = {
-			OR = {
-				750 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				825 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				826 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			any_state_of = {
+				target = { 750 825 826 }
+				is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes
 			}
 		}
 		available = {
@@ -957,16 +940,13 @@ GEA_colonial_decisions = {
 			750 = {
 				## add to territory
 				set_variable = { GEA_territory_capital_state = 750 }
-				add_claim_by = ROOT
-				add_compliance = 20
+				enable_state_integration_50_compliance = yes
 				add_resistance = -40
+				add_compliance = 20
 			}
 			826 = {
 				## add to territory
 				set_variable = { GEA_territory_capital_state = 750 }
-				add_claim_by = ROOT
-				add_compliance = 20
-				add_resistance = -40
 			}
 
 			if = {
@@ -974,13 +954,14 @@ GEA_colonial_decisions = {
 				825 = {
 					## add to territory
 					set_variable = { GEA_territory_capital_state = 750 }
-					add_claim_by = ROOT
-					add_compliance = 20
+					enable_state_integration_50_compliance = yes
 					add_resistance = -40
+					add_compliance = 20
 				}
 			}
 		}
 		ai_will_do = { factor = 1 }
+		fixed_random_seed = no
 	}
 }
 
@@ -1010,6 +991,7 @@ GEA_help_lep_decisions = {
 				FROM = { country_event = german_east_asia_events.202 }
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_give_factories_to_lep = {
@@ -1049,6 +1031,7 @@ GEA_help_lep_decisions = {
 			add_war_support = 0.1
 			add_political_power = 100
 		}
+		fixed_random_seed = no
 	}
 }
 
@@ -1103,6 +1086,7 @@ prospect_for_resources = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 
 	GEA_develop_sarawak_oil = {
@@ -1156,6 +1140,7 @@ prospect_for_resources = {
 				}
 			}
 		}
+		fixed_random_seed = no
 	}
 }
 

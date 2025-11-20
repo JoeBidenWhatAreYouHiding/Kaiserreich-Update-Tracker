@@ -1126,7 +1126,6 @@
  NATFRA_No_More_Incursion_desc: "The airspace of the patrie must be an impenetrable fortress, so that our people never again have to endure bombings again."
 
  NATFRA_Reorg_Forces_idea_1: "Reorganised French Forces"
- NATFRA_remodel_tank_idea: "Remodelled Tank Production"
  NATFRA_Project_Further_idea: "Plus Oultre"
  NATFRA_Expanded_Bureau_LaR_idea: "Deuxième Bureau"
 
@@ -1401,9 +1400,7 @@
 
  NFA_French_West_African_States_tt: "§YFrench West African States§!"
 
- NFA_Civ_Mission_tt: "Expanded Civilisation Mission"
  NFA_Civ_Mission_Effect_tt: "§YFrench African Colony States§!:\n Add the following:\n    $MODIFIER_RESISTANCE_TARGET$: §R+5.0%§!\n    $MODIFIER_COMPLIANCE_GAIN_ADD$: §G+0.01%§!"
- NFA_Promote_Autonomy_tt: "Autonomy Promoted"
  NFA_Promote_Autonomy_Effect_tt: "§YFrench African Colony States§!:\n Add the following:\n    $MODIFIER_RESISTANCE_TARGET$: §G-10.0%§!\n    $MODIFIER_COMPLIANCE_GAIN_ADD$: §R-0.01%§!"
  NFA_Algiers_Conference_Civ_effect: "You can now integrate §YFrench African Colony States§! as §GCores§! in the French Union"
  NFA_Algiers_Conference_AF_effect: "§YFrench African Colony States§!:\n Remove the §YColonial Resistance§! modifier\n Disable Resistance and Compliance\n Add the following:\n    $MODIFIER_LOCAL_RESOURCES$: §G+15.0%§!\n    $MODIFIER_LOCAL_MANPOWER$: §G+20%§!"
@@ -3360,7 +3357,7 @@
  NFA_maurice_janin_sic_desc: "§YBorn:§! §LOctober 19th, 1862, in Paris, Seine, French Empire§!"
 
  NFA_louis_franchet_desperey: "Louis Franchet D'Espèrey"
- NFA_louis_franchet_desperey_commander_desc: "§YBorn:§! §LMay 25th, 1856, in Mostaganem, Oran, Algeria, French Empire§!\n§YBackground:§! §LBorn to a cavalry officer, Louis Félix Marie François Franchet d'Espèrey would grow up to be an officer like his father. His early commands ranged from France to Algeria to China, and by 1913 was in command of the I Corps. During the Great War, Franchet d'Espèrey would fight in many of the early battles; among them Charleroi, Guise, and the Marne. He would also develop a... particular... form of command in order to push his officers to follow his orders. He ordered that any officer not doing their duty were to be shot, and he would break up roadblocks by firing a pistol repeatedly until everyone understood his message. This style of command would not avail him however, and despite promotions first to the Eastern Army Group and then the Northern Army Group, he failed to produce substantial victories. Eventually he was forced into exile as the Revolution took hold, and now serves as the eldest officer in the reorganised French Army, aside from Philippe Pétain himself.§!"
+ NFA_louis_franchet_desperey_commander_desc: "§YBorn:§! §LMay 25th, 1856, in Mostaganem, Oran, Algeria, French Empire§!\n§YBackground:§! §LBorn to a cavalry officer, Louis Félix Marie François Franchet d'Espèrey would grow up to be an officer like his father. His early commands ranged from France to Algeria to China, and by 1913 was in command of the I Corps. During the Great War, Franchet d'Espèrey would fight in many of the early battles; among them Charleroi, Guise, and the Marne. He would also develop a controversial form of command in order to push his officers to follow his orders. He ordered that any officer not doing their duty were to be shot, and he would break up roadblocks by firing a pistol repeatedly until everyone understood his message. This style of command would not avail him however, and despite promotions first to the Eastern Army Group and then the Northern Army Group, he failed to produce substantial victories. Eventually he was forced into exile as the Revolution took hold, and now serves as the eldest officer in the reorganised French Army, aside from Philippe Pétain himself.§!"
 
  NFA_jean_de_lattre_de_tassigny: "Jean de Lattre de Tassigny"
  NFA_jean_de_lattre_de_tassigny_commander_desc: "§YBorn:§! §LFebruary 2nd, 1889, in Mouilleron-en-Pareds, Vendée, French Republic§!\n§YBackground:§! §LBorn to an aristocratic family, he would attend the École spéciale militaire de Saint-Cyr, graduating 5th in his class. By the time of the Great War he was a second lieutenant assigned to the 12th Dragoon Regiment. His career during the Great War was marked by taking and surviving a total of seven wounds, five of which were taken at the Battle of Verdun. For these injuries he became well decorated; receiving eight citations, The Legion of Honour, and the British Military Cross. He remained loyal to the government as the revolution took hold, and fleeing south, was eventually promoted to Colonel.§!"
@@ -3438,7 +3435,7 @@
  NFA_eugene_deloncle: "Eugène Deloncle"
  NFA_eugene_deloncle_advisor_desc: "§YBorn:§! §LJune 20th, 1890, in Brest, Finistère, French Republic§!"
  NFA_georges_groussard: "Georges Groussard"
- NFA_georges_groussard_hoi_advisor_desc: "§YBorn:§! §LNovember 21st, 1891, in Saint-Martin-lès-Melle, Deux-Sèvres, French Republic§!"
+ NFA_georges_groussard_advisor_desc: "§YBorn:§! §LNovember 21st, 1891, in Saint-Martin-lès-Melle, Deux-Sèvres, French Republic§!"
  NFA_jean_mermoz: "Jean Mermoz"
  NFA_jean_mermoz_advisor_desc: "§YBorn:§! §LDecember 9th, 1901, in Aubenton, Aisne, French Republic§!"
  NFA_camille_barrere: "Camille Barrère"
@@ -3482,5 +3479,5 @@
  NFA_joseph_de_la_porte_du_theil: "Joseph de La Porte du Theil"
  NFA_joseph_de_la_porte_du_theil_advisor_desc: "§YBorn:§! §LMay 29th, 1884, in Mende, Lozère, French Republic§!"
  NFA_emile_rimailho: "Émile Rimailho"
- NFA_emile_rimailho_advisor_desc: "§YBorn:§! §LMarch 2nd, 1864, in Paris, Seine, French Empire§!"
+ NFA_emile_rimailho_scientist_desc: "§YBorn:§! §LMarch 2nd, 1864, in Paris, Seine, French Empire§!"
  NFA_gilbert_renault: "Gilbert Renault"
