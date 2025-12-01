@@ -2100,6 +2100,7 @@ characters = {
 			}
 		}
 		scientist = {
+			desc = JAP_yoshio_nishina_scientist_desc
 			traits = { scientist_trait_nuclear_specialist }
 			skills = { specialization_nuclear = 2 }
 		}

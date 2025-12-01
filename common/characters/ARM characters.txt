@@ -312,7 +312,6 @@ characters = {
 		advisor = {
 			slot = second_in_command
 			idea_token = ARM_hovhannes_kajaznuni_sic
-			desc = ARM_hovhannes_kajaznuni_leader_desc
 			traits = { KR_dashnak_pragmatist_sic }
 			cost = 0
 			can_be_fired = no

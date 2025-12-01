@@ -358,7 +358,7 @@ units = {
 	# Fujian
 	division = {
 		name = "Fujian Bubing Di 1 Zhen"
-		location = 7027
+		location = 11986
 		division_template = "Fujian Bubing Zhen"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.9

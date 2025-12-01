@@ -5657,7 +5657,7 @@ country_event = { #Campione, what to do
 			}
 			modifier = {
 				factor = 0 #prevents early WK2
-				NOT = { has_global_flag = second_weltkrieg_has_started }
+				second_weltkrieg_has_begun = no
 				OR = {
 					is_in_faction = yes
 					has_guarantor = yes
@@ -5701,7 +5701,7 @@ country_event = { #Campione, what to do
 			}
 			modifier = {
 				factor = 0 #prevents early WK2
-				NOT = { has_global_flag = second_weltkrieg_has_started }
+				second_weltkrieg_has_begun = no
 				OR = {
 					is_in_faction = yes
 					has_guarantor = yes

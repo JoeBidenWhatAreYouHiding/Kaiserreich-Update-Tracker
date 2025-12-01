@@ -11121,8 +11121,8 @@ focus_tree = {
 				}
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_right_weaken = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = 2 }
-				UKR_usdrp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+				UKR_coalition_partner_relationship_improve = yes
 				custom_effect_tooltip = tooltip_white_line
 				add_political_power = 50
 				add_popularity = {
@@ -11139,8 +11139,8 @@ focus_tree = {
 					set_temp_variable = { UKR_idealism_change = 1 }
 					UKR_idealism_influence = yes
 				}
-				set_temp_variable = { UKR_urdp_attitude_change = -2 }
-				UKR_urdp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 				if = {
 					limit = { UKR_has_any_failstate = no }
 					set_temp_variable = { UKR_usdrp_idealism_points_temp = UKR_usdrp_idealism_points }
@@ -11235,8 +11235,8 @@ focus_tree = {
 				UKR_urdp_centre_strengthen = yes
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_left_weaken = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = -3 }
-				UKR_usdrp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -3 }
+				UKR_coalition_partner_relationship_worsen = yes
 				custom_effect_tooltip = tooltip_white_line
 				custom_effect_tooltip = UKR_a_tight_rein_on_radical_leftists_tt
 				country_event = ukraine_republican_events.150
@@ -11300,8 +11300,8 @@ focus_tree = {
 				UKR_urdp_centre_strengthen = yes
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_left_weaken = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = -3 }
-				UKR_usdrp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -3 }
+				UKR_coalition_partner_relationship_worsen = yes
 				custom_effect_tooltip = UKR_a_tight_rein_on_radical_leftists_tt
 				country_event = ukraine_republican_events.150
 				custom_effect_tooltip = tooltip_white_line
@@ -11365,8 +11365,8 @@ focus_tree = {
 					}
 				}
 				else = {
-					set_temp_variable = { UKR_urdp_attitude_change = 2 }
-					UKR_urdp_relationship_improve = yes
+					set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+					UKR_coalition_partner_relationship_improve = yes
 
 					#Every additional idealism point adds an extra 25 political power
 					set_temp_variable = { UKR_political_power_change = UKR_usdrp_idealism_points }
@@ -11442,14 +11442,14 @@ focus_tree = {
 					country_event = ukraine_republican_events.171
 					custom_effect_tooltip = tooltip_white_line
 				}
-				set_temp_variable = { UKR_usdrp_attitude_change = -3 }
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -3 }
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_left_weaken = yes
-				UKR_usdrp_relationship_worsen = yes
+				UKR_coalition_partner_relationship_worsen = yes
 			}
 			else = {
-				set_temp_variable = { UKR_urdp_attitude_change = 3 }
-				UKR_urdp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 3 }
+				UKR_coalition_partner_relationship_improve = yes
 				if = {
 					limit = { UKR_has_any_failstate = no }
 					# Every addtional idealism point adds extra 0.03 stability, base 0.05
@@ -11508,8 +11508,8 @@ focus_tree = {
 			log = "[GetLogRoot]: Focus Completed UKR_delegate_control_over_peoples_militia"
 			if = {
 				limit = { has_government = social_liberal }
-				set_temp_variable = { UKR_usdrp_attitude_change = 2 }
-				UKR_usdrp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+				UKR_coalition_partner_relationship_improve = yes
 				custom_effect_tooltip = tooltip_white_line
 				add_ideas = UKR_decentralised_bureaucracy
 				if = {
@@ -11519,8 +11519,8 @@ focus_tree = {
 				}
 			}
 			else = {
-				set_temp_variable = { UKR_urdp_attitude_change = -2 }
-				UKR_urdp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 				if = {
 					limit = { UKR_has_any_failstate = no }
 					if = {
@@ -11681,8 +11681,8 @@ focus_tree = {
 			else = {
 				set_temp_variable = { UKR_idealism_change = -1 }
 				UKR_idealism_influence = yes
-				set_temp_variable = { UKR_urdp_attitude_change = 3 }
-				UKR_urdp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 3 }
+				UKR_coalition_partner_relationship_improve = yes
 				if = {
 					limit = {
 						NOT = { has_idea = UKR_minority_government }
@@ -11762,15 +11762,15 @@ focus_tree = {
 				UKR_urdp_right_weaken = yes
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_centre_weaken = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = 3 }
-				UKR_usdrp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 3 }
+				UKR_coalition_partner_relationship_improve = yes
 			}
 			else = {
 				add_political_power = 50
 				set_temp_variable = { UKR_idealism_change = 1 }
 				UKR_idealism_influence = yes
-				set_temp_variable = { UKR_urdp_attitude_change = -2 }
-				UKR_urdp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 				if = {
 					limit = { UKR_has_any_failstate = no }
 					custom_effect_tooltip = tooltip_white_line
@@ -11886,8 +11886,8 @@ focus_tree = {
 				UKR_urdp_centre_strengthen = yes
 				set_temp_variable = { UKR_urdp_influence_change = 2 }
 				UKR_urdp_left_strengthen = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = -2 }
-				UKR_usdrp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 				if = {
 					limit = {
 						NOT = {
@@ -11916,8 +11916,8 @@ focus_tree = {
 			else = {
 				set_temp_variable = { UKR_idealism_change = -1 }
 				UKR_idealism_influence = yes
-				set_temp_variable = { UKR_urdp_attitude_change = 2 }
-				UKR_urdp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+				UKR_coalition_partner_relationship_improve = yes
 				if = {
 					limit = {
 						NOT = { has_idea = UKR_minority_government }
@@ -12399,29 +12399,29 @@ focus_tree = {
 						UKR_has_any_failstate = yes
 					}
 				}
-				set_temp_variable = { UKR_urdp_attitude_vars_change = UKR_usdrp_idealism_points }
-				clamp_temp_variable = { var = UKR_urdp_attitude_vars_change min = 0 max = 4 }
-				multiply_temp_variable = { UKR_urdp_attitude_vars_change = 0.01 }
+				set_temp_variable = { UKR_coalition_partner_vars_change = UKR_usdrp_idealism_points }
+				clamp_temp_variable = { var = UKR_coalition_partner_vars_change min = 0 max = 4 }
+				multiply_temp_variable = { UKR_coalition_partner_vars_change = 0.01 }
 
 				#Indifferent
-				#UKR_urdp_attitude_indifferent_industrial_capacity_factory start at 0.01, +0.01 per extra lvl above 0
-				set_temp_variable = { UKR_urdp_attitude_indifferent_change = 0.01 } #Base
-				add_to_temp_variable = { UKR_urdp_attitude_indifferent_change = UKR_urdp_attitude_vars_change }
+				#UKR_coalition_partner_indifferent_industrial_capacity_factory start at 0.01, +0.01 per extra lvl above 0
+				set_temp_variable = { UKR_coalition_partner_indifferent_change = 0.01 } #Base
+				add_to_temp_variable = { UKR_coalition_partner_indifferent_change = UKR_coalition_partner_vars_change }
 
 				#Cooperative
-				#UKR_urdp_attitude_cooperative_industrial_capacity_factory start at 0.03, +0.01 per extra lvl above 0
-				set_temp_variable = { UKR_urdp_attitude_cooperative_change = 0.03 } #Base
-				add_to_temp_variable = { UKR_urdp_attitude_cooperative_change = UKR_urdp_attitude_vars_change }
+				#UKR_coalition_partner_cooperative_industrial_capacity_factory start at 0.03, +0.01 per extra lvl above 0
+				set_temp_variable = { UKR_coalition_partner_cooperative_change = 0.03 } #Base
+				add_to_temp_variable = { UKR_coalition_partner_cooperative_change = UKR_coalition_partner_vars_change }
 
 				#Amenable
-				#UKR_urdp_attitude_amenable_industrial_capacity_factory start at 0.05, +0.01 per extra lvl above 0
-				set_temp_variable = { UKR_urdp_attitude_amenable_change = 0.05 } #Base
-				add_to_temp_variable = { UKR_urdp_attitude_amenable_change = UKR_urdp_attitude_vars_change }
+				#UKR_coalition_partner_amenable_industrial_capacity_factory start at 0.05, +0.01 per extra lvl above 0
+				set_temp_variable = { UKR_coalition_partner_amenable_change = 0.05 } #Base
+				add_to_temp_variable = { UKR_coalition_partner_amenable_change = UKR_coalition_partner_vars_change }
 
 				custom_effect_tooltip = UKR_urdp_effects_modified_by_tt
-				add_to_variable = { UKR.UKR_coalition_partner_indifferent_industrial_capacity_factory = UKR_urdp_attitude_indifferent_change tooltip = UKR_industrial_capacity_factory_indifferent }
-				add_to_variable = { UKR.UKR_coalition_partner_cooperative_industrial_capacity_factory = UKR_urdp_attitude_cooperative_change tooltip = UKR_industrial_capacity_factory_cooperative }
-				add_to_variable = { UKR.UKR_coalition_partner_amenable_industrial_capacity_factory = UKR_urdp_attitude_amenable_change tooltip = UKR_industrial_capacity_factory_amenable }
+				add_to_variable = { UKR.UKR_coalition_partner_indifferent_industrial_capacity_factory = UKR_coalition_partner_indifferent_change tooltip = UKR_industrial_capacity_factory_indifferent }
+				add_to_variable = { UKR.UKR_coalition_partner_cooperative_industrial_capacity_factory = UKR_coalition_partner_cooperative_change tooltip = UKR_industrial_capacity_factory_cooperative }
+				add_to_variable = { UKR.UKR_coalition_partner_amenable_industrial_capacity_factory = UKR_coalition_partner_amenable_change tooltip = UKR_industrial_capacity_factory_amenable }
 				custom_effect_tooltip = tooltip_white_line
 				UKR_idealism_spend = yes
 				custom_effect_tooltip = UKR_support_for_nruz_3_tt
@@ -12647,8 +12647,8 @@ focus_tree = {
 			log = "[GetLogRoot]: Focus Completed UKR_keeping_the_flame"
 			if = {
 				limit = { has_government = social_liberal }
-				set_temp_variable = { UKR_usdrp_attitude_change = 3 }
-				UKR_usdrp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 3 }
+				UKR_coalition_partner_relationship_improve = yes
 				if = {
 					limit = {
 						UKR_has_any_failstate = no
@@ -12663,11 +12663,11 @@ focus_tree = {
 			else = {
 				if = {
 					limit = { UKR_has_any_failstate = no }
-					# One extra UKR_urdp_attitude_change per lvl of idealism above 0
-					set_temp_variable = { UKR_urdp_attitude_change = UKR_usdrp_idealism_points }
-					clamp_temp_variable = { var = UKR_urdp_attitude_change min = 0 max = 4 }
-					add_to_temp_variable = { UKR_urdp_attitude_change = 1 }
-					UKR_urdp_relationship_improve = yes
+					# One extra UKR_coalition_partner_attitude_change per lvl of idealism above 0
+					set_temp_variable = { UKR_coalition_partner_attitude_change = UKR_usdrp_idealism_points }
+					clamp_temp_variable = { var = UKR_coalition_partner_attitude_change min = 0 max = 4 }
+					add_to_temp_variable = { UKR_coalition_partner_attitude_change = 1 }
+					UKR_coalition_partner_relationship_improve = yes
 					set_variable = { UKR_scepticism_days_timeout = 120 }
 					custom_effect_tooltip = UKR_keeping_the_flame_tt_3
 					custom_effect_tooltip = tooltip_white_line
@@ -12848,8 +12848,8 @@ focus_tree = {
 				UKR_urdp_centre_strengthen = yes
 				set_temp_variable = { UKR_urdp_influence_change = 2 }
 				UKR_urdp_left_strengthen = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = -2 }
-				UKR_usdrp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 				if = {
 					limit = {
 						NOT = { has_country_flag = UKR_urdp_right_revolted }
@@ -12873,8 +12873,8 @@ focus_tree = {
 			else = {
 				if = {
 					limit = { NOT = { has_idea = UKR_minority_government } }
-					set_temp_variable = { UKR_urdp_attitude_change = 2 }
-					UKR_urdp_relationship_improve = yes
+					set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+					UKR_coalition_partner_relationship_improve = yes
 					custom_effect_tooltip = tooltip_white_line
 					custom_effect_tooltip = UKR_absorb_forestry_companies_tt_2
 					hidden_effect = { country_event = { id = ukraine_republican_events.46 days = 150 } }
@@ -12953,8 +12953,8 @@ focus_tree = {
 				UKR_reform_score = yes
 			}
 			else = {
-				set_temp_variable = { UKR_urdp_attitude_change = 2 }
-				UKR_urdp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+				UKR_coalition_partner_relationship_improve = yes
 				if = {
 					limit = { NOT = { has_idea = UKR_minority_government } }
 					custom_effect_tooltip = tooltip_white_line
@@ -13033,8 +13033,8 @@ focus_tree = {
 				}
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_right_weaken = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = 2 }
-				UKR_usdrp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+				UKR_coalition_partner_relationship_improve = yes
 				if = {
 					limit = {
 						NOT = {
@@ -13060,8 +13060,8 @@ focus_tree = {
 			else = {
 				set_temp_variable = { UKR_idealism_change = 1 }
 				UKR_idealism_influence = yes
-				set_temp_variable = { UKR_urdp_attitude_change = -2 }
-				UKR_urdp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 				if = {
 					limit = {
 						NOT = { has_idea = UKR_minority_government }
@@ -13115,8 +13115,8 @@ focus_tree = {
 				hidden_effect = { country_event = { id = ukraine_republican_events.156 days = 20 random_days = 40 } }
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_right_weaken = yes
-				set_temp_variable = { UKR_usdrp_attitude_change = 1 }
-				UKR_usdrp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 1 }
+				UKR_coalition_partner_relationship_improve = yes
 				if = {
 					limit = { NOT = { has_idea = UKR_minority_government } }
 					custom_effect_tooltip = tooltip_white_line
@@ -13316,12 +13316,12 @@ focus_tree = {
 				limit = {
 					has_government = social_liberal
 				}
-				set_temp_variable = { UKR_usdrp_attitude_change = -2 }
-				UKR_usdrp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 			}
 			else = {
-				set_temp_variable = { UKR_urdp_attitude_change = 2 }
-				UKR_urdp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+				UKR_coalition_partner_relationship_improve = yes
 				UKR_finish_usdrp_tree = yes
 			}
 			hidden_effect = {
@@ -13366,8 +13366,8 @@ focus_tree = {
 				limit = {
 					has_government = social_liberal
 				}
-				set_temp_variable = { UKR_usdrp_attitude_change = 2 }
-				UKR_usdrp_relationship_improve = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = 2 }
+				UKR_coalition_partner_relationship_improve = yes
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
 				UKR_urdp_right_weaken = yes
 				set_temp_variable = { UKR_urdp_influence_change = -2 }
@@ -13395,8 +13395,8 @@ focus_tree = {
 				}
 			}
 			else = {
-				set_temp_variable = { UKR_urdp_attitude_change = -2 }
-				UKR_urdp_relationship_worsen = yes
+				set_temp_variable = { UKR_coalition_partner_attitude_change = -2 }
+				UKR_coalition_partner_relationship_worsen = yes
 				custom_effect_tooltip = UKR_petliura_and_udovychenko_buffs
 				hidden_effect = {
 					UKR_symon_petliura = {
@@ -13506,45 +13506,45 @@ focus_tree = {
 			else = {
 				if = {
 					limit = { UKR_has_any_failstate = no }
-					set_temp_variable = { UKR_urdp_attitude_vars_change = UKR_usdrp_idealism_points }
-					clamp_temp_variable = { var = UKR_urdp_attitude_vars_change min = 0 max = 4 }
-					multiply_temp_variable = { UKR_urdp_attitude_vars_change = 0.02 }
+					set_temp_variable = { UKR_coalition_partner_vars_change = UKR_usdrp_idealism_points }
+					clamp_temp_variable = { var = UKR_coalition_partner_vars_change min = 0 max = 4 }
+					multiply_temp_variable = { UKR_coalition_partner_vars_change = 0.02 }
 
 					# Uncooperative
-					#UKR_urdp_attitude_uncooperative_production_factory_start_efficiency_factor start at 0.01, +0.02 per extra lvl above 0
-					set_temp_variable = { UKR_urdp_attitude_uncooperative_change = 0.01 } #Base
-					add_to_temp_variable = { UKR_urdp_attitude_uncooperative_change = UKR_urdp_attitude_vars_change }
+					#UKR_coalition_partner_uncooperative_production_factory_start_efficiency_factor start at 0.01, +0.02 per extra lvl above 0
+					set_temp_variable = { UKR_coalition_partner_uncooperative_change = 0.01 } #Base
+					add_to_temp_variable = { UKR_coalition_partner_uncooperative_change = UKR_coalition_partner_vars_change }
 
 					# Indifferent
-					#UKR_urdp_attitude_indifferent_production_factory_start_efficiency_factor start at 0.03, +0.02 per extra lvl above 0
-					set_temp_variable = { UKR_urdp_attitude_indifferent_change = 0.03 } #Base
-					add_to_temp_variable = { UKR_urdp_attitude_indifferent_change = UKR_urdp_attitude_vars_change }
+					#UKR_coalition_partner_indifferent_production_factory_start_efficiency_factor start at 0.03, +0.02 per extra lvl above 0
+					set_temp_variable = { UKR_coalition_partner_indifferent_change = 0.03 } #Base
+					add_to_temp_variable = { UKR_coalition_partner_indifferent_change = UKR_coalition_partner_vars_change }
 
 					# Cooperative
-					#UKR_urdp_attitude_cooperative_production_factory_start_efficiency_factor start at 0.05, +0.02 per extra lvl above 0
-					set_temp_variable = { UKR_urdp_attitude_cooperative_change = 0.05 } #Base
-					add_to_temp_variable = { UKR_urdp_attitude_cooperative_change = UKR_urdp_attitude_vars_change }
+					#UKR_coalition_partner_cooperative_production_factory_start_efficiency_factor start at 0.05, +0.02 per extra lvl above 0
+					set_temp_variable = { UKR_coalition_partner_cooperative_change = 0.05 } #Base
+					add_to_temp_variable = { UKR_coalition_partner_cooperative_change = UKR_coalition_partner_vars_change }
 
 					# Amenable
-					#UKR_urdp_attitude_amenable_production_factory_start_efficiency_factor start at 0.07, +0.02 per extra lvl above 0
-					set_temp_variable = { UKR_urdp_attitude_amenable_change = 0.07 } #Base
-					add_to_temp_variable = { UKR_urdp_attitude_amenable_change = UKR_urdp_attitude_vars_change }
+					#UKR_coalition_partner_amenable_production_factory_start_efficiency_factor start at 0.07, +0.02 per extra lvl above 0
+					set_temp_variable = { UKR_coalition_partner_amenable_change = 0.07 } #Base
+					add_to_temp_variable = { UKR_coalition_partner_amenable_change = UKR_coalition_partner_vars_change }
 
 					custom_effect_tooltip = UKR_urdp_effects_modified_by_tt
 					add_to_variable = {
-						UKR.UKR_coalition_partner_uncooperative_production_factory_start_efficiency_factor = UKR_urdp_attitude_uncooperative_change
+						UKR.UKR_coalition_partner_uncooperative_production_factory_start_efficiency_factor = UKR_coalition_partner_uncooperative_change
 						tooltip = UKR_production_factory_start_efficiency_factor_uncooperative
 					}
 					add_to_variable = {
-						UKR.UKR_coalition_partner_indifferent_production_factory_start_efficiency_factor = UKR_urdp_attitude_indifferent_change
+						UKR.UKR_coalition_partner_indifferent_production_factory_start_efficiency_factor = UKR_coalition_partner_indifferent_change
 						tooltip = UKR_production_factory_start_efficiency_factor_indifferent
 					}
 					add_to_variable = {
-						UKR.UKR_coalition_partner_cooperative_production_factory_start_efficiency_factor = UKR_urdp_attitude_cooperative_change
+						UKR.UKR_coalition_partner_cooperative_production_factory_start_efficiency_factor = UKR_coalition_partner_cooperative_change
 						tooltip = UKR_production_factory_start_efficiency_factor_cooperative
 					}
 					add_to_variable = {
-						UKR.UKR_coalition_partner_amenable_production_factory_start_efficiency_factor = UKR_urdp_attitude_amenable_change
+						UKR.UKR_coalition_partner_amenable_production_factory_start_efficiency_factor = UKR_coalition_partner_amenable_change
 						tooltip = UKR_production_factory_start_efficiency_factor_amenable
 					}
 					custom_effect_tooltip = tooltip_white_line

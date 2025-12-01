@@ -381,7 +381,9 @@
 
 ### Global and Country Flags ###
  USA_civil_war_over_flag: "The American Civil War is over"
+ USA_civil_war_over_flag_NOT: "The American Civil War is §Rnot§! over"
  USA_civil_war_begun_flag: "The American Civil War has begun"
+ USA_civil_war_begun_flag_NOT: "The American Civil War has §Rnot§! begun"
  macarthur_keeps_power_flag: "MacArthur has kept his emergency powers"
  USA_ACW_austerity_rejected: "An alliance was formed with Long"
  USA_ACW_landon_rallied_establishment: "Landon rallied the establishment behind the administration"

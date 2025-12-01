@@ -3821,7 +3821,8 @@ shared_focus = {
 		add_stability = 0.10
 		build_railway = {
 			level = 1
-			path = { 1319 4192 1884 4085 4628 4134 1597 4152 4092 7152 1047 }
+			start_province = 1319 #Kunming
+			target_province = 1047 #Guangzhou
 		}
 		if = {
 			limit = { has_idea = YUN_AOG_tin_control_over_us }

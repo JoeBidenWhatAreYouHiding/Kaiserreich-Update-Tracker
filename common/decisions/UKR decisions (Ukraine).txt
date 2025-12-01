@@ -6834,10 +6834,8 @@ UKR_republic_decisions = {
 			if = {
 				limit = {
 					OR = {
-						UKR_usdrp_cooperative = yes
-						UKR_usdrp_amenable = yes
-						UKR_urdp_cooperative = yes
-						UKR_urdp_amenable = yes
+						UKR_coalition_partner_cooperative = yes
+						UKR_coalition_partner_amenable = yes
 					}
 				}
 				add_to_variable = { UKR_national_defence_act_var = 1 }
@@ -6977,28 +6975,18 @@ UKR_republic_decisions = {
 			log = "[GetLogRoot]: Decision timeout UKR_urdp_party_conference"
 			custom_effect_tooltip = UKR_urdp_party_conference_tt
 			if = {
-				limit = {
-					OR = {
-						UKR_urdp_uncooperative = yes
-						UKR_urdp_indifferent = yes
-					}
-				}
-				country_event = ukraine_republican_events.195
-				event_option_tooltip = ukraine_republican_events.195.a
+				limit = { UKR_coalition_partner_amenable = yes }
+				country_event = ukraine_republican_events.197
+				event_option_tooltip = ukraine_republican_events.197.a
 			}
 			else_if = {
-				limit = {
-					UKR_urdp_cooperative = yes
-				}
+				limit = { UKR_coalition_partner_cooperative = yes }
 				country_event = ukraine_republican_events.196
 				event_option_tooltip = ukraine_republican_events.196.a
 			}
-			else_if = {
-				limit = {
-					UKR_urdp_amenable = yes
-				}
-				country_event = ukraine_republican_events.197
-				event_option_tooltip = ukraine_republican_events.197.a
+			else = {
+				country_event = ukraine_republican_events.195
+				event_option_tooltip = ukraine_republican_events.195.a
 			}
 		}
 		fixed_random_seed = no
@@ -7266,11 +7254,7 @@ UKR_republic_decisions = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = UKR_usdrp_leave_coalition_available_tt
-				OR = {
-					UKR_usdrp_indifferent = yes
-					UKR_usdrp_cooperative = yes
-					UKR_usdrp_amenable = yes
-				}
+				UKR_coalition_partner_uncooperative = no
 			}
 		}
 		selectable_mission = no
@@ -7295,11 +7279,7 @@ UKR_republic_decisions = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = UKR_urdp_leave_coalition_available_tt
-				OR = {
-					UKR_urdp_indifferent = yes
-					UKR_urdp_cooperative = yes
-					UKR_urdp_amenable = yes
-				}
+				UKR_coalition_partner_uncooperative = no
 			}
 		}
 		selectable_mission = no

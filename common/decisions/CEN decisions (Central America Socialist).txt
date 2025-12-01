@@ -1132,7 +1132,6 @@ CEN_naval_expansion = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = CEN_subs_count
-				always = yes
 			}
 		}
 
@@ -1182,7 +1181,6 @@ CEN_naval_expansion = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = CEN_destroyers_count
-				always = yes
 			}
 		}
 
@@ -1237,7 +1235,6 @@ CEN_naval_expansion = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = CEN_cruisers_count
-				always = yes
 			}
 		}
 
@@ -1294,7 +1291,6 @@ CEN_naval_expansion = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = CEN_battleships_count
-				always = yes
 			}
 		}
 
@@ -1351,7 +1347,6 @@ CEN_naval_expansion = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = CEN_battlecruiser_count
-				always = yes
 			}
 		}
 

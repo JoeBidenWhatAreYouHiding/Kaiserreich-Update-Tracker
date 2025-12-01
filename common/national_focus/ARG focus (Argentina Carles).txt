@@ -422,10 +422,15 @@ focus_tree = {
 		y = 5
 
 		available = {
-			any_state_of = {
-				target = { 511 902 }
-				is_demilitarized_zone = no
+			OR = {
+				511 = { is_demilitarized_zone = no }
+				902 = { is_demilitarized_zone = no }
 			}
+			#TODO - is_demilitarized_zone causes crashes in trigger scope. Revert when fixed.
+			#any_state_of = {
+			#	target = { 511 902 }
+			#	is_demilitarized_zone = no
+			#}
 		}
 		prerequisite = {
 			focus = ARG_Formation_of_the_Carles_Cabinet

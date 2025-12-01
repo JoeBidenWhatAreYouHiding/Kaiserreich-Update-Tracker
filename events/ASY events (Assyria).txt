@@ -1233,7 +1233,7 @@ country_event = { #Assyria demands our oil
 			modifier = {
 				add = 100
 				OR = {
-					NOT = { has_global_flag = second_weltkrieg_has_started }
+					second_weltkrieg_has_begun = no
 					country_is_in_dangerous_war = yes
 				}
 			}
@@ -1263,7 +1263,7 @@ country_event = { #Assyria demands our oil
 			modifier = {
 				factor = 0
 				OR = {
-					NOT = { has_global_flag = second_weltkrieg_has_started }
+					second_weltkrieg_has_begun = no
 					country_is_in_dangerous_war = yes
 				}
 			}
@@ -1307,7 +1307,7 @@ country_event = { #EGY: the Entente demands oil from Iraq
 			modifier = {
 				factor = 0
 				OR = {
-					NOT = { has_global_flag = second_weltkrieg_has_started }
+					second_weltkrieg_has_begun = no
 					country_is_in_dangerous_war = yes
 					NFA = { dont_start_major_faction_wars = yes }
 					NFA = { default_attack_AI_trigger = yes }

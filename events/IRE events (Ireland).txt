@@ -11782,17 +11782,7 @@ country_event = {	# Post-War SF turn MarLib?
 					has_country_flag = IRE_brooke_advisor_postwar
 					NOT = { has_war_with = ENT }
 				}
-				NIR_basil_brooke = {
-					add_advisor_role = {
-						advisor = {
-							slot = political_advisor
-							idea_token = NIR_basil_brooke_advisor
-							traits = { KR_consummate_proceduralist }
-							cost = 150
-							can_be_fired = no
-						}
-					}
-				}
+				NIR_basil_brooke_add_advisor = yes
 			}
 			clr_country_flag = IRE_had_war_with_INT
 		}
@@ -11977,31 +11967,19 @@ country_event = {	# MegaCollins?!
 	fire_only_once = yes
 
 	immediate = {
-		if = {
-			limit = {
-				NOT = { has_character = NIR_basil_brooke }
-			}
-			hidden_effect = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_character = NIR_basil_brooke } }
 				NIR = {
 					NIR_basil_brooke = {
 						set_nationality = IRE
 						remove_all_country_leader_roles = yes
+						remove_unit_leader_role = yes
+						remove_army_chief_role = yes
 					}
 				}
 			}
-		}
-		hidden_effect = {
-			NIR_basil_brooke = {
-				add_advisor_role = {
-					advisor = {
-						slot = second_in_command
-						idea_token = NIR_basil_brooke_sic
-						traits = { KR_pragmatic_statesman_sic }
-						cost = 0
-						can_be_fired = no
-					}
-				}
-			}
+			NIR_basil_brooke_add_sic = yes
 		}
 	}
 
@@ -12411,22 +12389,14 @@ country_event = {  # The Form of the Republic
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = { has_country_flag = IRE_govt_sf_megacollins }
-				}
+				limit = { NOT = { has_country_flag = IRE_govt_sf_megacollins } }
 				NIR = {
 					NIR_basil_brooke = {
 						set_nationality = IRE
 						remove_all_country_leader_roles = yes
-						add_advisor_role = {
-							advisor = {
-								slot = political_advisor
-								idea_token = NIR_basil_brooke_advisor
-								traits = { KR_consummate_proceduralist }
-								cost = 150
-								can_be_fired = no
-							}
-						}
+						remove_unit_leader_role = yes
+						remove_army_chief_role = yes
+						NIR_basil_brooke_add_advisor = yes
 					}
 				}
 			}
@@ -12483,9 +12453,7 @@ country_event = {  # The Form of the Republic
 			custom_effect_tooltip = ireland_events.2560.a.tt3
 			show_ideas_tooltip = NIR_basil_brooke_advisor
 			custom_effect_tooltip = ireland_events.2601.a.tt2
-			hidden_effect = {
-				activate_advisor = NIR_basil_brooke_advisor
-			}
+			hidden_effect = { activate_advisor = NIR_basil_brooke_advisor }
 		}
 		else = {
 			custom_effect_tooltip = ireland_events.2601.a.tt3
@@ -12582,9 +12550,7 @@ country_event = {  # The Form of the Republic
 			custom_effect_tooltip = ireland_events.2560.a.tt3
 			show_ideas_tooltip = NIR_basil_brooke_advisor
 			custom_effect_tooltip = ireland_events.2601.a.tt2
-			hidden_effect = {
-				activate_advisor = NIR_basil_brooke_advisor
-			}
+			hidden_effect = { activate_advisor = NIR_basil_brooke_advisor }
 		}
 		else = {
 			custom_effect_tooltip = ireland_events.2601.a.tt3

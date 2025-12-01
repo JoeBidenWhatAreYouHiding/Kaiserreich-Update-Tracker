@@ -5428,6 +5428,7 @@ focus_tree = {
 			OR = {
 				has_completed_focus = RUS_ally_army
 				has_completed_focus = RUS_republicanisation_of_army
+				has_completed_focus = RUS_distribute_honours
 			}
 		}
 

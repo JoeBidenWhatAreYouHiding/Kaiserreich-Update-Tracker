@@ -197,6 +197,7 @@ technologies = {
 
 		enable_equipment_modules = {
 			ship_light_battery_3
+			ship_light_medium_battery_3
 		}
 
 		folder = {
@@ -292,6 +293,7 @@ technologies = {
 
 		enable_equipment_modules = {
 			ship_light_battery_4
+			ship_light_medium_battery_4
 		}
 
 		on_research_complete = {
@@ -602,7 +604,7 @@ technologies = {
 
 		research_cost = 1
 
-		start_year = 1939
+		start_year = 1940
 
 		enable_equipment_modules = {
 			dp_light_battery_3
@@ -1696,6 +1698,13 @@ technologies = {
 		naval_invasion_prep_days = -10
 		naval_invasion_division_cap = 2
 		naval_invasion_plan_cap = 1
+
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_naval_support_ships
+			}
+		}
 
 		path = {
 			leads_to_tech = mtg_landing_craft

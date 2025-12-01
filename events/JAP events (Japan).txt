@@ -3882,8 +3882,8 @@ country_event = { #Hawaii begs for help
 		FROM.FROM = { country_event = { id = japan_foreign_events.65 days = 2 } }
 	}
 	option = { #Don't
-		log = "[GetLogInfo]: event japan_foreign_events.64 option japan_foreign_events.65.b"
-		name = japan_foreign_events.65.b
+		log = "[GetLogInfo]: event japan_foreign_events.64 option japan_foreign_events.64.b"
+		name = japan_foreign_events.64.b
 		trigger = {
 			NOT = { is_ally_with = FROM }
 			NOT = { has_guaranteed = FROM }
@@ -7389,7 +7389,7 @@ news_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = japan_foreign_events.251.a
+		name = japan_news.1.a
 	}
 }
 

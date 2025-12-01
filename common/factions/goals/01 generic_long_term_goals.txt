@@ -126,7 +126,7 @@ faction_goal_strategic_bombing_campaign = {
 				operators = {
 					faction_members
 					limit = {
-						has_army_size = {
+						has_deployed_air_force_size = {
 							size > 49
 							type = strategic_bomber
 						}

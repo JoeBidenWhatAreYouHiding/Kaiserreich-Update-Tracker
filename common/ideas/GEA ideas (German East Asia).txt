@@ -396,10 +396,8 @@ ideas = {
 				is_subject = yes
 			}
 			modifier = {
-				forced_surrender_limit = 1
 				send_volunteer_size = 3
 				unit_limit_bonus = 25
-				custom_modifier_tooltip = GEA_capitulation_conditions
 			}
 		}
 

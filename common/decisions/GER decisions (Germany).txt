@@ -12,7 +12,6 @@ political_actions = {
 		available = {
 			custom_override_tooltip = {
 				tooltip = GER_remove_schacht_need_kaiser_approval_tt
-				always = yes
 			}
 			if = {
 				limit = {

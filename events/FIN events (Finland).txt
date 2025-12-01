@@ -2450,7 +2450,15 @@ country_event = { # FIN asks to not be a puppet anymore
 		name = finland_events.140.b
 		ai_chance = { base = 0 }
 		add_political_power = -25
-		FIN = { country_event = finland_events.142 }
+		FIN = {
+			country_event = finland_events.142
+			effect_tooltip = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = KR_hates_govt
+				}
+			}
+		}
 	}
 }
 
@@ -2488,5 +2496,9 @@ country_event = { # Release request refused
 		add_political_power = -25
 		add_stability = -0.10
 		add_war_support = -0.15
+		add_opinion_modifier = {
+			target = FROM
+			modifier = KR_hates_govt
+		}
 	}
 }

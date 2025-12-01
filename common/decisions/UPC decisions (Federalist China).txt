@@ -43,7 +43,8 @@ UPC_reconstruction_plan = {
 			}
 			build_railway = {
 				level = 1
-				path = { 1047 7152 1187 12077 7039 10105 7192 10050 7137 }
+				start_province = 1047 #Guangzhou
+				target_province = 7137 #Nanning
 			}
 		}
 		fixed_random_seed = no
@@ -138,7 +139,8 @@ UPC_reconstruction_plan = {
 				add_building_construction = { type = infrastructure level = 1 }
 			}
 			build_railway = {
-				path = { 7137 10050 4028 1597 4134 12436 4532 4504 }
+				start_province = 7137 #Nanning
+				target_province = 4504 #Guiyang
 			}
 		}
 		fixed_random_seed = no

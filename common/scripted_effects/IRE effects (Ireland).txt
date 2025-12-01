@@ -2941,6 +2941,20 @@ IRE_rm_smyllie_add_advisor = {
 	else = { IRE_rm_smyllie = { clr_character_flag = show_political_advisor_role } }
 }
 
+NIR_basil_brooke_add_advisor = {
+	NIR_basil_brooke = {
+		add_advisor_role = {
+			advisor = {
+				slot = political_advisor
+				idea_token = NIR_basil_brooke_advisor
+				traits = { KR_consummate_proceduralist }
+				cost = 150
+				can_be_fired = no
+			}
+		}
+	}
+}
+
  ### Characters - Adding Heads of State ###
 
 IRE_ernie_omalley_add_hos = {
@@ -5009,7 +5023,7 @@ IRE_john_j_okelly_add_sic = {
 	}
 }
 
-IRE_ned_cronin_add_sic = {
+IRE_ned_cronin_add_sic = {	# If editing this trait, be sure to edit the loc tooltip aswell
 	IRE_ned_cronin = {
 		if = {
 			limit = { NOT = { has_advisor_role = second_in_command } }
@@ -5047,6 +5061,20 @@ IRE_dail_eireann_add_sic = {	## This is supposed to be a placeholder during elec
 				slot = second_in_command
 				idea_token = IRE_dail_eireann_sic
 				traits = { KR_parliament_sic }
+				cost = 0
+				can_be_fired = no
+			}
+		}
+	}
+}
+
+NIR_basil_brooke_add_sic = {
+	NIR_basil_brooke = {
+		add_advisor_role = {
+			advisor = {
+				slot = second_in_command
+				idea_token = NIR_basil_brooke_sic
+				traits = { KR_pragmatic_statesman_sic }
 				cost = 0
 				can_be_fired = no
 			}
@@ -5674,6 +5702,23 @@ IRE_move_back_basil_brooke = {
 					ideology = paternal_autocrat_subtype
 				}
 				promote_leader = yes
+			}
+			add_field_marshal_role = {
+				desc = NIR_basil_brooke_leader_desc
+				traits = { defensive_doctrine }
+				skill = 2
+				attack_skill = 1
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			add_advisor_role = {
+				advisor = {
+					slot = army_chief
+					idea_token = NIR_basil_brooke_army_chief
+					traits = { KR_army_chief_offensive_1 }
+					cost = 50
+				}
 			}
 			NIR_basil_brooke = { remove_second_in_command_role = yes }
 			set_nationality = NIR

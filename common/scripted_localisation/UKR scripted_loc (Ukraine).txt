@@ -618,18 +618,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = UKR_republican_decision_category_text
-	text = {
-		trigger = { has_government = social_democrat }
-		localization_key = UKR_republican_decision_category_usdrp
-	}
-	text = {
-		trigger = { has_marlib_or_soclib_government = yes }
-		localization_key = UKR_republican_decision_category_urdp
-	}
-}
-
-defined_text = {
 	name = UKR_republic_decisions_second_half
 	text = {
 		trigger = { has_marlib_or_soclib_government = yes }
@@ -641,67 +629,23 @@ defined_text = {
 	}
 }
 
-defined_text = {  #USDRP ATTITUDE
-	name = UKR_usdrp_attitude
+defined_text = {  #Coalition partner attitude
+	name = UKR_coalition_partner_attitude
 	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_usdrp_attitude < 0 } }
-			NOT = { check_variable = { UKR_usdrp_attitude > 5 } }
-		}
-		localization_key = UKR_usdrp_uncooperative
+		trigger = { UKR_coalition_partner_uncooperative = yes }
+		localization_key = UKR_coalition_partner_attitude_uncooperative
 	}
 	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_usdrp_attitude < 6 } }
-			NOT = { check_variable = { UKR_usdrp_attitude > 10 } }
-		}
-		localization_key = UKR_usdrp_indifferent
+		trigger = { UKR_coalition_partner_indifferent = yes }
+		localization_key = UKR_coalition_partner_attitude_indifferent
 	}
 	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_usdrp_attitude < 11 } }
-			NOT = { check_variable = { UKR_usdrp_attitude > 15 } }
-		}
-		localization_key = UKR_usdrp_cooperative
+		trigger = { UKR_coalition_partner_cooperative = yes }
+		localization_key = UKR_coalition_partner_attitude_cooperative
 	}
 	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_usdrp_attitude < 16 } }
-			NOT = { check_variable = { UKR_usdrp_attitude > 20 } }
-		}
-		localization_key = UKR_usdrp_amenable
-	}
-}
-
-defined_text = {  #URDP ATTITUDE - USES SAME LOC KEY
-	name = UKR_urdp_attitude
-	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_urdp_attitude < 0 } }
-			NOT = { check_variable = { UKR_urdp_attitude > 5 } }
-		}
-		localization_key = UKR_usdrp_uncooperative
-	}
-	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_urdp_attitude < 6 } }
-			NOT = { check_variable = { UKR_urdp_attitude > 10 } }
-		}
-		localization_key = UKR_usdrp_indifferent
-	}
-	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_urdp_attitude < 11 } }
-			NOT = { check_variable = { UKR_urdp_attitude > 15 } }
-		}
-		localization_key = UKR_usdrp_cooperative
-	}
-	text = {
-		trigger = {
-			NOT = { check_variable = { UKR_urdp_attitude < 16 } }
-			NOT = { check_variable = { UKR_urdp_attitude > 20 } }
-		}
-		localization_key = UKR_usdrp_amenable
+		trigger = { UKR_coalition_partner_amenable = yes }
+		localization_key = UKR_coalition_partner_attitude_amenable
 	}
 }
 
@@ -1159,122 +1103,46 @@ defined_text = {
 }
 
 defined_text = {
-	name = UKR_usdrp_uncooperative_activated
+	name = UKR_coalition_partner_uncooperative_activated
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_uncooperative = yes
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_uncooperative = yes
-			}
-		}
+		trigger = { UKR_coalition_partner_uncooperative = yes }
 		localization_key = UKR_uncooperative_active
 	}
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_uncooperative = no
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_uncooperative = no
-			}
-		}
-		localization_key = UKR_usdrp_relation_inactive
+		localization_key = UKR_relation_inactive
 	}
 }
 
 defined_text = {
-	name = UKR_usdrp_indifferent_activated
+	name = UKR_coalition_partner_indifferent_activated
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_indifferent = yes
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_indifferent = yes
-			}
-		}
+		trigger = { UKR_coalition_partner_indifferent = yes }
 		localization_key = UKR_indifferent_active
 	}
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_indifferent = no
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_indifferent = no
-			}
-		}
-		localization_key = UKR_usdrp_relation_inactive
+		localization_key = UKR_relation_inactive
 	}
 }
 
 defined_text = {
-	name = UKR_usdrp_cooperative_activated
+	name = UKR_coalition_partner_cooperative_activated
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_cooperative = yes
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_cooperative = yes
-			}
-		}
+		trigger = { UKR_coalition_partner_cooperative = yes }
 		localization_key = UKR_cooperative_active
 	}
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_cooperative = no
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_cooperative = no
-			}
-		}
-		localization_key = UKR_usdrp_relation_inactive
+		localization_key = UKR_relation_inactive
 	}
 }
 
 defined_text = {
-	name = UKR_usdrp_amenable_activated
+	name = UKR_coalition_partner_amenable_activated
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_amenable = yes
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_amenable = yes
-			}
-		}
+		trigger = { UKR_coalition_partner_amenable = yes }
 		localization_key = UKR_amenable_active
 	}
 	text = {
-		trigger = {
-			if = {
-				limit = { has_marlib_or_soclib_government = yes }
-				UKR_usdrp_amenable = no
-			}
-			else_if = {
-				limit = { has_government = social_democrat }
-				UKR_urdp_amenable = no
-			}
-		}
-		localization_key = UKR_usdrp_relation_inactive
+		localization_key = UKR_relation_inactive
 	}
 }
 
