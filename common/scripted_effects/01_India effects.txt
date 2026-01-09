@@ -25,7 +25,7 @@ SKM_create_tashi_namgyal = {
 								text = {
 									add_country_leader_role = {
 										country_leader = {
-											desc = SKM_tashi_namgyal_advisor_desc
+											desc = SKM_tashi_namgyal_leader_desc
 											ideology = [IDEOLOGY]
 										}
 										promote_leader = yes

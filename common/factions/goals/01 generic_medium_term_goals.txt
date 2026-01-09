@@ -1234,10 +1234,11 @@ faction_goal_control_malta = {
 			convoy_threat > 0.5
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							is_on_continent = europe
 						}
 					}
@@ -1246,10 +1247,11 @@ faction_goal_control_malta = {
 			}
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							OR = {
 								is_on_continent = middle_east
 								is_on_continent = africa

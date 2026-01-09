@@ -52,10 +52,6 @@ on_actions = {
 				if = {
 					limit = {
 						FROM.FROM = { state = 608 } #Beijing
-						NOT = {
-							GXC_is_phase_5_trigger = yes
-							is_in_faction_with = CUF
-						}
 					}
 					if = {
 						limit = { china_is_aligned_with_right_kmt = yes }

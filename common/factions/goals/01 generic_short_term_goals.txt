@@ -336,10 +336,11 @@ faction_goal_ensure_military_r_d = {
 		OR = {
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							land_facility > 0
 						}
 					}
@@ -349,10 +350,11 @@ faction_goal_ensure_military_r_d = {
 			}
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							naval_facility > 0
 						}
 					}
@@ -362,10 +364,11 @@ faction_goal_ensure_military_r_d = {
 			}
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							air_facility > 0
 						}
 					}
@@ -378,10 +381,11 @@ faction_goal_ensure_military_r_d = {
 	completed = {
 		collection_size = {
 			input = {
-				input = game:all_states
+				input = game:scope
 				operators = {
+					faction_members
+					controlled_states
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes
 						land_facility > 0
 					}
 				}
@@ -391,10 +395,11 @@ faction_goal_ensure_military_r_d = {
 		}
 		collection_size = {
 			input = {
-				input = game:all_states
+				input = game:scope
 				operators = {
+					faction_members
+					controlled_states
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes
 						naval_facility > 0
 					}
 				}
@@ -404,10 +409,11 @@ faction_goal_ensure_military_r_d = {
 		}
 		collection_size = {
 			input = {
-				input = game:all_states
+				input = game:scope
 				operators = {
+					faction_members
+					controlled_states
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes
 						air_facility > 0
 					}
 				}
@@ -422,10 +428,11 @@ faction_goal_ensure_military_r_d = {
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_collection_element = {
 			input = {
-				input = game:all_states
+				input = game:scope
 				operators = {
+					faction_members
+					controlled_states
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes
 						OR = {
 							air_facility > 0
 							land_facility > 0
@@ -529,17 +536,18 @@ faction_goal_military_infrastructure = {
 	visible = {
 		collection_size = {
 			input = {
-				input = game:all_states
+				input = game:scope
 				operators = {
+					faction_members
+					controlled_states
 					limit = {
-						is_core_of = CONTROLLER
-						is_controlled_by_ROOT_or_ally = yes
+						is_core_of = controller
+						infrastructure < 4
 						any_neighbor_state = {
 							controller = {
 								NOT = { is_in_faction_with = ROOT }
 							}
 						}
-						infrastructure < 4
 					}
 				}
 				name = COLLECTION_FACTION_BORDER_STATES_FULL_INFRASTRUCTURE
@@ -550,16 +558,17 @@ faction_goal_military_infrastructure = {
 	completed = {
 		collection_size = {
 			input = {
-				input = game:all_states
+				input = game:scope
 				operators = {
+					faction_members
+					controlled_states
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes
+						infrastructure < 4
 						any_neighbor_state = {
 							controller = {
 								NOT = { is_in_faction_with = ROOT }
 							}
 						}
-						infrastructure < 4
 					}
 				}
 				name = COLLECTION_FACTION_BORDER_STATES_FULL_INFRASTRUCTURE
@@ -1104,10 +1113,11 @@ faction_goal_expand_maltese_bases = {
 			convoy_threat > 0.5
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							is_on_continent = europe
 						}
 					}
@@ -1116,10 +1126,11 @@ faction_goal_expand_maltese_bases = {
 			}
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							OR = {
 								is_on_continent = middle_east
 								is_on_continent = africa
@@ -1692,10 +1703,11 @@ faction_goal_expand_singapore_naval_base = {
 			convoy_threat > 0.5
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							is_on_continent = europe
 						}
 					}
@@ -1705,10 +1717,11 @@ faction_goal_expand_singapore_naval_base = {
 			}
 			collection_size = {
 				input = {
-					input = game:all_states
+					input = game:scope
 					operators = {
+						faction_members
+						controlled_states
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes
 							is_on_continent = asia
 						}
 					}

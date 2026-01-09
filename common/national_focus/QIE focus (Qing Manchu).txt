@@ -2508,7 +2508,7 @@ focus_tree = {
 
 	focus = {
 		id = QIE_rural_defense_force
-		icon = GFX_focus_CHI_utilize_the_Terrain
+		icon = GFX_focus_CHI_utilize_the_terrain
 		cost = 8
 
 		relative_position_id = QIE_uneasy_coalition
