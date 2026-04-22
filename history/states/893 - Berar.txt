@@ -9,11 +9,10 @@ state = {
 	}
 
 	history = {
-		owner = HYD
-		add_core_of = HYD
-		add_core_of = RAJ
+		owner = PRF
+		add_core_of = PRF
 		add_claim_by = HND
-		add_claim_by = PJB
+		add_claim_by = RAJ
 		add_to_array = { state_victory_points = 10030 }
 
 		victory_points = { 10030 1 } #Amraoti

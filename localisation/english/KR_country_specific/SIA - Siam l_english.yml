@@ -184,8 +184,8 @@
  SIA_salacheepphurchard_tt: "Replace §H$SIA_conscription_bonus$§! and §H$SIA_defensetechnologyinstitute_idea$§! with §H$SIA_salacheepphurchard_idea$§!\nEffective change:\n$MODIFIER_WAR_SUPPORT_FACTOR$: [?0.10|+=%]\n$MODIFIERS_ARMY_CORE_ATTACK_FACTOR$: [?0.10|+=%]\n$MODIFIERS_ARMY_CORE_DEFENCE_FACTOR$: [?0.10|+=%].\n\n§GThis combines all the ideas on this national focus branch.§!\n"
  SIA_increase_state_cat_tt: "Every owned core state"
  SIA_siamese_exiles_in_saigon: "We have accepted the Siamese exile's plea for liberation."
- SIA_phao_leader_tt: "§YPhao Sriyanond§! becomes leader for the §YFascist§! and §YPaternal Autocrat§! parties.\n§YPhao Sriyanond§! gains:\n   §YThe Prancing Knight§!\n§gOne simply does not rise to the top position without deceit and deception - Phao lacks neither and is ready to smack down any opposition utilising both trickery and his own heavily militarised police forces in tow.§!\n  - §W$MODIFIER_POLITICAL_POWER_GAIN$§!: §G+0.05§!\n  - §W$MODIFIER_GLOBAL_NON_CORE_MANPOWER$:§!: §G+2.00%§!\n  - §W$MODIFIER_FOREIGN_SUBVERSIVE_ACTIVITIES$§!: §G-30%§!\n\n"
- SIA_sarit_leader_tt: "§YSarit Thanarat§! becomes leader for the §YFascist§! and §YPaternal Autocrat§! parties.\n§YSarit Thanarat§! gains:\n   §YThe Paternal Despot§!\n§gInspired by Sukhothai's era notion of Pho Khun (Patriarchal rule) and Ayuthaya's despotic rulership, Sarit felt such ruling style fits his political taste the best. He viewed himself as the foremost leader to guide the country through its \"Patiwat\" (revolutionary) phase against the rising leftist tides.§!\n  - §W$MODIFIER_CONSCRIPTION_TOTAL_FACTOR$§!: §G+5%§!\n  - §W$MODIFIERS_ARMY_CORE_DEFENCE_FACTOR$:§!: §G+10.0%§!\n  - §W$MODIFIER_AI_FOCUS_AGGRESSIVE_FACTOR$§!: §Y+25%§!\n\n"
+ SIA_phao_leader_tt: "§YPhao Sriyanond§! becomes leader for the §YNational Populist§! and §YPaternal Autocrat§! parties.\n§YPhao Sriyanond§! gains:\n   §YThe Prancing Knight§!\n§gOne simply does not rise to the top position without deceit and deception - Phao lacks neither and is ready to smack down any opposition utilising both trickery and his own heavily militarised police forces in tow.§!\n  - §W$MODIFIER_POLITICAL_POWER_GAIN$§!: §G+0.05§!\n  - §W$MODIFIER_GLOBAL_NON_CORE_MANPOWER$:§!: §G+2.00%§!\n  - §W$MODIFIER_FOREIGN_SUBVERSIVE_ACTIVITIES$§!: §G-30%§!\n\n"
+ SIA_sarit_leader_tt: "§YSarit Thanarat§! becomes leader for the §YNational Populist§! and §YPaternal Autocrat§! parties.\n§YSarit Thanarat§! gains:\n   §YThe Paternal Despot§!\n§gInspired by Sukhothai's era notion of Pho Khun (Patriarchal rule) and Ayuthaya's despotic rulership, Sarit felt such ruling style fits his political taste the best. He viewed himself as the foremost leader to guide the country through its \"Patiwat\" (revolutionary) phase against the rising leftist tides.§!\n  - §W$MODIFIER_CONSCRIPTION_TOTAL_FACTOR$§!: §G+5%§!\n  - §W$MODIFIERS_ARMY_CORE_DEFENCE_FACTOR$:§!: §G+10.0%§!\n  - §W$MODIFIER_AI_FOCUS_AGGRESSIVE_FACTOR$§!: §Y+25%§!\n\n"
  SIA_election_12_months_tt: "§GFirst public elections will be held within the next 12 months.§!\n"
  SIA_election_3_months_tt: "§GFirst public elections will be held within the next 3 months.§!\n"
  SIA_election_1_months_tt: "§GFirst public elections will be held within the next 30 days.§!\n"
@@ -789,33 +789,33 @@
  siam_events.78.t: "A War in Europe"
  siam_events.78.d.neutral: "We must preserve our neutral status." #temp
  siam_events.78.d.sphere: "Time to liberate Asia." #temp
- siam_events.78.d.reichpakt: "We must preserve the old order." #temp
+ siam_events.78.d.reichspakt: "We must preserve the old order." #temp
  siam_events.78.d.socialist: "The time has come." #temp
  siam_events.78.a.neutral: "If we stand incredibly still they will not see us." #temp
  siam_events.78.a.sphere: "The time for us Asians had come." #temp
- siam_events.78.a.reichpakt: "We must stop the Japanese." #temp
+ siam_events.78.a.reichspakt: "We must stop the Japanese." #temp
  siam_events.78.a.socialist: "Times for the Workers to rise!" #temp
 
 ## Nation at war ## Probaly when the Eastern Sea War kicks in, or when Siam find themselves at war.
  siam_events.79.t: "War founds its way to Siam"
  siam_events.79.d.war.neutral: "We're at war and we're neutral." #temp
  siam_events.79.d.war.sphere: "We're at war and we're with Japan." #temp
- siam_events.79.d.war.reichpakt: "We're at war and we're with Germany." #temp
+ siam_events.79.d.war.reichspakt: "We're at war and we're with Germany." #temp
  siam_events.79.d.war.socialist: "We're at war and we're proclaiming the world revolution." #temp
  siam_events.79.a.war.neutral: "So you've awaken the elephant in the room." #temp
  siam_events.79.a.war.sphere: "Time to strike the Germans!" #temp
- siam_events.79.a.war.reichpakt: "We must defend our territory from the Japanese at all cost." #temp
+ siam_events.79.a.war.reichspakt: "We must defend our territory from the Japanese at all cost." #temp
  siam_events.79.a.war.socialist: "Time to spread the Workers Revolution!" #temp
 
 ## Peace on Siam ## Probably when the Eastern Sea War Ended?, I have no idea how this last one will be implemented.
  siam_events.80.t: "Peace for the Nation"
  siam_events.80.d.peace.neutral: "We're finally at peace. And we're neutral." #temp
  siam_events.80.d.peace.sphere: "We're finally at peace. And we're with Japan." #temp
- siam_events.80.d.peace.reichpakt: "We're finally at peace and we're with Germany." #temp
+ siam_events.80.d.peace.reichspakt: "We're finally at peace and we're with Germany." #temp
  siam_events.80.d.peace.socialist: "We're finally at peace and the world revolution succeeded." #temp
  siam_events.80.a.peace.neutral: "Yay 1" #temp
  siam_events.80.a.peace.sphere: "Yay 2" #temp
- siam_events.80.a.peace.reichpakt: "Yay 3" #temp
+ siam_events.80.a.peace.reichspakt: "Yay 3" #temp
  siam_events.80.a.peace.socialist: "Yay 4" #temp
 
 ### News Events ###
@@ -1285,12 +1285,12 @@
  SIA_ADJ: "Siamese"
  SIA_DEF: "Siam"
 
- SIA_totalist: "Siamese Commune"
- SIA_totalist_DEF: "the Siamese Commune"
- SIA_syndicalist: "Commune of Siam"
- SIA_syndicalist_DEF: "the Commune of Siam"
- SIA_radical_socialist: "Commune of Siam"
- SIA_radical_socialist_DEF: "the Commune of Siam"
+ SIA_totalist: "Siamese People's Democratic Republic"
+ SIA_totalist_DEF: "the Siamese People's Democratic Republic"
+ SIA_syndicalist: "Socialist State of Siam"
+ SIA_syndicalist_DEF: "the Socialist State of Siam"
+ SIA_radical_socialist: "Socialist State of Siam"
+ SIA_radical_socialist_DEF: "the Socialist State of Siam"
  SIA_social_democrat: "Kingdom of Siam"
  SIA_social_democrat_DEF: "the Kingdom of Siam"
  SIA_social_liberal: "Kingdom of Siam"
@@ -1310,12 +1310,12 @@
  SIA_REP_ADJ: "Siamese"
  SIA_REP_DEF: "Siam"
 
- SIA_REP_totalist: "Siamese Commune"
- SIA_REP_totalist_DEF: "the Siamese Commune"
- SIA_REP_syndicalist: "Commune of Siam"
- SIA_REP_syndicalist_DEF: "the Commune of Siam"
- SIA_REP_radical_socialist: "Commune of Siam"
- SIA_REP_radical_socialist_DEF: "the Commune of Siam"
+ SIA_REP_totalist: "Siamese People's Democratic Republic"
+ SIA_REP_totalist_DEF: "the Siamese People's Democratic Republic"
+ SIA_REP_syndicalist: "Socialist State of Siam"
+ SIA_REP_syndicalist_DEF: "the Socialist State of Siam"
+ SIA_REP_radical_socialist: "Socialist Republic of Siam"
+ SIA_REP_radical_socialist_DEF: "the Socialist Republic of Siam"
  SIA_REP_social_democrat: "Republic of Siam"
  SIA_REP_social_democrat_DEF: "the Republic of Siam"
  SIA_REP_social_liberal: "Republic of Siam"
@@ -1335,12 +1335,12 @@
  THI_ADJ: "Thai"
  THI_DEF: "Thailand"
 
- THI_totalist: "Thai Commune"
- THI_totalist_DEF: "the Commune"
- THI_syndicalist: "Commune of Thailand"
- THI_syndicalist_DEF: "the Commune of Thailand"
- THI_radical_socialist: "Commune of Thailand"
- THI_radical_socialist_DEF: "the Commune of Thailand"
+ THI_totalist: "Thai People's Democratic Republic"
+ THI_totalist_DEF: "the Thai People's Democratic Republic"
+ THI_syndicalist: "Socialist State of Thailand"
+ THI_syndicalist_DEF: "the Socialist State of Thailand"
+ THI_radical_socialist: "Socialist Republic of Thailand"
+ THI_radical_socialist_DEF: "the Socialist Republic of Thailand"
  THI_social_democrat: "Kingdom of Thailand"
  THI_social_democrat_DEF: "the Kingdom of Thailand"
  THI_social_liberal: "Kingdom of Thailand"
@@ -1360,12 +1360,12 @@
  THI_REP_ADJ: "Thai"
  THI_REP_DEF: "Thailand"
 
- THI_REP_totalist: "Thai Commune"
- THI_REP_totalist_DEF: "the Thai Commune"
- THI_REP_syndicalist: "Commune of Thailand"
- THI_REP_syndicalist_DEF: "the Commune of Thailand"
- THI_REP_radical_socialist: "Commune of Thailand"
- THI_REP_radical_socialist_DEF: "the Commune of Thailand"
+ THI_REP_totalist: "Thai People's Democratic Republic"
+ THI_REP_totalist_DEF: "the Thai People's Democratic Republic"
+ THI_REP_syndicalist: "Socialist Republic of Thailand"
+ THI_REP_syndicalist_DEF: "the Socialist State of Thailand"
+ THI_REP_radical_socialist: "Socialist Republic of Thailand"
+ THI_REP_radical_socialist_DEF: "the Socialist Republic of Thailand"
  THI_REP_social_democrat: "Republic of Thailand"
  THI_REP_social_democrat_DEF: "the Republic of Thailand"
  THI_REP_social_liberal: "Republic of Thailand"

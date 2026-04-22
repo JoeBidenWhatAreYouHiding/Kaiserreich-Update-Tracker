@@ -5,9 +5,10 @@ state = {
 	state_category = one_island
 
 	history = {
-		owner = CEY
-		add_core_of = CEY
+		owner = GER
 		add_core_of = MAD
+		add_core_of = CEY
+		add_claim_by = GER
 
 		buildings = {
 			infrastructure = 1

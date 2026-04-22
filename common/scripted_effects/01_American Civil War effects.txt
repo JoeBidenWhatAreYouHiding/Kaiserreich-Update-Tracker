@@ -863,10 +863,7 @@ USA_civil_war_begins = {
 				country_event = { id = american_civil_war_events.69 days = 180 random_days = 20 } # Double V Campaign
 				country_event = { id = american_civil_war_events.70 days = 200 random_days = 20 } # Militarize the WASPs?
 
-				#news_event = { id = united_states_events.1000 hours = 4 } #main news event
-				hidden_effect = {
-					play_acw_super_event = yes
-				}
+				news_event = { id = united_states_events.1000 hours = 4 } #main news event
 			}
 			WCA = {
 				country_event = { id = american_civil_war_events.35 days = 40 random_days = 80 } # Female Soldiers
@@ -1091,6 +1088,16 @@ USA_civil_war_ends = {
 				remove_targeted_decision = { target = THIS decision = CUB_waited_promotenonsoc_ACCdecision }
 				remove_targeted_decision = { target = THIS decision = CUB_waited_promotenonsoc_APGdecision }
 				remove_targeted_decision = { target = THIS decision = CUB_waited_promotesoc_noWCAdecision }
+			}
+			CEN = {
+				if = {
+					limit = {
+						has_country_flag = CENmil_foreign_policy_open
+						ROOT = { has_socialist_government = no }
+					}
+					activate_targeted_decision = { target = ROOT decision = CENmil_request_foreign_protection }
+					clr_country_flag = CENmil_foreign_policy_open
+				}
 			}
 
 			#Power Projection event for Russia

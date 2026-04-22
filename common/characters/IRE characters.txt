@@ -6,7 +6,7 @@
 
  ### CONTENTS ###
  # Political Characters
- 	 # Communists
+ 	 # Totalists
  	 # Syndies
  	 # RadSocs
  	 # SocDems
@@ -29,7 +29,7 @@ characters = {
 	### Political Characters ###
 	############################
 
-	### Communists ###
+	### Totalists ###
 
 	IRE_winifred_carney = {
 		name = IRE_winifred_carney

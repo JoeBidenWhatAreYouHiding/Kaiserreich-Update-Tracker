@@ -61,7 +61,10 @@ characters = {
 					is_country_leader = no
 				}
 				not_already_hired_except_as = political_advisor
-				has_elected_government = yes
+				OR = {
+					has_elected_government = yes
+					PRF_chetput_pattabhiraman_ramaswami_iyer = { is_second_in_command = yes }
+				}
 			}
 			traits = { KR_patron_of_progressives }
 		}

@@ -22,6 +22,7 @@ instant_effect = {
 		equipment = {
 			type = infantry_equipment_1
 		}
+		industrial_manufacturer = mio:INDIA_punjab_ordnance_factories_organisation
 		requested_factories = 4
 		progress = 0.12
 		efficiency = 50
@@ -121,134 +122,134 @@ division_template = {
 
 units = {
 	division = {
-		location = 1349
+		location = 10735
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 3456
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 10729
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 1147
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 8007
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 10843
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 10905
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 4110
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 7998
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 10173
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 2002
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 1908
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 4149
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 12886
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 4003
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 10729
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 13853
 		division_template = "Infantry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 
 	division = {
-		location = 1349
+		location = 12708
 		division_template = "Gurkha Rifles"
 		start_experience_factor = 0.4
 	}
 	division = {
-		location = 1349
+		location = 1129
 		division_template = "Gurkha Rifles"
 		start_experience_factor = 0.4
 	}
 
 	division = {
-		location = 1349
+		location = 12876
 		division_template = "Cavalry Division"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.6
 	}
 	division = {
-		location = 1349
+		location = 12005
 		division_template = "Cavalry Division"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 	}
 
 	division = {
-		location = 1349
+		location = 12876
 		division_template = "Camelry Corps"
 		start_experience_factor = 0.3
 	}

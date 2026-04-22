@@ -2073,8 +2073,7 @@ country_event = {
 		trigger = {
 			original_tag = RAJ
 		}
-		every_country = {
-			limit = { is_in_faction_with = ROOT }
+		every_faction_member = {
 			set_country_flag = ENT_on_leave_faction_disabled
 		}
 		dismantle_faction = yes
@@ -2104,7 +2103,7 @@ country_event = {
 	option = { #Let's hope they see sense
 		log = "[GetLogInfo]: event dominion_of_india_events.100 option dominion_of_india_events.100.a"
 		name = dominion_of_india_events.100.a
-		PJB = {
+		PRF = {
 			country_event = { id = dominion_of_india_events.101 days = 2 }
 		}
 	}
@@ -2186,13 +2185,13 @@ country_event = {
 	desc = {
 		text = dominion_of_india_events.102.d.default
 		trigger = {
-			PJB = { NOT = { has_government = paternal_autocrat } }
+			PRF = { NOT = { has_government = paternal_autocrat } }
 		}
 	}
 	desc = {
 		text = dominion_of_india_events.102.d.osman
 		trigger = {
-			PJB = { has_government = paternal_autocrat }
+			PRF = { has_government = paternal_autocrat }
 		}
 	}
 	picture = GFX_report_event_PRF_war
@@ -2207,7 +2206,7 @@ country_event = {
 		custom_effect_tooltip = tooltip_white_line
 		create_wargoal = {
 			type = annex_everything
-			target = PJB
+			target = PRF
 		}
 	}
 }
@@ -2274,7 +2273,7 @@ country_event = {
 		custom_effect_tooltip = tooltip_white_line
 		create_wargoal = {
 			type = annex_everything
-			target = PJB
+			target = PRF
 		}
 	}
 }

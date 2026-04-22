@@ -9,8 +9,9 @@ state = {
 	}
 
 	history = {
-		owner = CEY
+		owner = GER
 		add_core_of = CEY
+		add_claim_by = GER
 		add_to_array = { state_victory_points = 7260 }
 
 		victory_points = { 7260 3 } #Colombo

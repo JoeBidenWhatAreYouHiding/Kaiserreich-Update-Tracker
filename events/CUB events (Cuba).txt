@@ -1531,7 +1531,7 @@ country_event = { # Start of revolutionary congress
 		}
 		modify_country_flag = { flag = cubanradsocscore value = 1 }
 	}
-	option = { #Communist
+	option = { #Totalist
 		log = "[GetLogInfo]: event cuba_events.30 option cuba_events.30.c"
 		name = cuba_events.30.c
 		ai_chance = {
@@ -1622,7 +1622,7 @@ country_event = { # congress issue 2
 		}
 		modify_country_flag = { flag = cubanradsocscore value = 1 }
 	}
-	option = { #Communist
+	option = { #Totalist
 		log = "[GetLogInfo]: event cuba_events.31 option cuba_events.31.c"
 		name = cuba_events.31.c
 		ai_chance = {
@@ -1713,7 +1713,7 @@ country_event = { # congress issue 3
 		}
 		modify_country_flag = { flag = cubanradsocscore value = 1 }
 	}
-	option = { #Communist
+	option = { #Totalist
 		log = "[GetLogInfo]: event cuba_events.32 option cuba_events.32.c"
 		name = cuba_events.32.c
 		ai_chance = {
@@ -2471,7 +2471,7 @@ country_event = { #Radsoc event for info
 	}
 }
 
-country_event = { #Communist event for info
+country_event = { #Totalist event for info
 	id = cuba_events.50
 	title = cuba_events.50.t
 	desc = cuba_events.50.d
@@ -4407,7 +4407,6 @@ country_event = { #Local Relations
 		text = cuba_events.123.d_1
 		trigger = {
 			any_other_country = {
-				exists = yes
 				has_war = no
 				OR = {
 					tag = DOM
@@ -4447,7 +4446,6 @@ country_event = { #Local Relations
 		trigger = {
 			NOT = {
 				any_other_country = {
-					exists = yes
 					has_war = no
 					OR = {
 						tag = DOM
@@ -4491,7 +4489,6 @@ country_event = { #Local Relations
 		name = cuba_events.123.a
 		trigger = {
 			any_other_country = {
-				exists = yes
 				has_war = no
 				OR = {
 					tag = DOM
@@ -4530,7 +4527,6 @@ country_event = { #Local Relations
 		}
 		every_other_country = {
 			limit = {
-				exists = yes
 				has_war = no
 				OR = {
 					tag = DOM
@@ -4576,7 +4572,6 @@ country_event = { #Local Relations
 		}
 		every_other_country = {
 			limit = {
-				exists = yes
 				has_war = no
 				OR = {
 					tag = DOM
@@ -4604,7 +4599,6 @@ country_event = { #Local Relations
 		name = cuba_events.123.c
 		trigger = {
 			any_other_country = {
-				exists = yes
 				OR = {
 					tag = DOM
 					tag = HAI
@@ -4643,7 +4637,6 @@ country_event = { #Local Relations
 		add_political_power = 30
 		every_other_country = {
 			limit = {
-				exists = yes
 				has_war = no
 				OR = {
 					tag = DOM
@@ -8361,7 +8354,7 @@ country_event = { #Start
 	}
 }
 
-###Fascist Focuses
+###National Populist Focuses
 
 country_event = { #Start
 	id = cuba_events.218
@@ -9056,7 +9049,7 @@ country_event = { #Syndie election
 	}
 }
 
-country_event = { #Communist switching to dictatorship
+country_event = { #Totalist switching to dictatorship
 	id = cuba_events.237
 	title = cuba_events.237.t
 	desc = cuba_events.237.d

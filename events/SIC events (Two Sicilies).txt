@@ -305,7 +305,7 @@ country_event = { # The 1937 Election
 			FOCUS = SIC_constitutional_kingdom
 		}
 	}
-	option = { # Fascists Democrats
+	option = { # National Populists Democrats
 		log = "[GetLogInfo]: event two_sicilies_events.10 option two_sicilies_events.10.f"
 		name = two_sicilies_events.10.f
 		ai_chance = {
@@ -1109,12 +1109,8 @@ country_event = { #Initial Proposal
 				NOT = { is_in_faction_with = SIC }
 			}
 			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject = no
-						is_in_faction_with = ROOT
-						NOT = { tag = ROOT }
-					}
+				every_allied_country = {
+					limit = { is_subject = no }
 					country_event = annexation_events.8
 				}
 			}

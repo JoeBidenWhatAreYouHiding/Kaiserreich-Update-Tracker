@@ -37,6 +37,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = generic_development_efforts_modifier
 					days = 180
+					scope = ROOT
 				}
 			}
 		}
@@ -64,6 +65,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = generic_development_efforts_modifier
 					days = 180
+					scope = ROOT
 				}
 			}
 		}
@@ -90,6 +92,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = generic_development_efforts_modifier
 					days = 180
+					scope = ROOT
 				}
 			}
 		}
@@ -117,6 +120,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = generic_development_efforts_modifier
 					days = 180
+					scope = ROOT
 				}
 			}
 		}
@@ -508,6 +512,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = generic_development_efforts_modifier
 					days = 90
+					scope = ROOT
 				}
 			}
 			432 = { #Assam
@@ -515,6 +520,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = generic_development_efforts_modifier
 					days = 90
+					scope = ROOT
 				}
 			}
 			815 = { #Patiala
@@ -522,6 +528,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = generic_development_efforts_modifier
 					days = 90
+					scope = ROOT
 				}
 			}
 		}
@@ -2506,17 +2513,6 @@ focus_tree = {
 			hidden_trigger = { always = no }
 		}
 
-		bypass = {
-			OR = {
-				has_war_with = RAJ
-				NOT = { country_exists = RAJ }
-			}
-			OR = {
-				has_war_with = PJB
-				NOT = { country_exists = PJB }
-			}
-		}
-
 		ai_will_do = { factor = 1 }
 
 		completion_reward = {
@@ -2702,14 +2698,14 @@ focus_tree = {
 				NOT = { country_exists = RAJ }
 			}
 			OR = {
-				has_war_with = PJB
-				NOT = { country_exists = PJB }
+				has_war_with = PRF
+				NOT = { country_exists = PRF }
 			}
 		}
 
 		prerequisite = { focus = HND_third_internationale }
 		will_lead_to_war_with = RAJ
-		will_lead_to_war_with = PJB
+		will_lead_to_war_with = PRF
 
 		ai_will_do = { factor = 1000 }
 
@@ -2728,7 +2724,7 @@ focus_tree = {
 			}
 			declare_war_on = {
 				type = annex_everything
-				target = PJB
+				target = PRF
 			}
 			hidden_effect = { news_event = india_events.103 }
 		}
@@ -2745,10 +2741,10 @@ focus_tree = {
 		y = 1
 
 		available = {
-			NOT = { country_exists = PJB }
+			NOT = { country_exists = PRF }
 			NOT = { country_exists = RAJ }
 			431 = { is_owned_and_controlled_by = ROOT } #West Bengal
-			891 = { is_owned_and_controlled_by = ROOT } #West Punjab
+			433 = { is_owned_and_controlled_by = ROOT } #Rajputana
 			427 = { is_owned_and_controlled_by = ROOT } #Hyderabad
 		}
 

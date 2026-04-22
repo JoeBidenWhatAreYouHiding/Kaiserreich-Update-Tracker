@@ -622,7 +622,7 @@ country_event = { # Socialist Constitution - Leader till election
 		add_to_coalition = yes
 		complete_national_focus = WCA_american_commonwealth
 	}
-	option = { # Communist - Earl Browder
+	option = { # Totalist - Earl Browder
 		log = "[GetLogInfo]: event america_workers_congress_events.11 option america_workers_congress_events.11.c"
 		name = america_workers_congress_events.11.c
 		trigger = {
@@ -669,7 +669,7 @@ country_event = { # Socialist Constitution - Leader till election
 			country_event = { id = america_workers_congress_events.74 days = 430 }
 		}
 	}
-	option = { # Communist - William Foster
+	option = { # Totalist - William Foster
 		log = "[GetLogInfo]: event america_workers_congress_events.11 option america_workers_congress_events.11.e"
 		name = america_workers_congress_events.11.e
 		trigger = {
@@ -4153,6 +4153,7 @@ country_event = { #Non-centralist flag choice event
 		hidden_effect = {
 			set_cosmetic_tag = WCA_red
 		}
+		custom_effect_tooltip = WCA_red_tt
 	}
 
 	option = { #Black-on-red
@@ -4175,6 +4176,7 @@ country_event = { #Non-centralist flag choice event
 		hidden_effect = {
 			set_cosmetic_tag = WCA_iww
 		}
+		custom_effect_tooltip = WCA_iww_tt
 	}
 	after = {
 		hidden_effect = {

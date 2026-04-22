@@ -348,7 +348,7 @@ country_event = {
 	}
 }
 
-# Communists attempt a coup
+# Totalists attempt a coup
 country_event = {
 	id = liberia_events.11
 	title = liberia_events.11.t

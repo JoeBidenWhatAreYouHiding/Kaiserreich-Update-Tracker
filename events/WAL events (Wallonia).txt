@@ -1164,7 +1164,7 @@ country_event = { #Question of Leadership
 	}
 }
 
-#Communist control
+#Totalist control
 
 country_event = { #Bloodbath at Liège
 	id = wallonia_events.82
