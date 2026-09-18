@@ -195,7 +195,7 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 1939.8.1
+				date > 1942.3.1
 			}
 		}
 
@@ -1204,21 +1204,11 @@ technologies = {
 			air_range = 0.25
 		}
 
-		rocket_artillery = {
+		category_rocket_artillery = {
 			soft_attack = 0.1
 		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.1
-		}
-
 		rocket_battery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
 		}
 
 		research_cost = 1
