@@ -5854,6 +5854,7 @@ country_event = { #Ma Zhanshan and the Heilongjiang Clique offer to Defect!
 					set_nationality = ROOT
 					demote_to_general = yes
 				}
+				retire_character = FNG_Li_Dingyi
 			}
 		}
 	}
@@ -5892,6 +5893,7 @@ country_event = { #Ma Zhanshan and the Heilongjiang Clique Defect!
 			retire_character = FNG_wu_junsheng
 			retire_character = FNG_wan_fulin
 			retire_character = FNG_zhang_tingshu
+			retire_character = FNG_Li_Dingyi
 		}
 		custom_effect_tooltip = tooltip_white_line
 		add_timed_idea = {
@@ -5933,6 +5935,7 @@ country_event = { #The Heilongjiang Insurgency!
 		retire_character = FNG_wu_junsheng
 		retire_character = FNG_wan_fulin
 		retire_character = FNG_zhang_tingshu
+		retire_character = FNG_Li_Dingyi
 	}
 }
 
@@ -8796,16 +8799,16 @@ country_event = { # The Compromise is Accepted
 
 				set_temp_variable = {
 					SHD_jiangsu_exploitation_civ_factories = {
-						value = 1047.building_level@industrial_complex
-						add = 598.building_level@industrial_complex
-						add = 1075.building_level@industrial_complex
+						value = var:1047.building_level@industrial_complex
+						add = var:598.building_level@industrial_complex
+						add = var:1075.building_level@industrial_complex
 					}
 				}
 				set_temp_variable = {
 					SHD_jiangsu_exploitation_mil_factories = {
-						value = 1047.building_level@arms_factory
-						add = 598.building_level@arms_factory
-						add = 1075.building_level@arms_factory
+						value = var:1047.building_level@arms_factory
+						add = var:598.building_level@arms_factory
+						add = var:1075.building_level@arms_factory
 					}
 				}
 

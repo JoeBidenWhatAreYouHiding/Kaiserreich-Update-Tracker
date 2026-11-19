@@ -3320,7 +3320,13 @@ RUS_trade_decisions = {
 				has_opinion = { target = ROOT value > 19 }
 				if = {
 					limit = { is_italian_tag = yes }
-					owns_state = 2 #Rome
+					if = {
+						limit = { tag = PAP }
+						italy_country_has_reunited_italy = yes
+					}
+					else = {
+						owns_state = 2 #Rome
+					}
 				}
 				if = {
 					limit = { tag = NFA }
@@ -3329,7 +3335,7 @@ RUS_trade_decisions = {
 			}
 			NOT = { is_embargoed_by = FROM }
 		}
-		targets = { ITA SIC SRD NFA FRP }
+		targets = { ITA LOM VNC PAP SIC SRD NFA FRP }
 		target_root_trigger = {
 			OR = {
 				has_completed_focus = RUS_trade
@@ -11917,6 +11923,10 @@ RUS_russian_sphere_decisions = {
 					}
 				}
 			}
+			modifier = {
+				factor = 0
+				FROM = { dont_start_major_faction_wars = yes }
+			}
 		}
 
 		cancel_effect = {
@@ -14396,6 +14406,10 @@ RUS_Spreading_the_Revolution_decisions = {
 				factor = 0
 				FROM = { RUS_dont_attack_if_overlord_is_stronger = yes }
 			}
+			modifier = {
+				factor = 0
+				FROM = { dont_start_major_faction_wars = yes }
+			}
 		}
 
 		cancel_effect = {
@@ -14484,6 +14498,10 @@ RUS_Spreading_the_Revolution_decisions = {
 			modifier = {
 				factor = 0
 				FROM = { RUS_dont_attack_if_overlord_is_stronger = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0
@@ -14582,6 +14600,10 @@ RUS_Spreading_the_Revolution_decisions = {
 			modifier = {
 				factor = 0
 				FROM = { RUS_dont_attack_if_overlord_is_stronger = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dont_start_major_faction_wars = yes }
 			}
 			modifier = {
 				factor = 0

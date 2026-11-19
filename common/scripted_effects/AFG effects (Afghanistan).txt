@@ -890,7 +890,6 @@ AFG_end_crossroads_of_civilisation = {
 }
 
 AFG_pashtunistan_revolt_effect = {
-	#set_global_flag = AFG_pashtunistan_revolt_fired
 
 	442 = { #Peshawar
 		add_core_of = PTH
@@ -1031,7 +1030,6 @@ AFG_pathanistan_puppet_setup_effect = {
 		}
 	}
 }
-
 
 AFG_pathanistan_leader_setup_effect = {
 
@@ -1262,6 +1260,110 @@ AFG_end_civil_war_effect = {
 	mark_focus_tree_layout_dirty = yes
 }
 
+AFG_find_socialist_overlord = {
+	if = {
+		limit = {
+			is_ai = yes
+			AFG_has_potential_socialist_overlord = yes
+			has_game_rule = { rule = AFG_forpol option = DEFAULT }
+		}
+		if = { #Done to prioritise HND -> RUS -> PER -> CHN -> INT, with human players always superceding this
+			limit = {
+				HND = { AFG_is_potential_socialist_overlord = yes }
+				NOT = {
+					RUS = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+					PER = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+					CHN = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+					any_home_area_neighbor_country = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+				}
+			}
+			HND = { save_event_target_as = AFG_potential_socialist_overlord }
+		}
+		else_if = {
+			limit = {
+				RUS = { AFG_is_potential_socialist_overlord = yes }
+				NOT = {
+					PER = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+					CHN = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+					any_home_area_neighbor_country = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+				}
+			}
+			RUS = { save_event_target_as = AFG_potential_socialist_overlord }
+		}
+		else_if = {
+			limit = {
+				PER = { AFG_is_potential_socialist_overlord = yes }
+				NOT = {
+					CHN = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+					any_home_area_neighbor_country = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+				}
+			}
+			PER = { save_event_target_as = AFG_potential_socialist_overlord }
+		}
+		else_if = {
+			limit = {
+				CHN = { AFG_is_potential_socialist_overlord = yes }
+				NOT = {
+					any_home_area_neighbor_country = {
+						AFG_is_potential_socialist_overlord = yes
+						is_ai = no
+					}
+				}
+			}
+			CHN = { save_event_target_as = AFG_potential_socialist_overlord }
+		}
+		else_if = {
+			limit = {
+				any_home_area_neighbor_country = { AFG_is_potential_socialist_overlord = yes }
+			}
+			INT = { save_event_target_as = AFG_potential_socialist_overlord }
+		}
+	}
+}
+AFG_clear_socialist_overlord_flags = {
+	hidden_effect = {
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = HND
+					tag = RUS
+					tag = PER
+					tag = CHN
+					tag = INT
+				}
+			}
+			clr_country_flag = AFG_declined_socialist_backing
+		}
+	}
+}
+
 AFG_telai_party_names_effect = {
 	hidden_effect = {
 		set_party_name = {
@@ -1483,6 +1585,7 @@ AFG_puppet_setup = {
 				}
 				AFG_create_zahir = yes
 				AFG_telai_puppet_party_names_effect = yes
+				activate_advisor = AFG_mohammad_hashim_khan_sic
 			}
 			else_if = {
 				limit = { AFG = { AFG_mohammad_nadir_khan = { is_dead = yes } } }
@@ -2101,6 +2204,7 @@ AFG_zahir_monarchy_setup_effect = {
 			promote_leader = yes
 		}
 	}
+	activate_advisor = AFG_mohammad_hashim_khan_sic
 }
 
 AFG_improve_loy_afghanistan_effect = {
